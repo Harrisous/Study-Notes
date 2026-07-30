@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mamba from Scratch — A Course</title>
+<title>Mamba from Scratch: A Course</title>
 <style>
 :root{
   --ink:#15202b; --paper:#fbfaf8; --panel:#ffffff; --rule:#e6e1d8;
@@ -263,9 +263,9 @@ h4.checkhead{margin:0 0 14px;font-size:12px;letter-spacing:.14em;text-transform:
   <div class="inner">
     <div class="kicker">Sequence Models · Course Notes</div>
     <h1>Mamba, from scratch</h1>
-    <p>Eleven lessons that start at "what is a state?" and end at the complete Mamba block. Every formula is
-       built up from the one before it, every claim is checked against the paper, and every number in this
-       course was computed rather than recalled.</p>
+    <p>Eleven lessons. They start at "what is a state?" and finish at the complete Mamba block. Every formula
+       is built from the one before it, every claim is checked against the paper, and every number here was
+       computed rather than recalled.</p>
     <div class="meta">
       <div><b>11</b> lessons, one per page</div>
       <div><b>5</b> interactive demos</div>
@@ -277,29 +277,29 @@ h4.checkhead{margin:0 0 14px;font-size:12px;letter-spacing:.14em;text-transform:
 <div class="box plain" style="margin-top:22px">
   <span class="t">How to read this</span>
   <p>One lesson per page. Move with the buttons at the bottom of each page, the numbers in the bar above, or
-  the <kbd>←</kbd> <kbd>→</kbd> arrow keys. Lessons 1–4 are the foundation and are worth going slowly — if you
-  understand what <span class="m">Δ</span> does by the end of Lesson 4, the rest is downhill. Lesson 8 is the
-  actual Mamba contribution; everything before it exists to make that lesson obvious.</p>
-  <p style="margin-top:10px">Each lesson ends with questions. Answer them out loud before opening the box —
-  recognising a correct answer feels identical to knowing it, and is not the same thing.</p>
+  the <kbd>←</kbd> <kbd>→</kbd> arrow keys. Take Lessons 1 to 4 slowly, because they are the foundation. Once
+  you understand what <span class="m">Δ</span> does, the rest is downhill. Lesson 8 is the actual Mamba
+  contribution, and everything before it exists to make that lesson feel obvious.</p>
+  <p style="margin-top:10px">Each lesson ends with questions. Answer them out loud before you open the box.
+  Recognising a correct answer feels exactly like knowing it, and the two are not the same thing.</p>
 </div>
 <div class="pagenav"><span></span>
-<button class="pn nx" data-go="1"><span class="k">Begin</span><span class="t">Lesson 1 — The problem with sequences</span></button>
+<button class="pn nx" data-go="1"><span class="k">Begin</span><span class="t">Lesson 1: The problem with sequences</span></button>
 </div>
 <div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div>
 </div></div><div class="page" data-i="1" id="page1"><div class="wrap"><div class="phead"></div><section id="l1">
 <h2><span class="num">Lesson 01</span>The problem with sequences</h2>
 <h3 class="lesson-title">You get to keep notes, or you get to re-read everything. Pick one.</h3>
 
-<p class="lede">A sequence model reads things one at a time — words, audio samples, sensor readings — and after
-each one it has to produce an answer. The whole field is organised around a single awkward question:
-<b>when you are at item number 900, what do you still know about item number 3?</b></p>
+<p class="lede">A sequence model reads things one at a time, whether those things are words, audio samples or
+sensor readings, and after each one it has to produce an answer. The whole field is organised around a single
+awkward question: <b>when you are at item number 900, what do you still know about item number 3?</b></p>
 
 <p>There are exactly two honest answers, and for thirty years they have been the only two.</p>
 
 <h4>Answer 1: keep a summary (the RNN)</h4>
-<p>Carry a small notebook. After each item, cross out the notebook and rewrite it. The notebook is always the
-same size — say 100 numbers — no matter how long the sequence gets.</p>
+<p>Carry a small notebook. After each item, cross out what is written and rewrite it. The notebook is always
+the same size, say 100 numbers, no matter how long the sequence gets.</p>
 <p><b>Good:</b> processing item 900 costs exactly what processing item 3 cost. Memory never grows.<br>
 <b>Bad:</b> everything you know about the past has to be squeezed into those 100 numbers. Item 3 has been
 overwritten 897 times. It is almost certainly gone.</p>
@@ -309,11 +309,11 @@ overwritten 897 times. It is almost certainly gone.</p>
 and decide which ones matter. That "looking back and deciding" is <b>attention</b>.</p>
 <p><b>Good:</b> item 3 is still perfectly intact. Nothing is lost.<br>
 <b>Bad:</b> item 900 requires 899 comparisons. Item 9000 requires 8999. The work grows with position, and
-the transcript you must store — the <b>KV cache</b> — grows without limit.</p>
+the transcript you have to store, called the <b>KV cache</b>, grows without limit.</p>
 
 <figure>
 <svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
-  <text x="10" y="18" font-size="13" font-weight="700" fill="#1f5fa8">RNN — fixed notebook</text>
+  <text x="10" y="18" font-size="13" font-weight="700" fill="#1f5fa8">RNN: fixed notebook</text>
   <text x="10" y="35" font-size="11.5" fill="#6b7280">constant cost, lossy memory</text>
   <g>
     <!-- state chain -->
@@ -349,13 +349,13 @@ the transcript you must store — the <b>KV cache</b> — grows without limit.</
     <rect x="165" y="181" width="26" height="14" rx="3" fill="#1f5fa8" opacity=".85"/>
     <rect x="235" y="181" width="26" height="14" rx="3" fill="#1f5fa8" opacity=".85"/>
     <rect x="305" y="181" width="26" height="14" rx="3" fill="#1f5fa8" opacity=".85"/>
-    <text x="30" y="222" font-size="12" fill="#15803d" font-weight="600">flat — never grows</text>
+    <text x="30" y="222" font-size="12" fill="#15803d" font-weight="600">flat, never grows</text>
     <text x="30" y="240" font-size="12" fill="#b3261e" font-weight="600">x₁ is faded almost to nothing by h₅</text>
   </g>
 
   <line x1="410" y1="10" x2="410" y2="240" stroke="#e6e1d8" stroke-width="1.5"/>
 
-  <text x="435" y="18" font-size="13" font-weight="700" fill="#c2410c">Transformer — full transcript</text>
+  <text x="435" y="18" font-size="13" font-weight="700" fill="#c2410c">Transformer: full transcript</text>
   <text x="435" y="35" font-size="11.5" fill="#6b7280">perfect memory, growing cost</text>
   <g>
     <g font-size="12" text-anchor="middle">
@@ -380,26 +380,26 @@ the transcript you must store — the <b>KV cache</b> — grows without limit.</
     <text x="435" y="240" font-size="12" fill="#b3261e" font-weight="600">cost and memory grow forever</text>
   </g>
 </svg>
-<figcaption><b>The trade that defines the field.</b> The RNN's blue state circles are all the same size — that
-is its whole advantage, and also its whole problem. The Transformer's orange arrows reach every past token
-perfectly — that is its whole advantage, and also its whole problem.</figcaption>
+<figcaption><b>The trade that defines the field.</b> The RNN's blue state circles are all the same size, which
+is its whole advantage and also its whole problem. The Transformer's orange arrows reach every past token
+perfectly, which is its whole advantage and also its whole problem.</figcaption>
 </figure>
 
 <div class="box key">
 <span class="t">The one-sentence version of this course</span>
-<p>Mamba is an RNN whose notebook is <em>large</em>, whose update rule is <em>fast on a GPU</em>, and — the
-actual new idea — which <em>decides for each incoming item how hard to write it down</em>. Everything else in
-these eleven lessons is machinery in service of that last clause.</p>
+<p>Mamba is an RNN whose notebook is <em>large</em> and whose update rule is <em>fast on a GPU</em>. The
+genuinely new idea is a third property: it <em>decides, for each incoming item, how hard to write that item
+down</em>. Everything else in these eleven lessons exists to make that third property work.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Why does a Transformer get slower with every token it generates, while an RNN does not?</div><button class="toggle">Show answer</button><div class="ans"><p>Because a Transformer <em>re-reads</em>. To produce token 900 it compares against all 899 previous tokens, so the work at each step is proportional to how far in it already is. An RNN does not re-read — it only looks at its notebook, which is the same size at token 900 as at token 3. That is the whole difference, and every other trade-off in this course follows from it.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="0"><span class="k">← Previous</span><span class="t">Contents</span></button><button class="pn nx" data-go="2"><span class="k">Next →</span><span class="t">Lesson 2 — The state</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="2" id="page2"><div class="wrap"><div class="phead"></div><section id="l2">
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Why does a Transformer get slower with every token it generates, while an RNN does not?</div><button class="toggle">Show answer</button><div class="ans"><p>Because a Transformer <em>re-reads</em>. To produce token 900 it compares against all 899 previous tokens, so the work at each step grows with how far in it already is. An RNN never re-reads. It only looks at its notebook, which is the same size at token 900 as at token 3. That is the whole difference, and every other trade-off in this course follows from it.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="0"><span class="k">← Previous</span><span class="t">Contents</span></button><button class="pn nx" data-go="2"><span class="k">Next →</span><span class="t">Lesson 2: The state</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="2" id="page2"><div class="wrap"><div class="phead"></div><section id="l2">
 <h2><span class="num">Lesson 02</span>The state</h2>
 <h3 class="lesson-title">A notebook with exactly one rule for updating it</h3>
 
 <p class="lede">Forget neural networks for a moment. Suppose you are tracking the temperature in a room and you
-want a running sense of "how warm has it been lately". You get one reading per minute. You are allowed to
+want a running sense of how warm it has been lately. You get one reading per minute, and you are allowed to
 remember exactly one number.</p>
 
-<p>Here is a rule that works. Call your remembered number <span class="m">h</span>, and the new reading
+<p>Here is a rule that works. Call your remembered number <span class="m">h</span> and the new reading
 <span class="m">x</span>. At every minute:</p>
 
 <div class="eq">
@@ -410,9 +410,9 @@ remember exactly one number.</p>
   <span class="m">b</span> of the new reading). That is it. That is a recurrent state.</span>
 </div>
 
-<p>Two knobs. <span class="m">a</span> controls <b>forgetting</b> — if <span class="m">a</span> = 0.9, then
-each minute you keep 90% of what you knew. <span class="m">b</span> controls <b>listening</b> — how much of
-the new reading gets mixed in.</p>
+<p>Two knobs. <span class="m">a</span> controls <b>forgetting</b>: if <span class="m">a</span> = 0.9, you keep
+90% of what you knew each minute. <span class="m">b</span> controls <b>listening</b>, meaning how much of the
+new reading gets mixed in.</p>
 
 <p>Let us actually run it. Take <span class="m">a</span> = 0.9, <span class="m">b</span> = 0.1, start at
 <span class="m">h</span><sub>0</sub> = 0, and feed in a single spike of 10 followed by silence:</p>
@@ -434,12 +434,12 @@ most important behaviour in the whole course, so it is worth staring at: <b>the 
 multiplied by a number smaller than one, over and over.</b></p>
 
 <div class="demo">
-  <div class="hd"><span>Demo 1 — turn the two knobs</span><span class="tag">drag me</span></div>
+  <div class="hd"><span>Demo 1: turn the two knobs</span><span class="tag">drag me</span></div>
   <div class="bd">
     <div class="ctl">
-      <div class="sl"><label>a — memory<small>fraction kept per step</small></label>
+      <div class="sl"><label>a: memory<small>fraction kept per step</small></label>
         <input type="range" id="d1a" min="0" max="0.99" step="0.01" value="0.9"><output id="d1ao">0.90</output></div>
-      <div class="sl"><label>b — listening<small>portion of input mixed in</small></label>
+      <div class="sl"><label>b: listening<small>portion of input mixed in</small></label>
         <input type="range" id="d1b" min="0" max="1" step="0.01" value="0.10"><output id="d1bo">0.10</output></div>
     </div>
     <div class="btnrow">
@@ -465,27 +465,27 @@ multiplied by a number smaller than one, over and over.</b></p>
 model a <em>long-term average</em> and the other makes it a <em>parrot that only knows the current input</em>.
 Decide which is which, then check.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>A state has <span class="m">Ā</span> = 0.9.
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>A state has <span class="m">Ā</span> = 0.9.
 A memory is written in with strength 1. Roughly how much of it survives 10 steps later?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>0.9<sup>10</sup> = <b>0.349</b>, so about 35%. The general rule: after <span class="m">k</span> steps you
-have <span class="m">Ā<sup>k</sup></span> of what you put in. Geometric decay, not deletion.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="1"><span class="k">← Previous</span><span class="t">Lesson 1 — The problem with sequences</span></button><button class="pn nx" data-go="3"><span class="k">Next →</span><span class="t">Lesson 3 — Continuous time</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="3" id="page3"><div class="wrap"><div class="phead"></div><section id="l3">
+have <span class="m">Ā<sup>k</sup></span> of what you put in. Geometric decay, not deletion.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="1"><span class="k">← Previous</span><span class="t">Lesson 1: The problem with sequences</span></button><button class="pn nx" data-go="3"><span class="k">Next →</span><span class="t">Lesson 3: Continuous time</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="3" id="page3"><div class="wrap"><div class="phead"></div><section id="l3">
 <h2><span class="num">Lesson 03</span>Continuous time</h2>
 <h3 class="lesson-title">The same rule, written for a world without discrete steps</h3>
 
 <p class="lede">State space models do not start from <span class="m">h<sub>t</sub></span> =
 <span class="m">a h<sub>t−1</sub></span> + <span class="m">b x<sub>t</sub></span>. They start one level
-further back, in continuous time, and then <em>derive</em> that rule. This detour looks like pointless
-mathematical formality. It is not: it is where <span class="m">Δ</span> comes from, and
+further back, in continuous time, and then <em>derive</em> that rule. The detour looks like pointless
+mathematical formality. It is not. It is where <span class="m">Δ</span> comes from, and
 <span class="m">Δ</span> is the entire Mamba paper.</p>
 
-<p>Picture a bucket with a hole in the bottom. Water pours in from a tap; water leaks out through the hole.
+<p>Picture a bucket with a hole in the bottom. Water pours in from a tap and leaks out through the hole.
 The water level is <span class="m">h</span>. Then:</p>
 
 <ul>
 <li>Water leaks out at a rate proportional to how full the bucket is. That is a term
-<span class="m">A h</span>, with <span class="m">A</span> <b>negative</b> — the fuller it is, the faster it
-drains. This is forgetting.</li>
+<span class="m">A h</span>, with <span class="m">A</span> <b>negative</b>, because the fuller it is, the
+faster it drains. This is forgetting.</li>
 <li>Water pours in proportional to the tap setting <span class="m">x</span>. That is a term
 <span class="m">B x</span>. This is listening.</li>
 <li>You read the level off a measuring stick, which might be calibrated in different units. That is
@@ -493,7 +493,7 @@ drains. This is forgetting.</li>
 </ul>
 
 <div class="eq">
-  <span class="lbl">Continuous-time state space model — paper Eq. (1)</span>
+  <span class="lbl">Continuous-time state space model, paper Eq. (1)</span>
   <span class="m">h</span>′(<span class="m">t</span>) = <span class="mb">A</span><span class="m">h</span>(<span class="m">t</span>) + <span class="mb">B</span><span class="m">x</span>(<span class="m">t</span>)
   &nbsp;&nbsp;&nbsp;&nbsp;
   <span class="m">y</span>(<span class="m">t</span>) = <span class="mb">C</span><span class="m">h</span>(<span class="m">t</span>)
@@ -523,14 +523,14 @@ drains. This is forgetting.</li>
   <rect x="77" y="124" width="96" height="50" fill="#1f5fa8" opacity=".28"/>
   <line x1="77" y1="124" x2="173" y2="124" stroke="#1f5fa8" stroke-width="2.5"/>
   <text x="125" y="152" font-size="19" fill="#1f5fa8" font-weight="700" text-anchor="middle" font-family="Georgia,serif" font-style="italic">h(t)</text>
-  <text x="125" y="196" font-size="11.5" fill="#6b7280" text-anchor="middle">the state — the water level</text>
+  <text x="125" y="196" font-size="11.5" fill="#6b7280" text-anchor="middle">the state: the water level</text>
 
   <!-- leak -->
   <g stroke="#b3261e" stroke-width="2.5" stroke-linecap="round" opacity=".7">
     <line x1="125" y1="177" x2="125" y2="187"/>
   </g>
   <text x="196" y="118" font-size="13" fill="#b3261e" font-weight="700">A</text>
-  <text x="211" y="118" font-size="11" fill="#6b7280">the leak rate — must be negative</text>
+  <text x="211" y="118" font-size="11" fill="#6b7280">the leak rate: must be negative</text>
   <path d="M177 112 Q192 112 192 130 Q192 148 177 148" fill="none" stroke="#b3261e" stroke-width="1.6"/>
   <polygon points="177,148 185,144 185,152" fill="#b3261e"/>
 
@@ -550,19 +550,19 @@ drains. This is forgetting.</li>
   <text x="460" y="30" font-size="13" font-weight="700" fill="#15202b">What each letter buys you</text>
   <g font-size="12.5">
     <circle cx="468" cy="60" r="5" fill="#b3261e"/>
-    <text x="484" y="65" fill="#15202b" font-weight="650">A — forget</text>
+    <text x="484" y="65" fill="#15202b" font-weight="650">A: forget</text>
     <text x="484" y="82" fill="#6b7280" font-size="11.5">sets how long anything survives in the state</text>
 
     <circle cx="468" cy="112" r="5" fill="#c2410c"/>
-    <text x="484" y="117" fill="#15202b" font-weight="650">B — listen</text>
+    <text x="484" y="117" fill="#15202b" font-weight="650">B: listen</text>
     <text x="484" y="134" fill="#6b7280" font-size="11.5">sets how strongly new input enters the state</text>
 
     <circle cx="468" cy="164" r="5" fill="#15803d"/>
-    <text x="484" y="169" fill="#15202b" font-weight="650">C — report</text>
+    <text x="484" y="169" fill="#15202b" font-weight="650">C: report</text>
     <text x="484" y="186" fill="#6b7280" font-size="11.5">sets which part of the state becomes the output</text>
   </g>
 </svg>
-<figcaption><b>The bucket.</b> This picture is not a loose analogy — it is literally the equation.
+<figcaption><b>The bucket.</b> This picture is not a loose analogy. It is literally the equation.
 <span class="m">A</span> must be negative or the bucket fills forever and the model blows up. Mamba enforces
 this structurally, which we will see in Lesson 5.</figcaption>
 </figure>
@@ -574,21 +574,21 @@ this structurally, which we will see in Lesson 5.</figcaption>
 <em>does</em> add a per-channel skip, <span class="m">y<sub>t</sub></span> = <span class="mb">C</span><span class="m">h<sub>t</sub></span>
 + <span class="mb">D</span><span class="m">x<sub>t</sub></span>, initialised to 1. It is a small thing, but it
 means the SSM only has to learn the <em>correction</em> to passing the input straight through. Paper and code
-differ here; there is a full errata box at the end.</p>
+differ here, and there is a full errata box at the end.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Why must <span class="mb">A</span> be negative?</div>
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Why must <span class="mb">A</span> be negative?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>Because <span class="m">Ā</span> = exp(<span class="m">ΔA</span>) and <span class="m">Δ</span> &gt; 0. If
 <span class="mb">A</span> were positive, <span class="m">Ā</span> &gt; 1 and every step would <em>amplify</em>
-the state — it explodes. Negative <span class="mb">A</span> puts <span class="m">Ā</span> in (0, 1), which is
-decay. Mamba enforces this structurally by storing <span class="mb">A</span> = −exp(<code>A_log</code>), so no
-optimizer step can ever make it positive.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="2"><span class="k">← Previous</span><span class="t">Lesson 2 — The state</span></button><button class="pn nx" data-go="4"><span class="k">Next →</span><span class="t">Lesson 4 — Discretization and Δ</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="4" id="page4"><div class="wrap"><div class="phead"></div><section id="l4">
+the state, so it explodes. Negative <span class="mb">A</span> puts <span class="m">Ā</span> in (0, 1), which
+is decay. Mamba enforces this structurally by storing <span class="mb">A</span> = −exp(<code>A_log</code>), so no
+optimizer step can ever make it positive.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="2"><span class="k">← Previous</span><span class="t">Lesson 2: The state</span></button><button class="pn nx" data-go="4"><span class="k">Next →</span><span class="t">Lesson 4: Discretization and Δ</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="4" id="page4"><div class="wrap"><div class="phead"></div><section id="l4">
 <h2><span class="num">Lesson 04</span>Discretization and Δ</h2>
 <h3 class="lesson-title">The most important lesson in this course</h3>
 
 <p class="lede">Continuous time is nice mathematics, but your data is a list. You have word number 1, word
-number 2, word number 3 — not a smooth function of <span class="m">t</span>. So you have to convert the
-continuous rule into a step-by-step rule. The conversion needs one new quantity, and that quantity turns out
+number 2, word number 3, not a smooth function of <span class="m">t</span>. So you have to convert the
+continuous rule into a step-by-step rule. That conversion needs one new quantity, and that quantity turns out
 to be the whole ballgame.</p>
 
 <h4>The new quantity: Δ</h4>
@@ -597,35 +597,35 @@ It is a step size. If you sample the bucket every second, <span class="m">Δ</sp
 0.01 seconds, <span class="m">Δ</span> = 0.01 and almost nothing has changed between samples.</p>
 
 <p>Given <span class="m">Δ</span>, you can solve the differential equation exactly over one step. Assume the
-input holds constant across the step — this is called a <b>zero-order hold</b>, ZOH — and out comes:</p>
+input holds constant across the step, an assumption called a <b>zero-order hold</b> or ZOH, and out comes:</p>
 
 <div class="eq">
-  <span class="lbl">ZOH discretization — paper Eq. (4)</span>
+  <span class="lbl">ZOH discretization, paper Eq. (4)</span>
   <span class="ovl"><span class="mb">A</span></span> = exp(<span class="m">Δ</span><span class="mb">A</span>)
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="ovl"><span class="mb">B</span></span> = (<span class="m">Δ</span><span class="mb">A</span>)<sup>−1</sup>(exp(<span class="m">Δ</span><span class="mb">A</span>) − <span class="mb">I</span>) · <span class="m">Δ</span><span class="mb">B</span>
   <span class="note">The bar means "discretized". Read <span class="ovl"><span class="mb">A</span></span> =
   exp(<span class="m">Δ</span><span class="mb">A</span>) as: <em>the fraction of the state that survives one
   step.</em> Since <span class="mb">A</span> is negative and <span class="m">Δ</span> is positive, this is
-  always between 0 and 1 — exactly the <span class="m">a</span> from Lesson 2.</span>
+  always between 0 and 1, which is exactly the <span class="m">a</span> from Lesson 2.</span>
 </div>
 
 <p>And now the discrete rule falls out, and it is <em>the rule you already know</em>:</p>
 
 <div class="eq">
-  <span class="lbl">Discrete recurrence — paper Eq. (2)</span>
+  <span class="lbl">Discrete recurrence, paper Eq. (2)</span>
   <span class="m">h<sub>t</sub></span> = <span class="ovl"><span class="mb">A</span></span><span class="m">h<sub>t−1</sub></span> + <span class="ovl"><span class="mb">B</span></span><span class="m">x<sub>t</sub></span>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <span class="m">y<sub>t</sub></span> = <span class="mb">C</span><span class="m">h<sub>t</sub></span>
   <span class="note">Compare to Lesson 2: <span class="m">h<sub>t</sub></span> = <span class="m">a h<sub>t−1</sub></span>
   + <span class="m">b x<sub>t</sub></span>. Identical. All the discretization did was <em>tell you where
-  <span class="m">a</span> and <span class="m">b</span> come from</em> — they are not free knobs, they are
+  <span class="m">a</span> and <span class="m">b</span> come from</em>. They are not free knobs; they are
   determined by <span class="mb">A</span>, <span class="mb">B</span> and <span class="m">Δ</span>. Note
   <span class="mb">C</span> gets no bar; only <span class="mb">A</span> and <span class="mb">B</span> are
   discretized.</span>
 </div>
 
-<h4>Worked example — do this one by hand</h4>
+<h4>Worked example: do this one by hand</h4>
 <p>Take the simplest possible case: one state, <span class="mb">A</span> = −1, <span class="mb">B</span> = 1,
 <span class="mb">C</span> = 1, and <span class="m">Δ</span> = 0.5.</p>
 
@@ -637,8 +637,8 @@ input holds constant across the step — this is called a <b>zero-order hold</b>
 
 <p>Notice that 0.6065 + 0.3935 = 1 exactly. For this scalar case the ZOH formula gives
 <span class="ovl"><span class="mb">B</span></span> = 1 − <span class="ovl"><span class="mb">A</span></span>,
-a perfect <b>convex blend</b>: keep 60.65% of the old state, mix in 39.35% of the new input. Remember this —
-it is Theorem 1 in disguise and it comes back in Lesson 8.</p>
+a perfect <b>convex blend</b>: keep 60.65% of the old state, mix in 39.35% of the new input. Remember this
+one, because it is Theorem 1 in disguise and it comes back in Lesson 8.</p>
 
 <p>Feed in a single spike of 1 at <span class="m">t</span> = 0 and then silence. The state:</p>
 
@@ -650,11 +650,11 @@ it is Theorem 1 in disguise and it comes back in Lesson 8.</p>
 </table>
 </div>
 
-<p>The two rows match, which is not a coincidence — it is Lesson 6, arriving early.</p>
+<p>The two rows match, and that is not a coincidence. It is Lesson 6, arriving early.</p>
 
 <h4>Now the part that matters</h4>
 <p>Look at what <span class="m">Δ</span> does. It sits <em>inside an exponential</em>, multiplying
-<span class="mb">A</span>. So changing <span class="m">Δ</span> does not nudge the model's memory — it
+<span class="mb">A</span>. So changing <span class="m">Δ</span> does not nudge the model's memory. It
 reshapes it:</p>
 
 <div class="tw">
@@ -670,20 +670,20 @@ reshapes it:</p>
 
 <div class="box key">
 <span class="t">The intuition to carry for the rest of the course</span>
-<p><b>Δ is a focus dial.</b> Large <span class="m">Δ</span> means "this input matters — clear the notebook and
-write it down". Small <span class="m">Δ</span> means "this input is noise — hold what you have and let it
-pass". A model whose <span class="m">Δ</span> is fixed applies the same focus to every item in the sequence.
-A model that can <em>choose</em> <span class="m">Δ</span> per item can decide what to pay attention to. That
-choice is Mamba.</p>
+<p><b>Δ is a focus dial.</b> Large <span class="m">Δ</span> means "this input matters, so clear the notebook
+and write it down". Small <span class="m">Δ</span> means "this input is noise, so hold what you have and let
+it pass". A model whose <span class="m">Δ</span> is fixed applies the same focus to every item in the
+sequence. A model that can <em>choose</em> <span class="m">Δ</span> per item can decide what to pay attention
+to. That choice is Mamba.</p>
 <p style="margin-top:10px">Useful rule of thumb, exact to two decimals:
 <b>memory horizon ≈ 2.303 / (Δ·|A|) steps</b> before a memory has faded to 10% of its original strength.</p>
 </div>
 
 <div class="demo">
-  <div class="hd"><span>Demo 2 — the Δ dial</span><span class="tag">the key demo</span></div>
+  <div class="hd"><span>Demo 2: the Δ dial</span><span class="tag">the key demo</span></div>
   <div class="bd">
     <div class="ctl">
-      <div class="sl"><label>Δ — step size<small>log scale, 0.01 → 5</small></label>
+      <div class="sl"><label>Δ: step size<small>log scale, 0.01 → 5</small></label>
         <input type="range" id="d2d" min="-2" max="0.7" step="0.01" value="-0.3"><output id="d2do">0.50</output></div>
       <div class="sl"><label>A<small>must stay negative</small></label>
         <input type="range" id="d2a" min="-3" max="-0.1" step="0.05" value="-1"><output id="d2ao">−1.00</output></div>
@@ -702,27 +702,27 @@ choice is Mamba.</p>
 <span class="t">One thing to decide before Lesson 8</span>
 <p>You have a sentence with a lot of filler words and one number you must remember. If you could set
 <span class="m">Δ</span> yourself for each word, what value would you want on "um", and what value on the
-number? Say the two values out loud before continuing — Lesson 8 is exactly this idea and nothing more.</p>
+number? Say the two values out loud before continuing. Lesson 8 is exactly this idea and nothing more.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>A model uses <span class="m">Δ</span> = 0.02 for
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>A model uses <span class="m">Δ</span> = 0.02 for
 every token, with <span class="mb">A</span> = −1. Is it better at remembering, or at reacting to what just
 happened?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p><b>Remembering</b>, at the cost of reacting. <span class="m">Ā</span> = exp(−0.02) = 0.980, so its memory
 horizon is 2.303/0.02 ≈ <b>115 steps</b>. But <span class="m">B̄</span> = 0.020, meaning each new input enters
-with only 2% weight. It is a very long, very sluggish averager — it will not notice anything happening now.
-This is precisely the trade a fixed <span class="m">Δ</span> forces you into.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="3"><span class="k">← Previous</span><span class="t">Lesson 3 — Continuous time</span></button><button class="pn nx" data-go="5"><span class="k">Next →</span><span class="t">Lesson 5 — Going wide</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="5" id="page5"><div class="wrap"><div class="phead"></div><section id="l5">
+with only 2% weight. It is a very long, very sluggish averager, and it will not notice anything happening now.
+This is precisely the trade a fixed <span class="m">Δ</span> forces you into.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="3"><span class="k">← Previous</span><span class="t">Lesson 3: Continuous time</span></button><button class="pn nx" data-go="5"><span class="k">Next →</span><span class="t">Lesson 5: Going wide</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="5" id="page5"><div class="wrap"><div class="phead"></div><section id="l5">
 <h2><span class="num">Lesson 05</span>Going wide</h2>
 <h3 class="lesson-title">One number is not a memory. Sixteen numbers at sixteen speeds is.</h3>
 
 <p class="lede">Everything so far used a single number for the state. That single number can only decay at one
-rate — it is either a fast memory or a slow memory, never both. Real sequences need both at once. The fix is
+rate, so it is either a fast memory or a slow memory, never both. Real sequences need both at once. The fix is
 embarrassingly simple: run several of these in parallel at different speeds.</p>
 
-<h4>N — the state dimension</h4>
+<h4>N: the state dimension</h4>
 <p>Instead of one <span class="m">h</span>, keep a vector of <span class="m">N</span> of them, each with its own
 <span class="mb">A</span> value. Mamba's default is <span class="m">N</span> = 16. Because
-<span class="mb">A</span> is <b>diagonal</b> — a design choice inherited from S4D — these 16 states do not talk
+<span class="mb">A</span> is <b>diagonal</b>, a design choice inherited from S4D, these 16 states never talk
 to each other. They are 16 independent leaky buckets with 16 different hole sizes.</p>
 
 <p>Concretely, with <span class="mb">A</span> = [−1, −0.1] and <span class="m">Δ</span> = 1:</p>
@@ -739,15 +739,15 @@ to each other. They are 16 independent leaky buckets with 16 different hole size
 (0.0001) and the slow state still holds 39% of it. Together they encode <em>both</em> "what just happened"
 and "what happened a while ago". Scale that to 16 and you have a small spectrum of timescales.</p>
 
-<h4>D — the channels</h4>
-<p>Meanwhile your input is not one number per timestep either — a token embedding is a vector of
+<h4>D: the channels</h4>
+<p>Meanwhile your input is not one number per timestep either. A token embedding is a vector of
 <span class="m">D</span> numbers (Mamba-2.8B uses <span class="m">D</span> = 2560, doubled to 5120 inside the
 block). Mamba runs a <b>completely separate SSM on each channel</b>. Channel 7 has its own 16 states and its
 own 16 decay rates, independent of channel 8.</p>
 
 <p>So the parameter <span class="mb">A</span> has shape (<span class="m">D</span>, <span class="m">N</span>):
 one decay rate for every (channel, state) pair. That is the whole reason the state is bigger than a classical
-RNN's — it is <span class="m">D</span> × <span class="m">N</span> numbers, not <span class="m">D</span>.</p>
+RNN's. It holds <span class="m">D</span> × <span class="m">N</span> numbers, not <span class="m">D</span>.</p>
 
 <figure>
 <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
@@ -837,9 +837,9 @@ RNN's — it is <span class="m">D</span> × <span class="m">N</span> numbers, no
   <text x="456" y="229" font-size="11.5" fill="#6b7280">stored as A = −exp(A_log), so A &lt; 0 always ⇒ Ā ∈ (0,1)</text>
 </svg>
 <figcaption><b>The state is a grid, not a vector.</b> Each row is one channel's private bank of memories at
-different speeds. Nothing crosses between rows inside the SSM — mixing across channels happens elsewhere in
-the block (Lesson 10). In Mamba-2.8B the block works on <span class="m">E</span>·<span class="m">D</span> =
-5,120 channels, so this grid is 5,120 × 16 = <b>81,920 numbers per layer</b> — and it is the same 81,920
+different speeds. Nothing crosses between rows inside the SSM, because mixing across channels happens
+elsewhere in the block (Lesson 10). In Mamba-2.8B the block works on <span class="m">E</span>·<span class="m">D</span> =
+5,120 channels, so this grid is 5,120 × 16 = <b>81,920 numbers per layer</b>, and it stays 81,920
 whether the sequence is 10 tokens long or a million.</figcaption>
 </figure>
 
@@ -847,23 +847,23 @@ whether the sequence is 10 tokens long or a million.</figcaption>
 <span class="t">Where HiPPO comes in, briefly</span>
 <p>HiPPO ("High-order Polynomial Projection Operator") is the 2020 result that made this line of work
 possible. It asks: if you must compress an entire history into <span class="m">N</span> numbers, what is the
-<em>optimal</em> way? The answer is a specific matrix — for HiPPO-LegS, entries
+<em>optimal</em> way? The answer is a specific matrix that keeps a running projection of the history onto
+Legendre polynomials. For HiPPO-LegS its entries are
 <span class="m">A<sub>nk</sub></span> = −(2n+1)<sup>½</sup>(2k+1)<sup>½</sup> above the diagonal and
-−(n+1) on it — that keeps a running projection of the history onto Legendre polynomials. That matrix is
-triangular, so its eigenvalues are just its diagonal: −1, −2, −3, …</p>
+−(n+1) on it. That matrix is triangular, so its eigenvalues are just its diagonal: −1, −2, −3, …</p>
 <p style="margin-top:9px">S4D's insight was that you can throw away the off-diagonal part and keep only that
 diagonal, <span class="m">A<sub>n</sub></span> = −(n+1), with almost no loss. That is what Mamba uses. So the
 practical takeaway is small and concrete: <b>initialise your decay rates to −1, −2, −3, … rather than to
 random numbers</b>, and the theory behind why is HiPPO.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>An SSM has <span class="m">N</span> = 16 states
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>An SSM has <span class="m">N</span> = 16 states
 initialised HiPPO-style at <span class="mb">A</span> = −1, −2, …, −16, with
 <span class="m">Δ</span> = 0.1. Which state holds a memory longest, and for roughly how many steps?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>The state with <span class="mb">A</span> = −1, since horizon ≈ 2.303/(<span class="m">Δ</span>|<span class="mb">A</span>|).
 That gives 2.303/(0.1 × 1) ≈ <b>23 steps</b>. The shortest is <span class="mb">A</span> = −16 at
-2.303/(0.1 × 16) ≈ <b>1.4 steps</b>. That 16× spread is the point of the HiPPO initialisation — you get a bank
-of memories covering many timescales simultaneously rather than 16 copies of the same one.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="4"><span class="k">← Previous</span><span class="t">Lesson 4 — Discretization and Δ</span></button><button class="pn nx" data-go="6"><span class="k">Next →</span><span class="t">Lesson 6 — S4 and the convolution trick</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="6" id="page6"><div class="wrap"><div class="phead"></div><section id="l6">
+2.303/(0.1 × 16) ≈ <b>1.4 steps</b>. That 16× spread is the point of the HiPPO initialisation: you get a bank
+of memories covering many timescales at once rather than 16 copies of the same one.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="4"><span class="k">← Previous</span><span class="t">Lesson 4: Discretization and Δ</span></button><button class="pn nx" data-go="6"><span class="k">Next →</span><span class="t">Lesson 6: S4 and the convolution trick</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="6" id="page6"><div class="wrap"><div class="phead"></div><section id="l6">
 <h2><span class="num">Lesson 06</span>S4 and the convolution trick</h2>
 <h3 class="lesson-title">The same model, computed two completely different ways</h3>
 
@@ -875,7 +875,7 @@ Transformers.</p>
 
 <p>S4's escape hatch: if <span class="ovl"><span class="mb">A</span></span>,
 <span class="ovl"><span class="mb">B</span></span>, <span class="mb">C</span> are the <b>same at every
-timestep</b> — a property called <b>linear time-invariant</b>, LTI — then just unroll the recurrence and
+timestep</b>, a property called <b>linear time-invariant</b> or LTI, then unroll the recurrence and
 watch what happens.</p>
 
 <div class="eq" style="text-align:left;font-size:17px">
@@ -892,18 +892,18 @@ watch what happens.</p>
 </div>
 
 <div class="eq">
-  <span class="lbl">Convolutional form — paper Eq. (3)</span>
+  <span class="lbl">Convolutional form, paper Eq. (3)</span>
   <span class="ovl"><span class="mb">K</span></span> = (<span class="mb">C</span><span class="ovl"><span class="mb">B</span></span>,
   <span class="mb">C</span><span class="ovl"><span class="mb">A</span></span><span class="ovl"><span class="mb">B</span></span>, … ,
   <span class="mb">C</span><span class="ovl"><span class="mb">A</span></span><sup class="m">k</sup><span class="ovl"><span class="mb">B</span></span>, …)
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="m">y</span> = <span class="m">x</span> ∗ <span class="ovl"><span class="mb">K</span></span>
   <span class="note">Recall the Lesson 4 table where two rows matched exactly. The state values <em>were</em>
-  the kernel — you had already computed <span class="ovl"><span class="mb">K</span></span> without knowing it.</span>
+  the kernel, so you had already computed <span class="ovl"><span class="mb">K</span></span> without knowing it.</span>
 </div>
 
-<p>Why this matters: a convolution over the whole sequence can be computed <b>in parallel</b> — all
-<span class="m">L</span> positions at once — or via FFT in <span class="m">O</span>(<span class="m">L</span> log
+<p>Why this matters: a convolution over the whole sequence can be computed <b>in parallel</b>, all
+<span class="m">L</span> positions at once, or via FFT in <span class="m">O</span>(<span class="m">L</span> log
 <span class="m">L</span>). So S4 gets to have it both ways:</p>
 
 <div class="tw">
@@ -917,11 +917,11 @@ watch what happens.</p>
 </div>
 
 <div class="demo">
-  <div class="hd"><span>Demo 3 — the convolution kernel</span><span class="tag">S4 / LTI</span></div>
+  <div class="hd"><span>Demo 3: the convolution kernel</span><span class="tag">S4 / LTI</span></div>
   <div class="bd">
     <p style="font-size:14.5px;color:#6b7280;margin-bottom:16px">Each bar is one tap of
-    <span class="m">K̄</span> = C Ā<sup>k</sup> B̄ — how much a token from <span class="m">k</span> steps ago
-    contributes to the output right now. Watch how <span class="m">Δ</span> reshapes the whole profile.</p>
+    <span class="m">K̄</span> = C Ā<sup>k</sup> B̄, showing how much a token from <span class="m">k</span> steps
+    ago contributes to the output right now. Watch how <span class="m">Δ</span> reshapes the whole profile.</p>
     <div class="ctl">
       <div class="sl"><label>Δ<small>step size</small></label>
         <input type="range" id="d3d" min="-1.7" max="0.5" step="0.01" value="-0.7"><output id="d3do">0.20</output></div>
@@ -940,7 +940,7 @@ watch what happens.</p>
 The instant any of them depends on the input, the unrolled sums stop collapsing into one fixed kernel and the
 trick dies. Lesson 8 breaks exactly this condition on purpose, and Lesson 9 is the bill that comes due.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Why does making <span class="m">Δ</span>
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Why does making <span class="m">Δ</span>
 input-dependent destroy the convolution trick?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>The convolution form comes from unrolling the recurrence and noticing that
@@ -948,8 +948,8 @@ input-dependent destroy the convolution trick?</div>
 uses the <em>same</em> coefficients <span class="mb">C</span><span class="m">Ā<sup>k</sup>B̄</span> at every
 <span class="m">t</span>. That is only true if <span class="m">Ā</span> and <span class="m">B̄</span> are
 constant. Once <span class="m">Δ<sub>t</sub></span> varies, position 5 accumulates
-<span class="m">Ā</span><sub>5</sub><span class="m">Ā</span><sub>4</sub><span class="m">Ā</span><sub>3</sub>…
-— a different product from position 6. There is no single kernel to convolve with, so no FFT.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="5"><span class="k">← Previous</span><span class="t">Lesson 5 — Going wide</span></button><button class="pn nx" data-go="7"><span class="k">Next →</span><span class="t">Lesson 7 — Why S4 is not enough</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="7" id="page7"><div class="wrap"><div class="phead"></div><section id="l7">
+<span class="m">Ā</span><sub>5</sub><span class="m">Ā</span><sub>4</sub><span class="m">Ā</span><sub>3</sub>…,
+a different product from the one position 6 accumulates. There is no single kernel to convolve with, so no FFT.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="5"><span class="k">← Previous</span><span class="t">Lesson 5: Going wide</span></button><button class="pn nx" data-go="7"><span class="k">Next →</span><span class="t">Lesson 7: Why S4 is not enough</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="7" id="page7"><div class="wrap"><div class="phead"></div><section id="l7">
 <h2><span class="num">Lesson 07</span>Why S4 is not enough</h2>
 <h3 class="lesson-title">A fixed kernel cannot notice what it is looking at</h3>
 
@@ -958,8 +958,8 @@ constant. Once <span class="m">Δ<sub>t</sub></span> varies, position 5 accumula
 on the input at all. S4 applies the identical weighting pattern to every sequence it will ever see.</p>
 
 <p>Think about what that means. The model weights "5 steps ago" by some fixed amount. Always. Whether the
-token 5 steps ago was a critical password or the word "um", it gets the same weight — because the weight was
-decided at training time, by position, not by content.</p>
+token 5 steps ago was a critical password or the word "um", it gets the same weight, because the weight was
+decided at training time by position rather than by content.</p>
 
 <h4>The task that exposes it: Selective Copying</h4>
 <p>Show the model a sequence of mostly-noise tokens with a few coloured tokens hidden at
@@ -967,7 +967,7 @@ decided at training time, by position, not by content.</p>
 
 <figure>
 <svg viewBox="0 0 800 230" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
-  <text x="10" y="16" font-size="12.5" font-weight="700" fill="#6b7280">Plain Copying — fixed spacing</text>
+  <text x="10" y="16" font-size="12.5" font-weight="700" fill="#6b7280">Plain Copying: fixed spacing</text>
   <g>
     <g>
       <rect x="10" y="30" width="30" height="28" rx="4" fill="#c2410c"/><text x="25" y="49" font-size="12" fill="#fff" text-anchor="middle">A</text>
@@ -985,12 +985,12 @@ decided at training time, by position, not by content.</p>
     </g>
     <rect x="316" y="30" width="34" height="28" rx="4" fill="#15202b"/><text x="333" y="49" font-size="11" fill="#fff" text-anchor="middle">out</text>
   </g>
-  <text x="10" y="80" font-size="11.5" fill="#15803d" font-weight="600">Solvable by a fixed kernel — the gap never changes, so a fixed lag works.</text>
+  <text x="10" y="80" font-size="11.5" fill="#15803d" font-weight="600">Solvable by a fixed kernel: the gap never changes, so a fixed lag works.</text>
   <text x="10" y="97" font-size="11.5" fill="#6b7280">The model never has to look at the content. S4 passes.</text>
 
   <line x1="10" y1="116" x2="790" y2="116" stroke="#e6e1d8"/>
 
-  <text x="10" y="140" font-size="12.5" font-weight="700" fill="#c2410c">Selective Copying — random spacing</text>
+  <text x="10" y="140" font-size="12.5" font-weight="700" fill="#c2410c">Selective Copying: random spacing</text>
   <g>
     <g fill="#eae7e1" stroke="#d8d3cb">
       <rect x="10" y="152" width="30" height="28" rx="4"/><rect x="44" y="152" width="30" height="28" rx="4"/>
@@ -1011,7 +1011,7 @@ decided at training time, by position, not by content.</p>
     </g>
     <rect x="316" y="152" width="34" height="28" rx="4" fill="#15202b"/><text x="333" y="171" font-size="11" fill="#fff" text-anchor="middle">out</text>
   </g>
-  <text x="10" y="202" font-size="11.5" fill="#b3261e" font-weight="600">No fixed kernel can solve it — the gaps differ on every example.</text>
+  <text x="10" y="202" font-size="11.5" fill="#b3261e" font-weight="600">No fixed kernel can solve it: the gaps differ on every example.</text>
   <text x="10" y="219" font-size="11.5" fill="#6b7280">The model must decide, per token, whether this one is worth keeping.</text>
 
   <line x1="424" y1="128" x2="424" y2="224" stroke="#e6e1d8" stroke-width="1.5"/>
@@ -1030,16 +1030,16 @@ decided at training time, by position, not by content.</p>
     <text x="790" y="222" fill="#15803d" font-weight="700" text-anchor="end" font-size="11.5">99.8%</text>
   </g>
 </svg>
-<figcaption><b>Read the three bars carefully.</b> Wrapping S4 in Mamba's architecture gets you from 18% to 56%
-— a real gain, but nowhere near solved. Swapping the <em>layer</em> from S4 to S6 gets you to 99.8%. The
+<figcaption><b>Read the three bars carefully.</b> Wrapping S4 in Mamba's architecture gets you from 18% to
+56%, a real gain but nowhere near solved. Swapping the <em>layer</em> from S4 to S6 gets you to 99.8%. The
 paper is explicit that architectural gating is not a substitute: gates do not act along the sequence axis, so
 they cannot change the spacing between tokens.</figcaption>
 </figure>
 
 <h4>The second task: Induction Heads</h4>
 <p>If you have seen the bigram "Harry Potter" earlier, then the next time "Harry" appears you should predict
-"Potter". This requires reaching back an <em>arbitrary, content-determined</em> distance — the defining
-capability behind in-context learning.</p>
+"Potter". This requires reaching back an <em>arbitrary, content-determined</em> distance, which is the
+defining capability behind in-context learning.</p>
 
 <p>The headline result here is the one worth memorising, because it is not a small improvement over a
 baseline; it is a different kind of behaviour. Two-layer models, 74K parameters for Mamba, trained on
@@ -1047,7 +1047,7 @@ sequences of length <b>256</b>:</p>
 
 <div class="box key">
 <span class="t">The extrapolation result</span>
-<p>Mamba solves induction heads perfectly at sequence length <b>2<sup>20</sup> = 1,048,576</b> — the paper
+<p>Mamba solves induction heads perfectly at sequence length <b>2<sup>20</sup> = 1,048,576</b>. The paper
 states it "generalizes perfectly to million-length sequences, or 4000× longer than it saw during training,
 <em>while no other method goes beyond 2×</em>." The attention baselines could not even be evaluated past
 16,384 without running out of memory.</p>
@@ -1055,24 +1055,24 @@ states it "generalizes perfectly to million-length sequences, or 4000× longer t
 
 <div class="box warn">
 <span class="t">The diagnosis, in one line</span>
-<p>S4's problem is not that its memory is too short. Its problem is that its memory is <b>content-blind</b> —
-it compresses on a fixed schedule instead of compressing based on what it just read. Fixing that requires
-letting the input change the dynamics. Which is Lesson 8.</p>
+<p>S4's problem is not that its memory is too short. Its problem is that its memory is <b>content-blind</b>.
+It compresses on a fixed schedule instead of compressing based on what it just read. Fixing that means
+letting the input change the dynamics, which is Lesson 8.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Plain Copying is solved perfectly by S4, but
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Plain Copying is solved perfectly by S4, but
 Selective Copying is not. What single change to the task causes that, and why is it fatal to S4?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>The change is <b>random spacing</b> between the tokens to be copied. In Plain Copying the gap is constant,
 so a fixed kernel with a spike at exactly the right lag solves it without ever looking at the content. In
-Selective Copying the gap is different on every example — and a fixed kernel is indexed by <em>position</em>,
-not by content, so no single kernel can be right for all examples. S4 scores 18.3%; the same architecture with
-an S6 layer scores 99.8%.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="6"><span class="k">← Previous</span><span class="t">Lesson 6 — S4 and the convolution trick</span></button><button class="pn nx" data-go="8"><span class="k">Next →</span><span class="t">Lesson 8 — Selection</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="8" id="page8"><div class="wrap"><div class="phead"></div><section id="l8">
+Selective Copying the gap is different on every example, and a fixed kernel is indexed by <em>position</em>,
+not by content, so no single kernel can be right for all of them. S4 scores 18.3%; the same architecture with
+an S6 layer scores 99.8%.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="6"><span class="k">← Previous</span><span class="t">Lesson 6: S4 and the convolution trick</span></button><button class="pn nx" data-go="8"><span class="k">Next →</span><span class="t">Lesson 8: Selection</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="8" id="page8"><div class="wrap"><div class="phead"></div><section id="l8">
 <h2><span class="num">Lesson 08</span>Selection</h2>
 <h3 class="lesson-title">Mamba's one idea: let the input choose Δ, B and C</h3>
 
 <p class="lede">Everything so far has been setup. Here is the actual contribution, and it fits in a sentence:
 <b>make <span class="m">Δ</span>, <span class="mb">B</span> and <span class="mb">C</span> functions of the
-current input instead of fixed parameters.</b> The layer that results is called <b>S6</b> — S4 plus
+current input instead of fixed parameters.</b> The layer that results is called <b>S6</b>, which is S4 plus
 Selection.</p>
 
 <p>In S4, <span class="mb">B</span> is a learned matrix. Same matrix for every token, forever. In S6,
@@ -1080,7 +1080,7 @@ Selection.</p>
 token, get a different <span class="mb">B</span>.</p>
 
 <div class="eq sel">
-  <span class="lbl">The selection functions — paper §3.2, verbatim</span>
+  <span class="lbl">The selection functions, paper §3.2, verbatim</span>
   <span class="m">s<sub>B</sub></span>(<span class="m">x</span>) = Linear<sub><span class="m">N</span></sub>(<span class="m">x</span>)
   &nbsp;&nbsp;
   <span class="m">s<sub>C</sub></span>(<span class="m">x</span>) = Linear<sub><span class="m">N</span></sub>(<span class="m">x</span>)
@@ -1089,18 +1089,18 @@ token, get a different <span class="mb">B</span>.</p>
   &nbsp;&nbsp;
   <span class="m">τ<sub>Δ</sub></span> = softplus
   <span class="note">Three tiny linear layers. That is the entire mechanism. <span class="m">τ<sub>Δ</sub></span>
-  = softplus just forces <span class="m">Δ</span> to be positive — a negative timestep is meaningless. In the
+  = softplus just forces <span class="m">Δ</span> to be positive, since a negative timestep is meaningless. In the
   real implementation the <span class="m">Δ</span> projection is low-rank, Linear<sub><span class="m">D</span></sub>(Linear<sub><span class="m">R</span></sub>(<span class="m">x</span>))
   with <span class="m">R</span> = ⌈<span class="m">D</span>/16⌉, and there is a learned bias inside the softplus.</span>
 </div>
 
 <h4>Why B and C, and why not A</h4>
 <ul>
-<li><b><span class="mb">B</span> selective</b> — the model can decide <em>whether this token gets written into
+<li><b><span class="mb">B</span> selective:</b> the model can decide <em>whether this token gets written into
 memory at all</em>.</li>
-<li><b><span class="mb">C</span> selective</b> — the model can decide <em>which parts of memory to read out
+<li><b><span class="mb">C</span> selective:</b> the model can decide <em>which parts of memory to read out
 right now</em>.</li>
-<li><b><span class="m">Δ</span> selective</b> — the focus dial from Lesson 4, now under the model's control
+<li><b><span class="m">Δ</span> selective:</b> the focus dial from Lesson 4, now under the model's control
 per token. This is the important one.</li>
 <li><b><span class="mb">A</span> stays fixed.</b> The paper's reasoning: <span class="mb">A</span> only ever
 reaches the model through <span class="ovl"><span class="mb">A</span></span> = exp(<span class="m">Δ</span><span class="mb">A</span>),
@@ -1112,14 +1112,14 @@ selective</em>. Selecting <span class="mb">A</span> too would be redundant. They
 justification: if a token should be ignored, <em>all</em> <span class="m">D</span> channels should ignore it.
 So the input is projected down to a single number and then copied out to all channels.</p>
 
-<h4>The shapes — this is where it becomes concrete</h4>
+<h4>The shapes: this is where it becomes concrete</h4>
 <p>Side by side, the two algorithms from the paper. <span style="color:#b3261e;font-weight:600">Warning:</span>
-the paper overloads the letter B — it means both "batch size" in shapes and "the SSM input matrix" in
-equations. Read carefully.</p>
+the paper overloads the letter B. It means both "batch size" in the shapes and "the SSM input matrix" in the
+equations, so read carefully.</p>
 
 <div class="tw">
 <table>
-<tr><th></th><th>Algorithm 1 — S4</th><th>Algorithm 2 — S6 (Mamba)</th></tr>
+<tr><th></th><th>Algorithm 1: S4</th><th>Algorithm 2: S6 (Mamba)</th></tr>
 <tr><td><b>A</b></td><td class="n">(D, N) Parameter</td><td class="n">(D, N) Parameter</td></tr>
 <tr><td><b>B</b></td><td class="n">(D, N) Parameter</td><td style="background:var(--orange-l)"><span class="n">(B, L, N)</span> ← s<sub>B</sub>(x)</td></tr>
 <tr><td><b>C</b></td><td class="n">(D, N) Parameter</td><td style="background:var(--orange-l)"><span class="n">(B, L, N)</span> ← s<sub>C</sub>(x)</td></tr>
@@ -1133,9 +1133,9 @@ equations. Read carefully.</p>
 <p>Look at the <span class="ovl"><span class="mb">A</span></span>,
 <span class="ovl"><span class="mb">B</span></span> row. In S4 they are one small matrix. In S6 they are a
 different matrix <em>at every position of every sequence in the batch</em>. That is a tensor of size
-B×L×D×N — for a realistic batch this is enormous, and it is why Lesson 9 exists.</p>
+B×L×D×N. For a realistic batch that is enormous, and it is why Lesson 9 exists.</p>
 
-<h4>Theorem 1 — the sanity check</h4>
+<h4>Theorem 1: the sanity check</h4>
 <p>Strip the model to its bones: <span class="m">N</span> = 1, <span class="mb">A</span> = −1,
 <span class="mb">B</span> = 1. Then the selective SSM becomes something you may already recognise:</p>
 
@@ -1150,7 +1150,7 @@ B×L×D×N — for a realistic batch this is enormous, and it is why Lesson 9 ex
   exactly <em>why</em> softplus is the right choice for <span class="m">τ<sub>Δ</sub></span>.</span>
 </div>
 
-<p>Verify it numerically — with <span class="m">z</span> = Linear(<span class="m">x<sub>t</sub></span>):</p>
+<p>Verify it numerically, with <span class="m">z</span> = Linear(<span class="m">x<sub>t</sub></span>):</p>
 
 <div class="tw">
 <table>
@@ -1166,7 +1166,7 @@ B×L×D×N — for a realistic batch this is enormous, and it is why Lesson 9 ex
 channel, with a GPU kernel that makes it trainable in parallel.</b></p>
 
 <div class="demo o">
-  <div class="hd"><span>Demo 4 — selective vs fixed, on the same sentence</span><span class="tag">the payoff</span></div>
+  <div class="hd"><span>Demo 4: selective vs fixed, on the same sentence</span><span class="tag">the payoff</span></div>
   <div class="bd">
     <p style="font-size:14.5px;color:#6b7280;margin-bottom:16px">One token carries the value <b>7</b>; the rest
     is filler. The selective model raises <span class="m">Δ</span> on the number and drops it on filler. The
@@ -1180,8 +1180,8 @@ channel, with a GPU kernel that makes it trainable in parallel.</b></p>
     </div>
     <canvas id="d4c" width="820" height="290"></canvas>
     <div class="readout">
-      <div class="rd o"><div class="k">Mamba recall</div><div class="v" id="d4m">—</div><div class="u">% of the 7 retained</div></div>
-      <div class="rd r"><div class="k">S4 recall</div><div class="v" id="d4s">—</div><div class="u">% of the 7 retained</div></div>
+      <div class="rd o"><div class="k">Mamba recall</div><div class="v" id="d4m">0.0%</div><div class="u">% of the 7 retained</div></div>
+      <div class="rd r"><div class="k">S4 recall</div><div class="v" id="d4s">0.0%</div><div class="u">% of the 7 retained</div></div>
     </div>
     <div class="verdict" id="d4v"></div>
   </div>
@@ -1190,24 +1190,24 @@ channel, with a GPU kernel that makes it trainable in parallel.</b></p>
 <div class="box warn">
 <span class="t">Try to break it</span>
 <p>Try to find a fixed <span class="m">Δ</span> that lets the S4 model win. You cannot, and the reason is worth
-working out. Push <span class="m">Δ</span> high and S4 writes the 7 in strongly — then erases it just as fast,
+working out. Push <span class="m">Δ</span> high and S4 writes the 7 in strongly, then erases it just as fast,
 because the same large <span class="m">Δ</span> applies to every filler token after it. Push
-<span class="m">Δ</span> low and S4 preserves beautifully — but <span class="m">B̄</span> is now tiny, so the 7
+<span class="m">Δ</span> low and S4 preserves beautifully, but <span class="m">B̄</span> is now tiny, so the 7
 was never really written down in the first place. <b>One dial cannot be set to "write hard" and "hold gently"
 at the same time.</b> Selection is not a better dial setting; it is the ability to use two settings in one
 sequence.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — 4 questions</h4><div class="q"><div class="qq"><span class="lv e">easy</span>In S4, what is the shape of
+<div class="checks"><h4 class="checkhead">Check yourself: 4 questions</h4><div class="q"><div class="qq"><span class="lv e">easy</span>In S4, what is the shape of
 <span class="mb">B</span>? In S6?</div>
 <button class="toggle">Show answer</button><div class="ans">
-<p>S4: <b>(D, N)</b> — a learned parameter, the same for every position and every sequence. S6:
-<b>(B, L, N)</b> — computed from the input, so it differs at every position of every sequence in the batch.
+<p>S4: <b>(D, N)</b>, a learned parameter, the same for every position and every sequence. S6:
+<b>(B, L, N)</b>, computed from the input, so it differs at every position of every sequence in the batch.
 The appearance of the L axis is literally what "time-varying" means, and it is what kills the convolution.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>If selection is so useful, why doesn't Mamba
 make <span class="mb">A</span> input-dependent too?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>Because it would be redundant. <span class="mb">A</span> only reaches the computation through
 <span class="m">Ā</span> = exp(<span class="m">Δ</span><span class="mb">A</span>), and
-<span class="m">Δ</span> is <em>already</em> input-dependent — so <span class="m">Ā</span> is already
+<span class="m">Δ</span> is <em>already</em> input-dependent, so <span class="m">Ā</span> is already
 input-dependent. The paper says selectivity in <span class="m">Δ</span> "is enough to ensure selectivity in
 (<span class="m">Ā</span>, <span class="m">B̄</span>)", hypothesises that a selective <span class="mb">A</span>
 would perform similarly, and leaves it out for simplicity.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span><span class="m">Δ</span> is projected down to
@@ -1215,7 +1215,7 @@ would perform similarly, and leaves it out for simplicity.</p></div></div><div c
 What is the argument for that?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>The paper's reasoning: <span class="m">Δ</span> answers the question "should this token be paid attention
-to at all?" — and that is a property of the token, not of any individual channel. If a token should be
+to at all?", and that is a property of the token, not of any individual channel. If a token should be
 ignored, all <span class="m">D</span> channels should ignore it. So the decision is made once and shared.
 Note this is a deliberate asymmetry: <span class="mb">B</span> and <span class="mb">C</span> lose the
 <span class="m">D</span> axis (shared across channels), while <span class="m">Δ</span> keeps it via
@@ -1230,14 +1230,14 @@ the input-dependent decay. Theorem 1 shows that with <span class="m">N</span> = 
 <span class="m">g<sub>t</sub></span> = <span class="m">σ</span>(Linear(<span class="m">x<sub>t</sub></span>)).
 So forget gate = <span class="m">Ā</span>, input gate = <span class="m">B̄</span>, and the identity that makes
 it work is exp(−softplus(<span class="m">z</span>)) = <span class="m">σ</span>(−<span class="m">z</span>).
-Mamba is a gated RNN that arrived at its gate by derivation rather than by design — then generalised the
-scalar state to 16 dimensions per channel and wrote a kernel fast enough to train it.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="7"><span class="k">← Previous</span><span class="t">Lesson 7 — Why S4 is not enough</span></button><button class="pn nx" data-go="9"><span class="k">Next →</span><span class="t">Lesson 9 — Making it fast</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="9" id="page9"><div class="wrap"><div class="phead"></div><section id="l9">
+Mamba is a gated RNN that arrived at its gate by derivation rather than by design, then generalised the
+scalar state to 16 dimensions per channel and wrote a kernel fast enough to train it.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="7"><span class="k">← Previous</span><span class="t">Lesson 7: Why S4 is not enough</span></button><button class="pn nx" data-go="9"><span class="k">Next →</span><span class="t">Lesson 9: Making it fast</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="9" id="page9"><div class="wrap"><div class="phead"></div><section id="l9">
 <h2><span class="num">Lesson 09</span>Making it fast</h2>
 <h3 class="lesson-title">Selection costs you the convolution. Here is how Mamba pays.</h3>
 
 <p class="lede">Selection broke LTI, and LTI was the thing that made the convolution trick work. So Mamba is
-back to a sequential recurrence — the exact problem that killed RNNs. Two engineering ideas rescue it, and
-neither changes the mathematics at all.</p>
+back to a sequential recurrence, which is the exact problem that killed RNNs. Two engineering ideas rescue it,
+and neither changes the mathematics at all.</p>
 
 <h4>Idea 1: the recurrence is a parallel scan</h4>
 <p>The recurrence looks hopelessly sequential, but it has a property that saves it. Write each step as a pair
@@ -1303,26 +1303,26 @@ memory, and the gap between them is brutal:</p>
     <text x="701" y="130">3. multiply by C</text>
   </g>
   <text x="701" y="152" font-size="10" fill="#6b7280" text-anchor="middle">Ā, B̄ never leave this box</text>
-  <text x="424" y="200" font-size="11.5" fill="#15803d" font-weight="600">IO reduced by a factor of O(N) — with N = 16, sixteenfold.</text>
+  <text x="424" y="200" font-size="11.5" fill="#15803d" font-weight="600">IO reduced by a factor of O(N): with N = 16, sixteenfold.</text>
   <text x="424" y="217" font-size="11.5" fill="#6b7280">The paper reports this "speeds up the operation by 20-40 times".</text>
 </svg>
 <figcaption><b>Kernel fusion.</b> Mamba does not compute <span class="m">Ā</span> and <span class="m">B̄</span>
-and then scan them — it loads the raw parameters into fast memory and does the discretization, the scan and
+and then scan them. It loads the raw parameters into fast memory and does the discretization, the scan and
 the readout there, writing back only the final output. Identical arithmetic, sixteen times less memory
 traffic.</figcaption>
 </figure>
 
 <h4>Idea 3: recompute instead of remembering</h4>
 <p>Backpropagation normally requires storing every intermediate state from the forward pass. Here that is the
-enormous (B,L,D,N) tensor again. Mamba <b>throws it away and recomputes it</b> during the backward pass. This
-sounds wasteful — it is extra arithmetic — but reading that tensor from HBM costs more than recomputing it in
-SRAM. This is the same insight as FlashAttention, and it is why the paper can say Mamba has the same memory
-footprint as an optimised Transformer.</p>
+enormous (B,L,D,N) tensor again. Mamba <b>throws it away and recomputes it</b> during the backward pass. That
+sounds wasteful, since it is extra arithmetic, but reading the tensor back from HBM costs more than
+recomputing it in SRAM. This is the same insight as FlashAttention, and it is why the paper can say Mamba has
+the same memory footprint as an optimised Transformer.</p>
 
 <div class="tw">
 <table>
 <tr><th>claim</th><th>figure</th><th>source</th></tr>
-<tr><td>Memory traffic reduction</td><td class="n">O(N) — 16×</td><td>Appendix D</td></tr>
+<tr><td>Memory traffic reduction</td><td class="n">O(N), so 16×</td><td>Appendix D</td></tr>
 <tr><td>Speedup vs a naive PyTorch scan</td><td class="n">20–40×</td><td>§4.5</td></tr>
 <tr><td>Faster than FlashAttention-2 beyond</td><td class="n">L ≈ 2,000</td><td>§4.5</td></tr>
 <tr><td>Faster than attention at L = 32K</td><td class="n">up to 7×</td><td>Appendix D</td></tr>
@@ -1332,22 +1332,23 @@ footprint as an optimised Transformer.</p>
 
 <div class="box key">
 <span class="t">Why this lesson is not optional</span>
-<p>Selective SSMs had been mathematically possible for years. What Mamba added was the <em>kernel</em> — a
+<p>Selective SSMs had been mathematically possible for years. What Mamba added was the <em>kernel</em>: a
 fused, IO-aware, recomputing parallel scan that made the idea trainable at scale. If you take one
-engineering lesson from this course: the algorithm and the memory hierarchy are not separable concerns.</p>
+engineering lesson from this course, take this one. The algorithm and the memory hierarchy are not separable
+concerns.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Mamba's kernel <em>recomputes</em> intermediate
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Mamba's kernel <em>recomputes</em> intermediate
 states in the backward pass rather than storing them. That is strictly more arithmetic. Why is it faster?</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>Because the bottleneck is memory bandwidth, not arithmetic. The intermediate states are a (B, L, D, N)
 tensor; storing and re-reading them means moving <span class="m">O</span>(BLND) elements across the slow HBM
 bus. Recomputing them needs only the small inputs, already in fast SRAM. On modern GPUs, arithmetic is nearly
-free and memory movement is the cost — the same insight FlashAttention is built on.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="8"><span class="k">← Previous</span><span class="t">Lesson 8 — Selection</span></button><button class="pn nx" data-go="10"><span class="k">Next →</span><span class="t">Lesson 10 — The Mamba block</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="10" id="page10"><div class="wrap"><div class="phead"></div><section id="l10">
+free and memory movement is the cost, which is the same insight FlashAttention is built on.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="8"><span class="k">← Previous</span><span class="t">Lesson 8: Selection</span></button><button class="pn nx" data-go="10"><span class="k">Next →</span><span class="t">Lesson 10: The Mamba block</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="10" id="page10"><div class="wrap"><div class="phead"></div><section id="l10">
 <h2><span class="num">Lesson 10</span>The Mamba block</h2>
 <h3 class="lesson-title">Assembling the whole thing</h3>
 
 <p class="lede">The S6 layer is the engine. The block is the car around it. Mamba's block design merges two
-things that architectures normally alternate — the H3-style SSM block and the gated MLP block — into one
+things that architectures normally alternate, the H3-style SSM block and the gated MLP block, into one
 homogeneous unit you simply stack.</p>
 
 <figure>
@@ -1364,7 +1365,7 @@ homogeneous unit you simply stack.</p>
   </defs>
 
   <path d="M32 40 L32 18 L724 18 L724 150" stroke="#6b7280" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arm)"/>
-  <text x="378" y="12" font-size="11" fill="#6b7280" text-anchor="middle">residual stream — RMSNorm is applied outside the block (pre-norm)</text>
+  <text x="378" y="12" font-size="11" fill="#6b7280" text-anchor="middle">residual stream: RMSNorm is applied outside the block (pre-norm)</text>
 
   <text x="14" y="161" font-size="13" font-weight="700" fill="#15202b">x</text>
   <text x="6" y="177" font-size="10.5" fill="#6b7280">(B,L,D)</text>
@@ -1398,20 +1399,20 @@ homogeneous unit you simply stack.</p>
   <text x="428" y="73" font-size="12.5" font-weight="700" fill="#c2410c" text-anchor="middle">Selective SSM</text>
   <text x="428" y="88" font-size="10" fill="#6b7280" text-anchor="middle">h ← Āh + B̄x,  y = Ch</text>
   <text x="428" y="101" font-size="10" fill="#6b7280" text-anchor="middle">A: (D,N) fixed, N = 16</text>
-  <text x="428" y="115" font-size="10" fill="#c2410c" text-anchor="middle" font-weight="650">the S6 layer — Lesson 8</text>
+  <text x="428" y="115" font-size="10" fill="#c2410c" text-anchor="middle" font-weight="650">the S6 layer, from Lesson 8</text>
 
   <rect x="280" y="164" width="272" height="66" rx="7" fill="#fff" stroke="#c2410c" stroke-width="1.4" stroke-dasharray="4 3"/>
   <text x="416" y="183" font-size="10.5" font-weight="700" fill="#c2410c" text-anchor="middle">x_proj  →  Δ, B, C&#160;&#160; (this is selection)</text>
   <text x="348" y="201" font-size="9.5" fill="#6b7280" text-anchor="middle">Δ (B,L,D)</text>
   <text x="416" y="201" font-size="9.5" fill="#6b7280" text-anchor="middle">B (B,L,N)</text>
   <text x="484" y="201" font-size="9.5" fill="#6b7280" text-anchor="middle">C (B,L,N)</text>
-  <text x="416" y="219" font-size="9.5" fill="#6b7280" text-anchor="middle">recomputed from x at every position — not learned constants</text>
+  <text x="416" y="219" font-size="9.5" fill="#6b7280" text-anchor="middle">recomputed from x at every position, not learned constants</text>
   <line x1="390" y1="164" x2="390" y2="128" stroke="#c2410c" stroke-width="1.5" marker-end="url(#aro)"/>
   <line x1="466" y1="164" x2="466" y2="128" stroke="#c2410c" stroke-width="1.5" marker-end="url(#aro)"/>
   <path d="M344 88 L344 164" stroke="#c2410c" stroke-width="1.3" fill="none" stroke-dasharray="3 3"/>
   <path d="M344 88 L344 40 L566 40 L566 74" stroke="#15803d" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
   <circle cx="344" cy="88" r="3.4" fill="#15202b"/>
-  <text x="452" y="33" font-size="10" fill="#15803d" text-anchor="middle">D ⊙ x — per-channel skip (in the code, not in the paper)</text>
+  <text x="452" y="33" font-size="10" fill="#15803d" text-anchor="middle">D ⊙ x: per-channel skip (in the code, not in the paper)</text>
 
   <line x1="490" y1="88" x2="552" y2="88" stroke="#15202b" stroke-width="1.6" marker-end="url(#ar)"/>
   <circle cx="566" cy="88" r="11" fill="#fff" stroke="#15803d" stroke-width="1.6"/>
@@ -1421,7 +1422,7 @@ homogeneous unit you simply stack.</p>
   <text x="209" y="273" font-size="11.5" font-weight="700" fill="#15202b" text-anchor="middle">SiLU</text>
   <line x1="232" y1="268" x2="630" y2="268" stroke="#15202b" stroke-width="1.6"/>
   <line x1="630" y1="268" x2="630" y2="103" stroke="#15202b" stroke-width="1.6" marker-end="url(#ar)"/>
-  <text x="424" y="286" font-size="10.5" fill="#6b7280" text-anchor="middle">the gate — decides how much of the SSM output survives</text>
+  <text x="424" y="286" font-size="10.5" fill="#6b7280" text-anchor="middle">the gate: decides how much of the SSM output survives</text>
 
   <line x1="577" y1="88" x2="617" y2="88" stroke="#15202b" stroke-width="1.6"/>
   <circle cx="630" cy="88" r="11" fill="#fff" stroke="#15202b" stroke-width="1.6"/>
@@ -1444,7 +1445,7 @@ homogeneous unit you simply stack.</p>
 <figcaption><b>One Mamba block.</b> Compared to the H3 block, Mamba replaces H3's first multiplicative gate
 with a plain activation. Compared to a gated MLP, Mamba adds an SSM to the main branch. Because SiLU is used
 for σ, the gated-MLP half is exactly SwiGLU. Note there is <em>no internal normalization</em> in the Mamba-1
-reference implementation — the paper mentions an "optional" one, but the released code does not have it.</figcaption>
+reference implementation. The paper mentions an "optional" one, but the released code does not have it.</figcaption>
 </figure>
 
 <h4>The numbers</h4>
@@ -1460,24 +1461,24 @@ reference implementation — the paper mentions an "optional" one, but the relea
 </table>
 </div>
 
-<p><b>Parameter count.</b> The paper states that most of a block's parameters — <b>3ED²</b> — sit in the linear
-projections (2ED² in, ED² out), and the SSM itself contributes little. Checking that on Mamba-2.8B
+<p><b>Parameter count.</b> The paper states that most of a block's parameters, <b>3ED²</b> of them, sit in the
+linear projections (2ED² in, ED² out), and the SSM itself contributes little. Checking that on Mamba-2.8B
 (D = 2560): 3ED² = 39.32M against an exact block count of 41.24M, so the rule of thumb captures
-<b>95.3%</b>. Times 64 blocks plus the tied embedding gives <b>2.768B</b> — which is the model.</p>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Estimate the parameter count of one Mamba block
+<b>95.3%</b>. Multiply by 64 blocks, add the tied embedding, and you get <b>2.768B</b>, which is the model.</p>
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv e">easy</span>Estimate the parameter count of one Mamba block
 with <span class="m">D</span> = 1024, <span class="m">E</span> = 2.</div>
 <button class="toggle">Show answer</button><div class="ans">
 <p>3<span class="m">ED</span>² = 3 × 2 × 1024² = <b>6.29M</b>. The remaining pieces (the convolution, the
 <span class="m">Δ</span>/<span class="mb">B</span>/<span class="mb">C</span> projections,
 <span class="mb">A</span>, <span class="mb">D</span>) add a few percent. At <span class="m">D</span> = 2560
-the rule of thumb accounts for 95.3% of the true count.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="9"><span class="k">← Previous</span><span class="t">Lesson 9 — Making it fast</span></button><button class="pn nx" data-go="11"><span class="k">Next →</span><span class="t">Lesson 11 — What you actually get</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="11" id="page11"><div class="wrap"><div class="phead"></div><section id="l11">
+the rule of thumb accounts for 95.3% of the true count.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="9"><span class="k">← Previous</span><span class="t">Lesson 9: Making it fast</span></button><button class="pn nx" data-go="11"><span class="k">Next →</span><span class="t">Lesson 11: What you actually get</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="11" id="page11"><div class="wrap"><div class="phead"></div><section id="l11">
 <h2><span class="num">Lesson 11</span>What you actually get</h2>
 <h3 class="lesson-title">The bill, and whether it was worth paying</h3>
 
 <div class="tw">
 <table>
 <tr><th></th><th>Transformer</th><th>Mamba</th></tr>
-<tr><td><b>Training, sequence length L</b></td><td style="color:var(--red)">O(L²) — quadratic</td><td style="color:var(--green)">O(L) — linear</td></tr>
+<tr><td><b>Training, sequence length L</b></td><td style="color:var(--red)">O(L²), quadratic</td><td style="color:var(--green)">O(L), linear</td></tr>
 <tr><td><b>Time per generated token</b></td><td style="color:var(--red)">grows with position</td><td style="color:var(--green)">constant</td></tr>
 <tr><td><b>State carried during generation</b></td><td style="color:var(--red)">KV cache, grows with L</td><td style="color:var(--green)">E·D·(N + 4) per layer, fixed</td></tr>
 <tr><td><b>Can it look up an exact past token?</b></td><td style="color:var(--green)">yes, perfectly</td><td style="color:var(--orange)">only if it chose to store it</td></tr>
@@ -1485,11 +1486,11 @@ the rule of thumb accounts for 95.3% of the true count.</p></div></div></div></s
 </div>
 
 <p>That last row is the honest cost, and it should not be glossed over. A Transformer never has to decide what
-to remember — it keeps everything. Mamba's fixed-size state means information genuinely can be lost. Selection
-is what makes the loss <em>intelligent</em> rather than arbitrary, but it is still loss.</p>
+to remember, because it keeps everything. Mamba's fixed-size state means information genuinely can be lost.
+Selection is what makes the loss <em>intelligent</em> rather than arbitrary, but it is still loss.</p>
 
 <div class="demo">
-  <div class="hd"><span>Demo 5 — the memory bill</span><span class="tag">why anyone cares</span></div>
+  <div class="hd"><span>Demo 5: the memory bill</span><span class="tag">why anyone cares</span></div>
   <div class="bd">
     <p style="font-size:14.5px;color:#6b7280;margin-bottom:16px">Both models sized like Mamba-2.8B: D = 2560,
     64 layers, bfloat16, one sequence.</p>
@@ -1500,7 +1501,7 @@ is what makes the loss <em>intelligent</em> rather than arbitrary, but it is sti
     <canvas id="d5c" width="820" height="180"></canvas>
     <div class="readout">
       <div class="rd r"><div class="k">Transformer KV cache</div><div class="v" id="d5t">6.55</div><div class="u">GB</div></div>
-      <div class="rd g"><div class="k">Mamba state</div><div class="v">13.1</div><div class="u">MB — constant, any L</div></div>
+      <div class="rd g"><div class="k">Mamba state</div><div class="v">13.1</div><div class="u">MB, constant at any L</div></div>
       <div class="rd b"><div class="k">ratio</div><div class="v" id="d5r">500×</div><div class="u">smaller</div></div>
     </div>
     <div class="verdict" id="d5v"></div>
@@ -1519,34 +1520,34 @@ the same tokenizer:</p>
 <tr class="good"><td><b>Mamba</b></td><td class="n">2.8B</td><td class="n">6.22</td><td class="n">63.3</td></tr>
 <tr><td>Pythia</td><td class="n">6.9B</td><td class="n">6.51</td><td class="n">61.7</td></tr>
 <tr><td>RWKV</td><td class="n">7.4B</td><td class="n">6.31</td><td class="n">62.5</td></tr>
-<tr><td>GPT-J</td><td class="n">6B</td><td class="n">—</td><td class="n">63.0</td></tr>
+<tr><td>GPT-J</td><td class="n">6B</td><td class="n">n/a</td><td class="n">63.0</td></tr>
 </table>
 </div>
 
 <p>Mamba-2.8B beats every baseline at roughly twice its size. The paper's summary: Mamba "generally matches
-baselines at twice the model size". Note the abstract says "Mamba-3B" — that is the same 2.8B model, rounded.</p>
+baselines at twice the model size". Note the abstract says "Mamba-3B", which is the same 2.8B model, rounded.</p>
 
 <div class="box key">
 <span class="t">The whole course in five lines</span>
 <p>1. A state is a fixed-size notebook updated by <span class="m">h ← ah + bx</span>.<br>
 2. Derive <span class="m">a</span> and <span class="m">b</span> from a continuous system, and a step size
 <span class="m">Δ</span> appears: <span class="m">Ā</span> = exp(<span class="m">ΔA</span>).<br>
-3. <span class="m">Δ</span> is a focus dial — large means "record this", small means "ignore this".<br>
+3. <span class="m">Δ</span> is a focus dial: large means "record this", small means "ignore this".<br>
 4. Let the input set <span class="m">Δ</span> (and <span class="mb">B</span>, <span class="mb">C</span>). That
 is selection, and it costs you the convolution trick.<br>
 5. Win it back with a fused parallel scan that never spills the big tensor to slow memory.</p>
 </div>
-<div class="checks"><h4 class="checkhead">Check yourself — one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Mamba's inference state is 13.1 MB whether the sequence is 10 tokens or a million. Name precisely what was given up to get that.</div><button class="toggle">Show answer</button><div class="ans"><p><b>Exact lookup of an arbitrary past token.</b> The Transformer's KV cache is a perfect record — any past token can be retrieved exactly, because nothing was thrown away. Mamba's 13.1 MB is a <em>summary</em>, and a summary of a million tokens has necessarily discarded something. Selection is what makes the discarding intelligent — the model chooses what to keep rather than losing things on a fixed schedule — but it does not make the loss zero. This is exactly why hybrid architectures, which interleave a few real attention layers among many Mamba layers, beat either pure design.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="10"><span class="k">← Previous</span><span class="t">Lesson 10 — The Mamba block</span></button><button class="pn nx" data-go="12"><span class="k">Next →</span><span class="t">Appendix — Paper vs code</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="12" id="page12"><div class="wrap"><div class="phead"></div><section id="errata">
+<div class="checks"><h4 class="checkhead">Check yourself: one question</h4><div class="q"><div class="qq"><span class="lv m">medium</span>Mamba's inference state is 13.1 MB whether the sequence is 10 tokens or a million. Name precisely what was given up to get that.</div><button class="toggle">Show answer</button><div class="ans"><p><b>Exact lookup of an arbitrary past token.</b> The Transformer's KV cache is a perfect record, so any past token can be retrieved exactly, because nothing was thrown away. Mamba's 13.1 MB is a <em>summary</em>, and a summary of a million tokens has necessarily discarded something. Selection makes the discarding intelligent, since the model chooses what to keep rather than losing things on a fixed schedule, but it does not make the loss zero. This is exactly why hybrid architectures, which interleave a few real attention layers among many Mamba layers, beat either pure design.</p></div></div></div></section><div class="pagenav"><button class="pn" data-go="10"><span class="k">← Previous</span><span class="t">Lesson 10: The Mamba block</span></button><button class="pn nx" data-go="12"><span class="k">Next →</span><span class="t">Appendix: Paper vs code</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="12" id="page12"><div class="wrap"><div class="phead"></div><section id="errata">
 <h2><span class="num">Appendix</span>Where the paper and the code disagree</h2>
 <h3 class="lesson-title">Four things to know before you read the source</h3>
 
 <div class="box errata">
-<span class="t">1 — B̄ is not the ZOH formula in the released code</span>
+<span class="t">1. B̄ is not the ZOH formula in the released code</span>
 <p>The paper's Eq. (4) gives <span class="m">B̄</span> = (<span class="m">ΔA</span>)<sup>−1</sup>(exp(<span class="m">ΔA</span>) − <span class="mb">I</span>)·<span class="m">ΔB</span>.
-The shipped CUDA kernel and the PyTorch reference both compute <b><span class="m">B̄</span> = <span class="m">ΔB</span></b>
-— a first-order Euler step — while keeping the exact ZOH for <span class="m">Ā</span>. The author's
+The shipped CUDA kernel and the PyTorch reference both compute <b><span class="m">B̄</span> = <span class="m">ΔB</span></b>,
+a first-order Euler step, while keeping the exact ZOH for <span class="m">Ā</span>. The author's
 explanation, given in a GitHub issue rather than the paper: it is simpler and does not affect empirical
-performance; think of it as ZOH for <span class="mb">A</span> mixed with Euler for <span class="mb">B</span>.
+performance. Think of it as ZOH for <span class="mb">A</span> mixed with Euler for <span class="mb">B</span>.
 The two agree as <span class="m">ΔA</span> → 0, and the difference is a per-channel rescaling that
 <span class="mb">B</span>'s projection can partly absorb.</p>
 <p style="margin-top:9px">Consequence worth noting: Theorem 1's clean convex combination
@@ -1558,7 +1559,7 @@ released implementation.</p>
 </div>
 
 <div class="box errata">
-<span class="t">2 — the D skip term is in the code, not in the paper's equations</span>
+<span class="t">2. The D skip term is in the code, not in the paper's equations</span>
 <p>The paper defines the SSM with four parameters and no feedthrough. The code has
 <code>self.D = nn.Parameter(torch.ones(d_inner))</code> and computes
 <span class="m">y<sub>t</sub></span> = <span class="mb">C</span><span class="m">h<sub>t</sub></span> + <span class="mb">D</span><span class="m">x<sub>t</sub></span>,
@@ -1566,22 +1567,22 @@ excluded from weight decay and kept in fp32.</p>
 </div>
 
 <div class="box errata">
-<span class="t">3 — the "optional normalization layer" is absent from Mamba-1</span>
+<span class="t">3. The "optional normalization layer" is absent from Mamba-1</span>
 <p>§3.4 mentions an optional LayerNorm inside the block, motivated by RetNet. There is no such layer anywhere
 in <code>mamba_simple.py</code>. Mamba-<em>2</em> does add a gated RMSNorm before <code>out_proj</code>. If you
 see a block diagram with an internal norm, it is Mamba-2.</p>
 </div>
 
 <div class="box errata">
-<span class="t">4 — small numeric slips</span>
+<span class="t">4. Small numeric slips</span>
 <p><code>dt_rank = ceil(d_model/16)</code> is a code default the paper never states (it only says "a small
 fraction of D"), though an appendix ablation is consistent with it. The paper writes S4D-Lin as
 <span class="m">A<sub>n</sub></span> = −½ + <span class="m">ni</span>, dropping the π from the S4D paper's
 −½ + <span class="m">iπn</span>. And the fused-kernel IO is quoted as
-<span class="m">O</span>(BLD + DN) in the forward and <span class="m">O</span>(BLN + DN) in the backward — a
+<span class="m">O</span>(BLD + DN) in the forward and <span class="m">O</span>(BLN + DN) in the backward, a
 D/N swap that looks like a typo in one of the two.</p>
 </div>
-</section><div class="pagenav"><button class="pn" data-go="11"><span class="k">← Previous</span><span class="t">Lesson 11 — What you actually get</span></button><button class="pn nx" data-go="13"><span class="k">Next →</span><span class="t">Review — Final review</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="13" id="page13"><div class="wrap"><div class="phead"></div><section id="review"><h2><span class="num">Review</span>Six synthesis questions</h2><h3 class="lesson-title">These span several lessons at once</h3><p class="lede">The per-lesson questions checked one idea at a time. These deliberately do not — each one needs pieces from two or three different lessons, which is the only real test of whether the course stuck. Answer out loud first.</p><div class="q"><div class="qq"><span class="lv m">medium</span>Walk the whole chain. A model with <span class="mb">A</span> = −1 sets <span class="m">Δ</span> = 2 on a token. State what happens to <span class="m">Ā</span>, to <span class="m">B̄</span>, and to the state — then say in plain English what the model just decided.</div><button class="toggle">Show answer</button><div class="ans"><p><span class="m">Ā</span> = exp(2 × −1) = <b>0.135</b>, so 86.5% of the existing state is erased in one step. <span class="m">B̄</span> = 1 − 0.135 = <b>0.865</b>, so the incoming token is written in at almost full strength. The state is therefore <em>replaced</em> rather than updated.</p><p>In plain English: <b>"this token matters — clear the notebook and write it down."</b> The memory horizon collapses to 2.303/2 ≈ 1.2 steps, which is the price: right after doing this, the model has forgotten nearly everything that came before.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>Someone says "Mamba is just an RNN with a bigger hidden state." What is right about that, and what is wrong?</div><button class="toggle">Show answer</button><div class="ans"><p><b>Right:</b> it is a recurrent model with a fixed-size state, it processes tokens sequentially at inference, and Theorem 1 shows the update rule reduces to an ordinary gated RNN in the scalar case. The state genuinely is bigger — <span class="m">D</span> × <span class="m">N</span> rather than <span class="m">D</span>.</p><p><b>Wrong, in two ways.</b> First, size is not the contribution — <em>selection</em> is. A classical RNN's gate is a design choice bolted on to fix vanishing gradients; Mamba's gate falls out of discretising a continuous system, which is what gives <span class="m">Δ</span> its interpretation as a timescale rather than an arbitrary number. Second, an RNN with a state this large would be untrainable: the whole reason Mamba works at scale is the fused parallel scan, which is an engineering result, not an architectural one. Bigger state + gate had been possible for years. The kernel is what made it real.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>You need to run a model over 500,000-token documents on a fixed GPU budget. Give the argument for Mamba — then give the honest argument against it.</div><button class="toggle">Show answer</button><div class="ans"><p><b>For:</b> at 500K tokens a 2.8B-class Transformer is carrying roughly 328 GB of KV cache, which does not fit on any single accelerator you can buy. Mamba carries 13.1 MB, the same as it carries at 500 tokens. Training is linear rather than quadratic in length, and per-token generation is constant-time. On a fixed budget this is not an optimisation, it is the difference between possible and impossible.</p><p><b>Against:</b> if the task is "find the one clause on page 340 and quote it exactly", you are asking for precise retrieval from a compressed summary, and that is the operation Mamba is structurally worst at. A Transformer keeps that clause verbatim. The right question is not "which architecture is better" but <em>"does my task need exact recall or good summarisation?"</em> — and if it needs both, that is the argument for a hybrid rather than for either pure model.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>Rank these four changes from "breaks the model entirely" to "barely matters": (a) making <span class="mb">A</span> positive, (b) deleting the depthwise convolution, (c) using Euler instead of ZOH for <span class="m">B̄</span>, (d) freezing <span class="m">Δ</span> to a constant.</div><button class="toggle">Show answer</button><div class="ans"><p><b>(a) → (d) → (b) → (c).</b></p><p><b>(a) catastrophic.</b> <span class="m">Ā</span> = exp(<span class="m">ΔA</span>) &gt; 1, so every step amplifies the state and it diverges. Not a degradation — a numerical failure. This is why the code stores <span class="mb">A</span> = −exp(<code>A_log</code>).</p><p><b>(d) severe but survivable.</b> You have reverted S6 to S4. The model still trains and still works; it has simply lost content-awareness. Concretely, 99.8% → 18.3% on Selective Copying.</p><p><b>(b) a real but bounded loss.</b> The conv supplies short-range temporal detail that an exponentially decaying state handles poorly. Measurable degradation, not collapse.</p><p><b>(c) no measurable effect</b> — this is what the released code actually does, and the author's stated reason is that it is simpler with no empirical cost.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>The SSM already mixes information over time. So why does the Mamba block also need a depthwise convolution in front of it?</div><button class="toggle">Show answer</button><div class="ans"><p>Two reasons, and it is worth being precise since the convolution is depthwise — it does <em>not</em> mix channels either (that job belongs to <code>in_proj</code> and <code>out_proj</code>).</p><p>First, the diagonal SSM's memory is a sum of decaying exponentials. That shape is good at "roughly how much of this have I seen recently" and bad at "exactly two tokens ago". A width-4 causal convolution gives sharp, exact, short-range structure that the decay profile cannot represent at all.</p><p>Second, it is cheap: <span class="m">ED</span>(<span class="m">d_conv</span> + 1) parameters against 3<span class="m">ED</span>² for the projections — a rounding error in the parameter budget for a capability the SSM genuinely lacks.</p></div></div><div class="q"><div class="qq"><span class="lv e">easy</span>One sentence each: what do <span class="mb">A</span>, <span class="mb">B</span>, <span class="mb">C</span> and <span class="m">Δ</span> do?</div><button class="toggle">Show answer</button><div class="ans"><p><b><span class="mb">A</span></b> forgets — it sets how fast each state decays.<br><b><span class="mb">B</span></b> listens — it sets how much of the new input enters the state.<br><b><span class="mb">C</span></b> reports — it selects which part of the state becomes the output.<br><b><span class="m">Δ</span></b> focuses — it scales <span class="mb">A</span> and <span class="mb">B</span> together, trading memory against listening, and it is the one the input gets to choose.</p><p>If you can say those four from memory, you can reconstruct the rest of the course.</p></div></div></section><div class="pagenav"><button class="pn" data-go="12"><span class="k">← Previous</span><span class="t">Appendix — Paper vs code</span></button><button class="pn nx" data-go="14"><span class="k">Next →</span><span class="t">Reference — Cheat sheet</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="14" id="page14"><div class="wrap"><div class="phead"></div><section id="cheat">
+</section><div class="pagenav"><button class="pn" data-go="11"><span class="k">← Previous</span><span class="t">Lesson 11: What you actually get</span></button><button class="pn nx" data-go="13"><span class="k">Next →</span><span class="t">Review: Final review</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="13" id="page13"><div class="wrap"><div class="phead"></div><section id="review"><h2><span class="num">Review</span>Six synthesis questions</h2><h3 class="lesson-title">These span several lessons at once</h3><p class="lede">The per-lesson questions checked one idea at a time. These deliberately do not. Each one needs pieces from two or three different lessons, which is the only real test of whether the course stuck. Answer out loud first.</p><div class="q"><div class="qq"><span class="lv m">medium</span>Walk the whole chain. A model with <span class="mb">A</span> = −1 sets <span class="m">Δ</span> = 2 on a token. State what happens to <span class="m">Ā</span>, to <span class="m">B̄</span>, and to the state, then say in plain English what the model just decided.</div><button class="toggle">Show answer</button><div class="ans"><p><span class="m">Ā</span> = exp(2 × −1) = <b>0.135</b>, so 86.5% of the existing state is erased in one step. <span class="m">B̄</span> = 1 − 0.135 = <b>0.865</b>, so the incoming token is written in at almost full strength. The state is therefore <em>replaced</em> rather than updated.</p><p>In plain English: <b>"this token matters, so clear the notebook and write it down."</b> The memory horizon collapses to 2.303/2 ≈ 1.2 steps, which is the price: right after doing this, the model has forgotten nearly everything that came before.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>Someone says "Mamba is just an RNN with a bigger hidden state." What is right about that, and what is wrong?</div><button class="toggle">Show answer</button><div class="ans"><p><b>Right:</b> it is a recurrent model with a fixed-size state, it processes tokens sequentially at inference, and Theorem 1 shows the update rule reduces to an ordinary gated RNN in the scalar case. The state genuinely is bigger: <span class="m">D</span> × <span class="m">N</span> rather than <span class="m">D</span>.</p><p><b>Wrong, in two ways.</b> First, size is not the contribution; <em>selection</em> is. A classical RNN's gate is a design choice bolted on to fix vanishing gradients, while Mamba's gate falls out of discretising a continuous system, which is what gives <span class="m">Δ</span> its interpretation as a timescale rather than an arbitrary number. Second, an RNN with a state this large would be untrainable: the whole reason Mamba works at scale is the fused parallel scan, which is an engineering result, not an architectural one. A bigger state with a gate had been possible for years. The kernel is what made it real.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>You need to run a model over 500,000-token documents on a fixed GPU budget. Give the argument for Mamba, then give the honest argument against it.</div><button class="toggle">Show answer</button><div class="ans"><p><b>For:</b> at 500K tokens a 2.8B-class Transformer is carrying roughly 328 GB of KV cache, which does not fit on any single accelerator you can buy. Mamba carries 13.1 MB, the same as it carries at 500 tokens. Training is linear rather than quadratic in length, and per-token generation is constant-time. On a fixed budget this is not an optimisation, it is the difference between possible and impossible.</p><p><b>Against:</b> if the task is "find the one clause on page 340 and quote it exactly", you are asking for precise retrieval from a compressed summary, and that is the operation Mamba is structurally worst at. A Transformer keeps that clause verbatim. The right question is not "which architecture is better" but <em>"does my task need exact recall or good summarisation?"</em>, and if it needs both, that is the argument for a hybrid rather than for either pure model.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>Rank these four changes from "breaks the model entirely" to "barely matters": (a) making <span class="mb">A</span> positive, (b) deleting the depthwise convolution, (c) using Euler instead of ZOH for <span class="m">B̄</span>, (d) freezing <span class="m">Δ</span> to a constant.</div><button class="toggle">Show answer</button><div class="ans"><p><b>(a) → (d) → (b) → (c).</b></p><p><b>(a) catastrophic.</b> <span class="m">Ā</span> = exp(<span class="m">ΔA</span>) &gt; 1, so every step amplifies the state and it diverges. This is not a degradation but a numerical failure, and it is why the code stores <span class="mb">A</span> = −exp(<code>A_log</code>).</p><p><b>(d) severe but survivable.</b> You have reverted S6 to S4. The model still trains and still works; it has simply lost content-awareness. Concretely, 99.8% → 18.3% on Selective Copying.</p><p><b>(b) a real but bounded loss.</b> The conv supplies short-range temporal detail that an exponentially decaying state handles poorly. Measurable degradation, not collapse.</p><p><b>(c) no measurable effect.</b> This is what the released code actually does, and the author's stated reason is that it is simpler with no empirical cost.</p></div></div><div class="q"><div class="qq"><span class="lv m">medium</span>The SSM already mixes information over time. So why does the Mamba block also need a depthwise convolution in front of it?</div><button class="toggle">Show answer</button><div class="ans"><p>Two reasons, and it is worth being precise here, since the convolution is depthwise and so does <em>not</em> mix channels either (that job belongs to <code>in_proj</code> and <code>out_proj</code>).</p><p>First, the diagonal SSM's memory is a sum of decaying exponentials. That shape is good at "roughly how much of this have I seen recently" and bad at "exactly two tokens ago". A width-4 causal convolution gives sharp, exact, short-range structure that the decay profile cannot represent at all.</p><p>Second, it is cheap: <span class="m">ED</span>(<span class="m">d_conv</span> + 1) parameters against 3<span class="m">ED</span>² for the projections, a rounding error in the parameter budget for a capability the SSM genuinely lacks.</p></div></div><div class="q"><div class="qq"><span class="lv e">easy</span>One sentence each: what do <span class="mb">A</span>, <span class="mb">B</span>, <span class="mb">C</span> and <span class="m">Δ</span> do?</div><button class="toggle">Show answer</button><div class="ans"><p><b><span class="mb">A</span></b> forgets: it sets how fast each state decays.<br><b><span class="mb">B</span></b> listens: it sets how much of the new input enters the state.<br><b><span class="mb">C</span></b> reports: it selects which part of the state becomes the output.<br><b><span class="m">Δ</span></b> focuses: it scales <span class="mb">A</span> and <span class="mb">B</span> together, trading memory against listening, and it is the one the input gets to choose.</p><p>If you can say those four from memory, you can reconstruct the rest of the course.</p></div></div></section><div class="pagenav"><button class="pn" data-go="12"><span class="k">← Previous</span><span class="t">Appendix: Paper vs code</span></button><button class="pn nx" data-go="14"><span class="k">Next →</span><span class="t">Reference: Cheat sheet</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><div class="page" data-i="14" id="page14"><div class="wrap"><div class="phead"></div><section id="cheat">
 <h2><span class="num">Reference</span>Cheat sheet</h2>
 <h3 class="lesson-title">Everything on one card</h3>
 
@@ -1595,7 +1596,7 @@ D/N swap that looks like a typo in one of the two.</p>
   <div class="ce"><span class="ovl"><b>K</b></span> = (<b>CB̄</b>, <b>CĀB̄</b>, … , <b>CĀ<sup>k</sup>B̄</b>, …)
     &nbsp;&nbsp;·&nbsp;&nbsp; y = x ∗ <span class="ovl"><b>K</b></span> &nbsp;<span style="font-size:12px;opacity:.7">(LTI only)</span></div>
 
-  <h4>Selection — the S6 layer</h4>
+  <h4>Selection: the S6 layer</h4>
   <div class="ce">s<sub>B</sub>(x) = Linear<sub>N</sub>(x) &nbsp;·&nbsp; s<sub>C</sub>(x) = Linear<sub>N</sub>(x)
     &nbsp;·&nbsp; s<sub>Δ</sub>(x) = Broadcast<sub>D</sub>(Linear<sub>1</sub>(x)) &nbsp;·&nbsp; τ<sub>Δ</sub> = softplus</div>
   <div class="ce">Theorem 1: &nbsp; g<sub>t</sub> = σ(Linear(x<sub>t</sub>)) &nbsp;·&nbsp;
@@ -1604,23 +1605,23 @@ D/N swap that looks like a typo in one of the two.</p>
   <h4>Symbols</h4>
   <table>
   <tr><th>sym</th><th>is</th><th>shape / value</th></tr>
-  <tr><td><b>A</b></td><td>decay rates — how fast each state forgets</td><td>(D, N), init −(n+1), stored as −exp(A_log)</td></tr>
-  <tr><td><b>B</b></td><td>write gate — how much input enters the state</td><td>S4 (D,N) &nbsp;→&nbsp; S6 (B, L, N)</td></tr>
-  <tr><td><b>C</b></td><td>read gate — which parts of state become output</td><td>S4 (D,N) &nbsp;→&nbsp; S6 (B, L, N)</td></tr>
-  <tr><td><b>Δ</b></td><td>focus dial — step size, big = record, small = ignore</td><td>S4 (D) &nbsp;→&nbsp; S6 (B, L, D)</td></tr>
+  <tr><td><b>A</b></td><td>decay rates: how fast each state forgets</td><td>(D, N), init −(n+1), stored as −exp(A_log)</td></tr>
+  <tr><td><b>B</b></td><td>write gate: how much input enters the state</td><td>S4 (D,N) &nbsp;→&nbsp; S6 (B, L, N)</td></tr>
+  <tr><td><b>C</b></td><td>read gate: which parts of state become output</td><td>S4 (D,N) &nbsp;→&nbsp; S6 (B, L, N)</td></tr>
+  <tr><td><b>Δ</b></td><td>focus dial: step size, big = record, small = ignore</td><td>S4 (D) &nbsp;→&nbsp; S6 (B, L, D)</td></tr>
   <tr><td><b>Ā</b></td><td>fraction of memory kept per step</td><td>exp(ΔA) ∈ (0, 1)</td></tr>
   <tr><td><b>D</b></td><td>model width (also: per-channel skip in code)</td><td>2560 for Mamba-2.8B</td></tr>
   <tr><td><b>N</b></td><td>state dimension per channel</td><td>16</td></tr>
   <tr><td><b>E</b></td><td>expansion factor inside the block</td><td>2</td></tr>
-  <tr><td><b>L</b></td><td>sequence length</td><td>—</td></tr>
+  <tr><td><b>L</b></td><td>sequence length</td><td>any</td></tr>
   </table>
 
   <h4>Rules of thumb</h4>
   <table>
   <tr><td>Memory horizon (to 10%)</td><td><code>2.303 / (Δ·|A|)</code> steps</td></tr>
   <tr><td>Half-life</td><td><code>0.693 / (Δ·|A|)</code> steps</td></tr>
-  <tr><td>Params per block</td><td><code>3ED²</code> — 95% accurate</td></tr>
-  <tr><td>Inference state per layer</td><td><code>E·D·(N + 4)</code> — constant in L</td></tr>
+  <tr><td>Params per block</td><td><code>3ED²</code>, 95% accurate</td></tr>
+  <tr><td>Inference state per layer</td><td><code>E·D·(N + 4)</code>, constant in L</td></tr>
   <tr><td>Blocks per Transformer-equivalent layer</td><td><code>2</code></td></tr>
   </table>
 
@@ -1644,7 +1645,7 @@ D/N swap that looks like a typo in one of the two.</p>
 <div class="box plain" style="margin-top:26px">
 <span class="t">Where to go next</span>
 <p>The obvious next step is <b>Mamba-2</b> and the state-space duality result, which shows that a restricted
-selective SSM and a form of linear attention are the same computation viewed two ways — and uses that to get a
+selective SSM and a form of linear attention are the same computation viewed two ways, and uses that to get a
 much faster matmul-based algorithm. After that: hybrid architectures, which interleave a few full-attention
 layers among many Mamba layers and consistently beat either pure design, because exact lookup and cheap
 long-context memory turn out to be complementary rather than competing.</p>
@@ -1655,7 +1656,7 @@ Primary source: Gu &amp; Dao, <em>Mamba: Linear-Time Sequence Modeling with Sele
 arXiv:2312.00752v2. Implementation details verified against <code>state-spaces/mamba</code>. Every numeric
 value on this page was computed rather than quoted from memory; every paper claim was checked against the
 v2 PDF.</p>
-</section><div class="pagenav"><button class="pn" data-go="13"><span class="k">← Previous</span><span class="t">Review — Final review</span></button><button class="pn nx" data-go="0"><span class="k">Finished</span><span class="t">Back to contents</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><script>
+</section><div class="pagenav"><button class="pn" data-go="13"><span class="k">← Previous</span><span class="t">Review: Final review</span></button><button class="pn nx" data-go="0"><span class="k">Finished</span><span class="t">Back to contents</span></button></div><div class="kb">Navigate with <kbd>←</kbd> and <kbd>→</kbd></div></div></div><script>
 (function(){
 "use strict";
 var C={ink:"#15202b",blue:"#1f5fa8",orange:"#c2410c",green:"#15803d",red:"#b3261e",
@@ -1721,10 +1722,10 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     txt(c,"time →",R,g.h-10,C.mute,11,"right");
 
     var v;
-    if(a>=0.97) v="<b>a = "+fmt(a,2)+" — an accumulator.</b> Almost nothing is forgotten, so the state keeps climbing and old inputs never clear out. Useful for a long-run average, useless for noticing what just happened.";
-    else if(a<=0.3) v="<b>a = "+fmt(a,2)+" — a parrot.</b> The state collapses within a step or two, so it is essentially a copy of the current input. No memory at all.";
-    else v="<b>a = "+fmt(a,2)+" — a working memory.</b> Half-life "+hl.textContent+" steps, effectively gone after "+mh.textContent+". This is the useful regime, and note you cannot widen the memory without also turning down how fast it reacts.";
-    if(b<0.03) v+=" With b = "+fmt(b,2)+" the input barely gets in at all — look how small the blue line is next to the grey bars.";
+    if(a>=0.97) v="<b>a = "+fmt(a,2)+": an accumulator.</b> Almost nothing is forgotten, so the state keeps climbing and old inputs never clear out. Useful for a long-run average, useless for noticing what just happened.";
+    else if(a<=0.3) v="<b>a = "+fmt(a,2)+": a parrot.</b> The state collapses within a step or two, so it is essentially a copy of the current input. No memory at all.";
+    else v="<b>a = "+fmt(a,2)+": a working memory.</b> Half-life "+hl.textContent+" steps, effectively gone after "+mh.textContent+". This is the useful regime, and notice that you cannot widen the memory without also slowing down how fast it reacts.";
+    if(b<0.03) v+=" With b = "+fmt(b,2)+" the input barely gets in at all, so look how small the blue line is next to the grey bars.";
     V.innerHTML=v;
   }
   A.oninput=B.oninput=draw;
@@ -1753,7 +1754,7 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     for(var k=0;k<=4;k++){ var y=T+(Bt-T)*k/4;
       line(c,L,y,R,y,C.grid,1); txt(c,fmt(1-k/4,2),L-7,y+3.5,C.mute,10,"right"); }
     line(c,L,Bt-(Bt-T)*0.1,R,Bt-(Bt-T)*0.1,C.green,1.4,[5,4]);
-    txt(c,"10% — memory horizon",L+4,Bt-(Bt-T)*0.1-6,C.green,10);
+    txt(c,"10%: memory horizon",L+4,Bt-(Bt-T)*0.1-6,C.green,10);
     c.beginPath(); c.moveTo(L,Bt);
     for(var k=0;k<K;k++){ var v=Math.pow(Ab,k); c.lineTo(L+k*iw,Bt-v*(Bt-T)); }
     c.lineTo(L+(K-1)*iw,Bt); c.closePath(); c.fillStyle=C.fill; c.fill();
@@ -1767,9 +1768,9 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     txt(c,"fraction of that memory still present",L-42,T-8,C.mute,10.5);
 
     var v;
-    if(d*(-a)<0.12) v="<b>Δ = "+Do.textContent+": ignore mode.</b> Ā = "+fmt(Ab,3)+" so the state barely moves — it holds its memory for ~"+fmt(mh,0)+" steps, but B̄ = "+fmt(Bb,3)+" means new input enters with almost no weight. The model is holding, not listening.";
+    if(d*(-a)<0.12) v="<b>Δ = "+Do.textContent+": ignore mode.</b> Ā = "+fmt(Ab,3)+" so the state barely moves. It holds its memory for ~"+fmt(mh,0)+" steps, but B̄ = "+fmt(Bb,3)+" means new input enters with almost no weight. The model is holding, not listening.";
     else if(d*(-a)>1.8) v="<b>Δ = "+Do.textContent+": reset mode.</b> Ā = "+fmt(Ab,3)+" wipes the old state almost completely, and B̄ = "+fmt(Bb,3)+" writes the new input in its place. The model has stopped remembering and is now just repeating what it sees.";
-    else v="<b>Δ = "+Do.textContent+": balanced.</b> Keeps "+fmt(Ab*100,1)+"% of memory per step, admits "+fmt(Bb*100,1)+"% of new input, effective memory ~"+fmt(mh,1)+" steps. Notice Ā + B̄ = 1 exactly — Δ does not add memory or subtract it, it <em>trades</em> one for the other. That trade is the thing Mamba lets the input control.";
+    else v="<b>Δ = "+Do.textContent+": balanced.</b> Keeps "+fmt(Ab*100,1)+"% of memory per step, admits "+fmt(Bb*100,1)+"% of new input, effective memory ~"+fmt(mh,1)+" steps. Notice that Ā + B̄ = 1 exactly: Δ does not add memory or subtract it, it <em>trades</em> one for the other. That trade is the thing Mamba lets the input control.";
     V.innerHTML=v;
   }
   D.oninput=A.oninput=draw; draw();
@@ -1808,7 +1809,7 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
       txt(c,"90% of the kernel's mass",ex+6,T+13,C.orange,11,"left",true); }
 
     V.innerHTML="<b>Δ = "+Do.textContent+", N = "+n+".</b> This kernel effectively looks back <b>"+eff+
-      " steps</b>. Two things to notice. First, lowering Δ stretches the kernel — the reach of an SSM is set by Δ, "+
+      " steps</b>. Two things to notice. First, lowering Δ stretches the kernel: the reach of an SSM is set by Δ, "+
       "not by any window size you chose. Second, adding states does not just make it longer, it changes its "+
       "<em>shape</em>: each state contributes its own decay rate, and the sum of "+n+" different exponentials is a "+
       "richer profile than any single one. That is what HiPPO's spread of −1, −2, −3, … buys you. "+
@@ -1865,7 +1866,7 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     txt(c,"the value 7",R-3,Bt-(KEY/mx)*(Bt-T)-5,C.green,10,"right");
     var kx=L+PRE*iw+iw/2;
     line(c,kx,T,kx,Bt,C.orange,1.4,[3,3]);
-    txt(c,"the number arrives — Mamba sets Δ = 3 here",kx+iw*0.55,dT+11,C.orange,10.5,"left",true);
+    txt(c,"the number arrives, so Mamba sets Δ = 3 here",kx+iw*0.55,dT+11,C.orange,10.5,"left",true);
 
     function plot(arr,col,w){
       c.beginPath(); c.strokeStyle=col; c.lineWidth=w;
@@ -1884,7 +1885,7 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     V.innerHTML="After "+nf+" filler tokens, Mamba still holds <b>"+fmt(rm,1)+"%</b> of the 7 while S4 holds <b>"+
       fmt(rs,1)+"%</b>. Watch <em>where</em> the gap opens: it is not mainly the decay, it is the <b>write</b>. "+
       "Mamba sets Δ = 3 on the number, so B̄ = 0.950 and the value goes almost fully into the state; it then sets "+
-      "Δ = 0.05 on the filler, so Ā = 0.951 and the state barely erodes. S4 must use one Δ for both jobs — a large "+
+      "Δ = 0.05 on the filler, so Ā = 0.951 and the state barely erodes. S4 must use one Δ for both jobs: a large "+
       "one writes well but then erases just as fast, a small one preserves well but never wrote much down. "+
       "<b>Selection is not a better setting. It is the ability to use two different settings in the same sequence.</b>";
   }
@@ -1932,9 +1933,9 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
     var v="At L = "+commas(L)+", the Transformer is carrying <b>"+
       (kv>=1e9?fmt(kv/1e9,2)+" GB":fmt(kv/1e6,0)+" MB")+"</b> of KV cache; Mamba is carrying <b>13.1 MB</b>, "+
       "the same as it carries at L = 10. ";
-    if(kv>80e9) v+="The red bar has now passed the memory of any single GPU you can buy — this is the wall that makes very long context expensive, and it is a wall Mamba simply does not have.";
+    if(kv>80e9) v+="The red bar has now passed the memory of any single GPU you can buy. This is the wall that makes very long context expensive, and Mamba simply does not have it.";
     else if(kv>1e9) v+="Note what is being compared: the red bar is a <em>perfect record</em> and the green bar is a <em>summary</em>. Mamba is not compressing the KV cache better; it never built one.";
-    else v+="At short lengths the difference hardly matters. Drag right — the interesting region starts around 10,000 tokens.";
+    else v+="At short lengths the difference hardly matters. Drag right, because the interesting region starts around 10,000 tokens.";
     V.innerHTML=v;
   }
   S.oninput=draw; draw();
@@ -1961,7 +1962,7 @@ function commas(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d)
    var b=document.createElement('button');
    b.className='pill'+(P[i][3]?' ap':'');
    b.textContent=P[i][0];
-   b.setAttribute('title',P[i][1]+' — '+P[i][2]);
+   b.setAttribute('title',P[i][1]+': '+P[i][2]);
    b.onclick=function(){go(i)};
    pills.appendChild(b);
  })(i);}
