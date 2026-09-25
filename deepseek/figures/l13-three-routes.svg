@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 412" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>让模型学会推理的三条路线：模仿人写的思维链、逐步打分或搜索、只奖励最终答案</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="16" y="22" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">路线</text>
+<text x="162" y="22" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">推理信号从哪里来</text>
+<text x="560" y="22" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">代价 · 在 R1 里的下场</text>
+<line x1="16" y1="30" x2="744" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="16" y="40" width="728" height="108" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="10"/>
+<text x="28" y="84" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">路线 A</text>
+<text x="28" y="106" font-size="13" fill="var(--fig-ink, #1C1B19)">模仿人写的思维链</text>
+<rect x="162" y="66" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<rect x="162" y="66" width="112.67" height="56" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="8"/>
+<text x="218.33" y="90" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">人类专家</text>
+<text x="218.33" y="109" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">写逐步解答</text>
+<line x1="276.67" y1="94" x2="292.67" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="294.67" y="66" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<rect x="294.67" y="66" width="112.67" height="56" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="8"/>
+<text x="351" y="90" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT：逐 token</text>
+<text x="351" y="109" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">模仿这些解答</text>
+<line x1="409.33" y1="94" x2="425.33" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="427.33" y="66" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<rect x="427.33" y="66" width="112.67" height="56" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="8"/>
+<text x="483.67" y="90" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">模型学会</text>
+<text x="483.67" y="109" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“像人那样写”</text>
+<text x="560" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)">标注贵、难扩展；</text>
+<text x="560" y="94" font-size="12" fill="var(--fig-ink, #1C1B19)">上限受人类写法约束</text>
+<rect x="556" y="106" width="184" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="13"/>
+<text x="648" y="124" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">只用于数千条冷启动（§5）</text>
+<rect x="16" y="158" width="728" height="108" fill="var(--fig-violet, #6733C4)" fill-opacity="0.05" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="10"/>
+<text x="28" y="202" font-size="14" fill="var(--fig-violet, #6733C4)" font-weight="700">路线 B</text>
+<text x="28" y="224" font-size="13" fill="var(--fig-ink, #1C1B19)">逐步打分或搜索</text>
+<rect x="162" y="184" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<rect x="162" y="184" width="112.67" height="56" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="8"/>
+<text x="218.33" y="208" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">模型写出</text>
+<text x="218.33" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">一个推理步骤</text>
+<line x1="276.67" y1="212" x2="292.67" y2="212" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="294.67" y="184" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<rect x="294.67" y="184" width="112.67" height="56" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="8"/>
+<text x="351" y="208" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">PRM / 价值模型</text>
+<text x="351" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">给这一步打分</text>
+<line x1="409.33" y1="212" x2="425.33" y2="212" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="427.33" y="184" width="112.67" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<rect x="427.33" y="184" width="112.67" height="56" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="8"/>
+<text x="483.67" y="208" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">保留高分步骤</text>
+<text x="483.67" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">继续往下展开</text>
+<text x="560" y="194" font-size="12" fill="var(--fig-ink, #1C1B19)">“一步”难定义、逐步标注难；</text>
+<text x="560" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)">打分模型会被钻空子</text>
+<rect x="556" y="224" width="184" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1" rx="13"/>
+<text x="648" y="242" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">试过，放弃（§7）</text>
+<rect x="16" y="276" width="728" height="108" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="10"/>
+<text x="28" y="320" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="700">路线 C</text>
+<text x="28" y="342" font-size="13" fill="var(--fig-ink, #1C1B19)">只奖励最终答案</text>
+<rect x="162" y="288" width="79.5" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<rect x="162" y="288" width="79.5" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="8"/>
+<text x="201.75" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">题目 +</text>
+<text x="201.75" y="331" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">标准答案</text>
+<line x1="243.5" y1="316" x2="259.5" y2="316" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="261.5" y="288" width="79.5" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<rect x="261.5" y="288" width="79.5" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="8"/>
+<text x="301.25" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">模型写出</text>
+<text x="301.25" y="331" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">完整回答</text>
+<line x1="343" y1="316" x2="359" y2="316" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="361" y="288" width="79.5" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<rect x="361" y="288" width="79.5" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.1" rx="8"/>
+<text x="400.75" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">规则核对</text>
+<text x="400.75" y="331" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">给 1 或 0</text>
+<line x1="442.5" y1="316" x2="458.5" y2="316" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="460.5" y="288" width="79.5" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<rect x="460.5" y="288" width="79.5" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="8"/>
+<text x="500.25" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">GRPO</text>
+<text x="500.25" y="331" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">更新策略</text>
+<path d="M500.2 346.0 V356.0 H301.2 V348.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<text x="400.75" y="369" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">同一道题采 16 个回答，反复迭代</text>
+<text x="560" y="312" font-size="12" fill="var(--fig-ink, #1C1B19)">要有可自动验证的题目</text>
+<text x="560" y="330" font-size="12" fill="var(--fig-ink, #1C1B19)">与足够的 RL 算力</text>
+<rect x="556" y="342" width="184" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="13"/>
+<text x="648" y="360" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">R1-Zero 的全部配方（§2–4）</text>
+<text x="16" y="404" font-size="12" fill="var(--fig-muted, #74716A)">三条路线都从同一个预训练模型出发；区别只在“训练信号”由谁、在哪个粒度上给出。</text>
+</svg>

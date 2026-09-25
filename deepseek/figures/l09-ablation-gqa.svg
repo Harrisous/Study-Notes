@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 附录 D.1：7B 稠密模型上 MQA、GQA、MHA 的得分</title>
+
+<circle cx="126" cy="24" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="137" y="28" font-size="12" fill="var(--fig-ink, #1C1B19)">MQA（1 组 K/V，7.1B 参数）</text>
+<circle cx="322" cy="24" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.65" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="333" y="28" font-size="12" fill="var(--fig-ink, #1C1B19)">GQA（8 组 K/V，6.9B）</text>
+<circle cx="518" cy="24" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="529" y="28" font-size="12" fill="var(--fig-ink, #1C1B19)">MHA（每头独立 K/V，6.9B）</text>
+<line x1="120" y1="42" x2="120" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="120" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">28</text>
+<line x1="234" y1="42" x2="234" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="234" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<line x1="348" y1="42" x2="348" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="348" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">36</text>
+<line x1="462" y1="42" x2="462" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="576" y1="42" x2="576" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="576" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">44</text>
+<line x1="690" y1="42" x2="690" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="690" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">48</text>
+<text x="405" y="272" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">得分（EM / 准确率，%）</text>
+<text x="106" y="70" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">BBH</text>
+<line x1="268.2" y1="66" x2="376.5" y2="66" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-opacity="0.35"/>
+<circle cx="268.2" cy="66" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="268.2" y="54" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">33.2</text>
+<circle cx="336.6" cy="66" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.65" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="336.6" y="54" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">35.6</text>
+<circle cx="376.5" cy="66" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="376.5" y="54" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">37.0</text>
+<text x="390.5" y="70" font-size="11" fill="var(--fig-muted, #74716A)">差 3.8</text>
+<text x="106" y="118" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">MMLU</text>
+<line x1="402.15" y1="114" x2="610.2" y2="114" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-opacity="0.35"/>
+<circle cx="402.15" cy="114" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="402.15" y="102" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">37.9</text>
+<circle cx="496.2" cy="114" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.65" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="496.2" y="102" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">41.2</text>
+<circle cx="610.2" cy="114" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="610.2" y="102" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">45.2</text>
+<text x="624.2" y="118" font-size="11" fill="var(--fig-muted, #74716A)">差 7.3</text>
+<text x="106" y="166" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">C-Eval</text>
+<line x1="177" y1="162" x2="544.65" y2="162" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-opacity="0.35"/>
+<circle cx="177" cy="162" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="177" y="150" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">30.0</text>
+<circle cx="396.45" cy="162" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.65" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="396.45" y="150" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">37.7</text>
+<circle cx="544.65" cy="162" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="544.65" y="150" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">42.9</text>
+<text x="558.65" y="166" font-size="11" fill="var(--fig-muted, #74716A)">差 12.9</text>
+<text x="106" y="214" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">CMMLU</text>
+<line x1="308.1" y1="210" x2="561.75" y2="210" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-opacity="0.35"/>
+<circle cx="308.1" cy="210" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="308.1" y="198" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">34.6</text>
+<circle cx="416.4" cy="210" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="0.65" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="416.4" y="198" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">38.4</text>
+<circle cx="561.75" cy="210" r="7" fill="var(--fig-violet, #6733C4)" fill-opacity="1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="561.75" y="198" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">43.5</text>
+<text x="575.75" y="214" font-size="11" fill="var(--fig-muted, #74716A)">差 8.9</text>
+</svg>

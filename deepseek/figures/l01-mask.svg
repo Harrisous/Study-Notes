@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 332" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>因果掩码：一次前向传播给出 T 个只看过去的预测</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">打分表 S（示意数值）加上掩码 M，再逐行 softmax</text>
+<text x="228" y="48" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">S + M</text>
+<text x="150" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=1</text>
+<text x="202" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=2</text>
+<text x="254" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=3</text>
+<text x="306" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=4</text>
+<text x="508" y="48" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">A = softmax(S + M)</text>
+<text x="430" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=1</text>
+<text x="482" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=2</text>
+<text x="534" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=3</text>
+<text x="586" y="70" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j=4</text>
+<text x="114" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">t=1  The</text>
+<rect x="125" y="79" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="150" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.0</text>
+<rect x="405" y="79" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.68" rx="3"/>
+<text x="430" y="100" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="177" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="202" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="457" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="482" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<rect x="229" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="254" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="509" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="534" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<rect x="281" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="306" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="561" y="79" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="586" y="100" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="626" y="100" font-size="12" fill="var(--fig-green, #16704A)">Ġunbelievable</text>
+<text x="114" y="134" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">t=2  Ġunbelievable</text>
+<rect x="125" y="113" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="150" y="134" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2</text>
+<rect x="405" y="113" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="3"/>
+<text x="430" y="134" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2891</text>
+<rect x="177" y="113" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="202" y="134" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.1</text>
+<rect x="457" y="113" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.51" rx="3"/>
+<text x="482" y="134" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.7109</text>
+<rect x="229" y="113" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="254" y="134" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="509" y="113" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="534" y="134" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<rect x="281" y="113" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="306" y="134" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="561" y="113" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="586" y="134" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="626" y="134" font-size="12" fill="var(--fig-green, #16704A)">Ġtoken</text>
+<text x="114" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">t=3  Ġtoken</text>
+<rect x="125" y="147" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="150" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="405" y="147" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="3"/>
+<text x="430" y="168" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2807</text>
+<rect x="177" y="147" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="202" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.0</text>
+<rect x="457" y="147" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" rx="3"/>
+<text x="482" y="168" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2079</text>
+<rect x="229" y="147" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="254" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.9</text>
+<rect x="509" y="147" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.39" rx="3"/>
+<text x="534" y="168" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5114</text>
+<rect x="281" y="147" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" rx="3"/>
+<text x="306" y="168" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">−∞</text>
+<rect x="561" y="147" width="50" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" rx="3"/>
+<text x="586" y="168" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="626" y="168" font-size="12" fill="var(--fig-green, #16704A)">ization</text>
+<text x="114" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">t=4  ization</text>
+<rect x="125" y="181" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="150" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.2</text>
+<rect x="405" y="181" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" rx="3"/>
+<text x="430" y="202" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4535</text>
+<rect x="177" y="181" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="202" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.4</text>
+<rect x="457" y="181" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" rx="3"/>
+<text x="482" y="202" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.0916</text>
+<rect x="229" y="181" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="254" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="509" y="181" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="3"/>
+<text x="534" y="202" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1510</text>
+<rect x="281" y="181" width="50" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="3"/>
+<text x="306" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.8</text>
+<rect x="561" y="181" width="50" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="3"/>
+<text x="586" y="202" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3040</text>
+<text x="626" y="202" font-size="12" fill="var(--fig-green, #16704A)">（下一个）</text>
+<line x1="342" y1="146" x2="394" y2="146" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<text x="626" y="70" font-size="11" fill="var(--fig-muted, #74716A)">该行要预测</text>
+<text x="368" y="120" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">逐行</text>
+<text x="368" y="136" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">softmax</text>
+<line x1="10" y1="234" x2="750" y2="234" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="256" font-size="12.5" fill="var(--fig-ink, #1C1B19)">一次前向传播，4 行给出 4 个预测；第 t 行只用到位置 1…t 的键和值，每行的权重和都是 1。</text>
+<text x="10" y="278" font-size="12.5" fill="var(--fig-muted, #74716A)">第 1 行的目标 Ġunbelievable 就是位置 2 的输入。如果不加掩码，第 1 行的权重会是</text>
+<text x="10" y="300" font-size="12.5" fill="var(--fig-red, #A3231C)">(0.218, 0.132, 0.059, 0.591)：78% 的信息来自“未来”，其中 0.132 直接来自答案本身。</text>
+<text x="10" y="322" font-size="12.5" fill="var(--fig-muted, #74716A)">掩码之后，这些格子的权重恰好为 0，训练时得到的 4 个预测与逐个生成时完全一样。</text>
+</svg>

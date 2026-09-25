@@ -1,0 +1,751 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1699 1216" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" style="min-width:1699px">
+<title>DeepSeek 科技树：2017 年到 2026 年 9 月的六条主线</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="4" y="16" width="1691" height="188" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" rx="8"/>
+<text x="14" y="115" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">模型发布</text>
+<rect x="4" y="244" width="1691" height="144" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="307" r="11" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="20" y="311.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">A</text>
+<text x="38" y="311" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">注意力与</text>
+<text x="38" y="328" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">KV cache</text>
+<rect x="4" y="394" width="1691" height="100" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="435" r="11" fill="var(--fig-violet, #6733C4)"/>
+<text x="20" y="439.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">B</text>
+<text x="38" y="439" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">前馈层稀疏化</text>
+<text x="38" y="456" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">（MoE）</text>
+<rect x="4" y="500" width="1691" height="144" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="563" r="11" fill="var(--fig-orange, #B4460C)"/>
+<text x="20" y="567.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">C</text>
+<text x="38" y="567" font-size="13" fill="var(--fig-orange, #B4460C)" font-weight="600">数值精度</text>
+<text x="38" y="584" font-size="13" fill="var(--fig-orange, #B4460C)" font-weight="600">与训练系统</text>
+<rect x="4" y="650" width="1691" height="144" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="713" r="11" fill="var(--fig-green, #16704A)"/>
+<text x="20" y="717.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">D</text>
+<text x="38" y="717" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">训练目标</text>
+<text x="38" y="734" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">与后训练</text>
+<rect x="4" y="800" width="1691" height="188" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="885" r="11" fill="var(--fig-amber, #8A6508)"/>
+<text x="20" y="889.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">E</text>
+<text x="38" y="889" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="600">残差流</text>
+<text x="38" y="906" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="600">与记忆</text>
+<rect x="4" y="994" width="1691" height="100" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="8"/>
+<circle cx="20" cy="1035" r="11" fill="var(--fig-ink, #1C1B19)"/>
+<text x="20" y="1039.5" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">F</text>
+<text x="38" y="1039" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">规模化规律</text>
+<text x="38" y="1056" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">与优化器</text>
+<line x1="164" y1="16" x2="164" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="214.37" y1="16" x2="214.37" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="264.73" y1="16" x2="264.73" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="315.1" y1="16" x2="315.1" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="365.6" y1="16" x2="365.6" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="415.96" y1="16" x2="415.96" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="466.33" y1="16" x2="466.33" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="607.62" y1="16" x2="607.62" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="948.24" y1="16" x2="948.24" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="1287.93" y1="16" x2="1287.93" y2="1100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="692.31" y1="16" x2="692.31" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="777" y1="16" x2="777" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="862.62" y1="16" x2="862.62" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="1032" y1="16" x2="1032" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="1116.69" y1="16" x2="1116.69" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="1202.31" y1="16" x2="1202.31" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="1371.69" y1="16" x2="1371.69" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="1456.38" y1="16" x2="1456.38" y2="1100" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<rect x="506" y="16" width="14" height="1084" fill="var(--fig-surface, #FFFFFF)" fill-opacity="0.9"/>
+<line x1="164" y1="228" x2="505" y2="228" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="521" y1="228" x2="1542" y2="228" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="506" y1="234" x2="512" y2="222" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="513" y1="234" x2="519" y2="222" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="164" y1="224" x2="164" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="167" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2017</text>
+<line x1="214.37" y1="224" x2="214.37" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="217.37" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2018</text>
+<line x1="264.73" y1="224" x2="264.73" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="267.73" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2019</text>
+<line x1="315.1" y1="224" x2="315.1" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="318.1" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2020</text>
+<line x1="365.6" y1="224" x2="365.6" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="368.6" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2021</text>
+<line x1="415.96" y1="224" x2="415.96" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="418.96" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2022</text>
+<line x1="466.33" y1="224" x2="466.33" y2="232" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="469.33" y="245" font-size="12" fill="var(--fig-muted, #74716A)">2023</text>
+<line x1="607.62" y1="222" x2="607.62" y2="234" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="611.62" y="245" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2024</text>
+<line x1="948.24" y1="222" x2="948.24" y2="234" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="952.24" y="245" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2025</text>
+<line x1="1287.93" y1="222" x2="1287.93" y2="234" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="1291.93" y="245" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2026</text>
+<line x1="692.31" y1="225" x2="692.31" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="695.31" y="245" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="777" y1="225" x2="777" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="780" y="245" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<line x1="862.62" y1="225" x2="862.62" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="865.62" y="245" font-size="11" fill="var(--fig-muted, #74716A)">10 月</text>
+<line x1="1032" y1="225" x2="1032" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1035" y="245" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="1116.69" y1="225" x2="1116.69" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1119.69" y="245" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<line x1="1202.31" y1="225" x2="1202.31" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1205.31" y="245" font-size="11" fill="var(--fig-muted, #74716A)">10 月</text>
+<line x1="1371.69" y1="225" x2="1371.69" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1374.69" y="245" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="1456.38" y1="225" x2="1456.38" y2="231" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1459.38" y="245" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<line x1="164" y1="1108" x2="505" y2="1108" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="521" y1="1108" x2="1542" y2="1108" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="506" y1="1114" x2="512" y2="1102" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="513" y1="1114" x2="519" y2="1102" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="164" y1="1104" x2="164" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="167" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2017</text>
+<line x1="214.37" y1="1104" x2="214.37" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="217.37" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2018</text>
+<line x1="264.73" y1="1104" x2="264.73" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="267.73" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2019</text>
+<line x1="315.1" y1="1104" x2="315.1" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="318.1" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2020</text>
+<line x1="365.6" y1="1104" x2="365.6" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="368.6" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2021</text>
+<line x1="415.96" y1="1104" x2="415.96" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="418.96" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2022</text>
+<line x1="466.33" y1="1104" x2="466.33" y2="1112" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="469.33" y="1125" font-size="12" fill="var(--fig-muted, #74716A)">2023</text>
+<line x1="607.62" y1="1102" x2="607.62" y2="1114" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="611.62" y="1125" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2024</text>
+<line x1="948.24" y1="1102" x2="948.24" y2="1114" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="952.24" y="1125" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2025</text>
+<line x1="1287.93" y1="1102" x2="1287.93" y2="1114" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="1291.93" y="1125" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">2026</text>
+<line x1="692.31" y1="1105" x2="692.31" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="695.31" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="777" y1="1105" x2="777" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="780" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<line x1="862.62" y1="1105" x2="862.62" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="865.62" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">10 月</text>
+<line x1="1032" y1="1105" x2="1032" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1035" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="1116.69" y1="1105" x2="1116.69" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1119.69" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<line x1="1202.31" y1="1105" x2="1202.31" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1205.31" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">10 月</text>
+<line x1="1371.69" y1="1105" x2="1371.69" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1374.69" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">4 月</text>
+<line x1="1456.38" y1="1105" x2="1456.38" y2="1111" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="1459.38" y="1125" font-size="11" fill="var(--fig-muted, #74716A)">7 月</text>
+<text x="498" y="1146" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">← 2017-01 至 2023-09：刻度压缩</text>
+<text x="528" y="1146" font-size="12" fill="var(--fig-muted, #74716A)">2023-10 起：同样一个月画宽 6.7 倍 →</text>
+<line x1="576.91" y1="63" x2="576.91" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="724.88" y1="107" x2="724.88" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="942.66" y1="63" x2="942.66" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="965.92" y1="107" x2="965.92" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="1259.08" y1="151" x2="1259.08" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="1393.09" y1="63" x2="1393.09" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<line x1="1522.46" y1="63" x2="1522.46" y2="1100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+<path d="M347.0 63.0 L347.0 80.0 Q347.0 88.0 355.0 88.0 L418.6 88.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M954.7 63.0 L954.7 82.4 Q954.7 88.0 960.3 88.0 L964.9 88.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="1065.46" y1="44" x2="1163.15" y2="44" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M1176.0 63.0 L1176.0 80.0 Q1176.0 88.0 1184.0 88.0 L1199.4 88.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M1176.0 63.0 L1176.0 124.0 Q1176.0 132.0 1184.0 132.0 L1258.1 132.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M198.0 291.0 L198.0 308.0 Q198.0 316.0 206.0 316.0 L306.4 316.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="407.17" y1="316" x2="484.79" y2="316" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M497.0 335.0 L497.0 352.0 Q497.0 360.0 505.0 360.0 L575.9 360.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M701.1 360.0 C713.0 360.0 713.0 272.0 723.9 272.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="480.44" y1="272" x2="498.72" y2="272" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="599.52" y1="272" x2="723.88" y2="272" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="866.81" y1="272" x2="1199.45" y2="272" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="1156.06" y1="272" x2="1199.45" y2="272" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="1342.38" y1="272" x2="1392.09" y2="272" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M1405.0 291.0 L1405.0 308.0 Q1405.0 316.0 1413.0 316.0 L1521.5 316.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="290.2" y1="422" x2="339.07" y2="422" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M352.0 441.0 L352.0 458.5 Q352.0 466.0 359.5 466.0 L366.0 466.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M466.8 466.0 C512.8 466.0 570.9 422.0 615.9 422.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M628.0 441.0 L628.0 458.0 Q628.0 466.0 636.0 466.0 L723.9 466.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<line x1="845.88" y1="466" x2="941.66" y2="466" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M851.0 441.0 L851.0 458.0 Q851.0 466.0 859.0 466.0 L941.7 466.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M1107.9 466.0 C1153.9 466.0 1347.1 422.0 1392.1 422.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M1405.0 441.0 L1405.0 458.0 Q1405.0 466.0 1413.0 466.0 L1521.5 466.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<path d="M550.8 528.0 C596.8 528.0 896.7 572.0 941.7 572.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<path d="M841.0 547.0 L841.0 564.0 Q841.0 572.0 849.0 572.0 L941.7 572.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<path d="M969.0 553.0 L969.0 536.0 Q969.0 528.0 977.0 528.0 L997.5 528.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<path d="M954.0 591.0 L954.0 608.0 Q954.0 616.0 962.0 616.0 L1071.0 616.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<path d="M1114.1 572.0 C1139.1 572.0 1139.1 528.0 1163.2 528.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<line x1="1276.78" y1="528" x2="1392.09" y2="528" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<path d="M1405.0 547.0 L1405.0 564.0 Q1405.0 572.0 1413.0 572.0 L1521.5 572.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<line x1="291.4" y1="678" x2="418.55" y2="678" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M431.0 697.0 L431.0 714.0 Q431.0 722.0 439.0 722.0 L485.8 722.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<line x1="539.47" y1="678" x2="639.19" y2="678" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M652.0 697.0 L652.0 758.0 Q652.0 766.0 660.0 766.0 L723.9 766.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M875.6 766.0 C920.8 766.0 920.8 722.0 964.9 722.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M869.5 722.0 C906.1 722.0 906.1 678.0 941.7 678.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M1053.7 678.0 L1055.7 678.0 Q1058.7 678.0 1058.7 681.0 L1058.7 697.0 Q1058.7 700.0 1061.7 700.0 L1436.7 700.0 Q1439.7 700.0 1439.7 703.0 L1439.7 719.0 Q1439.7 722.0 1442.7 722.0 L1450.7 722.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M1128.6 722.0 C1146.4 722.0 1146.4 678.0 1163.2 678.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M1176.0 697.0 L1176.0 758.0 Q1176.0 766.0 1184.0 766.0 L1258.1 766.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M1405.1 747.0 L1405.1 698.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<path d="M282.0 847.0 L282.0 864.0 Q282.0 872.0 290.0 872.0 L319.9 872.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M462.7 872.0 C508.7 872.0 814.8 828.0 859.8 828.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M1021.2 828.0 C1067.2 828.0 1241.0 872.0 1286.0 872.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M1350.0 853.0 L1350.0 836.0 Q1350.0 828.0 1358.0 828.0 L1392.1 828.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M1405.0 809.0 L1405.0 836.0 Q1405.0 828.0 1413.0 828.0 L1521.5 828.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M1231.0 847.0 L1231.0 952.0 Q1231.0 960.0 1239.0 960.0 L1311.1 960.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M1445.4 916.0 C1483.9 916.0 1483.9 828.0 1521.5 828.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<path d="M330.0 1041.0 L330.0 1058.0 Q330.0 1066.0 338.0 1066.0 L427.0 1066.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<path d="M534.1 1066.0 C572.7 1066.0 572.7 1022.0 610.3 1022.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<line x1="1051.5" y1="1022" x2="1392.09" y2="1022" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<line x1="307.54" y1="1022" x2="924.91" y2="1022" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<path d="M1405.0 1041.0 L1405.0 1058.0 Q1405.0 1066.0 1413.0 1066.0 L1521.5 1066.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="186.35" y="25" width="115.06" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="186.35" y="25" width="115.06" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="186.35" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="201.85" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="201.85" y="48" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">1</text>
+<text x="217.35" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Transformer</text>
+<text x="217.35" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2017-06-12</text>
+<rect x="236.58" y="69" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="236.58" y="69" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="236.58" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="252.08" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="252.08" y="92" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">2</text>
+<text x="267.58" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">GPT-1</text>
+<text x="267.58" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2018-06-11</text>
+<rect x="270.8" y="113" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="270.8" y="113" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="270.8" y="116" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="286.3" cy="132" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="286.3" y="136" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">1</text>
+<text x="301.8" y="129" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">GPT-2</text>
+<text x="301.8" y="144" font-size="11.5" fill="var(--fig-muted, #74716A)">2019-02-14</text>
+<rect x="335.52" y="25" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="335.52" y="25" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="335.52" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="351.02" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="351.02" y="48" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">2</text>
+<text x="366.52" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">GPT-3</text>
+<text x="366.52" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2020-05-28</text>
+<rect x="419.55" y="69" width="120.46" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="419.55" y="69" width="120.46" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="419.55" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="435.05" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="435.05" y="92" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">3</text>
+<text x="450.55" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">InstructGPT</text>
+<text x="450.55" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2022-01-27</text>
+<rect x="461.91" y="25" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="461.91" y="25" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="461.91" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="477.41" cy="44" r="9.5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="477.41" y="48" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<text x="492.91" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">ChatGPT</text>
+<text x="492.91" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2022-11-30</text>
+<rect x="474.19" y="113" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="474.19" y="113" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="474.19" y="116" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="489.69" cy="132" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="489.69" y="136" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">5</text>
+<text x="505.19" y="129" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">LLaMA</text>
+<text x="505.19" y="144" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-02-27</text>
+<rect x="551.78" y="69" width="144.49" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="551.78" y="69" width="144.49" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="551.78" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="567.28" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="567.28" y="92" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">6</text>
+<text x="582.78" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">DeepSeek-Coder</text>
+<text x="582.78" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-11-02</text>
+<rect x="576.91" y="25" width="188.54" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="576.91" y="25" width="188.54" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="576.91" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="592.41" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="592.41" y="48" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">6</text>
+<text x="607.91" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeek LLM 7B/67B</text>
+<text x="607.91" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-11-29</text>
+<rect x="616.93" y="113" width="156.37" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="616.93" y="113" width="156.37" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="616.93" y="116" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="632.43" cy="132" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="632.43" y="136" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">7</text>
+<text x="647.93" y="129" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">DeepSeekMoE 16B</text>
+<text x="647.93" y="144" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-01-11</text>
+<rect x="640.19" y="157" width="152.32" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="640.19" y="157" width="152.32" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="640.19" y="160" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="655.69" cy="176" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="655.69" y="180" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">8</text>
+<text x="671.19" y="173" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">DeepSeekMath 7B</text>
+<text x="671.19" y="188" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-02-05</text>
+<rect x="724.88" y="69" width="122.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="724.88" y="69" width="122.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="724.88" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="740.38" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="740.38" y="92" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">9</text>
+<circle cx="763.38" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="763.38" y="92" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">10</text>
+<text x="778.88" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">V2</text>
+<text x="778.88" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-05-06</text>
+<rect x="942.66" y="25" width="122.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="942.66" y="25" width="122.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="942.66" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="958.16" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="958.16" y="48" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">11</text>
+<circle cx="981.16" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="981.16" y="48" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="996.66" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3</text>
+<text x="996.66" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-12-26</text>
+<rect x="965.92" y="69" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="965.92" y="69" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="965.92" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="981.42" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="981.42" y="92" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">13</text>
+<text x="996.92" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">R1</text>
+<text x="996.92" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-01-20</text>
+<rect x="1164.15" y="25" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="1164.15" y="25" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="1164.15" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1179.65" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1179.65" y="48" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1195.15" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">V3.1</text>
+<text x="1195.15" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-08-21</text>
+<rect x="1200.45" y="69" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="1200.45" y="69" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="1200.45" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1215.95" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1215.95" y="92" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">14</text>
+<text x="1231.45" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">V3.2-Exp</text>
+<text x="1231.45" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-09-29</text>
+<rect x="1259.08" y="113" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="1259.08" y="113" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="1259.08" y="116" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1274.58" cy="132" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1274.58" y="136" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1290.08" y="129" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.2</text>
+<text x="1290.08" y="144" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-12-01</text>
+<rect x="1393.09" y="25" width="103.18" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="1393.09" y="25" width="103.18" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="1393.09" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1408.59" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1408.59" y="48" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">V4 预览版</text>
+<text x="1424.09" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1496.4" y="69" width="126.94" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="1496.4" y="69" width="126.94" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="1496.4" y="72" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1511.9" cy="88" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1511.9" y="92" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1527.4" y="85" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">V4-Pro 正式版</text>
+<text x="1527.4" y="100" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-08-13</text>
+<rect x="1522.46" y="25" width="111.88" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="1522.46" y="25" width="111.88" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="1522.46" y="28" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1537.96" cy="44" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1537.96" y="48" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1553.46" y="41" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">V4.1-Flash</text>
+<text x="1553.46" y="56" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="186.35" y="253" width="138.01" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="186.35" y="253" width="138.01" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="186.35" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="201.85" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="201.85" y="276" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">1</text>
+<text x="217.35" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">多头注意力 MHA</text>
+<text x="217.35" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2017-06-12</text>
+<rect x="307.37" y="297" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="307.37" y="297" width="99.8" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="307.37" y="300" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="322.87" cy="316" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="322.87" y="320" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">4</text>
+<text x="338.37" y="313" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">MQA</text>
+<text x="338.37" y="328" font-size="11.5" fill="var(--fig-muted, #74716A)">2019-11-06</text>
+<rect x="380.64" y="253" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="380.64" y="253" width="99.8" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="380.64" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="396.14" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="396.14" y="276" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">5</text>
+<text x="411.64" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">RoPE</text>
+<text x="411.64" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2021-04-20</text>
+<rect x="485.79" y="297" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="485.79" y="297" width="99.8" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="485.79" y="300" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="501.29" cy="316" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="501.29" y="320" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">4</text>
+<text x="516.79" y="313" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">GQA</text>
+<text x="516.79" y="328" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-05-22</text>
+<rect x="499.72" y="253" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="499.72" y="253" width="99.8" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="499.72" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="515.22" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="515.22" y="276" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">5</text>
+<text x="530.72" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">YaRN</text>
+<text x="530.72" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-08-31</text>
+<rect x="576.91" y="341" width="124.24" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="576.91" y="341" width="124.24" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="576.91" y="344" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="592.41" cy="360" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="592.41" y="364" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">6</text>
+<text x="607.91" y="357" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">67B 用 GQA-8</text>
+<text x="607.91" y="372" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-11-29</text>
+<rect x="724.88" y="253" width="141.93" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" rx="6"/>
+<rect x="724.88" y="253" width="141.93" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="6"/>
+<rect x="724.88" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="740.38" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="740.38" y="276" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">9</text>
+<text x="755.88" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">MLA 潜在注意力</text>
+<text x="755.88" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-05-06</text>
+<rect x="991.05" y="253" width="165.01" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<rect x="991.05" y="253" width="165.01" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" rx="6"/>
+<rect x="991.05" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="1006.55" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="1006.55" y="276" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">14</text>
+<text x="1022.05" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">NSA 原生稀疏注意力</text>
+<text x="1022.05" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-02-16</text>
+<rect x="1200.45" y="253" width="141.93" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" rx="6"/>
+<rect x="1200.45" y="253" width="141.93" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="6"/>
+<rect x="1200.45" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="1215.95" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="1215.95" y="276" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">14</text>
+<text x="1231.45" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">DSA 稀疏注意力</text>
+<text x="1231.45" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-09-29</text>
+<rect x="1393.09" y="253" width="168.61" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" rx="6"/>
+<rect x="1393.09" y="253" width="168.61" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="6"/>
+<rect x="1393.09" y="256" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="1408.59" cy="272" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="1408.59" y="276" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="269" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">CSA / HCA 序列压缩</text>
+<text x="1424.09" y="284" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1522.46" y="297" width="158.22" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" rx="6"/>
+<rect x="1522.46" y="297" width="158.22" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="6"/>
+<rect x="1522.46" y="300" width="3" height="32" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<circle cx="1537.96" cy="316" r="9.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="1537.96" y="320" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1553.46" y="313" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">CSA2 跨层共享 KV</text>
+<text x="1553.46" y="328" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="167.04" y="403" width="123.16" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="167.04" y="403" width="123.16" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="167.04" y="406" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="182.54" cy="422" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="182.54" y="426" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">7</text>
+<text x="198.04" y="419" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">稀疏门控 MoE</text>
+<text x="198.04" y="434" font-size="11.5" fill="var(--fig-muted, #74716A)">2017-01-23</text>
+<rect x="340.07" y="403" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="340.07" y="403" width="99.8" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="340.07" y="406" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="355.57" cy="422" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="355.57" y="426" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">7</text>
+<text x="371.07" y="419" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">GShard</text>
+<text x="371.07" y="434" font-size="11.5" fill="var(--fig-muted, #74716A)">2020-06-30</text>
+<rect x="366.98" y="447" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="366.98" y="447" width="99.8" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="366.98" y="450" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="382.48" cy="466" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="382.48" y="470" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">7</text>
+<text x="397.98" y="463" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Switch</text>
+<text x="397.98" y="478" font-size="11.5" fill="var(--fig-muted, #74716A)">2021-01-11</text>
+<rect x="616.93" y="403" width="155.41" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="2" rx="6"/>
+<rect x="616.93" y="403" width="155.41" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="6"/>
+<rect x="616.93" y="406" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="632.43" cy="422" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="632.43" y="426" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">7</text>
+<text x="647.93" y="419" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">细粒度 + 共享专家</text>
+<text x="647.93" y="434" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-01-11</text>
+<rect x="724.88" y="447" width="121" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="724.88" y="447" width="121" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="724.88" y="450" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="740.38" cy="466" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="740.38" y="470" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">10</text>
+<text x="755.88" y="463" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">设备受限路由</text>
+<text x="755.88" y="478" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-05-06</text>
+<rect x="830.98" y="403" width="188.5" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="830.98" y="403" width="188.5" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="830.98" y="406" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="846.48" cy="422" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="846.48" y="426" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">11</text>
+<text x="861.98" y="419" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">无辅助损失均衡（论文）</text>
+<text x="861.98" y="434" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-08-28</text>
+<rect x="942.66" y="447" width="165.24" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="2" rx="6"/>
+<rect x="942.66" y="447" width="165.24" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" rx="6"/>
+<rect x="942.66" y="450" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="958.16" cy="466" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="958.16" y="470" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">11</text>
+<text x="973.66" y="463" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">偏置均衡 · 节点受限</text>
+<text x="973.66" y="478" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-12-26</text>
+<rect x="1393.09" y="403" width="173.92" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="1393.09" y="403" width="173.92" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="1393.09" y="406" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="1408.59" cy="422" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="1408.59" y="426" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="419" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">哈希路由 · 去节点限制</text>
+<text x="1424.09" y="434" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1522.46" y="447" width="162.85" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="6"/>
+<rect x="1522.46" y="447" width="162.85" height="38" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" rx="6"/>
+<rect x="1522.46" y="450" width="3" height="32" fill="var(--fig-violet, #6733C4)" rx="1.5"/>
+<circle cx="1537.96" cy="466" r="9.5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="1537.96" y="470" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1553.46" y="463" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">1+384 专家 · 去哈希</text>
+<text x="1553.46" y="478" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="451.01" y="509" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="451.01" y="509" width="99.8" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="451.01" y="512" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="466.51" cy="528" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="466.51" y="532" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="482.01" y="525" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">FP8 格式</text>
+<text x="482.01" y="540" font-size="11.5" fill="var(--fig-muted, #74716A)">2022-09-12</text>
+<rect x="829.12" y="509" width="135.58" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="829.12" y="509" width="135.58" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="829.12" y="512" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="844.62" cy="528" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="844.62" y="532" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="860.12" y="525" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Fire-Flyer 集群</text>
+<text x="860.12" y="540" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-08-26</text>
+<rect x="942.66" y="553" width="171.41" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="2" rx="6"/>
+<rect x="942.66" y="553" width="171.41" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" rx="6"/>
+<rect x="942.66" y="556" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="958.16" cy="572" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="958.16" y="576" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="973.66" y="569" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">FP8 训练 · DualPipe</text>
+<text x="973.66" y="584" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-12-26</text>
+<rect x="998.5" y="509" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="998.5" y="509" width="99.8" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="998.5" y="512" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="1014" cy="528" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="1014" y="532" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="1029.5" y="525" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">开源周</text>
+<text x="1029.5" y="540" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-02-24</text>
+<rect x="1072.02" y="597" width="114.25" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="1072.02" y="597" width="114.25" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="1072.02" y="600" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="1087.52" cy="616" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="1087.52" y="620" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">12</text>
+<text x="1103.02" y="613" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">V3 硬件反思</text>
+<text x="1103.02" y="628" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-05-14</text>
+<rect x="1164.15" y="509" width="112.63" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="1164.15" y="509" width="112.63" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="1164.15" y="512" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="1179.65" cy="528" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="1179.65" y="532" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1195.15" y="525" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">UE8M0 缩放</text>
+<text x="1195.15" y="540" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-08-21</text>
+<rect x="1393.09" y="509" width="160.96" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="6"/>
+<rect x="1393.09" y="509" width="160.96" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" rx="6"/>
+<rect x="1393.09" y="512" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="1408.59" cy="528" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="1408.59" y="532" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="525" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">FP4 专家与 indexer</text>
+<text x="1424.09" y="540" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1522.46" y="553" width="106.83" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-orange, #B4460C)" stroke-width="2" rx="6"/>
+<rect x="1522.46" y="553" width="106.83" height="38" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" rx="6"/>
+<rect x="1522.46" y="556" width="3" height="32" fill="var(--fig-orange, #B4460C)" rx="1.5"/>
+<circle cx="1537.96" cy="572" r="9.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="1537.96" y="576" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1553.46" y="569" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">FP4 主 KV</text>
+<text x="1553.46" y="584" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="191.6" y="659" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="191.6" y="659" width="99.8" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="191.6" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="207.1" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="207.1" y="682" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">3</text>
+<text x="222.6" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">PPO</text>
+<text x="222.6" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2017-07-20</text>
+<rect x="419.55" y="659" width="119.92" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="419.55" y="659" width="119.92" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="419.55" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="435.05" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="435.05" y="682" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">3</text>
+<text x="450.55" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">RLHF 三步法</text>
+<text x="450.55" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2022-01-27</text>
+<rect x="486.75" y="703" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="486.75" y="703" width="99.8" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="486.75" y="706" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="502.25" cy="722" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="502.25" y="726" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">3</text>
+<text x="517.75" y="719" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">DPO</text>
+<text x="517.75" y="734" font-size="11.5" fill="var(--fig-muted, #74716A)">2023-05-29</text>
+<rect x="640.19" y="659" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="2" rx="6"/>
+<rect x="640.19" y="659" width="99.8" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.1" rx="6"/>
+<rect x="640.19" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="655.69" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="655.69" y="682" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">8</text>
+<text x="671.19" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">GRPO</text>
+<text x="671.19" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-02-05</text>
+<rect x="719.3" y="703" width="150.16" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="719.3" y="703" width="150.16" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="719.3" y="706" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="734.8" cy="722" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="734.8" y="726" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">11</text>
+<text x="750.3" y="719" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">并行多 token 预测</text>
+<text x="750.3" y="734" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-04-30</text>
+<rect x="724.88" y="747" width="150.7" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="724.88" y="747" width="150.7" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="724.88" y="750" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="740.38" cy="766" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="740.38" y="770" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">10</text>
+<text x="755.88" y="763" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">两阶段 GRPO 对齐</text>
+<text x="755.88" y="778" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-05-06</text>
+<rect x="942.66" y="659" width="111.01" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="942.66" y="659" width="111.01" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="942.66" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="958.16" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="958.16" y="682" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">11</text>
+<text x="973.66" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">MTP 因果链</text>
+<text x="973.66" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-12-26</text>
+<rect x="965.92" y="703" width="162.71" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="2" rx="6"/>
+<rect x="965.92" y="703" width="162.71" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.1" rx="6"/>
+<rect x="965.92" y="706" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="981.42" cy="722" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="981.42" y="726" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">13</text>
+<text x="996.92" y="719" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">R1-Zero / R1 纯 RL</text>
+<text x="996.92" y="734" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-01-20</text>
+<rect x="1164.15" y="659" width="175" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="1164.15" y="659" width="175" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="1164.15" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="1179.65" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="1179.65" y="682" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1195.15" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">一模两式（思考开关）</text>
+<text x="1195.15" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-08-21</text>
+<rect x="1255.36" y="703" width="134.5" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="1255.36" y="703" width="134.5" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="1255.36" y="706" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="1270.86" cy="722" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="1270.86" y="726" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1286.36" y="719" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Math-V2 自验证</text>
+<text x="1286.36" y="734" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-11-27</text>
+<rect x="1259.08" y="747" width="159.62" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="2" rx="6"/>
+<rect x="1259.08" y="747" width="159.62" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.1" rx="6"/>
+<rect x="1259.08" y="750" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="1274.58" cy="766" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="1274.58" y="770" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">15</text>
+<text x="1290.08" y="763" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">规模化 RL · 智能体</text>
+<text x="1290.08" y="778" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-12-01</text>
+<rect x="1393.09" y="659" width="137.47" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="1393.09" y="659" width="137.47" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="1393.09" y="662" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="1408.59" cy="678" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="1408.59" y="682" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="675" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">专家 + 在线蒸馏</text>
+<text x="1424.09" y="690" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1451.73" y="703" width="143.14" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="6"/>
+<rect x="1451.73" y="703" width="143.14" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.04" rx="6"/>
+<rect x="1451.73" y="706" width="3" height="32" fill="var(--fig-green, #16704A)" rx="1.5"/>
+<circle cx="1467.23" cy="722" r="9.5" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="1467.23" y="726" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1482.73" y="719" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">DSpark 投机解码</text>
+<text x="1482.73" y="734" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-06-26</text>
+<rect x="270.8" y="809" width="150.16" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="270.8" y="809" width="150.16" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="270.8" y="812" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="286.3" cy="828" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="286.3" y="832" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">1</text>
+<text x="301.8" y="825" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Pre-LN（GPT-2）</text>
+<text x="301.8" y="840" font-size="11.5" fill="var(--fig-muted, #74716A)">2019-02-14</text>
+<rect x="320.89" y="853" width="141.79" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="320.89" y="853" width="141.79" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="320.89" y="856" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="336.39" cy="872" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="336.39" y="876" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">1</text>
+<text x="351.89" y="869" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Pre-LN 梯度分析</text>
+<text x="351.89" y="884" font-size="11.5" fill="var(--fig-muted, #74716A)">2020-02-12</text>
+<rect x="860.76" y="809" width="160.42" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="860.76" y="809" width="160.42" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="860.76" y="812" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="876.26" cy="828" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="876.26" y="832" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">16</text>
+<text x="891.76" y="825" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Hyper-Connections</text>
+<text x="891.76" y="840" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-09-29</text>
+<rect x="1219.99" y="809" width="124.51" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="1219.99" y="809" width="124.51" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="1219.99" y="812" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1235.49" cy="828" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1235.49" y="832" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">17</text>
+<text x="1250.99" y="825" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">OCR 光学压缩</text>
+<text x="1250.99" y="840" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-10-20</text>
+<rect x="1287" y="853" width="141.93" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="2" rx="6"/>
+<rect x="1287" y="853" width="141.93" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" rx="6"/>
+<rect x="1287" y="856" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1302.5" cy="872" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1302.5" y="876" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">16</text>
+<text x="1318" y="869" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">mHC 双随机约束</text>
+<text x="1318" y="884" font-size="11.5" fill="var(--fig-muted, #74716A)">2025-12-31</text>
+<rect x="1298.17" y="897" width="147.27" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="2" rx="6"/>
+<rect x="1298.17" y="897" width="147.27" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" rx="6"/>
+<rect x="1298.17" y="900" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1313.67" cy="916" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1313.67" y="920" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">17</text>
+<text x="1329.17" y="913" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">Engram 条件记忆</text>
+<text x="1329.17" y="928" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-01-12</text>
+<rect x="1312.13" y="941" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="1312.13" y="941" width="99.8" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="1312.13" y="944" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1327.63" cy="960" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1327.63" y="964" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">17</text>
+<text x="1343.13" y="957" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">OCR 2</text>
+<text x="1343.13" y="972" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-01-27</text>
+<rect x="1393.09" y="809" width="117.76" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="1393.09" y="809" width="117.76" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="1393.09" y="812" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1408.59" cy="828" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1408.59" y="832" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="825" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">mHC 进入 V4</text>
+<text x="1424.09" y="840" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1522.46" y="809" width="155.29" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="6"/>
+<rect x="1522.46" y="809" width="155.29" height="38" fill="var(--fig-amber, #8A6508)" fill-opacity="0.04" rx="6"/>
+<rect x="1522.46" y="812" width="3" height="32" fill="var(--fig-amber, #8A6508)" rx="1.5"/>
+<circle cx="1537.96" cy="828" r="9.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="1537.96" y="832" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">19</text>
+<text x="1553.46" y="825" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">单遍 mHC · Engram</text>
+<text x="1553.46" y="840" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="207.74" y="1003" width="99.8" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="207.74" y="1003" width="99.8" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="207.74" y="1006" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="223.24" cy="1022" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="223.24" y="1026" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">2</text>
+<text x="238.74" y="1019" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">AdamW</text>
+<text x="238.74" y="1034" font-size="11.5" fill="var(--fig-muted, #74716A)">2017-11-14</text>
+<rect x="318.13" y="1003" width="155.29" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="318.13" y="1003" width="155.29" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="318.13" y="1006" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="333.63" cy="1022" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="333.63" y="1026" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">2</text>
+<text x="349.13" y="1019" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Kaplan 规模化规律</text>
+<text x="349.13" y="1034" font-size="11.5" fill="var(--fig-muted, #74716A)">2020-01-23</text>
+<rect x="427.97" y="1047" width="106.15" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="427.97" y="1047" width="106.15" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="427.97" y="1050" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="443.47" cy="1066" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="443.47" y="1070" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">2</text>
+<text x="458.97" y="1063" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Chinchilla</text>
+<text x="458.97" y="1078" font-size="11.5" fill="var(--fig-muted, #74716A)">2022-03-29</text>
+<rect x="611.34" y="1003" width="152.32" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="611.34" y="1003" width="152.32" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="611.34" y="1006" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="626.84" cy="1022" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="626.84" y="1026" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">6</text>
+<text x="642.34" y="1019" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">超参数规模化规律</text>
+<text x="642.34" y="1034" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-01-05</text>
+<rect x="925.91" y="1003" width="125.59" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="925.91" y="1003" width="125.59" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="925.91" y="1006" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="941.41" cy="1022" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="941.41" y="1026" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="956.91" y="1019" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Muon（博客）</text>
+<text x="956.91" y="1034" font-size="11.5" fill="var(--fig-muted, #74716A)">2024-12-08</text>
+<rect x="1393.09" y="1003" width="125.92" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="6"/>
+<rect x="1393.09" y="1003" width="125.92" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" rx="6"/>
+<rect x="1393.09" y="1006" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1408.59" cy="1022" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1408.59" y="1026" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">18</text>
+<text x="1424.09" y="1019" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">Muon 训练 V4</text>
+<text x="1424.09" y="1034" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-04-24</text>
+<rect x="1522.46" y="1047" width="154.21" height="38" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="6"/>
+<rect x="1522.46" y="1047" width="154.21" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" rx="6"/>
+<rect x="1522.46" y="1050" width="3" height="32" fill="var(--fig-ink, #1C1B19)" rx="1.5"/>
+<circle cx="1537.96" cy="1066" r="9.5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="1537.96" y="1070" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">17</text>
+<text x="1553.46" y="1063" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="500">Sinkhorn 平衡更新</text>
+<text x="1553.46" y="1078" font-size="11.5" fill="var(--fig-muted, #74716A)">2026-09-10</text>
+<rect x="164" y="1163" width="30" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<rect x="164" y="1166" width="3" height="16" fill="var(--fig-blue, #1F5FA8)" rx="1.5"/>
+<text x="202" y="1179" font-size="12.5" fill="var(--fig-ink, #1C1B19)">卡片左边缘 = 日期（模型取公开发布日，论文取 arXiv v1 日期）</text>
+<circle cx="643" cy="1174" r="9.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="643" y="1178" font-size="11.5" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">9</text>
+<text x="658" y="1179" font-size="12.5" fill="var(--fig-ink, #1C1B19)">讲它的课（0 = 只在本课提到）</text>
+<rect x="884" y="1163" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" rx="5"/>
+<text x="922" y="1179" font-size="12.5" fill="var(--fig-ink, #1C1B19)">粗框 = DeepSeek 主干模型及其关键创新；虚线竖线 = 主干模型的发布日</text>
+<line x1="164" y1="1198" x2="194" y2="1198" stroke="var(--fig-green, #16704A)" stroke-width="1.5" marker-end="url(#ah-green)"/>
+<text x="202" y="1203" font-size="12.5" fill="var(--fig-ink, #1C1B19)">主线内的箭头 = “在前者基础上改进”</text>
+<line x1="634" y1="1198" x2="664" y2="1198" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<text x="672" y="1203" font-size="12.5" fill="var(--fig-ink, #1C1B19)">模型行的箭头 = 权重血缘（在前者的检查点上继续训练）</text>
+</svg>

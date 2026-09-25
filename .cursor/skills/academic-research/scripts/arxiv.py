@@ -39,18 +39,31 @@ ATOM = {"a": "http://www.w3.org/2005/Atom", "x": "http://arxiv.org/schemas/atom"
 # ---------------------------------------------------------------- http
 
 
-def _get(url: str, tries: int = 3, timeout: int = 45) -> bytes:
+def _ssl_context():
+    # Windows Python installs often ship without a usable CA store; fall back to
+    # certifi's bundle when it is importable, otherwise use the system default.
+    import ssl
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
+def _get(url: str, tries: int = 4, timeout: int = 45) -> bytes:
     last = None
+    ctx = _ssl_context()
     for attempt in range(tries):
-        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
                 return resp.read()
         except (urllib.error.URLError, urllib.error.HTTPError, OSError) as exc:
             last = exc
             if isinstance(exc, urllib.error.HTTPError) and exc.code in (400, 403, 404):
                 break
-            time.sleep(1.5 * (attempt + 1))
+            # the export API answers bursts with 406/429/503; back off harder
+            time.sleep(3.0 * (attempt + 1))
     raise SystemExit("fetch failed: %s\n  %s" % (url, last))
 
 
@@ -232,6 +245,7 @@ def cmd_meta(a) -> None:
 def cmd_text(a) -> None:
     body = fulltext(a.id)
     if a.out:
+        os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
         with open(a.out, "w", encoding="utf-8") as fh:
             fh.write(body)
         print("%s -> %s (%d chars)" % (norm_id(a.id), a.out, len(body)))
@@ -325,4 +339,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
     main()

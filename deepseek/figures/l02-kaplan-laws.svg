@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 362" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Kaplan 的三条幂律：损失对参数量、数据量、算力</title>
+
+<text x="152" y="22" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">L(N) = (8.8×10<tspan baseline-shift="super" font-size="11">13</tspan> / N)<tspan baseline-shift="super" font-size="11">0.076</tspan></text>
+<line x1="54" y1="273.13" x2="250" y2="273.13" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="277.13" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.5</text>
+<line x1="54" y1="236.16" x2="250" y2="236.16" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="240.16" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="54" y1="184.05" x2="250" y2="184.05" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="188.05" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<line x1="54" y1="147.08" x2="250" y2="147.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="151.08" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<line x1="54" y1="94.97" x2="250" y2="94.97" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="98.97" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<line x1="54" y1="58" x2="250" y2="58" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="48" y="62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">8</text>
+<line x1="54" y1="58" x2="54" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">3</tspan></text>
+<line x1="119.33" y1="58" x2="119.33" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="119.33" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">6</tspan></text>
+<line x1="184.67" y1="58" x2="184.67" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="184.67" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">9</tspan></text>
+<line x1="250" y1="58" x2="250" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="250" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">12</tspan></text>
+<line x1="54" y1="282" x2="250" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="54" y1="58" x2="54" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="152" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">非嵌入参数 N</text>
+<path d="M54.0 79.1 L55.6 80.8 L57.3 82.5 L58.9 84.2 L60.6 85.9 L62.2 87.6 L63.9 89.3 L65.5 91.0 L67.2 92.7 L68.8 94.4 L70.5 96.1 L72.1 97.8 L73.8 99.5 L75.4 101.2 L77.1 102.9 L78.7 104.6 L80.4 106.3 L82.0 108.0 L83.6 109.7 L85.3 111.4 L86.9 113.1 L88.6 114.8 L90.2 116.5 L91.9 118.2 L93.5 119.9 L95.2 121.6 L96.8 123.3 L98.5 125.0 L100.1 126.7 L101.8 128.4 L103.4 130.1 L105.1 131.8 L106.7 133.5 L108.4 135.2 L110.0 136.9 L111.6 138.6 L113.3 140.3 L114.9 142.0 L116.6 143.7 L118.2 145.4 L119.9 147.1 L121.5 148.8 L123.2 150.5 L124.8 152.2 L126.5 153.9 L128.1 155.6 L129.8 157.3 L131.4 159.0 L133.1 160.7 L134.7 162.4 L136.4 164.1 L138.0 165.8 L139.6 167.5 L141.3 169.3 L142.9 171.0 L144.6 172.7 L146.2 174.4 L147.9 176.1 L149.5 177.8 L151.2 179.5 L152.8 181.2 L154.5 182.9 L156.1 184.6 L157.8 186.3 L159.4 188.0 L161.1 189.7 L162.7 191.4 L164.4 193.1 L166.0 194.8 L167.6 196.5 L169.3 198.2 L170.9 199.9 L172.6 201.6 L174.2 203.3 L175.9 205.0 L177.5 206.7 L179.2 208.4 L180.8 210.1 L182.5 211.8 L184.1 213.5 L185.8 215.2 L187.4 216.9" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<path d="M189.1 218.6 L190.7 220.3 L192.4 222.0 L194.0 223.7 L195.6 225.4 L197.3 227.1 L198.9 228.8 L200.6 230.5 L202.2 232.2 L203.9 233.9 L205.5 235.6 L207.2 237.3 L208.8 239.0 L210.5 240.7 L212.1 242.4 L213.8 244.1 L215.4 245.8 L217.1 247.5 L218.7 249.2 L220.4 250.9 L222.0 252.6 L223.6 254.3 L225.3 256.0 L226.9 257.7 L228.6 259.4 L230.2 261.1 L231.9 262.8 L233.5 264.5 L235.2 266.2 L236.8 267.9 L238.5 269.6 L240.1 271.3 L241.8 273.0 L243.4 274.7 L245.1 276.4 L246.7 278.1 L248.4 279.8 L250.0 281.5" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<circle cx="161.35" cy="189.96" r="3.8" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="167.35" y="181.96" font-size="11" fill="var(--fig-ink, #1C1B19)">85M：2.87</text>
+<circle cx="188.5" cy="218" r="3.8" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="182.5" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">1.5B：2.30</text>
+<circle cx="233.52" cy="264.49" r="3.8" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="227.52" y="281.49" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">175B：1.60</text>
+<text x="384" y="22" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">L(D) = (5.4×10<tspan baseline-shift="super" font-size="11">13</tspan> / D)<tspan baseline-shift="super" font-size="11">0.095</tspan></text>
+<line x1="286" y1="273.13" x2="482" y2="273.13" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="236.16" x2="482" y2="236.16" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="184.05" x2="482" y2="184.05" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="147.08" x2="482" y2="147.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="94.97" x2="482" y2="94.97" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="58" x2="482" y2="58" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="286" y1="58" x2="286" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="286" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">7</tspan></text>
+<line x1="364.4" y1="58" x2="364.4" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="364.4" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">9</tspan></text>
+<line x1="442.8" y1="58" x2="442.8" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="442.8" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">11</tspan></text>
+<line x1="286" y1="282" x2="482" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="286" y1="58" x2="286" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="384" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">训练 token 数 D</text>
+<path d="M300.8 146.6 L302.5 147.8 L304.1 149.0 L305.8 150.2 L307.4 151.3 L309.1 152.5 L310.7 153.7 L312.4 154.9 L314.0 156.1 L315.6 157.2 L317.3 158.4 L318.9 159.6 L320.6 160.8 L322.2 162.0 L323.9 163.1 L325.5 164.3 L327.2 165.5 L328.8 166.7 L330.5 167.9 L332.1 169.1 L333.8 170.2 L335.4 171.4 L337.1 172.6 L338.7 173.8 L340.4 175.0 L342.0 176.1 L343.6 177.3 L345.3 178.5 L346.9 179.7 L348.6 180.9 L350.2 182.0 L351.9 183.2 L353.5 184.4 L355.2 185.6 L356.8 186.8 L358.5 188.0 L360.1 189.1 L361.8 190.3 L363.4 191.5 L365.1 192.7 L366.7 193.9 L368.4 195.0 L370.0 196.2 L371.6 197.4 L373.3 198.6 L374.9 199.8 L376.6 200.9 L378.2 202.1 L379.9 203.3 L381.5 204.5 L383.2 205.7 L384.8 206.9 L386.5 208.0 L388.1 209.2 L389.8 210.4 L391.4 211.6 L393.1 212.8 L394.7 213.9 L396.4 215.1 L398.0 216.3 L399.6 217.5 L401.3 218.7 L402.9 219.8 L404.6 221.0 L406.2 222.2 L407.9 223.4 L409.5 224.6 L411.2 225.7 L412.8 226.9 L414.5 228.1 L416.1 229.3 L417.8 230.5" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.6"/>
+<path d="M286.0 136.0 L287.6 137.2 L289.3 138.3 L290.9 139.5 L292.6 140.7 L294.2 141.9 L295.9 143.1 L297.5 144.2 L299.2 145.4" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<path d="M419.4 231.7 L421.1 232.8 L422.7 234.0 L424.4 235.2 L426.0 236.4 L427.6 237.6 L429.3 238.7 L430.9 239.9 L432.6 241.1 L434.2 242.3 L435.9 243.5 L437.5 244.6 L439.2 245.8 L440.8 247.0 L442.5 248.2 L444.1 249.4 L445.8 250.6 L447.4 251.7 L449.1 252.9 L450.7 254.1 L452.4 255.3 L454.0 256.5 L455.6 257.6 L457.3 258.8 L458.9 260.0 L460.6 261.2 L462.2 262.4 L463.9 263.5 L465.5 264.7 L467.2 265.9 L468.8 267.1 L470.5 268.3 L472.1 269.5 L473.8 270.6 L475.4 271.8 L477.1 273.0 L478.7 274.2 L480.4 275.4 L482.0 276.5" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<circle cx="417.78" cy="230.48" r="3.8" fill="var(--fig-green, #16704A)"/>
+<text x="411.78" y="247.48" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">23B：2.09</text>
+<circle cx="461.5" cy="261.84" r="3.8" fill="var(--fig-green, #16704A)"/>
+<text x="455.5" y="278.84" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">300B：1.64</text>
+<text x="616" y="22" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">L(C) = (3.1×10<tspan baseline-shift="super" font-size="11">8</tspan> / C)<tspan baseline-shift="super" font-size="11">0.050</tspan></text>
+<line x1="518" y1="273.13" x2="714" y2="273.13" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="236.16" x2="714" y2="236.16" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="184.05" x2="714" y2="184.05" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="147.08" x2="714" y2="147.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="94.97" x2="714" y2="94.97" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="58" x2="714" y2="58" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="518" y1="58" x2="518" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="518" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-9</tspan></text>
+<line x1="563.23" y1="58" x2="563.23" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="563.23" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="608.46" y1="58" x2="608.46" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="608.46" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="653.69" y1="58" x2="653.69" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="653.69" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">0</tspan></text>
+<line x1="698.92" y1="58" x2="698.92" y2="282" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="698.92" y="298" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">3</tspan></text>
+<line x1="518" y1="282" x2="714" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="518" y1="58" x2="518" y2="282" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="616" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">算力 C<tspan baseline-shift="-3" font-size="11">min</tspan>（PF-days）</text>
+<path d="M549.3 97.2 L550.9 98.8 L552.6 100.4 L554.2 102.0 L555.9 103.6 L557.5 105.2 L559.2 106.8 L560.8 108.5 L562.5 110.1 L564.1 111.7 L565.8 113.3 L567.4 114.9 L569.1 116.5 L570.7 118.2 L572.4 119.8 L574.0 121.4 L575.6 123.0 L577.3 124.6 L578.9 126.2 L580.6 127.9 L582.2 129.5 L583.9 131.1 L585.5 132.7 L587.2 134.3 L588.8 135.9 L590.5 137.6 L592.1 139.2 L593.8 140.8 L595.4 142.4 L597.1 144.0 L598.7 145.6 L600.4 147.3 L602.0 148.9 L603.6 150.5 L605.3 152.1 L606.9 153.7 L608.6 155.3 L610.2 157.0 L611.9 158.6 L613.5 160.2 L615.2 161.8 L616.8 163.4 L618.5 165.0 L620.1 166.7 L621.8 168.3 L623.4 169.9 L625.1 171.5 L626.7 173.1 L628.4 174.7 L630.0 176.4 L631.6 178.0 L633.3 179.6 L634.9 181.2 L636.6 182.8 L638.2 184.4 L639.9 186.1 L641.5 187.7 L643.2 189.3 L644.8 190.9 L646.5 192.5 L648.1 194.1 L649.8 195.7 L651.4 197.4 L653.1 199.0 L654.7 200.6 L656.4 202.2 L658.0 203.8 L659.6 205.4 L661.3 207.1 L662.9 208.7 L664.6 210.3 L666.2 211.9 L667.9 213.5" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6"/>
+<path d="M518.0 66.4 L519.6 68.1 L521.3 69.7 L522.9 71.3 L524.6 72.9 L526.2 74.5 L527.9 76.1 L529.5 77.8 L531.2 79.4 L532.8 81.0 L534.5 82.6 L536.1 84.2 L537.8 85.8 L539.4 87.5 L541.1 89.1 L542.7 90.7 L544.4 92.3 L546.0 93.9 L547.6 95.5" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<path d="M669.5 215.1 L671.2 216.8 L672.8 218.4 L674.5 220.0 L676.1 221.6 L677.8 223.2 L679.4 224.8 L681.1 226.5 L682.7 228.1 L684.4 229.7 L686.0 231.3 L687.6 232.9 L689.3 234.5 L690.9 236.2 L692.6 237.8 L694.2 239.4 L695.9 241.0 L697.5 242.6 L699.2 244.2 L700.8 245.9 L702.5 247.5 L704.1 249.1 L705.8 250.7 L707.4 252.3 L709.1 253.9 L710.7 255.6 L712.4 257.2 L714.0 258.8" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<circle cx="653.69" cy="199.6" r="3.8" fill="var(--fig-violet, #6733C4)"/>
+<text x="647.69" y="216.6" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">1：2.66</text>
+<circle cx="707.38" cy="252.29" r="3.8" fill="var(--fig-violet, #6733C4)"/>
+<text x="701.38" y="269.29" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">3,640：1.76</text>
+<text x="14" y="170" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 14 170)">损失（nats/token，对数）</text>
+<text x="54" y="354" font-size="12" fill="var(--fig-ink, #1C1B19)">实线：论文实验大致覆盖的范围；虚线：外推。常数依赖 WebText2 与它的 BPE 分词，没有绝对意义。</text>
+</svg>

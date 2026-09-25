@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 652" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DSA 在 MLA 上的数据流（据 DeepSeek-V3.2 论文图 2 重绘，标出真实形状）</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="138" y="22" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">lightning indexer（打分）</text>
+<text x="390" y="22" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">主注意力的查询</text>
+<text x="631" y="22" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">主注意力的键值（MLA）</text>
+<rect x="190" y="608" width="380" height="32" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="380" y="628.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">输入隐藏状态 <tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">7168</tspan></text>
+<rect x="314" y="520" width="152" height="60" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="390" y="541.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">Q</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">1536</tspan></text>
+<text x="390" y="567.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">DQ</tspan> + RMSNorm</text>
+<rect x="514" y="520" width="124" height="60" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="576" y="541.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">KV</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">512</tspan></text>
+<text x="576" y="567.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">DKV</tspan></text>
+<rect x="646" y="520" width="102" height="60" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="6"/>
+<text x="697" y="541.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">R</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">64</tspan></text>
+<text x="697" y="567.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">KR</tspan> + RoPE</text>
+<rect x="12" y="520" width="118" height="60" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="71" y="541.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w<tspan baseline-shift="sub" font-size="11">t,j</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">I</tspan><tspan dx="3.08">：64 个</tspan></text>
+<text x="71" y="567.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">Iw</tspan>，BF16</text>
+<rect x="144" y="520" width="120" height="60" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="204" y="541.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">I</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">128</tspan></text>
+<text x="204" y="567.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">IK</tspan> + LayerNorm</text>
+<line x1="390" y1="608" x2="390" y2="582" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="576" y1="608" x2="576" y2="582" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="697" y1="608" x2="697" y2="582" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="71" y1="608" x2="71" y2="582" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="204" y1="608" x2="204" y2="582" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<rect x="284" y="422" width="102" height="62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="335" y="444.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">A</tspan><tspan dx="3.08">：128 × 512</tspan></text>
+<text x="335" y="470.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">吸收 W<tspan baseline-shift="super" font-size="11">UK</tspan></text>
+<rect x="394" y="422" width="102" height="62" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="6"/>
+<text x="445" y="444.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">R</tspan><tspan dx="3.08">：128 × 64</tspan></text>
+<text x="445" y="470.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">QR</tspan> + RoPE</text>
+<line x1="390" y1="520" x2="335" y2="486" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<line x1="390" y1="520" x2="445" y2="486" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" marker-end="url(#ah-red)"/>
+<rect x="514" y="416" width="234" height="68" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" rx="6"/>
+<text x="631" y="438" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">KV cache：[<tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">KV</tspan>; <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">R</tspan>] ∈ ℝ<tspan baseline-shift="super" font-size="11">576</tspan></text>
+<text x="631" y="460" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">全部 s ≤ t 都要留着</text>
+<text x="631" y="476" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">FP8 格式 656 字节 / token / 层</text>
+<line x1="576" y1="520" x2="576" y2="486" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" marker-end="url(#ah-orange)"/>
+<line x1="697" y1="520" x2="697" y2="486" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" marker-end="url(#ah-red)"/>
+<rect x="38" y="422" width="98" height="62" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="87" y="444.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,j</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">I</tspan><tspan dx="3.08">：64 × 128</tspan></text>
+<text x="87" y="470.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">由 <tspan font-weight="700">c</tspan><tspan baseline-shift="super" font-size="11">Q</tspan> 投影</text>
+<path d="M324 520 L324 504 L102 504 L102 486" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#ah-violet)"/>
+<rect x="144" y="416" width="120" height="68" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" rx="6"/>
+<text x="204" y="438" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引键缓存 <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan></text>
+<text x="204" y="460" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">FP8 + 1 个缩放</text>
+<text x="204" y="476" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">132 字节 / token / 层</text>
+<line x1="204" y1="520" x2="204" y2="486" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" marker-end="url(#ah-violet)"/>
+<rect x="12" y="314" width="252" height="80" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="138" y="335.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">I<tspan baseline-shift="sub" font-size="11">t,s</tspan> = Σ<tspan baseline-shift="sub" font-size="11">j</tspan> w<tspan baseline-shift="sub" font-size="11">t,j</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">I</tspan><tspan dx="3.08"> · ReLU(</tspan><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,j</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">I</tspan><tspan dx="3.08"> · </tspan><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan>)</text>
+<text x="138" y="358.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">对全部 s ≤ t 打分，FP8，仍是 O(t)</text>
+<text x="138" y="381.32" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">每键 2 × 64 × 128 = 16,384 FLOPs</text>
+<line x1="87" y1="420" x2="87" y2="396" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<line x1="204" y1="414" x2="204" y2="396" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<line x1="24" y1="520" x2="24" y2="396" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<rect x="12" y="224" width="252" height="54" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="138" y="244.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Top-k 选择器：取分数最高的 k = 2048 个</text>
+<text x="138" y="266.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">得到下标集合 S<tspan baseline-shift="sub" font-size="11">t</tspan>；t ≤ 2048 时等于全选</text>
+<line x1="138" y1="314" x2="138" y2="280" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<path d="M264 251 L631 251" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" stroke-dasharray="5 3"/>
+<path d="M631 414 L631 258" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" marker-end="url(#ah-amber)"/>
+<text x="623" y="287" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">按 S<tspan baseline-shift="sub" font-size="11">t</tspan> 取出 2048 个条目</text>
+<text x="623" y="306" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">2048 × 576</text>
+<circle cx="631" cy="251" r="4" fill="var(--fig-violet, #6733C4)"/>
+<rect x="284" y="118" width="464" height="60" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="516" y="141.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">多查询注意力（核心注意力，MQA 模式）</text>
+<text x="516" y="163.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128 个头共用同一组 2048 个条目：键 576 维，值取前 512 维</text>
+<path d="M335 422 L335 180" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<path d="M445 422 L445 180" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" marker-end="url(#ah-red)"/>
+<text x="390" y="212" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">拼成 128 × 576</text>
+<path d="M631 246 L631 180" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" marker-end="url(#ah-amber)"/>
+<rect x="284" y="46" width="464" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="516" y="72.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">o</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">C</tspan><tspan dx="3.08">：128 × 512 → W</tspan><tspan baseline-shift="super" font-size="11">UV</tspan> → <tspan font-weight="700">o</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan>：128 × 128 → W<tspan baseline-shift="super" font-size="11">O</tspan> → <tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">7168</tspan></text>
+<line x1="514" y1="118" x2="514" y2="92" stroke="var(--fig-green, #16704A)" stroke-width="1.4" marker-end="url(#ah-green)"/>
+<text x="16" y="60" font-size="12" fill="var(--fig-violet, #6733C4)">只有左列是 DSA 新增的；</text>
+<text x="16" y="78" font-size="12" fill="var(--fig-violet, #6733C4)">其余与 V3.1-Terminus 的 MLA 相同。</text>
+<text x="16" y="106" font-size="11" fill="var(--fig-muted, #74716A)">参数：每层 13,959,424 个，</text>
+<text x="16" y="122" font-size="11" fill="var(--fig-muted, #74716A)">62 层（含 MTP 层）约 0.87B</text>
+<text x="16" y="150" font-size="11" fill="var(--fig-muted, #74716A)">头数与维度来自 config.json，</text>
+<text x="16" y="166" font-size="11" fill="var(--fig-muted, #74716A)">论文只说“少量的头”</text>
+</svg>

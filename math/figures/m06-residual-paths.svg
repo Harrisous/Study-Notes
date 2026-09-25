@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 446" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>残差把雅可比的连乘变成 2^L 条路径之和，其中一条是恒等</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">无残差：<tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">l</tspan> = f<tspan baseline-shift="sub" font-size="11">l</tspan>(<tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">l−1</tspan>)，从 <tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">0</tspan> 到 <tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">3</tspan> 只有一条路</text>
+<text x="40" y="79" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600"><tspan font-weight="700">h</tspan>₀</text>
+<text x="640" y="79" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600"><tspan font-weight="700">h</tspan>₃</text>
+<rect x="110" y="56" width="80" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="150" y="79" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₁</text>
+<text x="150" y="46" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="260" y="56" width="80" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="300" y="79" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₂</text>
+<text x="300" y="46" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="410" y="56" width="80" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="450" y="79" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₃</text>
+<text x="450" y="46" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<line x1="56" y1="74" x2="108" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="192" y1="74" x2="258" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="342" y1="74" x2="408" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="492" y1="74" x2="622" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="360" y="116" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">∂<tspan font-weight="700">h</tspan>₃/∂<tspan font-weight="700">h</tspan>₀ = J₃ J₂ J₁：每个因子都缩一点，乘起来就消失；都放大一点，就爆炸</text>
+<text x="20" y="150" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">有残差：<tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">l</tspan> = <tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">l−1</tspan> + f<tspan baseline-shift="sub" font-size="11">l</tspan>(<tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">l−1</tspan>)，每一步的雅可比是 I + J<tspan baseline-shift="sub" font-size="11">l</tspan></text>
+<line x1="56" y1="260" x2="624" y2="260" stroke="var(--fig-green, #16704A)" stroke-width="3.2"/>
+<text x="40" y="265" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600"><tspan font-weight="700">h</tspan>₀</text>
+<text x="640" y="265" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600"><tspan font-weight="700">h</tspan>₃</text>
+<line x1="120" y1="260" x2="120" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="141" y="184" width="68" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="175" y="206" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₁</text>
+<line x1="120" y1="202" x2="141" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="209" y1="202" x2="230" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="230" y1="202" x2="230" y2="248" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<circle cx="230" cy="260" r="10" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="230" y="265" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="175" y="172" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<line x1="290" y1="260" x2="290" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="311" y="184" width="68" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="345" y="206" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₂</text>
+<line x1="290" y1="202" x2="311" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="379" y1="202" x2="400" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="400" y1="202" x2="400" y2="248" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<circle cx="400" cy="260" r="10" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="400" y="265" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="345" y="172" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="460" y1="260" x2="460" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="481" y="184" width="68" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="515" y="206" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">f₃</text>
+<line x1="460" y1="202" x2="481" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="549" y1="202" x2="570" y2="202" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="570" y1="202" x2="570" y2="248" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<circle cx="570" cy="260" r="10" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="570" y="265" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="515" y="172" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<line x1="610" y1="286" x2="70" y2="286" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" marker-end="url(#ah-red)"/>
+<text x="340" y="304" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">反向：梯度沿绿色传送带原样传回（恒等通路，局部导数 = I），</text>
+<text x="340" y="321" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">每经过一个 ⊕，再从分支加回一份 J<tspan baseline-shift="sub" font-size="11">l</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan> 的修正</text>
+<text x="20" y="364" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">展开：</text>
+<text x="70" y="364" font-size="13" fill="var(--fig-ink, #1C1B19)">(I + J₃)(I + J₂)(I + J₁) =</text>
+<text x="236" y="364" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">I</text>
+<text x="259" y="364" font-size="13" fill="var(--fig-muted, #74716A)">+</text>
+<text x="275" y="364" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">J₁ + J₂ + J₃</text>
+<text x="369" y="364" font-size="13" fill="var(--fig-muted, #74716A)">+</text>
+<text x="385" y="364" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">J₂J₁ + J₃J₁ + J₃J₂</text>
+<text x="521" y="364" font-size="13" fill="var(--fig-muted, #74716A)">+</text>
+<text x="537" y="364" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">J₃J₂J₁</text>
+<text x="242.5" y="386" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">1 条</text>
+<text x="242.5" y="403" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">只走捷径</text>
+<text x="317" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">3 条</text>
+<text x="317" y="403" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">经过 1 个分支</text>
+<text x="448" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">3 条</text>
+<text x="448" y="403" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">经过 2 个分支</text>
+<text x="558" y="386" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">1 条</text>
+<text x="558" y="403" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">经过全部分支</text>
+<text x="20" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)">L 层残差共有 2<tspan baseline-shift="super" font-size="11">L</tspan> 条路径，经过 k 个分支的有 C(L, k) 条；无残差时只剩最后一项。</text>
+</svg>

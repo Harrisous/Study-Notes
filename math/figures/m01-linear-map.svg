@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 290" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>矩阵 A 把平面上的网格、基向量和一个点一起变换</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="24.2" y="57.4" width="201.6" height="218.4" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6"/>
+<line x1="62" y1="275.8" x2="62" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="238" x2="225.8" y2="238" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="104" y1="275.8" x2="104" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="196" x2="225.8" y2="196" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="146" y1="275.8" x2="146" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="154" x2="225.8" y2="154" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="188" y1="275.8" x2="188" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="112" x2="225.8" y2="112" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="70" x2="225.8" y2="70" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="24.2" y1="238" x2="225.8" y2="238" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="62" y1="275.8" x2="62" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<polygon points="62,238 104,238 104,196 62,196" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<line x1="62" y1="238" x2="104" y2="238" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<line x1="62" y1="238" x2="62" y2="196" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<line x1="104" y1="238" x2="104" y2="154" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="62" y1="238" x2="104" y2="154" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2" marker-end="url(#ah-ink)"/>
+<circle cx="104" cy="154" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<rect x="334.4" y="57.4" width="323.4" height="218.4" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6"/>
+<line x1="368" y1="275.8" x2="368" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="410" y1="275.8" x2="410" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="452" y1="275.8" x2="452" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="334.4" y1="238" x2="657.8" y2="238" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="494" y1="275.8" x2="494" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="334.4" y1="196" x2="657.8" y2="196" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="536" y1="275.8" x2="536" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="334.4" y1="154" x2="657.8" y2="154" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="578" y1="275.8" x2="578" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="334.4" y1="112" x2="657.8" y2="112" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="620" y1="275.8" x2="620" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="334.4" y1="70" x2="657.8" y2="70" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-opacity="0.18"/>
+<line x1="628.4" y1="275.8" x2="657.8" y2="261.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="363.8" y1="275.8" x2="334.4" y2="246.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="502.4" y1="275.8" x2="657.8" y2="198.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="489.8" y1="275.8" x2="334.4" y2="120.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="376.4" y1="275.8" x2="657.8" y2="135.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="615.8" y1="275.8" x2="397.4" y2="57.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="334.4" y1="233.8" x2="657.8" y2="72.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="657.8" y1="191.8" x2="523.4" y2="57.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="334.4" y1="170.8" x2="561.2" y2="57.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="657.8" y1="65.8" x2="649.4" y2="57.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="334.4" y1="107.8" x2="435.2" y2="57.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-opacity="0.45"/>
+<line x1="334.4" y1="238" x2="657.8" y2="238" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="452" y1="275.8" x2="452" y2="57.4" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<polygon points="452,238 536,196 494,154 410,196" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<line x1="452" y1="238" x2="536" y2="196" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<line x1="452" y1="238" x2="410" y2="196" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<line x1="536" y1="196" x2="452" y2="112" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="452" y1="238" x2="452" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2" marker-end="url(#ah-ink)"/>
+<circle cx="452" cy="112" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<text x="38" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">变换前</text>
+<text x="110" y="256" font-size="13" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> = (1, 0)</text>
+<text x="54" y="190" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="112" y="150" font-size="13" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">x</tspan> = (1, 2)</text>
+<text x="112" y="168" font-size="12" fill="var(--fig-muted, #74716A)">= 1·<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> + 2·<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="83" y="222" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">面积 1</text>
+<text x="352" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">变换后：每个点 <tspan font-weight="700">v</tspan> 移到 <tspan font-weight="700">Av</tspan></text>
+<text x="544" y="202" font-size="13" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">Ae</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> = (2, 1)</text>
+<text x="402" y="188" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end"><tspan font-weight="700">Ae</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="402" y="208" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end">(−1, 1)</text>
+<text x="442" y="116" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end"><tspan font-weight="700">Ax</tspan> = (0, 3)</text>
+<text x="442" y="134" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">= 1·<tspan font-weight="700">Ae</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> + 2·<tspan font-weight="700">Ae</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="473" y="201" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">面积 3</text>
+<text x="284" y="82" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">乘以 <tspan font-weight="700">A</tspan></text>
+<rect x="258" y="98" width="24" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<rect x="286" y="98" width="24" height="52" fill="var(--fig-green, #16704A)" fill-opacity="0.14" rx="4"/>
+<text x="270" y="115.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="298" y="115.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−1</text>
+<text x="270" y="143.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="298" y="143.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<path d="M257 96 h-5 v56 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M311 96 h5 v56 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="268" y="172" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">列 1</text>
+<text x="300" y="172" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">列 2</text>
+<line x1="250" y1="202" x2="320" y2="202" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+</svg>

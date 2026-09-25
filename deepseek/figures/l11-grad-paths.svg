@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>梯度往哪里流：辅助损失与偏置的对照</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="16" y="24" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">Ⓐ 辅助损失：α Σ f<tspan baseline-shift="sub" font-size="11">i</tspan>P<tspan baseline-shift="sub" font-size="11">i</tspan> 可导，梯度进入 <tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<rect x="36" y="50" width="164" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="118" y="74.32" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">语言模型损失 ℒ<tspan baseline-shift="sub" font-size="11">LM</tspan></text>
+<rect x="36" y="112" width="164" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="118" y="136.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">后面的层 …</text>
+<rect x="36" y="174" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="118" y="198.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">MoE 层：Σ g<tspan baseline-shift="sub" font-size="11">i</tspan>·FFN<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<rect x="36" y="236" width="164" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="118" y="260.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">路由器：s<tspan baseline-shift="sub" font-size="11">i</tspan> = σ(<tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan>·<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">i</tspan>)</text>
+<rect x="36" y="298" width="164" height="40" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="118" y="322.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">隐藏状态 <tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<rect x="36" y="360" width="164" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="118" y="384.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力与更早的层</text>
+<line x1="118" y1="360" x2="118" y2="339" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="118" y1="298" x2="118" y2="277" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="118" y1="236" x2="118" y2="215" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="118" y1="174" x2="118" y2="153" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="118" y1="112" x2="118" y2="91" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M50 90 V 422" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2" stroke-dasharray="7 4" marker-end="url(#ah-green)"/>
+<text x="44" y="438" font-size="11" fill="var(--fig-green, #16704A)">ℒ<tspan baseline-shift="sub" font-size="11">LM</tspan> 的梯度流经每一层</text>
+<rect x="222" y="232" width="104" height="48" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="6"/>
+<text x="274" y="253" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">辅助损失</text>
+<text x="274" y="268" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">α Σ f<tspan baseline-shift="sub" font-size="11">i</tspan>P<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<line x1="201" y1="248" x2="221" y2="248" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" marker-end="url(#ah-muted)"/>
+<line x1="221" y1="264" x2="201" y2="264" stroke="var(--fig-red, #A3231C)" stroke-width="2" marker-end="url(#ah-red)"/>
+<path d="M242 280 H 170 V 277" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<path d="M170 278 V 297" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" marker-end="url(#ah-red)"/>
+<path d="M170 338 V 359" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" marker-end="url(#ah-red)"/>
+<text x="224" y="302" font-size="11" fill="var(--fig-red, #A3231C)">∂ℒ/∂<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">k</tspan>：改路由器</text>
+<text x="224" y="324" font-size="11" fill="var(--fig-red, #A3231C)" font-weight="600">∂ℒ/∂<tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan>：改表示</text>
+<text x="224" y="382" font-size="11" fill="var(--fig-red, #A3231C)">再传进注意力和</text>
+<text x="224" y="398" font-size="11" fill="var(--fig-red, #A3231C)" font-weight="600">更早的层 = “干扰梯度”</text>
+<line x1="360" y1="36" x2="360" y2="440" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="376" y="24" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">Ⓑ 偏置：只按计数更新，不产生梯度</text>
+<rect x="396" y="50" width="164" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="478" y="74.32" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">语言模型损失 ℒ<tspan baseline-shift="sub" font-size="11">LM</tspan></text>
+<rect x="396" y="112" width="164" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="478" y="136.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">后面的层 …</text>
+<rect x="396" y="174" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="478" y="198.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">MoE 层：Σ g<tspan baseline-shift="sub" font-size="11">i</tspan>·FFN<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<rect x="396" y="236" width="164" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="478" y="260.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">路由器：s<tspan baseline-shift="sub" font-size="11">i</tspan> = σ(<tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan>·<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">i</tspan>)</text>
+<rect x="396" y="298" width="164" height="40" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="478" y="322.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">隐藏状态 <tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<rect x="396" y="360" width="164" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="478" y="384.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力与更早的层</text>
+<line x1="478" y1="360" x2="478" y2="339" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="478" y1="298" x2="478" y2="277" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="478" y1="236" x2="478" y2="215" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="478" y1="174" x2="478" y2="153" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<line x1="478" y1="112" x2="478" y2="91" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" marker-end="url(#ah-muted)"/>
+<path d="M410 90 V 422" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2" stroke-dasharray="7 4" marker-end="url(#ah-green)"/>
+<text x="404" y="438" font-size="11" fill="var(--fig-green, #16704A)">ℒ<tspan baseline-shift="sub" font-size="11">LM</tspan> 的梯度流经每一层</text>
+<rect x="582" y="170" width="112" height="48" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6" stroke-dasharray="4 3"/>
+<text x="638" y="191" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">负载计数</text>
+<text x="638" y="206" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">每专家几个 token</text>
+<rect x="582" y="272" width="112" height="48" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="638" y="293" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">偏置 b<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="638" y="308" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b<tspan baseline-shift="sub" font-size="11">i</tspan> ∓ γ</text>
+<line x1="561" y1="194" x2="581" y2="194" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah-violet)"/>
+<line x1="638" y1="218" x2="638" y2="271" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<line x1="581" y1="296" x2="561" y2="262" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<text x="584" y="340" font-size="11" fill="var(--fig-violet, #6733C4)">只改“选谁”</text>
+<text x="584" y="356" font-size="11" fill="var(--fig-violet, #6733C4)" font-weight="600">不改权重，无梯度</text>
+<text x="16" y="462" font-size="12" fill="var(--fig-ink, #1C1B19)">绿色虚线：语言模型损失的梯度；红色实线：辅助损失的梯度；紫色：偏置的更新只用计数（下一步才生效）。</text>
+</svg>

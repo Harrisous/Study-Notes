@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>KL 约束下的最优策略：参考分布按 exp(r/β) 倾斜</title>
+
+<text x="16" y="24" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">三个回答的奖励 r = 0、1、2；每一行是一个概率分布（总长 = 1）</text>
+<rect x="96" y="38" width="16" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="118" y="49" font-size="12" fill="var(--fig-ink, #1C1B19)">回答 1（r = 0）</text>
+<rect x="236" y="38" width="16" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="258" y="49" font-size="12" fill="var(--fig-ink, #1C1B19)">回答 2（r = 1）</text>
+<rect x="376" y="38" width="16" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="398" y="49" font-size="12" fill="var(--fig-ink, #1C1B19)">回答 3（r = 2）</text>
+<text x="548" y="80" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">E[r]</text>
+<text x="616" y="80" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">KL</text>
+<text x="690" y="80" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">目标值</text>
+<text x="86" y="114" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">π<tspan baseline-shift="sub" font-size="11">ref</tspan></text>
+<rect x="96" y="92" width="240" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="216" y="113" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.600</text>
+<rect x="336" y="92" width="120" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="396" y="113" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.300</text>
+<rect x="456" y="92" width="40" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="490" y="89" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.100</text>
+<text x="548" y="113" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.500</text>
+<text x="616" y="113" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.000</text>
+<text x="690" y="113" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">—</text>
+<text x="86" y="158" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">β = 2</text>
+<rect x="96" y="136" width="175.64" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="183.82" y="157" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.439</text>
+<rect x="271.64" y="136" width="144.79" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="344.03" y="157" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.362</text>
+<rect x="416.43" y="136" width="79.57" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="456.21" y="157" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.199</text>
+<text x="548" y="157" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.760</text>
+<text x="616" y="157" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.068</text>
+<text x="690" y="157" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.624</text>
+<text x="86" y="202" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">β = 1</text>
+<rect x="96" y="180" width="111.4" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="151.7" y="201" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.279</text>
+<rect x="207.4" y="180" width="151.41" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="283.1" y="201" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.379</text>
+<rect x="358.81" y="180" width="137.19" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="427.4" y="201" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.343</text>
+<text x="548" y="201" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.064</text>
+<text x="616" y="201" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.297</text>
+<text x="690" y="201" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.768</text>
+<text x="86" y="246" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">β = 0.5</text>
+<rect x="96" y="224" width="29" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="124.5" y="221" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.072</text>
+<rect x="125" y="224" width="107.13" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="178.56" y="245" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.268</text>
+<rect x="232.13" y="224" width="263.87" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="364.07" y="245" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.660</text>
+<text x="548" y="245" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.587</text>
+<text x="616" y="245" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.061</text>
+<text x="690" y="245" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.057</text>
+<text x="86" y="290" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">β = 0.25</text>
+<rect x="96" y="268" width="0.76" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<rect x="96.76" y="268" width="20.79" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="121.16" y="265" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.052</text>
+<rect x="117.56" y="268" width="378.44" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.62" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="306.78" y="289" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.946</text>
+<text x="548" y="289" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.944</text>
+<text x="616" y="289" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2.024</text>
+<text x="690" y="289" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.438</text>
+<text x="16" y="324" font-size="12" fill="var(--fig-muted, #74716A)">β 越小，概率越往高奖励的回答倾斜。目标值 = E[r] − β·KL，恰好等于 β·log Z（Z 是归一化常数）。</text>
+</svg>

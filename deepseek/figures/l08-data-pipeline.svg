@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 440" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>从 Common Crawl 迭代召回数学网页的管线</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="470" y="14" width="254" height="50" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" rx="8" stroke-dasharray="5 3"/>
+<text x="597" y="35" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">去重后的 Common Crawl</text>
+<text x="597" y="54" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">40B 个 HTML 网页（单位：网页）</text>
+<rect x="16" y="96" width="224" height="98" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" rx="8"/>
+<text x="128" y="123.35" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">种子语料</text>
+<text x="128" y="140.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1 轮：OpenWebMath</text>
+<text x="128" y="158.45" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">取 500K 条作正例</text>
+<text x="128" y="176" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">另取 CC 网页 500K 作负例</text>
+<rect x="258" y="96" width="224" height="98" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="370" y="123.35" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">① 训练 fastText 分类器</text>
+<text x="370" y="140.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">向量维度 256，学习率 0.1</text>
+<text x="370" y="158.45" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">词 n-gram ≤ 3，最小词频 3</text>
+<text x="370" y="176" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">训练 3 个 epoch</text>
+<rect x="500" y="96" width="224" height="98" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="612" y="123.35" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">② 给每个网页打分、召回</text>
+<text x="612" y="140.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">按分数排序，只留高分页</text>
+<text x="612" y="158.45" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1 轮保留 top 40B tokens</text>
+<text x="612" y="176" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（试过 40/80/120/160B）</text>
+<rect x="500" y="262" width="224" height="98" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" rx="8"/>
+<text x="612" y="289.36" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">数学语料</text>
+<text x="612" y="306.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">本轮召回的网页</text>
+<text x="612" y="324.46" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4 轮后：35.5M 个网页</text>
+<text x="612" y="342" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">共 120B tokens</text>
+<rect x="258" y="262" width="224" height="98" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="370" y="289.36" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">③ 发现数学相关域名</text>
+<text x="370" y="306.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">按域名（base URL）分组</text>
+<text x="370" y="324.46" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">已被收集 &gt; 10% 的域名</text>
+<text x="370" y="342" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">例：mathoverflow.net</text>
+<rect x="16" y="262" width="224" height="98" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<text x="128" y="289.36" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">④ 人工标注 URL 路径</text>
+<text x="128" y="306.91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">例：mathoverflow.net/questions</text>
+<text x="128" y="324.46" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">路径下尚未被收集的网页</text>
+<text x="128" y="342" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">作为新正例加入种子</text>
+<line x1="240" y1="145" x2="256" y2="145" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<line x1="482" y1="145" x2="498" y2="145" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<line x1="597" y1="64" x2="597" y2="94" stroke="var(--fig-amber, #8A6508)" stroke-width="1.8" marker-end="url(#ah-amber)"/>
+<line x1="612" y1="194" x2="612" y2="260" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<line x1="500" y1="311" x2="484" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<line x1="258" y1="311" x2="242" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<line x1="128" y1="262" x2="128" y2="196" stroke="var(--fig-violet, #6733C4)" stroke-width="2" marker-end="url(#ah-violet)"/>
+<text x="138" y="232" font-size="12" fill="var(--fig-violet, #6733C4)">下一轮种子更大、更好</text>
+<text x="622" y="232" font-size="12" fill="var(--fig-muted, #74716A)">召回结果</text>
+<line x1="16" y1="374" x2="724" y2="374" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="392" font-size="12.5" fill="var(--fig-ink, #1C1B19)">停止条件：第 4 轮发现约 98% 的数据在第 3 轮已被收集，于是停在 4 轮。</text>
+<text x="16" y="414" font-size="12" fill="var(--fig-muted, #74716A)">去污染：凡与 GSM8K、MATH 等评测集有完全相同 10-gram 的文本段一律删除（短于 10-gram 的评测文本用精确匹配）。</text>
+<text x="16" y="436" font-size="12" fill="var(--fig-red, #A3231C)">注意：同一段原文里有两个“40B”：40B 个网页（候选池）与 40B tokens（第 1 轮保留量），单位不同。</text>
+</svg>

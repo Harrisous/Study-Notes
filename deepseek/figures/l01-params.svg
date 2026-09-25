@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>GPT-2 的参数都在哪里</title>
+
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) GPT-2 small 的 124,439,808 个参数</text>
+<rect x="20" y="44" width="223.32" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="131.66" y="66" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">wte 词嵌入</text>
+<text x="131.66" y="98" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">38.60M · 31.0%</text>
+<rect x="243.32" y="44" width="4.55" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.25" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="247.87" y="44" width="164.02" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="329.88" y="66" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">注意力 ×12</text>
+<text x="329.88" y="98" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">28.35M · 22.8%</text>
+<rect x="411.89" y="44" width="327.88" height="34" fill="var(--fig-muted, #74716A)" fill-opacity="0.45" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="575.84" y="66" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">FFN ×12</text>
+<text x="575.84" y="98" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">56.67M · 45.5%</text>
+<rect x="739.78" y="44" width="1.2" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.6" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8"/>
+<line x1="245.32" y1="80" x2="263.32" y2="120" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="265.32" y="132" font-size="11.5" fill="var(--fig-muted, #74716A)">wpe 0.79M（0.6%）</text>
+<line x1="739" y1="80" x2="710" y2="120" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="740" y="132" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">LayerNorm 共 25 个：0.04M（0.03%）</text>
+<text x="20" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)">每块 7,087,872 = 注意力 2,362,368（4d²+4d）+ FFN 4,722,432（8d²+5d）+ 2 个 LN 3,072（4d）。12 块合计 85.05M，占 68.4%。</text>
+<line x1="10" y1="190" x2="750" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="212" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 四个规模：嵌入表的占比随模型变大迅速下降；12Ld² 与非嵌入参数的差别不到 0.2%</text>
+<text x="168" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">small（L=12, d=768）</text>
+<rect x="178" y="236" width="119.63" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="297.63" y="236" width="258.37" height="22" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="303.63" y="252" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">嵌入 31.6%</text>
+<text x="566" y="244" font-size="11.5" fill="var(--fig-ink, #1C1B19)">总 124,439,808</text>
+<text x="566" y="259" font-size="11" fill="var(--fig-muted, #74716A)">非嵌入 85.06M，12Ld² 84.93M</text>
+<text x="168" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">medium（L=24, d=1024）</text>
+<rect x="178" y="274" width="55.94" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="233.94" y="274" width="322.06" height="22" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="239.94" y="290" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">嵌入 14.8%</text>
+<text x="566" y="282" font-size="11.5" fill="var(--fig-ink, #1C1B19)">总 354,823,168</text>
+<text x="566" y="297" font-size="11" fill="var(--fig-muted, #74716A)">非嵌入 302.31M，12Ld² 301.99M</text>
+<text x="168" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">large（L=36, d=1280）</text>
+<rect x="178" y="312" width="32.06" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="210.06" y="312" width="345.94" height="22" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="216.06" y="328" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">嵌入 8.5%</text>
+<text x="566" y="320" font-size="11.5" fill="var(--fig-ink, #1C1B19)">总 774,030,080</text>
+<text x="566" y="335" font-size="11" fill="var(--fig-muted, #74716A)">非嵌入 708.39M，12Ld² 707.79M</text>
+<text x="168" y="364" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">xl（L=48, d=1600）</text>
+<rect x="178" y="350" width="19.91" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="197.91" y="350" width="358.09" height="22" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="203.91" y="366" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">嵌入 5.3%</text>
+<text x="566" y="358" font-size="11.5" fill="var(--fig-ink, #1C1B19)">总 1,557,611,200</text>
+<text x="566" y="373" font-size="11" fill="var(--fig-muted, #74716A)">非嵌入 1475.56M，12Ld² 1474.56M</text>
+<text x="178" y="392" font-size="11.5" fill="var(--fig-muted, #74716A)">每条横条都按 100% 画：金色 = wte + wpe，灰色 = 12 个（或更多）块与 LayerNorm</text>
+</svg>

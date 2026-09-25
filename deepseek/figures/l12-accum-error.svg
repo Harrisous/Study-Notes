@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>简化模型：不提升时累加误差随 K 线性增长，每 128 个元素提升到 FP32 后与 K 无关</title>
+
+<line x1="90" y1="300" x2="560" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-5</tspan></text>
+<line x1="90" y1="210" x2="560" y2="210" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="214" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="90" y1="120" x2="560" y2="120" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="90" y1="30" x2="560" y2="30" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="34" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="90" y1="30" x2="90" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="90" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">512</text>
+<line x1="207.5" y1="30" x2="207.5" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="207.5" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1024</text>
+<line x1="325" y1="30" x2="325" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="325" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2048</text>
+<line x1="442.5" y1="30" x2="442.5" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="442.5" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4096</text>
+<line x1="560" y1="30" x2="560" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="560" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8192</text>
+<line x1="90" y1="300" x2="560" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="90" y1="30" x2="90" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="325" y="340" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">内维长度 K（对数刻度）</text>
+<text x="24" y="165" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 165)">中位相对误差（对数刻度）</text>
+<path d="M90.0 162.1 L207.5 148.6 L325.0 135.0 L442.5 121.5 L560.0 107.9" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="568" y="111.95" font-size="12" fill="var(--fig-muted, #74716A)">若误差随机抵消：∝ √K</text>
+<path d="M90.0 162.1 L207.5 132.6 L325.0 106.7 L442.5 77.8 L560.0 50.8" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.4"/>
+<circle cx="90" cy="162.13" r="3.6" fill="var(--fig-red, #A3231C)"/>
+<circle cx="207.5" cy="132.57" r="3.6" fill="var(--fig-red, #A3231C)"/>
+<circle cx="325" cy="106.66" r="3.6" fill="var(--fig-red, #A3231C)"/>
+<circle cx="442.5" cy="77.84" r="3.6" fill="var(--fig-red, #A3231C)"/>
+<circle cx="560" cy="50.79" r="3.6" fill="var(--fig-red, #A3231C)"/>
+<text x="568" y="54.79" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">不提升（14 位累加到底）</text>
+<path d="M90.0 209.8 L207.5 213.1 L325.0 206.4 L442.5 209.1 L560.0 207.3" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.4"/>
+<circle cx="90" cy="209.82" r="3.6" fill="var(--fig-green, #16704A)"/>
+<circle cx="207.5" cy="213.06" r="3.6" fill="var(--fig-green, #16704A)"/>
+<circle cx="325" cy="206.44" r="3.6" fill="var(--fig-green, #16704A)"/>
+<circle cx="442.5" cy="209.12" r="3.6" fill="var(--fig-green, #16704A)"/>
+<circle cx="560" cy="207.27" r="3.6" fill="var(--fig-green, #16704A)"/>
+<text x="568" y="211.27" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">每 N<tspan baseline-shift="sub" font-size="11">C</tspan> = 128 提升到 FP32</text>
+<text x="90" y="153.13" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">3.4e-04</text>
+<text x="207.5" y="123.57" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">7.3e-04</text>
+<text x="325" y="97.66" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">1.4e-03</text>
+<text x="442.5" y="68.84" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">2.9e-03</text>
+<text x="560" y="41.79" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">5.9e-03</text>
+<text x="568" y="72.79" font-size="12" fill="var(--fig-muted, #74716A)">∝ K：截断都朝 0 偏，</text>
+<text x="568" y="90.79" font-size="12" fill="var(--fig-muted, #74716A)">误差同号，越积越多</text>
+<text x="90" y="372" font-size="11" fill="var(--fig-muted, #74716A)">本课自己的玩具模型，不是硬件测量：输入 N(0,1) 舍入到 E4M3，32×32 个输出；只用来看趋势。</text>
+</svg>

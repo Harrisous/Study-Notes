@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 426" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>SwiGLU 前馈层（LLaMA-7B 维度）与参数匹配</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="185" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">数据流（一个 token）</text>
+<rect x="106" y="40" width="158" height="38" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="185" y="54.91" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">输入 <tspan font-weight="700">x</tspan></text>
+<text x="185" y="72.45" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">RMSNorm 之后，4096 维</text>
+<line x1="150" y1="78" x2="90" y2="118" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="220" y1="78" x2="280" y2="118" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="20" y="120" width="140" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="90" y="139.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">1</tspan>（gate）</text>
+<text x="90" y="159.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">4096 → 11008</text>
+<rect x="210" y="120" width="140" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="280" y="139.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">3</tspan>（up）</text>
+<text x="280" y="159.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">4096 → 11008</text>
+<line x1="90" y1="170" x2="90" y2="196" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<circle cx="90" cy="214" r="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4"/>
+<text x="90" y="219" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">SiLU</text>
+<text x="20" y="248" font-size="12" fill="var(--fig-violet, #6733C4)">SiLU(z) = z·σ(z)</text>
+<text x="20" y="300" font-size="11.5" fill="var(--fig-muted, #74716A)">门：给每个分量一个“开度”</text>
+<line x1="104" y1="226" x2="172" y2="272" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="280" y1="170" x2="198" y2="272" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<circle cx="185" cy="286" r="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5"/>
+<text x="185" y="292" font-size="17" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⊙</text>
+<text x="205" y="312" font-size="11.5" fill="var(--fig-muted, #74716A)">逐元素相乘，11008 维</text>
+<line x1="185" y1="301" x2="185" y2="328" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="115" y="330" width="140" height="50" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="185" y="349.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">2</tspan>（down）</text>
+<text x="185" y="369.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">11008 → 4096</text>
+<line x1="185" y1="380" x2="185" y2="400" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="185" y="416" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">输出，加回残差主干</text>
+<text x="580" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">参数匹配（按比例画，d = 4096）</text>
+<rect x="420" y="64" width="160" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="588" y="64" width="160" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="420" y="56" font-size="12.5" fill="var(--fig-muted, #74716A)" font-weight="600">GELU 前馈层：2 个 d × 4d 矩阵</text>
+<text x="420" y="122" font-size="12" fill="var(--fig-muted, #74716A)">2 · d · 4d = 8d² = 134,217,728</text>
+<rect x="420" y="172" width="106.67" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="534.67" y="172" width="106.67" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="649.33" y="172" width="106.67" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="420" y="164" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">SwiGLU，d<tspan baseline-shift="sub" font-size="11">ff</tspan> = 8d/3 = 10922.67：3 个矩阵</text>
+<text x="420" y="230" font-size="12" fill="var(--fig-muted, #74716A)">3 · d · (8d/3) = 8d² = 134,217,728</text>
+<rect x="420" y="280" width="107.5" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="535.5" y="280" width="107.5" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="651" y="280" width="107.5" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="420" y="272" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">LLaMA-7B 实际取 d<tspan baseline-shift="sub" font-size="11">ff</tspan> = 11008</text>
+<text x="420" y="338" font-size="12" fill="var(--fig-muted, #74716A)">3 · d · 11008 = 135,266,304（多 0.78%）</text>
+<text x="420" y="380" font-size="12" fill="var(--fig-muted, #74716A)">每个方块高 = d = 4096；宽 = 该矩阵的另一维。</text>
+<text x="420" y="398" font-size="12" fill="var(--fig-muted, #74716A)">面积 = 参数量。三个窄方块的总面积等于两个宽方块。</text>
+</svg>

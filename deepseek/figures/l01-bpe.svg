@@ -1,0 +1,597 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 658" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>BPE 的合并轨迹：Sennrich 算法 1 的玩具词典，以及 GPT-2 对 “ unbelievable” 的 12 次合并</title>
+
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) Sennrich 等（2016）算法 1 的玩具词典：每一步合并语料里出现最多的相邻符号对</text>
+<text x="10" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">步</text>
+<text x="40" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">合并（出现次数）</text>
+<text x="172" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">low ×5</text>
+<text x="308" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">lower ×2</text>
+<text x="448" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">newest ×6</text>
+<text x="598" y="46" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">widest ×3</text>
+<line x1="10" y1="53" x2="750" y2="53" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="18" y="72" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="40" y="72" font-size="12" fill="var(--fig-muted, #74716A)">初始（逐字符）</text>
+<rect x="172" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="179.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="189" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="196.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="206" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="213.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="223" y="59" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="241" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="325" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="342" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="359" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="393" y="59" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="411" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="506.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="516" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="523.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">s</text>
+<rect x="533" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="540.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">t</text>
+<rect x="550" y="59" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="568" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="598" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="656.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="666" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="673.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">s</text>
+<rect x="683" y="59" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="690.5" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">t</text>
+<rect x="700" y="59" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="718" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<text x="18" y="94" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="40" y="94" font-size="12" fill="var(--fig-blue, #1F5FA8)">e + s  (9)</text>
+<rect x="172" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="179.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="189" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="196.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="206" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="213.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="223" y="81" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="241" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="325" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="342" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="359" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="393" y="81" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="411" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="81" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="510" y="95" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">es</text>
+<rect x="523" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="530.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">t</text>
+<rect x="540" y="81" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="558" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="598" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="81" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="660" y="95" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">es</text>
+<rect x="673" y="81" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="680.5" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">t</text>
+<rect x="690" y="81" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="708" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<text x="18" y="116" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="40" y="116" font-size="12" fill="var(--fig-blue, #1F5FA8)">es + t  (9)</text>
+<rect x="172" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="179.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="189" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="196.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="206" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="213.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="223" y="103" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="241" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="325" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="342" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="359" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="393" y="103" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="411" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="103" width="29" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="513.5" y="117" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">est</text>
+<rect x="530" y="103" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="548" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="598" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="103" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="103" width="29" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="663.5" y="117" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">est</text>
+<rect x="680" y="103" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="698" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<text x="18" y="138" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="40" y="138" font-size="12" fill="var(--fig-blue, #1F5FA8)">est + &lt;/w&gt;  (9)</text>
+<rect x="172" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="179.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="189" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="196.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="206" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="213.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="223" y="125" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="241" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="325" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<rect x="342" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="359" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="393" y="125" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="411" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="125" width="57" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="527.5" y="139" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">est&lt;/w&gt;</text>
+<rect x="598" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="125" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="139" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="125" width="57" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="677.5" y="139" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">est&lt;/w&gt;</text>
+<text x="18" y="160" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="40" y="160" font-size="12" fill="var(--fig-blue, #1F5FA8)">l + o  (7)</text>
+<rect x="172" y="147" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="183" y="161" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">lo</text>
+<rect x="196" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="203.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="213" y="147" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="231" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="147" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="319" y="161" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">lo</text>
+<rect x="332" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="339.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="349" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="356.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="366" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="373.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="383" y="147" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="401" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="147" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="527.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<rect x="598" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="147" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="147" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="182" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="40" y="182" font-size="12" fill="var(--fig-blue, #1F5FA8)">lo + w  (7)</text>
+<rect x="172" y="169" width="29" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="186.5" y="183" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">low</text>
+<rect x="203" y="169" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="221" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="169" width="29" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="322.5" y="183" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">low</text>
+<rect x="339" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="169" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="455.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="465" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="472.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="482" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="489.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="499" y="169" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="527.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<rect x="598" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="169" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="169" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="204" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="40" y="204" font-size="12" fill="var(--fig-blue, #1F5FA8)">n + e  (6)</text>
+<rect x="172" y="191" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="186.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="203" y="191" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="221" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="191" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="339" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="191" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="191" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="459" y="205" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">ne</text>
+<rect x="472" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="479.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="489" y="191" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="517.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<rect x="598" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="191" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="191" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="205" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="226" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="40" y="226" font-size="12" fill="var(--fig-blue, #1F5FA8)">ne + w  (6)</text>
+<rect x="172" y="213" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="186.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="203" y="213" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="221" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="213" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="339" y="213" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="213" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="213" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="213" width="29" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="462.5" y="227" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">new</text>
+<rect x="479" y="213" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="507.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<rect x="598" y="213" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="213" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="213" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="213" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="248" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="40" y="248" font-size="12" fill="var(--fig-blue, #1F5FA8)">new + est&lt;/w&gt;  (6)</text>
+<rect x="172" y="235" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="186.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="203" y="235" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="221" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="308" y="235" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="339" y="235" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="235" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="235" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="235" width="78" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="487" y="249" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">newest&lt;/w&gt;</text>
+<rect x="598" y="235" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="235" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="235" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="235" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="249" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="270" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<text x="40" y="270" font-size="12" fill="var(--fig-blue, #1F5FA8)">low + &lt;/w&gt;  (5)</text>
+<rect x="172" y="257" width="57" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="200.5" y="271" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">low&lt;/w&gt;</text>
+<rect x="308" y="257" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="339" y="257" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="257" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="257" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="257" width="78" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="487" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">newest&lt;/w&gt;</text>
+<rect x="598" y="257" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="605.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">w</text>
+<rect x="615" y="257" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="622.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="632" y="257" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="639.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="649" y="257" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="677.5" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="18" y="292" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<text x="40" y="292" font-size="12" fill="var(--fig-blue, #1F5FA8)">w + i  (3)</text>
+<rect x="172" y="279" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="200.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low&lt;/w&gt;</text>
+<rect x="308" y="279" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">low</text>
+<rect x="339" y="279" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="279" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r</text>
+<rect x="373" y="279" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="391" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/w&gt;</text>
+<rect x="448" y="279" width="78" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="487" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">newest&lt;/w&gt;</text>
+<rect x="598" y="279" width="22" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="609" y="293" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">wi</text>
+<rect x="622" y="279" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="629.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">d</text>
+<rect x="639" y="279" width="57" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="667.5" y="293" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">est&lt;/w&gt;</text>
+<text x="10" y="314" font-size="12" fill="var(--fig-muted, #74716A)">&lt;/w&gt; 是词尾符号。频数的来历：e + s 出现在 newest（6 次）和 widest（3 次）里，6 + 3 = 9；平局取先遇到的一对。</text>
+<line x1="10" y1="332" x2="750" y2="332" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) GPT-2 的字节级 BPE：“ unbelievable” 从 13 个字节字符合并成 1 个 token</text>
+<text x="10" y="372" font-size="12" fill="var(--fig-muted, #74716A)">Ġ 是空格字节 0x20 的可见替身；每步合并当前出现的、在 merges 表里排名（rank）最靠前的一对</text>
+<text x="18" y="398" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="40" y="398" font-size="12" fill="var(--fig-muted, #74716A)">初始：13 个字节</text>
+<rect x="240" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="247.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġ</text>
+<rect x="257" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="264.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">u</text>
+<rect x="274" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="281.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="291" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="298.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="308" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="325" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="342" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="359" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="393" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="400.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a</text>
+<rect x="410" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="417.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="427" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="434.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="444" y="385" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="451.5" y="399" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<text x="18" y="418" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="40" y="418" font-size="12" fill="var(--fig-violet, #6733C4)">l + e</text>
+<text x="226" y="418" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 37</text>
+<rect x="240" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="247.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġ</text>
+<rect x="257" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="264.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">u</text>
+<rect x="274" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="281.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="291" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="298.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="308" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="315.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="325" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="332.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="342" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="349.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="359" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="366.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="376" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="383.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="393" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="400.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a</text>
+<rect x="410" y="405" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="417.5" y="419" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="427" y="405" width="22" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="438" y="419" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">le</text>
+<text x="18" y="438" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="40" y="438" font-size="12" fill="var(--fig-violet, #6733C4)">Ġ + u</text>
+<text x="226" y="438" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 78</text>
+<rect x="240" y="425" width="22" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="251" y="439" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Ġu</text>
+<rect x="264" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="271.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="281" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="288.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="298" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="305.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="315" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="332" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="339.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="349" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="356.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="366" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="373.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="383" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="390.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a</text>
+<rect x="400" y="425" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="407.5" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="417" y="425" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="428" y="439" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">le</text>
+<text x="18" y="458" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="40" y="458" font-size="12" fill="var(--fig-violet, #6733C4)">a + b</text>
+<text x="226" y="458" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 141</text>
+<rect x="240" y="445" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="251" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġu</text>
+<rect x="264" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="271.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="281" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="288.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="298" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="305.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="315" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="322.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">l</text>
+<rect x="332" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="339.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="349" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="356.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="366" y="445" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="373.5" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="383" y="445" width="22" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="394" y="459" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">ab</text>
+<rect x="407" y="445" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="418" y="459" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">le</text>
+<text x="18" y="478" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="40" y="478" font-size="12" fill="var(--fig-violet, #6733C4)">e + l</text>
+<text x="226" y="478" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 161</text>
+<rect x="240" y="465" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="251" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġu</text>
+<rect x="264" y="465" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="271.5" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="281" y="465" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="288.5" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="298" y="465" width="22" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="309" y="479" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">el</text>
+<rect x="322" y="465" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="329.5" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">i</text>
+<rect x="339" y="465" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="346.5" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e</text>
+<rect x="356" y="465" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="363.5" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="373" y="465" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="384" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ab</text>
+<rect x="397" y="465" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="408" y="479" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">le</text>
+<text x="18" y="498" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="40" y="498" font-size="12" fill="var(--fig-violet, #6733C4)">i + e</text>
+<text x="226" y="498" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 238</text>
+<rect x="240" y="485" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="251" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġu</text>
+<rect x="264" y="485" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="271.5" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="281" y="485" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="288.5" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="298" y="485" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="309" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">el</text>
+<rect x="322" y="485" width="22" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="333" y="499" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">ie</text>
+<rect x="346" y="485" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="353.5" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="363" y="485" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="374" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ab</text>
+<rect x="387" y="485" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="398" y="499" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">le</text>
+<text x="18" y="518" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="40" y="518" font-size="12" fill="var(--fig-violet, #6733C4)">ab + le</text>
+<text x="226" y="518" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 284</text>
+<rect x="240" y="505" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="251" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġu</text>
+<rect x="264" y="505" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="271.5" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">n</text>
+<rect x="281" y="505" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="288.5" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="298" y="505" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="309" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">el</text>
+<rect x="322" y="505" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="333" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ie</text>
+<rect x="346" y="505" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="353.5" y="519" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="363" y="505" width="36" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="381" y="519" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">able</text>
+<text x="18" y="538" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="40" y="538" font-size="12" fill="var(--fig-violet, #6733C4)">Ġu + n</text>
+<text x="226" y="538" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 299</text>
+<rect x="240" y="525" width="29" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="254.5" y="539" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Ġun</text>
+<rect x="271" y="525" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="278.5" y="539" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b</text>
+<rect x="288" y="525" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="299" y="539" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">el</text>
+<rect x="312" y="525" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="323" y="539" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ie</text>
+<rect x="336" y="525" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="343.5" y="539" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="353" y="525" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="371" y="539" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">able</text>
+<text x="18" y="558" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="40" y="558" font-size="12" fill="var(--fig-violet, #6733C4)">b + el</text>
+<text x="226" y="558" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 6,411</text>
+<rect x="240" y="545" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="254.5" y="559" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġun</text>
+<rect x="271" y="545" width="29" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="285.5" y="559" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">bel</text>
+<rect x="302" y="545" width="22" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="313" y="559" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ie</text>
+<rect x="326" y="545" width="15" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="333.5" y="559" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">v</text>
+<rect x="343" y="545" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="361" y="559" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">able</text>
+<text x="18" y="578" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<text x="40" y="578" font-size="12" fill="var(--fig-violet, #6733C4)">ie + v</text>
+<text x="226" y="578" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 10,947</text>
+<rect x="240" y="565" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="254.5" y="579" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Ġun</text>
+<rect x="271" y="565" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="285.5" y="579" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">bel</text>
+<rect x="302" y="565" width="29" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="316.5" y="579" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">iev</text>
+<rect x="333" y="565" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="351" y="579" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">able</text>
+<text x="18" y="598" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<text x="40" y="598" font-size="12" fill="var(--fig-violet, #6733C4)">Ġun + bel</text>
+<text x="226" y="598" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 17,235</text>
+<rect x="240" y="585" width="50" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="265" y="599" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Ġunbel</text>
+<rect x="292" y="585" width="29" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="306.5" y="599" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">iev</text>
+<rect x="323" y="585" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="341" y="599" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">able</text>
+<text x="18" y="618" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<text x="40" y="618" font-size="12" fill="var(--fig-violet, #6733C4)">Ġunbel + iev</text>
+<text x="226" y="618" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 20,298</text>
+<rect x="240" y="605" width="71" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="275.5" y="619" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Ġunbeliev</text>
+<rect x="313" y="605" width="36" height="18" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<text x="331" y="619" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">able</text>
+<text x="18" y="638" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<text x="40" y="638" font-size="12" fill="var(--fig-violet, #6733C4)">Ġunbeliev + able</text>
+<text x="226" y="638" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">rank 24,223</text>
+<rect x="240" y="625" width="99" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="289.5" y="639" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Ġunbelievable</text>
+<text x="351" y="638" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="600">→ token id 24479</text>
+</svg>

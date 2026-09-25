@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 566" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>主线 C 的总账：每个数用几位存，以及每万亿 token 的 GPU 小时</title>
+
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 每个数的有效位数（含摊到每个数上的缩放因子）</text>
+<line x1="330" y1="48" x2="330" y2="322" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="330" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0 位</text>
+<line x1="415" y1="48" x2="415" y2="322" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="415" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4 位</text>
+<line x1="500" y1="48" x2="500" y2="322" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="500" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8 位</text>
+<line x1="585" y1="48" x2="585" y2="322" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="585" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12 位</text>
+<line x1="670" y1="48" x2="670" y2="322" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="670" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16 位</text>
+<text x="320" y="71" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">BF16（混合精度训练的计算格式）</text>
+<rect x="330" y="60" width="340" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="675" y="72" font-size="11" fill="var(--fig-muted, #74716A)">16 · 第 2 课 §6</text>
+<text x="320" y="101" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3 激活 FP8：E4M3 + 每 1×128 一个 FP32</text>
+<rect x="330" y="90" width="175.31" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="510.31" y="102" font-size="11" fill="var(--fig-muted, #74716A)">8.25 · 第 12 课 §3</text>
+<text x="320" y="131" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3 权重 FP8：E4M3 + 每 128×128 一个 FP32</text>
+<rect x="330" y="120" width="170.04" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="505.04" y="132" font-size="11" fill="var(--fig-muted, #74716A)">8.002 · 第 12 课 §3</text>
+<text x="320" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.2 MLA 缓存行：656 B / 576 维</text>
+<rect x="330" y="150" width="193.61" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="528.61" y="162" font-size="11" fill="var(--fig-muted, #74716A)">9.111 · 第 14 课 §7</text>
+<text x="320" y="191" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4 KV 条目：584 B / 512 维</text>
+<rect x="330" y="180" width="193.91" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="528.91" y="192" font-size="11" fill="var(--fig-muted, #74716A)">9.125 · 第 18 课 §7</text>
+<text x="320" y="221" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V2 部署时的 KV（平均）</text>
+<rect x="330" y="210" width="127.5" height="16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="462.5" y="222" font-size="11" fill="var(--fig-muted, #74716A)">6 · 第 9 课 §8</text>
+<text x="320" y="251" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4.1 SWA 条目：528 B / 512 维</text>
+<rect x="330" y="240" width="175.31" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="510.31" y="252" font-size="11" fill="var(--fig-muted, #74716A)">8.25 · 第 19 课 §5</text>
+<text x="320" y="281" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4.1 主 KV：E2M1 + 每 16 个一个 E4M3</text>
+<rect x="330" y="270" width="95.62" height="16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="430.62" y="282" font-size="11" fill="var(--fig-muted, #74716A)">4.5 · 第 19 课 §5</text>
+<text x="320" y="311" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4.1 索引器键：MXFP4（每 32 个一个 E8M0）</text>
+<rect x="330" y="300" width="90.31" height="16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="425.31" y="312" font-size="11" fill="var(--fig-muted, #74716A)">4.25 · 第 19 课 §5</text>
+<text x="10" y="356" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 每训练 10<tspan baseline-shift="super" font-size="11">12</tspan> 个 token 的 H800 GPU 小时，与模型算力利用率 MFU</text>
+<line x1="250" y1="380" x2="250" y2="500" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="250" y="376" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0K</text>
+<line x1="340.62" y1="380" x2="340.62" y2="500" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="340.62" y="376" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100K</text>
+<line x1="431.25" y1="380" x2="431.25" y2="500" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="431.25" y="376" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200K</text>
+<line x1="521.88" y1="380" x2="521.88" y2="500" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="521.88" y="376" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">300K</text>
+<text x="680" y="376" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">MFU</text>
+<text x="240" y="403" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">67B（稠密，激活 67.4B）</text>
+<rect x="250" y="391" width="272.42" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.5" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="528.42" y="404" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">300.6K</text>
+<text x="680" y="404" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">约 38%（估算）</text>
+<text x="240" y="443" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V2（MoE，激活 21B）</text>
+<rect x="250" y="431" width="156.6" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.5" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="412.6" y="444" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">172.8K</text>
+<text x="680" y="444" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">约 20%（估算）</text>
+<text x="240" y="483" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3（MoE + FP8，激活 37B）</text>
+<rect x="250" y="471" width="163.12" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.5" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="419.12" y="484" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">180K</text>
+<text x="680" y="484" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">38.9%（Insights）</text>
+<text x="10" y="522" font-size="12" fill="var(--fig-muted, #74716A)">(a) 橙色：6 位及以下；黄色：约 8–9 位；灰色：BF16。缓存行里 RoPE 维若用 BF16 存，会把整行的平均位数拉高。</text>
+<text x="10" y="540" font-size="12" fill="var(--fig-muted, #74716A)">(b) 三行不是同一种模型：67B 稠密、V2 与 V3 是 MoE；MFU 都按 BF16 峰值计，前两个是课里按 6N 的估算。</text>
+</svg>

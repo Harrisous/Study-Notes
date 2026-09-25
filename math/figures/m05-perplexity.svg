@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>困惑度 = 平均意外的指数</title>
+
+<line x1="62" y1="300" x2="262" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="62" y1="265.33" x2="262" y2="265.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="269.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="62" y1="230.67" x2="262" y2="230.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="234.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="62" y1="196" x2="262" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<line x1="62" y1="161.33" x2="262" y2="161.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="165.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<line x1="62" y1="126.67" x2="262" y2="126.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="130.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5</text>
+<line x1="62" y1="92" x2="262" y2="92" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="96" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<line x1="62" y1="57.33" x2="262" y2="57.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="61.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">7</text>
+<line x1="62" y1="300" x2="262" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="62" y1="40" x2="62" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="162" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">(a) 第 2 课的 4 个 token</text>
+<rect x="70.5" y="275.97" width="33" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="87" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="87" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="120.5" y="251.94" width="33" height="48.06" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="137" y="246.94" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1.39</text>
+<text x="137" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.25</text>
+<rect x="170.5" y="220.18" width="33" height="79.82" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="187" y="215.18" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">2.30</text>
+<text x="187" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1</text>
+<rect x="220.5" y="292.26" width="33" height="7.74" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="237" y="287.26" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.22</text>
+<text x="237" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="62" y1="260.09" x2="262" y2="260.09" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="162" y="147.47" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">平均 1.151 nats（虚线）</text>
+<text x="162" y="165.47" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">PPL = exp(1.151) = 3.16</text>
+<text x="162" y="334" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">模型给真实 token 的概率</text>
+<line x1="330" y1="300" x2="700" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="330" y1="265.33" x2="700" y2="265.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="269.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="330" y1="230.67" x2="700" y2="230.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="234.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="330" y1="196" x2="700" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<line x1="330" y1="161.33" x2="700" y2="161.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="165.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<line x1="330" y1="126.67" x2="700" y2="126.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="130.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5</text>
+<line x1="330" y1="92" x2="700" y2="92" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="96" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<line x1="330" y1="57.33" x2="700" y2="57.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="324" y="61.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">7</text>
+<line x1="330" y1="300" x2="700" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="330" y1="40" x2="330" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="515" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">(b) 9 个 0.5，1 个 0.001</text>
+<rect x="336.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="348.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="348.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="373.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="385.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="385.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="410.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="422.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="422.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="447.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="459.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="459.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="484.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="496.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="496.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="521.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="533.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="533.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="558.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="570.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="570.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="595.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="607.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="607.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="632.29" y="275.97" width="24.42" height="24.03" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="644.5" y="270.97" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.69</text>
+<text x="644.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<rect x="669.29" y="60.53" width="24.42" height="239.47" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="681.5" y="55.53" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">6.91</text>
+<text x="681.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.001</text>
+<line x1="330" y1="254.43" x2="700" y2="254.43" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="480" y="224.43" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">平均 1.315 nats（虚线）→ PPL = exp(1.315) = 3.72</text>
+<text x="480" y="242.43" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">若第 10 个也是 0.5：PPL = 2.00</text>
+<text x="505" y="334" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">模型给真实 token 的概率</text>
+<text x="640" y="78.13" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">一个 token 贡献了</text>
+<text x="640" y="94.13" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">53% 的总意外</text>
+<text x="480" y="137.07" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">对照：1 ÷ 概率的算术平均 = 1/0.4501 = 2.22</text>
+<text x="480" y="154.07" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">算术平均几乎看不出那个坏 token</text>
+<text x="20" y="170" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 170)">每个 token 的意外 −ln p（nats）</text>
+</svg>

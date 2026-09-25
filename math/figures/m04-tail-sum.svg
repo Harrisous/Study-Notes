@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>尾和公式：同一块面积竖着切与横着切</title>
+
+<text x="70" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">投机解码的一轮：接受率 α = 0.8，草稿长 γ = 3，产出 N ∈ {1, 2, 3, 4} 个 token</text>
+<rect x="70" y="92" width="225.28" height="208" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<rect x="295.28" y="144" width="56.32" height="156" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<rect x="351.6" y="196" width="70.4" height="104" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<rect x="422" y="248" width="88" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.15" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<line x1="70" y1="248" x2="510" y2="248" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72" y1="274" x2="508" y2="274" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="72" y1="269" x2="72" y2="279" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="508" y1="269" x2="508" y2="279" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<text x="528" y="279" font-size="12" fill="var(--fig-orange, #B4460C)">第 1 层宽 P(N ≥ 1) = 0.8<tspan baseline-shift="super" font-size="11">0</tspan> = 1</text>
+<line x1="70" y1="196" x2="422" y2="196" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72" y1="222" x2="420" y2="222" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="72" y1="217" x2="72" y2="227" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="420" y1="217" x2="420" y2="227" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<text x="528" y="227" font-size="12" fill="var(--fig-orange, #B4460C)">第 2 层宽 P(N ≥ 2) = 0.8<tspan baseline-shift="super" font-size="11">1</tspan> = 0.8</text>
+<line x1="70" y1="144" x2="351.6" y2="144" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72" y1="170" x2="349.6" y2="170" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="72" y1="165" x2="72" y2="175" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="349.6" y1="165" x2="349.6" y2="175" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<text x="528" y="175" font-size="12" fill="var(--fig-orange, #B4460C)">第 3 层宽 P(N ≥ 3) = 0.8<tspan baseline-shift="super" font-size="11">2</tspan> = 0.64</text>
+<line x1="70" y1="92" x2="295.28" y2="92" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72" y1="118" x2="293.28" y2="118" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="72" y1="113" x2="72" y2="123" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="293.28" y1="113" x2="293.28" y2="123" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<text x="528" y="123" font-size="12" fill="var(--fig-orange, #B4460C)">第 4 层宽 P(N ≥ 4) = 0.8<tspan baseline-shift="super" font-size="11">3</tspan> = 0.512</text>
+<line x1="70" y1="300" x2="516" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="70" y1="300" x2="70" y2="84" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="66" y1="300" x2="70" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="62" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="66" y1="248" x2="70" y2="248" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="62" y="252" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="66" y1="196" x2="70" y2="196" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="62" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="66" y1="144" x2="70" y2="144" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="62" y="148" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<line x1="66" y1="92" x2="70" y2="92" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="62" y="96" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<text x="34" y="196" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 34 196)">高度 = N 的取值</text>
+<line x1="70" y1="300" x2="70" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="70" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="158" y1="300" x2="158" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="158" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="246" y1="300" x2="246" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="246" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="334" y1="300" x2="334" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="334" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="422" y1="300" x2="422" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="422" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="510" y1="300" x2="510" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="510" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="182.64" y="334" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">N=4</text>
+<text x="182.64" y="350" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.512</text>
+<text x="323.44" y="334" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">N=3</text>
+<text x="323.44" y="350" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.128</text>
+<text x="386.8" y="334" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">N=2</text>
+<text x="386.8" y="350" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.16</text>
+<text x="466" y="334" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">N=1</text>
+<text x="466" y="350" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.2</text>
+<text x="70" y="372" font-size="12" fill="var(--fig-blue, #1F5FA8)">柱宽 = P(N = n)，柱高 = n，柱面积 = n·P(N = n)</text>
+<text x="70" y="52" font-size="12" fill="var(--fig-blue, #1F5FA8)">竖着切：4×0.512 + 3×0.128 + 2×0.16 + 1×0.2 = 2.952</text>
+<text x="70" y="70" font-size="12" fill="var(--fig-orange, #B4460C)">横着切：1 + 0.8 + 0.64 + 0.512 = 2.952 = (1 − α<tspan baseline-shift="super" font-size="11">4</tspan>) / (1 − α)</text>
+</svg>

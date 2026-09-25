@@ -1,0 +1,162 @@
+/* Additions for the Markdown-authored (mostly Chinese) lessons.
+   Loaded after lesson-html-tailwind/assets/lesson.css; semantic tokens only. */
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong",
+    ui-serif, Georgia, "Times New Roman", SimSun, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Cascadia Mono",
+    "Microsoft YaHei Mono", monospace;
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+}
+
+@layer components {
+  /* CJK body text wants more leading and a narrower measure than Latin text */
+  .zh { font-size: 16.5px; line-height: 1.82; letter-spacing: .01em; }
+  .zh .shell { max-width: 50rem; }
+  .zh .prose-lesson h2, .zh .prose-lesson h3 { letter-spacing: 0; text-wrap: balance; }
+  .zh .box, .zh .pre { line-height: 1.78; }
+  .zh .tbl { line-height: 1.6; }
+  .prose-lesson em { font-style: normal; font-weight: 600; color: var(--color-ink); }
+  .prose-lesson i.lat, .prose-lesson em.lat { font-style: italic; font-weight: inherit; }
+  .en { font-family: var(--font-sans); letter-spacing: 0; }
+
+  /* cover */
+  .cover { padding: 2.5rem 0 .5rem; }
+  .cover h1 {
+    font-family: var(--font-serif); font-size: clamp(1.9rem, 5.2vw, 2.7rem);
+    line-height: 1.22; letter-spacing: -.01em; margin: .7rem 0 .8rem; font-weight: 700;
+    text-wrap: balance;
+  }
+  .cover .lede { font-size: 1.12rem; margin: 0 0 1.6rem; }
+  .cover .meta { font-size: .82rem; color: var(--color-muted); margin: -.8rem 0 1.6rem; }
+  .legend { display: grid; gap: .75rem; margin: 1.2rem 0 1.6rem; }
+  @media (min-width: 640px) { .legend { grid-template-columns: 1fr 1fr; } }
+  .legend > * { margin: 0 !important; }
+
+  /* page heading block */
+  .ph { margin: 2.2rem 0 1.4rem; }
+  .ph .kicker { display: block; margin-bottom: .35rem; }
+  .ph h2 { margin: 0; }
+
+  /* display math outside an .eq box */
+  .math-d { overflow-x: auto; overflow-y: hidden; margin: 1rem 0; padding: .1rem 0; }
+
+  /* worked example: neutral surface with an ink rule, it is not a semantic callout */
+  .box-ex { background: var(--color-surface); border-left: 3px solid var(--color-ink-2);
+    border-radius: 0 11px 11px 0; }
+  .box-ex .box-h { color: var(--color-ink-2); }
+
+  /* analogy: violet-free, uses the amber rule lightly so it reads as "a picture, not the math" */
+  .box-ana { background: var(--color-surface-2); border-style: dashed; }
+  .box-ana .box-h { color: var(--color-ink-2); }
+
+  /* exercises with a collapsible answer */
+  .box-quiz { background: var(--color-surface); }
+  .box-quiz .box-h { color: var(--color-blue); }
+  details.ans { margin-top: .8rem; border-top: 1px dashed var(--color-rule); padding-top: .6rem; }
+  details.ans > summary {
+    cursor: pointer; font-size: .82rem; font-weight: 650; color: var(--color-blue);
+    list-style: none; user-select: none;
+  }
+  details.ans > summary::-webkit-details-marker { display: none; }
+  details.ans > summary::before { content: "\25B8\00a0"; }
+  details.ans[open] > summary::before { content: "\25BE\00a0"; }
+  details.ans > .ans-b { margin-top: .6rem; }
+  details.ans > .ans-b > :last-child { margin-bottom: 0; }
+
+  /* side-by-side boxes */
+  .cols { display: grid; gap: .9rem; margin: 1.4rem 0; }
+  @media (min-width: 700px) { .cols { grid-template-columns: 1fr 1fr; } }
+  .cols > .col > :first-child { margin-top: 0; }
+  .cols > .col > :last-child { margin-bottom: 0; }
+
+  /* local-edit marker that shows in the local build only */
+  .todo { background: var(--color-orange-soft); border: 1px dashed var(--color-orange);
+    border-radius: 8px; padding: .5rem .8rem; font-size: .85rem; color: var(--color-orange); }
+
+  /* figure numbering line above a figure */
+  .fig .fig-t { margin-bottom: .7rem; }
+  .fig svg text { font-family: var(--font-sans); }
+  .fig.wide { margin-left: -1rem; margin-right: -1rem; }
+  @media (max-width: 700px) { .fig.wide { margin-left: 0; margin-right: 0; } }
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig-scroll > svg { min-width: 36rem; }
+
+  /* syntax-highlighted code (Pygments, dark in both themes like the base pre) */
+  .prose-lesson pre .c, .prose-lesson pre .c1, .prose-lesson pre .cm { color: #8B949E; font-style: italic; }
+  .prose-lesson pre .k, .prose-lesson pre .kn, .prose-lesson pre .kd, .prose-lesson pre .kc,
+  .prose-lesson pre .ow { color: #FF7B72; }
+  .prose-lesson pre .s, .prose-lesson pre .s1, .prose-lesson pre .s2, .prose-lesson pre .sd { color: #A5D6FF; }
+  .prose-lesson pre .mi, .prose-lesson pre .mf, .prose-lesson pre .m { color: #79C0FF; }
+  .prose-lesson pre .nf, .prose-lesson pre .fm { color: #D2A8FF; }
+  .prose-lesson pre .nc { color: #F0C674; }
+  .prose-lesson pre .nb, .prose-lesson pre .bp { color: #FFA657; }
+  .prose-lesson pre .o { color: #E4E9F0; }
+
+  /* course-level nav on the cover */
+  .course-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; }
+  .course-nav a { font-size: .8rem; text-decoration: none; border: 1px solid var(--color-rule);
+    border-radius: 999px; padding: .2rem .7rem; color: var(--color-ink-2); background: var(--color-surface); }
+  .course-nav a:hover { border-color: var(--color-blue); color: var(--color-blue); }
+
+  /* bar counter, no Tailwind utilities available in this build */
+  .ctr { color: var(--color-muted); font-size: .75rem; white-space: nowrap; display: none; }
+  @media (min-width: 640px) { .ctr { display: inline; } }
+
+  .ref .k2 { font-size: .72rem; color: var(--color-muted); letter-spacing: .06em; }
+  .refs-h { font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 700;
+    color: var(--color-muted); margin: 2rem 0 .4rem; }
+}
+
+@media print {
+  details.ans { display: block; }
+  details.ans > .ans-b { display: block !important; }
+}
+
+@layer components {
+  /* The base design uppercases small labels. In these lessons labels hold math and Greek:
+     uppercasing turns KaTeX's $d_h$ into D_H and θ into Θ, which changes the mathematics. */
+  .zh .box-h, .zh .eq-l, .zh .deriv-h, .zh .tbl th { text-transform: none; }
+  /* a derivation row is one formula: never wrap it mid-expression (the .deriv box scrolls) */
+  .deriv td:not(.step):not(.why) { white-space: nowrap; }
+  /* CJK titles: break at punctuation/spaces, not inside a word (形|状); still break if forced */
+  .cover h1, .ph h2 { word-break: keep-all; overflow-wrap: anywhere; }
+  /* display math that shares a paragraph with text gets no .math-d wrapper; let it scroll
+     instead of widening the whole page on a phone */
+  .prose-lesson .katex-display { overflow-x: auto; overflow-y: hidden; padding: .1rem 0; }
+  /* the base CSS hides derivation reasons below 700px; the reasons are the point of a
+     derivation, so on phones stack each reason under its formula instead */
+  @media (max-width: 700px) {
+    .zh .deriv table, .zh .deriv tbody { display: block; }
+    .zh .deriv tr { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: .2rem; }
+    .zh .deriv td.why { display: block; grid-column: 2; text-align: left; min-width: 0;
+      padding: 0 .25rem .55rem; }
+  }
+}
+
+@layer components {
+  /* the equation tag is absolutely placed bottom-right; keep notes (and a note-less formula) clear of it */
+  .zh .eq .eq-n { padding-right: 3.8rem; }
+  .zh .eq:not(:has(.eq-n)) { padding-bottom: 1.6rem; }
+  /* plain Markdown blockquotes: a quoted source passage */
+  .prose-lesson blockquote {
+    margin: 1.1rem 0; padding: .35rem 0 .35rem 1rem; border-left: 3px solid var(--color-rule);
+    color: var(--color-ink-2);
+  }
+  .prose-lesson blockquote > :last-child { margin-bottom: 0; }
+  .prose-lesson blockquote p { margin: 0 0 .5rem; }
+  .nobr { white-space: nowrap; }
+  /* Artifact variant renders MathML natively; Chrome ignores mtable's rowspacing/columnspacing
+     attributes, so matrices collapse into overlapping rows. Space the cells with CSS instead;
+     aligned/cases tables (right/left column pairs) keep tight horizontal spacing. */
+  math mtable > mtr > mtd { padding: .2em .5em; }
+  math mtable[columnalign^="right left"] > mtr > mtd,
+  math mtable[columnalign^="left left"] > mtr > mtd { padding-left: 0; padding-right: .15em; }
+  .toc .tsub { color: var(--color-muted); font-size: .84rem; font-weight: 400; }
+  .cites { white-space: nowrap; }
+  .cite-sep { font-size: .68em; vertical-align: super; line-height: 0; color: var(--color-muted); }
+}

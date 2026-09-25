@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Sinkhorn–Knopp 的一个 3×3 算例：每一步只能把一组和变成 1，另一组被打乱，但偏差一轮比一轮小</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="34" y="56" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① A（行和、列和都不是 1）</text>
+<rect x="36" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="57" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="82" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="103" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="128" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="149" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="36" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="57" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="82" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="103" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="128" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="149" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="36" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="57" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="82" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="103" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="128" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.56" rx="4"/>
+<text x="149" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<path d="M35 70 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M171 70 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="182" y="98" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">4</text>
+<text x="182" y="144" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">5</text>
+<text x="182" y="190" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">11</text>
+<text x="57" y="226" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">4</text>
+<text x="103" y="226" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">8</text>
+<text x="149" y="226" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">8</text>
+<text x="182" y="226" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="182" y="56" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<line x1="214" y1="140" x2="282" y2="140" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<text x="248" y="130" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">T<tspan baseline-shift="sub" font-size="11">c</tspan></text>
+<text x="248" y="160" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">除以列和</text>
+<text x="294" y="56" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② T<tspan baseline-shift="sub" font-size="11">c</tspan>(A)：列和变 1</text>
+<rect x="296" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="317" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<rect x="342" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<text x="363" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/8</text>
+<rect x="388" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<text x="409" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/8</text>
+<rect x="296" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="4"/>
+<text x="317" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/4</text>
+<rect x="342" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="4"/>
+<text x="363" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3/8</text>
+<rect x="388" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<text x="409" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/8</text>
+<rect x="296" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="4"/>
+<text x="317" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/4</text>
+<rect x="342" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="363" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<rect x="388" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.43" rx="4"/>
+<text x="409" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3/4</text>
+<path d="M295 70 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M431 70 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="442" y="98" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">3/4</text>
+<text x="442" y="144" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">3/4</text>
+<text x="442" y="190" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">3/2</text>
+<text x="317" y="226" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="363" y="226" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="409" y="226" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="442" y="226" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="442" y="56" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<line x1="474" y1="140" x2="536" y2="140" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<text x="505" y="130" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">T<tspan baseline-shift="sub" font-size="11">r</tspan></text>
+<text x="505" y="160" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">除以行和</text>
+<text x="548" y="56" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ M<tspan baseline-shift="super" font-size="11">(1)</tspan>：行和变 1</text>
+<rect x="550" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.39" rx="4"/>
+<text x="571" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2/3</text>
+<rect x="596" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<text x="617" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/6</text>
+<rect x="642" y="72" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<text x="663" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/6</text>
+<rect x="550" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="4"/>
+<text x="571" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/3</text>
+<rect x="596" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="617" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<rect x="642" y="118" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<text x="663" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/6</text>
+<rect x="550" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<text x="571" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/6</text>
+<rect x="596" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="4"/>
+<text x="617" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/3</text>
+<rect x="642" y="164" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="663" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<path d="M549 70 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M685 70 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="696" y="98" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="696" y="144" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="696" y="190" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="571" y="226" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">7/6</text>
+<text x="617" y="226" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="663" y="226" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">5/6</text>
+<text x="696" y="226" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="696" y="56" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<path d="M618 238 C 618 278 104 236 104 276" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ah-muted)"/>
+<text x="351" y="278" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 2 轮：再做一次 T<tspan baseline-shift="sub" font-size="11">c</tspan>，再做一次 T<tspan baseline-shift="sub" font-size="11">r</tspan></text>
+<text x="34" y="302" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">④ T<tspan baseline-shift="sub" font-size="11">c</tspan>(M<tspan baseline-shift="super" font-size="11">(1)</tspan>)：列和又变 1</text>
+<rect x="36" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" rx="4"/>
+<text x="57" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/7</text>
+<rect x="82" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="4"/>
+<text x="103" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/6</text>
+<rect x="128" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="4"/>
+<text x="149" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/5</text>
+<rect x="36" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" rx="4"/>
+<text x="57" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2/7</text>
+<rect x="82" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="103" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<rect x="128" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="4"/>
+<text x="149" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/5</text>
+<rect x="36" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" rx="4"/>
+<text x="57" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/7</text>
+<rect x="82" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="4"/>
+<text x="103" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/3</text>
+<rect x="128" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="4"/>
+<text x="149" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3/5</text>
+<path d="M35 316 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M171 316 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="182" y="344" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">0.938</text>
+<text x="182" y="390" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">0.986</text>
+<text x="182" y="436" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">1.076</text>
+<text x="57" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="103" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="149" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="182" y="472" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="182" y="302" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<line x1="224" y1="386" x2="282" y2="386" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<text x="253" y="376" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">T<tspan baseline-shift="sub" font-size="11">r</tspan></text>
+<text x="253" y="406" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle"></text>
+<text x="294" y="302" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">⑤ M<tspan baseline-shift="super" font-size="11">(2)</tspan>（小数）</text>
+<rect x="296" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="4"/>
+<text x="317" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.609</text>
+<rect x="342" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.15" rx="4"/>
+<text x="363" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.178</text>
+<rect x="388" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="4"/>
+<text x="409" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.213</text>
+<rect x="296" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" rx="4"/>
+<text x="317" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.290</text>
+<rect x="342" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.31" rx="4"/>
+<text x="363" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.507</text>
+<rect x="388" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="4"/>
+<text x="409" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.203</text>
+<rect x="296" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" rx="4"/>
+<text x="317" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.133</text>
+<rect x="342" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="4"/>
+<text x="363" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.310</text>
+<rect x="388" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.34" rx="4"/>
+<text x="409" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.558</text>
+<path d="M295 316 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M431 316 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="442" y="344" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="442" y="390" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="442" y="436" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="317" y="472" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">1.032</text>
+<text x="363" y="472" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">0.995</text>
+<text x="409" y="472" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">0.974</text>
+<text x="442" y="472" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="442" y="302" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<line x1="484" y1="386" x2="536" y2="386" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<text x="510" y="376" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">……</text>
+<text x="510" y="406" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">共 20 轮</text>
+<text x="548" y="302" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">⑥ 极限：行和、列和都是 1</text>
+<rect x="550" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="4"/>
+<text x="571" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.595</text>
+<rect x="596" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.15" rx="4"/>
+<text x="617" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.182</text>
+<rect x="642" y="318" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="4"/>
+<text x="663" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.223</text>
+<rect x="550" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" rx="4"/>
+<text x="571" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.279</text>
+<rect x="596" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.32" rx="4"/>
+<text x="617" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.511</text>
+<rect x="642" y="364" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="4"/>
+<text x="663" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.210</text>
+<rect x="550" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<text x="571" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.126</text>
+<rect x="596" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="4"/>
+<text x="617" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.307</text>
+<rect x="642" y="410" width="42" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.34" rx="4"/>
+<text x="663" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.567</text>
+<path d="M549 316 h-5 v138 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M685 316 h5 v138 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="696" y="344" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1.000</text>
+<text x="696" y="390" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1.000</text>
+<text x="696" y="436" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1.000</text>
+<text x="571" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1.000</text>
+<text x="617" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1.000</text>
+<text x="663" y="472" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1.000</text>
+<text x="696" y="472" font-size="11" fill="var(--fig-muted, #74716A)">← 列和</text>
+<text x="696" y="302" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<text x="34" y="506" font-size="12" fill="var(--fig-muted, #74716A)">绿字 = 等于 1 的和，红字 = 不等于 1 的和。最大列和误差：第 1 轮后 1/6 ≈ 0.167，第 2 轮后 0.032，之后每轮约乘 0.18。</text>
+</svg>

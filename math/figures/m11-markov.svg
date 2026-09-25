@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个三状态的天气马尔可夫链：转移矩阵的每一行加起来是 1，每一列不必</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker></defs>
+<text x="24" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 状态图：箭头上的数 = 明天变成那个状态的概率</text>
+<path d="M208.4 156.2 Q146.6 214.3 116.7 289.5" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.95" marker-end="url(#ah-blue)"/>
+<text x="135.05" y="210.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.15</text>
+<path d="M242.4 165.2 Q274.6 243.7 334.1 298.5" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.45" marker-end="url(#ah-blue)"/>
+<text x="263.05" y="255.68" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.05</text>
+<path d="M127.6 301.8 Q189.4 243.7 219.3 168.5" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+<text x="200.95" y="255.68" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.2</text>
+<path d="M134.0 330.0 Q232.0 348.0 326.0 330.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+<text x="232" y="366" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.2</text>
+<path d="M349.6 292.8 Q317.4 214.3 257.9 159.5" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.7" marker-end="url(#ah-blue)"/>
+<text x="328.95" y="210.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.1</text>
+<path d="M330.0 314.0 Q232.0 296.0 138.0 314.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.7" marker-end="url(#ah-blue)"/>
+<text x="232" y="286" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.3</text>
+<path d="M253.0 115.0 C271.0 70.0 193.0 70.0 211.0 115.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5.2" marker-end="url(#ah-blue)"/>
+<text x="232" y="63.5" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.8</text>
+<path d="M77.2 309.1 C28.8 307.0 54.6 380.6 91.1 348.8" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="4.2" marker-end="url(#ah-blue)"/>
+<text x="31.46" y="349.29" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">0.6</text>
+<path d="M372.9 348.8 C409.4 380.6 435.2 307.0 386.8 309.1" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="4.2" marker-end="url(#ah-blue)"/>
+<text x="432.54" y="349.29" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">0.6</text>
+<circle cx="232" cy="136" r="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="232" y="142" font-size="16" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">晴</text>
+<circle cx="104" cy="322" r="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="104" y="328" font-size="16" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">阴</text>
+<circle cx="360" cy="322" r="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="360" y="328" font-size="16" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">雨</text>
+<text x="466" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 转移矩阵 P：第 i 行 = 今天是 i 时明天的分布</text>
+<text x="536" y="66" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">明天晴</text>
+<text x="588" y="66" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">明天阴</text>
+<text x="640" y="66" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">明天雨</text>
+<text x="502" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">今天晴</text>
+<rect x="512" y="78" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.48" rx="5"/>
+<text x="536" y="107" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.8</text>
+<rect x="564" y="78" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.15" rx="5"/>
+<text x="588" y="107" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.15</text>
+<rect x="616" y="78" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.11" rx="5"/>
+<text x="640" y="107" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.05</text>
+<text x="676" y="107" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">行和 1</text>
+<text x="502" y="158" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">今天阴</text>
+<rect x="512" y="130" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="5"/>
+<text x="536" y="159" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2</text>
+<rect x="564" y="130" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="5"/>
+<text x="588" y="159" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="616" y="130" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="5"/>
+<text x="640" y="159" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2</text>
+<text x="676" y="159" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">行和 1</text>
+<text x="502" y="210" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">今天雨</text>
+<rect x="512" y="182" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" rx="5"/>
+<text x="536" y="211" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="564" y="182" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="5"/>
+<text x="588" y="211" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="616" y="182" width="48" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="5"/>
+<text x="640" y="211" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<text x="676" y="211" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">行和 1</text>
+<text x="536" y="252" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">1.1</text>
+<text x="588" y="252" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">1.05</text>
+<text x="640" y="252" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">0.85</text>
+<text x="676" y="252" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">列和 ≠ 1</text>
+<text x="466" y="284" font-size="12" fill="var(--fig-muted, #74716A)">从“今天晴”出发，每天的分布（行向量乘 P）：</text>
+<text x="474" y="306" font-size="12" fill="var(--fig-ink, #1C1B19)">p₀ = (1, 0, 0)，和为 1</text>
+<text x="474" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)">p₁ = (0.8, 0.15, 0.05)，和为 1</text>
+<text x="474" y="350" font-size="12" fill="var(--fig-ink, #1C1B19)">p₂ = (0.675, 0.225, 0.1)，和为 1</text>
+<text x="474" y="372" font-size="12" fill="var(--fig-ink, #1C1B19)">p₃ = (0.595, 0.26625, 0.13875)，和为 1</text>
+</svg>

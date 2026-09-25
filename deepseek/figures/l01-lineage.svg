@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 548" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>从编码器–解码器 Transformer 到仅解码器的 GPT-1 与 GPT-2</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="8" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) Transformer（2017）</text>
+<text x="8" y="40" font-size="12" fill="var(--fig-muted, #74716A)">编码器–解码器，Post-LN，N = 6</text>
+<rect x="10" y="52" width="108" height="38" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="6" stroke-dasharray="4 3"/>
+<text x="64" y="67.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">输入嵌入</text>
+<text x="64" y="83.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">+ 正弦位置</text>
+<rect x="10" y="100" width="108" height="203" fill="var(--fig-muted, #74716A)" fill-opacity="0.04" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="9" stroke-dasharray="4 3"/>
+<rect x="18" y="128" width="92" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<text x="64" y="144.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">多头自注意力</text>
+<rect x="18" y="170" width="92" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<text x="64" y="186.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">Add &amp; Norm</text>
+<rect x="18" y="212" width="92" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<text x="64" y="228.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">FFN（ReLU）</text>
+<rect x="18" y="254" width="92" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<text x="64" y="270.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">Add &amp; Norm</text>
+<text x="64" y="300" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">编码器 ×6</text>
+<text x="64" y="330" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">✕ GPT 整个删掉</text>
+<line x1="118" y1="190" x2="150" y2="190" stroke="var(--fig-red, #A3231C)" stroke-width="1.1" stroke-dasharray="4 3" marker-end="url(#ah-red)"/>
+<rect x="146" y="52" width="150" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="221" y="67.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">输出嵌入（右移一位）</text>
+<text x="221" y="83.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ 正弦位置</text>
+<line x1="221" y1="90" x2="221" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="134" y="100" width="168" height="203" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.02" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="9" stroke-dasharray="5 4"/>
+<text x="300" y="297" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-weight="600">×6</text>
+<rect x="150" y="112" width="142" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="221" y="128.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">掩码多头自注意力</text>
+<rect x="166" y="143" width="110" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="221" y="159.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add &amp; Norm</text>
+<line x1="221" y1="136" x2="221" y2="143" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="150" y="174" width="142" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.04" stroke="var(--fig-red, #A3231C)" stroke-width="1.1" rx="6" stroke-dasharray="4 3"/>
+<text x="221" y="190.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">交叉注意力</text>
+<line x1="158" y1="186" x2="284" y2="186" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<line x1="221" y1="167" x2="221" y2="174" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="150" y="205" width="142" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.04" stroke="var(--fig-red, #A3231C)" stroke-width="1.1" rx="6" stroke-dasharray="4 3"/>
+<text x="221" y="221.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">Add &amp; Norm</text>
+<line x1="158" y1="217" x2="284" y2="217" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<line x1="221" y1="198" x2="221" y2="205" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="150" y="236" width="142" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="221" y="252.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FFN（ReLU）</text>
+<line x1="221" y1="229" x2="221" y2="236" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="166" y="267" width="110" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="221" y="283.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add &amp; Norm</text>
+<line x1="221" y1="260" x2="221" y2="267" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M180.0 108.0 H142.0 V155.0 H164.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<path d="M180.0 232.0 H142.0 V279.0 H164.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<line x1="221" y1="291" x2="221" y2="331" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="156" y="331" width="130" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="221" y="347.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Linear（共享嵌入）</text>
+<line x1="221" y1="355" x2="221" y2="367" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="166" y="367" width="110" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="221" y="383.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Softmax</text>
+<text x="326" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) GPT-1（2018）</text>
+<text x="326" y="40" font-size="12" fill="var(--fig-muted, #74716A)">仅解码器，Post-LN，12 层</text>
+<rect x="342" y="52" width="168" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="426" y="67.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">词嵌入</text>
+<text x="426" y="83.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ 可学习位置</text>
+<line x1="426" y1="90" x2="426" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="330" y="100" width="186" height="203" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.02" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="9" stroke-dasharray="5 4"/>
+<text x="514" y="297" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-weight="600">×12</text>
+<rect x="346" y="112" width="160" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="426" y="128.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">掩码多头自注意力</text>
+<rect x="362" y="163.67" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="426" y="180.35" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add &amp; Norm</text>
+<line x1="426" y1="136" x2="426" y2="163.67" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="346" y="215.33" width="160" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="426" y="232.01" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FFN（GELU）</text>
+<line x1="426" y1="187.67" x2="426" y2="215.33" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="362" y="267" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="426" y="283.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add &amp; Norm</text>
+<line x1="426" y1="239.33" x2="426" y2="267" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M376.0 108.0 H338.0 V175.7 H360.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<path d="M376.0 211.3 H338.0 V279.0 H360.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<line x1="426" y1="291" x2="426" y2="331" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="356" y="331" width="140" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="426" y="347.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">× W<tspan baseline-shift="sub" font-size="11">e</tspan><tspan baseline-shift="super" font-size="11" dx="-6.05">⊤</tspan>（共享）</text>
+<line x1="426" y1="355" x2="426" y2="367" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="356" y="367" width="140" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="426" y="383.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Softmax</text>
+<text x="552" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(c) GPT-2（2019）</text>
+<text x="552" y="40" font-size="12" fill="var(--fig-muted, #74716A)">仅解码器，Pre-LN，L = 12–48 层</text>
+<rect x="568" y="52" width="168" height="38" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="652" y="67.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">词嵌入</text>
+<text x="652" y="83.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ 可学习位置</text>
+<line x1="652" y1="90" x2="652" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="556" y="100" width="186" height="203" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.02" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="9" stroke-dasharray="5 4"/>
+<text x="740" y="297" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-weight="600">×L</text>
+<rect x="588" y="112" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="128.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LayerNorm</text>
+<rect x="572" y="143" width="160" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="652" y="159.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">掩码多头自注意力</text>
+<line x1="652" y1="136" x2="652" y2="143" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="588" y="174" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="190.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add</text>
+<line x1="652" y1="167" x2="652" y2="174" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="588" y="205" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="221.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LayerNorm</text>
+<line x1="652" y1="198" x2="652" y2="205" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="572" y="236" width="160" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="252.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FFN（GELU）</text>
+<line x1="652" y1="229" x2="652" y2="236" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="588" y="267" width="128" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="283.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Add</text>
+<line x1="652" y1="260" x2="652" y2="267" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M602.0 108.0 H564.0 V186.0 H586.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<path d="M602.0 201.0 H564.0 V279.0 H586.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<line x1="652" y1="291" x2="652" y2="321" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="588" y="321" width="128" height="24" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="6"/>
+<text x="652" y="337.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">最终 LayerNorm</text>
+<line x1="652" y1="345" x2="652" y2="357" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="582" y="357" width="140" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="373.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">× <tspan font-weight="700">E</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan>（共享）</text>
+<line x1="652" y1="381" x2="652" y2="393" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="582" y="393" width="140" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="652" y="409.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Softmax</text>
+<line x1="8" y1="416" x2="752" y2="416" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="8" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">每个子层之后：</text>
+<text x="8" y="456" font-size="12" fill="var(--fig-muted, #74716A)">LayerNorm(x + 子层(x))</text>
+<text x="8" y="476" font-size="12" fill="var(--fig-muted, #74716A)">编码器的输出经交叉注意力</text>
+<text x="8" y="496" font-size="12" fill="var(--fig-muted, #74716A)">送进解码器</text>
+<text x="326" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">相对 (a)：</text>
+<text x="326" y="456" font-size="12" fill="var(--fig-muted, #74716A)">删去编码器与交叉注意力</text>
+<text x="326" y="476" font-size="12" fill="var(--fig-muted, #74716A)">位置改为可学习的表 P</text>
+<text x="326" y="496" font-size="12" fill="var(--fig-muted, #74716A)">ReLU → GELU；输出层仍共享嵌入</text>
+<text x="552" y="436" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">相对 (b)：</text>
+<text x="552" y="456" font-size="12" fill="var(--fig-muted, #74716A)">LN 移到每个子层的输入</text>
+<text x="552" y="476" font-size="12" fill="var(--fig-muted, #74716A)">最后加一个 LayerNorm</text>
+<text x="552" y="496" font-size="12" fill="var(--fig-muted, #74716A)">残差层初始化再乘 1/√N</text>
+<text x="8" y="528" font-size="12" fill="var(--fig-muted, #74716A)">红色删除线 = GPT 去掉的部分；左侧细箭头 = 残差连接（跳过子层，直接加到 Add 上）</text>
+</svg>

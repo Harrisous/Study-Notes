@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 474" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>CSA2 的三种模式：Full、Reindex、Reuse 各自在本层算什么、借什么</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="8" y="34" width="240" height="302" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.35" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="238" y="54" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">Full 模式</text>
+<rect x="16" y="60" width="92" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="5"/>
+<text x="62" y="77.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力输出</text>
+<rect x="16" y="106" width="136" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="84" y="123.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">核心注意力</text>
+<rect x="64" y="154" width="84" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="106" y="171.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">拼接</text>
+<rect x="158" y="154" width="84" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="200" y="171.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选中的主 KV</text>
+<rect x="92" y="202" width="60" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="122" y="219.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选择</text>
+<line x1="62" y1="106" x2="62" y2="86" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="106" y1="154" x2="106" y2="132" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="158" y1="167" x2="150" y2="167" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M138.0 202.0 L138.0 191.0 L198.0 191.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="198" y1="191" x2="198" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="14" y="288" width="40" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="34" y="305.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 Q</text>
+<rect x="58" y="288" width="50" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="83" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SWA KV</text>
+<line x1="34" y1="288" x2="34" y2="134" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="83" y1="288" x2="83" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="112" y="288" width="42" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="133" y="305.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 KV</text>
+<rect x="158" y="288" width="42" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="179" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引键</text>
+<rect x="204" y="288" width="40" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="224" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引 Q</text>
+<text x="179" y="326" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">索引键由主 KV 投影</text>
+<line x1="133" y1="288" x2="133" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="164" y="248" width="80" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="204" y="265.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引器</text>
+<rect x="184" y="202" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="214" y="219.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">top-k</text>
+<line x1="179" y1="288" x2="179" y2="274" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="225" y1="288" x2="225" y2="274" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="214" y1="248" x2="214" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="184" y1="215" x2="154" y2="215" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="260" y="34" width="240" height="302" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.35" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="490" y="54" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">Reindex 模式</text>
+<rect x="268" y="60" width="92" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="5"/>
+<text x="314" y="77.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力输出</text>
+<rect x="268" y="106" width="136" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="336" y="123.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">核心注意力</text>
+<rect x="316" y="154" width="84" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="358" y="171.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">拼接</text>
+<rect x="410" y="154" width="84" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="452" y="171.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选中的主 KV</text>
+<rect x="344" y="202" width="60" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="374" y="219.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选择</text>
+<line x1="314" y1="106" x2="314" y2="86" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="358" y1="154" x2="358" y2="132" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="410" y1="167" x2="402" y2="167" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M390.0 202.0 L390.0 191.0 L450.0 191.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="450" y1="191" x2="450" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="266" y="288" width="40" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="286" y="305.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 Q</text>
+<rect x="310" y="288" width="50" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="335" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SWA KV</text>
+<line x1="286" y1="288" x2="286" y2="134" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="335" y1="288" x2="335" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="456" y="288" width="40" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="476" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引 Q</text>
+<rect x="364" y="352" width="42" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="385" y="369.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 KV</text>
+<rect x="410" y="352" width="42" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="431" y="369.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引键</text>
+<line x1="385" y1="352" x2="385" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="416" y="248" width="80" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="456" y="265.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">索引器</text>
+<rect x="436" y="202" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="466" y="219.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">top-k</text>
+<line x1="431" y1="352" x2="431" y2="274" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="477" y1="288" x2="477" y2="274" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="466" y1="248" x2="466" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="436" y1="215" x2="406" y2="215" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="512" y="34" width="240" height="302" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.35" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="742" y="54" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">Reuse 模式</text>
+<rect x="520" y="60" width="92" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="5"/>
+<text x="566" y="77.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力输出</text>
+<rect x="520" y="106" width="136" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="588" y="123.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">核心注意力</text>
+<rect x="568" y="154" width="84" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="610" y="171.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">拼接</text>
+<rect x="662" y="154" width="84" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="704" y="171.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选中的主 KV</text>
+<rect x="596" y="202" width="60" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="626" y="219.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">选择</text>
+<line x1="566" y1="106" x2="566" y2="86" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="610" y1="154" x2="610" y2="132" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="662" y1="167" x2="654" y2="167" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M642.0 202.0 L642.0 191.0 L702.0 191.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="702" y1="191" x2="702" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="518" y="288" width="40" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="538" y="305.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 Q</text>
+<rect x="562" y="288" width="50" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="587" y="305.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SWA KV</text>
+<line x1="538" y1="288" x2="538" y2="134" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="587" y1="288" x2="587" y2="182" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="616" y="352" width="42" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="5"/>
+<text x="637" y="369.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">主 KV</text>
+<rect x="682" y="352" width="60" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="5"/>
+<text x="712" y="369.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">top-k 索引</text>
+<line x1="637" y1="352" x2="637" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M712.0 352.0 L712.0 215.0 L662.0 215.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3"/>
+<line x1="664" y1="215" x2="658" y2="215" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<text x="677" y="270" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">不跑索引器</text>
+<text x="380" y="396" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">主 KV、索引键借自最近的 Full 层</text>
+<text x="632" y="396" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">主 KV 借自最近的 Full 层</text>
+<text x="632" y="411" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">top-k 借自最近的 Full / Reindex 层</text>
+<rect x="8" y="430" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="28" y="440" font-size="12" fill="var(--fig-ink, #1C1B19)">本层计算</text>
+<rect x="106" y="430" width="14" height="12" fill="var(--fig-amber, #8A6508)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="1"/>
+<text x="126" y="440" font-size="12" fill="var(--fig-ink, #1C1B19)">复用：主 KV 与索引键（读缓存）</text>
+<rect x="338" y="430" width="14" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="358" y="440" font-size="12" fill="var(--fig-ink, #1C1B19)">复用：top-k 索引（不再打分）</text>
+<text x="8" y="464" font-size="12" fill="var(--fig-muted, #74716A)">三种模式都在本层算自己的主 Q 与 SWA KV；区别只在主 KV、索引键、top-k 索引三样东西是自己算还是借来的。</text>
+</svg>

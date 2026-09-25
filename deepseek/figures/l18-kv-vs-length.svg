@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个请求的 KV cache 随长度增长</title>
+
+<line x1="70" y1="340" x2="560" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="70" y1="288.33" x2="560" y2="288.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="292.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="70" y1="236.67" x2="560" y2="236.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="240.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20</text>
+<line x1="70" y1="185" x2="560" y2="185" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="189" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">30</text>
+<line x1="70" y1="133.33" x2="560" y2="133.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="137.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40</text>
+<line x1="70" y1="81.67" x2="560" y2="81.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="85.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50</text>
+<line x1="70" y1="30" x2="560" y2="30" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="34" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60</text>
+<line x1="70" y1="30" x2="70" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0K</text>
+<line x1="131.25" y1="30" x2="131.25" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="131.25" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128K</text>
+<line x1="192.5" y1="30" x2="192.5" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="192.5" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">256K</text>
+<line x1="315" y1="30" x2="315" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="315" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">512K</text>
+<line x1="437.5" y1="30" x2="437.5" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="437.5" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">768K</text>
+<line x1="560" y1="30" x2="560" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="560" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1024K</text>
+<line x1="70" y1="340" x2="560" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="30" x2="70" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="20" y="18" font-size="12" fill="var(--fig-muted, #74716A)">KV cache（GB）</text>
+<text x="315" y="378" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">上下文长度（K = 1024 个 token）</text>
+<line x1="70" y1="340" x2="182.22" y2="30" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="188.22" y="42" font-size="11" fill="var(--fig-muted, #74716A)">BF16 GQA8（61 层）：1M 时 262 GB</text>
+<line x1="70" y1="340" x2="560" y2="79.58" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6"/>
+<circle cx="560" cy="79.58" r="3.5" fill="var(--fig-amber, #8A6508)"/>
+<text x="568" y="83.58" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="700">V3.2：50.40 GB</text>
+<line x1="70" y1="340" x2="560" y2="312.74" stroke="var(--fig-orange, #B4460C)" stroke-width="2.6"/>
+<circle cx="560" cy="312.74" r="3.5" fill="var(--fig-orange, #B4460C)"/>
+<text x="568" y="308.74" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="700">V4-Pro：5.28 GB</text>
+<line x1="70" y1="340" x2="560" y2="320.96" stroke="var(--fig-red, #A3231C)" stroke-width="2.6"/>
+<circle cx="560" cy="320.96" r="3.5" fill="var(--fig-red, #A3231C)"/>
+<text x="568" y="334.96" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="700">V4-Flash：3.68 GB</text>
+<line x1="131.25" y1="30" x2="131.25" y2="340" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="126.25" y="296" font-size="11" fill="var(--fig-red, #A3231C)" transform="rotate(-90 126.25 296)">V3.2 上限 128K</text>
+<text x="376.25" y="216" font-size="12" fill="var(--fig-ink, #1C1B19)">比值处处相同：</text>
+<text x="376.25" y="234" font-size="12" fill="var(--fig-ink, #1C1B19)">Pro 为 V3.2 的 10.5%（9.55 倍），</text>
+<text x="376.25" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)">Flash 为 7.3%（13.68 倍）</text>
+<text x="20" y="392" font-size="11" fill="var(--fig-muted, #74716A)">只计随长度增长的部分；另有每请求固定的滑动窗口状态（Pro 4.56 MB，Flash 3.21 MB）未画出。</text>
+</svg>

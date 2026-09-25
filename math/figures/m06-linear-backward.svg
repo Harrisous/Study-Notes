@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>线性层的三次矩阵乘法（GPT-2 small 的 FFN 上投影，按比例）</title>
+
+<text x="20" y="42" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">前向：Y = X W</text>
+<text x="20" y="180" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">反向 ①：dX = dY Wᵀ（继续往回传）</text>
+<text x="20" y="376" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">反向 ②：dW = Xᵀ dY（用来更新 W）</text>
+<rect x="20" y="58" width="30" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="35" y="83" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">X</text>
+<text x="35" y="113" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[1024, 768]</text>
+<text x="62" y="83" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="74" y="58" width="120" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="134" y="78" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">W</text>
+<text x="134" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768, 3072]</text>
+<text x="206" y="83" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="218" y="58" width="120" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="278" y="83" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Y</text>
+<text x="278" y="113" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[1024, 3072]</text>
+<rect x="20" y="196" width="120" height="40" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.3"/>
+<text x="80" y="221" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">dY</text>
+<text x="80" y="251" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[1024, 3072]</text>
+<text x="152" y="221" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="164" y="196" width="30" height="120" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="179" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">Wᵀ</text>
+<text x="179" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[3072, 768]</text>
+<text x="206" y="221" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="218" y="196" width="30" height="40" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.3"/>
+<text x="233" y="221" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">dX</text>
+<text x="233" y="251" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[1024, 768]</text>
+<rect x="20" y="392" width="40" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="40" y="412" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Xᵀ</text>
+<text x="40" y="437" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768, 1024]</text>
+<text x="72" y="412" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="84" y="392" width="120" height="40" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.3"/>
+<text x="144" y="417" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">dY</text>
+<text x="144" y="447" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[1024, 3072]</text>
+<text x="216" y="412" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="228" y="392" width="120" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.3"/>
+<text x="288" y="412" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">dW</text>
+<text x="288" y="437" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768, 3072]</text>
+<text x="470" y="60" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">每次乘法的运算量</text>
+<text x="470" y="82" font-size="12" fill="var(--fig-ink, #1C1B19)">2 × 1024 × 768 × 3072 = 4.83×10<tspan baseline-shift="super" font-size="11">9</tspan></text>
+<text x="470" y="110" font-size="12" fill="var(--fig-blue, #1F5FA8)">前向 1 次：4.83×10<tspan baseline-shift="super" font-size="11">9</tspan> FLOPs</text>
+<text x="470" y="130" font-size="12" fill="var(--fig-red, #A3231C)">反向 2 次：9.66×10<tspan baseline-shift="super" font-size="11">9</tspan> FLOPs</text>
+<text x="470" y="150" font-size="12" fill="var(--fig-ink, #1C1B19)">合计 1.45×10<tspan baseline-shift="super" font-size="11">10</tspan> = 6 × 参数量 × token 数</text>
+<text x="470" y="184" font-size="12" fill="var(--fig-muted, #74716A)">形状自检：dW 必须与 W 同为</text>
+<text x="470" y="202" font-size="12" fill="var(--fig-muted, #74716A)">[768, 3072]；手里只有 X [1024, 768]</text>
+<text x="470" y="220" font-size="12" fill="var(--fig-muted, #74716A)">与 dY [1024, 3072]，唯一对得上的</text>
+<text x="470" y="238" font-size="12" fill="var(--fig-muted, #74716A)">乘法是 Xᵀ dY</text>
+<text x="470" y="272" font-size="12" fill="var(--fig-muted, #74716A)">dW 对 1024 个 token 求和：</text>
+<text x="470" y="290" font-size="12" fill="var(--fig-muted, #74716A)">每个 token 贡献一个外积 x·(dy)ᵀ</text>
+<text x="470" y="308" font-size="12" fill="var(--fig-muted, #74716A)">（同一个 W 被每个 token 用了一次）</text>
+<text x="20" y="470" font-size="12" fill="var(--fig-muted, #74716A)">方块边长按维数等比例画（1024 ↔ 40 像素）。</text>
+</svg>

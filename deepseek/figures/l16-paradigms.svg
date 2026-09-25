@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>残差连接、Hyper-Connections 与 mHC 的一个子层</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="128" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(a) 残差连接</text>
+<text x="78" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">d</tspan></text>
+<line x1="78" y1="58" x2="78" y2="309" stroke="var(--fig-ink, #1C1B19)" stroke-width="3"/>
+<line x1="78" y1="327" x2="78" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="3" marker-end="url(#ah-ink)"/>
+<text x="78" y="390" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan>+1</tspan></text>
+<circle cx="78" cy="76" r="3.5" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M78 76 H178 V150" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="136" y="152" width="84" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="178" y="169.59" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan></text>
+<text x="178" y="188.49" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">含 pre-norm</text>
+<path d="M178 196 V318 H89" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="78" cy="318" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="78" y="323" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="88" y="262" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">恒等捷径：</text>
+<text x="88" y="279" font-size="12" fill="var(--fig-green, #16704A)">系数固定为 1</text>
+<text x="128" y="420" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan>+1</tspan> = <tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> + 𝓕<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan>(<tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan>)</text>
+<text x="128" y="440" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">一条带子，捷径系数恒为 1</text>
+<line x1="250" y1="40" x2="250" y2="450" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="381" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(b) HC：三个映射都可学</text>
+<text x="322" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">4×d</tspan></text>
+<line x1="286" y1="58" x2="286" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="286" y1="240" x2="286" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="286" y1="325" x2="286" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="286" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="286" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="310" y1="58" x2="310" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="310" y1="240" x2="310" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="310" y1="325" x2="310" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="310" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="310" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="334" y1="58" x2="334" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="334" y1="240" x2="334" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="334" y1="325" x2="334" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="334" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="334" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="358" y1="58" x2="358" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="358" y1="240" x2="358" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="358" y1="325" x2="358" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="358" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="358" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="322" y="390" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan>+1</tspan></text>
+<rect x="268" y="198" width="116" height="42" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="6"/>
+<text x="326" y="215" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">res</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">  4×4</tspan></text>
+<text x="326" y="232" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">任意实数矩阵</text>
+<rect x="400" y="86" width="96" height="42" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="6"/>
+<text x="448" y="103" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">pre</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">  1×4</tspan></text>
+<text x="448" y="120" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">读出：加权合流</text>
+<circle cx="286" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="286" y1="76" x2="400" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="310" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="310" y1="76" x2="400" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="334" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="334" y1="76" x2="400" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="358" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="358" y1="76" x2="400" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="448" y1="128" x2="448" y2="146" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="408" y="148" width="80" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="448" y="163.59" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan></text>
+<text x="448" y="182.49" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1×d → 1×d</text>
+<line x1="448" y1="188" x2="448" y2="204" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="400" y="206" width="96" height="42" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="6"/>
+<text x="448" y="223" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">post</tspan><tspan baseline-shift="sub" font-size="11" dx="-22.22"><tspan font-style="italic">l</tspan></tspan><tspan dx="18.48">  1×4</tspan></text>
+<text x="448" y="240" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">写入：分发</text>
+<line x1="400" y1="246" x2="291" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="400" y1="246" x2="315" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="400" y1="246" x2="339" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="400" y1="246" x2="363" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="381" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan>+1</tspan> = H<tspan baseline-shift="super" font-size="11">res</tspan><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> + (H<tspan baseline-shift="super" font-size="11">post</tspan>)<tspan baseline-shift="super" font-size="11">⊤</tspan>𝓕(H<tspan baseline-shift="super" font-size="11">pre</tspan><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan>)</text>
+<text x="381" y="444" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">多层连乘 ∏ H<tspan baseline-shift="super" font-size="11">res</tspan> 可以爆炸</text>
+<line x1="506" y1="40" x2="506" y2="450" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="635" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(c) mHC：三个映射都加约束</text>
+<text x="576" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">4×d</tspan></text>
+<line x1="540" y1="58" x2="540" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="540" y1="240" x2="540" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="540" y1="325" x2="540" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="540" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="540" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="564" y1="58" x2="564" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="564" y1="240" x2="564" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="564" y1="325" x2="564" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="564" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="564" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="588" y1="58" x2="588" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="588" y1="240" x2="588" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="588" y1="325" x2="588" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="588" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="588" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="612" y1="58" x2="612" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="612" y1="240" x2="612" y2="311" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="612" y1="325" x2="612" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<circle cx="612" cy="318" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="612" y="322.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="576" y="390" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan>+1</tspan></text>
+<rect x="522" y="198" width="116" height="42" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="6"/>
+<text x="580" y="215" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">res</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">  4×4</tspan></text>
+<text x="580" y="232" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">SK×20 → 双随机</text>
+<rect x="654" y="86" width="96" height="42" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="6"/>
+<text x="702" y="103" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">pre</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">  1×4</tspan></text>
+<text x="702" y="120" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">σ(·) ∈ (0,1)</text>
+<circle cx="540" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="540" y1="76" x2="654" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="564" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="564" y1="76" x2="654" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="588" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="588" y1="76" x2="654" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<circle cx="612" cy="76" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="612" y1="76" x2="654" y2="107" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="702" y1="128" x2="702" y2="146" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="662" y="148" width="80" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="702" y="163.59" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan></text>
+<text x="702" y="182.49" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1×d → 1×d</text>
+<line x1="702" y1="188" x2="702" y2="204" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="654" y="206" width="96" height="42" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="6"/>
+<text x="702" y="223" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H<tspan baseline-shift="super" font-size="11">post</tspan><tspan baseline-shift="sub" font-size="11" dx="-22.22"><tspan font-style="italic">l</tspan></tspan><tspan dx="18.48">  1×4</tspan></text>
+<text x="702" y="240" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">2σ(·) ∈ (0,2)</text>
+<line x1="654" y1="246" x2="545" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="246" x2="569" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="246" x2="593" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="246" x2="617" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="635" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">三个映射都由 <tspan font-weight="700">X</tspan><tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">l</tspan></tspan> 算出，再投影到约束集</text>
+<text x="635" y="444" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">复合映射仍双随机：增益 ≈ 1</text>
+</svg>

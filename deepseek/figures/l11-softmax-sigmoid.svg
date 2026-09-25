@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>同一组 logit：softmax 门控（V2）与 sigmoid + 归一化门控（V3）</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 亲和度 s<tspan baseline-shift="sub" font-size="11">i</tspan>：6 个专家，logit z = [2.0, 1.5, 0.5, 0.0, −0.5, −1.0]</text>
+<line x1="70" y1="214" x2="690" y2="214" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="218" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.0</text>
+<line x1="70" y1="180" x2="690" y2="180" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="184" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="70" y1="146" x2="690" y2="146" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="150" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="70" y1="112" x2="690" y2="112" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="116" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<line x1="70" y1="78" x2="690" y2="78" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.8</text>
+<line x1="70" y1="44" x2="690" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.0</text>
+<line x1="70" y1="214" x2="690" y2="214" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<rect x="89.67" y="132.93" width="30" height="81.07" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="104.67" y="127.93" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.477</text>
+<rect x="123.67" y="64.26" width="30" height="149.74" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="138.67" y="59.26" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.881</text>
+<text x="121.67" y="231" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 1（被选）</text>
+<rect x="193" y="164.83" width="30" height="49.17" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="208" y="159.83" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.289</text>
+<rect x="227" y="75.01" width="30" height="138.99" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="242" y="70.01" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.818</text>
+<text x="225" y="231" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 2（被选）</text>
+<rect x="296.33" y="195.91" width="30" height="18.09" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="311.33" y="190.91" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.106</text>
+<rect x="330.33" y="108.18" width="30" height="105.82" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="345.33" y="103.18" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.622</text>
+<text x="328.33" y="231" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 3</text>
+<rect x="399.67" y="203.03" width="30" height="10.97" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="414.67" y="198.03" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.065</text>
+<rect x="433.67" y="129" width="30" height="85" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="448.67" y="124" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.500</text>
+<text x="431.67" y="231" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 4</text>
+<rect x="503" y="207.35" width="30" height="6.65" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="518" y="202.35" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.039</text>
+<rect x="537" y="149.82" width="30" height="64.18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="552" y="144.82" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.378</text>
+<text x="535" y="231" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 5</text>
+<rect x="606.33" y="209.96" width="30" height="4.04" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="621.33" y="204.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.024</text>
+<rect x="640.33" y="168.28" width="30" height="45.72" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="655.33" y="163.28" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.269</text>
+<text x="638.33" y="231" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 6</text>
+<rect x="440" y="42" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" rx="2"/>
+<text x="458" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)">softmax：6 个加起来 = 1</text>
+<rect x="440" y="62" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.7" rx="2"/>
+<text x="458" y="72" font-size="12" fill="var(--fig-ink, #1C1B19)">sigmoid：各自独立，和 = 3.47</text>
+<text x="16" y="270" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ 选 Top-2 后的门控值 g</text>
+<text x="16" y="305" font-size="12" fill="var(--fig-ink, #1C1B19)">V2：g = s</text>
+<rect x="116" y="292" width="81.07" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.75" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="156.54" y="306.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.477</text>
+<rect x="197.07" y="292" width="49.17" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.45" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="221.66" y="306.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.289</text>
+<text x="294" y="306.5" font-size="11" fill="var(--fig-muted, #74716A)">和 0.766</text>
+<line x1="286" y1="288" x2="286" y2="316" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="16" y="363" font-size="12" fill="var(--fig-violet, #6733C4)">V3：s 归一化</text>
+<rect x="116" y="350" width="88.16" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="160.08" y="364.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.519</text>
+<rect x="204.16" y="350" width="81.84" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="245.08" y="364.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.481</text>
+<text x="294" y="364.5" font-size="11" fill="var(--fig-muted, #74716A)">和 1.000</text>
+<line x1="286" y1="346" x2="286" y2="374" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="16" y="410" font-size="12" fill="var(--fig-muted, #74716A)">虚线处 = 1。V2 的两个门控加起来只有 0.766</text>
+<text x="376" y="270" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓒ 把没被选的专家 3 的 logit 调到 1.4</text>
+<text x="376" y="305" font-size="12" fill="var(--fig-ink, #1C1B19)">V2：g = s</text>
+<rect x="476" y="292" width="70.17" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.75" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="511.09" y="306.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.413</text>
+<rect x="546.17" y="292" width="42.56" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.45" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="567.46" y="306.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.250</text>
+<text x="654" y="306.5" font-size="11" fill="var(--fig-muted, #74716A)">和 0.663</text>
+<line x1="646" y1="288" x2="646" y2="316" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="376" y="363" font-size="12" fill="var(--fig-violet, #6733C4)">V3：s 归一化</text>
+<rect x="476" y="350" width="88.16" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="520.08" y="364.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.519</text>
+<rect x="564.16" y="350" width="81.84" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="605.08" y="364.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.481</text>
+<text x="654" y="364.5" font-size="11" fill="var(--fig-muted, #74716A)">和 1.000</text>
+<line x1="646" y1="346" x2="646" y2="374" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="376" y="410" font-size="12" fill="var(--fig-muted, #74716A)">V2 的门控随之变小；V3 纹丝不动</text>
+<line x1="360" y1="258" x2="360" y2="440" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="458" font-size="12" fill="var(--fig-muted, #74716A)">图中每个数都由 z 直接算出；softmax 的分母含全部 6 个专家，sigmoid 只看自己的 logit。</text>
+</svg>

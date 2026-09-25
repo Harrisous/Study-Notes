@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>KL 项的梯度权重：原始 k3 与 V3.2 的重要性修正版</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 每个 token 的梯度权重（ρ = 1）</text>
+<line x1="64" y1="305.32" x2="356" y2="305.32" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="309.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−1000</text>
+<line x1="64" y1="243.51" x2="356" y2="243.51" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="247.51" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−100</text>
+<line x1="64" y1="183.75" x2="356" y2="183.75" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="187.75" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−10</text>
+<line x1="64" y1="137.81" x2="356" y2="137.81" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="141.81" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−1</text>
+<line x1="64" y1="119.13" x2="356" y2="119.13" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="58" y="123.13" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="64" y1="100.45" x2="356" y2="100.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="104.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="64" y1="54.5" x2="356" y2="54.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="58.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="64" y1="50" x2="64" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="137" y1="50" x2="137" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="137" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="210" y1="50" x2="210" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="210" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-1</tspan></text>
+<line x1="283" y1="50" x2="283" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="283" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">0</tspan></text>
+<line x1="356" y1="50" x2="356" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="356" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">1</tspan></text>
+<text x="210" y="366" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = π<tspan baseline-shift="sub" font-size="11">θ</tspan> / π<tspan baseline-shift="sub" font-size="11">ref</tspan>（对数刻度）</text>
+<text x="14" y="38" font-size="11" fill="var(--fig-muted, #74716A)">纵轴：对称对数刻度</text>
+<path d="M64 305.29 L65.22 304.26 L66.43 303.23 L67.65 302.19 L68.87 301.16 L70.08 300.12 L71.3 299.09 L72.52 298.05 L73.73 297.02 L74.95 295.99 L76.17 294.95 L77.38 293.92 L78.6 292.88 L79.82 291.85 L81.03 290.81 L82.25 289.78 L83.47 288.75 L84.68 287.71 L85.9 286.68 L87.12 285.64 L88.33 284.61 L89.55 283.58 L90.77 282.54 L91.98 281.51 L93.2 280.47 L94.42 279.44 L95.63 278.4 L96.85 277.37 L98.07 276.34 L99.28 275.3 L100.5 274.27 L101.72 273.23 L102.93 272.2 L104.15 271.16 L105.37 270.13 L106.58 269.1 L107.8 268.06 L109.02 267.03 L110.23 265.99 L111.45 264.96 L112.67 263.92 L113.88 262.89 L115.1 261.86 L116.32 260.82 L117.53 259.79 L118.75 258.75 L119.97 257.72 L121.18 256.68 L122.4 255.65 L123.62 254.62 L124.83 253.58 L126.05 252.55 L127.27 251.51 L128.48 250.48 L129.7 249.44 L130.92 248.41 L132.13 247.38 L133.35 246.34 L134.57 245.31 L135.78 244.27 L137 243.24 L138.22 242.2 L139.43 241.17 L140.65 240.14 L141.87 239.1 L143.08 238.07 L144.3 237.03 L145.52 236 L146.73 234.96 L147.95 233.93 L149.17 232.9 L150.38 231.86 L151.6 230.83 L152.82 229.79 L154.03 228.76 L155.25 227.72 L156.47 226.69 L157.68 225.66 L158.9 224.62 L160.12 223.59 L161.33 222.55 L162.55 221.52 L163.77 220.48 L164.98 219.45 L166.2 218.42 L167.42 217.38 L168.63 216.35 L169.85 215.31 L171.07 214.28 L172.28 213.25 L173.5 212.21 L174.72 211.18 L175.93 210.14 L177.15 209.11 L178.37 208.07 L179.58 207.04 L180.8 206.01 L182.02 204.97 L183.23 203.94 L184.45 202.9 L185.67 201.87 L186.88 200.83 L188.1 199.8 L189.32 198.77 L190.53 197.73 L191.75 196.7 L192.97 195.66 L194.18 194.63 L195.4 193.59 L196.62 192.56 L197.83 191.53 L199.05 190.49 L200.27 189.46 L201.48 188.42 L202.7 187.39 L203.92 186.35 L205.13 185.32 L206.35 184.29 L207.57 183.25 L208.78 182.22 L210 181.18 L211.22 180.15 L212.43 179.11 L213.65 178.08 L214.87 177.05 L216.08 176.01 L217.3 174.98 L218.52 173.94 L219.73 172.91 L220.95 171.87 L222.17 170.84 L223.38 169.81 L224.6 168.77 L225.82 167.74 L227.03 166.7 L228.25 165.67 L229.47 164.63 L230.68 163.6 L231.9 162.57 L233.12 161.53 L234.33 160.5 L235.55 159.46 L236.77 158.43 L237.98 157.39 L239.2 156.36 L240.42 155.33 L241.63 154.29 L242.85 153.26 L244.07 152.22 L245.28 151.19 L246.5 150.15 L247.72 149.12 L248.93 148.09 L250.15 147.05 L251.37 146.02 L252.58 144.98 L253.8 143.95 L255.02 142.91 L256.23 141.88 L257.45 140.85 L258.67 139.81 L259.88 138.78 L261.1 137.74 L262.32 136.71 L263.53 135.68 L264.75 134.64 L265.97 133.61 L267.18 132.57 L268.4 131.54 L269.62 130.5 L270.83 129.47 L272.05 128.44 L273.27 127.4 L274.48 126.37 L275.7 125.33 L276.92 124.3 L278.13 123.26 L279.35 122.23 L280.57 121.2 L281.78 120.16 L283 119.13 L284.22 118.13 L285.43 117.21 L286.65 116.34 L287.87 115.54 L289.08 114.79 L290.3 114.09 L291.52 113.43 L292.73 112.81 L293.95 112.22 L295.17 111.67 L296.38 111.15 L297.6 110.66 L298.82 110.2 L300.03 109.76 L301.25 109.34 L302.47 108.95 L303.68 108.58 L304.9 108.22 L306.12 107.88 L307.33 107.56 L308.55 107.26 L309.77 106.97 L310.98 106.69 L312.2 106.43 L313.42 106.18 L314.63 105.94 L315.85 105.71 L317.07 105.49 L318.28 105.28 L319.5 105.08 L320.72 104.89 L321.93 104.71 L323.15 104.54 L324.37 104.37 L325.58 104.22 L326.8 104.06 L328.02 103.92 L329.23 103.78 L330.45 103.65 L331.67 103.52 L332.88 103.4 L334.1 103.28 L335.32 103.17 L336.53 103.06 L337.75 102.96 L338.97 102.86 L340.18 102.76 L341.4 102.67 L342.62 102.58 L343.83 102.5 L345.05 102.42 L346.27 102.34 L347.48 102.27 L348.7 102.2 L349.92 102.13 L351.13 102.06 L352.35 102 L353.57 101.94 L354.78 101.88 L356 101.83" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<path d="M64 174.86 L65.22 174.73 L66.43 174.59 L67.65 174.46 L68.87 174.33 L70.08 174.19 L71.3 174.06 L72.52 173.92 L73.73 173.79 L74.95 173.65 L76.17 173.52 L77.38 173.38 L78.6 173.24 L79.82 173.1 L81.03 172.96 L82.25 172.82 L83.47 172.68 L84.68 172.54 L85.9 172.39 L87.12 172.25 L88.33 172.1 L89.55 171.96 L90.77 171.81 L91.98 171.67 L93.2 171.52 L94.42 171.37 L95.63 171.22 L96.85 171.07 L98.07 170.92 L99.28 170.77 L100.5 170.62 L101.72 170.46 L102.93 170.31 L104.15 170.15 L105.37 170 L106.58 169.84 L107.8 169.68 L109.02 169.52 L110.23 169.36 L111.45 169.2 L112.67 169.04 L113.88 168.88 L115.1 168.71 L116.32 168.55 L117.53 168.38 L118.75 168.22 L119.97 168.05 L121.18 167.88 L122.4 167.71 L123.62 167.54 L124.83 167.37 L126.05 167.19 L127.27 167.02 L128.48 166.84 L129.7 166.67 L130.92 166.49 L132.13 166.31 L133.35 166.13 L134.57 165.95 L135.78 165.77 L137 165.58 L138.22 165.4 L139.43 165.21 L140.65 165.02 L141.87 164.83 L143.08 164.64 L144.3 164.45 L145.52 164.26 L146.73 164.06 L147.95 163.87 L149.17 163.67 L150.38 163.47 L151.6 163.27 L152.82 163.07 L154.03 162.87 L155.25 162.66 L156.47 162.45 L157.68 162.25 L158.9 162.04 L160.12 161.83 L161.33 161.61 L162.55 161.4 L163.77 161.18 L164.98 160.96 L166.2 160.74 L167.42 160.52 L168.63 160.3 L169.85 160.07 L171.07 159.85 L172.28 159.62 L173.5 159.38 L174.72 159.15 L175.93 158.92 L177.15 158.68 L178.37 158.44 L179.58 158.2 L180.8 157.95 L182.02 157.71 L183.23 157.46 L184.45 157.21 L185.67 156.96 L186.88 156.7 L188.1 156.44 L189.32 156.18 L190.53 155.92 L191.75 155.66 L192.97 155.39 L194.18 155.12 L195.4 154.84 L196.62 154.57 L197.83 154.29 L199.05 154.01 L200.27 153.72 L201.48 153.43 L202.7 153.14 L203.92 152.85 L205.13 152.55 L206.35 152.25 L207.57 151.94 L208.78 151.64 L210 151.32 L211.22 151.01 L212.43 150.69 L213.65 150.37 L214.87 150.04 L216.08 149.71 L217.3 149.38 L218.52 149.04 L219.73 148.7 L220.95 148.35 L222.17 148 L223.38 147.64 L224.6 147.28 L225.82 146.91 L227.03 146.54 L228.25 146.16 L229.47 145.78 L230.68 145.39 L231.9 145 L233.12 144.6 L234.33 144.2 L235.55 143.79 L236.77 143.37 L237.98 142.94 L239.2 142.51 L240.42 142.08 L241.63 141.63 L242.85 141.18 L244.07 140.72 L245.28 140.25 L246.5 139.77 L247.72 139.29 L248.93 138.79 L250.15 138.29 L251.37 137.78 L252.58 137.25 L253.8 136.72 L255.02 136.18 L256.23 135.62 L257.45 135.06 L258.67 134.48 L259.88 133.89 L261.1 133.28 L262.32 132.66 L263.53 132.03 L264.75 131.38 L265.97 130.72 L267.18 130.03 L268.4 129.34 L269.62 128.62 L270.83 127.88 L272.05 127.12 L273.27 126.34 L274.48 125.54 L275.7 124.71 L276.92 123.86 L278.13 122.98 L279.35 122.06 L280.57 121.12 L281.78 120.14 L283 119.13 L284.22 118.11 L285.43 117.13 L286.65 116.19 L287.87 115.28 L289.08 114.4 L290.3 113.54 L291.52 112.71 L292.73 111.91 L293.95 111.13 L295.17 110.37 L296.38 109.64 L297.6 108.92 L298.82 108.22 L300.03 107.54 L301.25 106.87 L302.47 106.22 L303.68 105.59 L304.9 104.97 L306.12 104.37 L307.33 103.78 L308.55 103.2 L309.77 102.63 L310.98 102.08 L312.2 101.53 L313.42 101 L314.63 100.48 L315.85 99.96 L317.07 99.46 L318.28 98.97 L319.5 98.48 L320.72 98 L321.93 97.54 L323.15 97.08 L324.37 96.62 L325.58 96.18 L326.8 95.74 L328.02 95.31 L329.23 94.89 L330.45 94.47 L331.67 94.06 L332.88 93.65 L334.1 93.25 L335.32 92.86 L336.53 92.47 L337.75 92.09 L338.97 91.71 L340.18 91.34 L341.4 90.98 L342.62 90.61 L343.83 90.26 L345.05 89.91 L346.27 89.56 L347.48 89.22 L348.7 88.88 L349.92 88.54 L351.13 88.21 L352.35 87.89 L353.57 87.56 L354.78 87.24 L356 86.93" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2"/>
+<text x="191.75" y="219.21" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="700">原始 k3：1 − 1/z</text>
+<text x="67.65" y="123.65" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700">V3.2：ρ·log z</text>
+<circle cx="64" cy="305.29" r="3.8" fill="var(--fig-red, #A3231C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<circle cx="64" cy="174.86" r="3.8" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<circle cx="137" cy="243.24" r="3.8" fill="var(--fig-red, #A3231C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<circle cx="137" cy="165.58" r="3.8" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="129" y="237.24" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">−99</text>
+<text x="145" y="181.58" font-size="12" fill="var(--fig-blue, #1F5FA8)">−4.61</text>
+<text x="76" y="310.29" font-size="12" fill="var(--fig-red, #A3231C)">−999</text>
+<text x="72" y="190.86" font-size="12" fill="var(--fig-blue, #1F5FA8)">−6.91</text>
+<text x="129.7" y="302.49" font-size="11" fill="var(--fig-muted, #74716A)">π<tspan baseline-shift="sub" font-size="11">θ</tspan> ≪ π<tspan baseline-shift="sub" font-size="11">ref</tspan> 时原始权重无界</text>
+<text x="400" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 5 个 token 的 softmax：期望梯度等于哪个 KL 的梯度</text>
+<line x1="440" y1="330" x2="746" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−0.3</text>
+<line x1="440" y1="283.33" x2="746" y2="283.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="287.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−0.2</text>
+<line x1="440" y1="236.67" x2="746" y2="236.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="240.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">−0.1</text>
+<line x1="440" y1="190" x2="746" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="434" y="194" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.0</text>
+<line x1="440" y1="143.33" x2="746" y2="143.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="147.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="440" y1="96.67" x2="746" y2="96.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="100.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="440" y1="50" x2="746" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="434" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.3</text>
+<rect x="448.06" y="190" width="9.77" height="9.09" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="459.83" y="190" width="9.77" height="9.09" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="471.6" y="174.61" width="9.77" height="15.39" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<rect x="483.37" y="174.61" width="9.77" height="15.39" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="470.6" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 1</text>
+<rect x="509.26" y="190" width="9.77" height="94.61" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="521.03" y="190" width="9.77" height="94.61" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="532.8" y="190" width="9.77" height="129.89" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<rect x="544.57" y="190" width="9.77" height="129.89" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="531.8" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 2</text>
+<rect x="570.46" y="190" width="9.77" height="26.39" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="582.23" y="190" width="9.77" height="26.39" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="594" y="173.96" width="9.77" height="16.04" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<rect x="605.77" y="173.96" width="9.77" height="16.04" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="593" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 3</text>
+<rect x="631.66" y="102.29" width="9.77" height="87.71" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="643.43" y="102.29" width="9.77" height="87.71" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="655.2" y="124.75" width="9.77" height="65.25" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<rect x="666.97" y="124.75" width="9.77" height="65.25" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="654.2" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 4</text>
+<rect x="692.86" y="147.62" width="9.77" height="42.38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="704.63" y="147.62" width="9.77" height="42.38" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="716.4" y="156.79" width="9.77" height="33.21" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<rect x="728.17" y="156.79" width="9.77" height="33.21" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="715.4" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 5</text>
+<text x="593" y="366" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">对 logits 的梯度分量（在策略采样：π<tspan baseline-shift="sub" font-size="11">old</tspan> = π<tspan baseline-shift="sub" font-size="11">θ</tspan>）</text>
+<rect x="64" y="379" width="16" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="86" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)">∇KL(π<tspan baseline-shift="sub" font-size="11">θ</tspan>‖π<tspan baseline-shift="sub" font-size="11">ref</tspan>)</text>
+<rect x="192.4" y="379" width="16" height="14" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="214.4" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)">E[∇(ρ·k3)]</text>
+<rect x="306.4" y="379" width="16" height="14" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="328.4" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)">∇KL(π<tspan baseline-shift="sub" font-size="11">ref</tspan>‖π<tspan baseline-shift="sub" font-size="11">θ</tspan>)</text>
+<rect x="434.8" y="379" width="16" height="14" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="456.8" y="390" font-size="12" fill="var(--fig-ink, #1C1B19)">E[∇k3]</text>
+<text x="64" y="412" font-size="11" fill="var(--fig-muted, #74716A)">实心 = 真实的 KL 梯度（解析式，已用有限差分核对）；空心 = 把估计量当损失求导后在 π<tspan baseline-shift="sub" font-size="11">θ</tspan> 下的期望。两两重合到小数点后 4 位。</text>
+</svg>

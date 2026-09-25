@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个双随机矩阵的两种读法：按列是“分出去”，按行是“加权平均”</title>
+
+<text x="30" y="34" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 矩阵 A</text>
+<text x="30" y="54" font-size="12" fill="var(--fig-muted, #74716A)">第 i 行第 j 列：旧流 j 分给新流 i 的份额</text>
+<text x="95" y="80" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 1</text>
+<text x="145" y="80" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 2</text>
+<text x="195" y="80" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 3</text>
+<text x="60" y="121" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">新 1</text>
+<rect x="72" y="94" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.41" rx="5"/>
+<text x="95" y="122" font-size="14" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.6</text>
+<rect x="122" y="94" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" rx="5"/>
+<text x="145" y="122" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<rect x="172" y="94" width="46" height="46" fill="var(--fig-grid, #EDE9E0)" rx="5"/>
+<text x="195" y="122" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="232" y="122" font-size="12" fill="var(--fig-blue, #1F5FA8)">行和 1</text>
+<text x="60" y="171" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">新 2</text>
+<rect x="72" y="144" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="5"/>
+<text x="95" y="172" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="122" y="144" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24" rx="5"/>
+<text x="145" y="172" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="172" y="144" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.41" rx="5"/>
+<text x="195" y="172" font-size="14" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.6</text>
+<text x="232" y="172" font-size="12" fill="var(--fig-blue, #1F5FA8)">行和 1</text>
+<text x="60" y="221" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">新 3</text>
+<rect x="72" y="194" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24" rx="5"/>
+<text x="95" y="222" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="122" y="194" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24" rx="5"/>
+<text x="145" y="222" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="172" y="194" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" rx="5"/>
+<text x="195" y="222" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<text x="232" y="222" font-size="12" fill="var(--fig-blue, #1F5FA8)">行和 1</text>
+<text x="95" y="262" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="145" y="262" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="195" y="262" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="232" y="262" font-size="12" fill="var(--fig-violet, #6733C4)">← 列和</text>
+<text x="30" y="300" font-size="12" fill="var(--fig-muted, #74716A)">非负；每行、每列加起来都是 1</text>
+<text x="30" y="320" font-size="12" fill="var(--fig-muted, #74716A)">（颜色越深，份额越大；灰格为 0）</text>
+<text x="296" y="34" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 按列读：旧流 1 分给谁</text>
+<text x="296" y="54" font-size="12" fill="var(--fig-muted, #74716A)">第 1 列 (0.6, 0.1, 0.3)</text>
+<line x1="360" y1="190" x2="456" y2="110" stroke="var(--fig-rule, #DCD7CC)" stroke-width="5" stroke-opacity="0.9"/>
+<line x1="360" y1="190" x2="456" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="4" stroke-opacity="0.9"/>
+<line x1="360" y1="270" x2="456" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="7" stroke-opacity="0.9"/>
+<line x1="360" y1="190" x2="456" y2="270" stroke="var(--fig-rule, #DCD7CC)" stroke-width="4" stroke-opacity="0.9"/>
+<line x1="360" y1="270" x2="456" y2="270" stroke="var(--fig-rule, #DCD7CC)" stroke-width="5" stroke-opacity="0.9"/>
+<line x1="360" y1="110" x2="456" y2="190" stroke="var(--fig-violet, #6733C4)" stroke-width="2.7" stroke-opacity="0.55"/>
+<text x="434.63" y="164.99" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">0.1</text>
+<line x1="360" y1="110" x2="456" y2="270" stroke="var(--fig-violet, #6733C4)" stroke-width="5.1" stroke-opacity="0.55"/>
+<text x="437.52" y="224.16" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">0.3</text>
+<line x1="360" y1="110" x2="456" y2="110" stroke="var(--fig-violet, #6733C4)" stroke-width="8.7" stroke-opacity="0.55"/>
+<text x="429.12" y="102.4" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">0.6</text>
+<rect x="306" y="95" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="333" y="115" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 1</text>
+<rect x="456" y="95" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="483" y="115" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 1</text>
+<rect x="306" y="175" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="333" y="195" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 2</text>
+<rect x="456" y="175" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="483" y="195" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 2</text>
+<rect x="306" y="255" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="333" y="275" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 3</text>
+<rect x="456" y="255" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="483" y="275" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 3</text>
+<text x="296" y="320" font-size="12" fill="var(--fig-violet, #6733C4)">0.6 + 0.1 + 0.3 = 1（列和）</text>
+<text x="296" y="340" font-size="12" fill="var(--fig-muted, #74716A)">旧流 1 的货全部分出去，</text>
+<text x="296" y="360" font-size="12" fill="var(--fig-muted, #74716A)">不多出、不丢失</text>
+<text x="530" y="34" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(c) 按行读：新流 2 从哪来</text>
+<text x="530" y="54" font-size="12" fill="var(--fig-muted, #74716A)">第 2 行 (0.1, 0.3, 0.6)</text>
+<line x1="594" y1="110" x2="690" y2="110" stroke="var(--fig-rule, #DCD7CC)" stroke-width="7" stroke-opacity="0.9"/>
+<line x1="594" y1="190" x2="690" y2="110" stroke="var(--fig-rule, #DCD7CC)" stroke-width="5" stroke-opacity="0.9"/>
+<line x1="594" y1="110" x2="690" y2="270" stroke="var(--fig-rule, #DCD7CC)" stroke-width="4" stroke-opacity="0.9"/>
+<line x1="594" y1="190" x2="690" y2="270" stroke="var(--fig-rule, #DCD7CC)" stroke-width="4" stroke-opacity="0.9"/>
+<line x1="594" y1="270" x2="690" y2="270" stroke="var(--fig-rule, #DCD7CC)" stroke-width="5" stroke-opacity="0.9"/>
+<line x1="594" y1="110" x2="690" y2="190" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.7" stroke-opacity="0.55"/>
+<text x="632.15" y="134.59" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.1</text>
+<line x1="594" y1="190" x2="690" y2="190" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5.1" stroke-opacity="0.55"/>
+<text x="626.64" y="184.2" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.3</text>
+<line x1="594" y1="270" x2="690" y2="190" stroke="var(--fig-blue, #1F5FA8)" stroke-width="8.7" stroke-opacity="0.55"/>
+<text x="619.21" y="237.89" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.6</text>
+<rect x="540" y="95" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="567" y="115" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 1</text>
+<rect x="690" y="95" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="717" y="115" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 1</text>
+<rect x="540" y="175" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="567" y="195" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 2</text>
+<rect x="690" y="175" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="717" y="195" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 2</text>
+<rect x="540" y="255" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="567" y="275" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">旧 3</text>
+<rect x="690" y="255" width="54" height="30" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="717" y="275" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">新 3</text>
+<text x="530" y="320" font-size="12" fill="var(--fig-blue, #1F5FA8)">0.1 + 0.3 + 0.6 = 1（行和）</text>
+<text x="530" y="340" font-size="12" fill="var(--fig-muted, #74716A)">新流 2 是三条旧流的</text>
+<text x="530" y="360" font-size="12" fill="var(--fig-muted, #74716A)">加权平均</text>
+</svg>

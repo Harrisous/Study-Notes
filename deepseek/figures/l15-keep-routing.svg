@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Keep Routing：同一个 token，推理框架与训练框架可能选出不同的专家</title>
+
+<text x="16" y="66" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">① 采样时（推理框架）</text>
+<text x="16" y="84" font-size="12" fill="var(--fig-muted, #74716A)">选中 {3, 8, 11, 14}</text>
+<line x1="196" y1="104" x2="744" y2="104" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="200" y="93.03" width="26.25" height="10.97" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="213.12" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="234.25" y="72" width="26.25" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="247.38" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<rect x="268.5" y="96.69" width="26.25" height="7.31" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="281.62" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="302.75" y="48.23" width="26.25" height="55.77" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="315.88" y="118" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">3</text>
+<rect x="337" y="83.89" width="26.25" height="20.11" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="350.12" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="371.25" y="56.73" width="26.25" height="47.27" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="384.38" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="384.38" y="51.73" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5170</text>
+<rect x="405.5" y="99.43" width="26.25" height="4.57" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="418.62" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="439.75" y="76.57" width="26.25" height="27.43" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="452.88" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="474" y="53.71" width="26.25" height="50.29" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="487.12" y="118" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="508.25" y="87.54" width="26.25" height="16.46" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="521.38" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<rect x="542.5" y="94.86" width="26.25" height="9.14" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="555.62" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<rect x="576.75" y="56.59" width="26.25" height="47.41" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="589.88" y="118" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">11</text>
+<text x="589.88" y="51.59" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5185</text>
+<rect x="611" y="79.31" width="26.25" height="24.69" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="624.12" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<rect x="645.25" y="95.77" width="26.25" height="8.23" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="658.38" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">13</text>
+<rect x="679.5" y="43.66" width="26.25" height="60.34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="692.62" y="118" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">14</text>
+<rect x="713.75" y="91.2" width="26.25" height="12.8" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="726.88" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">15</text>
+<text x="16" y="176" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">② 训练时重算（训练框架）</text>
+<text x="16" y="194" font-size="12" fill="var(--fig-muted, #74716A)">选中 {3, 5, 8, 14}</text>
+<line x1="196" y1="214" x2="744" y2="214" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="200" y="202.99" width="26.25" height="11.01" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="213.12" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="234.25" y="182.05" width="26.25" height="31.95" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="247.38" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<rect x="268.5" y="206.66" width="26.25" height="7.34" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="281.62" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="302.75" y="158.3" width="26.25" height="55.7" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="315.88" y="228" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">3</text>
+<rect x="337" y="193.84" width="26.25" height="20.16" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="350.12" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="371.25" y="166.62" width="26.25" height="47.38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<text x="384.38" y="228" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">5</text>
+<text x="384.38" y="161.62" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5182</text>
+<rect x="405.5" y="209.45" width="26.25" height="4.55" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="418.62" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="439.75" y="186.51" width="26.25" height="27.49" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="452.88" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="474" y="163.8" width="26.25" height="50.2" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="487.12" y="228" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="508.25" y="197.53" width="26.25" height="16.47" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="521.38" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<rect x="542.5" y="204.89" width="26.25" height="9.11" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="555.62" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<rect x="576.75" y="166.73" width="26.25" height="47.27" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<text x="589.88" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<text x="589.88" y="161.73" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5170</text>
+<rect x="611" y="189.26" width="26.25" height="24.74" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="624.12" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<rect x="645.25" y="205.75" width="26.25" height="8.25" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="658.38" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">13</text>
+<rect x="679.5" y="153.7" width="26.25" height="60.3" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="692.62" y="228" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">14</text>
+<rect x="713.75" y="201.17" width="26.25" height="12.83" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="726.88" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">15</text>
+<text x="188" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">专家</text>
+<text x="188" y="228" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">专家</text>
+<text x="16" y="274" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">③ Keep Routing</text>
+<text x="16" y="292" font-size="12" fill="var(--fig-muted, #74716A)">训练时强制用 ① 的集合</text>
+<rect x="196" y="258" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="228" y="277" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 3</text>
+<rect x="270" y="258" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="302" y="277" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 8</text>
+<rect x="344" y="258" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="376" y="277" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 11</text>
+<rect x="418" y="258" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="450" y="277" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 14</text>
+<text x="498" y="277" font-size="12" fill="var(--fig-blue, #1F5FA8)">→ 采样与训练优化的是同一组专家参数</text>
+<text x="16" y="326" font-size="12" fill="var(--fig-muted, #74716A)">专家 5 与 11 的亲和度只差 0.0015（第 4、5 名），两套框架的数值差异（每项 ≤ 0.0015）足以让它们换位。</text>
+<text x="16" y="344" font-size="12" fill="var(--fig-muted, #74716A)">数值为构造的示意，不是模型输出。真实的 V3.2 每层是 256 个路由专家选 8 个，共 58 个 MoE 层。</text>
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>同一个矩阵乘积的三种读法：批量点积、列的组合、外积之和</title>
+
+<text x="16" y="30" font-size="15" fill="var(--fig-blue, #1F5FA8)" font-weight="700">① 批量点积</text>
+<text x="118" y="30" font-size="13" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">C</tspan> 的每一格 = <tspan font-weight="700">A</tspan> 的一行 与 <tspan font-weight="700">B</tspan> 的一列 的点积</text>
+<text x="55" y="87.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="85" y="87.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="115" y="87.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="41" y="98" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="4"/>
+<text x="55" y="117.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="71" y="98" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="4"/>
+<text x="85" y="117.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="101" y="98" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="4"/>
+<text x="115" y="117.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<path d="M41 67 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M129 67 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="85" y="149" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle"><tspan font-weight="700">A</tspan>  [2, 3]</text>
+<text x="152" y="104" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="179" y="53" width="28" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" rx="4"/>
+<text x="193" y="72.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="223" y="72.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="179" y="83" width="28" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" rx="4"/>
+<text x="193" y="102.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="223" y="102.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="179" y="113" width="28" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" rx="4"/>
+<text x="193" y="132.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="223" y="132.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<path d="M179 52 h-5 v90 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M237 52 h5 v90 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="208" y="164" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle"><tspan font-weight="700">B</tspan>  [3, 2]</text>
+<text x="264" y="104" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<text x="305" y="87.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<text x="335" y="87.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="291" y="98" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="305" y="117.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<text x="335" y="117.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<path d="M291 67 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M349 67 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="320" y="149" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle"><tspan font-weight="700">C</tspan>  [2, 2]</text>
+<text x="400" y="80" font-size="14" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">C</tspan><tspan baseline-shift="sub" font-size="11">21</tspan> = (第 2 行) · (第 1 列)</text>
+<text x="400" y="106" font-size="14" fill="var(--fig-ink, #1C1B19)">     = (0, 1, 3) · (2, 1, 1)</text>
+<text x="400" y="132" font-size="14" fill="var(--fig-green, #16704A)">     = 0×2 + 1×1 + 3×1 = 4</text>
+<line x1="16" y1="172" x2="704" y2="172" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="200" font-size="15" fill="var(--fig-blue, #1F5FA8)" font-weight="700">② 列的组合</text>
+<text x="118" y="200" font-size="13" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">C</tspan> 的第 1 列 = <tspan font-weight="700">A</tspan> 的三列，按 <tspan font-weight="700">B</tspan> 第 1 列的系数 (2, 1, 1) 加权相加</text>
+<text x="44" y="265" font-size="17" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="264" font-size="15" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="81" y="229" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="95" y="248.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="81" y="259" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="95" y="278.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<path d="M81 228 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M109 228 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="95" y="310" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="128" y="265" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">+</text>
+<text x="150" y="265" font-size="17" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">1</text>
+<text x="168" y="264" font-size="15" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="187" y="229" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="201" y="248.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="187" y="259" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="201" y="278.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<path d="M187 228 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M215 228 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="201" y="310" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="234" y="265" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">+</text>
+<text x="256" y="265" font-size="17" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">1</text>
+<text x="274" y="264" font-size="15" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="293" y="229" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="307" y="248.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="293" y="259" width="28" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="4"/>
+<text x="307" y="278.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<path d="M293 228 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M321 228 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="307" y="310" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="340" y="265" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="359" y="229" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="373" y="248.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="359" y="259" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="373" y="278.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<path d="M359 228 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M387 228 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="373" y="310" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle"><tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="420" y="246" font-size="14" fill="var(--fig-ink, #1C1B19)">2·(1, 0) + 1·(2, 1) + 1·(0, 3)</text>
+<text x="420" y="272" font-size="14" fill="var(--fig-green, #16704A)">= (2+2+0, 0+1+3) = (4, 4)</text>
+<text x="420" y="298" font-size="13" fill="var(--fig-muted, #74716A)">第 2 列同理：1·<tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> + 0·<tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> + 4·<tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">3</tspan> = (1, 12)</text>
+<line x1="16" y1="336" x2="704" y2="336" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="364" font-size="15" fill="var(--fig-blue, #1F5FA8)" font-weight="700">③ 外积之和</text>
+<text x="118" y="364" font-size="13" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">C</tspan> = Σ<tspan baseline-shift="sub" font-size="11">k</tspan> (<tspan font-weight="700">A</tspan> 的第 k 列)(<tspan font-weight="700">B</tspan> 的第 k 行)，每一项都是一个 [2, 2] 的“秩 1”矩阵</text>
+<rect x="37" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="51" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="67" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="81" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="37" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="51" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="67" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="81" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<path d="M37 394 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M95 394 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="66" y="480" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">1</tspan><tspan font-weight="700">b</tspan><tspan baseline-shift="sub" font-size="11">1</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="66" y="504" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">列(1, 0) × 行(2, 1)</text>
+<text x="128" y="430" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">+</text>
+<rect x="159" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="173" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="189" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="203" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="159" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="173" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="189" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="203" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<path d="M159 394 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M217 394 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="188" y="480" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">2</tspan><tspan font-weight="700">b</tspan><tspan baseline-shift="sub" font-size="11">2</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="188" y="504" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">列(2, 1) × 行(1, 0)</text>
+<text x="250" y="430" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">+</text>
+<rect x="281" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="295" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="311" y="395" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="325" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="281" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="295" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="311" y="425" width="28" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" rx="4"/>
+<text x="325" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<path d="M281 394 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M339 394 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="310" y="480" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle"><tspan font-weight="700">a</tspan><tspan baseline-shift="sub" font-size="11">3</tspan><tspan font-weight="700">b</tspan><tspan baseline-shift="sub" font-size="11">3</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="310" y="504" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">列(0, 3) × 行(1, 4)</text>
+<text x="372" y="430" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="399" y="395" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="413" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="429" y="395" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="443" y="414.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="399" y="425" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="413" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="429" y="425" width="28" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" rx="4"/>
+<text x="443" y="444.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<path d="M399 394 h-5 v60 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M457 394 h5 v60 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="428" y="480" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle"><tspan font-weight="700">C</tspan></text>
+<text x="500" y="414" font-size="13" fill="var(--fig-muted, #74716A)">左上角：2 + 2 + 0 = 4</text>
+<text x="500" y="436" font-size="13" fill="var(--fig-muted, #74716A)">右下角：0 + 0 + 12 = 12</text>
+<text x="500" y="458" font-size="13" fill="var(--fig-muted, #74716A)">三项相加，与 ①② 的结果相同</text>
+</svg>

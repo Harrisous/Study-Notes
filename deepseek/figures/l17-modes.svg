@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 452" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一页文档要多少视觉 token：DeepSeek-OCR 各模式与其他系统</title>
+
+<text x="20" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">每页视觉 token 数（对数轴）</text>
+<text x="650" y="24" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">1000 文本 token</text>
+<text x="650" y="40" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">的压缩比</text>
+<line x1="254.56" y1="48" x2="254.56" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="254.56" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="306.01" y1="48" x2="306.01" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="306.01" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="357.46" y1="48" x2="357.46" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="357.46" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200</text>
+<line x1="425.47" y1="48" x2="425.47" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="425.47" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">500</text>
+<line x1="476.92" y1="48" x2="476.92" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="476.92" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1,000</text>
+<line x1="528.36" y1="48" x2="528.36" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="528.36" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2,000</text>
+<line x1="596.37" y1="48" x2="596.37" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="596.37" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5,000</text>
+<line x1="238" y1="380" x2="640" y2="380" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="20" y1="249" x2="740" y2="249" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="20" y="44" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700">DeepSeek-OCR</text>
+<text x="20" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)"></text>
+<text x="22" y="266" font-size="11.5" fill="var(--fig-muted, #74716A)">其他系统（OmniDocBench 每页平均）</text>
+<text x="20" y="63" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Tiny</text>
+<text x="118" y="63" font-size="11.5" fill="var(--fig-muted, #74716A)">512²</text>
+<line x1="272.89" y1="58" x2="282.65" y2="58" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5" stroke-opacity="0.35"/>
+<circle cx="272.89" cy="58" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="272.89" y="49" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">64</text>
+<text x="289.65" y="62.5" font-size="11" fill="var(--fig-muted, #74716A)">代码占 73</text>
+<text x="704" y="62.5" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">15.6×</text>
+<text x="20" y="93" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Small</text>
+<text x="118" y="93" font-size="11.5" fill="var(--fig-muted, #74716A)">640²</text>
+<line x1="306.01" y1="88" x2="313.76" y2="88" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5" stroke-opacity="0.35"/>
+<circle cx="306.01" cy="88" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="306.01" y="79" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">100</text>
+<text x="320.76" y="92.5" font-size="11" fill="var(--fig-muted, #74716A)">代码占 111</text>
+<text x="704" y="92.5" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">10.0×</text>
+<text x="20" y="123" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Base</text>
+<text x="118" y="123" font-size="11.5" fill="var(--fig-muted, #74716A)">1024²，补边</text>
+<line x1="375.78" y1="118" x2="380.55" y2="118" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5" stroke-opacity="0.35"/>
+<circle cx="375.78" cy="118" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="375.78" y="109" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">256</text>
+<text x="387.55" y="122.5" font-size="11" fill="var(--fig-muted, #74716A)">代码占 273</text>
+<circle cx="350.46" cy="118" r="3.6" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="343.46" y="122.5" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">均 182</text>
+<text x="704" y="122.5" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">3.9×</text>
+<text x="20" y="153" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Large</text>
+<text x="118" y="153" font-size="11.5" fill="var(--fig-muted, #74716A)">1280²，补边</text>
+<line x1="408.91" y1="148" x2="412.7" y2="148" stroke="var(--fig-blue, #1F5FA8)" stroke-width="5" stroke-opacity="0.35"/>
+<circle cx="408.91" cy="148" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="408.91" y="139" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">400</text>
+<text x="419.7" y="152.5" font-size="11" fill="var(--fig-muted, #74716A)">代码占 421</text>
+<circle cx="383.75" cy="148" r="3.6" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="376.75" y="152.5" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">均 285</text>
+<text x="704" y="152.5" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">2.5×</text>
+<text x="20" y="183" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Gundam</text>
+<text x="118" y="183" font-size="11.5" fill="var(--fig-muted, #74716A)">n 块 640² + 1024²</text>
+<line x1="418.63" y1="178" x2="487.67" y2="178" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3"/>
+<line x1="418.63" y1="172" x2="418.63" y2="184" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<line x1="487.67" y1="172" x2="487.67" y2="184" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="411.63" y="182.5" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">456</text>
+<text x="494.67" y="182.5" font-size="11.5" fill="var(--fig-blue, #1F5FA8)">1,156</text>
+<circle cx="459.89" cy="178" r="4.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="459.89" y="170" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">均 795</text>
+<text x="20" y="213" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">Gundam-M</text>
+<text x="118" y="213" font-size="11.5" fill="var(--fig-muted, #74716A)">n 块 1024² + 1280²</text>
+<line x1="470.08" y1="208" x2="550.75" y2="208" stroke="var(--fig-muted, #74716A)" stroke-width="3"/>
+<line x1="470.08" y1="202" x2="470.08" y2="214" stroke="var(--fig-muted, #74716A)" stroke-width="2"/>
+<line x1="550.75" y1="202" x2="550.75" y2="214" stroke="var(--fig-muted, #74716A)" stroke-width="2"/>
+<text x="463.08" y="212.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">912</text>
+<text x="557.75" y="212.5" font-size="11.5" fill="var(--fig-muted, #74716A)">2,704</text>
+<circle cx="522.7" cy="208" r="4.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.6"/>
+<text x="522.7" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">均 1,853</text>
+<text x="20" y="243" font-size="12.5" fill="var(--fig-violet, #6733C4)" font-weight="700">OCR 2</text>
+<text x="118" y="243" font-size="11.5" fill="var(--fig-muted, #74716A)">k 块 768² + 1024²</text>
+<line x1="375.78" y1="238" x2="485.33" y2="238" stroke="var(--fig-violet, #6733C4)" stroke-width="3"/>
+<line x1="375.78" y1="232" x2="375.78" y2="244" stroke="var(--fig-violet, #6733C4)" stroke-width="2"/>
+<line x1="485.33" y1="232" x2="485.33" y2="244" stroke="var(--fig-violet, #6733C4)" stroke-width="2"/>
+<text x="368.78" y="242.5" font-size="11.5" fill="var(--fig-violet, #6733C4)" text-anchor="end">256</text>
+<text x="492.33" y="242.5" font-size="11.5" fill="var(--fig-violet, #6733C4)">1,120</text>
+<text x="20" y="281" font-size="12.5" fill="var(--fig-ink, #1C1B19)">GOT-OCR2.0</text>
+<circle cx="375.78" cy="276" r="4.6" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="384.78" y="280.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)">256</text>
+<text x="20" y="311" font-size="12.5" fill="var(--fig-ink, #1C1B19)">Qwen2.5-VL-72B</text>
+<circle cx="578.86" cy="306" r="4.6" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="587.86" y="310.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)">3,949</text>
+<text x="20" y="341" font-size="12.5" fill="var(--fig-ink, #1C1B19)">dots.ocr</text>
+<text x="118" y="341" font-size="11.5" fill="var(--fig-muted, #74716A)">200dpi</text>
+<circle cx="604.05" cy="336" r="4.6" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="613.05" y="340.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)">5,545</text>
+<text x="20" y="371" font-size="12.5" fill="var(--fig-ink, #1C1B19)">MinerU2.0</text>
+<circle cx="619.09" cy="366" r="4.6" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="628.09" y="370.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)">6,790</text>
+<text x="118" y="226" font-size="11" fill="var(--fig-muted, #74716A)">开源版未提供</text>
+<text x="20" y="422" font-size="11.5" fill="var(--fig-muted, #74716A)">实心点：编码器输出的视觉 token（论文口径）；浅色延长段：开源代码实际占的位置（每行多一个换行 token，末尾一个分隔 token）；</text>
+<text x="20" y="440" font-size="11.5" fill="var(--fig-muted, #74716A)">空心点：OmniDocBench 上的平均（Base、Large 为补边后的平均有效 token）。Gundam 瓦片数 n = 2–9，OCR 2 局部视图 k = 0–6。</text>
+</svg>

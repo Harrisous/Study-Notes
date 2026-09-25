@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 434" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>GPT 预训练的完整流程：数据管线（一次）与训练循环（每步一次）</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="22" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="600">数据管线（只做一次）</text>
+<rect x="16" y="36" width="168" height="64" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="100" y="56.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">原始语料</text>
+<text x="100" y="72.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">Common Crawl 45 TB（压缩）</text>
+<text x="100" y="88.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">+ 书、维基等精选语料</text>
+<rect x="16" y="118" width="168" height="64" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="100" y="138.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">质量过滤 + 去重</text>
+<text x="100" y="154.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">分类器打分、MinHash</text>
+<text x="100" y="170.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">CC 过滤后剩 570 GB</text>
+<line x1="100" y1="101" x2="100" y2="117" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<rect x="16" y="200" width="168" height="64" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="100" y="220.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">分词</text>
+<text x="100" y="236.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">字节级 BPE</text>
+<text x="100" y="252.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">词表 V = 50,257</text>
+<line x1="100" y1="183" x2="100" y2="199" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<rect x="16" y="282" width="168" height="64" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="100" y="302.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">拼接打包</text>
+<text x="100" y="318.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">文档首尾相接</text>
+<text x="100" y="334.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">用 &lt;|endoftext|&gt; 分隔</text>
+<line x1="100" y1="265" x2="100" y2="281" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<rect x="16" y="364" width="168" height="64" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="100" y="384.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">组成 batch</text>
+<text x="100" y="400.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">切成 T = 2048 的序列</text>
+<text x="100" y="416.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每步约 3.2M 个 token</text>
+<line x1="100" y1="347" x2="100" y2="363" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5" marker-end="url(#ah-amber)"/>
+<text x="179" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§4</text>
+<text x="214" y="22" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">训练循环（每个优化步重复一次）</text>
+<rect x="214" y="44" width="146" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="287" y="75.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">前向传播</text>
+<text x="287" y="91.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">logits 形状 [B<tspan baseline-shift="-3" font-size="11">seq</tspan>, T, V]</text>
+<rect x="381" y="44" width="146" height="70" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="8"/>
+<text x="454" y="75.55" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">逐位置损失</text>
+<text x="454" y="91.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">ℓ<tspan baseline-shift="-3" font-size="11">t</tspan> = −log p<tspan baseline-shift="-3" font-size="11">θ</tspan>(x<tspan baseline-shift="-3" font-size="11">t+1</tspan> | x<tspan baseline-shift="-3" font-size="11">≤t</tspan>)</text>
+<rect x="548" y="44" width="146" height="70" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="8"/>
+<text x="621" y="67.55" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">平均损失 L</text>
+<text x="621" y="83.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">对 B<tspan baseline-shift="-3" font-size="11">seq</tspan>×T 个位置取平均</text>
+<text x="621" y="99.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">单位 nats/token</text>
+<rect x="548" y="196" width="146" height="70" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="8"/>
+<text x="621" y="219.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">反向传播</text>
+<text x="621" y="235.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">得到梯度 ∇<tspan baseline-shift="-3" font-size="11">θ</tspan>L</text>
+<text x="621" y="251.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">FLOPs 约为前向的 2 倍</text>
+<rect x="548" y="348" width="146" height="70" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="8"/>
+<text x="621" y="371.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">梯度裁剪</text>
+<text x="621" y="387.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">全局范数超过 1.0</text>
+<text x="621" y="403.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">就等比例缩小</text>
+<rect x="381" y="348" width="146" height="70" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="454" y="371.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">AdamW 更新</text>
+<text x="454" y="387.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">β<tspan baseline-shift="-3" font-size="11">1</tspan>=0.9，β<tspan baseline-shift="-3" font-size="11">2</tspan>=0.95</text>
+<text x="454" y="403.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">权重衰减 0.1</text>
+<rect x="214" y="348" width="146" height="70" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="287" y="371.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">学习率调度 η<tspan baseline-shift="-3.2" font-size="11">s</tspan></text>
+<text x="287" y="387.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">warmup 375M token</text>
+<text x="287" y="403.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">余弦降到峰值的 10%</text>
+<rect x="214" y="196" width="146" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="287" y="227.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">下一步 s → s+1</text>
+<text x="287" y="243.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">取下一个 batch</text>
+<line x1="360" y1="79" x2="379" y2="79" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<line x1="527" y1="79" x2="546" y2="79" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" marker-end="url(#ah-red)"/>
+<line x1="621" y1="114" x2="621" y2="194" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<line x1="621" y1="266" x2="621" y2="346" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<line x1="548" y1="383" x2="529" y2="383" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<line x1="360" y1="383" x2="379" y2="383" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="287" y1="196" x2="287" y2="116" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M454.0 347.0 V231.0 H362.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<path d="M185.0 396.0 H197.0 V231.0 H212.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" marker-end="url(#ah-amber)"/>
+<text x="355" y="57" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§3</text>
+<text x="689" y="57" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<text x="689" y="209" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§3·§6</text>
+<text x="522" y="361" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§5</text>
+<text x="689" y="361" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§5</text>
+<text x="355" y="361" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§5</text>
+<text x="454" y="136" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">GPT-3 175B：</text>
+<text x="454" y="154" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">300B token ÷ 3.2M token/步</text>
+<text x="454" y="172" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">≈ 93,750 步（忽略 batch 渐增）</text>
+<text x="454" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">总算力 ≈ 6ND</text>
+<text x="454" y="216" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">= 3.14×10<tspan baseline-shift="super" font-size="11">23</tspan> FLOPs</text>
+</svg>

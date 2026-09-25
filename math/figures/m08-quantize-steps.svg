@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>先缩放再舍入：8 个数量化成 FP4 E2M1，整组缩放与每 4 个一块</title>
+<defs><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="16" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 整组一个缩放因子：s = 12/6 = 2</text>
+<text x="744" y="16" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">0.35 与 −0.2 丢失；平方误差和 0.4625</text>
+<rect x="194" y="46" width="186.29" height="171" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<rect x="380.29" y="46" width="142.29" height="171" fill="var(--fig-muted, #74716A)" fill-opacity="0.1"/>
+<rect x="522.57" y="46" width="183.9" height="171" fill="var(--fig-green, #16704A)" fill-opacity="0.08"/>
+<text x="287.14" y="38" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">舍入成 0</text>
+<text x="451.43" y="38" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">次正规区</text>
+<text x="614.52" y="38" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">正规区：相对误差 ≤ u = 25%</text>
+<line x1="451.43" y1="46" x2="451.43" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="522.57" y1="46" x2="522.57" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="564.19" y1="46" x2="564.19" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="593.71" y1="46" x2="593.71" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="635.33" y1="46" x2="635.33" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="664.86" y1="46" x2="664.86" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="706.47" y1="46" x2="706.47" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="206" y1="46" x2="206" y2="217" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="380.29" y1="46" x2="380.29" y2="217" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="451.43" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">0.5</text>
+<text x="522.57" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">1</text>
+<text x="564.19" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">1.5</text>
+<text x="593.71" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">2</text>
+<text x="635.33" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">3</text>
+<text x="664.86" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">4</text>
+<text x="706.47" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">6</text>
+<text x="206" y="233" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">0</text>
+<text x="222" y="233" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">//</text>
+<text x="380.29" y="233" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.25</text>
+<text x="309.14" y="233" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.125</text>
+<text x="58" y="38" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">原值 x<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="118" y="38" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">x<tspan baseline-shift="sub" font-size="11">i</tspan>/s</text>
+<text x="178" y="38" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">乘回 s·q<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="58" y="64" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.9</text>
+<text x="118" y="64" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.45</text>
+<text x="178" y="64" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">1</text>
+<line x1="446.61" y1="60" x2="447.43" y2="60" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="60" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="440.61" cy="60" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="85" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−1.7</text>
+<text x="118" y="85" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−0.85</text>
+<text x="178" y="85" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">−2</text>
+<line x1="511.89" y1="81" x2="518.57" y2="81" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="522.57" cy="81" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="505.89" cy="81" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="106" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.35</text>
+<text x="118" y="106" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.175</text>
+<text x="178" y="106" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="700">0</text>
+<line x1="336.68" y1="102" x2="214" y2="102" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<text x="206" y="106.5" font-size="14" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">×</text>
+<circle cx="343.68" cy="102" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="127" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">3</text>
+<text x="118" y="127" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">1.5</text>
+<text x="178" y="127" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">3</text>
+<circle cx="564.19" cy="123" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="564.19" cy="123" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−0.6</text>
+<text x="118" y="148" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−0.3</text>
+<text x="178" y="148" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">−1</text>
+<line x1="405" y1="144" x2="447.43" y2="144" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="144" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="399" cy="144" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="169" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">1.2</text>
+<text x="118" y="169" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.6</text>
+<text x="178" y="169" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">1</text>
+<line x1="464.14" y1="165" x2="455.43" y2="165" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="165" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="470.14" cy="165" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">12</text>
+<text x="118" y="190" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">6</text>
+<text x="178" y="190" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">12</text>
+<circle cx="706.47" cy="186" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="706.47" cy="186" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="211" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−0.2</text>
+<text x="118" y="211" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−0.1</text>
+<text x="178" y="211" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="700">0</text>
+<line x1="279.24" y1="207" x2="214" y2="207" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<text x="206" y="211.5" font-size="14" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">×</text>
+<circle cx="286.24" cy="207" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="16" y="271" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 每 4 个一块，各配一个缩放因子</text>
+<text x="744" y="271" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">只有 −0.2 丢失；平方误差和 0.30</text>
+<rect x="194" y="301" width="186.29" height="213" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<rect x="380.29" y="301" width="142.29" height="213" fill="var(--fig-muted, #74716A)" fill-opacity="0.1"/>
+<rect x="522.57" y="301" width="183.9" height="213" fill="var(--fig-green, #16704A)" fill-opacity="0.08"/>
+<text x="287.14" y="293" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">舍入成 0</text>
+<text x="451.43" y="293" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">次正规区</text>
+<text x="614.52" y="293" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">正规区：相对误差 ≤ u = 25%</text>
+<line x1="451.43" y1="301" x2="451.43" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="522.57" y1="301" x2="522.57" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="564.19" y1="301" x2="564.19" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="593.71" y1="301" x2="593.71" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="635.33" y1="301" x2="635.33" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="664.86" y1="301" x2="664.86" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="706.47" y1="301" x2="706.47" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="206" y1="301" x2="206" y2="514" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="380.29" y1="301" x2="380.29" y2="514" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="451.43" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">0.5</text>
+<text x="522.57" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">1</text>
+<text x="564.19" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">1.5</text>
+<text x="593.71" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">2</text>
+<text x="635.33" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">3</text>
+<text x="664.86" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">4</text>
+<text x="706.47" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">6</text>
+<text x="206" y="530" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">0</text>
+<text x="222" y="530" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">//</text>
+<text x="380.29" y="530" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.25</text>
+<text x="309.14" y="530" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.125</text>
+<text x="58" y="293" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">原值 x<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="118" y="293" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">x<tspan baseline-shift="sub" font-size="11">i</tspan>/s</text>
+<text x="178" y="293" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">乘回 s·q<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="16" y="319" font-size="12" fill="var(--fig-violet, #6733C4)">块 1：s<tspan baseline-shift="sub" font-size="11">1</tspan> = 3/6 = 0.5</text>
+<line x1="194" y1="305" x2="736" y2="305" stroke="var(--fig-violet, #6733C4)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="58" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.9</text>
+<text x="118" y="340" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">1.8</text>
+<text x="178" y="340" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">1</text>
+<line x1="588.9" y1="336" x2="589.71" y2="336" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="593.71" cy="336" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="582.9" cy="336" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="361" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−1.7</text>
+<text x="118" y="361" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−3.4</text>
+<text x="178" y="361" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">−1.5</text>
+<line x1="642.18" y1="357" x2="639.33" y2="357" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="635.33" cy="357" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="648.18" cy="357" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.35</text>
+<text x="118" y="382" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.7</text>
+<text x="178" y="382" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">0.25</text>
+<line x1="479.96" y1="378" x2="455.43" y2="378" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="378" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="485.96" cy="378" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="403" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">3</text>
+<text x="118" y="403" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">6</text>
+<text x="178" y="403" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">3</text>
+<circle cx="706.47" cy="399" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="706.47" cy="399" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="16" y="424" font-size="12" fill="var(--fig-violet, #6733C4)">块 2：s<tspan baseline-shift="sub" font-size="11">2</tspan> = 12/6 = 2</text>
+<line x1="194" y1="410" x2="736" y2="410" stroke="var(--fig-violet, #6733C4)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="58" y="445" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−0.6</text>
+<text x="118" y="445" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−0.3</text>
+<text x="178" y="445" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">−1</text>
+<line x1="405" y1="441" x2="447.43" y2="441" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="441" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="399" cy="441" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="466" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">1.2</text>
+<text x="118" y="466" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.6</text>
+<text x="178" y="466" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">1</text>
+<line x1="464.14" y1="462" x2="455.43" y2="462" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<circle cx="451.43" cy="462" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="470.14" cy="462" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="487" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">12</text>
+<text x="118" y="487" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">6</text>
+<text x="178" y="487" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">12</text>
+<circle cx="706.47" cy="483" r="4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="706.47" cy="483" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="58" y="508" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−0.2</text>
+<text x="118" y="508" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">−0.1</text>
+<text x="178" y="508" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="700">0</text>
+<line x1="279.24" y1="504" x2="214" y2="504" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<text x="206" y="508.5" font-size="14" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">×</text>
+<circle cx="286.24" cy="504" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<circle cx="24" cy="556" r="6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="36" y="560" font-size="12" fill="var(--fig-ink, #1C1B19)">缩放后的 |x<tspan baseline-shift="sub" font-size="11">i</tspan>/s|</text>
+<circle cx="170" cy="556" r="4" fill="var(--fig-orange, #B4460C)"/>
+<text x="180" y="560" font-size="12" fill="var(--fig-ink, #1C1B19)">舍入到的 E2M1 格点 q<tspan baseline-shift="sub" font-size="11">i</tspan></text>
+<text x="356" y="560" font-size="14" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">×</text>
+<text x="366" y="560" font-size="12" fill="var(--fig-ink, #1C1B19)">舍入成 0</text>
+<text x="440" y="560" font-size="12" fill="var(--fig-muted, #74716A)">横轴：|x<tspan baseline-shift="sub" font-size="11">i</tspan>/s|，对数刻度（符号见左边的数）</text>
+</svg>

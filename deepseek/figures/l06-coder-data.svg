@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-Coder 的数据管线与仓库级依赖排序示例</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="16" y="30" width="130" height="92" fill="var(--fig-muted, #74716A)" fill-opacity="0.07" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="81" y="55.05" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">① 爬取</text>
+<text x="81" y="75.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GitHub 公开仓库</text>
+<text x="81" y="92.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2023 年 2 月前创建</text>
+<text x="81" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">只留 87 种语言</text>
+<line x1="147" y1="76" x2="157" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="158" y="30" width="130" height="92" fill="var(--fig-red, #A3231C)" fill-opacity="0.07" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="8"/>
+<text x="223" y="55.05" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">② 规则过滤</text>
+<text x="223" y="75.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">行长、字母比例、</text>
+<text x="223" y="92.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">文件类型等规则</text>
+<text x="223" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">剩原始量 32.8%</text>
+<line x1="289" y1="76" x2="299" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="300" y="30" width="130" height="92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="365" y="63.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">③ 依赖解析</text>
+<text x="365" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">按 import 等关系</text>
+<text x="365" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">排列仓库内文件</text>
+<line x1="431" y1="76" x2="441" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="442" y="30" width="130" height="92" fill="var(--fig-violet, #6733C4)" fill-opacity="0.07" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<text x="507" y="63.55" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">④ 仓库级去重</text>
+<text x="507" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">以仓库为单位去重</text>
+<text x="507" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">不拆散仓库结构</text>
+<line x1="573" y1="76" x2="583" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="584" y="30" width="130" height="92" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.07" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="649" y="55.05" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">⑤ 质量筛选</text>
+<text x="649" y="75.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">质量模型 + 去污染</text>
+<text x="649" y="92.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（与测试题有 10-gram</text>
+<text x="649" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">重合即删）</text>
+<text x="16" y="18" font-size="12" fill="var(--fig-muted, #74716A)">据 DeepSeek-Coder 报告图 2 重绘：最终代码语料 798 GB、6.03 亿个文件</text>
+<text x="16" y="170" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">示例仓库（虚构）：箭头 B → A 表示 A import 了 B</text>
+<rect x="36" y="234" width="88" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="80" y="255" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">utils.py</text>
+<text x="130" y="234" font-size="11" fill="var(--fig-muted, #74716A)">入度 0</text>
+<rect x="176" y="234" width="88" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="220" y="255" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">model.py</text>
+<text x="270" y="234" font-size="11" fill="var(--fig-muted, #74716A)">入度 1</text>
+<rect x="106" y="334" width="88" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="150" y="355" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">train.py</text>
+<text x="200" y="334" font-size="11" fill="var(--fig-muted, #74716A)">入度 2</text>
+<rect x="36" y="424" width="88" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="80" y="445" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a.py</text>
+<text x="130" y="424" font-size="11" fill="var(--fig-muted, #74716A)">入度 1</text>
+<rect x="176" y="424" width="88" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="220" y="445" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b.py</text>
+<text x="270" y="424" font-size="11" fill="var(--fig-muted, #74716A)">入度 1</text>
+<line x1="124" y1="250" x2="174" y2="250" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="90" y1="266" x2="130" y2="332" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="210" y1="266" x2="170" y2="332" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<path d="M110.0 424.0 Q 150.0 396.0 188.0 422.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<path d="M190.0 456.0 Q 150.0 484.0 112.0 458.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="300" y="445" font-size="12" fill="var(--fig-violet, #6733C4)">a、b 互相 import：</text>
+<text x="300" y="463" font-size="12" fill="var(--fig-violet, #6733C4)">一个环，入度都是 1</text>
+<text x="440" y="170" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">每个连通子图单独排序，每次取入度最小的文件</text>
+<text x="440" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)">子图 1：</text>
+<text x="440" y="218" font-size="12" fill="var(--fig-blue, #1F5FA8)">取 utils（入度 0）→ model 降为 0，train 降为 1</text>
+<text x="440" y="238" font-size="12" fill="var(--fig-blue, #1F5FA8)">取 model（入度 0）→ train 降为 0</text>
+<text x="440" y="258" font-size="12" fill="var(--fig-blue, #1F5FA8)">取 train</text>
+<text x="440" y="278" font-size="12" fill="var(--fig-violet, #6733C4)">子图 2：a、b 入度都是 1，取其一（a）</text>
+<text x="440" y="298" font-size="12" fill="var(--fig-violet, #6733C4)">→ b 降为 0，再取 b。环不会卡住排序</text>
+<text x="440" y="330" font-size="12" fill="var(--fig-ink, #1C1B19)">拼成两条训练样本，每个文件前加路径注释：</text>
+<rect x="440" y="344" width="300" height="60" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="452" y="364" font-size="12" fill="var(--fig-blue, #1F5FA8)"># utils.py    ……文件内容……</text>
+<text x="452" y="380" font-size="12" fill="var(--fig-blue, #1F5FA8)"># model.py    ……文件内容……</text>
+<text x="452" y="396" font-size="12" fill="var(--fig-blue, #1F5FA8)"># train.py    ……文件内容……</text>
+<rect x="440" y="420" width="300" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.06" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="6"/>
+<text x="452" y="440" font-size="12" fill="var(--fig-violet, #6733C4)"># a.py    ……文件内容……</text>
+<text x="452" y="456" font-size="12" fill="var(--fig-violet, #6733C4)"># b.py    ……文件内容……</text>
+</svg>

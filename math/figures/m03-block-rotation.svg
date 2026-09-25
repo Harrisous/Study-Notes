@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 444" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>d = 8 的 RoPE 旋转矩阵在位置 t = 3：四个 2×2 旋转沿对角线排开，各转各的角度</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="370" y="22" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">R<tspan baseline-shift="sub" font-size="11">Θ,t</tspan>（d = 8，b = 10000，t = 3）：4 个转速不同的 2×2 旋转沿对角线排开，其余全是 0</text>
+<rect x="59" y="55" width="86" height="86" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="4"/>
+<rect x="147" y="143" width="86" height="86" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="4"/>
+<rect x="235" y="231" width="86" height="86" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<rect x="323" y="319" width="86" height="86" fill="var(--fig-orange, #B4460C)" fill-opacity="0.12" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="4"/>
+<text x="80" y="80" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.990</text>
+<text x="124" y="80" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.141</text>
+<text x="168" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="124" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.141</text>
+<text x="124" y="124" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.990</text>
+<text x="168" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="124" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="168" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.955</text>
+<text x="212" y="168" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.296</text>
+<text x="256" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="168" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="212" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.296</text>
+<text x="212" y="212" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.955</text>
+<text x="256" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="256" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.000</text>
+<text x="300" y="256" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.030</text>
+<text x="344" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="300" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.030</text>
+<text x="300" y="300" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.000</text>
+<text x="344" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="388" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="80" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="344" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.000</text>
+<text x="388" y="344" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.003</text>
+<text x="80" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="168" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="212" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="256" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="300" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="344" y="388" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.003</text>
+<text x="388" y="388" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.000</text>
+<path d="M58 54 h-6 v352 h6" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<path d="M410 54 h6 v352 h-6" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="46" y="102" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">对 0</text>
+<text x="46" y="190" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">对 1</text>
+<text x="46" y="278" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end">对 2</text>
+<text x="46" y="366" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">对 3</text>
+<text x="80" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="124" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="168" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="212" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="256" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="300" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="344" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="388" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<circle cx="504" cy="116" r="40" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.4"/>
+<line x1="540" y1="116" x2="544" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="535.18" y1="98" x2="538.64" y2="96" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="522" y1="84.82" x2="524" y2="81.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="80" x2="504" y2="76" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="486" y1="84.82" x2="484" y2="81.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="472.82" y1="98" x2="469.36" y2="96" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="468" y1="116" x2="464" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="472.82" y1="134" x2="469.36" y2="136" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="486" y1="147.18" x2="484" y2="150.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="152" x2="504" y2="156" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="522" y1="147.18" x2="524" y2="150.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="535.18" y1="134" x2="538.64" y2="136" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="116" x2="542" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M520.8 116 A16.8 16.8 0 0 0 487.37 113.63" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<line x1="504" y1="116" x2="467.57" y2="110.81" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" marker-end="url(#ah-blue)"/>
+<text x="504" y="174" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">对 0：θ₀ = 1</text>
+<text x="504" y="192" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">转 tθ = 3 rad = 171.9°</text>
+<text x="504" y="209" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">波长 2π/θ = 6.28 token</text>
+<circle cx="654" cy="116" r="40" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.4"/>
+<line x1="690" y1="116" x2="694" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="685.18" y1="98" x2="688.64" y2="96" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="672" y1="84.82" x2="674" y2="81.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="80" x2="654" y2="76" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="636" y1="84.82" x2="634" y2="81.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="622.82" y1="98" x2="619.36" y2="96" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="618" y1="116" x2="614" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="622.82" y1="134" x2="619.36" y2="136" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="636" y1="147.18" x2="634" y2="150.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="152" x2="654" y2="156" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="672" y1="147.18" x2="674" y2="150.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="685.18" y1="134" x2="688.64" y2="136" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="116" x2="692" y2="116" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M670.8 116 A16.8 16.8 0 0 0 670.05 111.04" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<line x1="654" y1="116" x2="689.16" y2="105.12" stroke="var(--fig-violet, #6733C4)" stroke-width="2.4" marker-end="url(#ah-violet)"/>
+<text x="654" y="174" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">对 1：θ₁ = 0.1</text>
+<text x="654" y="192" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">转 tθ = 0.3 rad = 17.19°</text>
+<text x="654" y="209" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">波长 2π/θ = 62.83 token</text>
+<circle cx="504" cy="300" r="40" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.4"/>
+<line x1="540" y1="300" x2="544" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="535.18" y1="282" x2="538.64" y2="280" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="522" y1="268.82" x2="524" y2="265.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="264" x2="504" y2="260" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="486" y1="268.82" x2="484" y2="265.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="472.82" y1="282" x2="469.36" y2="280" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="468" y1="300" x2="464" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="472.82" y1="318" x2="469.36" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="486" y1="331.18" x2="484" y2="334.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="336" x2="504" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="522" y1="331.18" x2="524" y2="334.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="535.18" y1="318" x2="538.64" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="504" y1="300" x2="542" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M520.8 300 A16.8 16.8 0 0 0 520.79 299.5" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<line x1="504" y1="300" x2="540.78" y2="298.9" stroke="var(--fig-green, #16704A)" stroke-width="2.4" marker-end="url(#ah-green)"/>
+<text x="504" y="358" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">对 2：θ₂ = 0.01</text>
+<text x="504" y="376" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">转 tθ = 0.03 rad = 1.72°</text>
+<text x="504" y="393" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">波长 2π/θ = 628 token</text>
+<circle cx="654" cy="300" r="40" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.4"/>
+<line x1="690" y1="300" x2="694" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="685.18" y1="282" x2="688.64" y2="280" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="672" y1="268.82" x2="674" y2="265.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="264" x2="654" y2="260" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="636" y1="268.82" x2="634" y2="265.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="622.82" y1="282" x2="619.36" y2="280" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="618" y1="300" x2="614" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="622.82" y1="318" x2="619.36" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="636" y1="331.18" x2="634" y2="334.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="336" x2="654" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="672" y1="331.18" x2="674" y2="334.64" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="685.18" y1="318" x2="688.64" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="654" y1="300" x2="692" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M670.8 300 A16.8 16.8 0 0 0 670.8 299.95" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<line x1="654" y1="300" x2="690.8" y2="299.89" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4" marker-end="url(#ah-orange)"/>
+<text x="654" y="358" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">对 3：θ₃ = 0.001</text>
+<text x="654" y="376" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">转 tθ = 0.003 rad = 0.17°</text>
+<text x="654" y="393" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">波长 2π/θ = 6283 token</text>
+<text x="370" y="432" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">每个 2×2 块都是 (M3.4) 的 R(tθᵢ)，只搅动自己那两个分量。虚线是 t = 0 时的指针，彩色箭头是 t = 3 时的指针。</text>
+</svg>

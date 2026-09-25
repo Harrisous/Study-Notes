@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 附录 D.2：MoE 模型上 MHA 与 MLA 的得分</title>
+<defs><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<circle cx="156" cy="22" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="167" y="26" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">MHA</text>
+<circle cx="226" cy="22" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="237" y="26" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="600">MLA</text>
+<text x="290" y="26" font-size="12" fill="var(--fig-muted, #74716A)">箭头：同规模下从 MHA 换成 MLA</text>
+<text x="150" y="50" font-size="12" fill="var(--fig-muted, #74716A)">小 MoE（约 16B，1.33T token）：每 token KV 110.6K → 15.6K 个元素</text>
+<text x="150" y="68" font-size="12" fill="var(--fig-muted, #74716A)">大 MoE（约 250B，420B token）：每 token KV 860.2K → 34.6K 个元素</text>
+<line x1="150" y1="78" x2="150" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="150" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">36</text>
+<line x1="227.14" y1="78" x2="227.14" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="227.14" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="304.29" y1="78" x2="304.29" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="304.29" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">44</text>
+<line x1="381.43" y1="78" x2="381.43" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="381.43" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">48</text>
+<line x1="458.57" y1="78" x2="458.57" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="458.57" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">52</text>
+<line x1="535.71" y1="78" x2="535.71" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="535.71" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">56</text>
+<line x1="612.86" y1="78" x2="612.86" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="612.86" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="690" y1="78" x2="690" y2="382" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="690" y="398" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<text x="420" y="418" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">得分（EM / 准确率，%）</text>
+<text x="100" y="119" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">BBH</text>
+<text x="136" y="100" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">小</text>
+<line x1="186.64" y1="96" x2="200.86" y2="96" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="186.64" cy="96" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="207.86" cy="96" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="174.64" y="100" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">37.9</text>
+<text x="219.86" y="100" font-size="11" fill="var(--fig-orange, #B4460C)">39.0</text>
+<text x="136" y="138" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">大</text>
+<line x1="354.43" y1="134" x2="426.5" y2="134" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="354.43" cy="134" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="433.5" cy="134" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="342.43" y="138" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">46.6</text>
+<text x="445.5" y="138" font-size="11" fill="var(--fig-orange, #B4460C)">50.7</text>
+<line x1="40" y1="154" x2="690" y2="154" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="100" y="195" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">MMLU</text>
+<text x="136" y="176" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">小</text>
+<line x1="394.93" y1="172" x2="413" y2="172" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="394.93" cy="172" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="420" cy="172" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="382.93" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">48.7</text>
+<text x="432" y="176" font-size="11" fill="var(--fig-orange, #B4460C)">50.0</text>
+<text x="136" y="214" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">大</text>
+<line x1="564.64" y1="210" x2="586.57" y2="210" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="564.64" cy="210" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="593.57" cy="210" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="552.64" y="214" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">57.5</text>
+<text x="605.57" y="214" font-size="11" fill="var(--fig-orange, #B4460C)">59.0</text>
+<line x1="40" y1="230" x2="690" y2="230" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="100" y="271" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">C-Eval</text>
+<text x="136" y="252" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">小</text>
+<line x1="450.86" y1="248" x2="444.36" y2="248" stroke="var(--fig-red, #A3231C)" stroke-width="1.8" marker-end="url(#ah-red)"/>
+<circle cx="450.86" cy="248" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="437.36" cy="248" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="425.36" y="252" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="end">50.9</text>
+<text x="462.86" y="252" font-size="11" fill="var(--fig-ink, #1C1B19)">51.6</text>
+<text x="496.86" y="252" font-size="11" fill="var(--fig-red, #A3231C)">8 项里仅此项 MLA 低于 MHA</text>
+<text x="136" y="290" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">大</text>
+<line x1="572.36" y1="286" x2="590.43" y2="286" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="572.36" cy="286" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="597.43" cy="286" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="560.36" y="290" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">57.9</text>
+<text x="609.43" y="290" font-size="11" fill="var(--fig-orange, #B4460C)">59.2</text>
+<line x1="40" y1="306" x2="690" y2="306" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="100" y="347" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">CMMLU</text>
+<text x="136" y="328" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">小</text>
+<line x1="464.36" y1="324" x2="478.57" y2="324" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="464.36" cy="324" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="485.57" cy="324" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="452.36" y="328" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">52.3</text>
+<text x="497.57" y="328" font-size="11" fill="var(--fig-orange, #B4460C)">53.4</text>
+<text x="136" y="366" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">大</text>
+<line x1="626.36" y1="362" x2="654.07" y2="362" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<circle cx="626.36" cy="362" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<circle cx="661.07" cy="362" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="614.36" y="366" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">60.7</text>
+<text x="673.07" y="366" font-size="11" fill="var(--fig-orange, #B4460C)">62.5</text>
+</svg>

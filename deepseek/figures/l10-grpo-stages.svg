@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 506" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 的对齐流程：SFT，再用 GRPO 分两阶段做强化学习</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="16" y="22" width="132" height="50" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="82" y="44.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">V2 Base</text>
+<text x="82" y="60.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">8.1T + YaRN</text>
+<line x1="148" y1="47" x2="165" y2="47" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="166" y="22" width="132" height="50" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="232" y="44.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="232" y="60.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">150 万条，2 轮</text>
+<line x1="298" y1="47" x2="315" y2="47" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="316" y="22" width="132" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="382" y="44.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">RL 阶段 1</text>
+<text x="382" y="60.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">推理对齐</text>
+<line x1="448" y1="47" x2="465" y2="47" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="466" y="22" width="132" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="532" y="44.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">RL 阶段 2</text>
+<text x="532" y="60.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">人类偏好对齐</text>
+<line x1="598" y1="47" x2="615" y2="47" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="616" y="22" width="132" height="50" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="682" y="51.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">V2 Chat (RL)</text>
+<text x="236" y="92" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">SFT：120 万条有用性 + 30 万条安全，学习率 5×10⁻⁶</text>
+<text x="530" y="92" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">两个阶段用同一个算法（GRPO），换不同的奖励</text>
+<rect x="12" y="112" width="736" height="206" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="10"/>
+<text x="24" y="132" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">GRPO 的一步（不需要价值网络）</text>
+<rect x="24" y="166" width="92" height="44" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="70" y="192.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">问题 q</text>
+<line x1="116" y1="188" x2="146" y2="188" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="148" y="150" width="132" height="118" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="214" y="168" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">旧策略 π<tspan baseline-shift="sub" font-size="11">θold</tspan></text>
+<text x="214" y="190" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">采样 G 个回答</text>
+<text x="214" y="208" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="214" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="214" y="240" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⋮</text>
+<text x="214" y="256" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="sub" font-size="11">G</tspan></text>
+<line x1="280" y1="208" x2="312" y2="208" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="314" y="162" width="120" height="92" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="374" y="184" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">奖励</text>
+<text x="374" y="204" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">r<tspan baseline-shift="sub" font-size="11">1</tspan>, r<tspan baseline-shift="sub" font-size="11">2</tspan>, …, r<tspan baseline-shift="sub" font-size="11">G</tspan></text>
+<text x="374" y="224" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">（来自奖励模型，</text>
+<text x="374" y="240" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">见下方两种来源）</text>
+<line x1="434" y1="208" x2="464" y2="208" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="466" y="162" width="124" height="92" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="528" y="184" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">组内标准化</text>
+<text x="528" y="204" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Â<tspan baseline-shift="sub" font-size="11">i</tspan> = (r<tspan baseline-shift="sub" font-size="11">i</tspan> − 均值)</text>
+<text x="528" y="228" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">÷ 标准差</text>
+<line x1="590" y1="208" x2="620" y2="208" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="622" y="154" width="118" height="108" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="681" y="176" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">更新 π<tspan baseline-shift="sub" font-size="11">θ</tspan></text>
+<text x="681" y="196" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">裁剪比值 × Â</text>
+<text x="681" y="214" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">− β·KL(π<tspan baseline-shift="sub" font-size="11">θ</tspan>‖π<tspan baseline-shift="sub" font-size="11">ref</tspan>)</text>
+<text x="681" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">（式 10.32）</text>
+<path d="M681 262 C 681 294, 214 294, 214 270" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ah-muted)"/>
+<text x="448" y="310" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">更新后的 π<tspan baseline-shift="sub" font-size="11">θ</tspan> 成为下一轮采样用的旧策略</text>
+<rect x="16" y="352" width="350" height="118" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="28" y="374" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">阶段 1：推理对齐（代码、数学提示）</text>
+<text x="28" y="398" font-size="13" fill="var(--fig-ink, #1C1B19)">r<tspan baseline-shift="sub" font-size="11">i</tspan> = RM<tspan baseline-shift="sub" font-size="11">reasoning</tspan>(o<tspan baseline-shift="sub" font-size="11">i</tspan>)</text>
+<text x="28" y="422" font-size="12" fill="var(--fig-muted, #74716A)">代码偏好数据：由编译器反馈构造</text>
+<text x="28" y="440" font-size="12" fill="var(--fig-muted, #74716A)">数学偏好数据：由标准答案构造</text>
+<text x="28" y="458" font-size="12" fill="var(--fig-muted, #74716A)">数学与代码能力能在更长的训练中持续提升</text>
+<rect x="386" y="352" width="358" height="118" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="398" y="374" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">阶段 2：人类偏好对齐（多奖励）</text>
+<text x="398" y="398" font-size="13" fill="var(--fig-ink, #1C1B19)">r<tspan baseline-shift="sub" font-size="11">i</tspan> = c<tspan baseline-shift="sub" font-size="11">1</tspan>·RM<tspan baseline-shift="sub" font-size="11">helpful</tspan> + c<tspan baseline-shift="sub" font-size="11">2</tspan>·RM<tspan baseline-shift="sub" font-size="11">safety</tspan> + c<tspan baseline-shift="sub" font-size="11">3</tspan>·RM<tspan baseline-shift="sub" font-size="11">rule</tspan></text>
+<text x="398" y="422" font-size="12" fill="var(--fig-muted, #74716A)">有用性、安全两个学出来的奖励模型</text>
+<text x="398" y="440" font-size="12" fill="var(--fig-muted, #74716A)">加一个基于规则的奖励；c<tspan baseline-shift="sub" font-size="11">1</tspan>、c<tspan baseline-shift="sub" font-size="11">2</tspan>、c<tspan baseline-shift="sub" font-size="11">3</tspan> 未公布</text>
+<text x="398" y="458" font-size="12" fill="var(--fig-muted, #74716A)">论文实验：在线 RL 明显优于离线</text>
+<text x="380" y="494" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">学出来的奖励模型都从 V2 Chat (SFT) 初始化，用逐点（point-wise）或成对（pair-wise）损失训练</text>
+</svg>

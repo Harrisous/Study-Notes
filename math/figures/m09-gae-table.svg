@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>GAE = k 步估计的加权平均：按行读与按列读</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">例：r = (0, 0, 1)，V = (0.5, 0.6, 0.8, 0)，γ = 0.99，λ = 0.95，站在 t = 0</text>
+<text x="238" y="48" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">l = 0</text>
+<text x="362" y="48" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">l = 1</text>
+<text x="486" y="48" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">l = 2</text>
+<text x="16" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Â<tspan baseline-shift="sub" font-size="11">0</tspan><tspan baseline-shift="super" font-size="11">(1)</tspan>（1 步估计）</text>
+<text x="16" y="102" font-size="12" fill="var(--fig-muted, #74716A)">= 0.0940</text>
+<rect x="179" y="61" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="238" y="90" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">δ<tspan baseline-shift="sub" font-size="11">0</tspan> = 0.094</text>
+<rect x="303" y="61" width="118" height="48" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6" stroke-dasharray="3 3"/>
+<rect x="427" y="61" width="118" height="48" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6" stroke-dasharray="3 3"/>
+<text x="560" y="90" font-size="12.5" fill="var(--fig-violet, #6733C4)">× (1−λ) = 0.0500</text>
+<text x="16" y="133" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Â<tspan baseline-shift="sub" font-size="11">0</tspan><tspan baseline-shift="super" font-size="11">(2)</tspan>（2 步估计）</text>
+<text x="16" y="156" font-size="12" fill="var(--fig-muted, #74716A)">= 0.2841</text>
+<rect x="179" y="115" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="238" y="144" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">δ<tspan baseline-shift="sub" font-size="11">0</tspan> = 0.094</text>
+<rect x="303" y="115" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="362" y="144" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">γδ<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.190</text>
+<rect x="427" y="115" width="118" height="48" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6" stroke-dasharray="3 3"/>
+<text x="560" y="144" font-size="12.5" fill="var(--fig-violet, #6733C4)">× (1−λ)λ = 0.0475</text>
+<text x="16" y="187" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Â<tspan baseline-shift="sub" font-size="11">0</tspan><tspan baseline-shift="super" font-size="11">(3)</tspan>（3 步估计）</text>
+<text x="16" y="210" font-size="12" fill="var(--fig-muted, #74716A)">= 0.4801</text>
+<rect x="179" y="169" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="238" y="198" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">δ<tspan baseline-shift="sub" font-size="11">0</tspan> = 0.094</text>
+<rect x="303" y="169" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="362" y="198" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">γδ<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.190</text>
+<rect x="427" y="169" width="118" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="6"/>
+<text x="486" y="198" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">γ<tspan baseline-shift="super" font-size="11">2</tspan>δ<tspan baseline-shift="sub" font-size="11">2</tspan> = 0.196</text>
+<text x="560" y="198" font-size="12.5" fill="var(--fig-violet, #6733C4)">× λ<tspan baseline-shift="super" font-size="11">2</tspan> = 0.9025（余下全部）</text>
+<text x="560" y="48" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="600">行权重</text>
+<line x1="176" y1="226" x2="548" y2="226" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="248" font-size="12.5" fill="var(--fig-violet, #6733C4)">按列加起行权重</text>
+<text x="16" y="274" font-size="12.5" fill="var(--fig-green, #16704A)">再乘 γ<tspan baseline-shift="super" font-size="11">l</tspan>：δ<tspan baseline-shift="sub" font-size="11">l</tspan> 的总权重</text>
+<text x="238" y="248" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="238" y="274" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">(γλ)<tspan baseline-shift="super" font-size="11">0</tspan> = 1</text>
+<text x="362" y="248" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle">λ = 0.95</text>
+<text x="362" y="274" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">(γλ)<tspan baseline-shift="super" font-size="11">1</tspan> = 0.9405</text>
+<text x="486" y="248" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle">λ<tspan baseline-shift="super" font-size="11">2</tspan> = 0.9025</text>
+<text x="486" y="274" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">(γλ)<tspan baseline-shift="super" font-size="11">2</tspan> = 0.8845</text>
+<rect x="12" y="290" width="696" height="64" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="8"/>
+<text x="24" y="310" font-size="13" fill="var(--fig-ink, #1C1B19)">按行：GAE = 0.05×0.0940 + 0.0475×0.2841 + 0.9025×0.4801 = 0.4515</text>
+<text x="24" y="336" font-size="13" fill="var(--fig-ink, #1C1B19)">按列：GAE = 0.094 + 0.9405×0.192 + 0.8845×0.200 = 0.4515  （同一个数，求和换了顺序）</text>
+</svg>

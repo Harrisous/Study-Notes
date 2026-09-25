@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 530" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一次完整的路由：16 个专家、4 个节点、选 2 个节点内的 4 个专家</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 亲和度 s（柱）与加偏置后的 s + b（点）；编号从 0 开始，与代码一致</text>
+<line x1="60" y1="270" x2="704" y2="270" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.0</text>
+<line x1="60" y1="235.2" x2="704" y2="235.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="239.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="60" y1="200.4" x2="704" y2="200.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="204.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="60" y1="165.6" x2="704" y2="165.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="169.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<line x1="60" y1="130.8" x2="704" y2="130.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="134.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.8</text>
+<line x1="60" y1="96" x2="704" y2="96" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="100" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.0</text>
+<rect x="64" y="52" width="153" height="242" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="140.5" y="70" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">节点 0（入选）</text>
+<text x="140.5" y="86" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">节点分 1.3372</text>
+<rect x="76" y="136.28" width="24.25" height="133.72" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7" rx="2"/>
+<text x="88.12" y="285" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0</text>
+<line x1="88.12" y1="136.28" x2="88.12" y2="144.98" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<circle cx="88.12" cy="144.98" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="88.12" y="129.28" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.77</text>
+<rect x="110.25" y="195.95" width="24.25" height="74.05" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="122.38" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<circle cx="122.38" cy="195.95" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="122.38" y="188.95" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.43</text>
+<rect x="144.5" y="165.83" width="24.25" height="104.17" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7" rx="2"/>
+<text x="156.62" y="285" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">2</text>
+<line x1="156.62" y1="165.83" x2="156.62" y2="162.35" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="156.62" cy="162.35" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="156.62" y="155.35" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.60</text>
+<rect x="178.75" y="223.2" width="24.25" height="46.8" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="190.88" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<circle cx="190.88" cy="223.2" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="190.88" y="216.2" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.27</text>
+<rect x="225" y="52" width="153" height="242" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="301.5" y="70" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">节点 1（入选）</text>
+<text x="301.5" y="86" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">节点分 1.4309</text>
+<rect x="237" y="146.29" width="24.25" height="123.71" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7" rx="2"/>
+<text x="249.12" y="285" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">4</text>
+<line x1="249.12" y1="146.29" x2="249.12" y2="141.07" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="249.12" cy="141.07" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="249.12" y="134.07" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.71</text>
+<rect x="271.25" y="149.94" width="24.25" height="120.06" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7" rx="2"/>
+<text x="283.38" y="285" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">5</text>
+<circle cx="283.38" cy="149.94" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="283.38" y="142.94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.69</text>
+<rect x="305.5" y="204.31" width="24.25" height="65.69" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="317.62" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<circle cx="317.62" cy="204.31" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="317.62" y="197.31" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.38</text>
+<rect x="339.75" y="191.67" width="24.25" height="78.33" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="351.88" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<circle cx="351.88" cy="191.67" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="351.88" y="184.67" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.45</text>
+<rect x="386" y="52" width="153" height="242" fill="var(--fig-muted, #74716A)" fill-opacity="0.03" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6" stroke-dasharray="4 3"/>
+<text x="462.5" y="70" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">节点 2（落选）</text>
+<text x="462.5" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">节点分 1.2426</text>
+<rect x="398" y="212.26" width="24.25" height="57.74" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="410.12" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8</text>
+<circle cx="410.12" cy="212.26" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="410.12" y="205.26" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.33</text>
+<rect x="432.25" y="178.65" width="24.25" height="91.35" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="444.38" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<circle cx="444.38" cy="178.65" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="444.38" y="171.65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.52</text>
+<rect x="466.5" y="127.74" width="24.25" height="142.26" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="478.62" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">10</text>
+<line x1="478.62" y1="127.74" x2="478.62" y2="145.14" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<circle cx="478.62" cy="145.14" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="478.62" y="120.74" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.82</text>
+<rect x="500.75" y="229.72" width="24.25" height="40.28" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="512.88" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">11</text>
+<circle cx="512.88" cy="229.72" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="512.88" y="222.72" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.23</text>
+<rect x="547" y="52" width="153" height="242" fill="var(--fig-muted, #74716A)" fill-opacity="0.03" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="6" stroke-dasharray="4 3"/>
+<text x="623.5" y="70" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">节点 3（落选）</text>
+<text x="623.5" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">节点分 1.2801</text>
+<rect x="559" y="183" width="24.25" height="87" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="571.12" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<line x1="571.12" y1="183" x2="571.12" y2="176.04" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="571.12" cy="176.04" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="571.12" y="169.04" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.50</text>
+<rect x="593.25" y="200.17" width="24.25" height="69.83" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="605.38" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">13</text>
+<circle cx="605.38" cy="200.17" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="605.38" y="193.17" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.40</text>
+<rect x="627.5" y="170.05" width="24.25" height="99.95" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="639.62" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">14</text>
+<circle cx="639.62" cy="170.05" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="639.62" y="163.05" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.57</text>
+<rect x="661.75" y="157.66" width="24.25" height="112.34" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" rx="2"/>
+<text x="673.88" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">15</text>
+<line x1="673.88" y1="157.66" x2="673.88" y2="147.22" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="673.88" cy="147.22" r="3.6" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="673.88" y="140.22" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.65</text>
+<line x1="60" y1="270" x2="704" y2="270" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="60" y="314" font-size="11" fill="var(--fig-muted, #74716A)">横轴：专家编号（蓝 = 选中）</text>
+<text x="474.62" y="314" font-size="11" fill="var(--fig-red, #A3231C)">↑ 专家 10：亲和度最高（0.82），</text>
+<text x="486.62" y="328" font-size="11" fill="var(--fig-red, #A3231C)">但节点 2 落选，它也就出局</text>
+<text x="16" y="350" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ 按代码的顺序</text>
+<text x="24" y="372" font-size="12" fill="var(--fig-ink, #1C1B19)">① s = σ(logit)；s̃ = s + b（紫点；红/绿竖线是偏置）</text>
+<text x="24" y="392" font-size="12" fill="var(--fig-ink, #1C1B19)">② 节点分 = 节点内最大的 K<tspan baseline-shift="sub" font-size="11">r</tspan>/M = 2 个 s̃ 之和 → 选分最高的 M = 2 个节点：0、1</text>
+<text x="24" y="412" font-size="12" fill="var(--fig-ink, #1C1B19)">③ 其余节点的专家分数置为 −∞，在剩下 8 个里按 s̃ 取 Top-4：专家 0、2、4、5</text>
+<text x="24" y="432" font-size="12" fill="var(--fig-ink, #1C1B19)">④ 门控值只用原始 s：g = s / Σs，再乘 routed_scaling_factor = 2.5</text>
+<text x="24" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">专家</text>
+<text x="150" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">0</text>
+<text x="230" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">2</text>
+<text x="310" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">4</text>
+<text x="390" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">5</text>
+<text x="470" y="462" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">合计</text>
+<text x="24" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">s</text>
+<text x="150" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">0.7685</text>
+<text x="230" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">0.5987</text>
+<text x="310" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">0.7109</text>
+<text x="390" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">0.6900</text>
+<text x="470" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)">2.7681</text>
+<text x="24" y="498" font-size="12" fill="var(--fig-green, #16704A)">g = s / Σs</text>
+<text x="150" y="498" font-size="12" fill="var(--fig-green, #16704A)">0.2776</text>
+<text x="230" y="498" font-size="12" fill="var(--fig-green, #16704A)">0.2163</text>
+<text x="310" y="498" font-size="12" fill="var(--fig-green, #16704A)">0.2568</text>
+<text x="390" y="498" font-size="12" fill="var(--fig-green, #16704A)">0.2493</text>
+<text x="470" y="498" font-size="12" fill="var(--fig-green, #16704A)">1</text>
+<text x="24" y="516" font-size="12" fill="var(--fig-green, #16704A)">× 2.5</text>
+<text x="150" y="516" font-size="12" fill="var(--fig-green, #16704A)">0.6941</text>
+<text x="230" y="516" font-size="12" fill="var(--fig-green, #16704A)">0.5407</text>
+<text x="310" y="516" font-size="12" fill="var(--fig-green, #16704A)">0.6421</text>
+<text x="390" y="516" font-size="12" fill="var(--fig-green, #16704A)">0.6231</text>
+<text x="470" y="516" font-size="12" fill="var(--fig-green, #16704A)">2.5</text>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 604" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>三种均衡损失各数什么：同一张玩具路由表上的 f、f′、f″</title>
+
+<text x="20" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">玩具路由表（K<tspan baseline-shift="sub" font-size="11">r</tspan> = 2，M = 2）</text>
+<text x="24" y="58" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t1</text>
+<rect x="58" y="42" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1（A）</text>
+<rect x="130" y="42" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e3（B）</text>
+<text x="24" y="88" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t2</text>
+<rect x="58" y="72" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1（A）</text>
+<rect x="130" y="72" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e5（C）</text>
+<text x="24" y="118" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t3</text>
+<rect x="58" y="102" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1（A）</text>
+<rect x="130" y="102" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e7（D）</text>
+<text x="24" y="148" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t4</text>
+<rect x="58" y="132" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1（A）</text>
+<rect x="130" y="132" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e4（B）</text>
+<text x="24" y="178" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t5</text>
+<rect x="58" y="162" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e3（B）</text>
+<rect x="130" y="162" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e4（B）</text>
+<text x="24" y="208" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t6</text>
+<rect x="58" y="192" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="208" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e5（C）</text>
+<rect x="130" y="192" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="208" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e6（C）</text>
+<text x="24" y="238" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t7</text>
+<rect x="58" y="222" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="238" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e6（C）</text>
+<rect x="130" y="222" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="238" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e8（D）</text>
+<text x="24" y="268" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">t8</text>
+<rect x="58" y="252" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="90" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e7（D）</text>
+<rect x="130" y="252" width="64" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="162" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e8（D）</text>
+<text x="20" y="318" font-size="12" fill="var(--fig-muted, #74716A)">设备：A = {e1, e2}，B = {e3, e4}，</text>
+<text x="20" y="336" font-size="12" fill="var(--fig-muted, #74716A)">C = {e5, e6}，D = {e7, e8}</text>
+<text x="20" y="366" font-size="12" fill="var(--fig-muted, #74716A)">平均亲和度 P<tspan baseline-shift="sub" font-size="11">i</tspan>（玩具数字）：</text>
+<text x="20" y="384" font-size="12" fill="var(--fig-muted, #74716A)">P<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.22，P<tspan baseline-shift="sub" font-size="11">2</tspan> = 0.03，</text>
+<text x="20" y="402" font-size="12" fill="var(--fig-muted, #74716A)">P<tspan baseline-shift="sub" font-size="11">3</tspan> = … = P<tspan baseline-shift="sub" font-size="11">8</tspan> = 0.125</text>
+<text x="20" y="430" font-size="12" fill="var(--fig-muted, #74716A)">所以每台设备的 P′ = P″ = 0.25</text>
+<text x="240" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">专家级 f<tspan baseline-shift="sub" font-size="11">i</tspan>：每个专家被选的次数（归一化）</text>
+<text x="240" y="44" font-size="12" fill="var(--fig-muted, #74716A)">e1 被 4 个 token 选中，e2 一次也没有</text>
+<line x1="240" y1="208" x2="560" y2="208" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="240" y1="138" x2="560" y2="138" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="234" y="142" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<rect x="248" y="68" width="24" height="140" fill="var(--fig-red, #A3231C)" fill-opacity="0.7"/>
+<text x="260" y="63" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="260" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e1</text>
+<text x="300" y="203" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="300" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e2</text>
+<rect x="328" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="340" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="340" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e3</text>
+<rect x="368" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="380" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="380" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e4</text>
+<rect x="408" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="420" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="420" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e5</text>
+<rect x="448" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="460" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="460" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e6</text>
+<rect x="488" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="500" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="500" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e7</text>
+<rect x="528" y="138" width="24" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="540" y="133" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="540" y="223" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e8</text>
+<text x="576" y="84" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Σ f<tspan baseline-shift="sub" font-size="11">i</tspan>P<tspan baseline-shift="sub" font-size="11">i</tspan> = 1.19</text>
+<text x="576" y="104" font-size="12" fill="var(--fig-muted, #74716A)">均匀时 = 1；系数 α<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.003</text>
+<text x="240" y="244" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">设备级 f′<tspan baseline-shift="sub" font-size="11">m</tspan>：设备上专家的平均 f</text>
+<text x="240" y="266" font-size="12" fill="var(--fig-muted, #74716A)">每台设备都分到 4 次专家计算：计算量均衡</text>
+<line x1="240" y1="377.5" x2="560" y2="377.5" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="240" y1="307.5" x2="560" y2="307.5" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="234" y="311.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<rect x="265" y="307.5" width="30" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="280" y="302.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="280" y="392.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">A</text>
+<rect x="345" y="307.5" width="30" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="360" y="302.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="360" y="392.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">B</text>
+<rect x="425" y="307.5" width="30" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="440" y="302.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="440" y="392.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">C</text>
+<rect x="505" y="307.5" width="30" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="520" y="302.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="520" y="392.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">D</text>
+<text x="576" y="306" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Σ f′<tspan baseline-shift="sub" font-size="11">m</tspan>P′<tspan baseline-shift="sub" font-size="11">m</tspan> = 1</text>
+<text x="576" y="326" font-size="12" fill="var(--fig-muted, #74716A)">均匀时 = 1；系数 α<tspan baseline-shift="sub" font-size="11">2</tspan> = 0.05</text>
+<text x="240" y="413.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">通信 f″<tspan baseline-shift="sub" font-size="11">m</tspan>：发到该设备的 token 数（归一化）</text>
+<text x="240" y="435.5" font-size="12" fill="var(--fig-muted, #74716A)">A 收 4 个 token，B、C、D 各收 3 个</text>
+<line x1="240" y1="547" x2="560" y2="547" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="240" y1="477" x2="560" y2="477" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="234" y="481" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<rect x="265" y="477" width="30" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7"/>
+<text x="280" y="472" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="280" y="562" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">A</text>
+<rect x="345" y="494.5" width="30" height="52.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<text x="360" y="489.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.75</text>
+<text x="360" y="562" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">B</text>
+<rect x="425" y="494.5" width="30" height="52.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<text x="440" y="489.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.75</text>
+<text x="440" y="562" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">C</text>
+<rect x="505" y="494.5" width="30" height="52.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<text x="520" y="489.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.75</text>
+<text x="520" y="562" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">D</text>
+<text x="576" y="475.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Σ f″<tspan baseline-shift="sub" font-size="11">m</tspan>P″<tspan baseline-shift="sub" font-size="11">m</tspan> = 0.8125</text>
+<text x="576" y="495.5" font-size="12" fill="var(--fig-muted, #74716A)">均匀时 = 1；系数 α<tspan baseline-shift="sub" font-size="11">3</tspan> = 0.02</text>
+<text x="240" y="594" font-size="12" fill="var(--fig-muted, #74716A)">红 = 高于均匀份额，蓝 = 恰好均匀，灰 = 低于均匀份额</text>
+</svg>

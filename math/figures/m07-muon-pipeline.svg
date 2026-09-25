@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V4 的一步 Muon 更新，以及哪些参数用 Muon、哪些用 AdamW</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="4" y="44" width="112" height="92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="8"/>
+<text x="60" y="68" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">梯度 <tspan font-weight="700">G</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="60" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">形状 [n, m]</text>
+<text x="60" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">本步反传得到</text>
+<rect x="127" y="44" width="112" height="92" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" rx="8"/>
+<text x="183" y="68" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">动量缓冲 <tspan font-weight="700">M</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="183" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">μ<tspan font-weight="700">M</tspan><tspan baseline-shift="sub" font-size="11">t−1</tspan> + <tspan font-weight="700">G</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="183" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">μ = 0.95（状态）</text>
+<rect x="250" y="44" width="112" height="92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="8"/>
+<text x="306" y="68" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Nesterov</text>
+<text x="306" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">μ<tspan font-weight="700">M</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> + <tspan font-weight="700">G</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="306" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">再除以 ‖·‖<tspan baseline-shift="sub" font-size="11">F</tspan></text>
+<rect x="373" y="44" width="112" height="92" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" rx="8"/>
+<text x="429" y="68" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">牛顿–舒尔茨 × 10</text>
+<text x="429" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">前 8 步 (3.4445, …)</text>
+<text x="429" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">后 2 步 (2, −1.5, 0.5)</text>
+<rect x="496" y="44" width="112" height="92" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.6" rx="8"/>
+<text x="552" y="68" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">缩放</text>
+<text x="552" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">× 0.18·√max(n, m)</text>
+<text x="552" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">RMS 对齐 AdamW</text>
+<rect x="619" y="44" width="112" height="92" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" rx="8"/>
+<text x="675" y="68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">更新 W</text>
+<text x="675" y="94" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W(1 − ηλ) − η<tspan font-weight="700">O</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="675" y="112" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">λ = 0.1（解耦衰减）</text>
+<line x1="117" y1="90" x2="126" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="240" y1="90" x2="249" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="363" y1="90" x2="372" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="486" y1="90" x2="495" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="609" y1="90" x2="618" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<text x="20" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">一步 Muon（DeepSeek-V4 算法 1）：只对二维权重矩阵做；动量先加再正交化</text>
+<text x="12" y="166" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">以 [7168, 18432] 的矩阵（DeepSeek-V3 稠密 FFN 的形状）为例：</text>
+<text x="12" y="186" font-size="12" fill="var(--fig-ink, #1C1B19)">正交化后 UV<tspan baseline-shift="super" font-size="11">⊤</tspan> 有 7168 个奇异值为 1，RMS = 1/√18432 = 0.00737；</text>
+<text x="12" y="206" font-size="12" fill="var(--fig-ink, #1C1B19)">乘 0.18·√18432 = 24.44 后 RMS = 0.18，与 AdamW 更新的典型 RMS 同量级（Moonlight 用 0.2）。</text>
+<rect x="12" y="240" width="350" height="96" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="8"/>
+<text x="24" y="262" font-size="12.5" fill="var(--fig-violet, #6733C4)" font-weight="600">AdamW（β<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.9，β<tspan baseline-shift="sub" font-size="11">2</tspan> = 0.95，ε = 10<tspan baseline-shift="super" font-size="11">−20</tspan>，衰减 0.1）</text>
+<text x="30" y="286" font-size="12" fill="var(--fig-ink, #1C1B19)">· 词嵌入、预测头（输出层）</text>
+<text x="30" y="304" font-size="12" fill="var(--fig-ink, #1C1B19)">· mHC 的静态偏置与门控因子</text>
+<text x="30" y="322" font-size="12" fill="var(--fig-ink, #1C1B19)">· 全部 RMSNorm 权重（向量）</text>
+<rect x="378" y="240" width="350" height="96" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="8"/>
+<text x="390" y="262" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">Muon（动量 0.95，衰减 0.1，RMS 0.18）</text>
+<text x="396" y="286" font-size="12" fill="var(--fig-ink, #1C1B19)">· 其余全部模块</text>
+<text x="396" y="304" font-size="12" fill="var(--fig-ink, #1C1B19)">· 每个二维权重矩阵各自正交化</text>
+<text x="396" y="322" font-size="12" fill="var(--fig-ink, #1C1B19)">· 同形状的矩阵可以合成一批做 NS</text>
+</svg>

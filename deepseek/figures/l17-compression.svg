@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Fox 基准上的压缩比与 OCR 精度（据 DeepSeek-OCR 论文表 2 绘制）</title>
+
+<rect x="70" y="30" width="141.33" height="310" fill="var(--fig-green, #16704A)" fill-opacity="0.05"/>
+<line x1="70" y1="305.56" x2="600" y2="305.56" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="309.56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60%</text>
+<line x1="70" y1="236.67" x2="600" y2="236.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="240.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">70%</text>
+<line x1="70" y1="167.78" x2="600" y2="167.78" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="171.78" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">80%</text>
+<line x1="70" y1="98.89" x2="600" y2="98.89" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="102.89" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">90%</text>
+<line x1="70" y1="30" x2="600" y2="30" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="34" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<line x1="70" y1="30" x2="70" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6×</text>
+<line x1="140.67" y1="30" x2="140.67" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="140.67" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8×</text>
+<line x1="211.33" y1="30" x2="211.33" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="211.33" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10×</text>
+<line x1="282" y1="30" x2="282" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="282" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12×</text>
+<line x1="352.67" y1="30" x2="352.67" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="352.67" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">14×</text>
+<line x1="423.33" y1="30" x2="423.33" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="423.33" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16×</text>
+<line x1="494" y1="30" x2="494" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">18×</text>
+<line x1="564.67" y1="30" x2="564.67" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="564.67" y="357" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20×</text>
+<line x1="70" y1="340" x2="600" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="30" x2="70" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="211.33" y1="30" x2="211.33" y2="340" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="216.33" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">10×</text>
+<text x="335" y="378" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">压缩比 r = 文本 token 数 / 视觉 token 数</text>
+<text x="20" y="185" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 185)">OCR 精度（Precision）</text>
+<path d="M229.0 54.1 L274.9 72.7 L324.4 141.6 L391.5 127.1 L441.0 172.6 L483.4 192.6 L554.1 311.8" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<circle cx="229" cy="54.11" r="6.61" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="274.93" cy="72.71" r="13.23" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="324.4" cy="141.6" r="13.23" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="391.53" cy="127.13" r="9.35" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="441" cy="172.6" r="8.29" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="483.4" cy="192.58" r="7.07" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<circle cx="554.07" cy="311.76" r="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<path d="M94.7 40.3 L123.0 48.6 L158.3 52.0 L200.7 52.0 L232.5 88.6 L257.3 100.3 L303.2 118.9" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="94.73" cy="40.33" r="6.61" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="123" cy="48.6" r="13.23" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="158.33" cy="52.04" r="13.23" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="200.73" cy="52.04" r="9.35" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="232.53" cy="88.56" r="8.29" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="257.27" cy="100.27" r="7.07" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<circle cx="303.2" cy="118.87" r="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="538.07" y="315.76" font-size="11.5" fill="var(--fig-orange, #B4460C)" text-anchor="end" font-weight="700">19.7×，59.1%</text>
+<text x="538.07" y="331.76" font-size="11.5" fill="var(--fig-orange, #B4460C)" text-anchor="end">这一格只有 4 页</text>
+<text x="241" y="58.11" font-size="11.5" fill="var(--fig-orange, #B4460C)">10.5×，96.5%</text>
+<text x="312.4" y="159.6" font-size="11.5" fill="var(--fig-orange, #B4460C)" text-anchor="end">13.2×，83.8%</text>
+<text x="405.53" y="121.13" font-size="11.5" fill="var(--fig-orange, #B4460C)">15.1×，85.9%：比 13.2× 还高</text>
+<text x="295.2" y="138.87" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">12.6×，87.1%</text>
+<text x="96.73" y="26.33" font-size="11.5" fill="var(--fig-blue, #1F5FA8)">6.7×，98.5%</text>
+<text x="77.07" y="92" font-size="12" fill="var(--fig-green, #16704A)" font-weight="700">&lt; 10× 的四格</text>
+<text x="77.07" y="109" font-size="12" fill="var(--fig-green, #16704A)">按页加权 97.14%</text>
+<text x="77.07" y="126" font-size="11.5" fill="var(--fig-muted, #74716A)">（77 页）</text>
+<circle cx="622" cy="60" r="7" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="636" y="64" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="700">64 个视觉 token</text>
+<text x="636" y="81" font-size="11.5" fill="var(--fig-muted, #74716A)">（Tiny）</text>
+<circle cx="622" cy="104" r="7" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="636" y="108" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700">100 个视觉 token</text>
+<text x="636" y="125" font-size="11.5" fill="var(--fig-muted, #74716A)">（Small）</text>
+<text x="614" y="160" font-size="11.5" fill="var(--fig-muted, #74716A)">圆面积 ∝ 该档页数</text>
+<text x="614" y="178" font-size="11.5" fill="var(--fig-muted, #74716A)">（7, 28, 28, 14,</text>
+<text x="614" y="195" font-size="11.5" fill="var(--fig-muted, #74716A)">  11, 8, 4 页）</text>
+<text x="614" y="232" font-size="11.5" fill="var(--fig-muted, #74716A)">Fox 英文部分，</text>
+<text x="614" y="249" font-size="11.5" fill="var(--fig-muted, #74716A)">原文 600–1300 token，</text>
+<text x="614" y="266" font-size="11.5" fill="var(--fig-muted, #74716A)">共 100 页，提示</text>
+<text x="614" y="283" font-size="11.5" fill="var(--fig-muted, #74716A)">“Free OCR.”</text>
+<text x="20" y="412" font-size="11.5" fill="var(--fig-muted, #74716A)">每一格的压缩比 = 该档平均文本 token 数 ÷ 64 或 100；精度的计算方式论文没有定义。</text>
+</svg>

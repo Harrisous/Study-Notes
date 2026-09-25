@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>存储与互连的层级：带宽（对数刻度）与每一层的“脊点”</title>
+
+<text x="44" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">层级与容量</text>
+<text x="419" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">带宽（每秒字节，对数刻度）</text>
+<text x="700" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">脊点 F/带宽</text>
+<text x="700" y="43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">（FLOP/字节，F = 989 TFLOP/s）</text>
+<line x1="272" y1="58" x2="272" y2="326" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="272" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 GB/s</text>
+<line x1="345.5" y1="58" x2="345.5" y2="326" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="345.5" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100 GB/s</text>
+<line x1="419" y1="58" x2="419" y2="326" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="419" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1 TB/s</text>
+<line x1="492.5" y1="58" x2="492.5" y2="326" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492.5" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 TB/s</text>
+<line x1="566" y1="58" x2="566" y2="326" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="566" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100 TB/s</text>
+<text x="44" y="76" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">寄存器 RMEM</text>
+<text x="44" y="93" font-size="11" fill="var(--fig-muted, #74716A)">每 SM 256 KiB（全卡约 33 MiB）</text>
+<text x="278" y="84" font-size="11" fill="var(--fig-muted, #74716A)">（表中未给带宽）</text>
+<text x="44" y="120" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">共享内存 SMEM</text>
+<text x="44" y="137" font-size="11" fill="var(--fig-muted, #74716A)">每 SM 228 KiB（全卡约 29 MiB）</text>
+<rect x="272" y="110" width="256.62" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" rx="3"/>
+<text x="534.62" y="127" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">31 TB/s</text>
+<text x="700" y="127" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">31.9</text>
+<text x="44" y="164" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">L2 缓存</text>
+<text x="44" y="181" font-size="11" fill="var(--fig-muted, #74716A)">50 MiB</text>
+<rect x="272" y="154" width="226.32" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" rx="3"/>
+<text x="504.32" y="171" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">12 TB/s</text>
+<text x="700" y="171" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">82.4</text>
+<line x1="44" y1="190" x2="700" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="44" y="208" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">显存 HBM</text>
+<text x="44" y="225" font-size="11" fill="var(--fig-muted, #74716A)">80 GiB</text>
+<rect x="272" y="198" width="185.59" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" rx="3"/>
+<text x="463.59" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">3.35 TB/s</text>
+<text x="700" y="215" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">295</text>
+<line x1="44" y1="234" x2="700" y2="234" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="44" y="252" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">NVLink（节点内）</text>
+<text x="44" y="269" font-size="11" fill="var(--fig-muted, #74716A)">同节点另外 7 张卡</text>
+<rect x="272" y="242" width="88.5" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.45" rx="3"/>
+<text x="366.5" y="259" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">160 GB/s</text>
+<text x="700" y="259" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="600">6,181</text>
+<text x="44" y="296" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">InfiniBand（节点间）</text>
+<text x="44" y="313" font-size="11" fill="var(--fig-muted, #74716A)">其他节点的卡</text>
+<rect x="272" y="286" width="51.37" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.45" rx="3"/>
+<text x="329.37" y="303" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">50 GB/s</text>
+<text x="700" y="303" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="600">19,780</text>
+<line x1="30" y1="64" x2="30" y2="182" stroke="var(--fig-muted, #74716A)" stroke-width="1.4"/>
+<text x="20" y="123" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 123)">片上</text>
+<line x1="30" y1="196" x2="30" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1.4"/>
+<text x="20" y="211" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 211)">片外</text>
+<line x1="30" y1="240" x2="30" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="1.4"/>
+<text x="20" y="277" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 277)">卡间</text>
+<text x="20" y="366" font-size="12" fill="var(--fig-ink, #1C1B19)">从 SMEM 到 InfiniBand，带宽相差 620 倍；脊点越大，这一层上的数据越“贵”：每搬 1 字节</text>
+<text x="20" y="384" font-size="12" fill="var(--fig-ink, #1C1B19)">必须做这么多次运算，才不至于让计算单元干等。片上与 HBM 为 H100 SXM5，互连为 V3 的 H800 集群。</text>
+</svg>

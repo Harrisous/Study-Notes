@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 446" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>低秩 KV 联合压缩：5120 → 512 → 2 × 16384，按比例画</title>
+
+<rect x="60" y="182.56" width="26" height="46.88" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="73" y="158.56" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">h</tspan><tspan dy="4.2" font-size="11">t</tspan></text>
+<text x="73" y="174.56" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">d = 5120</text>
+<rect x="262" y="203.66" width="26" height="4.69" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6" rx="3"/>
+<text x="275" y="176" font-size="14" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">c</tspan><tspan dy="-5.6" font-size="11">KV</tspan><tspan dy="9.8" font-size="11">t</tspan></text>
+<text x="275" y="193" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">d<tspan dy="3.4" font-size="11">c</tspan><tspan dy="-3.4"> = 512</tspan></text>
+<text x="275" y="232" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">推理时缓存</text>
+<text x="275" y="248" font-size="11.5" fill="var(--fig-amber, #8A6508)" text-anchor="middle">只有这 512 个数</text>
+<polygon points="86,182.56 86,229.44 262,208.34 262,203.66" fill="var(--fig-orange, #B4460C)" fill-opacity="0.12"/>
+<text x="178" y="142" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">下投影 <tspan font-weight="700">W</tspan><tspan dy="-5.2" font-size="11">DKV</tspan></text>
+<text x="178" y="159" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">[512 × 5120]</text>
+<text x="178" y="262" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">2,621,440 个参数</text>
+<rect x="520" y="46" width="26" height="150" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<line x1="520" y1="64.75" x2="546" y2="64.75" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="83.5" x2="546" y2="83.5" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="102.25" x2="546" y2="102.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="121" x2="546" y2="121" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="139.75" x2="546" y2="139.75" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="158.5" x2="546" y2="158.5" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="177.25" x2="546" y2="177.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" stroke-opacity="0.6"/>
+<rect x="520" y="216" width="26" height="150" fill="var(--fig-green, #16704A)" fill-opacity="0.28" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="3"/>
+<line x1="520" y1="234.75" x2="546" y2="234.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="253.5" x2="546" y2="253.5" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="272.25" x2="546" y2="272.25" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="291" x2="546" y2="291" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="309.75" x2="546" y2="309.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="328.5" x2="546" y2="328.5" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="520" y1="347.25" x2="546" y2="347.25" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.6"/>
+<polygon points="288,203.66 288,206 520,196 520,46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1"/>
+<polygon points="288,206 288,208.34 520,366 520,216" fill="var(--fig-green, #16704A)" fill-opacity="0.1"/>
+<text x="420" y="114" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">上投影 <tspan font-weight="700">W</tspan><tspan dy="-5.2" font-size="11">UK</tspan></text>
+<text x="420" y="131" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">[16384 × 512]</text>
+<text x="420" y="290" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">上投影 <tspan font-weight="700">W</tspan><tspan dy="-5.2" font-size="11">UV</tspan></text>
+<text x="420" y="307" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">[16384 × 512]</text>
+<text x="420" y="212" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">各 8,388,608 个参数</text>
+<text x="560" y="62" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-5.2" font-size="11">C</tspan><tspan dy="9.1" font-size="11">t</tspan><tspan dy="-3.9">：16384 维</tspan></text>
+<text x="560" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)">= 128 个头 × 每头 128 维</text>
+<text x="560" y="98" font-size="11.5" fill="var(--fig-muted, #74716A)">（横线每 16 个头一条）</text>
+<text x="560" y="232" font-size="13" fill="var(--fig-green, #16704A)" font-weight="700"><tspan font-weight="700">v</tspan><tspan dy="-5.2" font-size="11">C</tspan><tspan dy="9.1" font-size="11">t</tspan><tspan dy="-3.9">：16384 维</tspan></text>
+<text x="560" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)">= 128 个头 × 每头 128 维</text>
+<text x="560" y="210" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">推理时不缓存</text>
+<line x1="20" y1="378" x2="720" y2="378" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="24" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)">MHA：每 token 每层缓存 <tspan font-weight="700">k</tspan>、<tspan font-weight="700">v</tspan> 共 32,768 个数；<tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">K</tspan><tspan dy="5">、</tspan><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">V</tspan><tspan dy="5"> 共 167,772,160 个参数。</tspan></text>
+<text x="24" y="424" font-size="12.5" fill="var(--fig-orange, #B4460C)">MLA：缓存 512 个数（另有 64 维的 <tspan font-weight="700">k</tspan><tspan dy="-5" font-size="11">R</tspan><tspan dy="5">，见 §5）；</tspan><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">DKV</tspan><tspan dy="5">、</tspan><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">UK</tspan><tspan dy="5">、</tspan><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">UV</tspan><tspan dy="5"> 共 19,398,656 个参数。</tspan></text>
+</svg>

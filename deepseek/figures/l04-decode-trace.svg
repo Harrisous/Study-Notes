@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个注意力头里的 4 步解码：每步新算哪几行、复用哪几行</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker></defs>
+<rect x="8" y="6" width="344" height="270" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="20" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 1 步：新 token x<tspan baseline-shift="sub" font-size="11">1</tspan> =「从」</text>
+<rect x="234" y="15" width="24" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="246" y="31" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">从</text>
+<rect x="262" y="15" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="290" y="15" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="318" y="15" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="52" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="63" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="74" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="85" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="50" y="56" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="44" y="68" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">q<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="104" y="68" font-size="11" fill="var(--fig-blue, #1F5FA8)">用完即弃</text>
+<line x1="74" y1="74" x2="74" y2="90" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" marker-end="url(#ah-blue)"/>
+<text x="44" y="104" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">从</text>
+<rect x="52" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="63" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="74" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="85" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="50" y="92" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<rect x="108" y="94" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="136" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="147" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="158" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="169" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="134" y="92" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<text x="74" y="123" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="115" y="123" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">a</text>
+<text x="158" y="123" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<rect x="136" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="147" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="158" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="169" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<text x="128" y="206" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">o<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<line x1="158" y1="129" x2="158" y2="193" stroke="var(--fig-green, #16704A)" stroke-width="1.1" marker-end="url(#ah-green)"/>
+<text x="32" y="230" font-size="12" fill="var(--fig-green, #16704A)">o<tspan baseline-shift="sub" font-size="11">1</tspan> = Σ<tspan baseline-shift="sub" font-size="11">j≤1</tspan> a<tspan baseline-shift="sub" font-size="11">j</tspan> v<tspan baseline-shift="sub" font-size="11">j</tspan></text>
+<text x="212" y="72" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">新算：q<tspan baseline-shift="sub" font-size="11">1</tspan>、k<tspan baseline-shift="sub" font-size="11">1</tspan>、v<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="212" y="96" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">读缓存：（还是空的）</text>
+<text x="212" y="120" font-size="12" fill="var(--fig-amber, #8A6508)">写回缓存：k<tspan baseline-shift="sub" font-size="11">1</tspan>、v<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="212" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)">打分：1 个点积</text>
+<text x="212" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)">混合：1 个值向量</text>
+<rect x="360" y="6" width="344" height="270" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="372" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 2 步：新 token x<tspan baseline-shift="sub" font-size="11">2</tspan> =「前」</text>
+<rect x="586" y="15" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="598" y="31" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">从</text>
+<rect x="614" y="15" width="24" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="626" y="31" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">前</text>
+<rect x="642" y="15" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="670" y="15" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="404" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="415" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="426" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="437" y="58" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="402" y="56" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="396" y="68" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">q<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="456" y="68" font-size="11" fill="var(--fig-blue, #1F5FA8)">用完即弃</text>
+<line x1="426" y1="74" x2="426" y2="90" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" marker-end="url(#ah-blue)"/>
+<text x="396" y="104" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">从</text>
+<rect x="404" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="415" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="426" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="437" y="94" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="402" y="92" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="460" y="94" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="499" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="510" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="521" y="94" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="486" y="92" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="396" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">前</text>
+<rect x="404" y="111" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="415" y="111" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="426" y="111" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="437" y="111" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="402" y="109" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<rect x="460" y="111" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="111" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="499" y="111" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="510" y="111" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="521" y="111" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="486" y="109" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<text x="426" y="140" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="467" y="140" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">a</text>
+<text x="510" y="140" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<rect x="488" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="499" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="510" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="521" y="196" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<text x="480" y="206" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">o<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="510" y1="146" x2="510" y2="193" stroke="var(--fig-green, #16704A)" stroke-width="1.1" marker-end="url(#ah-green)"/>
+<text x="384" y="230" font-size="12" fill="var(--fig-green, #16704A)">o<tspan baseline-shift="sub" font-size="11">2</tspan> = Σ<tspan baseline-shift="sub" font-size="11">j≤2</tspan> a<tspan baseline-shift="sub" font-size="11">j</tspan> v<tspan baseline-shift="sub" font-size="11">j</tspan></text>
+<text x="564" y="72" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">新算：q<tspan baseline-shift="sub" font-size="11">2</tspan>、k<tspan baseline-shift="sub" font-size="11">2</tspan>、v<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="564" y="96" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">读缓存：k、v 各 1 行</text>
+<text x="564" y="120" font-size="12" fill="var(--fig-amber, #8A6508)">写回缓存：k<tspan baseline-shift="sub" font-size="11">2</tspan>、v<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="564" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)">打分：2 个点积</text>
+<text x="564" y="168" font-size="12" fill="var(--fig-ink, #1C1B19)">混合：2 个值向量</text>
+<rect x="8" y="286" width="344" height="270" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="20" y="310" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 3 步：新 token x<tspan baseline-shift="sub" font-size="11">3</tspan> =「有」</text>
+<rect x="234" y="295" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="246" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">从</text>
+<rect x="262" y="295" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="274" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">前</text>
+<rect x="290" y="295" width="24" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="302" y="311" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">有</text>
+<rect x="318" y="295" width="24" height="22" fill="none" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" rx="4" stroke-dasharray="3 2"/>
+<rect x="52" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="63" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="74" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="85" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="50" y="336" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="44" y="348" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">q<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="104" y="348" font-size="11" fill="var(--fig-blue, #1F5FA8)">用完即弃</text>
+<line x1="74" y1="354" x2="74" y2="370" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" marker-end="url(#ah-blue)"/>
+<text x="44" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">从</text>
+<rect x="52" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="63" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="74" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="85" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="50" y="372" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="108" y="374" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="136" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="147" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="158" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="169" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="134" y="372" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="44" y="401" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">前</text>
+<rect x="52" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="63" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="74" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="85" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="50" y="389" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="108" y="391" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="136" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="147" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="158" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="169" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="134" y="389" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="44" y="418" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">有</text>
+<rect x="52" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="63" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="74" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="85" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="50" y="406" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<rect x="108" y="408" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="136" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="147" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="158" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="169" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="134" y="406" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<text x="74" y="437" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="115" y="437" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">a</text>
+<text x="158" y="437" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<rect x="136" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="147" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="158" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="169" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<text x="128" y="486" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">o<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<line x1="158" y1="443" x2="158" y2="473" stroke="var(--fig-green, #16704A)" stroke-width="1.1" marker-end="url(#ah-green)"/>
+<text x="32" y="510" font-size="12" fill="var(--fig-green, #16704A)">o<tspan baseline-shift="sub" font-size="11">3</tspan> = Σ<tspan baseline-shift="sub" font-size="11">j≤3</tspan> a<tspan baseline-shift="sub" font-size="11">j</tspan> v<tspan baseline-shift="sub" font-size="11">j</tspan></text>
+<text x="212" y="352" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">新算：q<tspan baseline-shift="sub" font-size="11">3</tspan>、k<tspan baseline-shift="sub" font-size="11">3</tspan>、v<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="212" y="376" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">读缓存：k、v 各 2 行</text>
+<text x="212" y="400" font-size="12" fill="var(--fig-amber, #8A6508)">写回缓存：k<tspan baseline-shift="sub" font-size="11">3</tspan>、v<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="212" y="424" font-size="12" fill="var(--fig-ink, #1C1B19)">打分：3 个点积</text>
+<text x="212" y="448" font-size="12" fill="var(--fig-ink, #1C1B19)">混合：3 个值向量</text>
+<rect x="360" y="286" width="344" height="270" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="372" y="310" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 4 步：新 token x<tspan baseline-shift="sub" font-size="11">4</tspan> =「座」</text>
+<rect x="586" y="295" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="598" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">从</text>
+<rect x="614" y="295" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="626" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">前</text>
+<rect x="642" y="295" width="24" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="4"/>
+<text x="654" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">有</text>
+<rect x="670" y="295" width="24" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="682" y="311" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">座</text>
+<rect x="404" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="415" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="426" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="437" y="338" width="10" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="1"/>
+<rect x="402" y="336" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="396" y="348" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">q<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="456" y="348" font-size="11" fill="var(--fig-blue, #1F5FA8)">用完即弃</text>
+<line x1="426" y1="354" x2="426" y2="370" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" marker-end="url(#ah-blue)"/>
+<text x="396" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">从</text>
+<rect x="404" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="415" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="426" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="437" y="374" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="402" y="372" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="460" y="374" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="499" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="510" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="521" y="374" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="486" y="372" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="396" y="401" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">前</text>
+<rect x="404" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="415" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="426" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="437" y="391" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="402" y="389" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="460" y="391" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="499" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="510" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="521" y="391" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="486" y="389" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="396" y="418" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">有</text>
+<rect x="404" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="415" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="426" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="437" y="408" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="402" y="406" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<rect x="460" y="408" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="499" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="510" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="521" y="408" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.2" rx="1"/>
+<rect x="486" y="406" width="46" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="396" y="435" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">座</text>
+<rect x="404" y="425" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="415" y="425" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="426" y="425" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="437" y="425" width="10" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="402" y="423" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<rect x="460" y="425" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="2"/>
+<rect x="488" y="425" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="499" y="425" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="510" y="425" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="521" y="425" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1"/>
+<rect x="486" y="423" width="46" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<text x="426" y="454" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="467" y="454" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">a</text>
+<text x="510" y="454" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<rect x="488" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="499" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="510" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<rect x="521" y="476" width="10" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.8" rx="1"/>
+<text x="480" y="486" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">o<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<line x1="510" y1="460" x2="510" y2="473" stroke="var(--fig-green, #16704A)" stroke-width="1.1" marker-end="url(#ah-green)"/>
+<text x="384" y="510" font-size="12" fill="var(--fig-green, #16704A)">o<tspan baseline-shift="sub" font-size="11">4</tspan> = Σ<tspan baseline-shift="sub" font-size="11">j≤4</tspan> a<tspan baseline-shift="sub" font-size="11">j</tspan> v<tspan baseline-shift="sub" font-size="11">j</tspan></text>
+<text x="564" y="352" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">新算：q<tspan baseline-shift="sub" font-size="11">4</tspan>、k<tspan baseline-shift="sub" font-size="11">4</tspan>、v<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="564" y="376" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">读缓存：k、v 各 3 行</text>
+<text x="564" y="400" font-size="12" fill="var(--fig-amber, #8A6508)">写回缓存：k<tspan baseline-shift="sub" font-size="11">4</tspan>、v<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="564" y="424" font-size="12" fill="var(--fig-ink, #1C1B19)">打分：4 个点积</text>
+<text x="564" y="448" font-size="12" fill="var(--fig-ink, #1C1B19)">混合：4 个值向量</text>
+<text x="564" y="480" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">→ 预测下一个：「山」</text>
+<rect x="16" y="574" width="30" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" rx="1"/>
+<rect x="14" y="572" width="34" height="16" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" rx="3"/>
+<text x="56" y="584" font-size="12" fill="var(--fig-ink, #1C1B19)">本步新算的行（蓝框）</text>
+<rect x="212" y="574" width="30" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" rx="1"/>
+<rect x="210" y="572" width="34" height="16" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="252" y="584" font-size="12" fill="var(--fig-ink, #1C1B19)">缓存里读出的行（黄框）</text>
+<text x="408" y="584" font-size="12" fill="var(--fig-muted, #74716A)">紫 K、绿 V、蓝 q；一行 d<tspan baseline-shift="sub" font-size="11">h</tspan> 个数，画成 4 格</text>
+</svg>

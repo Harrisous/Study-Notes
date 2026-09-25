@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 944" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>GPT-2 small 的一次前向传播：每条边上的张量形状</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="70" y="14" width="160" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="150" y="35.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">token id：x<tspan baseline-shift="sub" font-size="11">1</tspan>, …, x<tspan baseline-shift="sub" font-size="11">T</tspan></text>
+<rect x="262" y="14" width="160" height="34" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="342" y="35.68" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">位置：0, 1, …, T−1</text>
+<line x1="150" y1="48" x2="150" y2="82" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="158" y="70" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T] 整数</text>
+<line x1="342" y1="48" x2="342" y2="82" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="350" y="70" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T] 整数</text>
+<rect x="70" y="82" width="160" height="48" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="150" y="100.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">词嵌入 wte（查表）</text>
+<text x="150" y="120.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">矩阵 <tspan font-weight="700">E</tspan>：[50257, 768]</text>
+<rect x="262" y="82" width="160" height="48" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="342" y="100.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">位置嵌入 wpe（查表）</text>
+<text x="342" y="120.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">矩阵 <tspan font-weight="700">P</tspan>：[1024, 768]</text>
+<line x1="150" y1="130" x2="150" y2="162" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="142" y="152" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<path d="M342 130 V172 H162" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="350" y="155" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<circle cx="150" cy="172" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="145.05" y1="172" x2="154.95" y2="172" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="167.05" x2="150" y2="176.95" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="181" x2="150" y2="214" stroke="var(--fig-ink, #1C1B19)" stroke-width="4"/>
+<text x="160" y="200" font-size="13" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(0)</tspan></text>
+<text x="192" y="200" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<rect x="34" y="214" width="390" height="448" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.02" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="12" stroke-dasharray="6 4"/>
+<text x="412" y="236" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">Transformer 块 ×12</text>
+<text x="412" y="254" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">12 块结构相同、参数各自独立</text>
+<line x1="150" y1="214" x2="150" y2="421" stroke="var(--fig-ink, #1C1B19)" stroke-width="4"/>
+<circle cx="150" cy="430" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="145.05" y1="430" x2="154.95" y2="430" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="425.05" x2="150" y2="434.95" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="439" x2="150" y2="621" stroke="var(--fig-ink, #1C1B19)" stroke-width="4"/>
+<circle cx="150" cy="630" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="145.05" y1="630" x2="154.95" y2="630" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="625.05" x2="150" y2="634.95" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="150" y1="639" x2="150" y2="662" stroke="var(--fig-ink, #1C1B19)" stroke-width="4"/>
+<text x="140" y="290" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(l−1)</tspan></text>
+<text x="140" y="306" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<text x="140" y="486" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end"><tspan font-weight="700">h</tspan>′</text>
+<text x="140" y="502" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<text x="136" y="262" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">残差流</text>
+<path d="M150 272 H270 V294" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="200" y="294" width="140" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="270" y="313.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LayerNorm₁（ln_1）</text>
+<line x1="270" y1="324" x2="270" y2="346" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="278" y="340" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<rect x="186" y="346" width="218" height="58" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="295" y="370.71" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">掩码多头自注意力</text>
+<text x="295" y="388.65" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">12 头 × 64 维</text>
+<path d="M270 404 V430 H161" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="278" y="422" font-size="13" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">u</tspan></text>
+<text x="290" y="422" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<text x="168" y="446" font-size="12" fill="var(--fig-muted, #74716A)">相加（残差连接）</text>
+<path d="M150 470 H270 V494" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="200" y="494" width="140" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="270" y="513.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LayerNorm₂（ln_2）</text>
+<line x1="270" y1="524" x2="270" y2="546" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="278" y="540" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<rect x="186" y="546" width="218" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="295" y="570.71" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">前馈网络 FFN（逐位置）</text>
+<text x="295" y="588.65" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">768 → 3072 → 768，GELU</text>
+<path d="M270 604 V630 H161" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="278" y="622" font-size="13" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">m</tspan></text>
+<text x="292" y="622" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<text x="168" y="648" font-size="12" fill="var(--fig-muted, #74716A)">相加（残差连接）</text>
+<rect x="446" y="214" width="302" height="290" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<line x1="404" y1="375" x2="446" y2="300" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="458" y="234" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="700">放大：一层掩码多头自注意力</text>
+<text x="458" y="254" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">输入：LN₁ 的输出 [T, 768]</text>
+<rect x="466" y="262" width="262" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="597" y="279.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">c_attn：乘 W<tspan baseline-shift="sub" font-size="11">qkv</tspan>、加偏置（768 → 2304）</text>
+<line x1="597" y1="288" x2="597" y2="304" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="606" y="300" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 2304]</text>
+<rect x="466" y="306" width="82" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="507" y="322.68" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Q  [T, 768]</text>
+<rect x="556" y="306" width="82" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="597" y="322.68" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K  [T, 768]</text>
+<rect x="646" y="306" width="82" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="687" y="322.68" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V  [T, 768]</text>
+<text x="609" y="346" font-size="12" fill="var(--fig-muted, #74716A)">拆头 → [12, T, 64]</text>
+<line x1="507" y1="330" x2="507" y2="352" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<line x1="597" y1="330" x2="597" y2="352" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<rect x="466" y="354" width="262" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="597" y="370.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">S = QK<tspan baseline-shift="super" font-size="11">⊤</tspan> / √64  →  [12, T, T]</text>
+<line x1="597" y1="378" x2="597" y2="392" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="466" y="392" width="262" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.07" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="6"/>
+<text x="597" y="408.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">因果掩码 + 逐行 softmax → A  [12, T, T]</text>
+<path d="M728 318 H740 V442" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.3"/>
+<path d="M740 442 H729" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.3" marker-end="url(#ah-green)"/>
+<line x1="597" y1="416" x2="597" y2="430" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="466" y="430" width="262" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="597" y="446.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A V → [12, T, 64]；合头 → [T, 768]</text>
+<line x1="597" y1="454" x2="597" y2="468" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="466" y="468" width="262" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="597" y="485.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">O</tspan>（768×768）加偏置 → <tspan font-weight="700">u</tspan>  [T, 768]</text>
+<rect x="446" y="516" width="302" height="146" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="10"/>
+<line x1="404" y1="575" x2="446" y2="560" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="458" y="536" font-size="13" fill="var(--fig-muted, #74716A)" font-weight="700">放大：一层前馈网络</text>
+<text x="458" y="556" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">输入：LN₂ 的输出 [T, 768]</text>
+<rect x="466" y="564" width="262" height="24" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="597" y="580.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">c_fc：乘 W<tspan baseline-shift="sub" font-size="11">1</tspan>、加偏置（768 → 3072）</text>
+<line x1="597" y1="588" x2="597" y2="600" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="466" y="600" width="262" height="24" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="597" y="616.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GELU（逐元素）→ [T, 3072]</text>
+<line x1="597" y1="624" x2="597" y2="634" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="466" y="634" width="262" height="24" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="597" y="650.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">c_proj：乘 W<tspan baseline-shift="sub" font-size="11">2</tspan>、加偏置 → <tspan font-weight="700">m</tspan>  [T, 768]</text>
+<line x1="150" y1="662" x2="150" y2="686" stroke="var(--fig-ink, #1C1B19)" stroke-width="4"/>
+<line x1="150" y1="686" x2="150" y2="700" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2" marker-end="url(#ah-ink)"/>
+<text x="160" y="684" font-size="13" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(12)</tspan></text>
+<text x="196" y="684" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<rect x="70" y="700" width="160" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="150" y="720.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">最终 LayerNorm（ln_f）</text>
+<line x1="150" y1="732" x2="150" y2="760" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="158" y="750" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 768]</text>
+<rect x="60" y="760" width="180" height="50" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="150" y="780.71" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">反嵌入：Z = H̃ <tspan font-weight="700">E</tspan><tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="150" y="798.65" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">768 → 50257，不新增参数</text>
+<line x1="150" y1="810" x2="150" y2="842" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="158" y="831" font-size="12" fill="var(--fig-green, #16704A)">logits Z</text>
+<text x="214" y="831" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 50257]</text>
+<rect x="70" y="842" width="160" height="32" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="150" y="862.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">softmax（逐行）</text>
+<line x1="150" y1="874" x2="150" y2="900" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="158" y="892" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 50257]</text>
+<text x="40" y="920" font-size="12" fill="var(--fig-ink, #1C1B19)">第 t 行 = p(x<tspan baseline-shift="sub" font-size="11">t+1</tspan> | x<tspan baseline-shift="sub" font-size="11">1</tspan>, …, x<tspan baseline-shift="sub" font-size="11">t</tspan>)：50257 个非负数，和为 1</text>
+<path d="M70 106 H20 V785 H58" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#ah-ink)"/>
+<text x="14" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 14 450)">同一个矩阵 E（权重共享）</text>
+<text x="446" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">怎么读这张图</text>
+<text x="446" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)">粗黑竖线 = 残差流：每个位置一条 768 维向量</text>
+<text x="446" y="74" font-size="12" fill="var(--fig-ink, #1C1B19)">[T, 768] = 张量形状，每行一个 token（省略 batch 维）</text>
+<text x="446" y="96" font-size="12" fill="var(--fig-ink, #1C1B19)">T ≤ 1024（上下文长度）；d = 768；d<tspan baseline-shift="sub" font-size="11">h</tspan> = 64</text>
+<text x="446" y="118" font-size="12" fill="var(--fig-blue, #1F5FA8)">蓝 = 注意力；Q 蓝、K 紫、V 绿；红 = 掩码</text>
+<text x="446" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)">灰 = LayerNorm 与 FFN；绿 = 输出</text>
+<text x="446" y="162" font-size="12" fill="var(--fig-ink, #1C1B19)">自上而下读；块内每个子层“读一份、加回去”</text>
+<text x="446" y="700" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">参数（GPT-2 small，精确计数）</text>
+<text x="446" y="722" font-size="12" fill="var(--fig-ink, #1C1B19)">wte  50257×768</text>
+<text x="742" y="722" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">38,597,376</text>
+<text x="446" y="743" font-size="12" fill="var(--fig-ink, #1C1B19)">wpe  1024×768</text>
+<text x="742" y="743" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">786,432</text>
+<text x="446" y="764" font-size="12" fill="var(--fig-ink, #1C1B19)">每块：注意力</text>
+<text x="742" y="764" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">2,362,368</text>
+<text x="446" y="785" font-size="12" fill="var(--fig-ink, #1C1B19)">每块：FFN</text>
+<text x="742" y="785" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">4,722,432</text>
+<text x="446" y="806" font-size="12" fill="var(--fig-ink, #1C1B19)">每块：2 个 LayerNorm</text>
+<text x="742" y="806" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">3,072</text>
+<text x="446" y="827" font-size="12" fill="var(--fig-ink, #1C1B19)">12 块合计</text>
+<text x="742" y="827" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">85,054,464</text>
+<text x="446" y="848" font-size="12" fill="var(--fig-ink, #1C1B19)">ln_f</text>
+<text x="742" y="848" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">1,536</text>
+<text x="446" y="869" font-size="12" fill="var(--fig-ink, #1C1B19)">反嵌入（与 wte 共享）</text>
+<text x="742" y="869" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">0</text>
+<line x1="446" y1="877" x2="744" y2="877" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="446" y="898" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">合计</text>
+<text x="742" y="898" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">124,439,808</text>
+</svg>

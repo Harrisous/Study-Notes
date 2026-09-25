@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 336" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>V3 之后的续训 token 数：V3.1 的两阶段长上下文扩展与 V3.2 的 DSA 续训</title>
+
+<text x="16" y="20" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">续训 token 数（十亿，线性刻度）</text>
+<line x1="212" y1="30" x2="212" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="212" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="309.6" y1="30" x2="309.6" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="309.6" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200</text>
+<line x1="407.2" y1="30" x2="407.2" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="407.2" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">400</text>
+<line x1="504.8" y1="30" x2="504.8" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504.8" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">600</text>
+<line x1="602.4" y1="30" x2="602.4" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="602.4" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">800</text>
+<line x1="700" y1="30" x2="700" y2="256" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1000</text>
+<text x="700" y="286" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">B token</text>
+<text x="16" y="70" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">32K 阶段</text>
+<text x="204" y="55" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3（2024-12）</text>
+<rect x="212" y="42" width="30.7" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="250.7" y="55" font-size="12" fill="var(--fig-ink, #1C1B19)">1000 步 × 1920 条 × 32K = 62.9B</text>
+<text x="204" y="81" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.1（2025-08）</text>
+<rect x="212" y="68" width="307.44" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="527.44" y="81" font-size="12" fill="var(--fig-ink, #1C1B19)">630B，×10.01</text>
+<text x="16" y="148" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">128K 阶段</text>
+<text x="204" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3（2024-12）</text>
+<rect x="212" y="120" width="30.7" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="250.7" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)">1000 步 × 480 条 × 128K = 62.9B</text>
+<text x="204" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.1（2025-08）</text>
+<rect x="212" y="146" width="101.99" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="321.99" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)">209B，×3.32</text>
+<text x="16" y="226" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DSA 续训</text>
+<text x="204" y="211" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.2-Exp 预热</text>
+<rect x="212" y="198" width="1.5" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="221.02" y="211" font-size="12" fill="var(--fig-ink, #1C1B19)">只训 indexer：2.1B</text>
+<text x="204" y="237" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.2-Exp 稀疏</text>
+<rect x="212" y="224" width="460.53" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="664.53" y="237" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">943.7B（第 14 课）</text>
+<text x="16" y="308" font-size="12" fill="var(--fig-muted, #74716A)">V3.1 两阶段合计 630 + 209 = 839B（新闻页写“840B”）；再加 DSA 的 945.8B，V3 基座之后共续训约 1.78T token。</text>
+<text x="16" y="326" font-size="12" fill="var(--fig-muted, #74716A)">对照：V3 的预训练是 14.8T token。“10 倍 / 3.3 倍”的基数是 V3 报告里各 1000 步的 62.9B。</text>
+</svg>

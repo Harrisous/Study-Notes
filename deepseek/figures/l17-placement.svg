@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 608" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Engram 放在哪一层：两个真实配置与 12 层模型上的逐层扫描</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="20" y="33" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">Engram-27B</text>
+<text x="20" y="51" font-size="11.5" fill="var(--fig-muted, #74716A)">30 层，第 2、15 层</text>
+<rect x="197" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="215.27" y="20" width="16.27" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="2"/>
+<rect x="233.53" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="251.8" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="270.07" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="288.33" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="306.6" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="324.87" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="343.13" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="361.4" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="379.67" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="397.93" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="416.2" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="434.47" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="452.73" y="20" width="16.27" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="2"/>
+<rect x="471" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="489.27" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="507.53" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="525.8" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="544.07" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="562.33" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="580.6" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="598.87" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="617.13" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="635.4" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="653.67" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="671.93" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="690.2" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="708.47" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="726.73" y="20" width="16.27" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<text x="205.13" y="62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="223.4" y="62" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">2</text>
+<text x="460.87" y="62" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">15</text>
+<text x="734.87" y="62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<text x="20" y="97" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V4.1-Flash</text>
+<text x="20" y="115" font-size="11.5" fill="var(--fig-muted, #74716A)">40 层，配置 [1, 14]（从 0 计）</text>
+<rect x="197" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="210.7" y="84" width="11.7" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="2"/>
+<rect x="224.4" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="238.1" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="251.8" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="265.5" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="279.2" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="292.9" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="306.6" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="320.3" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="334" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="347.7" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="361.4" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="375.1" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="388.8" y="84" width="11.7" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="2"/>
+<rect x="402.5" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="416.2" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="429.9" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="443.6" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="457.3" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="471" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="484.7" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="498.4" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="512.1" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="525.8" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="539.5" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="553.2" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="566.9" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="580.6" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="594.3" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="608" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="621.7" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="635.4" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="649.1" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="662.8" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="676.5" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="690.2" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="703.9" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="717.6" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="731.3" y="84" width="11.7" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<text x="202.85" y="126" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="216.55" y="126" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">2</text>
+<text x="394.65" y="126" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">15</text>
+<text x="737.15" y="126" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<text x="20" y="180" font-size="12.5" fill="var(--fig-ink, #1C1B19)">一个带 Engram 的块：</text>
+<line x1="150" y1="200" x2="690" y2="200" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="680" y1="200" x2="700" y2="200" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="706" y="204" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700"><tspan font-weight="700">H</tspan></text>
+<rect x="176" y="158" width="104" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="228" y="175.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Engram</text>
+<path d="M196 200 V186" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M260 186 V194" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<circle cx="260" cy="200" r="6" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="260" y="204.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<rect x="330" y="158" width="104" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="382" y="175.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力</text>
+<path d="M350 200 V186" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M414 186 V194" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<circle cx="414" cy="200" r="6" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="414" y="204.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<rect x="484" y="158" width="104" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="536" y="175.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MoE</text>
+<path d="M504 200 V186" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M568 186 V194" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<circle cx="568" cy="200" r="6" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="568" y="204.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<text x="598" y="176" font-size="12" fill="var(--fig-muted, #74716A)">三次残差相加</text>
+<text x="20" y="238" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">12 层 3B MoE 上加 1.6B Engram：验证损失（越低越好）</text>
+<line x1="70" y1="531.82" x2="744" y2="531.82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="535.82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.767</text>
+<line x1="70" y1="482.76" x2="744" y2="482.76" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="486.76" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.770</text>
+<line x1="70" y1="433.71" x2="744" y2="433.71" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="437.71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.773</text>
+<line x1="70" y1="384.65" x2="744" y2="384.65" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="388.65" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.776</text>
+<line x1="70" y1="335.59" x2="744" y2="335.59" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="339.59" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.779</text>
+<line x1="70" y1="286.53" x2="744" y2="286.53" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="290.53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.782</text>
+<text x="86.58" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="119.75" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="152.92" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="186.08" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="219.25" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="252.42" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="285.58" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="318.75" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="351.92" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<text x="385.08" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<text x="418.25" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<text x="451.42" y="557" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<line x1="70" y1="540" x2="468" y2="540" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="262" x2="70" y2="540" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="269" y="578" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">只插一个 Engram 模块时的层号</text>
+<text x="78" y="276" font-size="12" fill="var(--fig-red, #A3231C)">纯 MoE 基线 1.808：在本图上沿之外，高出约 0.025 ↑</text>
+<line x1="70" y1="518.74" x2="744" y2="518.74" stroke="var(--fig-green, #16704A)" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="464" y="511.74" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="700">参考配置：第 2 + 6 层两块，1.768</text>
+<path d="M86.6 433.7 L119.8 474.6 L152.9 404.3 L186.1 381.4 L219.2 342.1 L252.4 361.8 L285.6 330.7 L318.8 316.0 L351.9 306.2 L385.1 302.9 L418.2 280.0 L451.4 283.3" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="2"/>
+<circle cx="86.58" cy="433.71" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="119.75" cy="474.59" r="5.2" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<circle cx="152.92" cy="404.27" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="186.08" cy="381.38" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="219.25" cy="342.13" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="252.42" cy="361.75" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="285.58" cy="330.68" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="318.75" cy="315.96" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="351.92" cy="306.15" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="385.08" cy="302.88" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="418.25" cy="279.99" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<circle cx="451.42" cy="283.26" r="3.8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<text x="128.75" y="478.59" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="700">第 2 层最好：1.770</text>
+<text x="84.58" y="423.71" font-size="11.5" fill="var(--fig-amber, #8A6508)" text-anchor="middle">第 1 层</text>
+<text x="351.92" y="409.18" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">越深越差</text>
+<line x1="498" y1="262" x2="498" y2="540" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="508" y="256" font-size="12" fill="var(--fig-muted, #74716A)">从参考配置去掉/改一项：</text>
+<circle cx="520" cy="412.45" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="530" y="416.45" font-size="11.5" fill="var(--fig-violet, #6733C4)">去掉多分支集成 1.7743</text>
+<circle cx="520" cy="425.53" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="530" y="429.53" font-size="11.5" fill="var(--fig-violet, #6733C4)">去掉分词器压缩 1.7735</text>
+<circle cx="520" cy="443.52" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="530" y="447.52" font-size="11.5" fill="var(--fig-violet, #6733C4)">去掉上下文门控 1.7724</text>
+<circle cx="520" cy="490.94" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="530" y="494.94" font-size="11.5" fill="var(--fig-violet, #6733C4)">加 4-gram 1.7695</text>
+<circle cx="520" cy="510.56" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="530" y="514.56" font-size="11.5" fill="var(--fig-violet, #6733C4)">去掉短卷积 1.7683</text>
+<text x="20" y="600" font-size="11.5" fill="var(--fig-muted, #74716A)">实心点与绿线、1.808 是论文正文数字；空心点据 arXiv v2 图 5 的矢量坐标读取（约 ±0.0002），不是正文数字。</text>
+</svg>

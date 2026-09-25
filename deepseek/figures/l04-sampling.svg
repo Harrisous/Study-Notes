@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 630" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>从 logits 到下一个 token：温度、top-k 与 top-p（玩具例子）</title>
+
+<text x="16" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 模型给出的 logits z（“从前有座”之后，示意的 5 个候选词）</text>
+<rect x="150" y="50" width="30" height="60" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.35" rx="2"/>
+<text x="165" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2.0</text>
+<text x="165" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="210" y="80" width="30" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.35" rx="2"/>
+<text x="225" y="74" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.0</text>
+<text x="225" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="270" y="95" width="30" height="15" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.35" rx="2"/>
+<text x="285" y="89" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5</text>
+<text x="285" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">桥</text>
+<rect x="330" y="110" width="30" height="0" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.35" rx="2"/>
+<text x="345" y="104" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.0</text>
+<text x="345" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">城</text>
+<rect x="390" y="110" width="30" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.35" rx="2"/>
+<text x="405" y="104" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">-1.0</text>
+<text x="405" y="156" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">车</text>
+<line x1="142" y1="110" x2="428" y2="110" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="480" y="64" font-size="12" fill="var(--fig-muted, #74716A)">除以温度 τ，再做 softmax：</text>
+<text x="480" y="82" font-size="13" fill="var(--fig-blue, #1F5FA8)">p<tspan baseline-shift="sub" font-size="11">τ</tspan>(x) = exp(z<tspan baseline-shift="sub" font-size="11">x</tspan>/τ) / Σ exp(z<tspan baseline-shift="sub" font-size="11">x'</tspan>/τ)</text>
+<text x="16" y="176" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 温度：同一组 logits，三种 τ</text>
+<rect x="40" y="205.61" width="24" height="124.39" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="52" y="200.61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.829</text>
+<text x="52" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="78" y="313.17" width="24" height="16.83" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="90" y="308.17" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.112</text>
+<text x="90" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="116" y="323.81" width="24" height="6.19" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="128" y="318.81" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.041</text>
+<text x="128" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">桥</text>
+<rect x="154" y="327.72" width="24" height="2.28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="166" y="322.72" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.015</text>
+<text x="166" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">城</text>
+<rect x="192" y="329.69" width="24" height="0.31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="204" y="324.69" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.002</text>
+<text x="204" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">车</text>
+<line x1="36" y1="330" x2="220" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="128" y="368" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">τ = 0.5，熵 0.878 bit</text>
+<text x="128" y="385" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">更尖，接近贪心</text>
+<rect x="272" y="245.55" width="24" height="84.45" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="284" y="240.55" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.563</text>
+<text x="284" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="310" y="298.93" width="24" height="31.07" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="322" y="293.93" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.207</text>
+<text x="322" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="348" y="311.16" width="24" height="18.84" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="360" y="306.16" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.126</text>
+<text x="360" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">桥</text>
+<rect x="386" y="318.57" width="24" height="11.43" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="398" y="313.57" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.076</text>
+<text x="398" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">城</text>
+<rect x="424" y="325.8" width="24" height="4.2" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="436" y="320.8" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.028</text>
+<text x="436" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">车</text>
+<line x1="268" y1="330" x2="452" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="360" y="368" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">τ = 1，熵 1.741 bit</text>
+<text x="360" y="385" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">原分布</text>
+<rect x="504" y="273.82" width="24" height="56.18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="516" y="268.82" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.375</text>
+<text x="516" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="542" y="295.92" width="24" height="34.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="554" y="290.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.227</text>
+<text x="554" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="580" y="303.46" width="24" height="26.54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="592" y="298.46" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.177</text>
+<text x="592" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">桥</text>
+<rect x="618" y="309.33" width="24" height="20.67" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="630" y="304.33" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.138</text>
+<text x="630" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">城</text>
+<rect x="656" y="317.46" width="24" height="12.54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="2"/>
+<text x="668" y="312.46" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.084</text>
+<text x="668" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">车</text>
+<line x1="500" y1="330" x2="684" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="592" y="368" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">τ = 2，熵 2.152 bit</text>
+<text x="592" y="385" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">更平，尾部被抬高</text>
+<text x="16" y="420" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 截断再重新归一化（都从 τ = 1 的分布出发）</text>
+<rect x="40" y="508.44" width="24" height="67.56" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="52" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="78" y="551.15" width="24" height="24.85" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="90" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="116" y="560.92" width="24" height="15.08" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="2" stroke-dasharray="3 2"/>
+<text x="128" y="592" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">桥</text>
+<rect x="154" y="566.86" width="24" height="9.14" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="2" stroke-dasharray="3 2"/>
+<text x="166" y="592" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">城</text>
+<rect x="192" y="572.64" width="24" height="3.36" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="2" stroke-dasharray="3 2"/>
+<text x="204" y="592" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">车</text>
+<line x1="36" y1="576" x2="220" y2="576" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="46" y="488.27" width="12" height="87.73" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="52" y="483.27" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.731</text>
+<rect x="84" y="543.73" width="12" height="32.27" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="90" y="538.73" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.269</text>
+<text x="128" y="614" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">top-k，k = 2：只留 2 个</text>
+<rect x="330" y="508.44" width="24" height="67.56" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="342" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="368" y="551.15" width="24" height="24.85" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="380" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<rect x="406" y="560.92" width="24" height="15.08" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="418" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">桥</text>
+<rect x="444" y="566.86" width="24" height="9.14" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="2"/>
+<text x="456" y="592" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">城</text>
+<rect x="482" y="572.64" width="24" height="3.36" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="2" stroke-dasharray="3 2"/>
+<text x="494" y="592" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">车</text>
+<line x1="326" y1="576" x2="510" y2="576" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="336" y="506.49" width="12" height="69.51" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="342" y="501.49" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.579</text>
+<rect x="374" y="550.43" width="12" height="25.57" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="380" y="545.43" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.213</text>
+<rect x="412" y="560.49" width="12" height="15.51" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="418" y="555.49" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.129</text>
+<rect x="450" y="566.59" width="12" height="9.41" fill="var(--fig-green, #16704A)" fill-opacity="0.9" rx="1"/>
+<text x="456" y="561.59" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">0.078</text>
+<text x="420" y="614" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">top-p，p<tspan baseline-shift="sub" font-size="11">⋆</tspan> = 0.9：累计 0.972 时停</text>
+<text x="528" y="456" font-size="12" fill="var(--fig-green, #16704A)">前 1 个累计 0.563</text>
+<text x="528" y="474" font-size="12" fill="var(--fig-green, #16704A)">前 2 个累计 0.770</text>
+<text x="528" y="492" font-size="12" fill="var(--fig-green, #16704A)">前 3 个累计 0.896</text>
+<text x="528" y="510" font-size="12" fill="var(--fig-green, #16704A)">前 4 个累计 0.972 ← 首次 ≥ 0.9</text>
+<text x="528" y="528" font-size="12" fill="var(--fig-muted, #74716A)">前 5 个累计 1.000</text>
+<text x="528" y="554" font-size="12" fill="var(--fig-muted, #74716A)">浅色宽柱：截断前；深色窄柱：</text>
+<text x="528" y="572" font-size="12" fill="var(--fig-muted, #74716A)">重新归一化后的概率</text>
+</svg>

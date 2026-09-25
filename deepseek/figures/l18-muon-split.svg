@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 446" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Muon 与 AdamW 的分工，以及更新 RMS 的缩放</title>
+
+<rect x="24" y="20" width="344" height="178" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="8"/>
+<text x="40" y="46" font-size="15" fill="var(--fig-muted, #74716A)" font-weight="700">AdamW</text>
+<text x="40" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)">· embedding（129,280 × d）</text>
+<text x="40" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)">· 预测头（d × 129,280）</text>
+<text x="40" y="124" font-size="12" fill="var(--fig-ink, #1C1B19)">· 所有 RMSNorm 的权重</text>
+<text x="40" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)">· mHC 的静态偏置 S 与门控因子 α</text>
+<rect x="392" y="20" width="344" height="178" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="408" y="46" font-size="15" fill="var(--fig-blue, #1F5FA8)" font-weight="700">Muon</text>
+<text x="408" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)">· 注意力的全部投影：W<tspan baseline-shift="4.8" font-size="11">DQ</tspan>、W<tspan baseline-shift="4.8" font-size="11">UQ</tspan>、窗口投影、</text>
+<text x="408" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)">  压缩器、indexer 投影、分组输出投影</text>
+<text x="408" y="124" font-size="12" fill="var(--fig-ink, #1C1B19)">· 每个路由专家与共享专家的三个矩阵</text>
+<text x="408" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)">· mHC 的动态投影 W<tspan baseline-shift="4.8" font-size="11">pre</tspan>、W<tspan baseline-shift="4.8" font-size="11">res</tspan>、W<tspan baseline-shift="4.8" font-size="11">post</tspan></text>
+<text x="408" y="172" font-size="12" fill="var(--fig-ink, #1C1B19)">· 路由器、MTP 模块里的矩阵（推测）</text>
+<text x="24" y="218" font-size="12" fill="var(--fig-muted, #74716A)">AdamW：β₁ = 0.9，β₂ = 0.95，ε = 10⁻²⁰，权重衰减 0.1</text>
+<text x="392" y="218" font-size="12" fill="var(--fig-muted, #74716A)">Muon：动量 0.95，权重衰减 0.1，更新 RMS = 0.18</text>
+<text x="24" y="252" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">正交化后的更新 RMS（对数轴）</text>
+<line x1="150" y1="396" x2="740" y2="396" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="142" y="400" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="4.4" font-size="11">-3</tspan></text>
+<line x1="150" y1="354.67" x2="740" y2="354.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="142" y="358.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="4.4" font-size="11">-2</tspan></text>
+<line x1="150" y1="313.33" x2="740" y2="313.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="142" y="317.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="4.4" font-size="11">-1</tspan></text>
+<line x1="150" y1="272" x2="740" y2="272" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="142" y="276" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="150" y1="396" x2="740" y2="396" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="216" y="351.68" width="30" height="44.32" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="231" y="345.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0118</text>
+<rect x="256" y="302.78" width="30" height="93.22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="271" y="296.78" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.18</text>
+<text x="246" y="414" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="4.8" font-size="11">DQ</tspan>：1536 × 7168</text>
+<rect x="416" y="371.54" width="30" height="24.46" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="431" y="365.54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0039</text>
+<rect x="456" y="302.78" width="30" height="93.22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="471" y="296.78" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.18</text>
+<text x="446" y="414" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="4.8" font-size="11">UQ</tspan>：65536 × 1536</text>
+<rect x="616" y="346.66" width="30" height="49.34" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="631" y="340.66" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0156</text>
+<rect x="656" y="302.78" width="30" height="93.22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="671" y="296.78" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.18</text>
+<text x="646" y="414" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="4.8" font-size="11">O1</tspan> 的一组：1024 × 4096</text>
+<rect x="360" y="242" width="14" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.55"/>
+<text x="380" y="252" font-size="11" fill="var(--fig-ink, #1C1B19)">正交因子 UV<tspan baseline-shift="4.4" font-size="11">⊤</tspan>：1/√max(p,q)</text>
+<rect x="560" y="242" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="580" y="252" font-size="11" fill="var(--fig-ink, #1C1B19)">再乘 √max(p,q) × 0.18</text>
+<text x="24" y="440" font-size="11" fill="var(--fig-muted, #74716A)">形状按 V4-Pro 的真实矩阵取（输出 × 输入）；缩放后与形状无关，这就是能共用一个学习率的原因。</text>
+</svg>

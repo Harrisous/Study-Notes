@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 412" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MinHash 的机制与分带 LSH 的概率开关</title>
+
+<text x="16" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) MinHash：随机排一次序，看并集里排第一的片段</text>
+<text x="16" y="50" font-size="12" fill="var(--fig-blue, #1F5FA8)">A：小猫坐在垫子上</text>
+<text x="156" y="50" font-size="12" fill="var(--fig-violet, #6733C4)">B：小猫坐在毯子上</text>
+<text x="16" y="70" font-size="12" fill="var(--fig-muted, #74716A)">以相邻 2 个字为一个片段，并集共 8 个：</text>
+<rect x="42" y="80" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="59" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">小猫</text>
+<rect x="80" y="80" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="97" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">猫坐</text>
+<rect x="118" y="80" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="135" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">坐在</text>
+<rect x="156" y="80" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="173" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">子上</text>
+<rect x="194" y="80" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="211" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在垫</text>
+<rect x="232" y="80" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="249" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">垫子</text>
+<rect x="270" y="80" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="287" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在毯</text>
+<rect x="308" y="80" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="325" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">毯子</text>
+<text x="354" y="95.5" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">J = 4/8 = 0.5</text>
+<rect x="42" y="112" width="12" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="2"/>
+<text x="59" y="122" font-size="12" fill="var(--fig-green, #16704A)">两篇都有（交集）</text>
+<rect x="170" y="112" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="187" y="122" font-size="12" fill="var(--fig-blue, #1F5FA8)">只在 A</text>
+<rect x="256" y="112" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="2"/>
+<text x="273" y="122" font-size="12" fill="var(--fig-violet, #6733C4)">只在 B</text>
+<text x="16" y="152" font-size="12" fill="var(--fig-muted, #74716A)">四个彼此独立的排列（从左到右是名次 1…8）：</text>
+<text x="16" y="179.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">h<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="42" y="164" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.28" stroke="var(--fig-green, #16704A)" stroke-width="2.2" rx="4"/>
+<text x="59" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">坐在</text>
+<rect x="80" y="164" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="97" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在毯</text>
+<rect x="118" y="164" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="135" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">小猫</text>
+<rect x="156" y="164" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="173" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">垫子</text>
+<rect x="194" y="164" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="211" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">子上</text>
+<rect x="232" y="164" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="249" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在垫</text>
+<rect x="270" y="164" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="287" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">毯子</text>
+<rect x="308" y="164" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="325" y="179.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">猫坐</text>
+<polygon points="53,188 49,194 57,194" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="53" y="207" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">A</text>
+<polygon points="65,188 61,194 69,194" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="65" y="207" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">B</text>
+<text x="354" y="179.5" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">相等</text>
+<text x="354" y="195" font-size="11" fill="var(--fig-muted, #74716A)">A 第 1，B 第 1</text>
+<text x="16" y="229.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">h<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="42" y="214" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="2.2" rx="4"/>
+<text x="59" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">毯子</text>
+<rect x="80" y="214" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.28" stroke="var(--fig-green, #16704A)" stroke-width="2.2" rx="4"/>
+<text x="97" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">子上</text>
+<rect x="118" y="214" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="135" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在垫</text>
+<rect x="156" y="214" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="173" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">猫坐</text>
+<rect x="194" y="214" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="211" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">小猫</text>
+<rect x="232" y="214" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="249" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在毯</text>
+<rect x="270" y="214" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="287" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">坐在</text>
+<rect x="308" y="214" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="325" y="229.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">垫子</text>
+<polygon points="97,238 93,244 101,244" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="97" y="257" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">A</text>
+<polygon points="59,238 55,244 63,244" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="59" y="257" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">B</text>
+<text x="354" y="229.5" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">不等</text>
+<text x="354" y="245" font-size="11" fill="var(--fig-muted, #74716A)">A 第 2，B 第 1</text>
+<text x="16" y="279.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">h<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="42" y="264" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.28" stroke="var(--fig-green, #16704A)" stroke-width="2.2" rx="4"/>
+<text x="59" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">小猫</text>
+<rect x="80" y="264" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="97" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">垫子</text>
+<rect x="118" y="264" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="135" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在毯</text>
+<rect x="156" y="264" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="173" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">子上</text>
+<rect x="194" y="264" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="211" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">毯子</text>
+<rect x="232" y="264" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="249" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">坐在</text>
+<rect x="270" y="264" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="287" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">猫坐</text>
+<rect x="308" y="264" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="325" y="279.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在垫</text>
+<polygon points="53,288 49,294 57,294" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="53" y="307" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">A</text>
+<polygon points="65,288 61,294 69,294" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="65" y="307" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">B</text>
+<text x="354" y="279.5" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">相等</text>
+<text x="354" y="295" font-size="11" fill="var(--fig-muted, #74716A)">A 第 1，B 第 1</text>
+<text x="16" y="329.5" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">h<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<rect x="42" y="314" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" rx="4"/>
+<text x="59" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">垫子</text>
+<rect x="80" y="314" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="2.2" rx="4"/>
+<text x="97" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">毯子</text>
+<rect x="118" y="314" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="135" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">猫坐</text>
+<rect x="156" y="314" width="34" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="173" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在垫</text>
+<rect x="194" y="314" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="211" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">坐在</text>
+<rect x="232" y="314" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="249" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">小猫</text>
+<rect x="270" y="314" width="34" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="287" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">子上</text>
+<rect x="308" y="314" width="34" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="4"/>
+<text x="325" y="329.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">在毯</text>
+<polygon points="59,338 55,344 63,344" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="59" y="357" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">A</text>
+<polygon points="97,338 93,344 101,344" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="97" y="357" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">B</text>
+<text x="354" y="329.5" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">不等</text>
+<text x="354" y="345" font-size="11" fill="var(--fig-muted, #74716A)">A 第 1，B 第 2</text>
+<text x="16" y="376" font-size="12" fill="var(--fig-ink, #1C1B19)">排第一的片段是绿色，两边的最小名次才相同；</text>
+<text x="16" y="394" font-size="12" fill="var(--fig-ink, #1C1B19)">随机排列下它是绿色的概率 = 4/8 = J（这四行恰好两行相等）。</text>
+<text x="462" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 分带 LSH：成为候选对的概率 (6.2)</text>
+<line x1="462" y1="46" x2="484" y2="46" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<text x="490" y="50" font-size="12" fill="var(--fig-blue, #1F5FA8)">b = 20，r = 5（正文示例）</text>
+<line x1="462" y1="66" x2="484" y2="66" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" stroke-dasharray="6 3"/>
+<text x="490" y="70" font-size="12" fill="var(--fig-blue, #1F5FA8)">b = 25，r = 4（练习 10）</text>
+<line x1="638" y1="66" x2="660" y2="66" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="2 3"/>
+<text x="666" y="70" font-size="12" fill="var(--fig-muted, #74716A)">只比 1 个值</text>
+<line x1="510" y1="304" x2="740" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504" y="308" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="510" y1="252" x2="740" y2="252" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504" y="256" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.25</text>
+<line x1="510" y1="200" x2="740" y2="200" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504" y="204" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="510" y1="148" x2="740" y2="148" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504" y="152" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.75</text>
+<line x1="510" y1="96" x2="740" y2="96" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="504" y="100" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="510" y1="96" x2="510" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="510" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="556" y1="96" x2="556" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="556" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="602" y1="96" x2="602" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="602" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="648" y1="96" x2="648" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="648" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="694" y1="96" x2="694" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="694" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="740" y1="96" x2="740" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="740" y="320" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="510" y1="304" x2="740" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="510" y1="96" x2="510" y2="304" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="625" y="340" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">Jaccard 相似度 J</text>
+<text x="470" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 470 200)">成为候选对的概率 P</text>
+<path d="M510.0 304.0 L740.0 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="2 3"/>
+<path d="M510.0 304.0 L511.1 304.0 L512.3 304.0 L513.5 304.0 L514.6 304.0 L515.8 304.0 L516.9 304.0 L518.0 304.0 L519.2 304.0 L520.4 304.0 L521.5 304.0 L522.6 304.0 L523.8 303.9 L525.0 303.9 L526.1 303.9 L527.2 303.8 L528.4 303.8 L529.5 303.7 L530.7 303.7 L531.9 303.6 L533.0 303.5 L534.1 303.4 L535.3 303.2 L536.5 303.1 L537.6 302.9 L538.8 302.7 L539.9 302.5 L541.0 302.3 L542.2 302.0 L543.4 301.7 L544.5 301.4 L545.6 301.0 L546.8 300.6 L548.0 300.2 L549.1 299.7 L550.2 299.2 L551.4 298.6 L552.5 298.0 L553.7 297.3 L554.9 296.6 L556.0 295.8 L557.1 295.0 L558.3 294.1 L559.5 293.2 L560.6 292.2 L561.8 291.1 L562.9 289.9 L564.0 288.7 L565.2 287.4 L566.4 286.1 L567.5 284.6 L568.6 283.1 L569.8 281.5 L571.0 279.8 L572.1 278.1 L573.2 276.2 L574.4 274.3 L575.5 272.3 L576.7 270.2 L577.9 268.0 L579.0 265.7 L580.1 263.4 L581.3 260.9 L582.5 258.4 L583.6 255.8 L584.8 253.1 L585.9 250.4 L587.0 247.5 L588.2 244.6 L589.4 241.6 L590.5 238.5 L591.6 235.4 L592.8 232.2 L594.0 228.9 L595.1 225.6 L596.2 222.2 L597.4 218.8 L598.5 215.4 L599.7 211.9 L600.9 208.3 L602.0 204.8 L603.1 201.2 L604.3 197.6 L605.5 194.0 L606.6 190.4 L607.8 186.8 L608.9 183.2 L610.0 179.6 L611.2 176.0 L612.4 172.5 L613.5 169.0 L614.6 165.6 L615.8 162.2 L617.0 158.8 L618.1 155.6 L619.2 152.3 L620.4 149.2 L621.5 146.1 L622.7 143.1 L623.9 140.2 L625.0 137.4 L626.1 134.7 L627.3 132.1 L628.5 129.6 L629.6 127.2 L630.8 124.9 L631.9 122.6 L633.0 120.5 L634.2 118.6 L635.4 116.7 L636.5 114.9 L637.6 113.2 L638.8 111.6 L640.0 110.2 L641.1 108.8 L642.2 107.5 L643.4 106.3 L644.5 105.2 L645.7 104.2 L646.9 103.3 L648.0 102.5 L649.1 101.7 L650.3 101.0 L651.5 100.4 L652.6 99.8 L653.8 99.3 L654.9 98.9 L656.0 98.5 L657.2 98.1 L658.4 97.8 L659.5 97.5 L660.6 97.3 L661.8 97.1 L663.0 96.9 L664.1 96.7 L665.2 96.6 L666.4 96.5 L667.5 96.4 L668.7 96.3 L669.9 96.3 L671.0 96.2 L672.1 96.2 L673.3 96.1 L674.5 96.1 L675.6 96.1 L676.8 96.1 L677.9 96.0 L679.0 96.0 L680.2 96.0 L681.4 96.0 L682.5 96.0 L683.6 96.0 L684.8 96.0 L686.0 96.0 L687.1 96.0 L688.2 96.0 L689.4 96.0 L690.5 96.0 L691.7 96.0 L692.9 96.0 L694.0 96.0 L695.1 96.0 L696.3 96.0 L697.5 96.0 L698.6 96.0 L699.8 96.0 L700.9 96.0 L702.0 96.0 L703.2 96.0 L704.4 96.0 L705.5 96.0 L706.6 96.0 L707.8 96.0 L709.0 96.0 L710.1 96.0 L711.2 96.0 L712.4 96.0 L713.5 96.0 L714.7 96.0 L715.9 96.0 L717.0 96.0 L718.1 96.0 L719.3 96.0 L720.5 96.0 L721.6 96.0 L722.8 96.0 L723.9 96.0 L725.0 96.0 L726.2 96.0 L727.4 96.0 L728.5 96.0 L729.6 96.0 L730.8 96.0 L732.0 96.0 L733.1 96.0 L734.2 96.0 L735.4 96.0 L736.5 96.0 L737.7 96.0 L738.9 96.0 L740.0 96.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" stroke-dasharray="6 3" stroke-opacity="0.85"/>
+<path d="M510.0 304.0 L511.1 304.0 L512.3 304.0 L513.5 304.0 L514.6 304.0 L515.8 304.0 L516.9 304.0 L518.0 304.0 L519.2 304.0 L520.4 304.0 L521.5 304.0 L522.6 304.0 L523.8 304.0 L525.0 304.0 L526.1 304.0 L527.2 304.0 L528.4 304.0 L529.5 304.0 L530.7 304.0 L531.9 304.0 L533.0 304.0 L534.1 303.9 L535.3 303.9 L536.5 303.9 L537.6 303.9 L538.8 303.9 L539.9 303.8 L541.0 303.8 L542.2 303.8 L543.4 303.7 L544.5 303.7 L545.6 303.6 L546.8 303.6 L548.0 303.5 L549.1 303.4 L550.2 303.3 L551.4 303.2 L552.5 303.1 L553.7 303.0 L554.9 302.8 L556.0 302.7 L557.1 302.5 L558.3 302.3 L559.5 302.1 L560.6 301.9 L561.8 301.6 L562.9 301.3 L564.0 301.0 L565.2 300.7 L566.4 300.4 L567.5 300.0 L568.6 299.6 L569.8 299.1 L571.0 298.6 L572.1 298.1 L573.2 297.6 L574.4 297.0 L575.5 296.3 L576.7 295.6 L577.9 294.9 L579.0 294.1 L580.1 293.3 L581.3 292.4 L582.5 291.5 L583.6 290.5 L584.8 289.4 L585.9 288.3 L587.0 287.1 L588.2 285.9 L589.4 284.6 L590.5 283.2 L591.6 281.8 L592.8 280.2 L594.0 278.6 L595.1 277.0 L596.2 275.2 L597.4 273.4 L598.5 271.5 L599.7 269.5 L600.9 267.4 L602.0 265.3 L603.1 263.1 L604.3 260.8 L605.5 258.4 L606.6 255.9 L607.8 253.3 L608.9 250.7 L610.0 248.0 L611.2 245.2 L612.4 242.3 L613.5 239.3 L614.6 236.3 L615.8 233.2 L617.0 230.0 L618.1 226.8 L619.2 223.5 L620.4 220.1 L621.5 216.7 L622.7 213.3 L623.9 209.8 L625.0 206.2 L626.1 202.7 L627.3 199.1 L628.5 195.4 L629.6 191.8 L630.8 188.2 L631.9 184.5 L633.0 180.9 L634.2 177.2 L635.4 173.6 L636.5 170.1 L637.6 166.5 L638.8 163.0 L640.0 159.5 L641.1 156.1 L642.2 152.8 L643.4 149.5 L644.5 146.3 L645.7 143.2 L646.9 140.1 L648.0 137.2 L649.1 134.4 L650.3 131.6 L651.5 129.0 L652.6 126.4 L653.8 124.0 L654.9 121.7 L656.0 119.5 L657.2 117.5 L658.4 115.5 L659.5 113.7 L660.6 111.9 L661.8 110.3 L663.0 108.8 L664.1 107.4 L665.2 106.2 L666.4 105.0 L667.5 103.9 L668.7 102.9 L669.9 102.0 L671.0 101.2 L672.1 100.5 L673.3 99.9 L674.5 99.3 L675.6 98.8 L676.8 98.4 L677.9 98.0 L679.0 97.7 L680.2 97.4 L681.4 97.1 L682.5 96.9 L683.6 96.7 L684.8 96.6 L686.0 96.5 L687.1 96.4 L688.2 96.3 L689.4 96.2 L690.5 96.2 L691.7 96.1 L692.9 96.1 L694.0 96.1 L695.1 96.1 L696.3 96.0 L697.5 96.0 L698.6 96.0 L699.8 96.0 L700.9 96.0 L702.0 96.0 L703.2 96.0 L704.4 96.0 L705.5 96.0 L706.6 96.0 L707.8 96.0 L709.0 96.0 L710.1 96.0 L711.2 96.0 L712.4 96.0 L713.5 96.0 L714.7 96.0 L715.9 96.0 L717.0 96.0 L718.1 96.0 L719.3 96.0 L720.5 96.0 L721.6 96.0 L722.8 96.0 L723.9 96.0 L725.0 96.0 L726.2 96.0 L727.4 96.0 L728.5 96.0 L729.6 96.0 L730.8 96.0 L732.0 96.0 L733.1 96.0 L734.2 96.0 L735.4 96.0 L736.5 96.0 L737.7 96.0 L738.9 96.0 L740.0 96.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<line x1="636.33" y1="258.24" x2="636.33" y2="304" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" stroke-dasharray="3 3"/>
+<text x="641.33" y="282" font-size="12" fill="var(--fig-ink, #1C1B19)">开关</text>
+<text x="641.33" y="297" font-size="12" fill="var(--fig-ink, #1C1B19)">J ≈ 0.55</text>
+<circle cx="556" cy="302.67" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="625" cy="206.23" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="694" cy="96.07" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="514.6" y="175.04" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">J = 0.2：0.0064</text>
+<line x1="556" y1="297.67" x2="546.8" y2="180.04" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="633" y="216.23" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">0.47（左例 J = 0.5）</text>
+<text x="694" y="90" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.9996</text>
+</svg>

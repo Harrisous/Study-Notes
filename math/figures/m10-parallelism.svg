@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 540" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>四种并行：数据、张量、流水线、专家</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker></defs>
+<rect x="12" y="10" width="352" height="250" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="26" y="34" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">数据并行（DP）</text>
+<text x="26" y="52" font-size="12" fill="var(--fig-muted, #74716A)">每卡一份完整模型，各吃不同的数据</text>
+<rect x="34" y="86" width="62" height="104" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="65" y="205" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 0</text>
+<rect x="42" y="96" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="42" y="118" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="42" y="140" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="42" y="162" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="65" y="174" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全 16 层</text>
+<rect x="46" y="64" width="38" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" rx="3"/>
+<text x="65" y="76" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">数据 0</text>
+<rect x="116" y="86" width="62" height="104" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="147" y="205" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 1</text>
+<rect x="124" y="96" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="124" y="118" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="124" y="140" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="124" y="162" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="147" y="174" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全 16 层</text>
+<rect x="128" y="64" width="38" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" rx="3"/>
+<text x="147" y="76" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">数据 1</text>
+<rect x="198" y="86" width="62" height="104" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="229" y="205" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 2</text>
+<rect x="206" y="96" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="206" y="118" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="206" y="140" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="206" y="162" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="229" y="174" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全 16 层</text>
+<rect x="210" y="64" width="38" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" rx="3"/>
+<text x="229" y="76" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">数据 2</text>
+<rect x="280" y="86" width="62" height="104" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="311" y="205" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 3</text>
+<rect x="288" y="96" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="288" y="118" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="288" y="140" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<rect x="288" y="162" width="46" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="311" y="174" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全 16 层</text>
+<rect x="292" y="64" width="38" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" rx="3"/>
+<text x="311" y="76" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">数据 3</text>
+<line x1="65" y1="222" x2="311" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="65" y1="208" x2="65" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="147" y1="208" x2="147" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="229" y1="208" x2="229" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="311" y1="208" x2="311" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="188" y="242" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">每步一次：梯度 all-reduce（求和）</text>
+<rect x="376" y="10" width="352" height="250" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="390" y="34" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">张量并行（TP）</text>
+<text x="390" y="52" font-size="12" fill="var(--fig-muted, #74716A)">把一层里的矩阵切开，每层都要通信</text>
+<rect x="396" y="110" width="34" height="64" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.7" rx="3"/>
+<text x="413" y="147" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">X</text>
+<rect x="452" y="74" width="196" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="550" y="159" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle"></text>
+<text x="644" y="138" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 0</text>
+<line x1="432" y1="142" x2="460.65" y2="110.48" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="466" y="86" width="34" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="483" y="114" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<line x1="502" y1="109" x2="522" y2="109" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="524" y="86" width="40" height="46" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="544" y="106" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GeLU</text>
+<text x="544" y="122" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(XA<tspan baseline-shift="sub" font-size="11">1</tspan>)</text>
+<line x1="566" y1="109" x2="584" y2="109" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="586" y="96" width="50" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="611" y="114" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">B<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="667" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">Z<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="452" y="160" width="196" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="550" y="245" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle"></text>
+<text x="644" y="224" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 1</text>
+<line x1="432" y1="142" x2="461.01" y2="193.26" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="466" y="172" width="34" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="483" y="200" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="502" y1="195" x2="522" y2="195" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="524" y="172" width="40" height="46" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="544" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GeLU</text>
+<text x="544" y="208" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(XA<tspan baseline-shift="sub" font-size="11">2</tspan>)</text>
+<line x1="566" y1="195" x2="584" y2="195" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="586" y="182" width="50" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="611" y="200" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">B<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="667" y="185" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">Z<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="483" y="70" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">按列切</text>
+<text x="611" y="70" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">按行切</text>
+<line x1="638" y1="109" x2="696" y2="109" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="638" y1="195" x2="696" y2="195" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<line x1="696" y1="109" x2="696" y2="195" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="552" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">部分和 Z<tspan baseline-shift="sub" font-size="11">1</tspan> + Z<tspan baseline-shift="sub" font-size="11">2</tspan>：前向一次 all-reduce</text>
+<rect x="12" y="280" width="352" height="250" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="26" y="304" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">流水线并行（PP）</text>
+<text x="26" y="322" font-size="12" fill="var(--fig-muted, #74716A)">按层切成几段，段与段之间传激活</text>
+<rect x="34" y="350" width="62" height="110" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="65" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 0</text>
+<rect x="42" y="360" width="46" height="90" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="65" y="402" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1–4</text>
+<text x="65" y="418" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层</text>
+<line x1="98" y1="386" x2="114" y2="386" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="114" y1="430" x2="98" y2="430" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<rect x="116" y="350" width="62" height="110" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="147" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 1</text>
+<rect x="124" y="360" width="46" height="90" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="147" y="402" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 5–8</text>
+<text x="147" y="418" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层</text>
+<line x1="180" y1="386" x2="196" y2="386" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="196" y1="430" x2="180" y2="430" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<rect x="198" y="350" width="62" height="110" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="229" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 2</text>
+<rect x="206" y="360" width="46" height="90" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="229" y="402" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 9–12</text>
+<text x="229" y="418" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层</text>
+<line x1="262" y1="386" x2="278" y2="386" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<line x1="278" y1="430" x2="262" y2="430" stroke="var(--fig-orange, #B4460C)" stroke-width="1.5" marker-end="url(#ah-orange)"/>
+<rect x="280" y="350" width="62" height="110" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="311" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 3</text>
+<rect x="288" y="360" width="46" height="90" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="311" y="402" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 13–16</text>
+<text x="311" y="418" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层</text>
+<text x="32" y="492" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">→ 前向传激活</text>
+<text x="142" y="492" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="600">← 反向传梯度</text>
+<text x="32" y="514" font-size="12" fill="var(--fig-muted, #74716A)">点对点、只在段的边界通信；代价是流水线气泡</text>
+<rect x="376" y="280" width="352" height="250" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="8"/>
+<text x="390" y="304" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">专家并行（EP）</text>
+<text x="390" y="322" font-size="12" fill="var(--fig-muted, #74716A)">不同专家放在不同卡上，token 去找专家</text>
+<rect x="398" y="390" width="62" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="429" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 0</text>
+<rect x="405" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="416" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E0</text>
+<rect x="430" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="441" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E1</text>
+<circle cx="406" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="406" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<circle cx="421.3" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="421.3" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<circle cx="436.6" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="436.6" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<circle cx="451.9" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="451.9" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<rect x="480" y="390" width="62" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="511" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 1</text>
+<rect x="487" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="498" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E2</text>
+<rect x="512" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="523" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E3</text>
+<circle cx="488" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="488" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<circle cx="503.3" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="503.3" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<circle cx="518.6" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="518.6" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<circle cx="533.9" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="533.9" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="562" y="390" width="62" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="593" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 2</text>
+<rect x="569" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="580" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E4</text>
+<rect x="594" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="605" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E5</text>
+<circle cx="570" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="570" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<circle cx="585.3" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="585.3" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<circle cx="600.6" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="600.6" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<circle cx="615.9" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="615.9" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="644" y="390" width="62" height="70" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="5"/>
+<text x="675" y="475" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">GPU 3</text>
+<rect x="651" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="662" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E6</text>
+<rect x="676" y="400" width="22" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="687" y="430" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E7</text>
+<circle cx="652" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="652" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<circle cx="667.3" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="667.3" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<circle cx="682.6" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="682.6" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<circle cx="697.9" cy="360" r="6.6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="697.9" y="364" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<line x1="436.6" y1="368" x2="591.02" y2="387.75" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<line x1="518.6" y1="368" x2="673.02" y2="387.75" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<line x1="600.6" y1="368" x2="430.99" y2="387.77" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<line x1="682.6" y1="368" x2="512.99" y2="387.77" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<line x1="421.3" y1="368" x2="509.05" y2="387.56" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<line x1="585.3" y1="368" x2="673.05" y2="387.56" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<text x="552" y="342" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">每个圆点是一个 token，数字是它的专家所在的卡</text>
+<text x="552" y="496" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">dispatch：all-to-all 发出去</text>
+<text x="552" y="516" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">combine：算完再 all-to-all 发回来</text>
+</svg>

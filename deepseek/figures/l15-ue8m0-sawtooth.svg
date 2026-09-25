@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>UE8M0 缩放因子：只能取 2 的整数次幂，代价是 E4M3 的最上面一段有时用不上</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">UE8M0：8 位全部是指数（无符号位、无尾数），值 = 2<tspan baseline-shift="super" font-size="11">E−127</tspan></text>
+<rect x="40" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="56" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<rect x="74" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="90" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">1</text>
+<rect x="108" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="124" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">1</text>
+<rect x="142" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="158" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">1</text>
+<rect x="176" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="192" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">1</text>
+<rect x="210" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="226" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<rect x="244" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="260" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<rect x="278" y="36" width="32" height="32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.04" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="294" y="58" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<text x="175" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">指数字段 E = 0111 1000₂ = 120</text>
+<text x="332" y="50" font-size="13" fill="var(--fig-ink, #1C1B19)">→  2<tspan baseline-shift="super" font-size="11">120−127</tspan> = 2<tspan baseline-shift="super" font-size="11">−7</tspan> = 0.0078125</text>
+<text x="332" y="70" font-size="12" fill="var(--fig-muted, #74716A)">E = 0…254 表示 2<tspan baseline-shift="super" font-size="11">−127</tspan>…2<tspan baseline-shift="super" font-size="11">127</tspan>；E = 255 保留给 NaN。</text>
+<text x="332" y="88" font-size="12" fill="var(--fig-muted, #74716A)">没有 0，也没有负数：缩放因子本来就是正数。</text>
+<text x="16" y="130" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">每个 1×128 分块的最大码值 / 448（E4M3 范围的利用率 u）</text>
+<line x1="70" y1="370.24" x2="600" y2="370.24" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="374.24" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="70" y1="340.48" x2="600" y2="340.48" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="344.48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<line x1="70" y1="310.71" x2="600" y2="310.71" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="314.71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.7</text>
+<line x1="70" y1="280.95" x2="600" y2="280.95" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="284.95" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.8</text>
+<line x1="70" y1="251.19" x2="600" y2="251.19" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="255.19" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.9</text>
+<line x1="70" y1="221.43" x2="600" y2="221.43" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="225.43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="70" y1="150" x2="70" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">0</tspan></text>
+<line x1="176" y1="150" x2="176" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="176" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">2</tspan></text>
+<line x1="282" y1="150" x2="282" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="282" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="388" y1="150" x2="388" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="388" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">6</tspan></text>
+<line x1="494" y1="150" x2="494" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">8</tspan></text>
+<line x1="600" y1="150" x2="600" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="600" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2<tspan baseline-shift="super" font-size="11">10</tspan></text>
+<text x="335" y="436" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">分块最大绝对值 a（对数刻度）</text>
+<line x1="70" y1="400" x2="600" y2="400" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<line x1="70" y1="150" x2="70" y2="400" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<line x1="70" y1="221.43" x2="600" y2="221.43" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<text x="606" y="225.43" font-size="12" fill="var(--fig-green, #16704A)">FP32 缩放：u = 1</text>
+<line x1="70" y1="304.36" x2="600" y2="304.36" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="606" y="308.36" font-size="12" fill="var(--fig-muted, #74716A)">平均 1/(2 ln 2) ≈ 0.721</text>
+<text x="606" y="374.24" font-size="12" fill="var(--fig-muted, #74716A)">最坏 1/2</text>
+<path d="M70 348.98 L71.07 346.58 L72.14 344.15 L73.21 341.69 L74.28 339.19 L75.35 336.66 L76.42 334.09 L77.49 331.48 L78.56 328.84 L79.63 326.16 L80.7 323.44 L81.77 320.69 L82.84 317.89 L83.91 315.06 L84.98 312.18 L86.05 309.27 L87.12 306.31 L88.19 303.32 L89.26 300.28 L90.33 297.19 L91.39 294.07 L92.46 290.9 L93.53 287.68 L94.6 284.43 L95.67 281.12 L96.74 277.77 L97.81 274.37 L98.88 270.92 L99.95 267.43 L101.02 263.88 L102.09 260.29 L103.16 256.64 L104.23 252.94 L105.3 249.19 L106.37 245.39 L107.44 241.54 L108.51 237.63 L109.58 233.66 L110.65 229.64 L111.72 225.56 L112.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="112.79" y1="221.43" x2="112.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M112.79 370.24 L114.11 367.64 L115.44 364.99 L116.76 362.3 L118.09 359.56 L119.41 356.77 L120.74 353.93 L122.06 351.05 L123.39 348.11 L124.71 345.12 L126.04 342.08 L127.36 338.99 L128.69 335.84 L130.01 332.64 L131.34 329.38 L132.66 326.07 L133.99 322.69 L135.31 319.26 L136.64 315.77 L137.96 312.21 L139.29 308.6 L140.61 304.92 L141.94 301.18 L143.26 297.37 L144.59 293.49 L145.91 289.55 L147.24 285.54 L148.56 281.46 L149.89 277.31 L151.21 273.08 L152.54 268.78 L153.86 264.41 L155.19 259.96 L156.51 255.43 L157.84 250.82 L159.16 246.13 L160.49 241.36 L161.81 236.51 L163.14 231.57 L164.46 226.54 L165.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="165.79" y1="221.43" x2="165.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M165.79 370.24 L167.11 367.64 L168.44 364.99 L169.76 362.3 L171.09 359.56 L172.41 356.77 L173.74 353.93 L175.06 351.05 L176.39 348.11 L177.71 345.12 L179.04 342.08 L180.36 338.99 L181.69 335.84 L183.01 332.64 L184.34 329.38 L185.66 326.07 L186.99 322.69 L188.31 319.26 L189.64 315.77 L190.96 312.21 L192.29 308.6 L193.61 304.92 L194.94 301.18 L196.26 297.37 L197.59 293.49 L198.91 289.55 L200.24 285.54 L201.56 281.46 L202.89 277.31 L204.21 273.08 L205.54 268.78 L206.86 264.41 L208.19 259.96 L209.51 255.43 L210.84 250.82 L212.16 246.13 L213.49 241.36 L214.81 236.51 L216.14 231.57 L217.46 226.54 L218.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="218.79" y1="221.43" x2="218.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M218.79 370.24 L220.11 367.64 L221.44 364.99 L222.76 362.3 L224.09 359.56 L225.41 356.77 L226.74 353.93 L228.06 351.05 L229.39 348.11 L230.71 345.12 L232.04 342.08 L233.36 338.99 L234.69 335.84 L236.01 332.64 L237.34 329.38 L238.66 326.07 L239.99 322.69 L241.31 319.26 L242.64 315.77 L243.96 312.21 L245.29 308.6 L246.61 304.92 L247.94 301.18 L249.26 297.37 L250.59 293.49 L251.91 289.55 L253.24 285.54 L254.56 281.46 L255.89 277.31 L257.21 273.08 L258.54 268.78 L259.86 264.41 L261.19 259.96 L262.51 255.43 L263.84 250.82 L265.16 246.13 L266.49 241.36 L267.81 236.51 L269.14 231.57 L270.46 226.54 L271.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="271.79" y1="221.43" x2="271.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M271.79 370.24 L273.11 367.64 L274.44 364.99 L275.76 362.3 L277.09 359.56 L278.41 356.77 L279.74 353.93 L281.06 351.05 L282.39 348.11 L283.71 345.12 L285.04 342.08 L286.36 338.99 L287.69 335.84 L289.01 332.64 L290.34 329.38 L291.66 326.07 L292.99 322.69 L294.31 319.26 L295.64 315.77 L296.96 312.21 L298.29 308.6 L299.61 304.92 L300.94 301.18 L302.26 297.37 L303.59 293.49 L304.91 289.55 L306.24 285.54 L307.56 281.46 L308.89 277.31 L310.21 273.08 L311.54 268.78 L312.86 264.41 L314.19 259.96 L315.51 255.43 L316.84 250.82 L318.16 246.13 L319.49 241.36 L320.81 236.51 L322.14 231.57 L323.46 226.54 L324.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="324.79" y1="221.43" x2="324.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M324.79 370.24 L326.11 367.64 L327.44 364.99 L328.76 362.3 L330.09 359.56 L331.41 356.77 L332.74 353.93 L334.06 351.05 L335.39 348.11 L336.71 345.12 L338.04 342.08 L339.36 338.99 L340.69 335.84 L342.01 332.64 L343.34 329.38 L344.66 326.07 L345.99 322.69 L347.31 319.26 L348.64 315.77 L349.96 312.21 L351.29 308.6 L352.61 304.92 L353.94 301.18 L355.26 297.37 L356.59 293.49 L357.91 289.55 L359.24 285.54 L360.56 281.46 L361.89 277.31 L363.21 273.08 L364.54 268.78 L365.86 264.41 L367.19 259.96 L368.51 255.43 L369.84 250.82 L371.16 246.13 L372.49 241.36 L373.81 236.51 L375.14 231.57 L376.46 226.54 L377.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="377.79" y1="221.43" x2="377.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M377.79 370.24 L379.11 367.64 L380.44 364.99 L381.76 362.3 L383.09 359.56 L384.41 356.77 L385.74 353.93 L387.06 351.05 L388.39 348.11 L389.71 345.12 L391.04 342.08 L392.36 338.99 L393.69 335.84 L395.01 332.64 L396.34 329.38 L397.66 326.07 L398.99 322.69 L400.31 319.26 L401.64 315.77 L402.96 312.21 L404.29 308.6 L405.61 304.92 L406.94 301.18 L408.26 297.37 L409.59 293.49 L410.91 289.55 L412.24 285.54 L413.56 281.46 L414.89 277.31 L416.21 273.08 L417.54 268.78 L418.86 264.41 L420.19 259.96 L421.51 255.43 L422.84 250.82 L424.16 246.13 L425.49 241.36 L426.81 236.51 L428.14 231.57 L429.46 226.54 L430.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="430.79" y1="221.43" x2="430.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M430.79 370.24 L432.11 367.64 L433.44 364.99 L434.76 362.3 L436.09 359.56 L437.41 356.77 L438.74 353.93 L440.06 351.05 L441.39 348.11 L442.71 345.12 L444.04 342.08 L445.36 338.99 L446.69 335.84 L448.01 332.64 L449.34 329.38 L450.66 326.07 L451.99 322.69 L453.31 319.26 L454.64 315.77 L455.96 312.21 L457.29 308.6 L458.61 304.92 L459.94 301.18 L461.26 297.37 L462.59 293.49 L463.91 289.55 L465.24 285.54 L466.56 281.46 L467.89 277.31 L469.21 273.08 L470.54 268.78 L471.86 264.41 L473.19 259.96 L474.51 255.43 L475.84 250.82 L477.16 246.13 L478.49 241.36 L479.81 236.51 L481.14 231.57 L482.46 226.54 L483.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="483.79" y1="221.43" x2="483.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M483.79 370.24 L485.11 367.64 L486.44 364.99 L487.76 362.3 L489.09 359.56 L490.41 356.77 L491.74 353.93 L493.06 351.05 L494.39 348.11 L495.71 345.12 L497.04 342.08 L498.36 338.99 L499.69 335.84 L501.01 332.64 L502.34 329.38 L503.66 326.07 L504.99 322.69 L506.31 319.26 L507.64 315.77 L508.96 312.21 L510.29 308.6 L511.61 304.92 L512.94 301.18 L514.26 297.37 L515.59 293.49 L516.91 289.55 L518.24 285.54 L519.56 281.46 L520.89 277.31 L522.21 273.08 L523.54 268.78 L524.86 264.41 L526.19 259.96 L527.51 255.43 L528.84 250.82 L530.16 246.13 L531.49 241.36 L532.81 236.51 L534.14 231.57 L535.46 226.54 L536.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="536.79" y1="221.43" x2="536.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M536.79 370.24 L538.11 367.64 L539.44 364.99 L540.76 362.3 L542.09 359.56 L543.41 356.77 L544.74 353.93 L546.06 351.05 L547.39 348.11 L548.71 345.12 L550.04 342.08 L551.36 338.99 L552.69 335.84 L554.01 332.64 L555.34 329.38 L556.66 326.07 L557.99 322.69 L559.31 319.26 L560.64 315.77 L561.96 312.21 L563.29 308.6 L564.61 304.92 L565.94 301.18 L567.26 297.37 L568.59 293.49 L569.91 289.55 L571.24 285.54 L572.56 281.46 L573.89 277.31 L575.21 273.08 L576.54 268.78 L577.86 264.41 L579.19 259.96 L580.51 255.43 L581.84 250.82 L583.16 246.13 L584.49 241.36 L585.81 236.51 L587.14 231.57 L588.46 226.54 L589.79 221.43" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="589.79" y1="221.43" x2="589.79" y2="370.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M589.79 370.24 L590.05 369.74 L590.3 369.24 L590.56 368.74 L590.81 368.24 L591.07 367.73 L591.32 367.23 L591.58 366.72 L591.83 366.21 L592.09 365.7 L592.34 365.19 L592.6 364.67 L592.85 364.16 L593.11 363.64 L593.36 363.12 L593.62 362.6 L593.87 362.07 L594.13 361.55 L594.38 361.02 L594.64 360.49 L594.89 359.96 L595.15 359.43 L595.41 358.9 L595.66 358.36 L595.92 357.83 L596.17 357.29 L596.43 356.75 L596.68 356.2 L596.94 355.66 L597.19 355.11 L597.45 354.56 L597.7 354.01 L597.96 353.46 L598.21 352.91 L598.47 352.35 L598.72 351.79 L598.98 351.24 L599.23 350.67 L599.49 350.11 L599.74 349.55 L600 348.98" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="154" y1="263.95" x2="178" y2="192.2" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8"/>
+<rect x="84.95" y="173.2" width="186.1" height="19" fill="var(--fig-surface, #FFFFFF)" fill-opacity="0.92" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="178" y="187.2" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a = 3.0：s = 2<tspan baseline-shift="super" font-size="11">−7</tspan>，u = 0.857</text>
+<circle cx="154" cy="263.95" r="4.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<line x1="422.12" y1="253.32" x2="392" y2="192.2" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8"/>
+<rect x="298.95" y="173.2" width="186.1" height="19" fill="var(--fig-surface, #FFFFFF)" fill-opacity="0.92" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="392" y="187.2" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a = 100：s = 2<tspan baseline-shift="super" font-size="11">−2</tspan>，u = 0.893</text>
+<circle cx="422.12" cy="253.32" r="4.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<line x1="483.79" y1="221.43" x2="520" y2="168.39" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8"/>
+<rect x="440.35" y="149.39" width="159.3" height="19" fill="var(--fig-surface, #FFFFFF)" fill-opacity="0.92" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="520" y="163.39" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a = 224：s = 2<tspan baseline-shift="super" font-size="11">−1</tspan>，u = 1</text>
+<circle cx="483.79" cy="221.43" r="4.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<line x1="483.82" y1="370.17" x2="330" y2="381.61" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8"/>
+<rect x="233.6" y="372.61" width="192.8" height="19" fill="var(--fig-surface, #FFFFFF)" fill-opacity="0.92" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="330" y="386.61" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">a = 224.1：s = 2<tspan baseline-shift="super" font-size="11">0</tspan>，u = 0.500</text>
+<circle cx="483.82" cy="370.17" r="4.5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="16" y="458" font-size="12" fill="var(--fig-muted, #74716A)">缩放因子向上取到 2 的幂，保证 a/s ≤ 448 不溢出；代价是最大码值落在 224 到 448 之间。</text>
+</svg>

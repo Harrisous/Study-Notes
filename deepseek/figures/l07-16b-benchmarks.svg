@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 468" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeekMoE 16B 与两个 7B 稠密模型在十项基准上的得分</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">每 4K token 的计算量：LLaMA2 7B 187.9T · DeepSeek 7B 183.5T · DeepSeekMoE 16B 74.4T（约 40%）</text>
+<rect x="16" y="40" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<text x="34" y="50" font-size="12" fill="var(--fig-ink, #1C1B19)">LLaMA2 7B</text>
+<circle cx="142" cy="46" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<text x="154" y="50" font-size="12" fill="var(--fig-ink, #1C1B19)">DeepSeek 7B</text>
+<circle cx="278" cy="46" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="290" y="50" font-size="12" fill="var(--fig-ink, #1C1B19)">DeepSeekMoE 16B</text>
+<text x="724" y="50" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">分数越高越好</text>
+<line x1="170" y1="76" x2="170" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="170" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="222.22" y1="76" x2="222.22" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="222.22" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="274.44" y1="76" x2="274.44" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="274.44" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="326.67" y1="76" x2="326.67" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="326.67" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="378.89" y1="76" x2="378.89" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="378.89" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="431.11" y1="76" x2="431.11" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="431.11" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="483.33" y1="76" x2="483.33" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="483.33" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="535.56" y1="76" x2="535.56" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="535.56" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">70</text>
+<line x1="587.78" y1="76" x2="587.78" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="587.78" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">80</text>
+<line x1="640" y1="76" x2="640" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="640" y="396" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">90</text>
+<text x="405" y="416" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">得分</text>
+<text x="158" y="96" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">HellaSwag</text>
+<line x1="563.76" y1="92" x2="572.63" y2="92" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="559.3" y="86.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="563.76" cy="92" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="572.63" cy="92" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="96" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 77.1（+1.7）</text>
+<text x="158" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">PIQA</text>
+<line x1="577.33" y1="122" x2="588.82" y2="122" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="571.83" y="116.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="583.6" cy="122" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="588.82" cy="122" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="126" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 80.2（+1.0）</text>
+<text x="158" y="156" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">ARC-challenge</text>
+<line x1="421.19" y1="152" x2="430.07" y2="152" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="420.39" y="146.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="421.19" cy="152" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="430.07" cy="152" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="156" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 49.8（+1.7）</text>
+<text x="158" y="186" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">GSM8K</text>
+<line x1="250.94" y1="182" x2="268.18" y2="182" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="245.44" y="176.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="260.87" cy="182" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="268.18" cy="182" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="186" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 18.8（+1.4）</text>
+<text x="158" y="216" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">HumanEval</text>
+<line x1="246.24" y1="212" x2="309.96" y2="212" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="240.74" y="206.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="306.82" cy="212" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="309.96" cy="212" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="216" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 26.8（+0.6）</text>
+<text x="158" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MBPP</text>
+<line x1="283.84" y1="242" x2="374.71" y2="242" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="278.34" y="236.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="373.67" cy="242" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="374.71" cy="242" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="246" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 39.2（+0.2）</text>
+<text x="158" y="276" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">TriviaQA</text>
+<line x1="481.77" y1="272" x2="508.4" y2="272" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="497.68" y="266.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="481.77" cy="272" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="508.4" cy="272" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="276" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 64.8（+5.1）</text>
+<text x="158" y="306" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">NaturalQuestions</text>
+<line x1="285.93" y1="302" x2="303.17" y2="302" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="297.67" y="296.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="285.93" cy="302" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="303.17" cy="302" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="306" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B 25.5（+3.3）</text>
+<rect x="10" y="318" width="720" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07" rx="3"/>
+<text x="158" y="336" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">MMLU</text>
+<line x1="405" y1="332" x2="421.71" y2="332" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="403.68" y="326.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="421.71" cy="332" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="405" cy="332" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="336" font-size="12" fill="var(--fig-red, #A3231C)">16B 45.0（-3.2）</text>
+<rect x="10" y="348" width="720" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07" rx="3"/>
+<text x="158" y="366" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">CEval</text>
+<line x1="347.03" y1="362" x2="405" y2="362" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<rect x="341.53" y="356.5" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.7"/>
+<circle cx="405" cy="362" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<circle cx="382.02" cy="362" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="652" y="366" font-size="12" fill="var(--fig-red, #A3231C)">16B 40.6（-4.4）</text>
+<text x="16" y="440" font-size="12" fill="var(--fig-muted, #74716A)">右列括号内是 DeepSeekMoE 16B 减 DeepSeek 7B 的差值。</text>
+<text x="16" y="458" font-size="12" fill="var(--fig-muted, #74716A)">红底：16B 落后于 DeepSeek 7B 的两项（都是多项选择题式的考试），论文归因于注意力参数少。</text>
+</svg>

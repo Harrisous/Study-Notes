@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 474" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>期望是平衡点，标准差是典型偏离</title>
+
+<text x="20" y="24" font-size="12" fill="var(--fig-blue, #1F5FA8)">竖条 = 概率（放在横梁上的砝码）</text>
+<text x="232" y="24" font-size="12" fill="var(--fig-green, #16704A)">绿三角 = 期望 μ（让横梁平衡的支点）</text>
+<text x="472" y="24" font-size="12" fill="var(--fig-orange, #B4460C)">橙线 = μ ± σ（一次典型的偏离）</text>
+<line x1="20" y1="38" x2="700" y2="38" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="150" y1="154" x2="520" y2="154" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="190.47" y1="154" x2="190.47" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="190.47" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="248.28" y1="154" x2="248.28" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="248.28" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="306.09" y1="154" x2="306.09" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="306.09" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="363.91" y1="154" x2="363.91" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="363.91" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="421.72" y1="154" x2="421.72" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="421.72" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="479.53" y1="154" x2="479.53" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="479.53" y="171" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="324" y="64" width="22" height="90" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="335" y="60" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1</text>
+<polygon points="335,155.5 327,168 343,168" fill="var(--fig-green, #16704A)"/>
+<circle cx="335" cy="188" r="4" fill="var(--fig-orange, #B4460C)"/>
+<text x="20" y="148" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">常数 3.5</text>
+<text x="548" y="132" font-size="12" fill="var(--fig-green, #16704A)">μ = 3.5</text>
+<text x="548" y="150" font-size="12" fill="var(--fig-orange, #B4460C)">σ = 0（方差 0）</text>
+<text x="548" y="168" font-size="12" fill="var(--fig-muted, #74716A)">期望相同，但纹丝不动</text>
+<line x1="20" y1="204" x2="700" y2="204" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="150" y1="241" x2="520" y2="241" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="190.47" y1="241" x2="190.47" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="190.47" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="248.28" y1="241" x2="248.28" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="248.28" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="306.09" y1="241" x2="306.09" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="306.09" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="363.91" y1="241" x2="363.91" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="363.91" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="421.72" y1="241" x2="421.72" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="421.72" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="479.53" y1="241" x2="479.53" y2="245" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="479.53" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="179.47" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="190.47" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<rect x="237.28" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="248.28" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<rect x="295.09" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="306.09" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<rect x="352.91" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="363.91" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<rect x="410.72" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="421.72" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<rect x="468.53" y="226" width="22" height="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="479.53" y="222" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">1/6</text>
+<polygon points="335,242.5 327,255 343,255" fill="var(--fig-green, #16704A)"/>
+<line x1="236.27" y1="275" x2="433.73" y2="275" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="236.27" y1="269" x2="236.27" y2="281" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="433.73" y1="269" x2="433.73" y2="281" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<circle cx="335" cy="275" r="3" fill="var(--fig-orange, #B4460C)"/>
+<text x="110" y="299" font-size="12" fill="var(--fig-muted, #74716A)">偏离 x − μ：−2.5, −1.5, −0.5, +0.5, +1.5, +2.5，各重 1/6；偏离² 的平均 = 2.92 = σ²</text>
+<text x="20" y="235" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">公平骰子</text>
+<text x="548" y="219" font-size="12" fill="var(--fig-green, #16704A)">μ = 3.5</text>
+<text x="548" y="237" font-size="12" fill="var(--fig-orange, #B4460C)">σ = 1.71（方差 2.92）</text>
+<text x="548" y="255" font-size="12" fill="var(--fig-muted, #74716A)">每次在 1 到 6 之间跳</text>
+<line x1="20" y1="313" x2="700" y2="313" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="150" y1="380" x2="520" y2="380" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="190.47" y1="380" x2="190.47" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="190.47" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="248.28" y1="380" x2="248.28" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="248.28" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="306.09" y1="380" x2="306.09" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="306.09" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="363.91" y1="380" x2="363.91" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="363.91" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="421.72" y1="380" x2="421.72" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="421.72" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="479.53" y1="380" x2="479.53" y2="384" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="479.53" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="179.47" y="371" width="22" height="9" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="190.47" y="367" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.1</text>
+<rect x="237.28" y="371" width="22" height="9" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="248.28" y="367" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.1</text>
+<rect x="295.09" y="371" width="22" height="9" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="306.09" y="367" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.1</text>
+<rect x="352.91" y="371" width="22" height="9" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="363.91" y="367" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.1</text>
+<rect x="410.72" y="371" width="22" height="9" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="421.72" y="367" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.1</text>
+<rect x="468.53" y="335" width="22" height="45" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="479.53" y="331" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.5</text>
+<polygon points="392.81,381.5 384.81,394 400.81,394" fill="var(--fig-green, #16704A)"/>
+<line x1="288.59" y1="414" x2="497.04" y2="414" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="288.59" y1="408" x2="288.59" y2="420" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<line x1="497.04" y1="408" x2="497.04" y2="420" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<circle cx="392.81" cy="414" r="3" fill="var(--fig-orange, #B4460C)"/>
+<text x="110" y="438" font-size="12" fill="var(--fig-muted, #74716A)">偏离 x − μ：−3.5 … +0.5 各重 0.1，+1.5 重 0.5；偏离² 的平均 = 3.25 = σ²</text>
+<text x="20" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">灌铅骰子</text>
+<text x="548" y="358" font-size="12" fill="var(--fig-green, #16704A)">μ = 4.5</text>
+<text x="548" y="376" font-size="12" fill="var(--fig-orange, #B4460C)">σ = 1.80（方差 3.25）</text>
+<text x="548" y="394" font-size="12" fill="var(--fig-muted, #74716A)">六点重 0.5，支点右移一格</text>
+</svg>

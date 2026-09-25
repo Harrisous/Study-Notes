@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>玩具实验：直接学习两块瘦矩阵，与截断 SVD 的误差对比</title>
+
+<text x="20" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 相对误差 E‖(<tspan font-weight="700">W</tspan> − <tspan font-weight="700">B</tspan>)<tspan font-weight="700">x</tspan>‖² / E‖<tspan font-weight="700">Wx</tspan>‖²</text>
+<line x1="70" y1="262" x2="400" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="70" y1="209" x2="400" y2="209" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="70" y1="156" x2="400" y2="156" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="160" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="70" y1="103" x2="400" y2="103" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="107" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-1</tspan></text>
+<line x1="70" y1="50" x2="400" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="70" y1="262" x2="70" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="70" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="152.5" y1="262" x2="152.5" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="152.5" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="235" y1="262" x2="235" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="235" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="317.5" y1="262" x2="317.5" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="317.5" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">24</text>
+<line x1="400" y1="262" x2="400" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="400" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<text x="235" y="300" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">秩预算 k（中间维）</text>
+<path d="M70 50 L80.31 52.13 L90.62 54.29 L100.94 57.68 L111.25 58.92 L121.56 62.85 L131.88 65.29 L142.19 66.89 L152.5 70.07 L162.81 72.28 L173.12 76.53 L183.44 80.64 L193.75 84.6 L204.06 86.3 L214.38 90.63 L224.69 96.35 L235 100.44 L245.31 103.76 L255.62 106.62 L265.94 113.68 L276.25 120.54 L286.56 129.76 L296.88 133.86 L307.19 144.6 L317.5 152.16 L327.81 159.59 L338.12 168.96 L348.44 180.9 L358.75 191.12 L369.06 206.5 L379.38 227.57" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2"/>
+<path d="M70 50 L80.31 56.43 L90.62 62.36 L100.94 68.42 L111.25 75.05 L121.56 80.72 L131.88 87.95 L142.19 94.04 L152.5 100.32 L162.81 106.29 L173.12 112.13 L183.44 118.49 L193.75 125.95 L204.06 131.29 L214.38 137.38 L224.69 143.82 L235 150.47 L245.31 157.42 L255.62 165.97 L265.94 174.23 L276.25 181.25 L286.56 187.81 L296.88 194.75 L307.19 203.11 L317.5 214.86 L327.81 225.74 L338.12 242.36 L348.44 253.78" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<circle cx="80.31" cy="56.43" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="90.62" cy="62.35" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="111.25" cy="75.04" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="152.5" cy="100.28" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="193.75" cy="125.91" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="235" cy="150.39" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="317.5" cy="214.81" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="162.81" y="60.07" font-size="12" fill="var(--fig-orange, #B4460C)">截断 <tspan font-weight="700">W</tspan> 自己的 SVD</text>
+<text x="78.25" y="174.55" font-size="12" fill="var(--fig-green, #16704A)">绿线：按数据加权的最优解</text>
+<circle cx="291.72" cy="71.09" r="4.6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="302.03" y="75.09" font-size="12" fill="var(--fig-blue, #1F5FA8)">SGD 直接学 <tspan font-weight="700">U</tspan>、<tspan font-weight="700">V</tspan></text>
+<line x1="152.5" y1="70.07" x2="152.5" y2="100.32" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="78.25" y="224.9" font-size="12" fill="var(--fig-ink, #1C1B19)">k = 8：截断 41.8%</text>
+<text x="78.25" y="242.9" font-size="12" fill="var(--fig-ink, #1C1B19)">最优 11.24%，SGD 11.25%</text>
+<line x1="430" y1="16" x2="430" y2="314" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="440" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 两个矩阵的奇异值（各自除以最大值）</text>
+<line x1="480" y1="262" x2="740" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="480" y1="209" x2="740" y2="209" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="480" y1="156" x2="740" y2="156" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="160" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="480" y1="103" x2="740" y2="103" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="107" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-1</tspan></text>
+<line x1="480" y1="50" x2="740" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="480" y1="262" x2="480" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="480" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="538.71" y1="262" x2="538.71" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="538.71" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="605.81" y1="262" x2="605.81" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="605.81" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="672.9" y1="262" x2="672.9" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="672.9" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">24</text>
+<line x1="740" y1="262" x2="740" y2="267" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="740" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<text x="610" y="300" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 i 个奇异值</text>
+<path d="M480 50 L488.39 50.32 L496.77 51.63 L505.16 53.43 L513.55 54.23 L521.94 55.59 L530.32 55.68 L538.71 57.5 L547.1 59.02 L555.48 59.24 L563.87 60.36 L572.26 61.22 L580.65 63.1 L589.03 63.6 L597.42 65.38 L605.81 67.71 L614.19 69.1 L622.58 72.34 L630.97 73.41 L639.35 74.45 L647.74 77.06 L656.13 77.52 L664.52 82.84 L672.9 85.48 L681.29 88.61 L689.68 92.88 L698.06 94.92 L706.45 101.52 L714.84 102.96 L723.23 109.99 L731.61 115.47 L740 196.11" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2"/>
+<path d="M480 50 L488.39 54.03 L496.77 56.77 L505.16 58.91 L513.55 63.79 L521.94 64.21 L530.32 69.52 L538.71 72.27 L547.1 75.9 L555.48 79.11 L563.87 81.18 L572.26 82.77 L580.65 89.87 L589.03 91.18 L597.42 93.67 L605.81 96.59 L614.19 99.46 L622.58 100.93 L630.97 105.54 L639.35 111.24 L647.74 115.43 L656.13 118.16 L664.52 119.8 L672.9 120.86 L681.29 127.42 L689.68 129.28 L698.06 140.73 L706.45 146.64 L714.84 148.74 L723.23 152.75 L731.61 166.56 L740 237.72" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="480" cy="50" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="480" cy="50" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="488.39" cy="50.32" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="488.39" cy="54.03" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="496.77" cy="51.63" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="496.77" cy="56.77" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="505.16" cy="53.43" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="505.16" cy="58.91" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="513.55" cy="54.23" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="513.55" cy="63.79" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="521.94" cy="55.59" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="521.94" cy="64.21" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="530.32" cy="55.68" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="530.32" cy="69.52" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="538.71" cy="57.5" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="538.71" cy="72.27" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="547.1" cy="59.02" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="547.1" cy="75.9" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="555.48" cy="59.24" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="555.48" cy="79.11" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="563.87" cy="60.36" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="563.87" cy="81.18" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="572.26" cy="61.22" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="572.26" cy="82.77" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="580.65" cy="63.1" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="580.65" cy="89.87" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="589.03" cy="63.6" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="589.03" cy="91.18" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="597.42" cy="65.38" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="597.42" cy="93.67" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="605.81" cy="67.71" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="605.81" cy="96.59" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="614.19" cy="69.1" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="614.19" cy="99.46" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="622.58" cy="72.34" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="622.58" cy="100.93" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="630.97" cy="73.41" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="630.97" cy="105.54" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="639.35" cy="74.45" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="639.35" cy="111.24" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="647.74" cy="77.06" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="647.74" cy="115.43" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="656.13" cy="77.52" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="656.13" cy="118.16" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="664.52" cy="82.84" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="664.52" cy="119.8" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="672.9" cy="85.48" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="672.9" cy="120.86" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="681.29" cy="88.61" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="681.29" cy="127.42" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="689.68" cy="92.88" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="689.68" cy="129.28" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="698.06" cy="94.92" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="698.06" cy="140.73" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="706.45" cy="101.52" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="706.45" cy="146.64" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="714.84" cy="102.96" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="714.84" cy="148.74" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="723.23" cy="109.99" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="723.23" cy="152.75" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="731.61" cy="115.47" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="731.61" cy="166.56" r="2.4" fill="var(--fig-green, #16704A)"/>
+<circle cx="740" cy="196.11" r="2.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="740" cy="237.72" r="2.4" fill="var(--fig-green, #16704A)"/>
+<text x="547.1" y="49.02" font-size="12" fill="var(--fig-orange, #B4460C)"><tspan font-weight="700">W</tspan></text>
+<text x="488.39" y="187.8" font-size="12" fill="var(--fig-green, #16704A)"><tspan font-weight="700">WS</tspan><tspan baseline-shift="sub" font-size="11">x</tspan><tspan baseline-shift="super" font-size="11">1/2</tspan>（绿）：衰减更快</text>
+<text x="20" y="318" font-size="12" fill="var(--fig-muted, #74716A)">输入方差从 1 到 0.001 按对数均匀分布、方向与 <tspan font-weight="700">W</tspan> 无关；m = n = 32。橙线与绿线逐 k 精确计算，蓝点是训练 6 万步后的结果。</text>
+</svg>

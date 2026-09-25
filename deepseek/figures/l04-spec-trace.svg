@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 412" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>投机解码的执行轨迹（γ = 3）：小模型起草，大模型一次并行验证</title>
+
+<text x="16" y="28" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 普通解码：每调用一次目标模型，产出 1 个 token（5 次调用 → 5 个 token）</text>
+<text x="100" y="80" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">目标模型</text>
+<rect x="110" y="60" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="160" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 1</text>
+<rect x="148" y="98" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="160" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="214" y="60" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="264" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 2</text>
+<rect x="252" y="98" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="264" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">，</text>
+<rect x="318" y="60" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="368" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 3</text>
+<rect x="356" y="98" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="368" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="422" y="60" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="472" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 4</text>
+<rect x="460" y="98" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="472" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">里</text>
+<rect x="526" y="60" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="576" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 5</text>
+<rect x="564" y="98" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="576" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">有</text>
+<text x="16" y="152" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ 投机解码：草稿模型先连写 γ = 3 个，目标模型一次前向同时检查</text>
+<text x="100" y="182" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">草稿模型</text>
+<text x="100" y="224" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">目标模型</text>
+<rect x="110" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="119" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<rect x="132" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="141" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">，</text>
+<rect x="154" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="163" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">海</text>
+<rect x="176" y="204" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="226" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 1：验证 4 处</text>
+<rect x="172" y="244" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="184" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<text x="184" y="284" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">✓</text>
+<rect x="200" y="244" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="212" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">，</text>
+<text x="212" y="284" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">✓</text>
+<rect x="228" y="244" width="24" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.18" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="4"/>
+<text x="240" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">海</text>
+<line x1="231" y1="265" x2="249" y2="247" stroke="var(--fig-red, #A3231C)" stroke-width="1.6"/>
+<text x="240" y="284" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">✗</text>
+<rect x="256" y="244" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="4"/>
+<text x="268" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">山</text>
+<text x="268" y="284" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">修正</text>
+<rect x="288" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="297" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">里</text>
+<rect x="310" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="319" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">有</text>
+<rect x="332" y="168" width="18" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="341" y="184" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">座</text>
+<rect x="354" y="204" width="100" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" rx="4"/>
+<text x="404" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">调用 2：验证 4 处</text>
+<rect x="350" y="244" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="362" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">里</text>
+<text x="362" y="284" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">✓</text>
+<rect x="378" y="244" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="390" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">有</text>
+<text x="390" y="284" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">✓</text>
+<rect x="406" y="244" width="24" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="4"/>
+<text x="418" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">座</text>
+<text x="418" y="284" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">✓</text>
+<rect x="434" y="244" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="4"/>
+<text x="446" y="261" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">庙</text>
+<text x="446" y="284" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">附赠</text>
+<text x="470" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">2 次调用 → 7 个 token</text>
+<line x1="16" y1="306" x2="704" y2="306" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="324" font-size="12" fill="var(--fig-ink, #1C1B19)">目标模型对“前缀 + 3 个草稿”做一次前向，就同时得到 4 个位置的分布 p<tspan baseline-shift="sub" font-size="11">1</tspan>, …, p<tspan baseline-shift="sub" font-size="11">4</tspan>，</text>
+<text x="16" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)">像 prefill 一样并行。从左到右逐个按接受规则检查：第一个被拒的草稿（红）之后全部作废，</text>
+<text x="16" y="364" font-size="12" fill="var(--fig-ink, #1C1B19)">并从残差分布补采一个 token（蓝，“修正”）；若 γ 个全部通过，再从 p<tspan baseline-shift="sub" font-size="11">4</tspan> 白拿一个（蓝，“附赠”）。</text>
+<text x="16" y="386" font-size="12" fill="var(--fig-muted, #74716A)">所以每次调用目标模型至少产出 1 个 token，最多 γ + 1 个。时间比例为示意。</text>
+</svg>

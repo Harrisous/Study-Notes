@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>辅助损失的两难：均衡度与困惑度（1B MoE，据 LossFree 图 2 重绘）</title>
+
+<line x1="78" y1="30" x2="78" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="78" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="189.27" y1="30" x2="189.27" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="189.27" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="300.55" y1="30" x2="300.55" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="300.55" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="411.82" y1="30" x2="411.82" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="411.82" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="523.09" y1="30" x2="523.09" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="523.09" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="634.36" y1="30" x2="634.36" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="634.36" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="78" y1="303.91" x2="690" y2="303.91" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="307.91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9.50</text>
+<line x1="78" y1="238.7" x2="690" y2="238.7" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="242.7" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9.55</text>
+<line x1="78" y1="173.48" x2="690" y2="173.48" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="177.48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9.60</text>
+<line x1="78" y1="108.26" x2="690" y2="108.26" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="112.26" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9.65</text>
+<line x1="78" y1="43.04" x2="690" y2="43.04" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="47.04" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9.70</text>
+<line x1="78" y1="330" x2="690" y2="330" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<line x1="78" y1="30" x2="78" y2="330" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="384" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MaxVio<tspan baseline-shift="sub" font-size="11">global</tspan>（越小越均衡；0.72 表示最忙的专家是平均负载的 1.72 倍）</text>
+<text x="22" y="180" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 22 180)">验证集困惑度（越低越好）</text>
+<path d="M89.13 56.09 L158.12 225.65 L325.03 268.7 L642.15 251.74" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="89.13" cy="56.09" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="103.13" y="60.09" font-size="12" fill="var(--fig-violet, #6733C4)">α = 0.01：(≈0.10, ≈9.69)</text>
+<circle cx="158.12" cy="225.65" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="172.12" y="217.65" font-size="12" fill="var(--fig-violet, #6733C4)">α = 0.001：(0.72, 9.56)</text>
+<circle cx="325.03" cy="268.7" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="325.03" y="294.7" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">α = 0.0001：(≈2.22, ≈9.527)</text>
+<circle cx="642.15" cy="251.74" r="6" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="648.15" y="237.74" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">α = 0（无辅助损失，也无偏置）：(≈5.07, ≈9.54)</text>
+<polygon points="82.45,294.91 84.8,300.68 91.01,301.13 86.26,305.15 87.74,311.19 82.45,307.91 77.16,311.19 78.65,305.15 73.89,301.13 80.1,300.68" fill="var(--fig-green, #16704A)" fill-opacity="0.9" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="98.45" y="307.91" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">无辅助损失（偏置）：(0.04, 9.50)</text>
+<text x="217.09" y="88.7" font-size="12" fill="var(--fig-muted, #74716A)">α 大：均衡好，但困惑度高</text>
+<text x="411.82" y="180" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">α 太小：负载严重失衡，困惑度也回升</text>
+<text x="690" y="20" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">实心点为论文表 2 的精确值；空心点读自原图，是约数</text>
+</svg>

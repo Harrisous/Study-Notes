@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 486" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>R1-Zero 的训练回路：模板、两条规则奖励、组内标准化与 GRPO 更新</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="16" y="16" width="300" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="10"/>
+<rect x="16" y="16" width="300" height="150" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" rx="10"/>
+<text x="28" y="36" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">训练模板（据论文表 1 意译）</text>
+<text x="28" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)">用户与助手对话。助手先在心里思考推理</text>
+<text x="28" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)">过程，再给出答案；两者分别放进标签：</text>
+<text x="28" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">&lt;think&gt; 推理过程 &lt;/think&gt;</text>
+<text x="28" y="120" font-size="12" fill="var(--fig-ink, #1C1B19)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">&lt;answer&gt; 答案 &lt;/answer&gt;</text>
+<text x="28" y="146" font-size="12.5" fill="var(--fig-ink, #1C1B19)">User: </text>
+<rect x="68" y="132" width="58" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="4"/>
+<text x="97" y="146" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">{题目}</text>
+<text x="134" y="146" font-size="12.5" fill="var(--fig-ink, #1C1B19)">Assistant:</text>
+<line x1="318" y1="91" x2="334" y2="91" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="336" y="50" width="112" height="82" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="392" y="78.04" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">策略 π<tspan baseline-shift="-3.08" font-size="11">θ</tspan></text>
+<text x="392" y="96.04" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">从 V3-Base 起步</text>
+<text x="392" y="114.04" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">温度 T = 1</text>
+<line x1="450" y1="91" x2="464" y2="91" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="466" y="16" width="278" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="10"/>
+<text x="478" y="36" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">一个回答 o<tspan baseline-shift="-2.64" font-size="11">i</tspan>（示意）</text>
+<text x="478" y="58" font-size="12" fill="var(--fig-violet, #6733C4)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">&lt;think&gt;</text>
+<text x="490" y="77" font-size="12" fill="var(--fig-ink, #1C1B19)">两边平方，整理成四次方程……</text>
+<text x="490" y="96" font-size="12" fill="var(--fig-ink, #1C1B19)">等等，平方可能引入增根，逐个检验……</text>
+<text x="478" y="115" font-size="12" fill="var(--fig-violet, #6733C4)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">&lt;/think&gt;</text>
+<text x="478" y="140" font-size="12" fill="var(--fig-green, #16704A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">&lt;answer&gt; \boxed{…} &lt;/answer&gt;</text>
+<line x1="590" y1="168" x2="590" y2="196" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="430" y="198" width="290" height="66" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="575" y="217.68" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">准确性奖励 r<tspan baseline-shift="-2.86" font-size="11">acc</tspan> ∈ {0, 1}</text>
+<text x="575" y="235.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">数学：\boxed{} 中的答案等于参考答案？</text>
+<text x="575" y="253.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">代码：编译并跑通预设的测试用例？</text>
+<path d="M736 168 V299 H722" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="430" y="276" width="290" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<text x="575" y="294.68" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">格式奖励 r<tspan baseline-shift="-2.86" font-size="11">format</tspan> ∈ {0, 1}</text>
+<text x="575" y="312.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">思考是否放在 &lt;think&gt; 与 &lt;/think&gt; 之间？</text>
+<circle cx="390" cy="262" r="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5"/>
+<text x="390" y="268" font-size="18" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="428" y1="231" x2="405" y2="254" stroke="var(--fig-green, #16704A)" stroke-width="1.4" marker-end="url(#ah-green)"/>
+<line x1="428" y1="292" x2="403" y2="270" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<text x="196" y="324" font-size="12" fill="var(--fig-ink, #1C1B19)">两条奖励等权相加：r<tspan baseline-shift="-2.64" font-size="11">i</tspan> = r<tspan baseline-shift="-2.64" font-size="11">acc</tspan> + r<tspan baseline-shift="-2.64" font-size="11">format</tspan></text>
+<line x1="374" y1="262" x2="350" y2="262" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="196" y="224" width="152" height="76" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="272" y="247.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">组内标准化</text>
+<text x="272" y="266.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Â<tspan baseline-shift="-2.64" font-size="11">i</tspan> = (r<tspan baseline-shift="-2.64" font-size="11">i</tspan> − 均值) / 标准差</text>
+<text x="272" y="285.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">G = 16 个回答一组</text>
+<line x1="194" y1="262" x2="178" y2="262" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="224" width="160" height="76" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="96" y="247.68" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">GRPO 更新 θ</text>
+<text x="96" y="266.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">lr = 3×10<tspan baseline-shift="4.32" font-size="11">-6</tspan>，β = 0.001</text>
+<text x="96" y="285.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每步 32 题 × 16 = 512 条</text>
+<path d="M96 222 V190 H392 V134" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<text x="244" y="184" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">更新后的策略继续采样</text>
+<rect x="16" y="354" width="360" height="116" fill="var(--fig-red, #A3231C)" fill-opacity="0.05" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="10" stroke-dasharray="5 4"/>
+<line x1="28" y1="368" x2="40" y2="380" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="28" y1="380" x2="40" y2="368" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" stroke-linecap="round"/>
+<text x="48" y="379" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">不用神经奖励模型（结果型或过程型都不用）</text>
+<text x="30" y="405" font-size="12" fill="var(--fig-ink, #1C1B19)">① 大规模 RL 中会被 reward hacking（钻空子）</text>
+<text x="30" y="427" font-size="12" fill="var(--fig-ink, #1C1B19)">② 重新训练奖励模型要额外的训练资源</text>
+<text x="30" y="449" font-size="12" fill="var(--fig-ink, #1C1B19)">③ 让整条训练流程更复杂</text>
+<rect x="392" y="354" width="352" height="116" fill="var(--fig-amber, #8A6508)" fill-opacity="0.06" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="10"/>
+<text x="406" y="377" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="600">训练日程（Nature 版 Methods 首次公开）</text>
+<text x="406" y="403" font-size="12" fill="var(--fig-ink, #1C1B19)">每次 rollout 8,192 条回答 → 16 个小批 → 16 步</text>
+<text x="406" y="425" font-size="12" fill="var(--fig-ink, #1C1B19)">每 400 步把参考模型 π<tspan baseline-shift="-2.64" font-size="11">ref</tspan> 换成最新策略</text>
+<text x="406" y="447" font-size="12" fill="var(--fig-ink, #1C1B19)">共 10,400 步；8.2k 步起最大长度 32,768 → 65,536</text>
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>V3.2-Speciale 与 DeepSeekMath-V2 的竞赛成绩，对照官方奖牌线</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeek-V3.2-Speciale（V3.2 论文表 4；无工具、无联网、最长生成 128k）</text>
+<text x="16" y="60" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">IMO 2025</text>
+<text x="16" y="76" font-size="11" fill="var(--fig-muted, #74716A)">6 题 × 7 分</text>
+<rect x="196" y="46" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="46" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="229.33" y="61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="262.67" y="46" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="296" y="61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="329.33" y="46" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="362.67" y="61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="396" y="46" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="429.33" y="61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="462.67" y="46" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="496" y="61" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<line x1="529.33" y1="40" x2="529.33" y2="74" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="529.33" y="88" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">金牌线 35</text>
+<text x="608" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">35 / 42</text>
+<text x="16" y="120" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">CMO 2025</text>
+<text x="16" y="136" font-size="11" fill="var(--fig-muted, #74716A)">6 题 × 21 分（英文版）</text>
+<rect x="196" y="106" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="106" width="57.14" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="224.57" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">18</text>
+<rect x="253.14" y="106" width="57.14" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="281.71" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">18</text>
+<rect x="310.29" y="106" width="28.57" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="324.57" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<rect x="338.86" y="106" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="372.19" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">21</text>
+<rect x="405.52" y="106" width="57.14" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="434.1" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">18</text>
+<rect x="462.67" y="106" width="57.14" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="491.24" y="121" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">18</text>
+<text x="608" y="122" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">102 / 126</text>
+<text x="16" y="180" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">IOI 2025</text>
+<text x="16" y="196" font-size="11" fill="var(--fig-muted, #74716A)">6 题 × 100 分</text>
+<rect x="196" y="166" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="166" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="229.33" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">100</text>
+<rect x="262.67" y="166" width="54.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="290" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">82</text>
+<rect x="317.33" y="166" width="48" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="341.33" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">72</text>
+<rect x="365.33" y="166" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="398.67" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">100</text>
+<rect x="432" y="166" width="36.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="450.33" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">55</text>
+<rect x="468.67" y="166" width="55.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="496.33" y="181" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">83</text>
+<line x1="488.2" y1="160" x2="488.2" y2="194" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="488.2" y="208" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">金牌线 438.3</text>
+<line x1="531.19" y1="160" x2="531.19" y2="194" stroke="var(--fig-muted, #74716A)" stroke-width="2"/>
+<text x="531.19" y="157" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 9 名</text>
+<text x="608" y="182" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">492 / 600</text>
+<text x="16" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">ICPC WF 2025</text>
+<text x="16" y="262" font-size="11" fill="var(--fig-muted, #74716A)">12 题，按解题数排名</text>
+<rect x="197" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="212.67" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A</text>
+<rect x="230.33" y="232" width="31.33" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="246" y="247" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">B</text>
+<rect x="263.67" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="279.33" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">C</text>
+<rect x="297" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="312.67" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">D</text>
+<rect x="330.33" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="346" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">E</text>
+<rect x="363.67" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="379.33" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">F</text>
+<rect x="397" y="232" width="31.33" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="412.67" y="247" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">G</text>
+<rect x="430.33" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="446" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">H</text>
+<rect x="463.67" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="479.33" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">I</text>
+<rect x="497" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="512.67" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">J</text>
+<rect x="530.33" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="546" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">K</text>
+<rect x="563.67" y="232" width="31.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="579.33" y="247" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">L</text>
+<text x="196" y="274" font-size="11" fill="var(--fig-muted, #74716A)">解出 10 题（共提交 14 次）；官方记分牌：第 1 名解 11 题，第 2、3 名各解 10 题</text>
+<text x="608" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">10 / 12</text>
+<line x1="12" y1="292" x2="748" y2="292" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeekMath-V2（其论文表 1；放大测试时计算，自家专家评分）</text>
+<text x="16" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">IMO 2025</text>
+<text x="16" y="364" font-size="11" fill="var(--fig-muted, #74716A)">5 / 6 题完全解出</text>
+<rect x="196" y="334" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="334" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="229.33" y="349" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="262.67" y="334" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="296" y="349" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="329.33" y="334" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="362.67" y="349" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="396" y="334" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="429.33" y="349" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="462.67" y="334" width="66.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="496" y="349" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<line x1="529.33" y1="328" x2="529.33" y2="362" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="529.33" y="376" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">金牌线 35</text>
+<text x="608" y="350" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">35 / 42</text>
+<text x="16" y="412" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">CMO 2024</text>
+<text x="16" y="428" font-size="11" fill="var(--fig-muted, #74716A)">4 题满分 + 1 题部分分</text>
+<rect x="196" y="398" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="398" width="295.2" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="608" y="414" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">73.8%</text>
+<text x="608" y="434" font-size="11" fill="var(--fig-muted, #74716A)">≈ 93 / 126（笔者反推）</text>
+<text x="16" y="480" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">Putnam 2024</text>
+<text x="16" y="496" font-size="11" fill="var(--fig-muted, #74716A)">12 题 × 10 分</text>
+<rect x="196" y="466" width="400" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="196" y="466" width="393.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<line x1="496" y1="460" x2="496" y2="494" stroke="var(--fig-muted, #74716A)" stroke-width="2"/>
+<text x="496" y="457" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">人类最高 90</text>
+<text x="608" y="482" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">118 / 120</text>
+<text x="16" y="532" font-size="11" fill="var(--fig-muted, #74716A)">每根条按各自的满分画成比例。CMO 的官方金牌线未能核实，所以不画线；IOI 第 10 名为 491.65。</text>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 588" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-R1 的四阶段训练流水线：冷启动、推理 RL、拒绝采样与 SFT、全场景 RL</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="98" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">① 造冷启动数据</text>
+<line x1="16" y1="30" x2="180" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="286" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">② 冷启动 SFT + 推理 RL</text>
+<line x1="204" y1="30" x2="368" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="474" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">③ 拒绝采样 + 第二次 SFT</text>
+<line x1="392" y1="30" x2="556" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="662" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">④ 全场景 RL</text>
+<line x1="580" y1="30" x2="744" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="16" y="44" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="98" y="69" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-V3-Base</text>
+<line x1="98" y1="86" x2="98" y2="100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="102" width="164" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="98" y="123" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">RL（GRPO）</text>
+<text x="98" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规则奖励：准确性 + 格式</text>
+<line x1="98" y1="160" x2="98" y2="172" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="174" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="98" y="199" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-R1-Zero</text>
+<line x1="98" y1="216" x2="98" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="230" width="164" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="98" y="251" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">采样：温度 T = 1.0</text>
+<text x="98" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每题多条推理轨迹</text>
+<line x1="98" y1="288" x2="98" y2="300" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="302" width="164" height="73" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="98" y="323" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">过滤</text>
+<text x="98" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">答案正确 · 格式可读</text>
+<text x="98" y="357" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">去重复、去语言混杂</text>
+<line x1="98" y1="377" x2="98" y2="389" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="391" width="164" height="73" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="98" y="412" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">改写与核验</text>
+<text x="98" y="429" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">V3 改写推理与总结</text>
+<text x="98" y="446" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">人工二次核验</text>
+<line x1="98" y1="466" x2="98" y2="478" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="16" y="480" width="164" height="56" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="98" y="501" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">冷启动数据</text>
+<text x="98" y="518" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“数千条”长思维链</text>
+<rect x="204" y="44" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="286" y="69" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-V3-Base</text>
+<line x1="286" y1="86" x2="286" y2="100" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="204" y="102" width="164" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="286" y="123" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT（冷启动）</text>
+<text x="286" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2–3 轮，lr 5×10<tspan baseline-shift="4.32" font-size="11">-5</tspan> → 5×10<tspan baseline-shift="4.32" font-size="11">-6</tspan></text>
+<path d="M180 510 H192 V130 H202" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" marker-end="url(#ah-amber)"/>
+<line x1="286" y1="160" x2="286" y2="172" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="204" y="174" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="286" y="199" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">Dev1</text>
+<line x1="286" y1="216" x2="286" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="204" y="230" width="164" height="73" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="286" y="251" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">推理导向的 RL</text>
+<text x="286" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规则奖励 + 语言一致性</text>
+<text x="286" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ε = 10，T = 1，G = 16</text>
+<line x1="286" y1="305" x2="286" y2="317" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="204" y="319" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="286" y="344" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">Dev2</text>
+<rect x="392" y="44" width="164" height="73" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="474" y="65" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">拒绝采样（用 Dev2）</text>
+<text x="474" y="82" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每题采多个回答</text>
+<text x="474" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">只保留正确的</text>
+<path d="M368 339 H380 V80 H390" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="474" y1="119" x2="474" y2="129" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="392" y="131" width="164" height="56" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="474" y="152" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">推理数据 626,933 条</text>
+<text x="474" y="169" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">数学 · 代码 · STEM · 逻辑</text>
+<rect x="392" y="197" width="164" height="56" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="474" y="218" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">非推理数据 177,812 条</text>
+<text x="474" y="235" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">写作、问答、翻译等</text>
+<line x1="474" y1="255" x2="474" y2="265" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="392" y="267" width="164" height="56" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="474" y="288" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">合计 804,745 条</text>
+<text x="474" y="305" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">平均 5,355 token / 条</text>
+<line x1="474" y1="325" x2="474" y2="337" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="392" y="339" width="164" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="474" y="360" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-V3-Base</text>
+<text x="474" y="377" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">从底座重新开始</text>
+<line x1="474" y1="389" x2="474" y2="401" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="392" y="403" width="164" height="56" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="474" y="424" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT（第二次）</text>
+<text x="474" y="441" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2–3 轮，上下文 32,768</text>
+<line x1="474" y1="461" x2="474" y2="473" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="392" y="475" width="164" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" rx="20"/>
+<text x="474" y="500" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">Dev3</text>
+<rect x="580" y="44" width="164" height="110" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="662" y="65" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">全场景 RL（1,700 步）</text>
+<text x="662" y="82" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">推理题：规则奖励</text>
+<text x="662" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">一般题：偏好奖励模型</text>
+<text x="662" y="116" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">T = 0.7；偏好奖励只在</text>
+<text x="662" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">最后 400 步加入</text>
+<path d="M556 495 H568 V100 H578" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="662" y1="156" x2="662" y2="170" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="580" y="172" width="164" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.5" rx="20"/>
+<text x="662" y="197" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-R1</text>
+<rect x="580" y="254" width="164" height="72" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6" stroke-dasharray="5 4"/>
+<text x="662" y="276" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">蒸馏（§6）</text>
+<text x="662" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">同一份 804,745 条数据</text>
+<text x="662" y="311" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SFT 6 个稠密小模型</text>
+<path d="M556 303 H568 V290 H578" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#ah-violet)"/>
+<rect x="16" y="564" width="30" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="52" y="576" font-size="12" fill="var(--fig-ink, #1C1B19)">模型检查点</text>
+<rect x="140" y="564" width="30" height="16" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="4"/>
+<text x="176" y="576" font-size="12" fill="var(--fig-ink, #1C1B19)">数据</text>
+<rect x="226" y="564" width="30" height="16" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="4"/>
+<text x="262" y="576" font-size="12" fill="var(--fig-ink, #1C1B19)">训练或处理步骤</text>
+<text x="744" y="576" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">据 R1 论文 arXiv v2 图 2（Nature 图 2）重绘，数字见正文</text>
+</svg>

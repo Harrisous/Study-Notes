@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>专家级均衡损失随路由坍缩程度的变化</title>
+
+<line x1="70" y1="320" x2="520" y2="320" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="324" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="70" y1="269.57" x2="520" y2="269.57" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="273.57" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="70" y1="219.13" x2="520" y2="219.13" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="223.13" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<line x1="70" y1="168.7" x2="520" y2="168.7" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="172.7" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<line x1="70" y1="118.26" x2="520" y2="118.26" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="122.26" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">8</text>
+<line x1="70" y1="67.83" x2="520" y2="67.83" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="71.83" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<text x="70" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="182.5" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.25</text>
+<text x="295" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<text x="407.5" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.75</text>
+<text x="520" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="70" y1="320" x2="520" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="30" x2="70" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="295" y="360" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">坍缩比例 λ（这部分 token 全部挤进同一组 K<tspan baseline-shift="-2.6" font-size="11">r</tspan> 个专家，其余均匀路由）</text>
+<text x="20" y="175" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 175)">L<tspan baseline-shift="-2.6" font-size="11">ExpBal</tspan> / α<tspan baseline-shift="-2.6" font-size="11">1</tspan></text>
+<path d="M70.0 294.8 L74.5 294.8 L79.0 294.7 L83.5 294.6 L88.0 294.4 L92.5 294.2 L97.0 293.9 L101.5 293.6 L106.0 293.2 L110.5 292.8 L115.0 292.3 L119.5 291.8 L124.0 291.3 L128.5 290.7 L133.0 290.0 L137.5 289.3 L142.0 288.5 L146.5 287.7 L151.0 286.9 L155.5 286.0 L160.0 285.0 L164.5 284.0 L169.0 283.0 L173.5 281.9 L178.0 280.7 L182.5 279.5 L187.0 278.3 L191.5 277.0 L196.0 275.7 L200.5 274.3 L205.0 272.8 L209.5 271.4 L214.0 269.8 L218.5 268.2 L223.0 266.6 L227.5 264.9 L232.0 263.2 L236.5 261.4 L241.0 259.6 L245.5 257.7 L250.0 255.8 L254.5 253.8 L259.0 251.8 L263.5 249.7 L268.0 247.6 L272.5 245.4 L277.0 243.2 L281.5 240.9 L286.0 238.6 L290.5 236.3 L295.0 233.8 L299.5 231.4 L304.0 228.9 L308.5 226.3 L313.0 223.7 L317.5 221.0 L322.0 218.3 L326.5 215.6 L331.0 212.8 L335.5 209.9 L340.0 207.0 L344.5 204.1 L349.0 201.1 L353.5 198.0 L358.0 194.9 L362.5 191.8 L367.0 188.6 L371.5 185.4 L376.0 182.1 L380.5 178.7 L385.0 175.3 L389.5 171.9 L394.0 168.4 L398.5 164.9 L403.0 161.3 L407.5 157.7 L412.0 154.0 L416.5 150.3 L421.0 146.5 L425.5 142.6 L430.0 138.8 L434.5 134.8 L439.0 130.9 L443.5 126.9 L448.0 122.8 L452.5 118.7 L457.0 114.5 L461.5 110.3 L466.0 106.0 L470.5 101.7 L475.0 97.3 L479.5 92.9 L484.0 88.5 L488.5 83.9 L493.0 79.4 L497.5 74.8 L502.0 70.1 L506.5 65.4 L511.0 60.7 L515.5 55.9 L520.0 51.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<circle cx="520" cy="51.01" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="530" y="55.01" font-size="12" fill="var(--fig-blue, #1F5FA8)">16B：N<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 64，K<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 6：终点 10.7</text>
+<path d="M70.0 294.8 L74.5 294.8 L79.0 294.7 L83.5 294.6 L88.0 294.5 L92.5 294.3 L97.0 294.1 L101.5 293.8 L106.0 293.5 L110.5 293.1 L115.0 292.8 L119.5 292.3 L124.0 291.9 L128.5 291.4 L133.0 290.8 L137.5 290.2 L142.0 289.6 L146.5 289.0 L151.0 288.2 L155.5 287.5 L160.0 286.7 L164.5 285.9 L169.0 285.0 L173.5 284.1 L178.0 283.2 L182.5 282.2 L187.0 281.1 L191.5 280.1 L196.0 279.0 L200.5 277.8 L205.0 276.6 L209.5 275.4 L214.0 274.1 L218.5 272.8 L223.0 271.5 L227.5 270.1 L232.0 268.6 L236.5 267.2 L241.0 265.7 L245.5 264.1 L250.0 262.5 L254.5 260.9 L259.0 259.2 L263.5 257.5 L268.0 255.7 L272.5 253.9 L277.0 252.1 L281.5 250.2 L286.0 248.3 L290.5 246.3 L295.0 244.3 L299.5 242.3 L304.0 240.2 L308.5 238.1 L313.0 236.0 L317.5 233.8 L322.0 231.5 L326.5 229.2 L331.0 226.9 L335.5 224.6 L340.0 222.2 L344.5 219.7 L349.0 217.2 L353.5 214.7 L358.0 212.2 L362.5 209.5 L367.0 206.9 L371.5 204.2 L376.0 201.5 L380.5 198.7 L385.0 195.9 L389.5 193.1 L394.0 190.2 L398.5 187.3 L403.0 184.3 L407.5 181.3 L412.0 178.3 L416.5 175.2 L421.0 172.0 L425.5 168.9 L430.0 165.7 L434.5 162.4 L439.0 159.1 L443.5 155.8 L448.0 152.4 L452.5 149.0 L457.0 145.6 L461.5 142.1 L466.0 138.6 L470.5 135.0 L475.0 131.4 L479.5 127.7 L484.0 124.0 L488.5 120.3 L493.0 116.5 L497.5 112.7 L502.0 108.9 L506.5 105.0 L511.0 101.0 L515.5 97.1 L520.0 93.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2"/>
+<circle cx="520" cy="93.04" r="4" fill="var(--fig-violet, #6733C4)"/>
+<text x="530" y="97.04" font-size="12" fill="var(--fig-violet, #6733C4)">2B：N<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 63，K<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 7：终点 9</text>
+<path d="M70.0 294.8 L74.5 294.8 L79.0 294.7 L83.5 294.6 L88.0 294.5 L92.5 294.3 L97.0 294.1 L101.5 293.9 L106.0 293.7 L110.5 293.4 L115.0 293.0 L119.5 292.6 L124.0 292.2 L128.5 291.8 L133.0 291.3 L137.5 290.8 L142.0 290.3 L146.5 289.7 L151.0 289.1 L155.5 288.4 L160.0 287.7 L164.5 287.0 L169.0 286.2 L173.5 285.4 L178.0 284.6 L182.5 283.8 L187.0 282.8 L191.5 281.9 L196.0 280.9 L200.5 279.9 L205.0 278.9 L209.5 277.8 L214.0 276.7 L218.5 275.6 L223.0 274.4 L227.5 273.2 L232.0 271.9 L236.5 270.6 L241.0 269.3 L245.5 267.9 L250.0 266.5 L254.5 265.1 L259.0 263.6 L263.5 262.1 L268.0 260.6 L272.5 259.0 L277.0 257.4 L281.5 255.8 L286.0 254.1 L290.5 252.4 L295.0 250.7 L299.5 248.9 L304.0 247.1 L308.5 245.2 L313.0 243.3 L317.5 241.4 L322.0 239.4 L326.5 237.4 L331.0 235.4 L335.5 233.3 L340.0 231.2 L344.5 229.1 L349.0 226.9 L353.5 224.7 L358.0 222.5 L362.5 220.2 L367.0 217.9 L371.5 215.5 L376.0 213.2 L380.5 210.7 L385.0 208.3 L389.5 205.8 L394.0 203.3 L398.5 200.7 L403.0 198.1 L407.5 195.5 L412.0 192.8 L416.5 190.1 L421.0 187.4 L425.5 184.6 L430.0 181.8 L434.5 179.0 L439.0 176.1 L443.5 173.2 L448.0 170.2 L452.5 167.2 L457.0 164.2 L461.5 161.2 L466.0 158.1 L470.5 155.0 L475.0 151.8 L479.5 148.6 L484.0 145.4 L488.5 142.1 L493.0 138.8 L497.5 135.5 L502.0 132.1 L506.5 128.7 L511.0 125.3 L515.5 121.8 L520.0 118.3" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.8"/>
+<circle cx="520" cy="118.26" r="4" fill="var(--fig-muted, #74716A)"/>
+<text x="530" y="122.26" font-size="12" fill="var(--fig-ink, #1C1B19)">N<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 16，K<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 2：终点 8</text>
+<circle cx="70" cy="294.78" r="4.5" fill="var(--fig-ink, #1C1B19)"/>
+<text x="82" y="312.78" font-size="12" fill="var(--fig-ink, #1C1B19)">均匀路由：三条曲线都从 1 出发</text>
+<circle cx="182.5" cy="279.55" r="3.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="174.5" y="271.55" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">1.60</text>
+<circle cx="295" cy="233.84" r="3.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="287" y="225.84" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">3.42</text>
+<circle cx="407.5" cy="157.66" r="3.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="399.5" y="149.66" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">6.44</text>
+<text x="530" y="238.26" font-size="12" fill="var(--fig-ink, #1C1B19)">16B 训练用 α<tspan baseline-shift="-2.6" font-size="11">1</tspan> = 0.001：</text>
+<text x="530" y="256.26" font-size="12" fill="var(--fig-ink, #1C1B19)">损失至多 0.0107（全部坍缩），</text>
+<text x="530" y="274.26" font-size="12" fill="var(--fig-ink, #1C1B19)">数值本身很小，</text>
+<text x="530" y="292.26" font-size="12" fill="var(--fig-ink, #1C1B19)">起作用的是它的梯度。</text>
+</svg>

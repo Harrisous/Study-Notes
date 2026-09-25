@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 482" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>每 token 全局 KV 的面积图：V4-Flash 3,514 字节，V4.1-Flash 890 字节</title>
+
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) DeepSeek-V4-Flash：41 份全局 KV（21 份 CSA，m = 4；20 份 HCA，m = 128）</text>
+<line x1="116" y1="222" x2="120" y2="222" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="226" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="116" y1="172" x2="120" y2="172" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="176" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">200</text>
+<line x1="116" y1="122" x2="120" y2="122" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="126" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">400</text>
+<line x1="116" y1="72" x2="120" y2="72" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="76" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">600</text>
+<line x1="120" y1="222" x2="120" y2="41" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="120" y1="222" x2="649" y2="222" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="120" y1="222" x2="120" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="120" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="212" y1="222" x2="212" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="212" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="304" y1="222" x2="304" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="304" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="396" y1="222" x2="396" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="396" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="488" y1="222" x2="488" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="488" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="580" y1="222" x2="580" y2="226" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="580" y="239" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="70" y="134.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 70 134.5)">字节/条目</text>
+<rect x="120" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="120" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="143" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="143" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="166" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="166" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="189" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="189" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="212" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="212" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="235" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="235" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="258" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="258" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="281" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="281" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="304" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="304" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="327" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="327" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="350" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="350" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="373" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="373" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="396" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="396" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="419" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="419" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="442" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="442" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="465" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="465" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="488" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="488" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="511" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="511" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="534" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="534" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="557" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="557" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="580" y="76" width="23" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="580" y="59" width="23" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="603" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="603.72" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="604.44" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="605.16" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="605.88" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="606.59" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="607.31" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="608.03" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="608.75" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="609.47" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="610.19" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="610.91" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="611.62" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="612.34" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="613.06" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="613.78" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="614.5" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="615.22" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="615.94" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<rect x="616.66" y="76" width="0.72" height="146" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<text x="361.5" y="49" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">21 块，每块宽 1/4、高 584 + 68 = 652</text>
+<line x1="619.38" y1="134.4" x2="639.38" y2="134.4" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="643.38" y="120.4" font-size="12" fill="var(--fig-orange, #B4460C)">20 块 HCA，</text>
+<text x="643.38" y="138.4" font-size="12" fill="var(--fig-orange, #B4460C)">每块宽 1/128，</text>
+<text x="643.38" y="156.4" font-size="12" fill="var(--fig-orange, #B4460C)">合计 91.25 字节</text>
+<text x="361.5" y="162" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">面积 = 3,514.25 字节/token</text>
+<text x="20" y="268" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) DeepSeek-V4.1-Flash：4 份全局 KV（层 2、8、14 的 m = 2；层 20 的 m = 1）</text>
+<line x1="116" y1="390" x2="120" y2="390" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="394" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="116" y1="340" x2="120" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">200</text>
+<line x1="116" y1="290" x2="120" y2="290" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="112" y="294" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">400</text>
+<line x1="120" y1="390" x2="120" y2="284" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="120" y1="390" x2="649" y2="390" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="120" y1="390" x2="120" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="120" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="212" y1="390" x2="212" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="212" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="304" y1="390" x2="304" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="304" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="396" y1="390" x2="396" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="396" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="488" y1="390" x2="488" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="488" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="580" y1="390" x2="580" y2="394" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="580" y="407" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="70" y="340" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 70 340)">字节/条目</text>
+<rect x="120" y="318" width="46" height="72" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="120" y="301" width="46" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="143" y="358" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 2</text>
+<rect x="166" y="318" width="46" height="72" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="166" y="301" width="46" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="189" y="358" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 8</text>
+<rect x="212" y="318" width="46" height="72" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="212" y="301" width="46" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="235" y="358" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 14</text>
+<rect x="258" y="318" width="92" height="72" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="258" y="301" width="92" height="17" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="304" y="358" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 20</text>
+<text x="362" y="309" font-size="12" fill="var(--fig-ink, #1C1B19)">高 288 + 68 = 356（主 KV 改用 FP4）</text>
+<text x="362" y="327" font-size="12" fill="var(--fig-ink, #1C1B19)">总宽 3 × 1/2 + 1 × 1 = 2.5 条目</text>
+<text x="362" y="351" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">面积 = 890 字节/token</text>
+<text x="386.8" y="426" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每 token 条目数（各份之和）</text>
+<rect x="20" y="440" width="14" height="12" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45"/>
+<text x="40" y="451" font-size="12" fill="var(--fig-ink, #1C1B19)">主 KV（main KV）</text>
+<rect x="170" y="440" width="14" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<text x="190" y="451" font-size="12" fill="var(--fig-ink, #1C1B19)">索引键（indexer K）</text>
+<rect x="330" y="440" width="14" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55"/>
+<text x="350" y="451" font-size="12" fill="var(--fig-ink, #1C1B19)">HCA 主 KV（无索引键）</text>
+<text x="20" y="471" font-size="12" fill="var(--fig-muted, #74716A)">高 = 每条目字节（条目大小）；宽 = 1/m（序列维）；块数 = 份数（层维）；面积之和 = 每 token 字节。</text>
+</svg>

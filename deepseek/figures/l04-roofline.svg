@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>屋顶线模型：A100 与 H100，以及 decode、prefill 各部分的算术强度</title>
+
+<line x1="84" y1="337.5" x2="640" y2="337.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="341.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="84" y1="252.5" x2="640" y2="252.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="256.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="84" y1="167.5" x2="640" y2="167.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="171.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="84" y1="82.5" x2="640" y2="82.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="86.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="126.77" y1="40" x2="126.77" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="126.77" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="212.31" y1="40" x2="212.31" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="212.31" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="297.85" y1="40" x2="297.85" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="297.85" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="383.38" y1="40" x2="383.38" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="383.38" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<line x1="468.92" y1="40" x2="468.92" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="468.92" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">256</text>
+<line x1="554.46" y1="40" x2="554.46" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="554.46" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1024</text>
+<line x1="640" y1="40" x2="640" y2="380" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="640" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4096</text>
+<line x1="84" y1="380" x2="640" y2="380" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="84" y1="40" x2="84" y2="380" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="362" y="420" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">算术强度 I（FLOP/字节，对数刻度）</text>
+<text x="24" y="210" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 210)">可达算力（TFLOP/s，对数刻度）</text>
+<path d="M84.0 318.5 L477.7 82.9 L640.0 82.9" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-linejoin="round"/>
+<line x1="477.72" y1="82.91" x2="477.72" y2="380" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M84.0 336.8 L437.2 125.5 L640.0 125.5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.6" stroke-linejoin="round"/>
+<line x1="437.17" y1="125.5" x2="437.17" y2="380" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="636" y="74.91" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">H100 SXM：989 TFLOP/s，3.35 TB/s</text>
+<text x="484.59" y="145.5" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">A100 80GB SXM</text>
+<text x="484.59" y="161.5" font-size="12" fill="var(--fig-ink, #1C1B19)">312 TFLOP/s，2.039 TB/s</text>
+<text x="433.17" y="372" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">脊点 153</text>
+<text x="481.72" y="372" font-size="12" fill="var(--fig-muted, #74716A)">脊点 295</text>
+<text x="427.17" y="286" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="end" font-weight="600">受带宽限制</text>
+<text x="427.17" y="302" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">（memory-bound）</text>
+<text x="427.17" y="318" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">斜线：可达算力 = 带宽 × I</text>
+<text x="523.5" y="196.98" font-size="13" fill="var(--fig-muted, #74716A)" font-weight="600">受算力限制</text>
+<text x="523.5" y="211.94" font-size="12" fill="var(--fig-muted, #74716A)">（compute-bound）</text>
+<rect x="122.27" y="306.7" width="9" height="9" fill="var(--fig-ink, #1C1B19)"/>
+<text x="118.77" y="302.2" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">B = 1</text>
+<rect x="293.35" y="204.35" width="9" height="9" fill="var(--fig-ink, #1C1B19)"/>
+<text x="289.85" y="199.85" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">B = 16</text>
+<rect x="378.88" y="153.17" width="9" height="9" fill="var(--fig-ink, #1C1B19)"/>
+<text x="375.38" y="148.67" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">B = 64</text>
+<rect x="464.42" y="121" width="9" height="9" fill="var(--fig-ink, #1C1B19)"/>
+<text x="460.92" y="116.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">B = 256</text>
+<text x="132.65" y="174.85" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">■ decode 的权重部分：I = B</text>
+<circle cx="126.77" cy="311.2" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="135.77" y="327.2" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">MHA 1</text>
+<circle cx="212.31" cy="260.02" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="221.31" y="276.02" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">Llama-3-8B 4</text>
+<circle cx="255.08" cy="234.44" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="264.08" y="250.44" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">GQA-8（64 头）8</text>
+<circle cx="383.38" cy="157.67" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<line x1="385.38" y1="164.67" x2="397.38" y2="207.67" stroke="var(--fig-amber, #8A6508)" stroke-width="1"/>
+<text x="409.38" y="221.67" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end" font-weight="600">MQA（64 头）64</text>
+<text x="175.42" y="355.15" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">● decode 的注意力部分：I = n<tspan baseline-shift="sub" font-size="11">h</tspan>/n<tspan baseline-shift="sub" font-size="11">g</tspan>，与 B 无关</text>
+<polygon points="594.87,118.5 601.87,125.5 594.87,132.5 587.87,125.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="596.87" y="95.5" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">prefill 2048 token</text>
+<text x="596.87" y="111.5" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">Llama-2-7B，I ≈ 1971</text>
+<text x="16" y="456" font-size="12" fill="var(--fig-muted, #74716A)">点的位置按正文的强度公式算出（bf16），不是实测的 kernel 剖析；H100 的 989 是稠密值，NVIDIA 官网只印稀疏值。</text>
+</svg>

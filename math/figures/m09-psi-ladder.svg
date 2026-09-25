@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 478" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>从 REINFORCE 到 GRPO：每一级只改一处</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="14" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">所有方法都是 ∇J ≈ E[ Σ<tspan baseline-shift="sub" font-size="11">t</tspan> Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> ∇ log π<tspan baseline-shift="sub" font-size="11">θ</tspan>(a<tspan baseline-shift="sub" font-size="11">t</tspan> | s<tspan baseline-shift="sub" font-size="11">t</tspan>) ]，区别只在 Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> 和样本怎么用</text>
+<rect x="14" y="40" width="124" height="62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="76" y="67" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">REINFORCE</text>
+<text x="76" y="87" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§2</text>
+<rect x="150" y="40" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="66" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> = R(τ)</text>
+<text x="162" y="87" font-size="12" fill="var(--fig-muted, #74716A)">整条轨迹的回报</text>
+<text x="414" y="65" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 无偏，只用样本</text>
+<text x="414" y="87" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 方差大；过去的奖励也算进来</text>
+<line x1="76" y1="103" x2="76" y2="112" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="14" y="113" width="124" height="62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="76" y="140" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">只用之后的回报</text>
+<text x="76" y="160" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§2</text>
+<rect x="150" y="113" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="139" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> = R<tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="162" y="160" font-size="12" fill="var(--fig-muted, #74716A)">因果性：去掉动作之前的奖励</text>
+<text x="414" y="138" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 期望不变，方差通常变小</text>
+<text x="414" y="160" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 仍背着之后所有 token 的运气</text>
+<line x1="76" y1="176" x2="76" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="14" y="186" width="124" height="62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="76" y="213" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">减去基线</text>
+<text x="76" y="233" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§3</text>
+<rect x="150" y="186" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="212" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> = R<tspan baseline-shift="sub" font-size="11">t</tspan> − b(s<tspan baseline-shift="sub" font-size="11">t</tspan>)</text>
+<text x="162" y="233" font-size="12" fill="var(--fig-muted, #74716A)">b 不依赖当前动作</text>
+<text x="414" y="211" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 期望不变，方差可降几个数量级</text>
+<text x="414" y="233" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 要有一个好的 b</text>
+<line x1="76" y1="249" x2="76" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="14" y="259" width="124" height="62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="76" y="286" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">价值网络 + GAE</text>
+<text x="76" y="306" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§4</text>
+<rect x="150" y="259" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="285" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ψ<tspan baseline-shift="sub" font-size="11">t</tspan> = Σ (γλ)<tspan baseline-shift="super" font-size="11">l</tspan> δ<tspan baseline-shift="sub" font-size="11">t+l</tspan></text>
+<text x="162" y="306" font-size="12" fill="var(--fig-muted, #74716A)">δ<tspan baseline-shift="sub" font-size="11">t</tspan> = r<tspan baseline-shift="sub" font-size="11">t</tspan> + γV(s<tspan baseline-shift="sub" font-size="11">t+1</tspan>) − V(s<tspan baseline-shift="sub" font-size="11">t</tspan>)</text>
+<text x="414" y="284" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 逐 token 记功，λ 调偏差与方差</text>
+<text x="414" y="306" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 要训练与策略同规模的价值网络</text>
+<line x1="76" y1="322" x2="76" y2="331" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="14" y="332" width="124" height="62" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="8"/>
+<text x="76" y="359" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">PPO</text>
+<text x="76" y="379" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§5–6</text>
+<rect x="150" y="332" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="358" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">ρ<tspan baseline-shift="sub" font-size="11">t</tspan> Â<tspan baseline-shift="sub" font-size="11">t</tspan>，再裁剪</text>
+<text x="162" y="379" font-size="12" fill="var(--fig-muted, #74716A)">ρ<tspan baseline-shift="sub" font-size="11">t</tspan> = π<tspan baseline-shift="sub" font-size="11">θ</tspan> / π<tspan baseline-shift="sub" font-size="11">θold</tspan>（逐 token）</text>
+<text x="414" y="357" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 一批样本能更新多步</text>
+<text x="414" y="379" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 只在旧策略附近可信，要限步长</text>
+<line x1="76" y1="395" x2="76" y2="404" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="14" y="405" width="124" height="62" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="8"/>
+<text x="76" y="432" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">GRPO</text>
+<text x="76" y="452" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">§7</text>
+<rect x="150" y="405" width="250" height="62" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.1" rx="8"/>
+<text x="162" y="431" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ψ<tspan baseline-shift="sub" font-size="11">i,t</tspan> = (r<tspan baseline-shift="sub" font-size="11">i</tspan> − mean) / std</text>
+<text x="162" y="452" font-size="12" fill="var(--fig-muted, #74716A)">同一题 G 个回答组内标准化</text>
+<text x="414" y="430" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="600">＋ 不要价值网络</text>
+<text x="414" y="452" font-size="12.5" fill="var(--fig-red, #A3231C)">－ 同一回答的 token 共享一个数</text>
+</svg>

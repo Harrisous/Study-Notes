@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 452" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>分组输出投影（V4-Pro）：先组内、后全局</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="24" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 一个 token 的注意力输出怎样回到 7168 维</text>
+<text x="186" y="42" font-size="11" fill="var(--fig-muted, #74716A)">拼接的注意力输出 <tspan font-weight="700">o</tspan><tspan baseline-shift="-2.4" font-size="11">t</tspan> = 65,536 维；每根细条 1 个头（512 维），每 8 个头一组</text>
+<rect x="186" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="188.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="191.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="195.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="198.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="201.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="205.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="208.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="211.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="201" y1="78" x2="201" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="186" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="201" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<line x1="201" y1="116" x2="201" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="190" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="221" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="223.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="226.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="230.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="233.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="236.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="240.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="243.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="246.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="236" y1="78" x2="236" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="221" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="236" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<line x1="236" y1="116" x2="236" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="225" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="256" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="258.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="261.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="265.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="268.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="271.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="275.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="278.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="281.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="271" y1="78" x2="271" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="256" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="271" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<line x1="271" y1="116" x2="271" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="260" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="291" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="293.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="296.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="300.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="303.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="306.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="310.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="313.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="316.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="306" y1="78" x2="306" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="291" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="306" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<line x1="306" y1="116" x2="306" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="295" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="326" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="328.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="331.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="335.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="338.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="341.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="345.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="348.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="351.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="341" y1="78" x2="341" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="326" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="341" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<line x1="341" y1="116" x2="341" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="330" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="361" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="363.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="366.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="370.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="373.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="376.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="380.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="383.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="386.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="376" y1="78" x2="376" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="361" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="376" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<line x1="376" y1="116" x2="376" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="365" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="396" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="398.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="401.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="405.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="408.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="411.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="415.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="418.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="421.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="411" y1="78" x2="411" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="396" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="411" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<line x1="411" y1="116" x2="411" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="400" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="431" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="433.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="436.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="440.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="443.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="446.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="450.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="453.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="456.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="446" y1="78" x2="446" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="431" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="446" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8</text>
+<line x1="446" y1="116" x2="446" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="435" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="466" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="468.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="471.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="475.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="478.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="481.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="485.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="488.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="491.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="481" y1="78" x2="481" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="466" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="481" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<line x1="481" y1="116" x2="481" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="470" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="501" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="503.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="506.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="510.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="513.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="516.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="520.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="523.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="526.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="516" y1="78" x2="516" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="501" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="516" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">10</text>
+<line x1="516" y1="116" x2="516" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="505" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="536" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="538.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="541.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="545.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="548.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="551.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="555.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="558.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="561.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="551" y1="78" x2="551" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="536" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="551" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">11</text>
+<line x1="551" y1="116" x2="551" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="540" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="571" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="573.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="576.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="580.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="583.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="586.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="590.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="593.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="596.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="586" y1="78" x2="586" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="571" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="586" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<line x1="586" y1="116" x2="586" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="575" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="606" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="608.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="611.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="615.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="618.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="621.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="625.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="628.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="631.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="621" y1="78" x2="621" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="606" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="621" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">13</text>
+<line x1="621" y1="116" x2="621" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="610" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="641" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="643.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="646.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="650.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="653.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="656.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="660.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="663.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="666.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="656" y1="78" x2="656" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="641" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="656" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">14</text>
+<line x1="656" y1="116" x2="656" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="645" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="676" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="678.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="681.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="685.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="688.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="691.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="695.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="698.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="701.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="691" y1="78" x2="691" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="676" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="691" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">15</text>
+<line x1="691" y1="116" x2="691" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="680" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="711" y="52" width="30" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<rect x="713.6" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="716.9" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="720.2" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="723.5" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="726.8" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="730.1" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="733.4" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="736.7" y="56" width="2.2" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<line x1="726" y1="78" x2="726" y2="94" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="711" y="94" width="30" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="726" y="108.96" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16</text>
+<line x1="726" y1="116" x2="726" y2="131" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="715" y="131" width="22" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<text x="174" y="69" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">128 个头 × 512 维</text>
+<text x="174" y="103" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">第一步：16 个</text>
+<text x="174" y="118" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">1024 × 4096 的 <tspan font-weight="700">W</tspan><tspan baseline-shift="4.8" font-size="11">O1</tspan><tspan baseline-shift="-2.6" font-size="11" dx="-13.64">κ</tspan></text>
+<text x="174" y="141" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">16 组 × 1024 维</text>
+<path d="M190 146 v6 H737 v-6" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<line x1="463.5" y1="152" x2="463.5" y2="180" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="473.5" y="170" font-size="11" fill="var(--fig-muted, #74716A)">拼接：16 × 1024 = 16,384 维</text>
+<rect x="248.5" y="180" width="430" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="463.5" y="198.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第二步：<tspan font-weight="700">W</tspan><tspan baseline-shift="4.8" font-size="11">O2</tspan>（7168 × 16,384），各组之间在这里才混合</text>
+<line x1="463.5" y1="208" x2="463.5" y2="224" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="333.5" y="224" width="260" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="463.5" y="241.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">输出 7168 维 → 交给 mHC 的 <tspan font-weight="700">H</tspan><tspan baseline-shift="4.8" font-size="11">post</tspan></text>
+<text x="174" y="192" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">组与组之间</text>
+<text x="174" y="207" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">要到第二步才混合</text>
+<line x1="24" y1="266" x2="736" y2="266" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="24" y="288" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 三个权重矩阵按同一比例尺画出（行 = 输出维，列 = 输入维），面积就是参数量</text>
+<rect x="40" y="304" width="320" height="35" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="374" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)">直接投影 <tspan font-weight="700">W</tspan><tspan baseline-shift="4.8" font-size="11">O</tspan>：7168 × 65,536</text>
+<text x="374" y="334" font-size="12" fill="var(--fig-muted, #74716A)">= 469.8M 个参数</text>
+<rect x="40" y="356" width="320" height="80" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="40" y="356" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="60" y="361" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="80" y="366" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="100" y="371" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="120" y="376" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="140" y="381" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="160" y="386" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="180" y="391" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="200" y="396" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="220" y="401" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="240" y="406" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="260" y="411" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="280" y="416" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="300" y="421" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="320" y="426" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<rect x="340" y="431" width="20" height="5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="374" y="370" font-size="12" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">W</tspan><tspan baseline-shift="4.8" font-size="11">O1</tspan>：16 个 1024 × 4096 的块排在对角线上</text>
+<text x="374" y="386" font-size="12" fill="var(--fig-muted, #74716A)">= 67.1M（虚线框里其余位置恒为 0，不存）</text>
+<rect x="374" y="400" width="80" height="35" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="464" y="414" font-size="12" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">W</tspan><tspan baseline-shift="4.8" font-size="11">O2</tspan>：7168 × 16,384 = 117.4M</text>
+<text x="464" y="431" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">两步合计 184.5M，是直接投影的 39.3%</text>
+</svg>

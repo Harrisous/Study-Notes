@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>分层稀疏索引器：层 20 全扫并圈出候选块，后面的 Reindex 层只在候选池里打分</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker></defs>
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">层 20（Full）：对全部位置打分</text>
+<text x="20" y="44" font-size="12" fill="var(--fig-muted, #74716A)">绿：本层 top-k；蓝框：块内最高分排前的块</text>
+<rect x="58" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 0</text>
+<rect x="58" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="95" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="130" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="55" y="92" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="50" y="107" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 1</text>
+<rect x="58" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="128" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 2</text>
+<rect x="58" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="149" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 3</text>
+<rect x="58" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="158" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="184" y="158" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="55" y="155" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="50" y="170" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 4</text>
+<rect x="58" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="179" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 5</text>
+<rect x="58" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="200" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="94" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="200" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="55" y="197" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="50" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 6</text>
+<rect x="58" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="221" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="233" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 7</text>
+<rect x="58" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="242" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="50" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 8</text>
+<rect x="58" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="76" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="94" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="112" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="130" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="148" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="166" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="184" y="263" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="55" y="260" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3" stroke-dasharray="4 2"/>
+<text x="50" y="275" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 9</text>
+<text x="208" y="275" font-size="11" fill="var(--fig-blue, #1F5FA8)">← 最新块，强制入池</text>
+<line x1="210" y1="134" x2="306" y2="134" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<text x="312" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">共享候选池</text>
+<text x="312" y="44" font-size="12" fill="var(--fig-muted, #74716A)">只保留蓝框里的块</text>
+<rect x="352" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="370" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="388" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="406" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="424" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="442" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="460" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="478" y="74" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="349" y="71" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="344" y="86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 1</text>
+<rect x="352" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="370" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="388" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="406" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="424" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="442" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="460" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="478" y="95" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="349" y="92" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="344" y="107" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 4</text>
+<rect x="352" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="370" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="388" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="406" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="424" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="442" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="460" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="478" y="116" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="349" y="113" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3"/>
+<text x="344" y="128" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 6</text>
+<rect x="352" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="370" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="388" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="406" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="424" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="442" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="460" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="478" y="137" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="349" y="134" width="147" height="21" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="3" stroke-dasharray="4 2"/>
+<text x="344" y="149" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 9</text>
+<text x="522" y="64" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">层 24（Reindex）：只在池内打分</text>
+<rect x="562" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="598" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="76" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="634" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="76" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 1</text>
+<rect x="562" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="598" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="97" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="688" y="97" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="109" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 4</text>
+<rect x="562" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="118" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="598" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="118" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="670" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="118" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="130" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 6</text>
+<rect x="562" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="598" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="139" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="151" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 9</text>
+<text x="522" y="176" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">层 28（Reindex）：只在池内打分</text>
+<rect x="562" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="598" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="188" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 1</text>
+<rect x="562" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="209" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="598" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="209" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="209" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<text x="554" y="221" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 4</text>
+<rect x="562" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="230" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="598" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="230" width="15" height="15" fill="var(--fig-green, #16704A)" fill-opacity="0.75" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="2"/>
+<rect x="634" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="230" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="242" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 6</text>
+<rect x="562" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="580" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="598" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="616" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="634" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="652" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="670" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<rect x="688" y="251" width="15" height="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="2"/>
+<text x="554" y="263" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">块 9</text>
+<line x1="500" y1="114" x2="522" y2="114" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="500" y1="134" x2="522" y2="226" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<text x="632" y="302" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层 32、36 同理</text>
+<line x1="20" y1="330" x2="740" y2="330" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="20" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)">示意：80 个位置、10 块 × 8；层 20 选 top-3，圈 3 块 + 最新块；Reindex 层各选 top-4。</text>
+<text x="20" y="370" font-size="12" fill="var(--fig-blue, #1F5FA8)">真实规模：块长 8，最多 2,048 块 → 16,384 个候选位置；1M 上下文时只占 1.56%。每层选 top-512。</text>
+<text x="20" y="392" font-size="12" fill="var(--fig-muted, #74716A)">只在解码器里用：层 20 仍扫描全部可见位置，层 24/28/32/36 的每查询打分量从 ∝ T 变成常数。</text>
+</svg>

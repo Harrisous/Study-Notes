@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 500" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>专家级与设备级均衡损失的逐项计算（4 个 token，8 个路由专家，每个 token 选 2 个）</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 亲和度 s<tspan baseline-shift="-2.9" font-size="11">i,t</tspan>（每行是一个 token 对 8 个路由专家的 softmax；粗框 = 该 token 的 top-2）</text>
+<text x="147" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 1</text>
+<text x="205" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 2</text>
+<text x="263" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 3</text>
+<text x="321" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 4</text>
+<text x="379" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 5</text>
+<text x="437" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 6</text>
+<text x="495" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 7</text>
+<text x="553" y="42" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家 8</text>
+<text x="108" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">token 1</text>
+<rect x="119" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.73" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="147" y="70" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.408</text>
+<rect x="177" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.48" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="205" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">0.247</text>
+<rect x="235" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="3"/>
+<text x="263" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.091</text>
+<rect x="293" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="3"/>
+<text x="321" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.055</text>
+<rect x="351" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="3"/>
+<text x="379" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.055</text>
+<rect x="409" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="3"/>
+<text x="437" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.055</text>
+<rect x="467" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="3"/>
+<text x="495" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.055</text>
+<rect x="525" y="51" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" rx="3"/>
+<text x="553" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.033</text>
+<text x="592" y="70" font-size="12" fill="var(--fig-muted, #74716A)">门控和 0.65</text>
+<text x="108" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">token 2</text>
+<rect x="119" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.69" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="147" y="100" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.381</text>
+<rect x="177" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="205" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.063</text>
+<rect x="235" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.58" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="263" y="100" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.312</text>
+<rect x="293" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="3"/>
+<text x="321" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.052</text>
+<rect x="351" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="3"/>
+<text x="379" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.052</text>
+<rect x="409" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="3"/>
+<text x="437" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.052</text>
+<rect x="467" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="3"/>
+<text x="495" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.038</text>
+<rect x="525" y="81" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" rx="3"/>
+<text x="553" y="100" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.052</text>
+<text x="592" y="100" font-size="12" fill="var(--fig-muted, #74716A)">门控和 0.69</text>
+<text x="108" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">token 3</text>
+<rect x="119" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="147" y="130" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0.325</text>
+<rect x="177" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.51" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="205" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">0.266</text>
+<rect x="235" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19" rx="3"/>
+<text x="263" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.066</text>
+<rect x="293" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="3"/>
+<text x="321" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.080</text>
+<rect x="351" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19" rx="3"/>
+<text x="379" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.066</text>
+<rect x="409" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19" rx="3"/>
+<text x="437" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.066</text>
+<rect x="467" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19" rx="3"/>
+<text x="495" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.066</text>
+<rect x="525" y="111" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19" rx="3"/>
+<text x="553" y="130" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.066</text>
+<text x="592" y="130" font-size="12" fill="var(--fig-muted, #74716A)">门控和 0.59</text>
+<text x="108" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">token 4</text>
+<rect x="119" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="3"/>
+<text x="147" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.078</text>
+<rect x="177" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="3"/>
+<text x="205" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.078</text>
+<rect x="235" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="263" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.086</text>
+<rect x="293" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.5" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="321" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">0.260</text>
+<rect x="351" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.46" stroke="var(--fig-ink, #1C1B19)" stroke-width="2" rx="3"/>
+<text x="379" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">0.235</text>
+<rect x="409" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" rx="3"/>
+<text x="437" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.106</text>
+<rect x="467" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="3"/>
+<text x="495" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.078</text>
+<rect x="525" y="141" width="56" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21" rx="3"/>
+<text x="553" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.078</text>
+<text x="592" y="160" font-size="12" fill="var(--fig-muted, #74716A)">门控和 0.49</text>
+<text x="16" y="196" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 逐列记账</text>
+<text x="108" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">被选次数</text>
+<text x="147" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="205" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="263" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="321" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="379" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="437" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="495" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="553" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="108" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">f<tspan baseline-shift="-2.6" font-size="11">i</tspan></text>
+<text x="147" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="205" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="263" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="321" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="379" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="437" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="495" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="553" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="108" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">P<tspan baseline-shift="-2.6" font-size="11">i</tspan></text>
+<text x="147" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.2980</text>
+<text x="205" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.1637</text>
+<text x="263" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.1387</text>
+<text x="321" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.1117</text>
+<text x="379" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.1019</text>
+<text x="437" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.0695</text>
+<text x="495" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.0593</text>
+<text x="553" y="272" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.0572</text>
+<text x="108" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">f<tspan baseline-shift="-2.6" font-size="11">i</tspan>·P<tspan baseline-shift="-2.6" font-size="11">i</tspan></text>
+<text x="147" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.8940</text>
+<text x="205" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3274</text>
+<text x="263" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1387</text>
+<text x="321" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1117</text>
+<text x="379" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1019</text>
+<text x="437" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="495" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="553" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<line x1="118" y1="210" x2="582" y2="210" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="592" y="224" font-size="11" fill="var(--fig-muted, #74716A)">f<tspan baseline-shift="-2.4" font-size="11">i</tspan> = 8/(2×4)×次数</text>
+<text x="592" y="248" font-size="11" fill="var(--fig-muted, #74716A)">Σf<tspan baseline-shift="-2.4" font-size="11">i</tspan> = 8 = N<tspan baseline-shift="-2.4" font-size="11">r</tspan></text>
+<text x="592" y="272" font-size="11" fill="var(--fig-muted, #74716A)">P<tspan baseline-shift="-2.4" font-size="11">i</tspan> = 各列平均</text>
+<text x="118" y="324" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">L<tspan baseline-shift="-3.1" font-size="11">ExpBal</tspan> / α<tspan baseline-shift="-3.1" font-size="11">1</tspan> = Σ f<tspan baseline-shift="-3.1" font-size="11">i</tspan>P<tspan baseline-shift="-3.1" font-size="11">i</tspan> = 1.5736</text>
+<text x="418" y="324" font-size="12" fill="var(--fig-muted, #74716A)">（完全均匀时 = 1，全部坍缩时 = N<tspan baseline-shift="-2.6" font-size="11">r</tspan>/K<tspan baseline-shift="-2.6" font-size="11">r</tspan> = 4）</text>
+<text x="16" y="360" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 设备级：专家 1–4 放在设备 A，5–8 放在设备 B</text>
+<path d="M122.0 372.0 L122.0 380.0 L346.0 380.0 L346.0 372.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="234" y="400" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">设备 A</text>
+<text x="234" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">f′ = 组内 f 的平均 = 1.75</text>
+<text x="234" y="440" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">P′ = 组内 P 之和 = 0.7121</text>
+<path d="M354.0 372.0 L354.0 380.0 L578.0 380.0 L578.0 372.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="466" y="400" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">设备 B</text>
+<text x="466" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">f′ = 组内 f 的平均 = 0.25</text>
+<text x="466" y="440" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">P′ = 组内 P 之和 = 0.2879</text>
+<text x="118" y="470" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">L<tspan baseline-shift="-3.1" font-size="11">DevBal</tspan> / α<tspan baseline-shift="-3.1" font-size="11">2</tspan> = 1.75×0.7121 + 0.25×0.2879 = 1.3181</text>
+<text x="118" y="496" font-size="12" fill="var(--fig-muted, #74716A)">（两台设备完全均衡时 = 1）</text>
+</svg>

@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 452" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-R1-Zero 训练中反思词与“wait”的出现次数（据论文图 9 的数据重绘）</title>
+
+<text x="16" y="18" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 10 个反思词的总次数：wait, mistake, however, but, retry, error, verify, wrong, evaluate, check</text>
+<line x1="70" y1="190" x2="736" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="194" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="70" y1="136.67" x2="736" y2="136.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="140.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5,000</text>
+<line x1="70" y1="83.33" x2="736" y2="83.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="87.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10,000</text>
+<line x1="70" y1="30" x2="736" y2="30" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="34" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">15,000</text>
+<line x1="70" y1="30" x2="70" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="198.08" y1="30" x2="198.08" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="326.15" y1="30" x2="326.15" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="454.23" y1="30" x2="454.23" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="582.31" y1="30" x2="582.31" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="710.38" y1="30" x2="710.38" y2="190" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="70" y1="190" x2="736" y2="190" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="595.12" y1="30" x2="595.12" y2="190" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path d="M82.81 174.22 L95.62 166.62 L108.42 169.87 L121.23 182.15 L134.04 183.23 L146.85 172.1 L159.65 176.74 L172.46 177.52 L185.27 139.4 L198.08 178.9 L210.88 172.76 L223.69 178.05 L236.5 166.82 L249.31 178.63 L262.12 179.13 L274.92 171.33 L287.73 172.89 L300.54 178.13 L313.35 178.07 L326.15 175.4 L338.96 147.06 L351.77 133.41 L364.58 159.07 L377.38 152.87 L403 141.7 L415.81 117.79 L428.62 120.45 L441.42 97.56 L454.23 115.14 L467.04 115.17 L479.85 81.38 L505.46 132.05 L518.27 95.16 L531.08 104.6 L543.88 132.91 L556.69 113.53 L569.5 117.67 L595.12 97.63 L620.73 86.32 L633.54 119.21 L646.35 133.01 L659.15 94.84 L671.96 100.31 L684.77 107.05 L697.58 37.58 L710.38 113.01 L723.19 85.35 L736 114.47" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="82.81" cy="174.22" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="95.62" cy="166.62" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="108.42" cy="169.87" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="121.23" cy="182.15" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="134.04" cy="183.23" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="146.85" cy="172.1" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="159.65" cy="176.74" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="172.46" cy="177.52" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="185.27" cy="139.4" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="198.08" cy="178.9" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="210.88" cy="172.76" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="223.69" cy="178.05" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="236.5" cy="166.82" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="249.31" cy="178.63" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="262.12" cy="179.13" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="274.92" cy="171.33" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="287.73" cy="172.89" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="300.54" cy="178.13" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="313.35" cy="178.07" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="326.15" cy="175.4" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="338.96" cy="147.06" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="351.77" cy="133.41" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="364.58" cy="159.07" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="377.38" cy="152.87" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="403" cy="141.7" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="415.81" cy="117.79" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="428.62" cy="120.45" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="441.42" cy="97.56" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="454.23" cy="115.14" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="467.04" cy="115.17" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="479.85" cy="81.38" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="505.46" cy="132.05" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="518.27" cy="95.16" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="531.08" cy="104.6" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="543.88" cy="132.91" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="556.69" cy="113.53" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="569.5" cy="117.67" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="595.12" cy="97.63" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="620.73" cy="86.32" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="633.54" cy="119.21" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="646.35" cy="133.01" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="659.15" cy="94.84" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="671.96" cy="100.31" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="684.77" cy="107.05" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="697.58" cy="37.58" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="710.38" cy="113.01" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="723.19" cy="85.35" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="736" cy="114.47" r="2.1" fill="var(--fig-violet, #6733C4)"/>
+<text x="16" y="238" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) “wait” 一个词的次数</text>
+<rect x="326.15" y="254" width="192.12" height="146" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08"/>
+<text x="422.21" y="270" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">4,000–7,000 步：偶尔出现</text>
+<line x1="70" y1="400" x2="736" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="404" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="70" y1="363.5" x2="736" y2="363.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="367.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">400</text>
+<line x1="70" y1="327" x2="736" y2="327" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">800</text>
+<line x1="70" y1="290.5" x2="736" y2="290.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="294.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1,200</text>
+<line x1="70" y1="254" x2="736" y2="254" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1,600</text>
+<line x1="70" y1="254" x2="70" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="198.08" y1="254" x2="198.08" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="198.08" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2,000</text>
+<line x1="326.15" y1="254" x2="326.15" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="326.15" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4,000</text>
+<line x1="454.23" y1="254" x2="454.23" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="454.23" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6,000</text>
+<line x1="582.31" y1="254" x2="582.31" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="582.31" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8,000</text>
+<line x1="710.38" y1="254" x2="710.38" y2="400" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="710.38" y="416" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10,000</text>
+<line x1="70" y1="400" x2="736" y2="400" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="595.12" y1="254" x2="595.12" y2="400" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path d="M82.81 400 L95.62 400 L108.42 400 L121.23 400 L134.04 400 L146.85 400 L159.65 400 L172.46 400 L185.27 400 L198.08 399.91 L210.88 399.91 L223.69 399.82 L236.5 399.91 L249.31 400 L262.12 400 L274.92 399.91 L287.73 400 L300.54 399.91 L313.35 399.45 L326.15 399 L338.96 398.08 L351.77 398.72 L364.58 396.44 L377.38 392.61 L403 395.62 L415.81 385.4 L428.62 392.06 L441.42 391.97 L454.23 385.95 L467.04 393.89 L479.85 395.35 L505.46 398.18 L518.27 397.9 L531.08 390.97 L543.88 395.16 L556.69 386.95 L569.5 388.5 L595.12 319.06 L620.73 263.12 L633.54 369.52 L646.35 390.33 L659.15 368.61 L671.96 361.68 L684.77 349.81 L697.58 366.69 L710.38 363.41 L723.19 308.02 L736 347.99" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="82.81" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="95.62" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="108.42" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="121.23" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="134.04" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="146.85" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="159.65" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="172.46" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="185.27" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="198.08" cy="399.91" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="210.88" cy="399.91" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="223.69" cy="399.82" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="236.5" cy="399.91" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="249.31" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="262.12" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="274.92" cy="399.91" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="287.73" cy="400" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="300.54" cy="399.91" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="313.35" cy="399.45" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="326.15" cy="399" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="338.96" cy="398.08" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="351.77" cy="398.72" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="364.58" cy="396.44" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="377.38" cy="392.61" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="403" cy="395.62" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="415.81" cy="385.4" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="428.62" cy="392.06" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="441.42" cy="391.97" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="454.23" cy="385.95" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="467.04" cy="393.89" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="479.85" cy="395.35" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="505.46" cy="398.18" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="518.27" cy="397.9" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="531.08" cy="390.97" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="543.88" cy="395.16" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="556.69" cy="386.95" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="569.5" cy="388.5" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="595.12" cy="319.06" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="620.73" cy="263.12" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="633.54" cy="369.52" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="646.35" cy="390.33" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="659.15" cy="368.61" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="671.96" cy="361.68" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="684.77" cy="349.81" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="697.58" cy="366.69" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="710.38" cy="363.41" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="723.19" cy="308.02" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="736" cy="347.99" r="2.1" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="628.73" y="267.12" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">第 8,600 步：1,500</text>
+<text x="589.12" y="323.06" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">第 8,200 步：887</text>
+<text x="736" y="438" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">红虚线：第 8,200 步，最大长度加倍</text>
+<text x="403" y="438" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">RL 训练步数</text>
+</svg>

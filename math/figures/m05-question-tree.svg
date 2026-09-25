@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>用是/否问题猜一个符号：按哪个分布设计问题，平均就要问多少次</title>
+
+<rect x="8" y="18" width="244" height="400" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="130" y="42" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">(a) 按真实分布 p 设计</text>
+<rect x="258" y="18" width="244" height="400" fill="var(--fig-violet, #6733C4)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="380" y="42" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">(b) 按均匀分布设计</text>
+<rect x="508" y="18" width="244" height="400" fill="var(--fig-red, #A3231C)" fill-opacity="0.04" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="630" y="42" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">(c) 按“反了”的分布设计</text>
+<rect x="25" y="78" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="68" y="97" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 A？</text>
+<circle cx="24" cy="154" r="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5"/>
+<text x="24" y="159" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">A</text>
+<text x="24" y="187" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1 问</text>
+<line x1="68" y1="106" x2="24" y2="139" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="37" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<rect x="89" y="140" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="132" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 B？</text>
+<line x1="68" y1="106" x2="132" y2="139" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="109" y="125" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<circle cx="88" cy="216" r="15" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5"/>
+<text x="88" y="221" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">B</text>
+<text x="88" y="249" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<line x1="132" y1="168" x2="88" y2="201" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="101" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<rect x="153" y="202" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="196" y="221" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 C？</text>
+<line x1="132" y1="168" x2="196" y2="201" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="173" y="187" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<circle cx="156" cy="278" r="15" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.5"/>
+<text x="156" y="283" font-size="14" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">C</text>
+<text x="156" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3 问</text>
+<line x1="196" y1="230" x2="156" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="167" y="249" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<circle cx="236" cy="278" r="15" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5"/>
+<text x="236" y="283" font-size="14" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">D</text>
+<text x="236" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3 问</text>
+<line x1="196" y1="230" x2="236" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="225" y="249" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<text x="130" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">q = (1/2, 1/4, 1/8, 1/8)</text>
+<rect x="332" y="78" width="96" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="380" y="97" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 A 或 B？</text>
+<rect x="291" y="170" width="62" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="322" y="189" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 A？</text>
+<rect x="407" y="170" width="62" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="438" y="189" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 C？</text>
+<line x1="380" y1="106" x2="322" y2="169" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="342" y="140" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<line x1="380" y1="106" x2="438" y2="169" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="418" y="140" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<circle cx="296" cy="278" r="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5"/>
+<text x="296" y="283" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">A</text>
+<text x="296" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<circle cx="348" cy="278" r="15" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5"/>
+<text x="348" y="283" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">B</text>
+<text x="348" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<line x1="322" y1="198" x2="296" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="300" y="233" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end"></text>
+<line x1="322" y1="198" x2="348" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="344" y="233" font-size="11" fill="var(--fig-muted, #74716A)"></text>
+<circle cx="412" cy="278" r="15" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.5"/>
+<text x="412" y="283" font-size="14" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">C</text>
+<text x="412" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<circle cx="464" cy="278" r="15" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5"/>
+<text x="464" y="283" font-size="14" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">D</text>
+<text x="464" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<line x1="438" y1="198" x2="412" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="416" y="233" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end"></text>
+<line x1="438" y1="198" x2="464" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="460" y="233" font-size="11" fill="var(--fig-muted, #74716A)"></text>
+<text x="380" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">q = (1/4, 1/4, 1/4, 1/4)</text>
+<rect x="525" y="78" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="568" y="97" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 D？</text>
+<circle cx="524" cy="154" r="15" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.5"/>
+<text x="524" y="159" font-size="14" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">D</text>
+<text x="524" y="187" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1 问</text>
+<line x1="568" y1="106" x2="524" y2="139" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="537" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<rect x="589" y="140" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="632" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 C？</text>
+<line x1="568" y1="106" x2="632" y2="139" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="609" y="125" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<circle cx="588" cy="216" r="15" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.5"/>
+<text x="588" y="221" font-size="14" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">C</text>
+<text x="588" y="249" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 问</text>
+<line x1="632" y1="168" x2="588" y2="201" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="601" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<rect x="653" y="202" width="86" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="696" y="221" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">是 A？</text>
+<line x1="632" y1="168" x2="696" y2="201" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="673" y="187" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<circle cx="656" cy="278" r="15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5"/>
+<text x="656" y="283" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">A</text>
+<text x="656" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3 问</text>
+<line x1="696" y1="230" x2="656" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="667" y="249" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">是</text>
+<circle cx="736" cy="278" r="15" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5"/>
+<text x="736" y="283" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">B</text>
+<text x="736" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3 问</text>
+<line x1="696" y1="230" x2="736" y2="263" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="725" y="249" font-size="11" fill="var(--fig-muted, #74716A)">否</text>
+<text x="630" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">q = (1/8, 1/8, 1/4, 1/2)</text>
+<text x="130" y="354" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">½·1 + ¼·2 + ⅛·3 + ⅛·3</text>
+<text x="130" y="376" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">平均 1.75 问 = H(p)</text>
+<text x="130" y="398" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">多问 0</text>
+<text x="380" y="354" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">½·2 + ¼·2 + ⅛·2 + ⅛·2</text>
+<text x="380" y="376" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">平均 2 问 = H(p, q)</text>
+<text x="380" y="398" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">多问 0.25 = KL(p‖q)</text>
+<text x="630" y="354" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">½·3 + ¼·3 + ⅛·2 + ⅛·1</text>
+<text x="630" y="376" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">平均 2.625 问 = H(p, q)</text>
+<text x="630" y="398" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">多问 0.875 = KL(p‖q)</text>
+</svg>

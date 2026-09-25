@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 452" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>解耦 RoPE：一个头的 192 维查询与键</title>
+
+<text x="16" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">第 i 个头：查询和键各 192 维 = 128 维内容 + 64 维位置</text>
+<text x="106" y="71" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">查询 <tspan font-weight="700">q</tspan><tspan dy="3.9" font-size="11">t,i</tspan></text>
+<rect x="118" y="50" width="256" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="246" y="71" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">q</tspan><tspan dy="-5.2" font-size="11">C</tspan><tspan dy="9.1" font-size="11">t,i</tspan><tspan dy="-3.9">（128）</tspan></text>
+<rect x="374" y="50" width="128" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-red, #A3231C)" stroke-width="2" rx="3"/>
+<text x="438" y="71" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">q</tspan><tspan dy="-5.2" font-size="11">R</tspan><tspan dy="9.1" font-size="11">t,i</tspan><tspan dy="-3.9">（64）</tspan></text>
+<text x="246" y="44" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">= <tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UQ</tspan><tspan dy="8" font-size="11">i</tspan><tspan dy="-3.4" font-weight="700">c</tspan><tspan dy="-4.6" font-size="11">Q</tspan><tspan dy="8" font-size="11">t</tspan><tspan dy="-3.4">，不旋转</tspan></text>
+<text x="438" y="44" font-size="11.5" fill="var(--fig-red, #A3231C)" text-anchor="middle">RoPE(<tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">QR</tspan><tspan dy="8" font-size="11">i</tspan><tspan dy="-3.4" font-weight="700">c</tspan><tspan dy="-4.6" font-size="11">Q</tspan><tspan dy="8" font-size="11">t</tspan><tspan dy="-3.4">)，每头一个</tspan></text>
+<text x="106" y="139" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">键 <tspan font-weight="700">k</tspan><tspan dy="3.9" font-size="11">j,i</tspan></text>
+<rect x="118" y="118" width="256" height="32" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="246" y="139" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-5.2" font-size="11">C</tspan><tspan dy="9.1" font-size="11">j,i</tspan><tspan dy="-3.9">（128）</tspan></text>
+<rect x="374" y="118" width="128" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="2" rx="3"/>
+<text x="438" y="139" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-5.2" font-size="11">R</tspan><tspan dy="9.1" font-size="11">j</tspan><tspan dy="-3.9">（64）</tspan></text>
+<text x="246" y="166" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">= <tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UK</tspan><tspan dy="8" font-size="11">i</tspan><tspan dy="-3.4" font-weight="700">c</tspan><tspan dy="-4.6" font-size="11">KV</tspan><tspan dy="8" font-size="11">j</tspan><tspan dy="-3.4">，每头不同，不旋转</tspan></text>
+<text x="438" y="166" font-size="11.5" fill="var(--fig-red, #A3231C)" text-anchor="middle">RoPE(<tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">KR</tspan><tspan dy="4.6" font-weight="700">h</tspan><tspan dy="3.4" font-size="11">j</tspan><tspan dy="-3.4">)，没有下标 i</tspan></text>
+<path d="M120 196 v8 h252.0 v-8" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<path d="M376.0 196 v8 h124.0 v-8" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4"/>
+<text x="246" y="222" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">内容分数 (<tspan font-weight="700">q</tspan><tspan dy="-4.8" font-size="11">C</tspan><tspan dy="8.4" font-size="11">t,i</tspan><tspan dy="-3.6">)</tspan><tspan dy="-4.8" font-size="11">⊤</tspan><tspan dy="4.8" font-weight="700">k</tspan><tspan dy="-4.8" font-size="11">C</tspan><tspan dy="8.4" font-size="11">j,i</tspan><tspan dy="-3.6">：没有旋转夹在中间 → 可吸收</tspan></text>
+<text x="474" y="242" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">位置分数 (<tspan font-weight="700">q</tspan><tspan dy="-4.8" font-size="11">R</tspan><tspan dy="8.4" font-size="11">t,i</tspan><tspan dy="-3.6">)</tspan><tspan dy="-4.8" font-size="11">⊤</tspan><tspan dy="4.8" font-weight="700">k</tspan><tspan dy="-4.8" font-size="11">R</tspan><tspan dy="8.4" font-size="11">j</tspan><tspan dy="-3.6">：含 </tspan><tspan font-weight="700">R</tspan><tspan dy="3.6" font-size="11">j−t</tspan></text>
+<text x="516" y="71" font-size="12" fill="var(--fig-muted, #74716A)">拼接</text>
+<text x="516" y="139" font-size="12" fill="var(--fig-muted, #74716A)">拼接</text>
+<text x="560" y="110" font-size="12" fill="var(--fig-ink, #1C1B19)">分数 = 两部分之和，</text>
+<text x="560" y="128" font-size="12" fill="var(--fig-ink, #1C1B19)">再除以 √192</text>
+<line x1="12" y1="262" x2="728" y2="262" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="286" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">同一个 token j 在不同头里的键：内容部分各不相同，位置部分是同一个向量</text>
+<text x="106" y="318" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">头 1</text>
+<rect x="118" y="302" width="256" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="246" y="318" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"></text>
+<text x="246" y="318" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle"><tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UK</tspan><tspan dy="8.4" font-size="11">1</tspan><tspan dy="-3.6" font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">KV</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<rect x="374" y="302" width="128" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="2" rx="3"/>
+<text x="438" y="318" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"></text>
+<text x="438" y="318" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan dy="-4.8" font-size="11">R</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<text x="106" y="350" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">头 2</text>
+<rect x="118" y="334" width="256" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="246" y="350" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"></text>
+<text x="246" y="350" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle"><tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UK</tspan><tspan dy="8.4" font-size="11">2</tspan><tspan dy="-3.6" font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">KV</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<rect x="374" y="334" width="128" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="2" rx="3"/>
+<text x="438" y="350" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"></text>
+<text x="438" y="350" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan dy="-4.8" font-size="11">R</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<text x="106" y="396" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">头 128</text>
+<rect x="118" y="380" width="256" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.4" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="246" y="396" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"></text>
+<text x="246" y="396" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle"><tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UK</tspan><tspan dy="8.4" font-size="11">128</tspan><tspan dy="-3.6" font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">KV</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<rect x="374" y="380" width="128" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="2" rx="3"/>
+<text x="438" y="396" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"></text>
+<text x="438" y="396" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan dy="-4.8" font-size="11">R</tspan><tspan dy="8.4" font-size="11">j</tspan></text>
+<text x="106" y="364" font-size="14" fill="var(--fig-muted, #74716A)" text-anchor="end">⋮</text>
+<text x="246" y="370" font-size="14" fill="var(--fig-muted, #74716A)" text-anchor="middle">⋮</text>
+<rect x="526" y="318" width="198" height="96" fill="var(--fig-amber, #8A6508)" fill-opacity="0.06" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" rx="6"/>
+<text x="536" y="338" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">推理时每 token 每层缓存：</text>
+<rect x="536" y="348" width="102" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-amber, #8A6508)" stroke-width="2" rx="3"/>
+<text x="587" y="362" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">KV</tspan><tspan dy="8.4" font-size="11">j</tspan><tspan dy="-3.6">  512</tspan></text>
+<rect x="642" y="348" width="50" height="18" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="2" rx="3"/>
+<text x="667" y="362" font-size="11.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-4.6" font-size="11">R</tspan><tspan dy="8" font-size="11">j</tspan><tspan dy="-3.4"> 64</tspan></text>
+<text x="536" y="388" font-size="12" fill="var(--fig-ink, #1C1B19)">= 576 个数；</text>
+<text x="536" y="405" font-size="12" fill="var(--fig-muted, #74716A)">同形状 MHA 要存 32,768 个</text>
+</svg>

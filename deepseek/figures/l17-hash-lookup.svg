@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 562" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Engram 的查表：分词器压缩、N-gram、乘法-异或哈希、按 8 个素数取模、拼接</title>
+<defs><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="40" y="18" width="116" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="98" y="39.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Alexander</text>
+<text x="91" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">x<tspan baseline-shift="sub" font-size="11">t−2</tspan></text>
+<rect x="170" y="18" width="116" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="228" y="39.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"> the</text>
+<text x="221" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">x<tspan baseline-shift="sub" font-size="11">t−1</tspan></text>
+<rect x="300" y="18" width="116" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="358" y="39.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"> Great</text>
+<text x="351" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">x<tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="20" y="12" font-size="12" fill="var(--fig-ink, #1C1B19)"></text>
+<text x="450" y="28" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="700">分词器压缩 𝒫（满射，V → V′）</text>
+<text x="450" y="48" font-size="12" fill="var(--fig-ink, #1C1B19)">NFKC → NFD → 去重音 → 小写 → 空白折叠</text>
+<text x="450" y="66" font-size="12" fill="var(--fig-ink, #1C1B19)">例：“ Great”与“ great”→ 同一个 ID</text>
+<text x="450" y="84" font-size="12" fill="var(--fig-muted, #74716A)">128K 词表的有效大小减少约 23%</text>
+<line x1="98" y1="56" x2="98" y2="98" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<line x1="228" y1="56" x2="228" y2="98" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<line x1="358" y1="56" x2="358" y2="98" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<text x="366" y="86" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="700">𝒫</text>
+<rect x="58" y="100" width="80" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="98" y="119.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x′<tspan baseline-shift="sub" font-size="11">t−2</tspan></text>
+<rect x="188" y="100" width="80" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="228" y="119.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x′<tspan baseline-shift="sub" font-size="11">t−1</tspan></text>
+<rect x="318" y="100" width="80" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="358" y="119.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x′<tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<rect x="20" y="157" width="348" height="57" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="194" y="179.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2-gram (x′<tspan baseline-shift="sub" font-size="11">t−1</tspan>, x′<tspan baseline-shift="sub" font-size="11">t</tspan>)</text>
+<text x="194" y="200.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">mix<tspan baseline-shift="sub" font-size="11">2</tspan> = x′<tspan baseline-shift="sub" font-size="11">t</tspan>·c<tspan baseline-shift="sub" font-size="11">0</tspan> ⊕ x′<tspan baseline-shift="sub" font-size="11">t−1</tspan>·c<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="392" y="157" width="348" height="57" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="566" y="179.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3-gram (x′<tspan baseline-shift="sub" font-size="11">t−2</tspan>, x′<tspan baseline-shift="sub" font-size="11">t−1</tspan>, x′<tspan baseline-shift="sub" font-size="11">t</tspan>)</text>
+<text x="566" y="200.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">mix<tspan baseline-shift="sub" font-size="11">3</tspan> = mix<tspan baseline-shift="sub" font-size="11">2</tspan> ⊕ x′<tspan baseline-shift="sub" font-size="11">t−2</tspan>·c<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<path d="M58 134 v6 H398 v-6" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3"/>
+<path d="M228.0 140 C 228.0 148, 194.0 144, 194.0 155" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<path d="M228.0 140 C 228.0 148, 566.0 144, 566.0 155" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<text x="194" y="232" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">同一个 mix 对 8 个不同素数取模：8 个头 = 8 张表</text>
+<line x1="194" y1="214" x2="194" y2="220" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<rect x="26.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="28.75" y="344.72" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="41.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h1</text>
+<rect x="70.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="72.25" y="335.08" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="85.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h2</text>
+<rect x="113.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="115.75" y="280.68" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="128.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h3</text>
+<rect x="157.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="159.25" y="268" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="172.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h4</text>
+<rect x="200.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="202.75" y="351.66" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="215.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h5</text>
+<rect x="244.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="246.25" y="339.84" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="259.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h6</text>
+<rect x="287.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="289.75" y="332.16" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="302.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h7</text>
+<rect x="331.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="333.25" y="320.95" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="346.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h8</text>
+<text x="194" y="394" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p = 2,262,409, 2,262,413, …, 2,262,467</text>
+<text x="194" y="412" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每张表约 226 万行 × 80 维（行号 = mix mod p）</text>
+<text x="566" y="232" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">同一个 mix 对 8 个不同素数取模：8 个头 = 8 张表</text>
+<line x1="566" y1="214" x2="566" y2="220" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<rect x="398.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="400.75" y="364.79" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="413.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h1</text>
+<rect x="442.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="444.25" y="296.89" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="457.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h2</text>
+<rect x="485.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="487.75" y="337.26" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="500.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h3</text>
+<rect x="529.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="531.25" y="349.22" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="544.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h4</text>
+<rect x="572.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="574.75" y="292.23" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="587.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h5</text>
+<rect x="616.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="618.25" y="350.41" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="631.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h6</text>
+<rect x="659.75" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="661.75" y="287.37" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="674.75" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h7</text>
+<rect x="703.25" y="262" width="30" height="112" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="3"/>
+<rect x="705.25" y="318.42" width="26" height="5" fill="var(--fig-orange, #B4460C)" fill-opacity="0.9"/>
+<text x="718.25" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">h8</text>
+<text x="566" y="394" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p = 2,262,499, 2,262,521, …, 2,262,619</text>
+<text x="566" y="412" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每张表约 226 万行 × 80 维（行号 = mix mod p）</text>
+<rect x="60" y="468" width="320" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<rect x="380" y="468" width="320" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.42" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="100" y1="468" x2="100" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="100" y1="488" x2="100" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="140" y1="468" x2="140" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="140" y1="488" x2="140" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="180" y1="468" x2="180" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="180" y1="488" x2="180" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="220" y1="468" x2="220" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="220" y1="488" x2="220" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="260" y1="468" x2="260" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="260" y1="488" x2="260" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="300" y1="468" x2="300" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="300" y1="488" x2="300" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="340" y1="468" x2="340" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="340" y1="488" x2="340" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="420" y1="468" x2="420" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="420" y1="488" x2="420" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="460" y1="468" x2="460" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="460" y1="488" x2="460" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="500" y1="468" x2="500" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="500" y1="488" x2="500" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="540" y1="468" x2="540" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="540" y1="488" x2="540" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="580" y1="468" x2="580" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="580" y1="488" x2="580" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="620" y1="468" x2="620" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="620" y1="488" x2="620" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="660" y1="468" x2="660" y2="474" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="660" y1="488" x2="660" y2="494" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<line x1="194" y1="422" x2="220" y2="464" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" marker-end="url(#ah-orange)"/>
+<line x1="566" y1="422" x2="540" y2="464" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" marker-end="url(#ah-orange)"/>
+<text x="380" y="440" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">每个头取回一行，共 16 行</text>
+<text x="220" y="486" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8 段来自 2-gram</text>
+<text x="540" y="486" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8 段来自 3-gram</text>
+<text x="52" y="486" font-size="14" fill="var(--fig-orange, #B4460C)" text-anchor="end" font-weight="700"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="380" y="516" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">拼接：<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">1280</tspan> = 2 阶 × 8 头 × 80 维（Engram-27B）；V4.1-Flash：3 阶 × 8 头 × 256 维 = 6144 维</text>
+<text x="380" y="538" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">示意：token ID 与乘子 c 为虚构；素数是按演示代码布局复算的 Engram-27B 第一层真实表大小。</text>
+</svg>

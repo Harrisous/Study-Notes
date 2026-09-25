@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>1e17 FLOPs 预算下 batch size × 学习率的训练损失网格</title>
+
+<rect x="97" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="116" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.872</text>
+<rect x="137" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="156" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.872</text>
+<rect x="177" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="196" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.886</text>
+<rect x="217" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="236" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.893</text>
+<rect x="257" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="276" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.900</text>
+<rect x="297" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="316" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.877</text>
+<rect x="337" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="356" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.891</text>
+<rect x="377" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="396" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.890</text>
+<rect x="417" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="436" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.878</text>
+<rect x="457" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="476" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.902</text>
+<rect x="497" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="516" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.912</text>
+<rect x="537" y="47" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="556" y="64" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.918</text>
+<rect x="97" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.08"/>
+<text x="116" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.787</text>
+<rect x="137" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.1"/>
+<text x="156" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.781</text>
+<rect x="177" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.06"/>
+<text x="196" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.794</text>
+<rect x="217" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.12"/>
+<text x="236" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.775</text>
+<rect x="257" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.09"/>
+<text x="276" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.782</text>
+<rect x="297" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.16"/>
+<text x="316" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.759</text>
+<rect x="337" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.18"/>
+<text x="356" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.755</text>
+<rect x="377" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.09"/>
+<text x="396" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.784</text>
+<rect x="417" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.19"/>
+<text x="436" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.750</text>
+<rect x="457" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.2"/>
+<text x="476" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.747</text>
+<rect x="497" y="75" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.16"/>
+<text x="516" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.761</text>
+<rect x="537" y="75" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.06"/>
+<text x="556" y="92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.805</text>
+<rect x="97" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.17"/>
+<text x="116" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.757</text>
+<rect x="137" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.22"/>
+<text x="156" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.740</text>
+<rect x="177" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.31"/>
+<text x="196" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.711</text>
+<rect x="217" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.31"/>
+<text x="236" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.712</text>
+<rect x="257" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.22"/>
+<text x="276" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.741</text>
+<rect x="297" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.24"/>
+<text x="316" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.733</text>
+<rect x="337" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="356" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.720</text>
+<rect x="377" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.3"/>
+<text x="396" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.715</text>
+<rect x="417" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.32"/>
+<text x="436" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.708</text>
+<rect x="457" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.32"/>
+<text x="476" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.707</text>
+<rect x="497" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="516" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">3.693</text>
+<rect x="537" y="103" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.1"/>
+<text x="556" y="120" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.781</text>
+<rect x="97" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.2"/>
+<text x="116" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.747</text>
+<rect x="137" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.21"/>
+<text x="156" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.744</text>
+<rect x="177" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.24"/>
+<text x="196" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.734</text>
+<rect x="217" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.27"/>
+<text x="236" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.724</text>
+<rect x="257" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.31"/>
+<text x="276" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.712</text>
+<rect x="297" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.36"/>
+<text x="316" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.695</text>
+<rect x="337" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.35"/>
+<text x="356" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.698</text>
+<rect x="377" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="396" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">3.693</text>
+<rect x="417" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="436" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">3.690</text>
+<rect x="457" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.18"/>
+<text x="476" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.753</text>
+<rect x="497" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="516" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">3.685</text>
+<rect x="537" y="131" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.21"/>
+<text x="556" y="148" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.744</text>
+<rect x="97" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.1"/>
+<text x="116" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.779</text>
+<rect x="137" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.22"/>
+<text x="156" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.740</text>
+<rect x="177" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.22"/>
+<text x="196" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.741</text>
+<rect x="217" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.26"/>
+<text x="236" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.726</text>
+<rect x="257" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.34"/>
+<text x="276" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.701</text>
+<rect x="297" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.32"/>
+<text x="316" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.709</text>
+<rect x="337" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.32"/>
+<text x="356" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.709</text>
+<rect x="377" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.33"/>
+<text x="396" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.704</text>
+<rect x="417" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.2"/>
+<text x="436" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.746</text>
+<rect x="457" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.18"/>
+<text x="476" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.754</text>
+<rect x="497" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.21"/>
+<text x="516" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.743</text>
+<rect x="537" y="159" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.15"/>
+<text x="556" y="176" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.764</text>
+<rect x="97" y="187" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.06"/>
+<text x="116" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.805</text>
+<rect x="137" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.13"/>
+<text x="156" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.770</text>
+<rect x="177" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.13"/>
+<text x="196" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.769</text>
+<rect x="217" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.22"/>
+<text x="236" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.739</text>
+<rect x="257" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.24"/>
+<text x="276" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.734</text>
+<rect x="297" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.25"/>
+<text x="316" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.730</text>
+<rect x="337" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.29"/>
+<text x="356" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.718</text>
+<rect x="377" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="396" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">3.691</text>
+<rect x="417" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.09"/>
+<text x="436" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.785</text>
+<rect x="457" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.12"/>
+<text x="476" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.775</text>
+<rect x="497" y="187" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.08"/>
+<text x="516" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.788</text>
+<rect x="537" y="187" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.06"/>
+<text x="556" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.809</text>
+<rect x="97" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="116" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.880</text>
+<rect x="137" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="156" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.867</text>
+<rect x="177" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07"/>
+<text x="196" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.839</text>
+<rect x="217" y="215" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.04"/>
+<text x="236" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.800</text>
+<rect x="257" y="215" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.05"/>
+<text x="276" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.796</text>
+<rect x="297" y="215" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.08"/>
+<text x="316" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.786</text>
+<rect x="337" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="356" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.910</text>
+<rect x="377" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07"/>
+<text x="396" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.852</text>
+<rect x="417" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07"/>
+<text x="436" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.835</text>
+<rect x="457" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.07"/>
+<text x="476" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.845</text>
+<rect x="497" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<text x="516" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.862</text>
+<rect x="537" y="215" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.06"/>
+<text x="556" y="232" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.808</text>
+<rect x="97" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.14"/>
+<text x="116" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.136</text>
+<rect x="137" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.13"/>
+<text x="156" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.071</text>
+<rect x="177" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.11"/>
+<text x="196" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.999</text>
+<rect x="217" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="236" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.964</text>
+<rect x="257" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="276" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.957</text>
+<rect x="297" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.12"/>
+<text x="316" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.047</text>
+<rect x="337" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="356" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.960</text>
+<rect x="377" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="396" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.970</text>
+<rect x="417" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="436" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.976</text>
+<rect x="457" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.09"/>
+<text x="476" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.920</text>
+<rect x="497" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="516" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.956</text>
+<rect x="537" y="243" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="556" y="260" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3.960</text>
+<rect x="97" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.27"/>
+<text x="116" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.653</text>
+<rect x="137" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.22"/>
+<text x="156" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.456</text>
+<rect x="177" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.3"/>
+<text x="196" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.764</text>
+<rect x="217" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.24"/>
+<text x="236" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.513</text>
+<rect x="257" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.2"/>
+<text x="276" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.347</text>
+<rect x="297" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.16"/>
+<text x="316" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.197</text>
+<rect x="337" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.18"/>
+<text x="356" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.281</text>
+<rect x="377" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.17"/>
+<text x="396" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.222</text>
+<rect x="417" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.15"/>
+<text x="436" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.156</text>
+<rect x="457" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.14"/>
+<text x="476" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.111</text>
+<rect x="497" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.13"/>
+<text x="516" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.078</text>
+<rect x="537" y="271" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.15"/>
+<text x="556" y="288" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.166</text>
+<rect x="97" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.35"/>
+<text x="116" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.958</text>
+<rect x="137" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.36"/>
+<text x="156" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5.152</text>
+<rect x="177" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.36"/>
+<text x="196" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5.098</text>
+<rect x="217" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.36"/>
+<text x="236" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5.013</text>
+<rect x="257" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.35"/>
+<text x="276" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.964</text>
+<rect x="297" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.36"/>
+<text x="316" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5.001</text>
+<rect x="337" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.35"/>
+<text x="356" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.965</text>
+<rect x="377" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.3"/>
+<text x="396" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.770</text>
+<rect x="417" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.32"/>
+<text x="436" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.834</text>
+<rect x="457" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.29"/>
+<text x="476" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.715</text>
+<rect x="497" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.3"/>
+<text x="516" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.741</text>
+<rect x="537" y="299" width="38" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.26"/>
+<text x="556" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.614</text>
+<text x="88" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">15</tspan></text>
+<text x="88" y="92" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">16</tspan></text>
+<text x="88" y="120" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">16.5</tspan></text>
+<text x="88" y="148" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">17</tspan></text>
+<text x="88" y="176" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">17.5</tspan></text>
+<text x="88" y="204" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">18</tspan></text>
+<text x="88" y="232" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">18.5</tspan></text>
+<text x="88" y="260" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">19</tspan></text>
+<text x="88" y="288" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">19.5</tspan></text>
+<text x="88" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">20</tspan></text>
+<text x="116" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-10.5</text>
+<text x="156" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-10.25</text>
+<text x="196" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-10</text>
+<text x="236" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-9.75</text>
+<text x="276" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-9.5</text>
+<text x="316" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-9.25</text>
+<text x="356" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-9</text>
+<text x="396" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-8.75</text>
+<text x="436" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-8.5</text>
+<text x="476" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-8.25</text>
+<text x="516" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-8</text>
+<text x="556" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-7.75</text>
+<text x="336" y="18" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">学习率 η = 2<tspan baseline-shift="super" font-size="11">k</tspan>，表头为 k</text>
+<text x="28" y="186" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 28 186)">batch size（token）</text>
+<line x1="388.54" y1="117.99" x2="406.54" y2="135.99" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<line x1="388.54" y1="135.99" x2="406.54" y2="117.99" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<rect x="592" y="50" width="18" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="618" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)">近优格：</text>
+<text x="618" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)">≤ 最小值 × 1.0025</text>
+<text x="618" y="98" font-size="12" fill="var(--fig-muted, #74716A)">（阈值 3.6942，5 格）</text>
+<rect x="592" y="114" width="18" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.2"/>
+<text x="618" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)">3.80 以下，越深越低</text>
+<rect x="592" y="142" width="18" height="14" fill="var(--fig-red, #A3231C)" fill-opacity="0.3"/>
+<text x="618" y="154" font-size="12" fill="var(--fig-ink, #1C1B19)">3.80 以上，越红越高</text>
+<line x1="594" y1="174" x2="608" y2="188" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<line x1="594" y1="188" x2="608" y2="174" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<text x="618" y="186" font-size="12" fill="var(--fig-blue, #1F5FA8)">式 (6.12) 的预测：</text>
+<text x="618" y="204" font-size="12" fill="var(--fig-blue, #1F5FA8)">B = 2<tspan baseline-shift="super" font-size="11">16.70</tspan></text>
+<text x="618" y="222" font-size="12" fill="var(--fig-blue, #1F5FA8)">η = 2<tspan baseline-shift="super" font-size="11">-8.74</tspan></text>
+<text x="592" y="256" font-size="12" fill="var(--fig-ink, #1C1B19)">最小值 3.685 在</text>
+<text x="592" y="274" font-size="12" fill="var(--fig-ink, #1C1B19)">B = 2<tspan baseline-shift="super" font-size="11">17</tspan>，η = 2<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<text x="592" y="306" font-size="12" fill="var(--fig-muted, #74716A)">每格训练 5.65×10<tspan baseline-shift="super" font-size="11">8</tspan></text>
+<text x="592" y="324" font-size="12" fill="var(--fig-muted, #74716A)">个 token；B = 2<tspan baseline-shift="super" font-size="11">20</tspan></text>
+<text x="592" y="342" font-size="12" fill="var(--fig-muted, #74716A)">时只有约 539 步</text>
+</svg>

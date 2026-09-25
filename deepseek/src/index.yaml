@@ -1,0 +1,44 @@
+title: DeepSeek 科技树：从 GPT 到 DeepSeek-V4.1
+description: 一门从标准 GPT Transformer 讲到 DeepSeek-V4.1-Flash 的中文课程：每个架构与训练创新背后的问题、公式、推导和账单。
+lede: 从标准 GPT 的一次前向传播讲起，沿着 DeepSeek 的每一篇技术报告一路走到 2026 年 9 月的 V4.1-Flash。每一课回答同一类问题：上一代模型的账单是什么，这一代用什么数学把它压下去，代价又是什么。
+back: ../index.html
+aside: <b>怎么读：</b>按顺序读，每课都接着上一课留下的问题。数学不熟的地方，课里的黄色“前置知识”框会链接到 <a href="../math/index.html" style="color:var(--blue)">数学补课</a> 的对应小节。<b>六条主线</b>：注意力与 KV cache 经济学 · 前馈层的稀疏化（MoE） · 数值精度与训练系统 · 训练目标与后训练（RL） · 残差流与记忆 · 规模化规律与优化器。
+footer: 课程源文件在 <code>deepseek/src/</code>（Markdown），研究笔记与勘误在 <code>deepseek/reference-docs/</code>。
+sections:
+  - name: 总览
+    lessons:
+      - {file: lesson-00-tech-tree.html, tag: 第 0 课, tagclass: x, title: 科技树总览, desc: 一张时间轴、六条主线、每个模型的规格表，以及这门课的读法。}
+  - name: 第一部分 · GPT 的地基
+    blurb: 标准 GPT 的架构、训练、对齐与推理。后面所有 DeepSeek 的创新，都是在给这四课里的某一张账单打折。
+    lessons:
+      - {file: lesson-01-transformer-anatomy.html, tag: 第 1 课, title: Transformer 解剖：GPT 的一次前向传播, desc: 从 token 到 logits，每一步的张量形状、公式和它在数学上的意义。}
+      - {file: lesson-02-gpt-training.html, tag: 第 2 课, title: GPT 的训练：预训练、优化与 scaling laws, desc: 下一词预测、交叉熵、AdamW 与学习率调度、6ND 与规模化规律。}
+      - {file: lesson-03-alignment-rlhf.html, tag: 第 3 课, title: 从预训练模型到助手：SFT、RLHF 与 DPO, desc: 奖励模型、PPO 的裁剪目标、KL 约束与 DPO 的闭式推导。}
+      - {file: lesson-04-inference-kv-cache.html, tag: 第 4 课, title: 推理：自回归解码、KV cache 与带宽墙, desc: KV cache 从零推导、每 token 的字节账单、roofline、MQA/GQA 与投机解码。}
+      - {file: lesson-05-modern-block.html, tag: 第 5 课, title: 现代 Transformer 积木, desc: RoPE 的复数推导、RMSNorm、SwiGLU，以及 YaRN 这类上下文扩展方法。}
+  - name: 第二部分 · DeepSeek 的起点（2024 上半年）
+    lessons:
+      - {file: lesson-06-deepseek-llm.html, tag: 第 6 课, title: DeepSeek LLM：以长期主义做 scaling, desc: 超参数的规模化规律、用非嵌入 FLOPs 度量模型规模、数据质量如何改变最优分配。}
+      - {file: lesson-07-deepseekmoe.html, tag: 第 7 课, title: DeepSeekMoE：细粒度专家与共享专家, desc: MoE 的来龙去脉、组合数爆炸的直觉、共享专家与负载均衡损失。}
+      - {file: lesson-08-deepseekmath-grpo.html, tag: 第 8 课, title: DeepSeekMath 与 GRPO, desc: 去掉价值网络的组相对策略优化、KL 的无偏估计器、统一的梯度视角。}
+  - name: 第三部分 · V2 与 V3（2024）
+    lessons:
+      - {file: lesson-09-v2-mla.html, tag: 第 9 课, title: DeepSeek-V2（上）：多头潜在注意力 MLA, desc: 低秩 KV 压缩、矩阵吸收、解耦 RoPE，以及每 token 缓存省下了多少字节。}
+      - {file: lesson-10-v2-moe-training.html, tag: 第 10 课, title: DeepSeek-V2（下）：规模化 MoE、长上下文与对齐, desc: 设备受限路由、三种均衡损失、YaRN 扩到 128K、GRPO 对齐。}
+      - {file: lesson-11-v3-architecture.html, tag: 第 11 课, title: DeepSeek-V3（上）：无辅助损失均衡与多 token 预测, desc: 用一个只管路由的偏置代替辅助损失；MTP 的因果链与投机解码。}
+      - {file: lesson-12-v3-infrastructure.html, tag: 第 12 课, title: DeepSeek-V3（下）：FP8、DualPipe 与训练成本, desc: 细粒度 FP8 量化、累加精度、流水线气泡、跨节点通信与推理部署。}
+  - name: 第四部分 · 推理模型与稀疏注意力（2025）
+    lessons:
+      - {file: lesson-13-r1-reasoning.html, tag: 第 13 课, title: DeepSeek-R1：用强化学习激发推理, desc: R1-Zero 的纯 RL、规则奖励、多阶段流水线、蒸馏与失败的尝试。}
+      - {file: lesson-14-sparse-attention.html, tag: 第 14 课, title: 稀疏注意力：从 NSA 到 DSA, desc: 可训练的原生稀疏注意力、lightning indexer 与 top-k 选择。}
+      - {file: lesson-15-v3-2-agents.html, tag: 第 15 课, title: DeepSeek-V3.1 / V3.2：混合思考、规模化 RL 与智能体, desc: 一模两用的思考模式、稳定规模化 GRPO 的改动、智能体任务合成。}
+  - name: 第五部分 · 新架构（2025 年末至今）
+    lessons:
+      - {file: lesson-16-mhc.html, tag: 第 16 课, title: 残差流的新几何：Hyper-Connections 与 mHC, desc: 多条残差流、双随机矩阵与 Sinkhorn 迭代，让信号既不爆炸也不消失。}
+      - {file: lesson-17-engram-ocr.html, tag: 第 17 课, title: 记忆的另外两种形态：Engram 与 DeepSeek-OCR, desc: N-gram 查表式条件记忆，以及把文字上下文压成视觉 token。}
+      - {file: lesson-18-v4.html, tag: 第 18 课, title: DeepSeek-V4：百万 token 上下文, desc: CSA 与 HCA 混合注意力、mHC、Muon 优化器与百万上下文的账单。}
+      - {file: lesson-19-v4-1-flash.html, tag: 第 19 课, title: DeepSeek-V4.1-Flash：把 KV cache 压到极限, desc: 因果编码器-解码器、跨层 KV 复用、FP4 KV 缓存与持久化缓存的回放。}
+  - name: 复盘
+    lessons:
+      - {file: lesson-20-retrospective.html, tag: 第 20 课, tagclass: x, title: 总复盘：六条主线与开放问题, desc: 每条主线的演进表、被放弃的路线，以及跨课的综合练习。}
+      - {file: ../math/index.html, tag: 数学补课, tagclass: m, title: 数学补课（11 课）, desc: 线性代数、概率与信息论、微积分、优化、浮点数、强化学习数学、算力算术、双随机矩阵。}

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 348" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>知识混杂与知识冗余示意：少而大的专家 vs 细粒度专家 + 共享专家</title>
+
+<text x="20" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 传统 MoE：少而大的专家（画出 4 个）</text>
+<rect x="24" y="44" width="72" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="60" y="62" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 1</text>
+<rect x="30" y="70" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="3"/>
+<text x="60" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">代码</text>
+<rect x="30" y="100" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="60" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">数学</text>
+<rect x="30" y="130" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="3"/>
+<text x="60" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">诗词</text>
+<rect x="30" y="160" width="60" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="60" y="178" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">公共知识</text>
+<rect x="108" y="44" width="72" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="144" y="62" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 2</text>
+<rect x="114" y="70" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="3"/>
+<text x="144" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">法律</text>
+<rect x="114" y="100" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="144" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">医学</text>
+<rect x="114" y="130" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="3"/>
+<text x="144" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">体育</text>
+<rect x="114" y="160" width="60" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="144" y="178" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">公共知识</text>
+<rect x="192" y="44" width="72" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="228" y="62" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 3</text>
+<rect x="198" y="70" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="3"/>
+<text x="228" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">历史</text>
+<rect x="198" y="100" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="228" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">化学</text>
+<rect x="198" y="130" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="3"/>
+<text x="228" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">金融</text>
+<rect x="198" y="160" width="60" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="228" y="178" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">公共知识</text>
+<rect x="276" y="44" width="72" height="150" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="6"/>
+<text x="312" y="62" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">专家 4</text>
+<rect x="282" y="70" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" rx="3"/>
+<text x="312" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">地理</text>
+<rect x="282" y="100" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="312" y="118" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">音乐</text>
+<rect x="282" y="130" width="60" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="3"/>
+<text x="312" y="148" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">烹饪</text>
+<rect x="282" y="160" width="60" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="312" y="178" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">公共知识</text>
+<text x="24" y="230" font-size="12" fill="var(--fig-ink, #1C1B19)">混杂：一个专家要同时装下 3 类互不相干的知识，</text>
+<text x="24" y="248" font-size="12" fill="var(--fig-ink, #1C1B19)">它们很难在同一组参数里被同时用好。</text>
+<text x="24" y="274" font-size="12" fill="var(--fig-violet, #6733C4)">冗余：“公共知识”（语法、常识……）在每个专家里</text>
+<text x="24" y="292" font-size="12" fill="var(--fig-violet, #6733C4)">都要各学一份，参数花在了重复的东西上。</text>
+<path d="M30 200 L30 206 L342 206 L342 200" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="392" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) DeepSeekMoE：细粒度专家 + 共享专家</text>
+<rect x="392" y="44" width="330" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="6"/>
+<text x="557" y="62" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">共享专家：公共知识只存一份</text>
+<text x="557" y="78" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">每个 token 都经过它，不参与路由</text>
+<rect x="392" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="417" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="417" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">代码</text>
+<rect x="448" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="473" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="473" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">数学</text>
+<rect x="504" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="529" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="529" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">诗词</text>
+<rect x="560" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="585" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="585" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">法律</text>
+<rect x="616" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="641" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="641" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">医学</text>
+<rect x="672" y="100" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="697" y="117" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="697" y="135" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">体育</text>
+<rect x="392" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="417" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="417" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">历史</text>
+<rect x="448" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="473" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="473" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">化学</text>
+<rect x="504" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="529" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<text x="529" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">金融</text>
+<rect x="560" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="585" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<text x="585" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">地理</text>
+<rect x="616" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="641" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<text x="641" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">音乐</text>
+<rect x="672" y="152" width="50" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="697" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<text x="697" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">烹饪</text>
+<text x="392" y="228" font-size="12" fill="var(--fig-ink, #1C1B19)">每个小专家只装一类知识，一个 token 同时激活几个</text>
+<text x="392" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)">相关的小专家，按需组合（§5）；公共知识交给</text>
+<text x="392" y="264" font-size="12" fill="var(--fig-ink, #1C1B19)">共享专家，路由专家不必各存一份（§6）。</text>
+<line x1="20" y1="306" x2="720" y2="306" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="20" y="330" font-size="12" fill="var(--fig-muted, #74716A)">示意图：这是 DeepSeekMoE 论文提出的假说。真实专家“装了什么”是训练中自发形成的，论文只给出间接证据（§8）。</text>
+</svg>

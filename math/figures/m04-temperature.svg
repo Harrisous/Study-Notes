@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>温度改变分布的形状：同一组 logits 在三种温度下的分布与熵</title>
+
+<line x1="60" y1="268" x2="410" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="221.33" x2="410" y2="221.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="174.67" x2="410" y2="174.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="128" x2="410" y2="128" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="81.33" x2="410" y2="81.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="268" x2="410" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="60" y1="58" x2="60" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="56" y1="268" x2="60" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="56" y1="221.33" x2="60" y2="221.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="225.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="56" y1="174.67" x2="60" y2="174.67" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="178.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="56" y1="128" x2="60" y2="128" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<line x1="56" y1="81.33" x2="60" y2="81.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="85.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.8</text>
+<text x="20" y="163" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 20 163)">概率</text>
+<text x="60" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">logits z = (2, 1, 0.5, 0, −1) 在三种温度下</text>
+<rect x="62" y="74.51" width="20" height="193.49" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="72" y="69.51" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.83</text>
+<rect x="85" y="136.63" width="20" height="131.37" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="95" y="131.63" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.56</text>
+<rect x="108" y="180.61" width="20" height="87.39" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="118" y="175.61" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.37</text>
+<text x="95" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = 2</text>
+<rect x="132" y="241.81" width="20" height="26.19" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="155" y="219.67" width="20" height="48.33" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="178" y="214.99" width="20" height="53.01" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="165" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = 1</text>
+<rect x="202" y="258.37" width="20" height="9.63" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="225" y="238.69" width="20" height="29.31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="248" y="226.72" width="20" height="41.28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="235" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = 0.5</text>
+<rect x="272" y="264.46" width="20" height="3.54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="295" y="250.22" width="20" height="17.78" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="318" y="235.85" width="20" height="32.15" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="305" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = 0</text>
+<rect x="342" y="267.52" width="20" height="0.48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="352" y="262.52" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.00</text>
+<rect x="365" y="261.46" width="20" height="6.54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="375" y="256.46" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.03</text>
+<rect x="388" y="248.5" width="20" height="19.5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="398" y="243.5" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">.08</text>
+<text x="375" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">z = -1</text>
+<text x="235" y="302" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">token（按 logit 从大到小）</text>
+<rect x="250" y="60" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="270" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)">τ = 0.5，熵 0.878 bit</text>
+<rect x="250" y="80" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="270" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)">τ = 1，熵 1.741 bit</text>
+<rect x="250" y="100" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="270" y="110" font-size="12" fill="var(--fig-ink, #1C1B19)">τ = 2，熵 2.152 bit</text>
+<line x1="490" y1="268" x2="700" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="227.62" x2="700" y2="227.62" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="187.23" x2="700" y2="187.23" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="146.85" x2="700" y2="146.85" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="106.46" x2="700" y2="106.46" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="66.08" x2="700" y2="66.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="509.15" y1="58" x2="509.15" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="572.77" y1="58" x2="572.77" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="636.38" y1="58" x2="636.38" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="700" y1="58" x2="700" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="490" y1="268" x2="700" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="490" y1="58" x2="490" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="509.15" y1="268" x2="509.15" y2="272" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="509.15" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1</text>
+<line x1="572.77" y1="268" x2="572.77" y2="272" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="572.77" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="636.38" y1="268" x2="636.38" y2="272" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="636.38" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="700" y1="268" x2="700" y2="272" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="700" y="284" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="486" y1="268" x2="490" y2="268" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="486" y1="227.62" x2="490" y2="227.62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="231.62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="486" y1="187.23" x2="490" y2="187.23" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="191.23" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="486" y1="146.85" x2="490" y2="146.85" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="150.85" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.5</text>
+<line x1="486" y1="106.46" x2="490" y2="106.46" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="110.46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="486" y1="66.08" x2="490" y2="66.08" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="483" y="70.08" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.5</text>
+<text x="595" y="302" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">温度 τ（对数轴）</text>
+<text x="454" y="163" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 454 163)">熵（bit）</text>
+<text x="470" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">熵随温度的变化</text>
+<path d="M490 268 L490.7 268 L491.4 268 L492.11 268 L492.81 268 L493.51 268 L494.21 268 L494.92 268 L495.62 268 L496.32 268 L497.02 268 L497.73 268 L498.43 268 L499.13 268 L499.83 268 L500.54 268 L501.24 268 L501.94 268 L502.64 267.99 L503.34 267.99 L504.05 267.99 L504.75 267.99 L505.45 267.98 L506.15 267.98 L506.86 267.97 L507.56 267.97 L508.26 267.96 L508.96 267.94 L509.67 267.93 L510.37 267.91 L511.07 267.89 L511.77 267.87 L512.47 267.84 L513.18 267.8 L513.88 267.75 L514.58 267.7 L515.28 267.64 L515.99 267.57 L516.69 267.49 L517.39 267.39 L518.09 267.28 L518.8 267.15 L519.5 267.01 L520.2 266.84 L520.9 266.65 L521.61 266.44 L522.31 266.2 L523.01 265.93 L523.71 265.64 L524.41 265.3 L525.12 264.93 L525.82 264.52 L526.52 264.07 L527.22 263.57 L527.93 263.03 L528.63 262.43 L529.33 261.79 L530.03 261.08 L530.74 260.32 L531.44 259.5 L532.14 258.61 L532.84 257.66 L533.55 256.64 L534.25 255.55 L534.95 254.38 L535.65 253.14 L536.35 251.83 L537.06 250.44 L537.76 248.97 L538.46 247.42 L539.16 245.79 L539.87 244.09 L540.57 242.3 L541.27 240.43 L541.97 238.49 L542.68 236.47 L543.38 234.38 L544.08 232.21 L544.78 229.97 L545.48 227.66 L546.19 225.28 L546.89 222.85 L547.59 220.35 L548.29 217.8 L549 215.19 L549.7 212.54 L550.4 209.84 L551.1 207.11 L551.81 204.34 L552.51 201.54 L553.21 198.72 L553.91 195.88 L554.62 193.02 L555.32 190.15 L556.02 187.28 L556.72 184.41 L557.42 181.55 L558.13 178.69 L558.83 175.85 L559.53 173.03 L560.23 170.23 L560.94 167.45 L561.64 164.71 L562.34 162 L563.04 159.33 L563.75 156.7 L564.45 154.11 L565.15 151.57 L565.85 149.07 L566.56 146.63 L567.26 144.24 L567.96 141.9 L568.66 139.62 L569.36 137.39 L570.07 135.22 L570.77 133.1 L571.47 131.05 L572.17 129.05 L572.88 127.12 L573.58 125.24 L574.28 123.42 L574.98 121.65 L575.69 119.95 L576.39 118.3 L577.09 116.71 L577.79 115.17 L578.49 113.68 L579.2 112.26 L579.9 110.88 L580.6 109.55 L581.3 108.28 L582.01 107.05 L582.71 105.87 L583.41 104.74 L584.11 103.65 L584.82 102.6 L585.52 101.6 L586.22 100.64 L586.92 99.72 L587.63 98.84 L588.33 97.99 L589.03 97.18 L589.73 96.41 L590.43 95.67 L591.14 94.96 L591.84 94.28 L592.54 93.63 L593.24 93.01 L593.95 92.42 L594.65 91.86 L595.35 91.32 L596.05 90.8 L596.76 90.31 L597.46 89.84 L598.16 89.39 L598.86 88.96 L599.57 88.56 L600.27 88.17 L600.97 87.8 L601.67 87.44 L602.37 87.11 L603.08 86.79 L603.78 86.48 L604.48 86.19 L605.18 85.91 L605.89 85.65 L606.59 85.39 L607.29 85.15 L607.99 84.93 L608.7 84.71 L609.4 84.5 L610.1 84.3 L610.8 84.12 L611.51 83.94 L612.21 83.77 L612.91 83.61 L613.61 83.45 L614.31 83.31 L615.02 83.17 L615.72 83.03 L616.42 82.91 L617.12 82.79 L617.83 82.67 L618.53 82.56 L619.23 82.46 L619.93 82.36 L620.64 82.27 L621.34 82.18 L622.04 82.09 L622.74 82.01 L623.44 81.94 L624.15 81.86 L624.85 81.8 L625.55 81.73 L626.25 81.67 L626.96 81.61 L627.66 81.55 L628.36 81.5 L629.06 81.45 L629.77 81.4 L630.47 81.35 L631.17 81.31 L631.87 81.26 L632.58 81.22 L633.28 81.19 L633.98 81.15 L634.68 81.12 L635.38 81.08 L636.09 81.05 L636.79 81.02 L637.49 81 L638.19 80.97 L638.9 80.94 L639.6 80.92 L640.3 80.9 L641 80.88 L641.71 80.86 L642.41 80.84 L643.11 80.82 L643.81 80.8 L644.52 80.78 L645.22 80.77 L645.92 80.75 L646.62 80.74 L647.32 80.72 L648.03 80.71 L648.73 80.7 L649.43 80.69 L650.13 80.67 L650.84 80.66 L651.54 80.65 L652.24 80.64 L652.94 80.64 L653.65 80.63 L654.35 80.62 L655.05 80.61 L655.75 80.6 L656.45 80.6 L657.16 80.59 L657.86 80.58 L658.56 80.58 L659.26 80.57 L659.97 80.57 L660.67 80.56 L661.37 80.56 L662.07 80.55 L662.78 80.55 L663.48 80.54 L664.18 80.54 L664.88 80.53 L665.59 80.53 L666.29 80.53 L666.99 80.52 L667.69 80.52 L668.39 80.52 L669.1 80.51 L669.8 80.51 L670.5 80.51 L671.2 80.51 L671.91 80.5 L672.61 80.5 L673.31 80.5 L674.01 80.5 L674.72 80.5 L675.42 80.49 L676.12 80.49 L676.82 80.49 L677.53 80.49 L678.23 80.49 L678.93 80.49 L679.63 80.49 L680.33 80.48 L681.04 80.48 L681.74 80.48 L682.44 80.48 L683.14 80.48 L683.85 80.48 L684.55 80.48 L685.25 80.48 L685.95 80.48 L686.66 80.47 L687.36 80.47 L688.06 80.47 L688.76 80.47 L689.46 80.47 L690.17 80.47 L690.87 80.47 L691.57 80.47 L692.27 80.47 L692.98 80.47 L693.68 80.47 L694.38 80.47 L695.08 80.47 L695.79 80.47 L696.49 80.47 L697.19 80.47 L697.89 80.47 L698.6 80.47 L699.3 80.47 L700 80.47" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="490" y1="80.46" x2="700" y2="80.46" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="499.3" y="74.46" font-size="12" fill="var(--fig-green, #16704A)">均匀：log₂5 = 2.32</text>
+<circle cx="553.62" cy="197.08" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="572.77" cy="127.41" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="591.92" cy="94.21" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="559.62" y="211.08" font-size="11" fill="var(--fig-blue, #1F5FA8)">0.88</text>
+<text x="578.77" y="141.41" font-size="11" fill="var(--fig-blue, #1F5FA8)">1.74</text>
+<text x="597.92" y="108.21" font-size="11" fill="var(--fig-blue, #1F5FA8)">2.15</text>
+<text x="495.04" y="110.5" font-size="12" fill="var(--fig-red, #A3231C)">τ → 0：熵 → 0</text>
+<text x="495.04" y="126.5" font-size="12" fill="var(--fig-red, #A3231C)">（贪心）</text>
+<text x="60" y="330" font-size="12" fill="var(--fig-muted, #74716A)">温度不改变排名：每种温度下都是第一个 token 最大；只改变“有多确定”。</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 312" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>重叠与不重叠：V3 一条 32K 序列 decode 一步的注意力，搬运与计算的两种排法</title>
+
+<text x="16" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">V3 一条 32K token 的序列，decode 一步、61 层的注意力：算 a = 0.562 ms，搬 b = 0.687 ms</text>
+<text x="16" y="56" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 不重叠</text>
+<text x="90" y="56" font-size="12" fill="var(--fig-muted, #74716A)">搬完全部，再开算</text>
+<text x="102" y="79" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="end">搬（HBM）</text>
+<text x="102" y="103" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">算（SM）</text>
+<rect x="110" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="145.69" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="181.38" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="217.07" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="252.76" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="288.45" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="324.14" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="359.83" y="66" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="395.52" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="424.72" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="453.92" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="483.12" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="512.32" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="541.52" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="570.72" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="599.92" y="90" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<line x1="629.12" y1="62" x2="629.12" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="635.12" y="103" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">1.250 ms</text>
+<text x="16" y="140" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 重叠</text>
+<text x="76" y="140" font-size="12" fill="var(--fig-muted, #74716A)">搬第 k+1 块时算第 k 块</text>
+<text x="102" y="163" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="end">搬（HBM）</text>
+<text x="102" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">算（SM）</text>
+<rect x="110" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="145.69" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="181.38" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="217.07" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="252.76" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="288.45" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="324.14" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="359.83" y="150" width="35.69" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="145.69" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="181.38" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="217.07" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="252.76" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="288.45" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="324.14" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="359.83" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="395.52" y="174" width="29.2" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<line x1="424.72" y1="146" x2="424.72" y2="196" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="430.72" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">0.758 ms</text>
+<line x1="395.52" y1="44" x2="395.52" y2="206" stroke="var(--fig-green, #16704A)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="629.12" y1="44" x2="629.12" y2="206" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="391.52" y="222" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">下界 max(a, b) = 0.687 ms</text>
+<text x="629.12" y="222" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">上界 a + b = 1.250 ms</text>
+<line x1="110" y1="238" x2="650" y2="238" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="110" y1="238" x2="110" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="110" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0</text>
+<line x1="193.08" y1="238" x2="193.08" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="193.08" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="276.15" y1="238" x2="276.15" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="276.15" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="359.23" y1="238" x2="359.23" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="359.23" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="442.31" y1="238" x2="442.31" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="442.31" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="525.38" y1="238" x2="525.38" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="525.38" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.0</text>
+<line x1="608.46" y1="238" x2="608.46" y2="242" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="608.46" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.2</text>
+<text x="650" y="255" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">ms</text>
+<text x="16" y="280" font-size="11" fill="var(--fig-muted, #74716A)">② 的总长 = b + a/8：每块的计算都藏在下一块的搬运后面，只剩最后一块的计算露在外面（琥珀 = 搬运，蓝 = 计算）。</text>
+<text x="16" y="298" font-size="11" fill="var(--fig-muted, #74716A)">切成 8 块只是示意：块越多，露在外面的尾巴越短，总时间越接近下界；这条尾巴和 §5 流水线的“填充与排空”是同一回事。</text>
+</svg>

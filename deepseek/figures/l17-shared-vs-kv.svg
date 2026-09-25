@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>共享一份的 Engram 表与每个请求一份的 KV cache（V4.1-Flash 的数字）</title>
+
+<text x="20" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">同时服务 N 个一百万 token 的会话，要占多少内存</text>
+<line x1="72" y1="318" x2="520" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="322" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="72" y1="273.33" x2="520" y2="273.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="277.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50</text>
+<line x1="72" y1="228.67" x2="520" y2="228.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="232.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="72" y1="184" x2="520" y2="184" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="188" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">150</text>
+<line x1="72" y1="139.33" x2="520" y2="139.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="143.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">200</text>
+<line x1="72" y1="94.67" x2="520" y2="94.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="98.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">250</text>
+<line x1="72" y1="50" x2="520" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">300</text>
+<line x1="72" y1="50" x2="72" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="146.67" y1="50" x2="146.67" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="146.67" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="221.33" y1="50" x2="221.33" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="221.33" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="296" y1="50" x2="296" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="296" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">150</text>
+<line x1="370.67" y1="50" x2="370.67" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="370.67" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200</text>
+<line x1="445.33" y1="50" x2="445.33" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="445.33" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">250</text>
+<line x1="520" y1="50" x2="520" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="520" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">300</text>
+<line x1="72" y1="318" x2="520" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="72" y1="50" x2="72" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="296" y="356" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">同时服务的百万 token 会话数 N</text>
+<text x="24" y="184" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 184)">占用（GB）</text>
+<line x1="72" y1="136.87" x2="520" y2="136.87" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6"/>
+<line x1="72" y1="318" x2="520" y2="79.48" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.4"/>
+<line x1="72" y1="318" x2="520" y2="294.15" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="532" y="83.48" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">KV cache：每个会话 0.89 GB</text>
+<text x="532" y="100.48" font-size="11.5" fill="var(--fig-muted, #74716A)">每个请求一份，随 N 线性涨</text>
+<text x="532" y="140.87" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="700">Engram 表：202.8 GB</text>
+<text x="532" y="157.87" font-size="11.5" fill="var(--fig-muted, #74716A)">所有请求共用一份，与 N 无关</text>
+<text x="532" y="280.15" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="700">光学压缩约 10×（设想）</text>
+<text x="532" y="297.15" font-size="11.5" fill="var(--fig-muted, #74716A)">每个会话约 0.089 GB</text>
+<line x1="412.21" y1="136.87" x2="412.21" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="412.21" cy="136.87" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.4"/>
+<text x="402.21" y="124.87" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">N ≈ 228：KV 超过整张表</text>
+<text x="418.21" y="290.89" font-size="11.5" fill="var(--fig-muted, #74716A)">N = 228</text>
+<text x="83.95" y="155.87" font-size="11.5" fill="var(--fig-amber, #8A6508)">202.8 GB ÷ 0.89 GB ≈ 228</text>
+<text x="20" y="390" font-size="11.5" fill="var(--fig-muted, #74716A)">Engram 表 = 768,022,850 行 × (256 + 8) 字节（FP8 数值 + 每 32 维 1 字节缩放）；KV 按 V4.1-Flash 全局 890 字节/token。</text>
+<text x="20" y="408" font-size="11.5" fill="var(--fig-muted, #74716A)">橙色虚线按视觉 token 与文本 token 的 KV 同价计（笔者假设），要约 2,280 个会话才追上 Engram 表；论文没有做过这种实验。</text>
+</svg>

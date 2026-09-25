@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 428" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一段 4 个 token 的回答：逐 token 奖励、价值、TD 残差与 GAE 优势</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker></defs>
+<rect x="222" y="16" width="110" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="277" y="37.86" font-size="13.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">o<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="348" y="16" width="110" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="403" y="37.86" font-size="13.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">o<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="474" y="16" width="110" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="529" y="37.86" font-size="13.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">o<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="600" y="16" width="110" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="655" y="37.86" font-size="13.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">o<tspan baseline-shift="sub" font-size="11">4</tspan>（结束）</text>
+<text x="655" y="66" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">RM 分 1.0 只加在这里</text>
+<text x="202" y="92" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">log π<tspan baseline-shift="sub" font-size="11">θ</tspan>/π<tspan baseline-shift="sub" font-size="11">ref</tspan></text>
+<text x="277" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<text x="403" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.05</text>
+<text x="529" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.2</text>
+<text x="655" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="202" y="128" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">r<tspan baseline-shift="sub" font-size="11">t</tspan>（KL 奖励 + RM 分）</text>
+<text x="277" y="128" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−0.005</text>
+<text x="403" y="128" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.0025</text>
+<text x="529" y="128" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−0.01</text>
+<text x="655" y="128" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle">1</text>
+<text x="202" y="164" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="end">V<tspan baseline-shift="sub" font-size="11">t</tspan>（价值网络）</text>
+<text x="277" y="164" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.5</text>
+<text x="403" y="164" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.6</text>
+<text x="529" y="164" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.7</text>
+<text x="655" y="164" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.9</text>
+<text x="202" y="200" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">δ<tspan baseline-shift="sub" font-size="11">t</tspan> = r<tspan baseline-shift="sub" font-size="11">t</tspan> + V<tspan baseline-shift="sub" font-size="11">t+1</tspan> − V<tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="277" y="200" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.095</text>
+<text x="403" y="200" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1025</text>
+<text x="529" y="200" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.19</text>
+<text x="655" y="200" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="12" y="216" width="716" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="6"/>
+<text x="202" y="236" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">Â<tspan baseline-shift="sub" font-size="11">t</tspan>，λ = 0.95</text>
+<text x="277" y="236" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.4496</text>
+<text x="403" y="236" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.3733</text>
+<text x="529" y="236" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.285</text>
+<text x="655" y="236" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.1</text>
+<text x="202" y="276" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="end">Â<tspan baseline-shift="sub" font-size="11">t</tspan>，λ = 0（= δ<tspan baseline-shift="sub" font-size="11">t</tspan>）</text>
+<text x="277" y="276" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.095</text>
+<text x="403" y="276" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1025</text>
+<text x="529" y="276" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.19</text>
+<text x="655" y="276" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1</text>
+<text x="202" y="312" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="end">Â<tspan baseline-shift="sub" font-size="11">t</tspan>，λ = 1</text>
+<text x="277" y="312" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4875</text>
+<text x="403" y="312" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.3925</text>
+<text x="529" y="312" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.29</text>
+<text x="655" y="312" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1</text>
+<text x="202" y="348" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="end">价值目标 Â<tspan baseline-shift="sub" font-size="11">t</tspan> + V<tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="277" y="348" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.9496</text>
+<text x="403" y="348" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.9733</text>
+<text x="529" y="348" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.985</text>
+<text x="655" y="348" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<path d="M635 246 Q 595 262 555 246" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<text x="595" y="266" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">×0.95，加 δ</text>
+<path d="M509 246 Q 469 262 429 246" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<text x="469" y="266" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">×0.95，加 δ</text>
+<path d="M383 246 Q 343 262 303 246" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<text x="343" y="266" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">×0.95，加 δ</text>
+<text x="16" y="398" font-size="12" fill="var(--fig-muted, #74716A)">从最后一个 token 往前递推：Â<tspan baseline-shift="sub" font-size="11">4</tspan> = δ<tspan baseline-shift="sub" font-size="11">4</tspan>，Â<tspan baseline-shift="sub" font-size="11">t</tspan> = δ<tspan baseline-shift="sub" font-size="11">t</tspan> + γλ·Â<tspan baseline-shift="sub" font-size="11">t+1</tspan>（γ = 1）。结束之后 V = 0。</text>
+<text x="16" y="418" font-size="12" fill="var(--fig-muted, #74716A)">β = 0.05；红字是每个 token 的 KL 奖励 −β·log(π<tspan baseline-shift="sub" font-size="11">θ</tspan>/π<tspan baseline-shift="sub" font-size="11">ref</tspan>)；数字为笔者自拟，由脚本计算。</text>
+</svg>

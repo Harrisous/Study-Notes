@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>拒绝采样与投机采样：同一个提议分布 q，两种接受规则</title>
+
+<line x1="60" y1="258" x2="310" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="219.54" x2="310" y2="219.54" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="181.08" x2="310" y2="181.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="142.62" x2="310" y2="142.62" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="104.15" x2="310" y2="104.15" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="65.69" x2="310" y2="65.69" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="258" x2="310" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="60" y1="58" x2="60" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="56" y1="258" x2="60" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="56" y1="219.54" x2="60" y2="219.54" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="223.54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.25</text>
+<line x1="56" y1="181.08" x2="60" y2="181.08" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="185.08" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="56" y1="142.62" x2="60" y2="142.62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="146.62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.75</text>
+<line x1="56" y1="104.15" x2="60" y2="104.15" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="108.15" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="56" y1="65.69" x2="60" y2="65.69" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="69.69" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.25</text>
+<text x="20" y="158" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 20 158)">概率 / 包络高度</text>
+<text x="40" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">拒绝采样：包络 M·q，M = 2.5</text>
+<rect x="84.88" y="181.08" width="44" height="0" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="84.88" y="181.08" width="44" height="76.92" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="106.88" y="175.08" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">Mq=0.50</text>
+<text x="106.88" y="223.54" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.5</text>
+<text x="106.88" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 0</text>
+<text x="106.88" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 1.00</text>
+<rect x="163" y="65.69" width="44" height="146.15" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="163" y="211.85" width="44" height="46.15" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="185" y="59.69" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">Mq=1.25</text>
+<text x="185" y="238.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.3</text>
+<text x="185" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 1</text>
+<text x="185" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 0.24</text>
+<rect x="241.12" y="142.62" width="44" height="84.62" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="241.12" y="227.23" width="44" height="30.77" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="263.12" y="136.62" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">Mq=0.75</text>
+<text x="263.12" y="246.62" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.2</text>
+<text x="263.12" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 2</text>
+<text x="263.12" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 0.27</text>
+<text x="40" y="314" font-size="12" fill="var(--fig-ink, #1C1B19)">绿 = 接受的面积（恰为 p），红虚框 = 被拒的面积</text>
+<text x="40" y="332" font-size="12" fill="var(--fig-red, #A3231C)">P(接受) = 1/M = 0.4，平均要试 M = 2.5 次</text>
+<line x1="420" y1="258" x2="700" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="224.67" x2="700" y2="224.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="191.33" x2="700" y2="191.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="158" x2="700" y2="158" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="124.67" x2="700" y2="124.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="91.33" x2="700" y2="91.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="58" x2="700" y2="58" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="420" y1="258" x2="700" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="420" y1="58" x2="420" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="416" y1="258" x2="420" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="416" y1="224.67" x2="420" y2="224.67" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="228.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="416" y1="191.33" x2="420" y2="191.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="195.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="416" y1="158" x2="420" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="162" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.3</text>
+<line x1="416" y1="124.67" x2="420" y2="124.67" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="128.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="416" y1="91.33" x2="420" y2="91.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="95.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="416" y1="58" x2="420" y2="58" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413" y="62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<text x="400" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">投机采样：接受 min(1, p/q)</text>
+<rect x="450.5" y="191.33" width="44" height="66.67" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<rect x="450.5" y="91.33" width="44" height="100" fill="var(--fig-orange, #B4460C)" fill-opacity="0.35" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="498.5" y="145.33" font-size="11" fill="var(--fig-orange, #B4460C)">p−q</text>
+<text x="472.5" y="85.33" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.5 q=0.2</text>
+<text x="472.5" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 0</text>
+<text x="472.5" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 1</text>
+<rect x="538" y="158" width="44" height="100" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<rect x="538" y="91.33" width="44" height="66.67" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="586" y="128.67" font-size="11" fill="var(--fig-red, #A3231C)">q−p</text>
+<text x="560" y="85.33" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.3 q=0.5</text>
+<text x="560" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 1</text>
+<text x="560" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 0.6</text>
+<rect x="625.5" y="191.33" width="44" height="66.67" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<rect x="625.5" y="158" width="44" height="33.33" fill="var(--fig-red, #A3231C)" fill-opacity="0.14" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="673.5" y="178.67" font-size="11" fill="var(--fig-red, #A3231C)">q−p</text>
+<text x="647.5" y="152" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p=0.2 q=0.3</text>
+<text x="647.5" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">x = 2</text>
+<text x="647.5" y="290" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">接受 0.667</text>
+<text x="400" y="314" font-size="12" fill="var(--fig-green, #16704A)">绿 = min(p, q)，直接接受，合计 β = 0.7</text>
+<text x="400" y="332" font-size="12" fill="var(--fig-red, #A3231C)">红 = 被拒的提议，合计 0.2 + 0.1 = 0.3 = 1 − β</text>
+<text x="400" y="350" font-size="12" fill="var(--fig-orange, #B4460C)">橙 = 拒绝后从 max(0, p−q) 补采，合计也是 0.3</text>
+<text x="400" y="368" font-size="12" fill="var(--fig-ink, #1C1B19)">红色的质量整块搬到橙色：绿 + 橙 = p</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>提升累加精度：Tensor Core 里每累加 128 个乘积，就把部分和搬到 CUDA core 的 FP32 寄存器</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="20" y="20" width="470" height="118" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="32" y="40" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">Tensor Core（FP8 × FP8 乘法，低精度累加）</text>
+<rect x="34" y="58" width="70" height="34" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="4"/>
+<text x="69" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">WGMMA 1</text>
+<text x="69" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">K 上 32 个</text>
+<line x1="104" y1="75" x2="114" y2="75" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="114" y="58" width="70" height="34" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="4"/>
+<text x="149" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">WGMMA 2</text>
+<text x="149" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">K 上 32 个</text>
+<line x1="184" y1="75" x2="194" y2="75" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="194" y="58" width="70" height="34" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="4"/>
+<text x="229" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">WGMMA 3</text>
+<text x="229" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">K 上 32 个</text>
+<line x1="264" y1="75" x2="274" y2="75" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="274" y="58" width="70" height="34" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="4"/>
+<text x="309" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">WGMMA 4</text>
+<text x="309" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">K 上 32 个</text>
+<line x1="344" y1="75" x2="362" y2="75" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="362" y="50" width="110" height="50" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="4"/>
+<text x="417" y="68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">部分和 P<tspan baseline-shift="sub" font-size="11">g</tspan></text>
+<text x="417" y="92" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">约 14 位有效位</text>
+<text x="32" y="109" font-size="12" fill="var(--fig-ink, #1C1B19)">“N<tspan baseline-shift="sub" font-size="11">C</tspan> 间隔”：沿 K 累加满 N<tspan baseline-shift="sub" font-size="11">C</tspan> = 128 个乘积</text>
+<text x="32" y="129" font-size="12" fill="var(--fig-ink, #1C1B19)">（= 4 条 WGMMA）就停下，把 P<tspan baseline-shift="sub" font-size="11">g</tspan> 交出去</text>
+<rect x="20" y="176" width="470" height="92" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="32" y="196" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">CUDA core（FP32 寄存器，全精度累加）</text>
+<text x="34" y="224" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">y<tspan baseline-shift="sub" font-size="11">t,j</tspan>  ←  y<tspan baseline-shift="sub" font-size="11">t,j</tspan>  +  (s<tspan baseline-shift="sub" font-size="11">t,g</tspan> · S<tspan baseline-shift="sub" font-size="11">a,g</tspan>) × P<tspan baseline-shift="sub" font-size="11">g</tspan></text>
+<text x="34" y="248" font-size="12" fill="var(--fig-muted, #74716A)">两个缩放因子在这里乘上（反量化）；y<tspan baseline-shift="sub" font-size="11">t,j</tspan> 是 FP32，g = 1…56（K = 7168）</text>
+<line x1="417" y1="100" x2="417" y2="174" stroke="var(--fig-green, #16704A)" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<text x="424" y="160" font-size="12" fill="var(--fig-green, #16704A)">复制到 FP32</text>
+<text x="512" y="44" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">为什么要这样：</text>
+<text x="512" y="66" font-size="12" fill="var(--fig-ink, #1C1B19)">Tensor Core 的 FP8 累加</text>
+<text x="512" y="85" font-size="12" fill="var(--fig-ink, #1C1B19)">只保留约 14 位有效位</text>
+<text x="512" y="104" font-size="12" fill="var(--fig-muted, #74716A)">（V3 报告 §3.5.2；Insights</text>
+<text x="512" y="123" font-size="12" fill="var(--fig-muted, #74716A)">论文写作 13 位小数、</text>
+<text x="512" y="142" font-size="12" fill="var(--fig-muted, #74716A)">FP22 寄存器）。</text>
+<text x="512" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)">K = 4096 时，论文测得最大</text>
+<text x="512" y="180" font-size="12" fill="var(--fig-ink, #1C1B19)">相对误差接近 2%。</text>
+<text x="512" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)">代价：每 128 个元素一次</text>
+<text x="512" y="231" font-size="12" fill="var(--fig-ink, #1C1B19)">搬运与乘法。靠两个 warpgroup</text>
+<text x="512" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)">交替来藏住它（下图）。</text>
+<text x="20" y="288" font-size="12" fill="var(--fig-muted, #74716A)">时间 →（示意）</text>
+<text x="20" y="317" font-size="12" fill="var(--fig-ink, #1C1B19)">warpgroup 1</text>
+<rect x="118" y="300" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="164" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<rect x="214" y="300" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="260" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<rect x="310" y="300" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="356" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<rect x="406" y="300" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="452" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<rect x="502" y="300" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="548" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<rect x="598" y="300" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="644" y="316" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<text x="20" y="353" font-size="12" fill="var(--fig-ink, #1C1B19)">warpgroup 2</text>
+<rect x="118" y="336" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="164" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<rect x="214" y="336" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="260" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<rect x="310" y="336" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="356" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<rect x="406" y="336" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="452" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<rect x="502" y="336" width="92" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="548" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP32 提升</text>
+<rect x="598" y="336" width="92" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="644" y="352" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Tensor Core 乘加</text>
+<text x="20" y="392" font-size="11" fill="var(--fig-muted, #74716A)">据 DeepSeek-V3 技术报告图 7(b) 与 §3.3.2 重绘；宽度不代表实测时间。</text>
+</svg>

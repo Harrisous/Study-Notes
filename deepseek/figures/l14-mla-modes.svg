@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MLA 的两种算法：MHA 模式与 MQA 模式（据 DeepSeek-V3.2 论文图 7 重绘）</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker></defs>
+<text x="20" y="26" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="700">MHA 模式（训练、预填充）</text>
+<text x="20" y="46" font-size="12" fill="var(--fig-muted, #74716A)">先把缓存展开成每个头自己的键和值</text>
+<rect x="30" y="360" width="128" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.25" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<rect x="158" y="360" width="20" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="94" y="378" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">KV</tspan>：512</text>
+<text x="184" y="378" font-size="12" fill="var(--fig-red, #A3231C)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">R</tspan>：64</text>
+<text x="30" y="406" font-size="12" fill="var(--fig-amber, #8A6508)">缓存里的一个条目（576 个数）</text>
+<rect x="30" y="266" width="170" height="50" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="115" y="284.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">× W<tspan baseline-shift="super" font-size="11">UK</tspan>、W<tspan baseline-shift="super" font-size="11">UV</tspan>（每头一份）</text>
+<text x="115" y="306.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">展开：每 token 128 头</text>
+<line x1="48" y1="358" x2="48" y2="316" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" marker-end="url(#ah-orange)"/>
+<rect x="30" y="172" width="36" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<rect x="30" y="206" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<rect x="72" y="172" width="36" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<rect x="72" y="206" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<rect x="114" y="172" width="36" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<rect x="114" y="206" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<rect x="156" y="172" width="36" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<rect x="156" y="206" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="205" y="192" font-size="14" fill="var(--fig-ink, #1C1B19)">…</text>
+<text x="72" y="160" font-size="12" fill="var(--fig-violet, #6733C4)">键 <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s,i</tspan>：128 头 × 192</text>
+<text x="72" y="246" font-size="12" fill="var(--fig-green, #16704A)">值 <tspan font-weight="700">v</tspan><tspan baseline-shift="sub" font-size="11">s,i</tspan><tspan baseline-shift="super" font-size="11" dx="-12.98">C</tspan><tspan dx="5.5">：128 头 × 128</tspan></text>
+<line x1="48" y1="265" x2="48" y2="232" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="242" y="172" width="120" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="302" y="194.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">查询 <tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan></text>
+<text x="302" y="214.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">128 头 × 192</text>
+<rect x="30" y="76" width="332" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="196" y="97.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每个头：点积 192 + 加权 128</text>
+<text x="196" y="119.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">每键 2 × 128 × (192 + 128) = 81,920 FLOPs</text>
+<line x1="48" y1="170" x2="48" y2="134" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<line x1="302" y1="170" x2="302" y2="134" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<text x="216" y="318" font-size="11" fill="var(--fig-muted, #74716A)">展开后每 token 每层：</text>
+<text x="216" y="334" font-size="11" fill="var(--fig-muted, #74716A)">128 × 320 = 40,960 个数</text>
+<line x1="372" y1="20" x2="372" y2="420" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<text x="392" y="26" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="700">MQA 模式（解码；DSA 的稀疏核）</text>
+<text x="392" y="46" font-size="12" fill="var(--fig-muted, #74716A)">把 W<tspan baseline-shift="super" font-size="11">UK</tspan> 吸收进查询，缓存条目原样当键和值</text>
+<rect x="402" y="360" width="128" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.25" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<rect x="530" y="360" width="20" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="466" y="378" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">c</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">KV</tspan>：512</text>
+<text x="556" y="378" font-size="12" fill="var(--fig-red, #A3231C)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">R</tspan>：64</text>
+<text x="402" y="406" font-size="12" fill="var(--fig-amber, #8A6508)">缓存里的一个条目（576 个数）</text>
+<rect x="402" y="172" width="160" height="56" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="482" y="194.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">键 = 整个条目：576</text>
+<text x="482" y="214.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">值 = 前 512 维</text>
+<line x1="476" y1="358" x2="476" y2="230" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<text x="484" y="292" font-size="12" fill="var(--fig-orange, #B4460C)">不展开，</text>
+<text x="484" y="310" font-size="12" fill="var(--fig-orange, #B4460C)">128 个头共用</text>
+<rect x="588" y="256" width="156" height="68" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="666" y="279.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">C</tspan><tspan dx="3.08"> 左乘 (W</tspan><tspan baseline-shift="sub" font-size="11">i</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">UK</tspan>)<tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="666" y="309.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">得 <tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan><tspan baseline-shift="super" font-size="11" dx="-10.56">A</tspan><tspan dx="3.08">：512 维</tspan></text>
+<rect x="588" y="172" width="156" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="666" y="194.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">查询 [<tspan font-weight="700">q</tspan><tspan baseline-shift="super" font-size="11">A</tspan>; <tspan font-weight="700">q</tspan><tspan baseline-shift="super" font-size="11">R</tspan>]</text>
+<text x="666" y="214.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">128 头 × 576</text>
+<line x1="666" y1="256" x2="666" y2="230" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<rect x="402" y="76" width="342" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="573" y="97.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每个头：点积 576 + 加权 512，再乘 W<tspan baseline-shift="sub" font-size="11">i</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">UV</tspan></text>
+<text x="573" y="119.32" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">每键 2 × 128 × (576 + 512) = 278,528 FLOPs（× 3.4）</text>
+<line x1="476" y1="170" x2="476" y2="134" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" marker-end="url(#ah-orange)"/>
+<line x1="666" y1="170" x2="666" y2="134" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<text x="20" y="446" font-size="12" fill="var(--fig-ink, #1C1B19)">两种模式数学上等价（结合律），缩放都是 1/√192。MHA 模式每键算得少，但每个头要自己的键值；</text>
+<text x="20" y="464" font-size="12" fill="var(--fig-ink, #1C1B19)">MQA 模式每键多算 3.4 倍，换来“一个条目读一次、128 个头一起用”，这正是解码与 DSA 稀疏核需要的。</text>
+</svg>

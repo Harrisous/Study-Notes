@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeekMoE 16B 的参数预算：总参数与每 token 激活参数</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 按同一比例尺：激活参数只有总参数的 17.3%</text>
+<text x="100" y="55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">总参数</text>
+<text x="100" y="71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">16.376B</text>
+<rect x="110" y="40" width="547.71" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="383.85" y="55" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">路由专家</text>
+<text x="383.85" y="70" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">91.3%</text>
+<rect x="657.71" y="40" width="17.12" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="674.82" y="40" width="17.21" height="36" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="692.03" y="40" width="7.68" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="699.72" y="40" width="7.68" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="707.4" y="40" width="2.46" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="709.87" y="40" width="0.13" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="100" y="107" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">激活参数</text>
+<text x="100" y="123" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.829B</text>
+<rect x="110" y="92" width="51.35" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="161.35" y="92" width="17.12" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="178.46" y="92" width="17.21" height="36" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="195.68" y="92" width="7.68" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="203.36" y="92" width="7.68" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="211.04" y="92" width="2.46" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="213.51" y="92" width="0.13" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="221.64" y="115" font-size="12" fill="var(--fig-blue, #1F5FA8)">← 每个 token 实际用到的部分</text>
+<text x="16" y="170" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 把激活参数放大到整条：路由专家只占一半</text>
+<text x="100" y="203" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">激活参数</text>
+<text x="100" y="219" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">放大 5.8 倍</text>
+<rect x="110" y="188" width="297.26" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="258.63" y="203" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">路由专家</text>
+<text x="258.63" y="218" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">49.5%</text>
+<rect x="407.26" y="188" width="99.09" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="456.81" y="203" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">共享专家</text>
+<text x="456.81" y="218" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">16.5%</text>
+<rect x="506.35" y="188" width="99.64" height="36" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="556.17" y="203" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力</text>
+<text x="556.17" y="218" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16.6%</text>
+<rect x="605.99" y="188" width="44.48" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="650.48" y="188" width="44.48" height="36" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="694.96" y="188" width="14.26" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="709.22" y="188" width="0.75" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="16" y="262" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">构成（B = 10<tspan baseline-shift="4.8" font-size="11">9</tspan>）</text>
+<rect x="16" y="273" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="36" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)">路由专家</text>
+<text x="36" y="301" font-size="11" fill="var(--fig-muted, #74716A)">总 14.948B / 激活 1.401B</text>
+<rect x="196" y="273" width="14" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.75" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="216" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)">共享专家</text>
+<text x="216" y="301" font-size="11" fill="var(--fig-muted, #74716A)">0.467B（全部激活）</text>
+<rect x="376" y="273" width="14" height="14" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.3" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="396" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)">注意力</text>
+<text x="396" y="301" font-size="11" fill="var(--fig-muted, #74716A)">0.470B（全部激活）</text>
+<rect x="556" y="273" width="14" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="576" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)">输入嵌入</text>
+<text x="576" y="301" font-size="11" fill="var(--fig-muted, #74716A)">0.210B（全部激活）</text>
+<rect x="16" y="315" width="14" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="36" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)">输出头</text>
+<text x="36" y="343" font-size="11" fill="var(--fig-muted, #74716A)">0.210B（全部激活）</text>
+<rect x="196" y="315" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="216" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)">首层稠密 FFN</text>
+<text x="216" y="343" font-size="11" fill="var(--fig-muted, #74716A)">0.067B（全部激活）</text>
+<rect x="376" y="315" width="14" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<text x="396" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)">路由器</text>
+<text x="396" y="343" font-size="11" fill="var(--fig-muted, #74716A)">0.004B（全部激活）</text>
+<text x="16" y="388" font-size="12" fill="var(--fig-muted, #74716A)">由 config.json 复算：总 16,375,728,128，激活 2,828,650,496（含输入嵌入与输出头；两者都去掉是 2.409B）。</text>
+</svg>

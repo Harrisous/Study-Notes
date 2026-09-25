@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 372" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>交叉熵损失与困惑度：PPL = e 的 L 次方</title>
+
+<line x1="78" y1="318" x2="610" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="322" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="78" y1="266.8" x2="610" y2="266.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="270.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="78" y1="215.6" x2="610" y2="215.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="219.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="78" y1="164.4" x2="610" y2="164.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="168.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1,000</text>
+<line x1="78" y1="113.2" x2="610" y2="113.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="117.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="78" y1="62" x2="610" y2="62" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="70" y="66" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<line x1="78" y1="62" x2="78" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="78" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="124.26" y1="62" x2="124.26" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="124.26" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="170.52" y1="62" x2="170.52" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="170.52" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="216.78" y1="62" x2="216.78" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="216.78" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="263.04" y1="62" x2="263.04" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="263.04" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="309.3" y1="62" x2="309.3" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="309.3" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="355.57" y1="62" x2="355.57" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="355.57" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<line x1="401.83" y1="62" x2="401.83" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="401.83" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<line x1="448.09" y1="62" x2="448.09" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="448.09" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="494.35" y1="62" x2="494.35" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494.35" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<line x1="540.61" y1="62" x2="540.61" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="540.61" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="586.87" y1="62" x2="586.87" y2="318" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="586.87" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<line x1="78" y1="318" x2="610" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="78" y1="62" x2="78" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="78" y1="62" x2="610" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="78" y1="57" x2="78" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="78" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="142.13" y1="57" x2="142.13" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="142.13" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="206.26" y1="57" x2="206.26" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="206.26" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="270.39" y1="57" x2="270.39" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="270.39" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<line x1="334.52" y1="57" x2="334.52" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="334.52" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="398.66" y1="57" x2="398.66" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="398.66" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="462.79" y1="57" x2="462.79" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="462.79" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<line x1="526.92" y1="57" x2="526.92" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="526.92" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">14</text>
+<line x1="591.05" y1="57" x2="591.05" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="591.05" y="53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<text x="344" y="24" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">同一损失换成 bits（除以 ln 2 ≈ 0.693）</text>
+<text x="344" y="358" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">平均交叉熵损失 L（nats / token）</text>
+<text x="20" y="190" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 190)">困惑度 PPL（对数刻度）</text>
+<path d="M78.0 318.0 L80.7 316.7 L83.3 315.4 L86.0 314.1 L88.7 312.9 L91.4 311.6 L94.0 310.3 L96.7 309.0 L99.4 307.7 L102.1 306.4 L104.7 305.2 L107.4 303.9 L110.1 302.6 L112.8 301.3 L115.4 300.0 L118.1 298.7 L120.8 297.4 L123.4 296.2 L126.1 294.9 L128.8 293.6 L131.5 292.3 L134.1 291.0 L136.8 289.7 L139.5 288.4 L142.2 287.2 L144.8 285.9 L147.5 284.6 L150.2 283.3 L152.9 282.0 L155.5 280.7 L158.2 279.5 L160.9 278.2 L163.5 276.9 L166.2 275.6 L168.9 274.3 L171.6 273.0 L174.2 271.7 L176.9 270.5 L179.6 269.2 L182.3 267.9 L184.9 266.6 L187.6 265.3 L190.3 264.0 L193.0 262.7 L195.6 261.5 L198.3 260.2 L201.0 258.9 L203.6 257.6 L206.3 256.3 L209.0 255.0 L211.7 253.8 L214.3 252.5 L217.0 251.2 L219.7 249.9 L222.4 248.6 L225.0 247.3 L227.7 246.0 L230.4 244.8 L233.1 243.5 L235.7 242.2 L238.4 240.9 L241.1 239.6 L243.7 238.3 L246.4 237.0 L249.1 235.8 L251.8 234.5 L254.4 233.2 L257.1 231.9 L259.8 230.6 L262.5 229.3 L265.1 228.1 L267.8 226.8 L270.5 225.5 L273.2 224.2 L275.8 222.9 L278.5 221.6 L281.2 220.3 L283.8 219.1 L286.5 217.8 L289.2 216.5 L291.9 215.2 L294.5 213.9 L297.2 212.6 L299.9 211.3 L302.6 210.1 L305.2 208.8 L307.9 207.5 L310.6 206.2 L313.3 204.9 L315.9 203.6 L318.6 202.4 L321.3 201.1 L323.9 199.8 L326.6 198.5 L329.3 197.2 L332.0 195.9 L334.6 194.6 L337.3 193.4 L340.0 192.1 L342.7 190.8 L345.3 189.5 L348.0 188.2 L350.7 186.9 L353.4 185.6 L356.0 184.4 L358.7 183.1 L361.4 181.8 L364.1 180.5 L366.7 179.2 L369.4 177.9 L372.1 176.7 L374.7 175.4 L377.4 174.1 L380.1 172.8 L382.8 171.5 L385.4 170.2 L388.1 168.9 L390.8 167.7 L393.5 166.4 L396.1 165.1 L398.8 163.8 L401.5 162.5 L404.2 161.2 L406.8 159.9 L409.5 158.7 L412.2 157.4 L414.8 156.1 L417.5 154.8 L420.2 153.5 L422.9 152.2 L425.5 151.0 L428.2 149.7 L430.9 148.4 L433.6 147.1 L436.2 145.8 L438.9 144.5 L441.6 143.2 L444.3 142.0 L446.9 140.7 L449.6 139.4 L452.3 138.1 L454.9 136.8 L457.6 135.5 L460.3 134.2 L463.0 133.0 L465.6 131.7 L468.3 130.4 L471.0 129.1 L473.7 127.8 L476.3 126.5 L479.0 125.3 L481.7 124.0 L484.4 122.7 L487.0 121.4 L489.7 120.1 L492.4 118.8 L495.0 117.5 L497.7 116.3 L500.4 115.0 L503.1 113.7 L505.7 112.4 L508.4 111.1 L511.1 109.8 L513.8 108.5 L516.4 107.3 L519.1 106.0 L521.8 104.7 L524.5 103.4 L527.1 102.1 L529.8 100.8 L532.5 99.6 L535.1 98.3 L537.8 97.0 L540.5 95.7 L543.2 94.4 L545.8 93.1 L548.5 91.8 L551.2 90.6 L553.9 89.3 L556.5 88.0 L559.2 86.7 L561.9 85.4 L564.6 84.1 L567.2 82.8 L569.9 81.6 L572.6 80.3 L575.2 79.0 L577.9 77.7 L580.6 76.4 L583.3 75.1 L585.9 73.9 L588.6 72.6 L591.3 71.3 L594.0 70.0 L596.6 68.7 L599.3 67.4 L602.0 66.1 L604.7 64.9 L607.3 63.6 L610.0 62.3" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<text x="364.82" y="168.14" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">PPL = e<tspan baseline-shift="super" font-size="11">L</tspan></text>
+<line x1="78" y1="292.4" x2="131.26" y2="292.4" stroke="var(--fig-green, #16704A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="131.26" cy="292.4" r="4.5" fill="var(--fig-green, #16704A)"/>
+<text x="141.26" y="297.4" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">例题（四个 token）：L = 1.151，PPL = 3.16</text>
+<line x1="78" y1="253.24" x2="212.73" y2="253.24" stroke="var(--fig-violet, #6733C4)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="212.73" cy="253.24" r="4.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="204.73" y="227.24" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">GPT-1 在 BooksCorpus</text>
+<text x="204.73" y="243.24" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">PPL 18.4 → L = 2.912</text>
+<line x1="78" y1="77.3" x2="578.77" y2="77.3" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="578.77" y1="77.3" x2="578.77" y2="318" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="578.77" cy="77.3" r="4.5" fill="var(--fig-red, #A3231C)"/>
+<text x="506.77" y="94.3" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end"><tspan font-weight="700">均匀瞎猜 50,257 个 token</tspan>：L = ln 50,257 = 10.825</text>
+<text x="471.22" y="226.83" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">损失每降 1 nat，</text>
+<text x="471.22" y="242.83" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">困惑度除以 e ≈ 2.72</text>
+</svg>

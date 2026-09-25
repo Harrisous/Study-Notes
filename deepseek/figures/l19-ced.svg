@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 522" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>因果编码器–解码器：解码器的全局 KV 由编码器输出投影而来</title>
+<defs><marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-amber, #8A6508)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker></defs>
+<rect x="150" y="386" width="176" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="238" y="405.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">嵌入：文本 token + 视觉 token</text>
+<line x1="238" y1="386" x2="238" y2="374" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="238" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">编码器：层 0–19</text>
+<rect x="150" y="346" width="176" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="238" y="363.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 0–1 · 纯 SWA</text>
+<rect x="150" y="261" width="176" height="78" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="150" y="326" width="176" height="13" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22" rx="3"/>
+<text x="238" y="283" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 2–7 · CSA2，m = 2</text>
+<text x="238" y="301" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层 2 Full，其余 Reuse</text>
+<text x="238" y="335.6" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">层 2</text>
+<rect x="14" y="315.5" width="112" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="70" y="329.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全局 KV：层 2</text>
+<text x="70" y="344.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">m = 2，178 B/token</text>
+<line x1="150" y1="332.5" x2="128" y2="332.5" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" marker-end="url(#ah-amber)"/>
+<rect x="150" y="176" width="176" height="78" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="150" y="241" width="176" height="13" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22" rx="3"/>
+<text x="238" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 8–13 · CSA2，m = 2</text>
+<text x="238" y="216" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层 8 Full，其余 Reuse</text>
+<text x="238" y="250.6" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">层 8</text>
+<rect x="14" y="230.5" width="112" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="70" y="244.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全局 KV：层 8</text>
+<text x="70" y="259.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">m = 2，178 B/token</text>
+<line x1="150" y1="247.5" x2="128" y2="247.5" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" marker-end="url(#ah-amber)"/>
+<rect x="150" y="91" width="176" height="78" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="150" y="156" width="176" height="13" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22" rx="3"/>
+<text x="238" y="113" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 14–19 · CSA2，m = 2</text>
+<text x="238" y="131" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层 14 Full，其余 Reuse</text>
+<text x="238" y="165.6" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">层 14</text>
+<rect x="14" y="145.5" width="112" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="70" y="159.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全局 KV：层 14</text>
+<text x="70" y="174.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">m = 2，178 B/token</text>
+<line x1="150" y1="162.5" x2="128" y2="162.5" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" marker-end="url(#ah-amber)"/>
+<polygon points="306,352.5 312,346.5 318,352.5 312,358.5" fill="var(--fig-green, #16704A)" fill-opacity="0.8"/>
+<polygon points="306,162.5 312,156.5 318,162.5 312,168.5" fill="var(--fig-green, #16704A)" fill-opacity="0.8"/>
+<line x1="238" y1="91" x2="238" y2="69" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="238" y="61" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700"><tspan font-weight="700">H</tspan><tspan baseline-shift="sub" font-size="11">L/2</tspan>：层 19 的输出</text>
+<text x="568" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">解码器：层 20–39</text>
+<rect x="480" y="320" width="176" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="480" y="359" width="176" height="13" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22" rx="3"/>
+<text x="568" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 20–23 · CSA2，m = 1</text>
+<text x="568" y="368.6" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">层 20 Full，其余 Reuse</text>
+<rect x="480" y="261" width="176" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="480" y="300" width="176" height="13" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="568" y="281" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 24–27 · CSA2，m = 1</text>
+<text x="568" y="309.6" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 24 Reindex，其余 Reuse</text>
+<rect x="480" y="202" width="176" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="480" y="241" width="176" height="13" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="568" y="222" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 28–31 · CSA2，m = 1</text>
+<text x="568" y="250.6" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 28 Reindex，其余 Reuse</text>
+<rect x="480" y="143" width="176" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="480" y="182" width="176" height="13" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="568" y="163" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 32–35 · CSA2，m = 1</text>
+<text x="568" y="191.6" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 32 Reindex，其余 Reuse</text>
+<rect x="480" y="84" width="176" height="52" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<rect x="480" y="123" width="176" height="13" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" rx="3"/>
+<text x="568" y="104" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">层 36–39 · CSA2，m = 1</text>
+<text x="568" y="132.6" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 36 Reindex，其余 Reuse</text>
+<rect x="480" y="40" width="176" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="568" y="59.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">输出头 → 下一个 token</text>
+<line x1="568" y1="84" x2="568" y2="71" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="328" y1="56" x2="403" y2="56" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6"/>
+<line x1="403" y1="56" x2="403" y2="148" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" marker-end="url(#ah-orange)"/>
+<rect x="349" y="150" width="108" height="40" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="403" y="166.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">层 20 的 <tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">KV</tspan></text>
+<text x="403" y="182.32" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">投影一次</text>
+<line x1="403" y1="190" x2="403" y2="212" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" marker-end="url(#ah-amber)"/>
+<rect x="349" y="214" width="108" height="62" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="403" y="232.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">解码器全局 KV</text>
+<text x="403" y="249.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">只有 1 份，m = 1</text>
+<text x="403" y="266.32" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">356 B/token</text>
+<line x1="457" y1="245" x2="466" y2="245" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="466" y1="110" x2="466" y2="346" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="466" y1="346" x2="479" y2="346" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" marker-end="url(#ah-amber)"/>
+<line x1="466" y1="287" x2="479" y2="287" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" marker-end="url(#ah-amber)"/>
+<line x1="466" y1="228" x2="479" y2="228" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" marker-end="url(#ah-amber)"/>
+<line x1="466" y1="169" x2="479" y2="169" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" marker-end="url(#ah-amber)"/>
+<line x1="466" y1="110" x2="479" y2="110" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" marker-end="url(#ah-amber)"/>
+<line x1="333" y1="372" x2="333" y2="91" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3"/>
+<line x1="340" y1="372" x2="340" y2="91" stroke="var(--fig-green, #16704A)" stroke-width="3"/>
+<line x1="663" y1="372" x2="663" y2="84" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-dasharray="3 4"/>
+<line x1="670" y1="372" x2="670" y2="84" stroke="var(--fig-green, #16704A)" stroke-width="3"/>
+<text x="678" y="312" font-size="11" fill="var(--fig-blue, #1F5FA8)">prefill 只有</text>
+<text x="678" y="327" font-size="11" fill="var(--fig-blue, #1F5FA8)">最后 128 个</text>
+<text x="678" y="342" font-size="11" fill="var(--fig-blue, #1F5FA8)">token 走这里</text>
+<line x1="20" y1="438" x2="56" y2="438" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3"/>
+<text x="64" y="442" font-size="12" fill="var(--fig-ink, #1C1B19)">prefill：T 个提示 token 走编码器 20 层 + 层 20 的 KV 投影；只有最后 128 个再走解码器（回放）。约 8B 激活/token</text>
+<line x1="20" y1="461" x2="56" y2="461" stroke="var(--fig-green, #16704A)" stroke-width="3"/>
+<text x="64" y="465" font-size="12" fill="var(--fig-ink, #1C1B19)">decode：每个新 token 走全部 40 层和输出头。约 16B 激活/token</text>
+<rect x="20" y="477" width="36" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.22"/>
+<text x="64" y="488" font-size="12" fill="var(--fig-ink, #1C1B19)">Full 层（自己写全局 KV）</text>
+<rect x="250" y="477" width="36" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22"/>
+<text x="294" y="488" font-size="12" fill="var(--fig-ink, #1C1B19)">Reindex 层（借 KV，自己重新选）</text>
+<polygon points="520,483 526,477 532,483 526,489" fill="var(--fig-green, #16704A)" fill-opacity="0.8"/>
+<text x="540" y="488" font-size="12" fill="var(--fig-ink, #1C1B19)">Engram（层 1、14）</text>
+<text x="20" y="512" font-size="12" fill="var(--fig-amber, #8A6508)">每一层（两半都算）都保留自己的 SWA：最近 128 个 token，FP8，每条目 528 字节，不跨层共享。</text>
+</svg>

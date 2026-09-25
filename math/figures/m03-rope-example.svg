@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 408" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>4 维 RoPE 算例：两对维度各自旋转，点积是两对小点积之和</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="370" y="22" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">q = (1, 2, 2, 1) 在位置 t = 5，k = (0.5, −1, 1, 1) 在位置 j = 2；d = 4，θ = (1, 0.01)</text>
+<text x="185" y="50" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">对 0（快针，θ₀ = 1）：q 转 5 rad，k 转 2 rad</text>
+<line x1="50.6" y1="204.8" x2="330.6" y2="204.8" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="185" y1="280.4" x2="185" y2="67.6" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="185" y1="204.8" x2="241" y2="92.8" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" stroke-dasharray="4 3" stroke-opacity="0.75"/>
+<line x1="185" y1="204.8" x2="213" y2="260.8" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" stroke-dasharray="4 3" stroke-opacity="0.75"/>
+<path d="M200.53 173.75 A34.72 34.72 0 1 0 219.18 210.88" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.5" stroke-dasharray="5 2"/>
+<path d="M194.52 223.83 A21.28 21.28 0 0 0 198.35 188.23" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.5"/>
+<line x1="185" y1="204.8" x2="308.28" y2="226.73" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<line x1="185" y1="204.8" x2="224.27" y2="156.04" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6" marker-end="url(#ah-violet)"/>
+<path d="M237.38 214.12 A53.2 53.2 0 0 0 218.37 163.36" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<text x="312.28" y="244.73" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">(2.202, −0.392)</text>
+<text x="230.27" y="152.04" font-size="11.5" fill="var(--fig-violet, #6733C4)">(0.701, 0.871)</text>
+<text x="235" y="88.8" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">q⁽⁰⁾ = (1, 2)</text>
+<text x="221" y="266.8" font-size="11.5" fill="var(--fig-violet, #6733C4)">k⁽⁰⁾ = (0.5, −1)</text>
+<text x="146.28" y="210.4" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">q 转 286.5°（虚线弧）</text>
+<text x="146.28" y="227.4" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">k 转 114.6°（实线弧）</text>
+<text x="258.42" y="181.3" font-size="11.5" fill="var(--fig-green, #16704A)" text-anchor="middle">61.24°</text>
+<text x="185" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">旋转前小点积 −1.5，旋转后 1.2027</text>
+<text x="555" y="50" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">对 1（慢针，θ₁ = 0.01）：q 转 0.05 rad，k 转 0.02 rad</text>
+<line x1="457.8" y1="204.8" x2="704.2" y2="204.8" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="525" y1="280.4" x2="525" y2="67.6" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="525" y1="204.8" x2="637" y2="148.8" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" stroke-dasharray="4 3" stroke-opacity="0.75"/>
+<line x1="525" y1="204.8" x2="581" y2="148.8" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" stroke-dasharray="4 3" stroke-opacity="0.75"/>
+<line x1="525" y1="204.8" x2="634.06" y2="143.27" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<line x1="525" y1="204.8" x2="579.87" y2="147.69" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6" marker-end="url(#ah-violet)"/>
+<path d="M571.33 178.66 A53.2 53.2 0 0 0 561.86 166.44" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<text x="642.06" y="159.27" font-size="12" fill="var(--fig-blue, #1F5FA8)">q⁽¹⁾</text>
+<text x="573.87" y="141.69" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">k⁽¹⁾</text>
+<text x="586.6" y="193.6" font-size="11" fill="var(--fig-red, #A3231C)">转角只有 2.9° 与 1.1°</text>
+<text x="539" y="239.52" font-size="11.5" fill="var(--fig-blue, #1F5FA8)">q⁽¹⁾ = (2, 1) → (1.948, 1.099)</text>
+<text x="539" y="258" font-size="11.5" fill="var(--fig-violet, #6733C4)">k⁽¹⁾ = (1, 1) → (0.980, 1.020)</text>
+<text x="615.72" y="138.46" font-size="11.5" fill="var(--fig-green, #16704A)">16.72°</text>
+<text x="555" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">旋转前小点积 3，旋转后 3.0286</text>
+<line x1="370" y1="40" x2="370" y2="330" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="370" y="368" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">总打分 = 1.2027 + 3.0286 = 4.2314（旋转前是 −1.5 + 3 = 1.5）</text>
+<text x="370" y="392" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">虚线：旋转前；实线：旋转后；红弧：转过的角度；绿弧：转完后 q 与 k 的夹角。快针的贡献从 −1.5 变成 1.2027，慢针几乎没动。</text>
+</svg>

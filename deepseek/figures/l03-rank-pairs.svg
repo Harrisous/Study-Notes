@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>K 个回答的一次排序拆成 C(K,2) 对两两比较</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker></defs>
+<text x="16" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">一次排序：D &gt; C &gt; A &gt; B（K = 4）</text>
+<line x1="106" y1="84" x2="232" y2="84" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="100.63" y1="99.82" x2="237.78" y2="204.96" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="80" y1="110" x2="80" y2="194" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="260" y1="110" x2="260" y2="194" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="239.37" y1="99.82" x2="102.22" y2="204.96" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="234" y1="222" x2="108" y2="222" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<circle cx="80" cy="84" r="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="80" y="90" font-size="17" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">D</text>
+<text x="80" y="54" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 1 名</text>
+<circle cx="260" cy="84" r="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="260" y="90" font-size="17" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">C</text>
+<text x="260" y="54" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 2 名</text>
+<circle cx="260" cy="222" r="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="260" y="228" font-size="17" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">A</text>
+<text x="260" y="264" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 3 名</text>
+<circle cx="80" cy="222" r="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="80" y="228" font-size="17" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">B</text>
+<text x="80" y="264" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 4 名</text>
+<text x="16" y="298" font-size="12.5" fill="var(--fig-ink, #1C1B19)">箭头从胜者指向败者：C(4,2) = 6 对，</text>
+<text x="16" y="316" font-size="12.5" fill="var(--fig-ink, #1C1B19)">每个回答出现在 K − 1 = 3 对里。</text>
+<text x="390" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">每个提示产生的比较对数 C(K,2) = K(K−1)/2</text>
+<line x1="400" y1="262" x2="700" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="400" y1="209.5" x2="700" y2="209.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="213.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="400" y1="157" x2="700" y2="157" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="161" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20</text>
+<line x1="400" y1="104.5" x2="700" y2="104.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="108.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">30</text>
+<line x1="400" y1="52" x2="700" y2="52" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40</text>
+<line x1="400" y1="262" x2="700" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="413.03" y="230.5" width="32" height="31.5" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="429.03" y="224.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">6</text>
+<text x="429.03" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=4</text>
+<text x="429.03" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3 对/答</text>
+<rect x="461.42" y="209.5" width="32" height="52.5" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="477.42" y="203.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">10</text>
+<text x="477.42" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=5</text>
+<text x="477.42" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4 对/答</text>
+<rect x="509.81" y="183.25" width="32" height="78.75" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="525.81" y="177.25" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">15</text>
+<text x="525.81" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=6</text>
+<text x="525.81" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5 对/答</text>
+<rect x="558.19" y="151.75" width="32" height="110.25" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="574.19" y="145.75" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">21</text>
+<text x="574.19" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=7</text>
+<text x="574.19" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6 对/答</text>
+<rect x="606.58" y="115" width="32" height="147" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="622.58" y="109" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">28</text>
+<text x="622.58" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=8</text>
+<text x="622.58" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7 对/答</text>
+<rect x="654.97" y="73" width="32" height="189" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="670.97" y="67" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">36</text>
+<text x="670.97" y="279" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K=9</text>
+<text x="670.97" y="295" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8 对/答</text>
+<text x="390" y="316" font-size="12.5" fill="var(--fig-ink, #1C1B19)">一个 batch 64 个提示：384 至 2,304 对（64×6 至 64×36）</text>
+</svg>

@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 716" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Sinkhorn–Knopp 的一个 3×3 算例，以及它收敛得有多快</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="56" y="30" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">① M⁽⁰⁾ = A</text>
+<text x="56" y="52" font-size="12" fill="var(--fig-muted, #74716A)">（mHC 里是 exp(logits)）</text>
+<rect x="57" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="109" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="161" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="57" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="109" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="161" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="57" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="109" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="161" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="220" y="68" font-size="11" fill="var(--fig-red, #A3231C)">行和</text>
+<text x="220" y="94" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">6</text>
+<text x="220" y="124" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">6</text>
+<text x="220" y="154" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">6</text>
+<text x="52" y="182" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">列和</text>
+<text x="82" y="182" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">7</text>
+<text x="134" y="182" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">7</text>
+<text x="186" y="182" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">4</text>
+<line x1="290" y1="120" x2="368" y2="120" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<text x="329" y="108" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓣<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">c</tspan></tspan></text>
+<text x="329" y="140" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">每列除以列和</text>
+<text x="430" y="30" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">② 𝓣<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">c</tspan></tspan>(A)</text>
+<text x="430" y="52" font-size="12" fill="var(--fig-muted, #74716A)">列和都变成 1，行和被打乱</text>
+<rect x="431" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="456" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/7</text>
+<rect x="483" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="508" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/7</text>
+<rect x="535" y="75" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="560" y="94" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/4</text>
+<rect x="431" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="456" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/7</text>
+<rect x="483" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="508" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/7</text>
+<rect x="535" y="105" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="560" y="124" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/4</text>
+<rect x="431" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="456" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2/7</text>
+<rect x="483" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="508" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2/7</text>
+<rect x="535" y="135" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="560" y="154" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1/2</text>
+<text x="594" y="68" font-size="11" fill="var(--fig-red, #A3231C)">行和</text>
+<text x="594" y="94" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">27/28</text>
+<text x="594" y="124" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">27/28</text>
+<text x="594" y="154" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">15/14</text>
+<text x="426" y="182" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">列和</text>
+<text x="456" y="182" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="508" y="182" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="560" y="182" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="56" y="250" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">③ M⁽¹⁾ = 𝓣<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">r</tspan></tspan>(𝓣<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">c</tspan></tspan>(A))</text>
+<text x="56" y="272" font-size="12" fill="var(--fig-muted, #74716A)">行和变成 1，列和又偏了</text>
+<rect x="57" y="295" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16/27</text>
+<rect x="109" y="295" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/27</text>
+<rect x="161" y="295" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7/27</text>
+<rect x="57" y="325" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/27</text>
+<rect x="109" y="325" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16/27</text>
+<rect x="161" y="325" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7/27</text>
+<rect x="57" y="355" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="82" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/15</text>
+<rect x="109" y="355" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="134" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4/15</text>
+<rect x="161" y="355" width="50" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="186" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7/15</text>
+<text x="220" y="288" font-size="11" fill="var(--fig-green, #16704A)">行和</text>
+<text x="220" y="314" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="220" y="344" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="220" y="374" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="52" y="402" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">列和</text>
+<text x="82" y="402" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">136/135</text>
+<text x="134" y="402" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">136/135</text>
+<text x="186" y="402" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">133/135</text>
+<path d="M600 202 V224 H26 V309 H50" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="420" y="214" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓣<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">r</tspan></tspan>：每行除以行和</text>
+<line x1="290" y1="340" x2="368" y2="340" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<text x="329" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">重复 t 次</text>
+<text x="329" y="360" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">t → ∞</text>
+<text x="430" y="250" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">④ 极限（五位小数）</text>
+<text x="430" y="272" font-size="12" fill="var(--fig-muted, #74716A)">行和、列和都为 1：双随机</text>
+<rect x="431" y="295" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="463" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.58899</text>
+<rect x="497" y="295" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="529" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.14725</text>
+<rect x="563" y="295" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="595" y="314" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.26376</text>
+<rect x="431" y="325" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="463" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.14725</text>
+<rect x="497" y="325" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="529" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.58899</text>
+<rect x="563" y="325" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="595" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.26376</text>
+<rect x="431" y="355" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="463" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.26376</text>
+<rect x="497" y="355" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="529" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.26376</text>
+<rect x="563" y="355" width="64" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" rx="4"/>
+<text x="595" y="374" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.47247</text>
+<text x="636" y="288" font-size="11" fill="var(--fig-green, #16704A)">行和</text>
+<text x="636" y="314" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="636" y="344" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="636" y="374" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">1</text>
+<text x="426" y="402" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">列和</text>
+<text x="463" y="402" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="529" y="402" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="595" y="402" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">1</text>
+<text x="56" y="440" font-size="12" fill="var(--fig-muted, #74716A)">③ 的列和 ≈ 1.0074, 1.0074, 0.9852：误差 0.0148；每多一轮，误差约乘 0.0436</text>
+<text x="40" y="470" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">⑤ 最大列和误差 |列和 − 1| 随迭代轮数 t 的变化（对数纵轴）</text>
+<line x1="90" y1="670" x2="540" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="674" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-15</tspan></text>
+<line x1="90" y1="632.8" x2="540" y2="632.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="636.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-12</tspan></text>
+<line x1="90" y1="595.6" x2="540" y2="595.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="599.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-9</tspan></text>
+<line x1="90" y1="558.4" x2="540" y2="558.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="562.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="90" y1="521.2" x2="540" y2="521.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="525.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="90" y1="484" x2="540" y2="484" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="83" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="90" y1="484" x2="90" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="90" y="686" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="184.74" y1="484" x2="184.74" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="184.74" y="686" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="303.16" y1="484" x2="303.16" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="303.16" y="686" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="421.58" y1="484" x2="421.58" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="421.58" y="686" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">15</text>
+<line x1="540" y1="484" x2="540" y2="670" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="540" y="686" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="90" y1="670" x2="540" y2="670" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="90" y1="484" x2="90" y2="670" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="315" y="704" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">迭代轮数 t（mHC 取 t<tspan baseline-shift="sub" font-size="11">max</tspan> = 20）</text>
+<path d="M90.0 506.7 L113.7 523.6 L137.4 540.4 L161.1 557.3 L184.7 574.2 L208.4 591.1 L232.1 607.9 L255.8 624.8 L279.5 641.7 L303.2 658.5" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<circle cx="90" cy="506.68" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="113.68" cy="523.55" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="137.37" cy="540.43" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="161.05" cy="557.3" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="184.74" cy="574.18" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="208.42" cy="591.05" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="232.11" cy="607.93" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="255.79" cy="624.8" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="279.47" cy="641.69" r="2.2" fill="var(--fig-green, #16704A)"/>
+<circle cx="303.16" cy="658.51" r="2.2" fill="var(--fig-green, #16704A)"/>
+<path d="M90.0 489.9 L113.7 492.7 L137.4 494.5 L161.1 495.8 L184.7 496.9 L208.4 497.8 L232.1 498.6 L255.8 499.3 L279.5 499.9 L303.2 500.4 L326.8 500.9 L350.5 501.3 L374.2 501.7 L397.9 502.1 L421.6 502.5 L445.3 502.8 L468.9 503.1 L492.6 503.4 L516.3 503.7 L540.0 504.0" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<circle cx="90" cy="489.92" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="113.68" cy="492.67" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="137.37" cy="494.48" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="161.05" cy="495.83" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="184.74" cy="496.91" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="208.42" cy="497.81" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="232.11" cy="498.58" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="255.79" cy="499.26" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="279.47" cy="499.86" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="303.16" cy="500.4" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="326.84" cy="500.89" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="350.53" cy="501.33" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="374.21" cy="501.75" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="397.89" cy="502.13" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="421.58" cy="502.49" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="445.26" cy="502.83" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="468.95" cy="503.15" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="492.63" cy="503.45" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="516.32" cy="503.73" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<circle cx="540" cy="504" r="2.2" fill="var(--fig-red, #A3231C)"/>
+<path d="M90.0 489.9 L113.7 492.7 L137.4 494.5 L161.1 495.8 L184.7 496.9 L208.4 497.8 L232.1 498.6 L255.8 499.3 L279.5 499.9 L303.2 500.5 L326.8 501.0 L350.5 501.4 L374.2 501.9 L397.9 502.3 L421.6 502.6 L445.3 503.0 L468.9 503.3 L492.6 503.7 L516.3 504.0 L540.0 504.3" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2" stroke-dasharray="5 3"/>
+<circle cx="90" cy="489.92" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="113.68" cy="492.67" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="137.37" cy="494.49" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="161.05" cy="495.85" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="184.74" cy="496.93" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="208.42" cy="497.84" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="232.11" cy="498.62" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="255.79" cy="499.3" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="279.47" cy="499.92" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="303.16" cy="500.47" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="326.84" cy="500.97" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="350.53" cy="501.44" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="374.21" cy="501.87" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="397.89" cy="502.27" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="421.58" cy="502.65" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="445.26" cy="503.01" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="468.95" cy="503.34" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="492.63" cy="503.67" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="516.32" cy="503.97" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="540" cy="504.27" r="2.2" fill="var(--fig-orange, #B4460C)"/>
+<text x="554" y="494" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">红：[[1,1],[0,1]]</text>
+<text x="554" y="511" font-size="12" fill="var(--fig-red, #A3231C)">误差恰为 1/(2t+1)</text>
+<text x="554" y="528" font-size="12" fill="var(--fig-red, #A3231C)">t = 20 时 1/41 = 0.024</text>
+<text x="554" y="556" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="600">橙虚：[[1,1],[e<tspan baseline-shift="super" font-size="11">-10</tspan>,1]]</text>
+<text x="554" y="573" font-size="12" fill="var(--fig-orange, #B4460C)">t = 20 时 0.0232</text>
+<text x="554" y="590" font-size="12" fill="var(--fig-orange, #B4460C)">与红线几乎重合</text>
+<text x="554" y="618" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">绿：本页 3×3 算例</text>
+<text x="554" y="635" font-size="12" fill="var(--fig-green, #16704A)">每轮 × 0.0436（直线）</text>
+<text x="554" y="657" font-size="12" fill="var(--fig-green, #16704A)">t = 10 时 8.4 × 10<tspan baseline-shift="super" font-size="11">-15</tspan></text>
+</svg>
