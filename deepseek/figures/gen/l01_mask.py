@@ -1,4 +1,4 @@
-"""Figure 1.9: the causal mask turns one forward pass into T honest predictions.
+"""Figure 1.10: the causal mask turns one forward pass into T honest predictions.
 
 Scores: the illustrative 4x4 matrix of reference-docs/lesson-01-doc.md sec. 4.4 (not from a real
 model), rows/columns labelled with the GPT-2 tokens of "The unbelievable tokenization".

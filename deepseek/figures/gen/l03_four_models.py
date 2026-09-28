@@ -1,4 +1,4 @@
-"""Figure 3.11: the four networks of PPO-based RLHF and one iteration of data flow.
+"""Figure 3.12: the four networks of PPO-based RLHF and one iteration of data flow.
 
 Policy pi_theta (trained), reference pi_ref (frozen), reward model r_phi (frozen), value network V_psi
 (trained). Sizes in the side notes are InstructGPT's (arXiv v1, sec. 3.5 and App. C.3-C.4): policy

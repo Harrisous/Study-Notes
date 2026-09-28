@@ -1,4 +1,4 @@
-"""Figure 1.12: the residual stream as a conveyor belt (course analogy 6; Elhage et al. 2021).
+"""Figure 1.13: the residual stream as a conveyor belt (course analogy 6; Elhage et al. 2021).
 
 Each of the 2L = 24 sub-layers of GPT-2 small reads a copy of the stream (through its own
 LayerNorm) and adds an increment back. Schematic; the counts (12 blocks, 24 writers, 768 wide)

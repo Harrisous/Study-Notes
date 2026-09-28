@@ -1,4 +1,4 @@
-"""Figure 3.10: rewards, values, TD residuals and GAE advantages on a 4-token answer.
+"""Figure 3.11: rewards, values, TD residuals and GAE advantages on a 4-token answer.
 
 Toy numbers (lesson-03 research notes, sec. 4.4): beta = 0.05, RM score 1.0 on the last token,
 per-token log-ratios log(pi/pi_ref) = [0.10, -0.05, 0.20, 0.00], values V = [0.5, 0.6, 0.7, 0.9],

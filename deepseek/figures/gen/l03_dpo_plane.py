@@ -1,4 +1,4 @@
-"""Figure 3.14: what the DPO loss rewards.
+"""Figure 3.17: what the DPO loss rewards.
 
 Left : per-pair gradient weight sigma(-m) against the implicit-reward margin m = r_w - r_l,
        with the worked examples (beta = 0.1: m = 0.15; beta = 0.5: m = 0.75) and m = +-1.

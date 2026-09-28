@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 404" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>黑板上的显存账：先数一个参数的字节，再数四种做法各放了几个网络</title>
+
+<text x="16" y="26" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">一个参数占几个字节（每格 2 字节）</text>
+<text x="16" y="62" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">训练的参数</text>
+<rect x="104" y="44" width="41" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="124.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="124.5" y="86" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">权重</text>
+<text x="124.5" y="101" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16 位</text>
+<rect x="158" y="44" width="41" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="178.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="178.5" y="86" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">梯度</text>
+<text x="178.5" y="101" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16 位</text>
+<rect x="212" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="232.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="256" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="276.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="254.5" y="86" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">主权重</text>
+<text x="254.5" y="101" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32 位 · 4 字节</text>
+<rect x="310" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="330.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="354" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="374.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="352.5" y="86" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">动量</text>
+<text x="352.5" y="101" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32 位 · 4 字节</text>
+<rect x="408" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="428.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="452" y="44" width="41" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.18" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="3"/>
+<text x="472.5" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="450.5" y="86" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">方差</text>
+<text x="450.5" y="101" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32 位 · 4 字节</text>
+<text x="512" y="62" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 16 字节</text>
+<text x="16" y="142" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">冻结的参数</text>
+<rect x="104" y="124" width="41" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="3"/>
+<text x="124.5" y="142" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="158" y="142" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 2 字节（只存 16 位权重，没有梯度和优化器状态）</text>
+<line x1="10" y1="166" x2="730" y2="166" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="192" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">每个网络 1B 参数时的模型状态（GB）</text>
+<text x="724" y="192" font-size="12.5" fill="var(--fig-muted, #74716A)" text-anchor="end" font-weight="600">× 7 → 7B</text>
+<text x="16" y="229" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">SFT</text>
+<rect x="104" y="210" width="142" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="3"/>
+<text x="175" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">策略 16</text>
+<text x="444" y="229" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 16 GB</text>
+<text x="724" y="229" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">112 GB</text>
+<text x="16" y="271" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">DPO</text>
+<rect x="104" y="252" width="142" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="3"/>
+<text x="175" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">策略 16</text>
+<rect x="248" y="252" width="16" height="28" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="3"/>
+<text x="256" y="271" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="444" y="271" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 18 GB</text>
+<text x="724" y="271" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">126 GB</text>
+<text x="16" y="313" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">GRPO 式</text>
+<rect x="104" y="294" width="142" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="3"/>
+<text x="175" y="313" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">策略 16</text>
+<rect x="248" y="294" width="16" height="28" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="3"/>
+<text x="256" y="313" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="266" y="294" width="16" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="3"/>
+<text x="274" y="313" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="444" y="313" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 20 GB</text>
+<text x="724" y="313" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">140 GB</text>
+<text x="16" y="355" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">PPO</text>
+<rect x="104" y="336" width="142" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="3"/>
+<text x="175" y="355" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">策略 16</text>
+<rect x="248" y="336" width="142" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="3"/>
+<text x="319" y="355" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">价值 16</text>
+<rect x="392" y="336" width="16" height="28" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="3"/>
+<text x="400" y="355" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="410" y="336" width="16" height="28" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="3"/>
+<text x="418" y="355" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="444" y="355" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 36 GB</text>
+<text x="724" y="355" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">252 GB</text>
+<rect x="16" y="376" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="36" y="386" font-size="11.5" fill="var(--fig-ink, #1C1B19)">策略（训练 16）</text>
+<rect x="158" y="376" width="14" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="178" y="386" font-size="11.5" fill="var(--fig-ink, #1C1B19)">价值网络（训练 16）</text>
+<rect x="300" y="376" width="14" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="320" y="386" font-size="11.5" fill="var(--fig-ink, #1C1B19)">参考模型（冻结 2）</text>
+<rect x="442" y="376" width="14" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="462" y="386" font-size="11.5" fill="var(--fig-ink, #1C1B19)">奖励模型（冻结 2）</text>
+<text x="724" y="26" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">只算模型状态：不含激活值与采样用的 KV cache</text>
+</svg>

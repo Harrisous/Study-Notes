@@ -1,4 +1,4 @@
-"""Figure 3.13: RLHF (reward model + RL loop) versus DPO (one maximum-likelihood step).
+"""Figure 3.16: RLHF (reward model + RL loop) versus DPO (one maximum-likelihood step).
 Redrawn after Rafailov et al. 2023, Figure 1, in the course colours; schematic.
 Writes deepseek/figures/l03-dpo-vs-rlhf.svg
 """

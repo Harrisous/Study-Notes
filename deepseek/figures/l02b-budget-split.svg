@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>黑板上的预算分配：两项损失此消彼长</title>
+
+<text x="28" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 预算 ND = 100</text>
+<line x1="58" y1="250" x2="358" y2="250" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="58" y1="215.09" x2="358" y2="215.09" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="219.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="58" y1="180.18" x2="358" y2="180.18" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="184.18" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="58" y1="145.27" x2="358" y2="145.27" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="149.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.3</text>
+<line x1="58" y1="110.36" x2="358" y2="110.36" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="114.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="58" y1="75.45" x2="358" y2="75.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="51" y="79.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="58" y1="250" x2="358" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="66.14" y="75.45" width="26.57" height="174.55" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="66.14" y="68.47" width="26.57" height="6.98" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="79.43" y="62.47" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.52</text>
+<text x="79.43" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=2</text>
+<text x="79.43" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=50</text>
+<rect x="109" y="162.73" width="26.57" height="87.27" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="109" y="148.76" width="26.57" height="13.96" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="122.29" y="142.76" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.29</text>
+<text x="122.29" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=4</text>
+<text x="122.29" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=25</text>
+<rect x="151.86" y="180.18" width="26.57" height="69.82" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="151.86" y="162.73" width="26.57" height="17.45" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="165.14" y="156.73" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.25</text>
+<text x="165.14" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=5</text>
+<text x="165.14" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=20</text>
+<rect x="194.71" y="215.09" width="26.57" height="34.91" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<rect x="194.71" y="180.18" width="26.57" height="34.91" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="1.8"/>
+<text x="208" y="174.18" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0.2</text>
+<text x="208" y="266" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">N=10</text>
+<text x="208" y="281" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">D=10</text>
+<text x="208" y="300" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">谷底：两段一样长</text>
+<rect x="237.57" y="232.55" width="26.57" height="17.45" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="237.57" y="162.73" width="26.57" height="69.82" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="250.86" y="156.73" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.25</text>
+<text x="250.86" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=20</text>
+<text x="250.86" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=5</text>
+<rect x="280.43" y="236.04" width="26.57" height="13.96" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="280.43" y="148.76" width="26.57" height="87.27" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="293.71" y="142.76" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.29</text>
+<text x="293.71" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=25</text>
+<text x="293.71" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=4</text>
+<rect x="323.29" y="243.02" width="26.57" height="6.98" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="323.29" y="68.47" width="26.57" height="174.55" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="336.57" y="62.47" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.52</text>
+<text x="336.57" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=50</text>
+<text x="336.57" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=2</text>
+<text x="373" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 预算翻 4 倍：ND = 400</text>
+<line x1="403" y1="250" x2="703" y2="250" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="403" y1="215.09" x2="703" y2="215.09" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="219.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="403" y1="180.18" x2="703" y2="180.18" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="184.18" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="403" y1="145.27" x2="703" y2="145.27" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="149.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.3</text>
+<line x1="403" y1="110.36" x2="703" y2="110.36" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="114.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="403" y1="75.45" x2="703" y2="75.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396" y="79.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="403" y1="250" x2="703" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="411.14" y="180.18" width="26.57" height="69.82" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="411.14" y="175.82" width="26.57" height="4.36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="424.43" y="169.82" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.213</text>
+<text x="424.43" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=5</text>
+<text x="424.43" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=80</text>
+<rect x="454" y="206.36" width="26.57" height="43.64" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="454" y="199.38" width="26.57" height="6.98" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="467.29" y="193.38" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.145</text>
+<text x="467.29" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=8</text>
+<text x="467.29" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=50</text>
+<rect x="496.86" y="215.09" width="26.57" height="34.91" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="496.86" y="206.36" width="26.57" height="8.73" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="510.14" y="200.36" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.125</text>
+<text x="510.14" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=10</text>
+<text x="510.14" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=40</text>
+<rect x="539.71" y="232.55" width="26.57" height="17.45" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<rect x="539.71" y="215.09" width="26.57" height="17.45" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="1.8"/>
+<text x="553" y="209.09" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0.1</text>
+<text x="553" y="266" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">N=20</text>
+<text x="553" y="281" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">D=20</text>
+<text x="553" y="300" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">谷底：两段一样长</text>
+<rect x="582.57" y="241.27" width="26.57" height="8.73" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="582.57" y="206.36" width="26.57" height="34.91" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="595.86" y="200.36" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.125</text>
+<text x="595.86" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=40</text>
+<text x="595.86" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=10</text>
+<rect x="625.43" y="243.02" width="26.57" height="6.98" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="625.43" y="199.38" width="26.57" height="43.64" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="638.71" y="193.38" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.145</text>
+<text x="638.71" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=50</text>
+<text x="638.71" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=8</text>
+<rect x="668.29" y="245.64" width="26.57" height="4.36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="668.29" y="175.82" width="26.57" height="69.82" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="681.57" y="169.82" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.213</text>
+<text x="681.57" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">N=80</text>
+<text x="681.57" y="281" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">D=5</text>
+<rect x="60" y="314" width="26" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="94" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)">模型有限 1/N</text>
+<rect x="210" y="314" width="26" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="244" y="326" font-size="12" fill="var(--fig-ink, #1C1B19)">数据有限 1/D</text>
+<text x="372" y="326" font-size="12" fill="var(--fig-muted, #74716A)">柱顶数字 = 玩具损失 1/N + 1/D</text>
+</svg>

@@ -1,4 +1,4 @@
-"""Figure 3.12: model-state memory of SFT, DPO, GRPO-style RL and PPO-RLHF (bookkeeping estimate).
+"""Figure 3.14: model-state memory of SFT, DPO, GRPO-style RL and PPO-RLHF (bookkeeping estimate).
 
 Assumptions (stated in the lesson): a trained network costs 16 bytes/parameter (mixed-precision Adam:
 fp16 weights 2 + fp16 grads 2 + fp32 master weights, momentum, variance 12; ZeRO paper sec. 3.1);

@@ -1,4 +1,4 @@
-"""Figure 3.15: lineage of the methods in lesson 3, placed by arXiv first-version date.
+"""Figure 3.18: lineage of the methods in lesson 3, placed by arXiv first-version date.
 
 Dates (lesson-03 research notes, sec. 0): GAE 2015-06-08; Christiano 2017-06-12; PPO 2017-07-20;
 Ziegler 2019-09-18; Stiennon 2020-09-02; InstructGPT 2022-03-04; HH-RLHF 2022-04-12; DPO 2023-05-29;

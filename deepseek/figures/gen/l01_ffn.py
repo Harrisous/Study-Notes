@@ -1,4 +1,4 @@
-"""Figure 1.11: the FFN read as a key-value memory, and the GELU non-linearity.
+"""Figure 1.12: the FFN read as a key-value memory, and the GELU non-linearity.
 
 Left: FFN(x) = sum_m GELU(k_m . x + b_m) v_m with k_m = rows of W_1 and v_m = columns of W_2
 (Geva et al. 2021, eq. 1, rewritten in the course's column convention), GPT-2 small shapes.

@@ -1,4 +1,4 @@
-"""Figure 1.8: why the scores are divided by sqrt(d_k).
+"""Figure 1.9: why the scores are divided by sqrt(d_k).
 
 Left: distribution of q.k for d_k = 64 when q, k have independent N(0, 1) components
 (Vaswani et al. 2017, footnote 4 assumptions), before and after dividing by sqrt(64) = 8.

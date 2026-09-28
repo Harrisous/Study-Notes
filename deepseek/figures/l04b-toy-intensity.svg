@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>黑板上的两部分强度：权重被全 batch 共用，KV 每条序列各读各的</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="10" y="8" width="352" height="404" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<rect x="378" y="8" width="352" height="404" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="24" y="32" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">权重部分：一份 W，全 batch 共用</text>
+<text x="392" y="32" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">注意力部分：每条序列读自己的 KV</text>
+<rect x="40" y="62" width="92" height="92" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" rx="4"/>
+<text x="86" y="104" font-size="16" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">W</text>
+<text x="86" y="124" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1000×1000</text>
+<text x="86" y="174" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">搬一次：2,000,000 字节</text>
+<line x1="138" y1="108" x2="234.44" y2="74.62" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<circle cx="250" cy="72" r="8" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="266" y="76" font-size="12" fill="var(--fig-blue, #1F5FA8)">序列 1</text>
+<line x1="138" y1="108" x2="234.05" y2="96.92" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<circle cx="250" cy="96" r="8" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="266" y="100" font-size="12" fill="var(--fig-blue, #1F5FA8)">序列 2</text>
+<line x1="138" y1="108" x2="234.05" y2="119.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<circle cx="250" cy="120" r="8" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="266" y="124" font-size="12" fill="var(--fig-blue, #1F5FA8)">序列 3</text>
+<line x1="138" y1="108" x2="234.44" y2="141.38" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<circle cx="250" cy="144" r="8" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3"/>
+<text x="266" y="148" font-size="12" fill="var(--fig-blue, #1F5FA8)">序列 4</text>
+<text x="34" y="198" font-size="12" fill="var(--fig-muted, #74716A)">B = 4 时，4 条序列都用这同一份</text>
+<rect x="396" y="52" width="140" height="96" fill="var(--fig-amber, #8A6508)" fill-opacity="0.05" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="6"/>
+<text x="466" y="198" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">序列 1 自己的缓存</text>
+<text x="404" y="75" font-size="11" fill="var(--fig-muted, #74716A)">位置 1</text>
+<rect x="444" y="62" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="478" y="62" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="458" y="62" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="492" y="62" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="404" y="97" font-size="11" fill="var(--fig-muted, #74716A)">位置 2</text>
+<rect x="444" y="84" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="478" y="84" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="458" y="84" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="492" y="84" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="404" y="119" font-size="11" fill="var(--fig-muted, #74716A)">位置 3</text>
+<rect x="444" y="106" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="478" y="106" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="458" y="106" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="492" y="106" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="457" y="140" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="491" y="140" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<line x1="424" y1="148" x2="424" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="424" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="452" y1="148" x2="452" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="452" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="480" y1="148" x2="480" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="480" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="508" y1="148" x2="508" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="508" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="560" y="52" width="140" height="96" fill="var(--fig-amber, #8A6508)" fill-opacity="0.05" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="6"/>
+<text x="630" y="198" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">序列 2 自己的缓存</text>
+<text x="568" y="75" font-size="11" fill="var(--fig-muted, #74716A)">位置 1</text>
+<rect x="608" y="62" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="642" y="62" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="622" y="62" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="656" y="62" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="568" y="97" font-size="11" fill="var(--fig-muted, #74716A)">位置 2</text>
+<rect x="608" y="84" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="642" y="84" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="622" y="84" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="656" y="84" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="568" y="119" font-size="11" fill="var(--fig-muted, #74716A)">位置 3</text>
+<rect x="608" y="106" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="642" y="106" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<rect x="622" y="106" width="12" height="16" fill="var(--fig-violet, #6733C4)" fill-opacity="0.25" stroke="var(--fig-violet, #6733C4)" stroke-width="0.7" rx="2"/>
+<rect x="656" y="106" width="12" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.7" rx="2"/>
+<text x="621" y="140" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">K</text>
+<text x="655" y="140" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V</text>
+<line x1="588" y1="148" x2="588" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="588" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="616" y1="148" x2="616" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="616" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="644" y1="148" x2="644" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="644" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<line x1="672" y1="148" x2="672" y2="168" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1"/>
+<circle cx="672" cy="174" r="6" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="392" y="226" font-size="12" fill="var(--fig-muted, #74716A)">每条序列 4 个查询头（蓝点）共用 1 个 KV 头（MQA）</text>
+<text x="24" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700"></text>
+<text x="160" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">运算</text>
+<text x="246" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">字节</text>
+<text x="332" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">强度</text>
+<line x1="20" y1="266" x2="352" y2="266" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="24" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">B = 1</text>
+<text x="160" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">2,000,000</text>
+<text x="246" y="288" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">2,000,000</text>
+<text x="332" y="288" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">1</text>
+<rect x="18" y="298" width="336" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" rx="4"/>
+<text x="24" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)">B = 4</text>
+<text x="160" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">8,000,000</text>
+<text x="246" y="316" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">2,000,000</text>
+<text x="332" y="316" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">4</text>
+<text x="24" y="346" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">字节不随 B 变，强度 = B</text>
+<text x="24" y="368" font-size="12" fill="var(--fig-muted, #74716A)">（输入向量的字节不到 1%，忽略）</text>
+<text x="392" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700"></text>
+<text x="528" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">运算</text>
+<text x="614" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">字节</text>
+<text x="700" y="258" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">强度</text>
+<line x1="388" y1="266" x2="720" y2="266" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="392" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">MQA，B = 1</text>
+<text x="528" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">96</text>
+<text x="614" y="288" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">24</text>
+<text x="700" y="288" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">4</text>
+<text x="392" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)">MQA，B = 2</text>
+<text x="528" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">192</text>
+<text x="614" y="316" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">48</text>
+<text x="700" y="316" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">4</text>
+<text x="392" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)">MHA，B = 1</text>
+<text x="528" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">96</text>
+<text x="614" y="344" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">96</text>
+<text x="700" y="344" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">1</text>
+<text x="392" y="372" font-size="12" fill="var(--fig-ink, #1C1B19)">MHA，B = 2</text>
+<text x="528" y="372" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">192</text>
+<text x="614" y="372" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">192</text>
+<text x="700" y="372" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">1</text>
+<text x="392" y="398" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">运算和字节一起随 B 翻倍，强度 = n<tspan baseline-shift="sub" font-size="11">h</tspan>/n<tspan baseline-shift="sub" font-size="11">g</tspan></text>
+</svg>

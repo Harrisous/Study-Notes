@@ -1,4 +1,4 @@
-"""Figure 1.10: multi-head attention in GPT-2 small (d = 768, n_h = 12, d_h = 64).
+"""Figure 1.11: multi-head attention in GPT-2 small (d = 768, n_h = 12, d_h = 64).
 
 (a) splitting the 768-d query into 12 slices costs nothing (a reshape);
 (b) every head runs its own softmax, so one position gets 12 different weightings of its prefix

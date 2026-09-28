@@ -13,6 +13,12 @@
   --default-mono-font-family: var(--font-mono);
 }
 
+/* Unlayered on purpose: the claude.ai Artifact skeleton ships its own unlayered body reset
+   (off-white ground, dark text), which beats any layered rule. If page ground and text colour
+   came from that reset while the boxes used our dark tokens, dark mode would show dark text on
+   dark boxes. Painting both here keeps the ground and the ink from the same token set. */
+body, .zh { background: var(--color-paper); color: var(--color-ink); }
+
 @layer components {
   /* CJK body text wants more leading and a narrower measure than Latin text */
   .zh { font-size: 16.5px; line-height: 1.82; letter-spacing: .01em; }

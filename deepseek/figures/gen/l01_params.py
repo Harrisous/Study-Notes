@@ -1,4 +1,4 @@
-"""Figure 1.14: where the parameters of GPT-2 live.
+"""Figure 1.18: where the parameters of GPT-2 live.
 
 (a) GPT-2 small, exact count 124,439,808, split into wte / wpe / attention / FFN / LayerNorm.
 (b) the four GPT-2 sizes: embedding share of the exact total, and non-embedding count vs 12 L d^2.

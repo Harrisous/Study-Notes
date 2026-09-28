@@ -1,4 +1,4 @@
-"""Figure 3.9: how GAE weights future TD residuals, (gamma*lambda)^l.
+"""Figure 3.10: how GAE weights future TD residuals, (gamma*lambda)^l.
 
   gamma*lambda = 0.9405  (gamma 0.99, lambda 0.95: PPO paper, MuJoCo, Table 3)
   gamma*lambda = 0.95    (gamma 1, lambda 0.95: Stiennon et al. 2020, App. B.1)

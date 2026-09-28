@@ -1,4 +1,4 @@
-"""Figure 1.15: forward FLOPs per token of GPT-2 small.
+"""Figure 1.19: forward FLOPs per token of GPT-2 small.
 
 (a) T = 1024: weight matmuls 2 * 12 L d^2 = 169.87M, unembedding 2 d V = 77.19M, attention scores
     and weighted sums 2 L T d = 18.87M (Kaplan et al. 2020, Table 1 counting) or 4 L T d = 37.75M

@@ -1,4 +1,4 @@
-"""Figure 1.7: the hand-computed 3-token example of sec. 3 (d_k = 2), drawn in the plane.
+"""Figure 1.8: the hand-computed 3-token example of sec. 3 (d_k = 2), drawn in the plane.
 
 (a) keys k_1..k_3 and the query q_3 of token 3; the scores are the dot products q_3 . k_j.
 (b) values v_1..v_3 span a triangle; each output o_t = sum_j alpha_tj v_j is a point inside the

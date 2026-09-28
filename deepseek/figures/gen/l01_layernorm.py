@@ -1,4 +1,4 @@
-"""Figure 1.13: Post-LN vs Pre-LN, redrawn from Xiong et al. (2020) Fig. 1 in the course colours,
+"""Figure 1.16: Post-LN vs Pre-LN, redrawn from Xiong et al. (2020) Fig. 1 in the course colours,
 plus the hidden-state norms of their Lemma 2 (at initialisation, under the paper's simplified
 assumptions): Post-LN E||x^{post,5}_l||^2 = 1.5 d for every layer l > 0 (the sum that enters the
 second LayerNorm; after that LayerNorm the norm^2 is exactly d); Pre-LN
