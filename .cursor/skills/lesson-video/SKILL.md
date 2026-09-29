@@ -1,6 +1,6 @@
 ---
 name: lesson-video
-description: Turns a lesson page into a narrated 16:9 "blackboard" explainer video (Manim CE + ElevenLabs), with per-segment difficulty badges (零基础 / 工程师向), burned-in Chinese subtitles, an SRT file and a chapter list. Use when writing or editing an episode under */video/*.py, changing the voice, or building, checking or re-rendering a lesson video.
+description: Turns a lesson page into a narrated 16:9 explainer video (Manim CE + ElevenLabs) in a 3Blue1Brown-style or chalkboard theme, with per-segment difficulty badges (零基础 / 工程师向), burned-in Chinese subtitles, an SRT file, a chapter list and per-chapter files for a web player. Use when writing or editing an episode under */video/*.py, changing the voice or theme, or building, checking or re-rendering a lesson video.
 ---
 
 # Lesson videos (episode script → narrated blackboard video)
@@ -30,7 +30,27 @@ $PY $S/make_video.py tts deepseek/video/l01-s4.py            # bill only lines n
 $PY $S/make_video.py qa  deepseek/video/l01-s4.py            # Whisper listen-back, prints lines above 12% CER
 $PY $S/make_video.py all deepseek/video/l01-s4.py            # 1080p30 final (TTS already cached)
 $PY $S/make_video.py render deepseek/video/l01-s4.py --only S05Saturation   # re-render one segment
+$PY $S/make_video.py split deepseek/video/l01-s4.py          # one file per chapter (<19 MiB) + chapters.json
+$PY $S/make_video.py page  deepseek/video/l01-s4.py --page-dir <scratchpad>/l01-s4-video   # the video page
 ```
+
+`page` fills `assets/player.html` from the episode's `page_title`, `kicker`, `headline`, `lede` and
+`source` fields. Publish its `index.html` as an Artifact, with `poster.jpg` and `chapters/*.mp4` as
+`files` (each under 15 MB, the lot under 64 MB). Publishing reads only from the repo or the session
+scratchpad, which is why `--page-dir` points there. The video pages are listed in
+`deepseek/reference-docs/artifacts.md`.
+
+An episode's `EPISODE` dict sets `theme` (`"3b1b"`, the default, or `"chalk"`), `voice` (an ElevenLabs
+voice id) and `speak_numbers` (`"zh"`: every bare number is read the Chinese way while the subtitle keeps
+the digits, so `64` is spoken 六十四, `2017 年` 二零一七年, `87%` 百分之八十七).
+
+- **3b1b**: black ground, 思源黑体 (Noto Sans SC), Computer Modern maths and Manim's 3Blue1Brown palette
+  (blue #58C4DD for queries, purple for keys, green for values, yellow for highlights, red for masked).
+- **chalk**: green board, 楷体 and chalk colours, with a dust texture laid over the frame at assembly.
+
+Per-chapter files are for the private video page (an Artifact with the `assets` capability, whose
+uploads are capped at 20 MiB each). The page lists chapters with their level and can skip the
+工程师向 ones.
 
 1. **Lay out with `--dry`.** Narration is faked at 4.3 characters per second, so the whole episode
    renders in about 30 s for nothing. `render` prints layout warnings (anything outside the safe
@@ -68,8 +88,9 @@ class S01Coins(Segment):            # S<nn> = order and chapter number
 ```
 
 - **Narration markup.** `{name}` is a bookmark for `v.until("name")`. `[shown|spoken]` puts one
-  thing in the subtitle and has the voice say another. Use it for maths: `[√d_k|根号 d k]`,
-  `[2,362,368|二百三十六万两千三百六十八]`. Leaving a `with self.say()` block waits for the clip to
+  thing in the subtitle and has the voice say another. Use it for maths (`[√d_k|根号 d k]`) and for
+  words the voice misreads: 行 as háng is safer as `[按行|一行一行地]`. With `speak_numbers: "zh"`
+  you never need to write number pairs by hand. Leaving a `with self.say()` block waits for the clip to
   end. Keep every `say()`/`narrate()` text a **string literal**: the TTS and QA passes read them
   from the file without running Manim.
 - **Helpers.** `T` (chalk text, KaiTi), `M` (MathTex), `L("text $maths$ text")` (one mixed line),
@@ -95,16 +116,23 @@ class S01Coins(Segment):            # S<nn> = order and chapter number
 
 ## Voice
 
-`scripts/tts.py` holds the voice, model and settings: `eleven_v3`, speed 1.15, stability 0.5.
-The account is on ElevenLabs' free plan. The API refuses Voice Library voices on that plan (HTTP
-402), so the voice is the premade "Daniel". On 2026-09-28 the premade male voices scored 19–25% CER
-reading Mandarin on `eleven_multilingual_v2` and 3–5% on `eleven_v3` (Whisper listen-back). Test
-clips are in `D:\StudyNotes-video\out\voice-test\`.
+`scripts/tts.py` holds the default voice, model and settings: `eleven_v3`, speed 1.15, stability 0.5.
+An episode's `voice` overrides the default voice.
 
-To change the voice, set `VOICE_ID` (or the `BB_VOICE_ID` environment variable). Every line then
-re-bills once. A cloned voice or a Voice Library voice needs a paid plan.
+The account is on ElevenLabs' free plan, which only allows the premade voices through the API.
+Voice Library voices return HTTP 402, and designing or cloning a voice returns HTTP 403 ("only
+available on a paid plan"). On 2026-09-28 the premade voices scored 19–25% CER reading Mandarin on
+`eleven_multilingual_v2` and 3–5% on `eleven_v3` in the Whisper listen-back. `l01-s4` uses "Laura"
+(lively; the highest Whisper confidence of those tested). "Daniel" (steady broadcaster) was the first
+pick. Test clips are in `D:\StudyNotes-video\out\voice-test\`.
 
-The free plan allows 10,000 credits a month, and one 15-minute episode costs about 3,700. Audio made
+Changing the voice re-bills every line once. Don't imitate a real person's voice (a voice actor, or a
+meme voice cloned from one) without their permission. A cloned voice of your own, or a Voice Library
+voice, needs a paid plan.
+
+The free plan allows 10,000 credits a month, and one 14-minute episode costs about 3,700. On 2026-09-28
+the month's quota ran out (4 credits left) after the episode had been voiced twice plus the voice tests.
+A quota error names the credits left, and lines already synthesised stay cached. Audio made
 on the free plan may not be used commercially. When it is published, "elevenlabs.io" or "11.ai" must
 appear in the title
 ([ElevenLabs help](https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform)).

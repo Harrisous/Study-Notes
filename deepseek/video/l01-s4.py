@@ -8,7 +8,17 @@ from math import comb
 
 from blackboard import *
 
-EPISODE = {"title": "第 1 课 §4 · 注意力（二）：缩放、因果掩码与多头"}
+EPISODE = {"title": "第 1 课 §4 · 注意力（二）：缩放、因果掩码与多头",
+           "theme": "3b1b",
+           "voice": "FGY2WhTYpPnrIDTdsKH5",  # premade "Laura": lively; best Whisper score of the voices the free plan allows
+           "speak_numbers": "zh",
+           # the private video page (make_video.py page)
+           "page_title": "注意力（二）视频",
+           "kicker": "DeepSeek 科技树 · 第 1 课 §4",
+           "headline": "注意力（二）：缩放、因果掩码与多头",
+           "lede": "为什么打分要除以 √d<sub>k</sub>、softmax 之前为什么加 −∞、为什么用 12 个 64 维的头。"
+                   "视频按章节切开，每章标了难度，可以只看零基础的部分。",
+           "source": "数字全部取自讲义第 1 课 §4。"}
 
 
 def coin_hist(unit=0.19, max_h=2.3, base=-2.2):
@@ -51,14 +61,14 @@ class S01Coins(Segment):
     level, title = ZERO, "开场：抛 64 次硬币"
 
     def header(self):
-        kicker = T("DeepSeek 科技树 · 第 1 课 §4 · 黑板课", 28, MUTED)
+        kicker = T("DeepSeek 科技树 · 第 1 课 §4", 28, MUTED)
         name = T("注意力（二）：缩放、因果掩码与多头", 54)
         legend = VGroup(
             VGroup(badge(ZERO, 26), T("谁都能听懂：比方、手算、结论", 30)).arrange(RIGHT, buff=0.35),
             VGroup(badge(ENG, 26), T("要一点线性代数、概率和深度学习的底子，第一次看可以跳过", 30)).arrange(RIGHT, buff=0.35),
         ).arrange(DOWN, buff=0.35, aligned_edge=LEFT)
         card = VGroup(kicker, name, legend).arrange(DOWN, buff=0.6)
-        with self.say("这是 DeepSeek 科技树第一课第四页的黑板课。{a}视频分段标了难度：绿色“零基础”，谁都能听懂；"
+        with self.say("这是 DeepSeek 科技树第一课的第四页。{a}视频分段标了难度：绿色“零基础”，谁都能听懂；"
                       "{b}橙色“工程师向”，要一点线性代数和深度学习的底子，第一次看可以跳过。") as v:
             self.play(FadeIn(kicker), Write(name), run_time=1.5)
             v.until("a")
@@ -69,7 +79,7 @@ class S01Coins(Segment):
         super().header()
 
     def body(self):
-        with self.say("先请大家做一个思想实验。{a}抛一枚硬币，正面记加一，反面记减一。") as v:
+        with self.say("先请大家做一个思想实验。{a}抛一枚硬币，正面算加一，反面算减一。") as v:
             coin = VGroup(L(r"正面 $\to +1$", 44, V_GREEN), L(r"反面 $\to -1$", 44, RED)).arrange(RIGHT, buff=1.5)
             self.put(coin, center=True, first_y=2.7)
             v.until("a")
@@ -128,7 +138,7 @@ class S01Coins(Segment):
 
 
 class S02FourCoins(Segment):
-    level, title = ZERO, "黑板上：4 维点积 = 抛 4 次硬币"
+    level, title = ZERO, "手算：4 维点积 = 抛 4 次硬币"
 
     def body(self):
         self.narrate("先把 64 缩成 4，在黑板上一种一种地数。")
@@ -364,7 +374,7 @@ class S06Mask(Segment):
             r[1].move_to([-2.6, 1.6 - i * 0.8, 0], aligned_edge=LEFT)
         def cover(k):  # a sheet over rows k..3
             top, bottom = 1.6 - (k - 0.5) * 0.8, 1.6 - 3.5 * 0.8
-            return Rectangle(width=4.6, height=top - bottom, fill_color="#D9D3C2", fill_opacity=0.96,
+            return Rectangle(width=4.6, height=top - bottom, fill_color=PAPER, fill_opacity=1.0,
                              stroke_width=0).move_to([-3.35, (top + bottom) / 2, 0])
 
         paper = cover(1)
@@ -420,7 +430,7 @@ class S06Mask(Segment):
             for t in range(n - 1):
                 first = cells[t * n + t + 1]
                 w = (n - 1 - t) * 0.85
-                papers.add(Rectangle(width=w - 0.08, height=0.85 - 0.12, fill_color="#D9D3C2", fill_opacity=0.5,
+                papers.add(Rectangle(width=w - 0.08, height=0.85 - 0.12, fill_color=PAPER, fill_opacity=0.5,
                                      stroke_width=0).move_to(first.get_left() + RIGHT * w / 2))
             self.play(LaggedStart(*[FadeIn(p, shift=RIGHT * 0.2) for p in papers], lag_ratio=0.0), run_time=0.9)
             note = T("每一行各一张纸，同时盖好", 30, AMBER).next_to(side, DOWN, buff=0.5).align_to(side, LEFT)
@@ -662,6 +672,6 @@ class S10Recap(Segment):
             self.item(v, r"② 因果掩码：softmax 之前加 $-\infty$", r"训练并行且诚实；旧位置的 $K,\ V$ 可精确缓存")
         with self.say("第三，多头就是几套独立的 softmax，总运算量不变；{a}W O 让每个头把结果写回残差流。") as v:
             self.item(v, r"③ 多头：几套独立的 softmax，总运算量不变", r"$W^O$ 让每个头写回残差流：$\mathbf u_t=\sum_iW^O_i\mathbf o_{t,i}$")
-        with self.say("下一页，我们看注意力之后的另一半：前馈网络。") as v:
+        with self.say("下一页，我们来看前馈网络。") as v:
             nxt = self.put(T("下一页：前馈网络 →", 34, MUTED), center=True, gap=0.5)
             self.play(FadeIn(nxt))

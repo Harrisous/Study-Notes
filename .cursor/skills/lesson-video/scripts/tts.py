@@ -8,6 +8,8 @@ not change, and a lock file keeps parallel renders from billing the same line tw
 Narration markup (shared by the Manim kit and the subtitle writer):
     [shown|spoken]   the subtitle shows "shown", the voice says "spoken", e.g. [√d_k|根号 d k]
     {name}           a bookmark; animations can wait until the voice reaches it
+With BB_SPEAK_NUMBERS=zh (an episode's "speak_numbers": "zh"), bare numbers become
+[64|六十四]-style pairs automatically.
 """
 from __future__ import annotations
 
@@ -36,6 +38,68 @@ MODEL_ID = os.environ.get("BB_MODEL_ID", "eleven_v3")
 SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True, "speed": 1.15}
 
 _PIECE = re.compile(r"\[([^\[\]|]*)\|([^\[\]]*)\]|\{(\w+)\}|(.)", re.S)
+_MARKUP = re.compile(r"\[[^\[\]|]*\|[^\[\]]*\]|\{\w+\}")
+_NUM = re.compile(r"(?<![A-Za-z0-9_.])(\d{1,3}(?:,\d{3})+|\d+)(?:\.(\d+))?(%)?(?![A-Za-z0-9_])")
+_DIG = "零一二三四五六七八九"
+
+
+def _four(n: int) -> str:
+    out, zero = "", False
+    for i, unit in ((3, "千"), (2, "百"), (1, "十"), (0, "")):
+        d = n // 10 ** i % 10
+        if d == 0:
+            zero = bool(out)
+        else:
+            out += ("零" if zero else "") + _DIG[d] + unit
+            zero = False
+    return out
+
+
+def int2zh(n: int) -> str:
+    """Integer as read aloud in Mandarin: 768 -> 七百六十八, 1024 -> 一千零二十四, 2362368 -> 二百三十六万二千三百六十八."""
+    if n == 0:
+        return "零"
+    groups = []
+    while n:
+        groups.append(n % 10000)
+        n //= 10000
+    out = ""
+    for gi in range(len(groups) - 1, -1, -1):
+        g = groups[gi]
+        if g == 0:
+            continue
+        if out and g < 1000:
+            out += "零"
+        out += _four(g) + ("", "万", "亿", "万亿")[gi]
+    return out[1:] if out.startswith("一十") else out
+
+
+def speak_numbers(text: str) -> str:
+    """Wrap every bare number in [digits|Chinese reading] so the subtitle keeps the digits and the voice
+    reads it the Chinese way (premade voices misread Arabic numerals next to English words)."""
+    def one(seg: str) -> str:
+        def rep(m: re.Match) -> str:
+            whole, frac, pct = m.group(1), m.group(2), m.group(3)
+            after = seg[m.end():].lstrip()
+            if frac is None and not pct and len(whole) == 4 and after.startswith("年"):
+                spoken = "".join(_DIG[int(c)] for c in whole)  # years digit by digit
+            elif whole == "2" and frac is None and not pct and after[:1] in tuple("个次位种项倍张条对组层"):
+                spoken = "两"
+            else:
+                spoken = int2zh(int(whole.replace(",", "")))
+            if frac:
+                spoken += "点" + "".join(_DIG[int(c)] for c in frac)
+            return f"[{m.group(0)}|{'百分之' + spoken if pct else spoken}]"
+        seg = _NUM.sub(rep, seg)
+        # a space between a Chinese character and a number reads as a pause: keep it on screen only
+        seg = re.sub(r"(?<=[一-鿿]) \[([^\[\]|]*)\|", r"[ \1|", seg)
+        return re.sub(r"\[([^\[\]|]*)\|([^\[\]]*)\] (?=[一-鿿])", r"[\1 |\2]", seg)
+
+    out, pos = [], 0
+    for m in _MARKUP.finditer(text):
+        out += [one(text[pos:m.start()]), m.group(0)]
+        pos = m.end()
+    return "".join(out + [one(text[pos:])])
 
 
 @dataclass
@@ -48,6 +112,8 @@ class Line:
 
 
 def parse(text: str) -> Line:
+    if os.environ.get("BB_SPEAK_NUMBERS") == "zh":
+        text = speak_numbers(text)
     speech, display, marks, spans = [], [], {}, []
     s = d = 0
     for m in _PIECE.finditer(text):

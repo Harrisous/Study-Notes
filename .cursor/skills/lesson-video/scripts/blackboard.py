@@ -28,23 +28,36 @@ from manim import *  # noqa: F401,F403  (episode files do `from blackboard impor
 
 import tts
 
-# ---- chalk palette; hues follow the course's figure semantics (style-guide.md §4) ----
-BOARD = "#1E3328"
-INK = "#F1EFE6"      # plain chalk: text, lines
-MUTED = "#8FA79A"    # faded chalk: scaffolding, grids, "earlier" work
-Q_BLUE = "#8EC5F0"   # query / current token
-K_VIOLET = "#C9ABF2" # key / scores
-V_GREEN = "#A6DB9A"  # value / output / good
-AMBER = "#F2CC6B"    # cache / memory; also the general highlight
-ORANGE = "#F5A66B"   # compressed / low precision
-RED = "#F08A8A"      # masked / discarded / wrong
+# ---- themes; hues follow the course's figure semantics (style-guide.md §4) ----
+# "3b1b": black ground, Source Han Sans (Noto Sans SC) and the 3Blue1Brown palette that Manim ships with.
+# "chalk": green board, KaiTi and chalk colours (make_video.py adds a dust texture for it).
+THEMES = {
+    "3b1b": {"BOARD": "#000000", "INK": "#FFFFFF", "MUTED": "#A8A8A8", "Q_BLUE": "#58C4DD", "K_VIOLET": "#B189C6",
+             "V_GREEN": "#83C167", "AMBER": "#F7D96F", "ORANGE": "#FF862F", "RED": "#FC6255", "PAPER": "#5A5A5A",
+             "FONT": "Noto Sans SC", "ZERO_C": "#83C167", "ENG_C": "#F0AC5F", "RULE": False, "RADIUS": 0.0},
+    "chalk": {"BOARD": "#1E3328", "INK": "#F1EFE6", "MUTED": "#8FA79A", "Q_BLUE": "#8EC5F0", "K_VIOLET": "#C9ABF2",
+              "V_GREEN": "#A6DB9A", "AMBER": "#F2CC6B", "ORANGE": "#F5A66B", "RED": "#F08A8A", "PAPER": "#D9D3C2",
+              "FONT": "KaiTi", "ZERO_C": "#A6DB9A", "ENG_C": "#F5A66B", "RULE": True, "RADIUS": 0.08},
+}
+THEME = os.environ.get("BB_THEME", "3b1b")
+_t = THEMES[THEME]
+BOARD = _t["BOARD"]
+INK = _t["INK"]            # plain text, lines
+MUTED = _t["MUTED"]        # scaffolding, grids, secondary text
+Q_BLUE = _t["Q_BLUE"]      # query / current token
+K_VIOLET = _t["K_VIOLET"]  # key / scores
+V_GREEN = _t["V_GREEN"]    # value / output / good
+AMBER = _t["AMBER"]        # cache / memory; also the general highlight
+ORANGE = _t["ORANGE"]      # compressed / low precision
+RED = _t["RED"]            # masked / discarded / wrong
+PAPER = _t["PAPER"]        # the sheet that covers masked cells
 HILITE = AMBER
 
-FONT = os.environ.get("BB_FONT", "KaiTi")
+FONT = os.environ.get("BB_FONT", _t["FONT"])
 CODE_FONT = "Consolas"
 MATH_FONT_SIZE = 46
 ZERO, ENG = "zero", "eng"
-LEVELS = {ZERO: ("零基础", V_GREEN), ENG: ("工程师向", ORANGE)}
+LEVELS = {ZERO: ("零基础", _t["ZERO_C"]), ENG: ("工程师向", _t["ENG_C"])}
 
 # Safe area in scene units (frame is 14.22 x 8). The strip below SAFE_BOTTOM is kept for subtitles.
 SAFE_LEFT, SAFE_RIGHT, SAFE_TOP, SAFE_BOTTOM = -6.75, 6.75, 3.05, -2.75
@@ -130,7 +143,7 @@ def badge(level: str, size: float = 24) -> VGroup:
 
 
 def chalk_box(mob: Mobject, color=HILITE, buff: float = 0.15, **kw) -> SurroundingRectangle:
-    return SurroundingRectangle(mob, color=color, buff=buff, corner_radius=0.08, stroke_width=3, **kw)
+    return SurroundingRectangle(mob, color=color, buff=buff, corner_radius=_t["RADIUS"], stroke_width=3, **kw)
 
 
 def chalk_underline(mob: Mobject, color=HILITE, buff: float = 0.08) -> Line:
@@ -242,7 +255,7 @@ class Segment(Scene):
         self.wait(0.5)
         small = T(f"{num} {self.title}".strip(), 26, MUTED).to_corner(UL, buff=0.3).set_y(HEADER_Y)
         rule = Line([SAFE_LEFT, HEADER_Y - 0.32, 0], [SAFE_RIGHT, HEADER_Y - 0.32, 0], color=MUTED, stroke_width=1.5,
-                    stroke_opacity=0.5)
+                    stroke_opacity=0.5 if _t["RULE"] else 0.0)
         self.chrome = VGroup(small, tag_box, rule)
         self._frame_items |= {id(m) for m in [*self.chrome.get_family(), big, tag]}
         self.play(ReplacementTransform(big, small), ReplacementTransform(tag, badge_t), Create(tag_box[0]),

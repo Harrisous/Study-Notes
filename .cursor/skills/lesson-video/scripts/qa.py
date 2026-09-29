@@ -16,38 +16,9 @@ from pathlib import Path
 ROOT = Path(os.environ.get("BB_VIDEO_ROOT", r"D:\StudyNotes-video"))
 os.environ.setdefault("HF_HOME", str(ROOT / "hf-cache"))
 
-_DIG = "零一二三四五六七八九"
+from tts import _DIG, int2zh
+
 _model = None
-
-
-def _four(n: int) -> str:
-    out, zero = "", False
-    for i, unit in ((3, "千"), (2, "百"), (1, "十"), (0, "")):
-        d = n // 10 ** i % 10
-        if d == 0:
-            zero = bool(out)
-        else:
-            out += ("零" if zero else "") + _DIG[d] + unit
-            zero = False
-    return out
-
-
-def int2zh(n: int) -> str:
-    if n == 0:
-        return "零"
-    groups = []
-    while n:
-        groups.append(n % 10000)
-        n //= 10000
-    out = ""
-    for gi in range(len(groups) - 1, -1, -1):
-        g = groups[gi]
-        if g == 0:
-            continue
-        if out and g < 1000:
-            out += "零"
-        out += _four(g) + ("", "万", "亿", "万亿")[gi]
-    return out[1:] if out.startswith("一十") else out
 
 
 def _num(m: re.Match) -> str:

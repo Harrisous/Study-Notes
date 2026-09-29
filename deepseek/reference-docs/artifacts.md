@@ -63,3 +63,13 @@ python $S/build_artifacts.py <scratch>/artifacts --link-map deepseek/reference-d
 | M09 · 策略梯度数学 | https://claude.ai/artifact/CCpFMTCCVeaVuAi52LJwZB |
 | M10 · 算力算术 | https://claude.ai/artifact/RJiCnG8x3sHBCYpe4YJ3fs |
 | M11 · Sinkhorn 与双随机 | https://claude.ai/artifact/MJmoYXWEFrW42WNVubGP4M |
+
+## 讲解视频
+
+由 `deepseek/video/*.py` 生成（`.cursor/skills/lesson-video/`）。每页按章节播放，章节标了零基础或工程师向。
+重新发布用同一个 URL：`make_video.py page <episode> --page-dir <scratch>/<slug>-video`，再把 `index.html`
+连同 `poster.jpg` 和 `chapters/*.mp4` 发布到下表的 URL。
+
+| 视频 | URL |
+|---|---|
+| 第 1 课 §4 · 注意力（二）：缩放、因果掩码与多头 | https://claude.ai/artifact/8SqXpbFgtNZFibJ1imNMrA |

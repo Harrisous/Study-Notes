@@ -32,7 +32,26 @@ TEX_BIN = ROOT / "TinyTeX" / "bin" / "windows"
 QUALITY = {"dry": (854, 480, 15), "preview": (854, 480, 15), "final": (1920, 1080, 30)}
 TAG = {"dry": "-dry", "preview": "-preview", "final": ""}
 LEVEL_NAME = {"zero": "零基础", "eng": "工程师向"}
-LEVEL_RGB = {"zero": (166, 219, 154), "eng": (245, 166, 107)}
+# per theme: level strip colours, subtitle font, whether to lay the chalk-dust texture over the frame
+STYLE = {
+    "3b1b": {"levels": {"zero": (131, 193, 103), "eng": (240, 172, 95)}, "sub_font": "Noto Sans SC", "texture": False},
+    "chalk": {"levels": {"zero": (166, 219, 154), "eng": (245, 166, 107)}, "sub_font": "Microsoft YaHei", "texture": True},
+}
+
+
+def style() -> dict:
+    return STYLE[os.environ.get("BB_THEME", "3b1b")]
+
+
+def apply_episode_settings(ep: Path) -> dict:
+    """EPISODE = {"theme": ..., "voice": ..., "speak_numbers": "zh"} -> environment for this process and Manim."""
+    meta, _ = read_episode(ep)
+    os.environ["BB_THEME"] = meta.get("theme", "3b1b")
+    if meta.get("voice"):
+        os.environ["BB_VOICE_ID"] = meta["voice"]
+    if meta.get("speak_numbers"):
+        os.environ["BB_SPEAK_NUMBERS"] = meta["speak_numbers"]
+    return meta
 CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳"
 SR = 48000
 
@@ -333,7 +352,7 @@ def write_subs(segs, out: Path, w: int, h: int, texts: dict):
             "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, "
             "Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
             "Alignment, MarginL, MarginR, MarginV, Encoding\n"
-            f"Style: Sub,Microsoft YaHei,{fs},&H00F0F0F0,&H000000FF,&H00141E18,&H80000000,0,0,0,0,100,100,1,0,1,"
+            f"Style: Sub,{style()['sub_font']},{fs},&H00F0F0F0,&H000000FF,&H00101010,&H80000000,0,0,0,0,100,100,1,0,1,"
             f"{max(1, round(3 * h / 1080))},0,2,{round(80 * w / 1920)},{round(80 * w / 1920)},{round(34 * h / 1080)},1\n\n"
             "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     ev = [f"Dialogue: 0,{ts(a, '.')[1:-1]},{ts(b, '.')[1:-1]},Sub,,0,0,0,,{txt}" for a, b, txt in cues]
@@ -372,7 +391,7 @@ def level_strip(segs, total: float, w: int, h: int, out: Path) -> tuple[Path, li
     boxes = []
     for s in segs:
         x0, x1 = round(w * s["t"] / total), round(w * (s["t"] + s["dur"]) / total)
-        r, g, b = LEVEL_RGB[s["level"]]
+        r, g, b = style()["levels"][s["level"]]
         d.rectangle([x0 + 1, 0, x1 - 2, sh - 1], fill=(r, g, b, 90))
         boxes.append(f"drawbox=x={x0 + 1}:y=ih-{sh}:w={max(1, x1 - x0 - 3)}:h={sh}:color=0x{r:02X}{g:02X}{b:02X}@0.95:"
                      f"t=fill:enable='gte(t,{s['t'] + s['dur']:.2f})'")
@@ -413,7 +432,8 @@ def cmd_assemble(ep, args):
     tex = board_texture(w, h)
     strip, boxes = level_strip(segs, total, w, h, out)
     ph_h = max(6, round(16 * h / 1080))
-    graph = (f"[0:v][2:v]overlay=0:0:shortest=1[a];[a][3:v]overlay=0:H-h:shortest=1[b];"
+    first = "[0:v][2:v]overlay=0:0:shortest=1[a];" if style()["texture"] else "[0:v]null[a];"
+    graph = (f"{first}[a][3:v]overlay=0:H-h:shortest=1[b];"
              f"[b]{','.join(boxes)}[c];"
              f"[4:v]format=rgba[ph];[c][ph]overlay=x='(W-w)*t/{total:.3f}':y=H-h:eval=frame:shortest=1[d];"
              f"[d]subtitles=subs.ass[v]")
@@ -441,6 +461,60 @@ def cmd_assemble(ep, args):
     zero = sum(s["dur"] for s in segs if s["level"] == "zero")
     print(f"assemble: {final} ({total / 60:.1f} min, {n_cues} subtitle cues, {zero / total:.0%} 零基础) in {time.time() - t0:.0f}s")
     print("  " + "\n  ".join(chapters))
+
+
+# ---------------------------------------------------------------- per-chapter files
+def cmd_split(ep, args, cap_mib: float = 19.0):
+    """Cut the finished video into one file per chapter (each under cap_mib, the web page's per-file
+    limit is 20 MiB) plus chapters.json with titles, levels and times."""
+    quality = quality_of(args)
+    slug, work, out = dirs(ep, quality)
+    segs, _ = load_segments(ep, quality)
+    final = out / f"{slug}{TAG[quality]}.mp4"
+    cdir = out / "chapters"
+    cdir.mkdir(exist_ok=True)
+    items = []
+    for i, s in enumerate(segs, 1):
+        dst = cdir / f"{i:02d}-{s['name']}.mp4"
+        for cq in (22, 26, 30, 34):
+            enc = (["-c:v", "libx264", "-preset", "medium", "-crf", str(cq - 3)] if args.cpu else
+                   ["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", str(cq), "-b:v", "0"])
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s['t']:.3f}", "-i", str(final), "-t", f"{s['dur']:.3f}",
+                            *enc, "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart",
+                            str(dst)], check=True)
+            if dst.stat().st_size <= cap_mib * 2 ** 20:
+                break
+        items.append({"n": i, "file": dst.name, "title": s["title"], "level": s["level"],
+                      "start": round(s["t"], 2), "dur": round(s["dur"], 2), "mib": round(dst.stat().st_size / 2 ** 20, 1)})
+    (cdir / "chapters.json").write_text(json.dumps(items, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("split:", ", ".join(f"{it['n']}:{it['mib']}MiB" for it in items))
+
+
+def cmd_page(ep, args):
+    """Build the private video page: index.html from assets/player.html, poster.jpg and chapters/.
+    Artifact publishing only reads from the repo or the session scratchpad, so pass --page-dir there."""
+    import shutil
+    quality = quality_of(args)
+    slug, _, out = dirs(ep, quality)
+    meta, _ = read_episode(ep)
+    items = json.loads((out / "chapters" / "chapters.json").read_text(encoding="utf-8"))
+    dst = Path(args.page_dir) if args.page_dir else out / "page"
+    (dst / "chapters").mkdir(parents=True, exist_ok=True)
+    for it in items:
+        shutil.copy2(out / "chapters" / it["file"], dst / "chapters" / it["file"])
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(meta.get("poster_at", 60)), "-i",
+                    str(out / f"{slug}{TAG[quality]}.mp4"), "-frames:v", "1", str(dst / "poster.jpg")], check=True)
+    chapters = [{"title": it["title"], "level": it["level"], "dur": it["dur"], "src": "chapters/" + it["file"]}
+                for it in items]
+    html = (HERE.parent / "assets" / "player.html").read_text(encoding="utf-8")
+    fills = {"__CHAPTERS__": json.dumps(chapters, ensure_ascii=False), "__POSTER__": "poster.jpg",
+             "__PAGE_TITLE__": meta.get("page_title", slug), "__KICKER__": meta.get("kicker", ""),
+             "__HEADLINE__": meta.get("headline", meta.get("title", slug)), "__LEDE__": meta.get("lede", ""),
+             "__SOURCE__": meta.get("source", "")}
+    for k, v in fills.items():
+        html = html.replace(k, v)
+    (dst / "index.html").write_text(html, encoding="utf-8")
+    print(f"page: {dst} (publish index.html with poster.jpg and chapters/*.mp4 as files)")
 
 
 # ---------------------------------------------------------------- contact sheet
@@ -479,7 +553,7 @@ def cmd_sheet(ep, args, per_sheet=12, cols=3, tile_w=640):
 def main():
     _reexec_in_venv()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=["tts", "qa", "render", "assemble", "sheet", "all"])
+    ap.add_argument("step", choices=["tts", "qa", "render", "assemble", "sheet", "split", "page", "all"])
     ap.add_argument("episode", type=Path)
     ap.add_argument("--preview", action="store_true", help="854x480 at 15 fps")
     ap.add_argument("--dry", action="store_true", help="preview size with silent placeholder narration (no TTS, no cost)")
@@ -487,11 +561,13 @@ def main():
     ap.add_argument("-j", "--jobs", type=int, default=8)
     ap.add_argument("--cpu", action="store_true", help="encode with libx264 instead of NVENC")
     ap.add_argument("--qa", action="store_true", help="with 'all': run the Whisper listen-back after tts")
+    ap.add_argument("--page-dir", default="", help="'page': output folder (use the session scratchpad to publish)")
     args = ap.parse_args()
     ep = args.episode.resolve()
     sys.path.insert(0, str(HERE))
+    apply_episode_settings(ep)
     steps = {"tts": [cmd_tts], "qa": [cmd_qa], "render": [cmd_render], "assemble": [cmd_assemble],
-             "sheet": [cmd_sheet],
+             "sheet": [cmd_sheet], "split": [cmd_split], "page": [cmd_page],
              "all": ([] if args.dry else [cmd_tts] + ([cmd_qa] if args.qa else []))
                     + [cmd_render, cmd_assemble, cmd_sheet]}[args.step]
     for f in steps:
