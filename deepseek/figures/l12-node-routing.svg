@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 456" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>节点受限路由：每个 token 至多发往 4 个节点，先走 IB 到同编号 GPU，再走 NVLink 扇出</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker></defs>
+<rect x="30" y="170" width="240" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="8"/>
+<text x="38" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">节点 A（token 在 GPU 3）</text>
+<rect x="38" y="212" width="224" height="10" fill="var(--fig-muted, #74716A)" fill-opacity="0.22" rx="3"/>
+<text x="258" y="221" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">NVSwitch</text>
+<rect x="38" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="50" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="66" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="78" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="94" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="106" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="122" y="178" width="24" height="24" fill="var(--fig-orange, #B4460C)" fill-opacity="0.35" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<text x="134" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="150" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="162" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="178" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="190" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="206" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="218" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="234" y="178" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="246" y="195" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="470" y="40" width="240" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="8"/>
+<text x="462" y="66" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">节点 B</text>
+<rect x="478" y="82" width="224" height="10" fill="var(--fig-muted, #74716A)" fill-opacity="0.22" rx="3"/>
+<text x="698" y="91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">NVSwitch</text>
+<rect x="478" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="490" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="506" y="48" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="518" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="534" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="546" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="562" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="574" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="590" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="602" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="618" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="630" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="646" y="48" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="658" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="674" y="48" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="686" y="65" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<text x="716" y="66" font-size="12" fill="var(--fig-blue, #1F5FA8)">2 个</text>
+<path d="M134.0 178.0 C 284.0 166.0, 400.0 24.0, 450.0 24.0 C 534.0 24.0, 574.0 26.0, 574.0 46.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" marker-end="url(#ah-orange)"/>
+<path d="M574.0 72.0 Q 546.0 94.0 518.0 73.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M574.0 72.0 Q 616.0 94.0 658.0 73.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<rect x="470" y="136" width="240" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="8"/>
+<text x="462" y="162" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">节点 C</text>
+<rect x="478" y="178" width="224" height="10" fill="var(--fig-muted, #74716A)" fill-opacity="0.22" rx="3"/>
+<text x="698" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">NVSwitch</text>
+<rect x="478" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="490" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="506" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="518" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="534" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="546" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="562" y="144" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="574" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="590" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="602" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="618" y="144" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="630" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="646" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="658" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="674" y="144" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="686" y="161" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<text x="716" y="162" font-size="12" fill="var(--fig-blue, #1F5FA8)">2 个</text>
+<path d="M134.0 178.0 C 284.0 166.0, 400.0 120.0, 450.0 120.0 C 534.0 120.0, 574.0 122.0, 574.0 142.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" marker-end="url(#ah-orange)"/>
+<path d="M574.0 168.0 Q 602.0 190.0 630.0 169.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<rect x="470" y="232" width="240" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="8"/>
+<text x="462" y="258" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">节点 D</text>
+<rect x="478" y="274" width="224" height="10" fill="var(--fig-muted, #74716A)" fill-opacity="0.22" rx="3"/>
+<text x="698" y="283" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">NVSwitch</text>
+<rect x="478" y="240" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="490" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="506" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="518" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="534" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="546" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="562" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="574" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="590" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="602" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="618" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="630" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="646" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="658" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="674" y="240" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="686" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<text x="716" y="258" font-size="12" fill="var(--fig-blue, #1F5FA8)">1 个</text>
+<path d="M134.0 178.0 C 284.0 166.0, 400.0 216.0, 450.0 216.0 C 534.0 216.0, 574.0 218.0, 574.0 238.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" marker-end="url(#ah-orange)"/>
+<path d="M574.0 264.0 Q 532.0 286.0 490.0 265.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<rect x="470" y="328" width="240" height="58" fill="var(--fig-muted, #74716A)" fill-opacity="0.05" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="8"/>
+<text x="462" y="354" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">节点 E</text>
+<rect x="478" y="370" width="224" height="10" fill="var(--fig-muted, #74716A)" fill-opacity="0.22" rx="3"/>
+<text x="698" y="379" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">NVSwitch</text>
+<rect x="478" y="336" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="490" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="506" y="336" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="518" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="534" y="336" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="546" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="562" y="336" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="574" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="590" y="336" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="602" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="618" y="336" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="630" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="646" y="336" width="24" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="658" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="674" y="336" width="24" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="686" y="353" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<text x="716" y="354" font-size="12" fill="var(--fig-blue, #1F5FA8)">3 个</text>
+<path d="M134.0 178.0 C 284.0 166.0, 400.0 312.0, 450.0 312.0 C 534.0 312.0, 574.0 314.0, 574.0 334.0" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" marker-end="url(#ah-orange)"/>
+<path d="M574.0 360.0 Q 560.0 382.0 546.0 361.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M574.0 360.0 Q 588.0 382.0 602.0 361.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<path d="M574.0 360.0 Q 630.0 382.0 686.0 361.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<text x="30" y="422" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="600">橙线 IB：每个目标节点只发一次</text>
+<text x="242" y="422" font-size="12" fill="var(--fig-orange, #B4460C)">（50 GB/s；dispatch 的数据是 FP8）</text>
+<text x="30" y="444" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">蓝弧 NVLink：到达后在节点内转发（160 GB/s）</text>
+<text x="30" y="300" font-size="12" fill="var(--fig-ink, #1C1B19)">不限节点：最多要经 IB 发 8 份（8t）</text>
+<text x="30" y="322" font-size="12" fill="var(--fig-ink, #1C1B19)">限制 M = 4：IB 至多发 4 份（4t），通信减半</text>
+<text x="30" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)">每次 IB 到达后，节点内顺带扇出 160/50 = 3.2 个专家</text>
+<text x="30" y="366" font-size="12" fill="var(--fig-ink, #1C1B19)">最多可选 4 × 3.2 ≈ 13 个而通信开销不变（实际 8 个）</text>
+<text x="30" y="388" font-size="12" fill="var(--fig-muted, #74716A)">通信内核只用 132 个 SM 中的 20 个（10 个通道）</text>
+</svg>

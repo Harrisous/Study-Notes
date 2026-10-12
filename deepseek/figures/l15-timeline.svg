@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 534" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3 到 V3.2 的发布时间线，以及后训练算力占比</title>
+
+<line x1="36" y1="214" x2="736" y2="214" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="36" y1="210" x2="36" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="38" y="232" font-size="11" fill="var(--fig-muted, #74716A)">2024.12</text>
+<line x1="90.8" y1="210" x2="90.8" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="92.8" y="232" font-size="11" fill="var(--fig-muted, #74716A)">1</text>
+<line x1="145.6" y1="210" x2="145.6" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="147.6" y="232" font-size="11" fill="var(--fig-muted, #74716A)">2</text>
+<line x1="195.09" y1="210" x2="195.09" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="197.09" y="232" font-size="11" fill="var(--fig-muted, #74716A)">3</text>
+<line x1="249.89" y1="210" x2="249.89" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="251.89" y="232" font-size="11" fill="var(--fig-muted, #74716A)">4</text>
+<line x1="302.92" y1="210" x2="302.92" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="304.92" y="232" font-size="11" fill="var(--fig-muted, #74716A)">5</text>
+<line x1="357.72" y1="210" x2="357.72" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="359.72" y="232" font-size="11" fill="var(--fig-muted, #74716A)">6</text>
+<line x1="410.75" y1="210" x2="410.75" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="412.75" y="232" font-size="11" fill="var(--fig-muted, #74716A)">7</text>
+<line x1="465.55" y1="210" x2="465.55" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="467.55" y="232" font-size="11" fill="var(--fig-muted, #74716A)">8</text>
+<line x1="520.34" y1="210" x2="520.34" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="522.34" y="232" font-size="11" fill="var(--fig-muted, #74716A)">9</text>
+<line x1="573.37" y1="210" x2="573.37" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="575.37" y="232" font-size="11" fill="var(--fig-muted, #74716A)">10</text>
+<line x1="628.17" y1="210" x2="628.17" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="630.17" y="232" font-size="11" fill="var(--fig-muted, #74716A)">11</text>
+<line x1="681.2" y1="210" x2="681.2" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="683.2" y="232" font-size="11" fill="var(--fig-muted, #74716A)">12</text>
+<line x1="736" y1="210" x2="736" y2="218" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="92.8" y="246" font-size="11" fill="var(--fig-muted, #74716A)">2025 年（月份）</text>
+<line x1="78.42" y1="209" x2="78.42" y2="180" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="78.42" cy="214" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="36" y="118" width="144" height="62" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="44" y="123" width="34" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="3"/>
+<text x="61" y="135.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">发布</text>
+<text x="44" y="156" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeek-V3</text>
+<text x="44" y="174" font-size="12" fill="var(--fig-muted, #74716A)">671B / 37B，FP8 训练</text>
+<line x1="235.75" y1="219" x2="235.75" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="235.75" cy="214" r="5" fill="var(--fig-green, #16704A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="106" y="262" width="170" height="62" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="114" y="267" width="34" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="3"/>
+<text x="131" y="279.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">训练</text>
+<text x="114" y="300" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3-0324</text>
+<text x="114" y="318" font-size="12" fill="var(--fig-muted, #74716A)">RL 中开始用 Keep Routing</text>
+<line x1="350.65" y1="209" x2="350.65" y2="180" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="350.65" cy="214" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="238" y="118" width="132" height="62" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="246" y="123" width="34" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="3"/>
+<text x="263" y="135.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">发布</text>
+<text x="246" y="156" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">R1-0528</text>
+<text x="246" y="174" font-size="12" fill="var(--fig-muted, #74716A)">V3.1 的对比对象</text>
+<line x1="500.9" y1="219" x2="476" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="500.9" cy="214" r="5" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="290" y="262" width="196" height="80" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="298" y="267" width="34" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="3"/>
+<text x="315" y="279.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">训练</text>
+<rect x="338" y="267" width="34" height="16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" rx="3"/>
+<text x="355" y="279.5" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle">数值</text>
+<text x="298" y="300" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.1（08-21；Base 08-19）</text>
+<text x="298" y="318" font-size="12" fill="var(--fig-muted, #74716A)">混合思考 · UE8M0 缩放</text>
+<text x="298" y="336" font-size="12" fill="var(--fig-muted, #74716A)">839B token 长上下文续训</text>
+<line x1="557.46" y1="209" x2="546" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="557.46" cy="214" r="5" fill="var(--fig-green, #16704A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="362" y="28" width="194" height="62" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="370" y="33" width="34" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="3"/>
+<text x="387" y="45.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">训练</text>
+<text x="370" y="66" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.1-Terminus（09-22）</text>
+<text x="370" y="84" font-size="12" fill="var(--fig-muted, #74716A)">语言一致性、代码/搜索智能体</text>
+<line x1="569.84" y1="209" x2="574" y2="108" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="569.84" cy="214" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="564" y="28" width="188" height="80" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="572" y="33" width="34" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="3"/>
+<text x="589" y="45.5" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">架构</text>
+<text x="572" y="66" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.2-Exp（09-29）</text>
+<text x="572" y="84" font-size="12" fill="var(--fig-muted, #74716A)">DSA 稀疏注意力（第 14 课）</text>
+<text x="572" y="102" font-size="12" fill="var(--fig-muted, #74716A)">API 降价 50%+</text>
+<line x1="674.13" y1="209" x2="674.13" y2="208" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="674.13" cy="214" r="5" fill="var(--fig-green, #16704A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="584" y="146" width="168" height="62" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="592" y="151" width="34" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="3"/>
+<text x="609" y="163.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">训练</text>
+<text x="592" y="184" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeekMath-V2</text>
+<text x="592" y="202" font-size="12" fill="var(--fig-muted, #74716A)">11-27 · 自我验证的证明器</text>
+<line x1="681.2" y1="219" x2="681.2" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="681.2" cy="214" r="5" fill="var(--fig-green, #16704A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.5"/>
+<rect x="560" y="262" width="192" height="80" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<rect x="568" y="267" width="34" height="16" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="0.8" rx="3"/>
+<text x="585" y="279.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">训练</text>
+<text x="568" y="300" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.2 与 V3.2-Speciale</text>
+<text x="568" y="318" font-size="12" fill="var(--fig-muted, #74716A)">12-01 发布；论文 12-02</text>
+<text x="568" y="336" font-size="12" fill="var(--fig-muted, #74716A)">规模化 RL · 智能体</text>
+<line x1="36" y1="368" x2="736" y2="368" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="36" y="390" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">后训练算力占预训练的比例（对数刻度）</text>
+<line x1="168" y1="404" x2="168" y2="486" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="168" y="502" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1%</text>
+<line x1="345.33" y1="404" x2="345.33" y2="486" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="345.33" y="502" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1%</text>
+<line x1="522.67" y1="404" x2="522.67" y2="486" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="522.67" y="502" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10%</text>
+<line x1="700" y1="404" x2="700" y2="486" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="502" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100%</text>
+<text x="158" y="428" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">DeepSeek-V3</text>
+<rect x="168" y="412" width="48.49" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="224.49" y="428" font-size="12" fill="var(--fig-ink, #1C1B19)">5K / 2664K GPU 小时 = 0.188%</text>
+<text x="158" y="464" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">DeepSeek-V3.2</text>
+<rect x="168" y="448" width="354.67" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="538.67" y="464" font-size="12" fill="var(--fig-ink, #1C1B19)">“超过预训练成本的 10%”（无绝对值）</text>
+<path d="M524.7 451.0 l7 4 l-7 4" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="36" y="522" font-size="12" fill="var(--fig-muted, #74716A)">两者之比约 53 倍（10 / 0.188）。V3.2 没有说明“预训练成本”以哪一次预训练为基数。</text>
+</svg>

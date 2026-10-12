@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个选择块从与之重叠的压缩块收集分数（NSA 式 9 的权重 1, 2, 2, 2, 1）</title>
+
+<line x1="70" y1="58" x2="684.4" y2="58" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="54" x2="70" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="70" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="172.4" y1="54" x2="172.4" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="172.4" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">33</text>
+<line x1="274.8" y1="54" x2="274.8" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="274.8" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">65</text>
+<line x1="377.2" y1="54" x2="377.2" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="377.2" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">97</text>
+<line x1="479.6" y1="54" x2="479.6" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="479.6" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">129</text>
+<line x1="582" y1="54" x2="582" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="582" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">161</text>
+<line x1="681.2" y1="54" x2="681.2" y2="62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="681.2" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">192</text>
+<text x="58" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">键位置</text>
+<rect x="70" y="76" width="204.8" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="172.4" y="92" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">选择块 0（键 1–64）</text>
+<rect x="274.8" y="76" width="204.8" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4"/>
+<text x="377.2" y="92" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">选择块 1（键 65–128）</text>
+<rect x="479.6" y="76" width="204.8" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="582" y="92" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">选择块 2（键 129–192）</text>
+<text x="58" y="92" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">ℓ<tspan baseline-shift="sub" font-size="11">s</tspan> = 64</text>
+<line x1="274.8" y1="102" x2="274.8" y2="170" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="479.6" y1="102" x2="479.6" y2="170" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="71" y="118" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="121.2" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=0</text>
+<rect x="122.2" y="148" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="172.4" y="162" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=1</text>
+<rect x="173.4" y="118" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="223.6" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=2</text>
+<rect x="224.6" y="148" width="100.4" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="296.8" y="162" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b=3</text>
+<rect x="275.8" y="118" width="100.4" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="326" y="132" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b=4</text>
+<rect x="327" y="148" width="100.4" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="377.2" y="162" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b=5</text>
+<rect x="378.2" y="118" width="100.4" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="428.4" y="132" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b=6</text>
+<rect x="429.4" y="148" width="100.4" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.28" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="3"/>
+<text x="457.6" y="162" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">b=7</text>
+<rect x="480.6" y="118" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="530.8" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=8</text>
+<rect x="531.8" y="148" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="582" y="162" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=9</text>
+<rect x="583" y="118" width="100.4" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8" rx="3"/>
+<text x="633.2" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">b=10</text>
+<text x="58" y="132" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">ℓ<tspan baseline-shift="sub" font-size="11">c</tspan> = 32</text>
+<text x="58" y="162" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end">δ<tspan baseline-shift="sub" font-size="11">c</tspan> = 16</text>
+<text x="58" y="210" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">重叠 / 16</text>
+<circle cx="274.8" cy="206" r="11" fill="var(--fig-orange, #B4460C)" fill-opacity="0.15" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="274.8" y="211" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">1</text>
+<text x="274.8" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">一半</text>
+<circle cx="326" cy="206" r="11" fill="var(--fig-orange, #B4460C)" fill-opacity="0.15" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="326" y="211" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">2</text>
+<text x="326" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">完整</text>
+<circle cx="377.2" cy="206" r="11" fill="var(--fig-orange, #B4460C)" fill-opacity="0.15" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="377.2" y="211" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">2</text>
+<text x="377.2" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">完整</text>
+<circle cx="428.4" cy="206" r="11" fill="var(--fig-orange, #B4460C)" fill-opacity="0.15" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="428.4" y="211" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">2</text>
+<text x="428.4" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">完整</text>
+<circle cx="479.6" cy="206" r="11" fill="var(--fig-orange, #B4460C)" fill-opacity="0.15" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="479.6" y="211" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">1</text>
+<text x="479.6" y="236" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">一半</text>
+<text x="70" y="272" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">选择块 1 的分数 = 1·p<tspan baseline-shift="super" font-size="11">cmp</tspan>[3] + 2·p<tspan baseline-shift="super" font-size="11">cmp</tspan>[4] + 2·p<tspan baseline-shift="super" font-size="11">cmp</tspan>[5] + 2·p<tspan baseline-shift="super" font-size="11">cmp</tspan>[6] + 1·p<tspan baseline-shift="super" font-size="11">cmp</tspan>[7]</text>
+<text x="70" y="294" font-size="12" fill="var(--fig-muted, #74716A)">权重 = 压缩块落在选择块内的键数 ÷ 16：中间 3 块完整在内，两端各有一半在内。</text>
+<text x="70" y="314" font-size="11" fill="var(--fig-muted, #74716A)">块下标按式 (14.6) 与 (14.12) 的约定计算；NSA 原文式 (9) 的下标与此对不齐（见正文），权重模式相同。</text>
+</svg>

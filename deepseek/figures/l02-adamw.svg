@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>AdamW 的一步，以及 L2 正则与解耦权重衰减的区别</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">AdamW 的一步（对每个参数逐元素进行）</text>
+<rect x="110" y="36" width="170" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="195" y="55.05" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">梯度 g<tspan baseline-shift="-3.2" font-size="11">t</tspan></text>
+<text x="195" y="70.05" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">（已裁剪）</text>
+<rect x="16" y="106" width="170" height="76" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="101" y="125.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">一阶矩 m<tspan baseline-shift="-3.2" font-size="11">t</tspan></text>
+<text x="101" y="148.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">β<tspan baseline-shift="-3" font-size="11">1</tspan>m<tspan baseline-shift="-3" font-size="11">t−1</tspan> + (1−β<tspan baseline-shift="-3" font-size="11">1</tspan>)g<tspan baseline-shift="-3" font-size="11">t</tspan></text>
+<text x="101" y="171.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">梯度的滑动平均</text>
+<rect x="200" y="106" width="170" height="76" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="285" y="125.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">二阶矩 v<tspan baseline-shift="-3.2" font-size="11">t</tspan></text>
+<text x="285" y="148.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">β<tspan baseline-shift="-3" font-size="11">2</tspan>v<tspan baseline-shift="-3" font-size="11">t−1</tspan> + (1−β<tspan baseline-shift="-3" font-size="11">2</tspan>)g<tspan baseline-shift="-3" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11">2</tspan></text>
+<text x="285" y="171.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">梯度平方的滑动平均</text>
+<rect x="16" y="200" width="170" height="44" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="8"/>
+<text x="101" y="226.55" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">m̂<tspan baseline-shift="-3.2" font-size="11">t</tspan> = m<tspan baseline-shift="-3.2" font-size="11">t</tspan> / (1 − β<tspan baseline-shift="-3.2" font-size="11">1</tspan><tspan baseline-shift="super" font-size="11">t</tspan>)</text>
+<rect x="200" y="200" width="170" height="44" fill="var(--fig-muted, #74716A)" fill-opacity="0.06" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="8"/>
+<text x="285" y="226.55" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">v̂<tspan baseline-shift="-3.2" font-size="11">t</tspan> = v<tspan baseline-shift="-3.2" font-size="11">t</tspan> / (1 − β<tspan baseline-shift="-3.2" font-size="11">2</tspan><tspan baseline-shift="super" font-size="11">t</tspan>)</text>
+<rect x="70" y="270" width="250" height="54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="195" y="291.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">u<tspan baseline-shift="-3.2" font-size="11">t</tspan> = m̂<tspan baseline-shift="-3.2" font-size="11">t</tspan> / (√v̂<tspan baseline-shift="-3.2" font-size="11">t</tspan> + ε)</text>
+<text x="195" y="311.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每个参数的步长被自己的梯度尺度归一化</text>
+<rect x="30" y="352" width="330" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="195" y="374.05" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">θ<tspan baseline-shift="-3.2" font-size="11">t</tspan> = θ<tspan baseline-shift="-3.2" font-size="11">t−1</tspan> − η<tspan baseline-shift="-3.2" font-size="11">t</tspan> u<tspan baseline-shift="-3.2" font-size="11">t</tspan> − η<tspan baseline-shift="-3.2" font-size="11">t</tspan> λ θ<tspan baseline-shift="-3.2" font-size="11">t−1</tspan></text>
+<text x="195" y="395.05" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">学习率 η<tspan baseline-shift="-3" font-size="11">t</tspan> 来自调度（图 2.8）</text>
+<line x1="160" y1="81" x2="101" y2="106" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="230" y1="81" x2="285" y2="106" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="101" y1="183" x2="101" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="285" y1="183" x2="285" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="101" y1="245" x2="150" y2="270" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="285" y1="245" x2="245" y2="270" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="195" y1="325" x2="195" y2="350" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="372" y="338" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">解耦权重衰减：</text>
+<text x="372" y="358" font-size="12" fill="var(--fig-green, #16704A)">−η<tspan baseline-shift="-3" font-size="11">t</tspan>λθ<tspan baseline-shift="-3" font-size="11">t−1</tspan> 直接</text>
+<text x="372" y="378" font-size="12" fill="var(--fig-green, #16704A)">作用在 θ 上，</text>
+<text x="372" y="398" font-size="12" fill="var(--fig-green, #16704A)">不经过 m、v</text>
+<text x="16" y="48" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">Adam+L2：</text>
+<text x="16" y="66" font-size="12" fill="var(--fig-red, #A3231C)">把 λ′θ 加进 g</text>
+<path d="M92 72 H108" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ah-red)"/>
+<text x="492" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">每步被正则“收走”的比例</text>
+<text x="492" y="42" font-size="12" fill="var(--fig-muted, #74716A)">η = 6×10<tspan baseline-shift="super" font-size="11">−5</tspan>，λ = 0.1</text>
+<line x1="542" y1="300" x2="708" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<line x1="542" y1="254" x2="708" y2="254" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="258" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-7</tspan></text>
+<line x1="542" y1="208" x2="708" y2="208" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="542" y1="162" x2="708" y2="162" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="166" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-5</tspan></text>
+<line x1="542" y1="116" x2="708" y2="116" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="120" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="542" y1="70" x2="708" y2="70" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="536" y="74" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="542" y1="70" x2="542" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="542" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-5</tspan></text>
+<line x1="583.5" y1="70" x2="583.5" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="583.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="625" y1="70" x2="625" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="625" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<line x1="666.5" y1="70" x2="666.5" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="666.5" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="708" y1="70" x2="708" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="708" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">-1</tspan></text>
+<line x1="542" y1="300" x2="708" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="542" y1="70" x2="542" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="625" y="338" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">该参数的梯度尺度 √v̂（对数）</text>
+<text x="625" y="354" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">越往右，L2 的正则越弱</text>
+<path d="M542.0 172.2 L544.8 172.2 L547.6 172.2 L550.4 172.2 L553.3 172.2 L556.1 172.2 L558.9 172.2 L561.7 172.2 L564.5 172.2 L567.3 172.2 L570.1 172.2 L572.9 172.2 L575.8 172.2 L578.6 172.2 L581.4 172.2 L584.2 172.2 L587.0 172.2 L589.8 172.2 L592.6 172.2 L595.5 172.2 L598.3 172.2 L601.1 172.2 L603.9 172.2 L606.7 172.2 L609.5 172.2 L612.3 172.2 L615.2 172.2 L618.0 172.2 L620.8 172.2 L623.6 172.2 L626.4 172.2 L629.2 172.2 L632.0 172.2 L634.8 172.2 L637.7 172.2 L640.5 172.2 L643.3 172.2 L646.1 172.2 L648.9 172.2 L651.7 172.2 L654.5 172.2 L657.4 172.2 L660.2 172.2 L663.0 172.2 L665.8 172.2 L668.6 172.2 L671.4 172.2 L674.2 172.2 L677.1 172.2 L679.9 172.2 L682.7 172.2 L685.5 172.2 L688.3 172.2 L691.1 172.2 L693.9 172.2 L696.7 172.2 L699.6 172.2 L702.4 172.2 L705.2 172.2 L708.0 172.2" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.6"/>
+<path d="M542.0 80.2 L544.8 83.3 L547.6 86.4 L550.4 89.6 L553.3 92.7 L556.1 95.8 L558.9 98.9 L561.7 102.0 L564.5 105.2 L567.3 108.3 L570.1 111.4 L572.9 114.5 L575.8 117.6 L578.6 120.7 L581.4 123.9 L584.2 127.0 L587.0 130.1 L589.8 133.2 L592.6 136.3 L595.5 139.5 L598.3 142.6 L601.1 145.7 L603.9 148.8 L606.7 151.9 L609.5 155.1 L612.3 158.2 L615.2 161.3 L618.0 164.4 L620.8 167.5 L623.6 170.6 L626.4 173.8 L629.2 176.9 L632.0 180.0 L634.8 183.1 L637.7 186.2 L640.5 189.4 L643.3 192.5 L646.1 195.6 L648.9 198.7 L651.7 201.8 L654.5 205.0 L657.4 208.1 L660.2 211.2 L663.0 214.3 L665.8 217.4 L668.6 220.5 L671.4 223.7 L674.2 226.8 L677.1 229.9 L679.9 233.0 L682.7 236.1 L685.5 239.3 L688.3 242.4 L691.1 245.5 L693.9 248.6 L696.7 251.7 L699.6 254.8 L702.4 258.0 L705.2 261.1 L708.0 264.2" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.4" stroke-dasharray="7 4"/>
+<text x="546.73" y="217.21" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">AdamW：6×10<tspan baseline-shift="super" font-size="11">−6</tspan></text>
+<text x="546.73" y="235.21" font-size="12" fill="var(--fig-green, #16704A)">对所有参数一样</text>
+<text x="704" y="94.05" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end" font-weight="600">Adam+L2</text>
+<text x="704" y="112.05" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">∝ 1/√v̂</text>
+</svg>

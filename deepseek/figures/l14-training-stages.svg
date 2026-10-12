@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DSA 的两阶段续训：先稠密预热只训 indexer，再全参数稀疏训练</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="12" y="74" width="118" height="92" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="71" y="102.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">V3.1-Terminus</text>
+<text x="71" y="124.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">基座检查点</text>
+<text x="71" y="146.32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">已扩到 128K</text>
+<line x1="132" y1="120" x2="150" y2="120" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="152" y="40" width="250" height="214" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8"/>
+<text x="166" y="62" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="700">① 稠密预热（dense warm-up）</text>
+<text x="166" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)">注意力：仍是稠密的</text>
+<text x="166" y="117" font-size="12" fill="var(--fig-ink, #1C1B19)">可训练：只有 indexer，其余全部冻结</text>
+<text x="166" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)">损失：KL(p<tspan baseline-shift="sub" font-size="11">t,:</tspan> ‖ softmax(I<tspan baseline-shift="sub" font-size="11">t,:</tspan>))，全部位置</text>
+<text x="166" y="171" font-size="12" fill="var(--fig-muted, #74716A)">学习率 10<tspan baseline-shift="super" font-size="11">-3</tspan></text>
+<text x="166" y="198" font-size="12" fill="var(--fig-muted, #74716A)">1000 步 × 16 条 × 128K</text>
+<text x="166" y="225" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="700">= 2,097,152,000 ≈ 2.1B token</text>
+<line x1="404" y1="120" x2="420" y2="120" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="422" y="40" width="250" height="214" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="436" y="62" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="700">② 稀疏训练（sparse training）</text>
+<text x="436" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)">注意力：每个查询只看 top-2048</text>
+<text x="436" y="115" font-size="12" fill="var(--fig-ink, #1C1B19)">可训练：全部参数（主模型 + indexer）</text>
+<text x="436" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)">主模型：语言模型损失；indexer：</text>
+<text x="436" y="165" font-size="12" fill="var(--fig-ink, #1C1B19)">KL 只在被选集合 S<tspan baseline-shift="sub" font-size="11">t</tspan> 上；两者梯度分离</text>
+<text x="436" y="190" font-size="12" fill="var(--fig-muted, #74716A)">学习率 7.3 × 10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<text x="436" y="215" font-size="12" fill="var(--fig-muted, #74716A)">15000 步 × 480 条 × 128K</text>
+<text x="436" y="240" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700">= 943,718,400,000 ≈ 943.7B token</text>
+<line x1="674" y1="120" x2="690" y2="120" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="692" y="74" width="60" height="92" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="722" y="102.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">后训练</text>
+<text x="722" y="124.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">同样</text>
+<text x="722" y="146.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">稀疏</text>
+<text x="166" y="276" font-size="12" fill="var(--fig-muted, #74716A)">两阶段的数据分布都与 V3.1-Terminus 的 128K 长上下文扩展数据完全对齐。</text>
+<text x="12" y="304" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">训练 token 数（对数刻度）</text>
+<line x1="150" y1="320" x2="150" y2="424" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="150" y="442" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1B</text>
+<line x1="333.33" y1="320" x2="333.33" y2="424" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="333.33" y="442" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10B</text>
+<line x1="516.67" y1="320" x2="516.67" y2="424" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="516.67" y="442" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100B</text>
+<line x1="700" y1="320" x2="700" y2="424" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="442" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1T</text>
+<text x="140" y="354" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="700">① 稠密预热</text>
+<rect x="150" y="336" width="58.97" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="216.97" y="355" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="700">2.1B</text>
+<text x="140" y="402" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700">② 稀疏训练</text>
+<rect x="150" y="384" width="545.39" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="703.39" y="403" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700">943.7B</text>
+<text x="12" y="466" font-size="12" fill="var(--fig-muted, #74716A)">稀疏阶段的 token 数是预热的 450 倍；预热只占两阶段合计的 0.22%。每步 batch：预热 2.10M token，稀疏 62.9M token。</text>
+</svg>

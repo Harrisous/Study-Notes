@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>容量因子与 token 丢弃：同一批 1024 个 token 在三种容量因子下的命运</title>
+
+<text x="20" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">容量因子 1.0：每个专家 128 个槽</text>
+<line x1="46" y1="250" x2="238" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="40" y="254" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="44" y1="250" x2="46" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="40" y="188.62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="44" y1="184.62" x2="46" y2="184.62" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="40" y="123.23" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">200</text>
+<line x1="44" y1="119.23" x2="46" y2="119.23" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="50" y="166.31" width="18" height="83.69" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="50" y="119.23" width="18" height="47.08" fill="var(--fig-red, #A3231C)" fill-opacity="0.75"/>
+<text x="59" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<rect x="74" y="166.31" width="18" height="83.69" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="74" y="151.92" width="18" height="14.38" fill="var(--fig-red, #A3231C)" fill-opacity="0.75"/>
+<text x="83" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="98" y="166.31" width="18" height="83.69" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="98" y="165" width="18" height="1.31" fill="var(--fig-red, #A3231C)" fill-opacity="0.75"/>
+<text x="107" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<rect x="122" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="122" y="166.31" width="18" height="5.23" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="131" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="146" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="146" y="166.31" width="18" height="5.23" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="155" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<rect x="170" y="178.08" width="18" height="71.92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="170" y="166.31" width="18" height="11.77" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="179" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="194" y="184.62" width="18" height="65.38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="194" y="166.31" width="18" height="18.31" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="203" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="218" y="188.54" width="18" height="61.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="218" y="166.31" width="18" height="22.23" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="227" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="46" y1="166.31" x2="238" y2="166.31" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" stroke-dasharray="5 3"/>
+<text x="238" y="161.31" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">容量 128</text>
+<text x="50" y="286" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">丢弃 96 个 token（9.4%）</text>
+<text x="50" y="304" font-size="12" fill="var(--fig-muted, #74716A)">空槽 96 个（算了也白算）</text>
+<text x="264" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">容量因子 1.25：每个专家 160 个槽</text>
+<line x1="290" y1="250" x2="482" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="294" y="145.38" width="18" height="104.62" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="294" y="119.23" width="18" height="26.15" fill="var(--fig-red, #A3231C)" fill-opacity="0.75"/>
+<text x="303" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<rect x="318" y="151.92" width="18" height="98.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="318" y="145.38" width="18" height="6.54" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="327" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="342" y="165" width="18" height="85" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="342" y="145.38" width="18" height="19.62" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="351" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<rect x="366" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="366" y="145.38" width="18" height="26.15" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="375" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="390" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="390" y="145.38" width="18" height="26.15" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="399" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<rect x="414" y="178.08" width="18" height="71.92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="414" y="145.38" width="18" height="32.69" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="423" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="438" y="184.62" width="18" height="65.38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="438" y="145.38" width="18" height="39.23" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="447" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="462" y="188.54" width="18" height="61.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="462" y="145.38" width="18" height="43.15" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="471" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="290" y1="145.38" x2="482" y2="145.38" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" stroke-dasharray="5 3"/>
+<text x="482" y="140.38" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">容量 160</text>
+<text x="294" y="286" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">丢弃 40 个 token（3.9%）</text>
+<text x="294" y="304" font-size="12" fill="var(--fig-muted, #74716A)">空槽 296 个（算了也白算）</text>
+<text x="508" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">容量因子 2.0：每个专家 256 个槽</text>
+<line x1="534" y1="250" x2="726" y2="250" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="538" y="119.23" width="18" height="130.77" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="538" y="82.62" width="18" height="36.62" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="547" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<rect x="562" y="151.92" width="18" height="98.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="562" y="82.62" width="18" height="69.31" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="571" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="586" y="165" width="18" height="85" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="586" y="82.62" width="18" height="82.38" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="595" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<rect x="610" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="610" y="82.62" width="18" height="88.92" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="619" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="634" y="171.54" width="18" height="78.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="634" y="82.62" width="18" height="88.92" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="643" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<rect x="658" y="178.08" width="18" height="71.92" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="658" y="82.62" width="18" height="95.46" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="667" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="682" y="184.62" width="18" height="65.38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="682" y="82.62" width="18" height="102" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="691" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="706" y="188.54" width="18" height="61.46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<rect x="706" y="82.62" width="18" height="105.92" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="715" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="534" y1="82.62" x2="726" y2="82.62" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" stroke-dasharray="5 3"/>
+<text x="726" y="77.62" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">容量 256</text>
+<text x="538" y="286" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">丢弃 0 个 token（0.0%）</text>
+<text x="538" y="304" font-size="12" fill="var(--fig-muted, #74716A)">空槽 1024 个（算了也白算）</text>
+<text x="20" y="103.23" font-size="11" fill="var(--fig-muted, #74716A)">token 数</text>
+<rect x="20" y="323" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="40" y="334" font-size="12" fill="var(--fig-ink, #1C1B19)">被专家处理</text>
+<rect x="126" y="323" width="14" height="14" fill="var(--fig-red, #A3231C)" fill-opacity="0.75"/>
+<text x="146" y="334" font-size="12" fill="var(--fig-ink, #1C1B19)">超出容量被丢弃，只走残差</text>
+<rect x="316" y="323" width="14" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="336" y="334" font-size="12" fill="var(--fig-ink, #1C1B19)">空槽（按容量预留却没用上）</text>
+<text x="720" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">专家编号 1…8，负载和 = 1024</text>
+</svg>

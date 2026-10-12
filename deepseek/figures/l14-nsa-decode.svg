@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>NSA 每步解码要装入的 token 数与期望加速（据 NSA 表 4）</title>
+
+<text x="70" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">每步装入的 token 数（线性刻度）</text>
+<line x1="70" y1="320" x2="390" y2="320" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="324" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="70" y1="281.43" x2="390" y2="281.43" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="285.43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10K</text>
+<line x1="70" y1="242.86" x2="390" y2="242.86" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="246.86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20K</text>
+<line x1="70" y1="204.29" x2="390" y2="204.29" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="208.29" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">30K</text>
+<line x1="70" y1="165.71" x2="390" y2="165.71" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="169.71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40K</text>
+<line x1="70" y1="127.14" x2="390" y2="127.14" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="131.14" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50K</text>
+<line x1="70" y1="88.57" x2="390" y2="88.57" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="92.57" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60K</text>
+<line x1="70" y1="50" x2="390" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">70K</text>
+<line x1="70" y1="320" x2="390" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="82" y="288.4" width="28" height="31.6" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="116" y="312.1" width="28" height="7.9" fill="var(--fig-green, #16704A)" fill-opacity="0.7" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="96" y="282.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8192</text>
+<text x="130" y="290.1" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">4×</text>
+<text x="130" y="305.1" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">2048</text>
+<text x="113" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8K</text>
+<rect x="162" y="256.8" width="28" height="63.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="196" y="310.13" width="28" height="9.87" fill="var(--fig-green, #16704A)" fill-opacity="0.7" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="176" y="250.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16384</text>
+<text x="210" y="288.13" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">6.4×</text>
+<text x="210" y="303.13" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">2560</text>
+<text x="193" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16K</text>
+<rect x="242" y="193.61" width="28" height="126.39" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="276" y="306.18" width="28" height="13.82" fill="var(--fig-green, #16704A)" fill-opacity="0.7" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="256" y="187.61" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32768</text>
+<text x="290" y="284.18" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">9.1×</text>
+<text x="290" y="299.18" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">3584</text>
+<text x="273" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">32K</text>
+<rect x="322" y="67.22" width="28" height="252.78" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="356" y="298.28" width="28" height="21.72" fill="var(--fig-green, #16704A)" fill-opacity="0.7" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="336" y="61.22" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">65536</text>
+<text x="370" y="276.28" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">11.6×</text>
+<text x="370" y="291.28" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">5632</text>
+<text x="353" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">64K</text>
+<text x="230" y="360" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">上下文长度（1K = 1024）</text>
+<rect x="76" y="48" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="94" y="58" font-size="12" fill="var(--fig-muted, #74716A)">全注意力：装入全部 t 个</text>
+<rect x="76" y="68" width="12" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.7"/>
+<text x="94" y="78" font-size="12" fill="var(--fig-green, #16704A)">NSA（绿色柱顶 = 期望加速）</text>
+<text x="450" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">NSA 的 token 从哪里来（线性刻度）</text>
+<line x1="480" y1="320" x2="730" y2="320" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="324" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="480" y1="275" x2="730" y2="275" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="279" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="480" y1="230" x2="730" y2="230" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="234" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2000</text>
+<line x1="480" y1="185" x2="730" y2="185" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="189" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3000</text>
+<line x1="480" y1="140" x2="730" y2="140" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="144" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4000</text>
+<line x1="480" y1="95" x2="730" y2="95" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="99" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5000</text>
+<line x1="480" y1="50" x2="730" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6000</text>
+<line x1="480" y1="320" x2="730" y2="320" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="494" y="296.96" width="34.5" height="23.04" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<rect x="494" y="250.88" width="34.5" height="46.08" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="511.25" y="277.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1024</text>
+<rect x="494" y="227.84" width="34.5" height="23.04" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="511.25" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8K</text>
+<rect x="556.5" y="296.96" width="34.5" height="23.04" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<rect x="556.5" y="250.88" width="34.5" height="46.08" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="573.75" y="277.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1024</text>
+<rect x="556.5" y="204.8" width="34.5" height="46.08" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="573.75" y="231.84" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1024</text>
+<text x="573.75" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">16K</text>
+<rect x="619" y="296.96" width="34.5" height="23.04" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<rect x="619" y="250.88" width="34.5" height="46.08" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="636.25" y="277.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1024</text>
+<rect x="619" y="158.72" width="34.5" height="92.16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="636.25" y="208.8" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2048</text>
+<text x="636.25" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">32K</text>
+<rect x="681.5" y="296.96" width="34.5" height="23.04" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<rect x="681.5" y="250.88" width="34.5" height="46.08" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="698.75" y="277.92" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1024</text>
+<rect x="681.5" y="66.56" width="34.5" height="184.32" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="698.75" y="162.72" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4096</text>
+<text x="698.75" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">64K</text>
+<rect x="484" y="52" width="12" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6"/>
+<text x="502" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)">压缩 t/16</text>
+<rect x="484" y="70" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<text x="502" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)">选择 16 × 64</text>
+<rect x="484" y="88" width="12" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="502" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)">窗口 512</text>
+<text x="450" y="360" font-size="12" fill="var(--fig-muted, #74716A)">只有压缩项随长度增长：每 16 个 token 多 1 个</text>
+<text x="20" y="392" font-size="11" fill="var(--fig-muted, #74716A)">期望加速 = 全注意力装入量 ÷ NSA 装入量，是按访存量推算的估计，不是实测延迟（论文表 4 行名即 Expected Speedup）。</text>
+</svg>

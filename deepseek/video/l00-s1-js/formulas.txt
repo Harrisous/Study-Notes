@@ -1,0 +1,2 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math)
+days | 1{,}997+364+1{,}016=3{,}377

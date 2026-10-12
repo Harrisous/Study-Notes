@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>V3 的两组消融：新方法减基线的差值</title>
+
+<text x="42" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 无辅助损失 − 纯辅助损失（表 5）</text>
+<text x="42" y="42" font-size="11" fill="var(--fig-muted, #74716A)">小：15.7B / 1.33T tokens；大：228.7B / 578B</text>
+<line x1="150" y1="60" x2="150" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="150" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-2</text>
+<line x1="180" y1="60" x2="180" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="180" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="210" y1="60" x2="210" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="210" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+2</text>
+<line x1="240" y1="60" x2="240" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="240" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+4</text>
+<line x1="270" y1="60" x2="270" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="270" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+6</text>
+<line x1="300" y1="60" x2="300" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="300" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+8</text>
+<line x1="330" y1="60" x2="330" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="330" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+10</text>
+<text x="142" y="87" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">BBH</text>
+<line x1="210" y1="83" x2="198" y2="83" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="210" cy="83" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="198" cy="83" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="219" y="87" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.2</text>
+<text x="142" y="121" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MMLU</text>
+<line x1="192" y1="117" x2="163.5" y2="117" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="192" cy="117" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="163.5" cy="117" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="201" y="121" font-size="11" fill="var(--fig-red, #A3231C)">-1.1</text>
+<text x="142" y="155" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">DROP</text>
+<line x1="193.5" y1="151" x2="180" y2="151" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="193.5" cy="151" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="180" cy="151" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="202.5" y="155" font-size="11" fill="var(--fig-blue, #1F5FA8)">0.0</text>
+<text x="142" y="189" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">TriviaQA</text>
+<line x1="183" y1="185" x2="195" y2="185" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="183" cy="185" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="195" cy="185" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="204" y="189" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.0</text>
+<text x="142" y="223" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">NaturalQuestions</text>
+<line x1="183" y1="219" x2="195" y2="219" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="183" cy="219" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="195" cy="219" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="204" y="223" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.0</text>
+<text x="142" y="257" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">HumanEval</text>
+<line x1="189" y1="253" x2="271.5" y2="253" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="189" cy="253" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="271.5" cy="253" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="280.5" y="257" font-size="11" fill="var(--fig-blue, #1F5FA8)">+6.1</text>
+<text x="142" y="291" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MBPP</text>
+<line x1="168" y1="287" x2="210" y2="287" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="168" cy="287" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="210" cy="287" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="219" y="291" font-size="11" fill="var(--fig-blue, #1F5FA8)">+2.0</text>
+<text x="142" y="325" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">GSM8K</text>
+<line x1="217.5" y1="321" x2="237" y2="321" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="217.5" cy="321" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="237" cy="321" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="246" y="325" font-size="11" fill="var(--fig-blue, #1F5FA8)">+3.8</text>
+<text x="142" y="359" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MATH</text>
+<line x1="183" y1="355" x2="216" y2="355" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="183" cy="355" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="216" cy="355" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="225" y="359" font-size="11" fill="var(--fig-blue, #1F5FA8)">+2.4</text>
+<text x="240" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">差值（分数点；&gt; 0 表示新方法更好）</text>
+<text x="42" y="428" font-size="11" fill="var(--fig-muted, #74716A)">Pile BPB（越低越好）：小 −0.003，大 −0.004</text>
+<text x="392" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ 加 MTP − 基线（表 4）</text>
+<text x="392" y="42" font-size="11" fill="var(--fig-muted, #74716A)">小：15.7B / 1.33T tokens；大：228.7B / 540B</text>
+<line x1="500" y1="60" x2="500" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="500" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">-2</text>
+<line x1="530" y1="60" x2="530" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="530" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="560" y1="60" x2="560" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="560" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+2</text>
+<line x1="590" y1="60" x2="590" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="590" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+4</text>
+<line x1="620" y1="60" x2="620" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="620" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+6</text>
+<line x1="650" y1="60" x2="650" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="650" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+8</text>
+<line x1="680" y1="60" x2="680" y2="372" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="680" y="388" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+10</text>
+<text x="492" y="87" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">BBH</text>
+<line x1="566" y1="83" x2="540.5" y2="83" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="566" cy="83" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="540.5" cy="83" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="575" y="87" font-size="11" fill="var(--fig-blue, #1F5FA8)">+0.7</text>
+<text x="492" y="121" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MMLU</text>
+<line x1="579.5" y1="117" x2="516.5" y2="117" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="579.5" cy="117" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="516.5" cy="117" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="588.5" y="121" font-size="11" fill="var(--fig-red, #A3231C)">-0.9</text>
+<text x="492" y="155" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">DROP</text>
+<line x1="561.5" y1="151" x2="561.5" y2="151" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="561.5" cy="151" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="561.5" cy="151" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="570.5" y="155" font-size="11" fill="var(--fig-blue, #1F5FA8)">+2.1</text>
+<text x="492" y="189" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">TriviaQA</text>
+<line x1="542" y1="185" x2="534.5" y2="185" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="542" cy="185" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="534.5" cy="185" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="551" y="189" font-size="11" fill="var(--fig-blue, #1F5FA8)">+0.3</text>
+<text x="492" y="223" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">NaturalQuestions</text>
+<line x1="524" y1="219" x2="549.5" y2="219" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="524" cy="219" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="549.5" cy="219" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="558.5" y="223" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.3</text>
+<text x="492" y="257" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">HumanEval</text>
+<line x1="621.5" y1="253" x2="668" y2="253" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="621.5" cy="253" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="668" cy="253" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="677" y="257" font-size="11" fill="var(--fig-blue, #1F5FA8)">+9.2</text>
+<text x="492" y="291" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MBPP</text>
+<line x1="545" y1="287" x2="539" y2="287" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="545" cy="287" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="539" cy="287" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="554" y="291" font-size="11" fill="var(--fig-blue, #1F5FA8)">+0.6</text>
+<text x="492" y="325" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">GSM8K</text>
+<line x1="620" y1="321" x2="555.5" y2="321" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="620" cy="321" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="555.5" cy="321" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="629" y="325" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.7</text>
+<text x="492" y="359" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MATH</text>
+<line x1="558.5" y1="355" x2="548" y2="355" stroke="var(--fig-rule, #DCD7CC)" stroke-width="2"/>
+<circle cx="558.5" cy="355" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<circle cx="548" cy="355" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="567.5" y="359" font-size="11" fill="var(--fig-blue, #1F5FA8)">+1.2</text>
+<text x="590" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">差值（分数点；&gt; 0 表示新方法更好）</text>
+<text x="392" y="428" font-size="11" fill="var(--fig-muted, #74716A)">Pile BPB：小 0.000，大 −0.001</text>
+<circle cx="24" cy="458" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="34" y="462" font-size="12" fill="var(--fig-ink, #1C1B19)">小模型</text>
+<circle cx="100" cy="458" r="5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="110" y="462" font-size="12" fill="var(--fig-ink, #1C1B19)">大模型（数字标的是大模型的差值；负值为红色）</text>
+</svg>

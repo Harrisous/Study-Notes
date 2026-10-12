@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>大海捞针测试：DeepSeek-V2 Base 在 1K–128K 上下文、12 个插入深度上的得分（近似重绘）</title>
+
+<rect x="85" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="85" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="127" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="169" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="115" width="40" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.6" rx="2"/>
+<text x="231" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">≈3</text>
+<rect x="211" y="143" width="40" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.6" rx="2"/>
+<text x="231" y="161" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">≈3</text>
+<rect x="211" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="227" width="40" height="26" fill="var(--fig-red, #A3231C)" fill-opacity="0.6" rx="2"/>
+<text x="231" y="245" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">≈3</text>
+<rect x="211" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="211" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="253" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="295" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="337" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="379" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="421" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="171" width="40" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" rx="2"/>
+<text x="483" y="189" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">≈7</text>
+<rect x="463" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="463" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="505" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="31" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="59" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="87" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="115" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="143" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="171" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="199" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="227" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="255" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="283" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="311" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<rect x="547" y="339" width="40" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<text x="105" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1K</text>
+<text x="147" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12K</text>
+<text x="189" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">24K</text>
+<text x="231" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">35K</text>
+<text x="273" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">47K</text>
+<text x="315" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">58K</text>
+<text x="357" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">70K</text>
+<text x="399" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">81K</text>
+<text x="441" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">93K</text>
+<text x="483" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">104K</text>
+<text x="525" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">116K</text>
+<text x="567" y="384" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128K</text>
+<text x="76" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0%</text>
+<text x="76" y="76" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">9%</text>
+<text x="76" y="104" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">18%</text>
+<text x="76" y="132" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">27%</text>
+<text x="76" y="160" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">36%</text>
+<text x="76" y="188" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">45%</text>
+<text x="76" y="216" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">55%</text>
+<text x="76" y="244" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">64%</text>
+<text x="76" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">73%</text>
+<text x="76" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">82%</text>
+<text x="76" y="328" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">91%</text>
+<text x="76" y="356" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<text x="336" y="406" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">上下文长度（token）</text>
+<text x="24" y="198" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 198)">针插入的深度（占全文的百分比）</text>
+<text x="610" y="40" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">得分（1–10）</text>
+<rect x="610" y="56" width="22" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<text x="640" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)">≈10：找到</text>
+<rect x="610" y="84" width="22" height="18" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" rx="2"/>
+<text x="640" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)">≈7：部分</text>
+<rect x="610" y="112" width="22" height="18" fill="var(--fig-red, #A3231C)" fill-opacity="0.6" rx="2"/>
+<text x="640" y="126" font-size="12" fill="var(--fig-ink, #1C1B19)">≈3：失败</text>
+<text x="610" y="170" font-size="12" fill="var(--fig-muted, #74716A)">144 格中 140 格</text>
+<text x="610" y="188" font-size="12" fill="var(--fig-muted, #74716A)">约为满分；</text>
+<text x="610" y="206" font-size="12" fill="var(--fig-muted, #74716A)">35K 列三格、</text>
+<text x="610" y="224" font-size="12" fill="var(--fig-muted, #74716A)">104K 列一格失分</text>
+<text x="610" y="260" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">测的是 Base 模型</text>
+<text x="610" y="278" font-size="12" fill="var(--fig-muted, #74716A)">（YaRN 续训后的基础</text>
+<text x="610" y="296" font-size="12" fill="var(--fig-muted, #74716A)">模型，不是对话模型）</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 390" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>四种后训练方法的模型状态显存（7B）与 InstructGPT 175B 配置</title>
+
+<text x="16" y="24" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">每个网络都是 7B（单位 GB）</text>
+<line x1="60" y1="300" x2="420" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="60" y1="255.36" x2="420" y2="255.36" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="259.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50</text>
+<line x1="60" y1="210.71" x2="420" y2="210.71" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="214.71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="60" y1="166.07" x2="420" y2="166.07" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="170.07" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">150</text>
+<line x1="60" y1="121.43" x2="420" y2="121.43" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="125.43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">200</text>
+<line x1="60" y1="76.79" x2="420" y2="76.79" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="54" y="80.79" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">250</text>
+<line x1="60" y1="300" x2="420" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="84" y="200" width="58" height="100" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="113" y="254" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">112</text>
+<text x="113" y="194" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">112</text>
+<text x="113" y="317" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="113" y="333" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1×</text>
+<rect x="170" y="200" width="58" height="100" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="199" y="254" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">112</text>
+<rect x="170" y="187.5" width="58" height="12.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="199" y="181.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">126</text>
+<text x="199" y="317" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">DPO</text>
+<text x="199" y="333" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.125×</text>
+<rect x="256" y="200" width="58" height="100" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="285" y="254" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">112</text>
+<rect x="256" y="187.5" width="58" height="12.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="256" y="175" width="58" height="12.5" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="285" y="169" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">140</text>
+<text x="285" y="317" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">GRPO 式</text>
+<text x="285" y="333" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.25×</text>
+<rect x="342" y="200" width="58" height="100" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="371" y="254" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">112</text>
+<rect x="342" y="100" width="58" height="100" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1"/>
+<text x="371" y="154" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">112</text>
+<rect x="342" y="87.5" width="58" height="12.5" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="342" y="75" width="58" height="12.5" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="371" y="69" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">252</text>
+<text x="371" y="317" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">PPO</text>
+<text x="371" y="333" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2.25×</text>
+<rect x="16" y="352" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="35" y="363" font-size="11.5" fill="var(--fig-ink, #1C1B19)">策略（训练）</text>
+<rect x="138" y="352" width="14" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="157" y="363" font-size="11.5" fill="var(--fig-ink, #1C1B19)">价值网络（训练）</text>
+<rect x="260" y="352" width="14" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="279" y="363" font-size="11.5" fill="var(--fig-ink, #1C1B19)">参考模型（冻结）</text>
+<rect x="382" y="352" width="14" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="401" y="363" font-size="11.5" fill="var(--fig-ink, #1C1B19)">奖励模型（冻结）</text>
+<text x="16" y="384" font-size="11.5" fill="var(--fig-muted, #74716A)">训练的网络按 16 字节/参数，冻结的按 2 字节/参数；不含激活值和采样用的 KV cache。</text>
+<text x="460" y="24" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">InstructGPT，175B 策略（单位 GB）</text>
+<rect x="470" y="70" width="218.29" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="688.29" y="70" width="27.29" height="34" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="715.58" y="70" width="7.48" height="34" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1"/>
+<rect x="723.06" y="70" width="0.94" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<rect x="470" y="130" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="488" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)">策略 175B × 16</text>
+<text x="724" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">2,800（85.9%）</text>
+<rect x="470" y="154" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="488" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)">参考 175B × 2</text>
+<text x="724" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">350（10.7%）</text>
+<rect x="470" y="178" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="488" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)">价值 6B × 16</text>
+<text x="724" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">96（2.9%）</text>
+<rect x="470" y="202" width="12" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="488" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)">奖励 6B × 2</text>
+<text x="724" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">12（0.4%）</text>
+<line x1="470" y1="236" x2="724" y2="236" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="470" y="256" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">合计 3,258 GB</text>
+<text x="470" y="282" font-size="12" fill="var(--fig-muted, #74716A)">RM 与价值网络固定为 6B，</text>
+<text x="470" y="300" font-size="12" fill="var(--fig-muted, #74716A)">对 175B 策略几乎不占地方；</text>
+<text x="470" y="318" font-size="12" fill="var(--fig-muted, #74716A)">四个网络同尺寸时，价值网络</text>
+<text x="470" y="336" font-size="12" fill="var(--fig-muted, #74716A)">和策略一样贵（左图 PPO）。</text>
+</svg>

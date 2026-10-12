@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>被放弃或被替换的路线：什么时候上、什么时候下、换成了什么</title>
+
+<line x1="290.41" y1="46" x2="290.41" y2="534" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="293.41" y="42" font-size="11" fill="var(--fig-muted, #74716A)">2024</text>
+<line x1="451.16" y1="46" x2="451.16" y2="534" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="454.16" y="42" font-size="11" fill="var(--fig-muted, #74716A)">2025</text>
+<line x1="611.48" y1="46" x2="611.48" y2="534" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="614.48" y="42" font-size="11" fill="var(--fig-muted, #74716A)">2026</text>
+<line x1="345.75" y1="54" x2="345.75" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="448.53" y1="54" x2="448.53" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="459.51" y1="54" x2="459.51" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="570.19" y1="54" x2="570.19" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="661.11" y1="54" x2="661.11" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="722.16" y1="54" x2="722.16" y2="534" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="250" y="20" font-size="12" fill="var(--fig-muted, #74716A)">横轴：发布日期（2023-10 至 2026-10）；虚竖线是主干模型发布日</text>
+<text x="345.75" y="550" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">V2</text>
+<text x="448.53" y="550" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">V3</text>
+<text x="570.19" y="550" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">V3.2-Exp</text>
+<text x="661.11" y="550" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">V4</text>
+<text x="722.16" y="550" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">V4.1</text>
+<text x="461.51" y="564" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">R1</text>
+<text x="240" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">逐头缓存 K、V（MHA / GQA）</text>
+<rect x="275.91" y="63" width="69.84" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="345.75" y1="60" x2="345.75" y2="78" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="350.75" y="73" font-size="11" fill="var(--fig-green, #16704A)">→ MLA</text>
+<text x="240" y="103" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">以辅助损失为主的均衡</text>
+<rect x="294.8" y="93" width="153.73" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="448.53" y1="90" x2="448.53" y2="108" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="453.53" y="103" font-size="11" fill="var(--fig-green, #16704A)">→ 偏置均衡</text>
+<text x="240" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">softmax 门控</text>
+<rect x="294.8" y="123" width="153.73" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="448.53" y1="120" x2="448.53" y2="138" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="453.53" y="133" font-size="11" fill="var(--fig-green, #16704A)">→ sigmoid</text>
+<text x="240" y="163" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">设备级 token 丢弃</text>
+<rect x="345.75" y="153" width="102.78" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="448.53" y1="150" x2="448.53" y2="168" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="453.53" y="163" font-size="11" fill="var(--fig-green, #16704A)">→ 不丢 token</text>
+<text x="240" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">设备 / 节点受限路由</text>
+<rect x="345.75" y="183" width="315.36" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="661.11" y1="180" x2="661.11" y2="198" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="666.11" y="193" font-size="11" fill="var(--fig-green, #16704A)">→ 取消限制</text>
+<text x="240" y="223" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">神经奖励模型给推理打分</text>
+<rect x="305.78" y="213" width="153.73" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="459.51" y1="210" x2="459.51" y2="228" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="464.51" y="223" font-size="11" fill="var(--fig-green, #16704A)">→ 规则验证器</text>
+<text x="240" y="253" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">过程奖励模型 PRM</text>
+<polygon points="459.51,242 465.51,249 459.51,256 453.51,249" fill="var(--fig-red, #A3231C)" fill-opacity="0.15" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="449.51" y="253" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">试过未用</text>
+<text x="240" y="283" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">蒙特卡洛树搜索 MCTS</text>
+<polygon points="459.51,272 465.51,279 459.51,286 453.51,279" fill="var(--fig-red, #A3231C)" fill-opacity="0.15" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="449.51" y="283" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">试过未用</text>
+<text x="240" y="313" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">小底座直接做 RL</text>
+<polygon points="459.51,302 465.51,309 459.51,316 453.51,309" fill="var(--fig-red, #A3231C)" fill-opacity="0.15" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="449.51" y="313" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">改用蒸馏</text>
+<text x="240" y="343" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">NSA：按块选择 + 压缩分支</text>
+<rect x="471.37" y="333" width="98.82" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<line x1="570.19" y1="330" x2="570.19" y2="348" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="575.19" y="343" font-size="11" fill="var(--fig-green, #16704A)">→ DSA</text>
+<text x="240" y="373" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">无约束的超连接 HC</text>
+<rect x="409.88" y="363" width="201.16" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<line x1="611.04" y1="360" x2="611.04" y2="378" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="616.04" y="373" font-size="11" fill="var(--fig-green, #16704A)">→ mHC</text>
+<text x="240" y="403" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">预训练里的 MTP 模块</text>
+<rect x="448.53" y="393" width="273.63" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="722.16" y1="390" x2="722.16" y2="408" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="443.53" y="403" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">DSpark ←</text>
+<text x="240" y="433" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">稠密注意力预热</text>
+<rect x="570.19" y="423" width="151.97" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="722.16" y1="420" x2="722.16" y2="438" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="565.19" y="433" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">从头稀疏 ←</text>
+<text x="240" y="463" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">HCA 与重叠压缩</text>
+<rect x="661.11" y="453" width="61.05" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="722.16" y1="450" x2="722.16" y2="468" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="656.11" y="463" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">纯 CSA2 ←</text>
+<text x="240" y="493" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">前 3 层哈希路由</text>
+<rect x="661.11" y="483" width="61.05" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="722.16" y1="480" x2="722.16" y2="498" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="656.11" y="493" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">标准路由 ←</text>
+<text x="240" y="523" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">SWA 状态落盘 / 精确重建</text>
+<rect x="661.11" y="513" width="61.05" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<line x1="722.16" y1="510" x2="722.16" y2="528" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="656.11" y="523" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">有界回放 ←</text>
+<line x1="530.53" y1="99" x2="572.16" y2="99" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="2 2"/>
+<text x="576.16" y="103" font-size="11" fill="var(--fig-red, #A3231C)">只留 10<tspan baseline-shift="super" font-size="11">-4</tspan> 的序列级护栏</text>
+<line x1="448.53" y1="183" x2="448.53" y2="195" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="397.14" y="193" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3 台设备</text>
+<text x="554.82" y="193" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4 个节点</text>
+<rect x="10" y="568" width="22" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<text x="38" y="578" font-size="12" fill="var(--fig-ink, #1C1B19)">用在发布的模型里</text>
+<rect x="160" y="568" width="22" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="188" y="578" font-size="12" fill="var(--fig-ink, #1C1B19)">发表或试验过，未进生产</text>
+<polygon points="360,567 366,574 360,581 354,574" fill="var(--fig-red, #A3231C)" fill-opacity="0.15" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<text x="372" y="578" font-size="12" fill="var(--fig-ink, #1C1B19)">论文报告的失败尝试</text>
+<text x="520" y="578" font-size="12" fill="var(--fig-green, #16704A)">绿字：换成了什么</text>
+</svg>

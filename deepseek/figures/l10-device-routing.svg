@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 468" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>设备受限路由的一次决策：4 台设备 × 4 个专家，K = 4，M = 2</title>
+
+<text x="30" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">玩具路由器：16 个专家的亲和度 s（和为 1）</text>
+<rect x="66" y="52" width="80" height="178" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="106" y="72" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">设备 A</text>
+<rect x="72" y="85" width="68" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="4"/>
+<rect x="69" y="83" width="74" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="5" stroke-dasharray="4 3"/>
+<text x="78" y="105" font-size="12" fill="var(--fig-muted, #74716A)">e1</text>
+<text x="134" y="105" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">0.20</text>
+<text x="78" y="141" font-size="12" fill="var(--fig-muted, #74716A)">e2</text>
+<text x="134" y="141" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.03</text>
+<text x="78" y="177" font-size="12" fill="var(--fig-muted, #74716A)">e3</text>
+<text x="134" y="177" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.025</text>
+<rect x="72" y="193" width="68" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="4"/>
+<text x="78" y="213" font-size="12" fill="var(--fig-muted, #74716A)">e4</text>
+<text x="134" y="213" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">0.05</text>
+<rect x="150" y="52" width="80" height="178" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="6"/>
+<text x="190" y="72" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">设备 B</text>
+<text x="162" y="105" font-size="12" fill="var(--fig-muted, #74716A)">e5</text>
+<text x="218" y="105" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.04</text>
+<rect x="153" y="119" width="74" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="5" stroke-dasharray="4 3"/>
+<text x="162" y="141" font-size="12" fill="var(--fig-muted, #74716A)">e6</text>
+<text x="218" y="141" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.12</text>
+<rect x="153" y="155" width="74" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="5" stroke-dasharray="4 3"/>
+<text x="162" y="177" font-size="12" fill="var(--fig-muted, #74716A)">e7</text>
+<text x="218" y="177" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.10</text>
+<text x="162" y="213" font-size="12" fill="var(--fig-muted, #74716A)">e8</text>
+<text x="218" y="213" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.015</text>
+<rect x="234" y="52" width="80" height="178" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="6"/>
+<text x="274" y="72" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">设备 C</text>
+<rect x="240" y="85" width="68" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="4"/>
+<rect x="237" y="83" width="74" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="5" stroke-dasharray="4 3"/>
+<text x="246" y="105" font-size="12" fill="var(--fig-muted, #74716A)">e9</text>
+<text x="302" y="105" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">0.15</text>
+<text x="246" y="141" font-size="12" fill="var(--fig-muted, #74716A)">e10</text>
+<text x="302" y="141" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.01</text>
+<text x="246" y="177" font-size="12" fill="var(--fig-muted, #74716A)">e11</text>
+<text x="302" y="177" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.02</text>
+<rect x="240" y="193" width="68" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="4"/>
+<text x="246" y="213" font-size="12" fill="var(--fig-muted, #74716A)">e12</text>
+<text x="302" y="213" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">0.035</text>
+<rect x="318" y="52" width="80" height="178" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="6"/>
+<text x="358" y="72" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">设备 D</text>
+<text x="330" y="105" font-size="12" fill="var(--fig-muted, #74716A)">e13</text>
+<text x="386" y="105" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.08</text>
+<text x="330" y="141" font-size="12" fill="var(--fig-muted, #74716A)">e14</text>
+<text x="386" y="141" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.055</text>
+<text x="330" y="177" font-size="12" fill="var(--fig-muted, #74716A)">e15</text>
+<text x="386" y="177" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.03</text>
+<text x="330" y="213" font-size="12" fill="var(--fig-muted, #74716A)">e16</text>
+<text x="386" y="213" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end">0.04</text>
+<text x="56" y="256" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">组内最大</text>
+<text x="106" y="256" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.20（第 1）</text>
+<text x="190" y="256" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.12（第 3）</text>
+<text x="274" y="256" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">0.15（第 2）</text>
+<text x="358" y="256" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.08（第 4）</text>
+<text x="440" y="92" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">第 1 步</text>
+<text x="498" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)">每台设备打一个分：</text>
+<text x="498" y="118" font-size="13" fill="var(--fig-ink, #1C1B19)">设备上最高的那个亲和度</text>
+<text x="440" y="144" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">第 2 步</text>
+<text x="498" y="144" font-size="13" fill="var(--fig-ink, #1C1B19)">取分数最高的 M = 2 台：A、C</text>
+<text x="440" y="170" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">第 3 步</text>
+<text x="498" y="170" font-size="13" fill="var(--fig-ink, #1C1B19)">只在 A、C 的 8 个专家里取 Top-4</text>
+<text x="498" y="196" font-size="13" fill="var(--fig-ink, #1C1B19)">（蓝底 = 最终选中）</text>
+<text x="440" y="222" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">对照</text>
+<text x="498" y="222" font-size="13" fill="var(--fig-ink, #1C1B19)">虚线框 = 不受限 Top-4 会选的专家</text>
+<text x="440" y="256" font-size="12" fill="var(--fig-muted, #74716A)">设备 B 有两个强专家（0.12、0.10），</text>
+<text x="440" y="274" font-size="12" fill="var(--fig-muted, #74716A)">但它的“最大值”只排第 3，整台被排除。</text>
+<text x="30" y="300" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">不受限 Top-4</text>
+<rect x="30" y="310" width="92" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="13"/>
+<text x="76" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1  0.20</text>
+<rect x="130" y="310" width="92" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="13"/>
+<text x="176" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e9  0.15</text>
+<rect x="230" y="310" width="92" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="13"/>
+<text x="276" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e6  0.12</text>
+<rect x="330" y="310" width="92" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" rx="13"/>
+<text x="376" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e7  0.10</text>
+<text x="440" y="328" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">门控和 0.57 · 跨 A、B、C 三台设备</text>
+<text x="30" y="358" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">V2 的规则：按组内最大值选 2 台（A、C）</text>
+<rect x="30" y="368" width="92" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="13"/>
+<text x="76" y="386" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1  0.20</text>
+<rect x="130" y="368" width="92" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="13"/>
+<text x="176" y="386" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e9  0.15</text>
+<rect x="230" y="368" width="92" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="13"/>
+<text x="276" y="386" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e4  0.05</text>
+<rect x="330" y="368" width="92" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="13"/>
+<text x="376" y="386" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e12  0.035</text>
+<text x="440" y="386" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">门控和 0.435 · 只去 2 台</text>
+<text x="30" y="416" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">另一种规则：按组内前 2 名之和选 2 台（A 0.25、B 0.22）</text>
+<rect x="30" y="426" width="92" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="13"/>
+<text x="76" y="444" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e1  0.20</text>
+<rect x="130" y="426" width="92" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="13"/>
+<text x="176" y="444" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e6  0.12</text>
+<rect x="230" y="426" width="92" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="13"/>
+<text x="276" y="444" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e7  0.10</text>
+<rect x="330" y="426" width="92" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="13"/>
+<text x="376" y="444" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">e4  0.05</text>
+<text x="440" y="444" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">门控和 0.47 · 只去 2 台</text>
+</svg>

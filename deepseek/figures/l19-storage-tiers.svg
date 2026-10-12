@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>三层存储里各放什么：V4 部署与 V4.1 部署</title>
+
+<text x="266" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V4-Flash 部署</text>
+<text x="594" y="30" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V4.1-Flash 部署</text>
+<text x="20" y="91" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="700">GPU HBM</text>
+<rect x="110" y="44" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<rect x="438" y="44" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<text x="20" y="189" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="700">主机内存</text>
+<rect x="110" y="142" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<rect x="438" y="142" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<text x="20" y="287" font-size="13" fill="var(--fig-amber, #8A6508)" font-weight="700">SSD</text>
+<rect x="110" y="240" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<rect x="438" y="240" width="312" height="86" fill="var(--fig-amber, #8A6508)" fill-opacity="0.07" stroke="var(--fig-amber, #8A6508)" stroke-width="1" rx="6"/>
+<text x="122" y="66" font-size="12" fill="var(--fig-ink, #1C1B19)">全局 KV：3,514.25 字节/token</text>
+<text x="122" y="85" font-size="12" fill="var(--fig-ink, #1C1B19)">SWA 状态：3.07 MiB/请求（43 层 × 128 × 584 B）</text>
+<text x="122" y="104" font-size="12" fill="var(--fig-muted, #74716A)">活跃请求才在这里</text>
+<text x="450" y="66" font-size="12" fill="var(--fig-ink, #1C1B19)">全局 KV：890 字节/token</text>
+<text x="450" y="85" font-size="12" fill="var(--fig-ink, #1C1B19)">SWA 状态：2.58 MiB/请求（40 层 × 128 × 528 B）</text>
+<text x="450" y="104" font-size="12" fill="var(--fig-muted, #74716A)">活跃请求才在这里</text>
+<text x="122" y="164" font-size="12" fill="var(--fig-muted, #74716A)">（论文没有描述这一层的 KV 用途）</text>
+<text x="450" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)">分布式 SWA 池：每台机器拿出 10% 的主机内存</text>
+<text x="450" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)">只存编码器的 SWA KV；寿命几分钟，过期立即回收</text>
+<text x="450" y="202" font-size="12" fill="var(--fig-red, #A3231C)">未命中 → 只回放最近 128 个 token</text>
+<text x="450" y="221" font-size="12" fill="var(--fig-muted, #74716A)">Engram 表也放在主机内存，经 RDMA 预取</text>
+<text x="122" y="262" font-size="12" fill="var(--fig-ink, #1C1B19)">持久化 KV：全局 KV + SWA KV</text>
+<text x="122" y="281" font-size="12" fill="var(--fig-ink, #1C1B19)">SWA 在“提示结尾”“输出结尾”两处保存</text>
+<text x="122" y="300" font-size="12" fill="var(--fig-muted, #74716A)">SWA 约占一半容量；典型负载下都能驻留 72 小时以上</text>
+<text x="450" y="262" font-size="12" fill="var(--fig-ink, #1C1B19)">持久化 KV：只有全局 KV</text>
+<text x="450" y="281" font-size="12" fill="var(--fig-ink, #1C1B19)">保证至少驻留 72 小时</text>
+<text x="450" y="300" font-size="12" fill="var(--fig-muted, #74716A)">前缀命中时从这里读回 HBM</text>
+<text x="20" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">持久化缓存的容量（以 V4-Flash 其中的全局 KV 部分为 1）</text>
+<text x="140" y="385" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4-Flash</text>
+<rect x="150" y="370" width="150" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="225" y="385" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">全局 KV 1.0</text>
+<rect x="300" y="370" width="150" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="375" y="385" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SWA ≈ 1.0</text>
+<text x="458" y="385" font-size="12" fill="var(--fig-ink, #1C1B19)">≈ 2.0</text>
+<text x="140" y="423" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4.1-Flash</text>
+<rect x="150" y="408" width="37.99" height="22" fill="var(--fig-orange, #B4460C)" fill-opacity="0.6" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="195.99" y="423" font-size="12" fill="var(--fig-orange, #B4460C)">0.253（相对 V4 的 2.0：0.127，约 1/8）</text>
+<text x="520" y="385" font-size="12" fill="var(--fig-muted, #74716A)">× 1/2：SWA 不再落盘</text>
+<text x="520" y="403" font-size="12" fill="var(--fig-muted, #74716A)">× 0.253：全局 KV 本身变小</text>
+</svg>

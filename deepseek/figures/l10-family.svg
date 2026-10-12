@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 家族：谁从谁那里来</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker></defs>
+<text x="30" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">DeepSeek-V2 预训练（236B / 21B）</text>
+<rect x="30" y="56" width="300" height="28" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="4"/>
+<line x1="30" y1="84" x2="30" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="30" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0T</text>
+<line x1="104.07" y1="84" x2="104.07" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="104.07" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2T</text>
+<line x1="178.15" y1="84" x2="178.15" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="252.22" y1="84" x2="252.22" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="252.22" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6T</text>
+<line x1="330" y1="84" x2="330" y2="90" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="330" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8.1T</text>
+<line x1="185.56" y1="50" x2="185.56" y2="84" stroke="var(--fig-orange, #B4460C)" stroke-width="2"/>
+<text x="185.56" y="46" font-size="11" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">4.2T 中间检查点</text>
+<text x="240" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8.1T tokens，4K</text>
+<line x1="332" y1="70" x2="348" y2="70" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="350" y="46" width="116" height="48" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="408" y="67.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">YaRN 续训</text>
+<text x="408" y="82.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32K × 576 × 1000 步</text>
+<line x1="466" y1="70" x2="482" y2="70" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="484" y="46" width="116" height="48" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="542" y="67.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="542" y="82.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">150 万条</text>
+<line x1="600" y1="70" x2="616" y2="70" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="618" y="46" width="116" height="48" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="676" y="67.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">两阶段 GRPO</text>
+<text x="676" y="82.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">推理 → 偏好</text>
+<text x="730" y="20" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">V2 Chat：2024-05-06</text>
+<path d="M185.6 84 C 185.6 140, 60 140, 60 174" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.8" marker-end="url(#ah-orange)"/>
+<text x="206" y="156" font-size="13" fill="var(--fig-orange, #B4460C)" font-weight="600">DeepSeek-Coder-V2（236B / 21B）：从 V2 的中间检查点续训</text>
+<rect x="20" y="176" width="190" height="48" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="115" y="197.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">续训 +6T</text>
+<text x="115" y="212.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">代码 60% · 数学 10% · 文本 30%</text>
+<line x1="212" y1="200" x2="226" y2="200" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="228" y="176" width="190" height="48" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="323" y="197.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">长上下文两阶段</text>
+<text x="323" y="212.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32K×1152、128K×288 各 1000 步</text>
+<line x1="420" y1="200" x2="434" y2="200" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="436" y="176" width="120" height="48" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="496" y="197.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="496" y="212.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">300M tokens</text>
+<line x1="558" y1="200" x2="572" y2="200" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="574" y="176" width="120" height="48" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="634" y="197.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">GRPO</text>
+<text x="634" y="212.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">约 4 万个提示</text>
+<text x="20" y="244" font-size="12" fill="var(--fig-muted, #74716A)">总曝光 4.2T + 6T = 10.2T tokens；86 → 338 种编程语言；16K → 128K 上下文；arXiv 2024-06-17</text>
+<text x="20" y="278" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">DeepSeek-V2-Lite（15.7B / 2.4B）：与 V2 同一份语料，从零训练</text>
+<rect x="20" y="296" width="150" height="46" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="95" y="316.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">从零预训练</text>
+<text x="95" y="331.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5.7T tokens，4K</text>
+<line x1="172" y1="318" x2="186" y2="318" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="188" y="296" width="150" height="46" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="263" y="316.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">长上下文扩展</text>
+<text x="263" y="331.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">到 32K</text>
+<line x1="340" y1="318" x2="354" y2="318" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<rect x="356" y="296" width="150" height="46" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="431" y="316.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="431" y="331.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">没有 RL</text>
+<text x="520" y="323" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="600">V2-Lite Chat：2024-05-16</text>
+<text x="20" y="362" font-size="12" fill="var(--fig-muted, #74716A)">Coder-V2-Lite（16B / 2.4B）同样写作“4.2T + 6T”；它的起点检查点来自 V2-Lite 还是 V2，原文没有说明</text>
+<rect x="250" y="398" width="260" height="46" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="380" y="418.86" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">DeepSeek-V2.5（2024-09-05）</text>
+<text x="380" y="433.86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">合并 V2-0628 与 Coder-V2-0724</text>
+<path d="M720 94 C 752 130, 752 430, 512 428" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah-green)"/>
+<text x="726" y="150" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">V2-0628</text>
+<path d="M660 224 C 712 260, 712 406, 512 412" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah-green)"/>
+<text x="668" y="254" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">Coder-V2-0724</text>
+</svg>

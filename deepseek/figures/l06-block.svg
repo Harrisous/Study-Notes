@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek LLM 67B 的一层：Pre-RMSNorm、GQA-8 注意力、SwiGLU 前馈，按真实维度标注</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="44" y="18" width="180" height="34" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="134" y="39.55" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">输入 token id</text>
+<rect x="44" y="66" width="180" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="134" y="84.05" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">词嵌入 102400×8192</text>
+<text x="134" y="104.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（与输出头不共享）</text>
+<rect x="44" y="142" width="180" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="134" y="161.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">RMSNorm</text>
+<rect x="44" y="186" width="180" height="50" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="134" y="207.05" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">GQA 注意力</text>
+<text x="134" y="227.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">64 个查询头 / 8 个 KV 头</text>
+<rect x="44" y="280" width="180" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="134" y="299.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">RMSNorm</text>
+<rect x="44" y="324" width="180" height="50" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="134" y="345.05" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">SwiGLU 前馈</text>
+<text x="134" y="365.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">8192 → 22016 → 8192</text>
+<rect x="44" y="440" width="180" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="134" y="459.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">最终 RMSNorm</text>
+<rect x="44" y="484" width="180" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="134" y="502.05" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">输出头 8192×102400</text>
+<text x="134" y="522.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">→ logits</text>
+<circle cx="134" cy="260" r="10" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="134" y="265" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">+</text>
+<circle cx="134" cy="398" r="10" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="134" y="403" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">+</text>
+<line x1="134" y1="52" x2="134" y2="64" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="110" x2="134" y2="140" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="172" x2="134" y2="184" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="236" x2="134" y2="248" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="270" x2="134" y2="278" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="310" x2="134" y2="322" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="374" x2="134" y2="386" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="408" x2="134" y2="438" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<line x1="134" y1="470" x2="134" y2="482" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<path d="M134.0 126 H 32.0 V 260 H 122.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<path d="M134.0 274 H 32.0 V 398 H 122.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<text x="22" y="196" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 22 196)">残差</text>
+<path d="M238.0 136 h 8 V 414 h -8" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="252" y="262" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">×95 层</text>
+<text x="252" y="280" font-size="12" fill="var(--fig-muted, #74716A)">（7B：×30）</text>
+<text x="318" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">GQA-8：每 8 个查询头共享一对 K、V 头（每个头 d<tspan baseline-shift="sub" font-size="11">h</tspan> = 128）</text>
+<rect x="318" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="322.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="327.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="331.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="336.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="341" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="345.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="350.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M318.0 82.0 L 335.8 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M353.6 82.0 L 335.8 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="324.8" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="336.8" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="364.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="369.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="374" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="378.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="383.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="387.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="392.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="397" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M364.8 82.0 L 382.6 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M400.4 82.0 L 382.6 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="371.6" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="383.6" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="411.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="416.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="420.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="425.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="430" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="434.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="439.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="443.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M411.6 82.0 L 429.4 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M447.2 82.0 L 429.4 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="418.4" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="430.4" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="458.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="463" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="467.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="472.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="476.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="481.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="486" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="490.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M458.4 82.0 L 476.2 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M494.0 82.0 L 476.2 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="465.2" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="477.2" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="505.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="509.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="514.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="519" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="523.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="528.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="532.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="537.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M505.2 82.0 L 523.0 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M540.8 82.0 L 523.0 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="512" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="524" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="552" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="556.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="561.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="565.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="570.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="575" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="579.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="584.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M552.0 82.0 L 569.8 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M587.6 82.0 L 569.8 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="558.8" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="570.8" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="598.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="603.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="608" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="612.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="617.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="621.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="626.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="631" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M598.8 82.0 L 616.6 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M634.4 82.0 L 616.6 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="605.6" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="617.6" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<rect x="645.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="650.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="654.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="659.4" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="664" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="668.6" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="673.2" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<rect x="677.8" y="44" width="3.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55"/>
+<path d="M645.6 82.0 L 663.4 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<path d="M681.2 82.0 L 663.4 96.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="652.4" y="98" width="10" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="664.4" y="98" width="10" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="690.4" y="66" font-size="12" fill="var(--fig-blue, #1F5FA8)">Q：64 头</text>
+<text x="690.4" y="116" font-size="12" fill="var(--fig-violet, #6733C4)">K、V：8 头</text>
+<text x="318" y="160" font-size="12" fill="var(--fig-blue, #1F5FA8)">W<tspan baseline-shift="super" font-size="11">Q</tspan>：8192 → 64×128 = 8192</text>
+<text x="318" y="181" font-size="12" fill="var(--fig-violet, #6733C4)">W<tspan baseline-shift="super" font-size="11">K</tspan>、W<tspan baseline-shift="super" font-size="11">V</tspan>：8192 → 8×128 = 1024（各一个）</text>
+<text x="318" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)">W<tspan baseline-shift="super" font-size="11">O</tspan>：8192 → 8192</text>
+<text x="318" y="223" font-size="12" fill="var(--fig-amber, #8A6508)">每 token 每层缓存 2×8×128 = 2048 个数（MHA 为 16384）</text>
+<text x="318" y="250" font-size="12" fill="var(--fig-muted, #74716A)">注意力参数/层：2d<tspan baseline-shift="super" font-size="11">2</tspan> + 2d·1024 = 1.51 亿（MHA 4d<tspan baseline-shift="super" font-size="11">2</tspan> = 2.68 亿）</text>
+<text x="318" y="292" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">SwiGLU：门控支路 × 线性支路，再投回 d</text>
+<rect x="326" y="336" width="70" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="361" y="357.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600"><tspan font-weight="700">h</tspan></text>
+<text x="361" y="386" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">8192</text>
+<rect x="422" y="310" width="104" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="474" y="331.2" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">gate</tspan>：→ 22016</text>
+<rect x="422" y="374" width="104" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="474" y="395.2" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">up</tspan>：→ 22016</text>
+<line x1="396" y1="348" x2="420" y2="327" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="396" y1="358" x2="420" y2="391" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="546" y="310" width="50" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="571" y="331.2" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SiLU</text>
+<line x1="526" y1="327" x2="544" y2="327" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<circle cx="626" cy="353" r="12" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="626" y="358" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⊙</text>
+<line x1="596" y1="327" x2="617" y2="345" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<line x1="526" y1="391" x2="617" y2="361" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="650" y="336" width="96" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="698" y="357.2" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="sub" font-size="11">down</tspan>：→ 8192</text>
+<line x1="638" y1="353" x2="648" y2="353" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<text x="318" y="442" font-size="12" fill="var(--fig-muted, #74716A)">FFN 参数/层：3 × 8192 × 22016 = 5.41 亿，约占一层的 78%</text>
+<text x="318" y="463" font-size="12" fill="var(--fig-muted, #74716A)">22016/8192 = 2.6875，略大于 8/3（7B 的 11008/4096 相同）</text>
+<text x="318" y="500" font-size="12" fill="var(--fig-ink, #1C1B19)">7B 的不同之处：d = 4096，32 个查询头、32 个 KV 头（即 MHA），</text>
+<text x="318" y="520" font-size="12" fill="var(--fig-ink, #1C1B19)">FFN 11008，30 层。两者都用 RoPE（θ = 10000）、上下文 4096。</text>
+</svg>

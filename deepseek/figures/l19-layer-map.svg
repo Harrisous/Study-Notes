@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>V4.1-Flash 逐层配置：40 层只有 4 层写全局 KV，8 层跑索引器</title>
+
+<path d="M85.0 35.0 L85.0 40.0 L395.0 40.0 L395.0 35.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="240" y="34" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">编码器（层 0–19）</text>
+<path d="M397.0 35.0 L397.0 40.0 L707.0 40.0 L707.0 35.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="552" y="34" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">解码器（层 20–39）</text>
+<path d="M709.0 35.0 L709.0 40.0 L753.8 40.0 L753.8 35.0" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="731.4" y="34" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">DSpark</text>
+<rect x="84.8" y="70" width="14" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="2"/>
+<rect x="100.4" y="70" width="14" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="2"/>
+<rect x="116" y="70" width="14" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" rx="2"/>
+<rect x="131.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="147.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="162.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="178.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="194" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="209.6" y="70" width="14" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" rx="2"/>
+<rect x="225.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="240.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="256.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="272" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="287.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="303.2" y="70" width="14" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" rx="2"/>
+<rect x="318.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="334.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="350" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="365.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="381.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="396.8" y="70" width="14" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" rx="2"/>
+<rect x="412.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="428" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="443.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="459.2" y="70" width="14" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" rx="2"/>
+<rect x="474.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="490.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="506" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="521.6" y="70" width="14" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" rx="2"/>
+<rect x="537.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="552.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="568.4" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="584" y="70" width="14" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" rx="2"/>
+<rect x="599.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="615.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="630.8" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="646.4" y="70" width="14" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8" rx="2"/>
+<rect x="662" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="677.6" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="693.2" y="70" width="14" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" rx="2"/>
+<rect x="708.8" y="70" width="14" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="2"/>
+<rect x="724.4" y="70" width="14" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="2"/>
+<rect x="740" y="70" width="14" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" rx="2"/>
+<polygon points="102.4,61 107.4,56 112.4,61 107.4,66" fill="var(--fig-green, #16704A)" fill-opacity="0.85"/>
+<polygon points="305.2,61 310.2,56 315.2,61 310.2,66" fill="var(--fig-green, #16704A)" fill-opacity="0.85"/>
+<circle cx="669" cy="106" r="2.4" fill="var(--fig-muted, #74716A)"/>
+<circle cx="684.6" cy="106" r="2.4" fill="var(--fig-muted, #74716A)"/>
+<circle cx="700.2" cy="106" r="2.4" fill="var(--fig-muted, #74716A)"/>
+<text x="76" y="89" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">模式</text>
+<text x="91.8" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="123" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="216.6" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="310.2" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">14</text>
+<text x="403.8" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<text x="466.2" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">24</text>
+<text x="528.6" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">28</text>
+<text x="591" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<text x="653.4" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">36</text>
+<text x="700.2" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">39</text>
+<text x="76" y="122" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">层号</text>
+<text x="76" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">压缩比 m</text>
+<text x="91.8" y="142" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">–</text>
+<text x="107.4" y="142" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">–</text>
+<text x="123" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="138.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="154.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="169.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="185.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="201" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="216.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="232.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="247.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="263.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="279" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="294.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="310.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="325.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="341.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="357" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="372.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="388.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="403.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="419.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="435" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="450.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="466.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="481.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="497.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="513" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="528.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="544.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="559.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="575.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="591" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="606.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="622.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="637.8" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="653.4" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="669" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="684.6" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="700.2" y="142" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="76" y="176" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end">主 KV 来自</text>
+<path d="M116.2 169.0 L116.2 164.0 L207.8 164.0 L207.8 169.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="162" y="180" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">层 2（m = 2）</text>
+<path d="M209.8 169.0 L209.8 164.0 L301.4 164.0 L301.4 169.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="255.6" y="180" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">层 8（m = 2）</text>
+<path d="M303.4 169.0 L303.4 164.0 L395.0 164.0 L395.0 169.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="349.2" y="180" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">层 14（m = 2）</text>
+<path d="M397.0 169.0 L397.0 164.0 L707.0 164.0 L707.0 169.0" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="552" y="180" font-size="11" fill="var(--fig-amber, #8A6508)" text-anchor="middle">层 20（m = 1）</text>
+<text x="76" y="220" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">top-k 来自</text>
+<path d="M116.2 213.0 L116.2 208.0 L207.8 208.0 L207.8 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="162" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 2</text>
+<path d="M209.8 213.0 L209.8 208.0 L301.4 208.0 L301.4 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="255.6" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 8</text>
+<path d="M303.4 213.0 L303.4 208.0 L395.0 208.0 L395.0 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="349.2" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 14</text>
+<path d="M397.0 213.0 L397.0 208.0 L457.4 208.0 L457.4 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="427.2" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 20</text>
+<path d="M459.4 213.0 L459.4 208.0 L519.8 208.0 L519.8 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="489.6" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 24</text>
+<path d="M521.8 213.0 L521.8 208.0 L582.2 208.0 L582.2 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="552" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 28</text>
+<path d="M584.2 213.0 L584.2 208.0 L644.6 208.0 L644.6 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="614.4" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 32</text>
+<path d="M646.6 213.0 L646.6 208.0 L707.0 208.0 L707.0 213.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="676.8" y="224" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">层 36</text>
+<rect x="20" y="256" width="14" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="40" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)">Full：写全局 KV、跑索引器（4 层）</text>
+<rect x="270" y="256" width="14" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="290" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)">Reindex：借 KV、自己打分（4 层）</text>
+<rect x="510" y="256" width="14" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="530" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)">Reuse：KV 与 top-k 都借（30 层）</text>
+<rect x="20" y="278" width="14" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.3" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="40" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">纯 SWA（2 层）</text>
+<rect x="150" y="278" width="14" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.15" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="170" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">DSpark 草稿块（纯 SWA）</text>
+<polygon points="340,282 345,277 350,282 345,287" fill="var(--fig-green, #16704A)" fill-opacity="0.85"/>
+<text x="357" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">Engram（层 1、14）</text>
+<circle cx="496" cy="283" r="2.4" fill="var(--fig-muted, #74716A)"/>
+<text x="504" y="288" font-size="12" fill="var(--fig-ink, #1C1B19)">DSpark 取特征的层（37–39）</text>
+<text x="20" y="312" font-size="12" fill="var(--fig-muted, #74716A)">每一层都另有自己的 SWA（窗口 128），不跨层共享；DSpark 块不属于 40 层主干。</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 416" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>PPO 论文表 1：不同替代目标的平均归一化得分</title>
+
+<line x1="250" y1="42" x2="250" y2="369" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="250" y="385" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.5</text>
+<line x1="396.67" y1="42" x2="396.67" y2="369" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="396.67" y="385" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="543.33" y1="42" x2="543.33" y2="369" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="543.33" y="385" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<line x1="690" y1="42" x2="690" y2="369" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="690" y="385" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="396.67" y1="42" x2="396.67" y2="369" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="470" y="405" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">平均归一化得分（1 = 最好，0 = 随机策略）</text>
+<text x="16" y="26" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">7 个 MuJoCo 环境 × 3 个随机种子的平均</text>
+<rect x="282.27" y="50" width="114.4" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" stroke="var(--fig-red, #A3231C)" stroke-width="1.1"/>
+<text x="240" y="66" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">不裁剪、不惩罚</text>
+<text x="288.27" y="66" font-size="12" fill="var(--fig-ink, #1C1B19)">−0.39</text>
+<rect x="396.67" y="79" width="222.93" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="240" y="95" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">裁剪 ε = 0.1</text>
+<text x="625.6" y="95" font-size="12" fill="var(--fig-ink, #1C1B19)">0.76</text>
+<rect x="396.67" y="108" width="240.53" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="240" y="124" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">裁剪 ε = 0.2</text>
+<text x="643.2" y="124" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">0.82</text>
+<rect x="396.67" y="137" width="205.33" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="240" y="153" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">裁剪 ε = 0.3</text>
+<text x="608" y="153" font-size="12" fill="var(--fig-ink, #1C1B19)">0.70</text>
+<rect x="396.67" y="166" width="199.47" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1"/>
+<text x="240" y="182" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">自适应 KL，d<tspan baseline-shift="sub" font-size="11">targ</tspan> = 0.003</text>
+<text x="602.13" y="182" font-size="12" fill="var(--fig-ink, #1C1B19)">0.68</text>
+<rect x="396.67" y="195" width="217.07" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1"/>
+<text x="240" y="211" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">自适应 KL，d<tspan baseline-shift="sub" font-size="11">targ</tspan> = 0.01</text>
+<text x="619.73" y="211" font-size="12" fill="var(--fig-ink, #1C1B19)">0.74</text>
+<rect x="396.67" y="224" width="208.27" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1"/>
+<text x="240" y="240" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">自适应 KL，d<tspan baseline-shift="sub" font-size="11">targ</tspan> = 0.03</text>
+<text x="610.93" y="240" font-size="12" fill="var(--fig-ink, #1C1B19)">0.71</text>
+<rect x="396.67" y="253" width="181.87" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.28" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="240" y="269" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">固定 KL，β = 0.3</text>
+<text x="584.53" y="269" font-size="12" fill="var(--fig-ink, #1C1B19)">0.62</text>
+<rect x="396.67" y="282" width="208.27" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.28" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="240" y="298" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">固定 KL，β = 1</text>
+<text x="610.93" y="298" font-size="12" fill="var(--fig-ink, #1C1B19)">0.71</text>
+<rect x="396.67" y="311" width="211.2" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.28" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="240" y="327" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">固定 KL，β = 3</text>
+<text x="613.87" y="327" font-size="12" fill="var(--fig-ink, #1C1B19)">0.72</text>
+<rect x="396.67" y="340" width="202.4" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.28" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="240" y="356" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">固定 KL，β = 10</text>
+<text x="605.07" y="356" font-size="12" fill="var(--fig-ink, #1C1B19)">0.69</text>
+</svg>

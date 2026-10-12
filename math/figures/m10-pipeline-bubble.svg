@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>流水线气泡：P = 4、m = 4 的 GPipe 调度，以及气泡占比随 m 的变化</title>
+
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">P = 4 段、m = 4 个 micro-batch（前向 1、反向 2 个时间单位）</text>
+<text x="68" y="78" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">第 0 段</text>
+<rect x="78" y="58" width="357" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<rect x="78" y="58" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="86.5" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="299" y="58" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="316" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="95" y="58" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="103.5" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="333" y="58" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="350" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="112" y="58" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="120.5" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="367" y="58" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="384" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="129" y="58" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="137.5" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<rect x="401" y="58" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="418" y="78" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<text x="68" y="116" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">第 1 段</text>
+<rect x="78" y="96" width="357" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<rect x="95" y="96" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="103.5" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="265" y="96" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="282" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="112" y="96" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="120.5" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="299" y="96" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="316" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="129" y="96" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="137.5" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="333" y="96" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="350" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="146" y="96" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="154.5" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<rect x="367" y="96" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="384" y="116" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<text x="68" y="154" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">第 2 段</text>
+<rect x="78" y="134" width="357" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<rect x="112" y="134" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="120.5" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="231" y="134" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="248" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="129" y="134" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="137.5" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="265" y="134" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="282" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="146" y="134" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="154.5" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="299" y="134" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="316" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="163" y="134" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="171.5" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<rect x="333" y="134" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="350" y="154" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<text x="68" y="192" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">第 3 段</text>
+<rect x="78" y="172" width="357" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<rect x="129" y="172" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="137.5" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="197" y="172" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="214" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">0</text>
+<rect x="146" y="172" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="154.5" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="231" y="172" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="248" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">1</text>
+<rect x="163" y="172" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="171.5" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="265" y="172" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="282" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">2</text>
+<rect x="180" y="172" width="17" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="188.5" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<rect x="299" y="172" width="34" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="316" y="192" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">3</text>
+<line x1="78" y1="214" x2="435" y2="214" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="78" y1="214" x2="78" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="78" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="129" y1="214" x2="129" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="129" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="180" y1="214" x2="180" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="180" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<line x1="231" y1="214" x2="231" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="231" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<line x1="282" y1="214" x2="282" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="282" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<line x1="333" y1="214" x2="333" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="333" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">15</text>
+<line x1="384" y1="214" x2="384" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="384" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">18</text>
+<line x1="435" y1="214" x2="435" y2="218" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="435" y="231" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">21</text>
+<text x="256.5" y="248" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">时间（单位：一次前向）</text>
+<rect x="78" y="259" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="98" y="270" font-size="12" fill="var(--fig-ink, #1C1B19)">前向</text>
+<rect x="144" y="259" width="14" height="14" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="164" y="270" font-size="12" fill="var(--fig-ink, #1C1B19)">反向</text>
+<rect x="210" y="259" width="14" height="14" fill="var(--fig-red, #A3231C)" fill-opacity="0.15"/>
+<text x="230" y="270" font-size="12" fill="var(--fig-ink, #1C1B19)">空等（气泡）</text>
+<text x="78" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">每段忙 12、空 9，总长 21：空闲占 9/21 = 42.9%</text>
+<text x="440" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">气泡占比 (P−1)/(m+P−1)</text>
+<line x1="470" y1="246" x2="700" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="464" y="250" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0%</text>
+<line x1="470" y1="197" x2="700" y2="197" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="464" y="201" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">25%</text>
+<line x1="470" y1="148" x2="700" y2="148" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="464" y="152" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50%</text>
+<line x1="470" y1="99" x2="700" y2="99" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="464" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">75%</text>
+<line x1="470" y1="50" x2="700" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="464" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<line x1="470" y1="50" x2="470" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="470" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="521.11" y1="50" x2="521.11" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="521.11" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="572.22" y1="50" x2="572.22" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="572.22" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="623.33" y1="50" x2="623.33" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="623.33" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<line x1="674.44" y1="50" x2="674.44" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="674.44" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">256</text>
+<text x="585" y="280" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">micro-batch 数 m（对数刻度）</text>
+<path d="M470.0 99.0 L471.1 100.2 L472.3 101.3 L473.4 102.5 L474.6 103.7 L475.8 105.0 L476.9 106.2 L478.1 107.5 L479.2 108.7 L480.4 110.0 L481.5 111.3 L482.6 112.6 L483.8 114.0 L484.9 115.3 L486.1 116.7 L487.2 118.1 L488.4 119.5 L489.6 120.9 L490.7 122.3 L491.9 123.7 L493.0 125.2 L494.1 126.6 L495.3 128.1 L496.4 129.5 L497.6 131.0 L498.8 132.5 L499.9 134.0 L501.1 135.5 L502.2 137.0 L503.4 138.5 L504.5 140.0 L505.6 141.6 L506.8 143.1 L507.9 144.6 L509.1 146.1 L510.2 147.7 L511.4 149.2 L512.5 150.7 L513.7 152.2 L514.9 153.8 L516.0 155.3 L517.1 156.8 L518.3 158.3 L519.5 159.8 L520.6 161.3 L521.8 162.8 L522.9 164.3 L524.0 165.8 L525.2 167.3 L526.4 168.7 L527.5 170.2 L528.6 171.6 L529.8 173.1 L531.0 174.5 L532.1 175.9 L533.2 177.3 L534.4 178.7 L535.5 180.1 L536.7 181.4 L537.9 182.8 L539.0 184.1 L540.1 185.4 L541.3 186.7 L542.5 188.0 L543.6 189.3 L544.8 190.5 L545.9 191.7 L547.0 192.9 L548.2 194.1 L549.4 195.3 L550.5 196.5 L551.6 197.6 L552.8 198.8 L554.0 199.9 L555.1 201.0 L556.2 202.0 L557.4 203.1 L558.5 204.1 L559.7 205.1 L560.9 206.1 L562.0 207.1 L563.1 208.1 L564.3 209.0 L565.5 210.0 L566.6 210.9 L567.8 211.8 L568.9 212.6 L570.0 213.5 L571.2 214.3 L572.4 215.1 L573.5 215.9 L574.6 216.7 L575.8 217.5 L577.0 218.2 L578.1 219.0 L579.2 219.7 L580.4 220.4 L581.5 221.1 L582.7 221.8 L583.9 222.4 L585.0 223.1 L586.1 223.7 L587.3 224.3 L588.5 224.9 L589.6 225.5 L590.8 226.0 L591.9 226.6 L593.0 227.1 L594.2 227.6 L595.4 228.2 L596.5 228.7 L597.6 229.1 L598.8 229.6 L600.0 230.1 L601.1 230.5 L602.2 231.0 L603.4 231.4 L604.5 231.8 L605.7 232.2 L606.9 232.6 L608.0 233.0 L609.2 233.4 L610.3 233.7 L611.5 234.1 L612.6 234.4 L613.8 234.8 L614.9 235.1 L616.1 235.4 L617.2 235.7 L618.4 236.0 L619.5 236.3 L620.6 236.6 L621.8 236.9 L623.0 237.1 L624.1 237.4 L625.2 237.6 L626.4 237.9 L627.5 238.1 L628.7 238.4 L629.9 238.6 L631.0 238.8 L632.1 239.0 L633.3 239.2 L634.5 239.4 L635.6 239.6 L636.8 239.8 L637.9 240.0 L639.0 240.2 L640.2 240.4 L641.4 240.5 L642.5 240.7 L643.6 240.8 L644.8 241.0 L646.0 241.1 L647.1 241.3 L648.2 241.4 L649.4 241.6 L650.5 241.7 L651.7 241.8 L652.9 242.0 L654.0 242.1 L655.1 242.2 L656.3 242.3 L657.5 242.4 L658.6 242.5 L659.8 242.6 L660.9 242.7 L662.0 242.8 L663.2 242.9 L664.4 243.0 L665.5 243.1 L666.6 243.2 L667.8 243.3 L669.0 243.4 L670.1 243.4 L671.2 243.5 L672.4 243.6 L673.5 243.7 L674.7 243.7 L675.8 243.8 L677.0 243.9 L678.1 243.9 L679.3 244.0 L680.5 244.1 L681.6 244.1 L682.8 244.2 L683.9 244.2 L685.0 244.3 L686.2 244.3 L687.4 244.4 L688.5 244.4 L689.6 244.5 L690.8 244.5 L692.0 244.6 L693.1 244.6 L694.2 244.7 L695.4 244.7 L696.5 244.7 L697.7 244.8 L698.9 244.8" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2"/>
+<circle cx="572.22" cy="215.05" r="3.6" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M470.0 74.5 L471.1 75.2 L472.3 75.9 L473.4 76.6 L474.6 77.3 L475.8 78.0 L476.9 78.8 L478.1 79.6 L479.2 80.4 L480.4 81.2 L481.5 82.0 L482.6 82.8 L483.8 83.7 L484.9 84.6 L486.1 85.5 L487.2 86.4 L488.4 87.3 L489.6 88.3 L490.7 89.3 L491.9 90.2 L493.0 91.3 L494.1 92.3 L495.3 93.3 L496.4 94.4 L497.6 95.5 L498.8 96.6 L499.9 97.7 L501.1 98.8 L502.2 100.0 L503.4 101.1 L504.5 102.3 L505.6 103.5 L506.8 104.7 L507.9 106.0 L509.1 107.2 L510.2 108.5 L511.4 109.8 L512.5 111.1 L513.7 112.4 L514.9 113.8 L516.0 115.1 L517.1 116.5 L518.3 117.9 L519.5 119.2 L520.6 120.6 L521.8 122.1 L522.9 123.5 L524.0 124.9 L525.2 126.4 L526.4 127.8 L527.5 129.3 L528.6 130.8 L529.8 132.3 L531.0 133.8 L532.1 135.3 L533.2 136.8 L534.4 138.3 L535.5 139.8 L536.7 141.3 L537.9 142.8 L539.0 144.4 L540.1 145.9 L541.3 147.4 L542.5 148.9 L543.6 150.5 L544.8 152.0 L545.9 153.5 L547.0 155.0 L548.2 156.6 L549.4 158.1 L550.5 159.6 L551.6 161.1 L552.8 162.6 L554.0 164.1 L555.1 165.6 L556.2 167.0 L557.4 168.5 L558.5 170.0 L559.7 171.4 L560.9 172.8 L562.0 174.3 L563.1 175.7 L564.3 177.1 L565.5 178.5 L566.6 179.8 L567.8 181.2 L568.9 182.5 L570.0 183.9 L571.2 185.2 L572.4 186.5 L573.5 187.8 L574.6 189.0 L575.8 190.3 L577.0 191.5 L578.1 192.8 L579.2 194.0 L580.4 195.1 L581.5 196.3 L582.7 197.4 L583.9 198.6 L585.0 199.7 L586.1 200.8 L587.3 201.9 L588.5 202.9 L589.6 204.0 L590.8 205.0 L591.9 206.0 L593.0 207.0 L594.2 207.9 L595.4 208.9 L596.5 209.8 L597.6 210.7 L598.8 211.6 L600.0 212.5 L601.1 213.3 L602.2 214.2 L603.4 215.0 L604.5 215.8 L605.7 216.6 L606.9 217.4 L608.0 218.1 L609.2 218.9 L610.3 219.6 L611.5 220.3 L612.6 221.0 L613.8 221.7 L614.9 222.3 L616.1 223.0 L617.2 223.6 L618.4 224.2 L619.5 224.8 L620.6 225.4 L621.8 225.9 L623.0 226.5 L624.1 227.0 L625.2 227.6 L626.4 228.1 L627.5 228.6 L628.7 229.1 L629.9 229.5 L631.0 230.0 L632.1 230.5 L633.3 230.9 L634.5 231.3 L635.6 231.7 L636.8 232.2 L637.9 232.6 L639.0 232.9 L640.2 233.3 L641.4 233.7 L642.5 234.0 L643.6 234.4 L644.8 234.7 L646.0 235.0 L647.1 235.4 L648.2 235.7 L649.4 236.0 L650.5 236.3 L651.7 236.5 L652.9 236.8 L654.0 237.1 L655.1 237.4 L656.3 237.6 L657.5 237.9 L658.6 238.1 L659.8 238.3 L660.9 238.6 L662.0 238.8 L663.2 239.0 L664.4 239.2 L665.5 239.4 L666.6 239.6 L667.8 239.8 L669.0 240.0 L670.1 240.2 L671.2 240.3 L672.4 240.5 L673.5 240.7 L674.7 240.8 L675.8 241.0 L677.0 241.1 L678.1 241.3 L679.3 241.4 L680.5 241.5 L681.6 241.7 L682.8 241.8 L683.9 241.9 L685.0 242.1 L686.2 242.2 L687.4 242.3 L688.5 242.4 L689.6 242.5 L690.8 242.6 L692.0 242.7 L693.1 242.8 L694.2 242.9 L695.4 243.0 L696.5 243.1 L697.7 243.2 L698.9 243.3" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.2"/>
+<circle cx="597.78" cy="210.82" r="3.6" fill="var(--fig-violet, #6733C4)"/>
+<path d="M470.0 62.2 L471.1 62.6 L472.3 63.0 L473.4 63.4 L474.6 63.8 L475.8 64.2 L476.9 64.6 L478.1 65.0 L479.2 65.4 L480.4 65.9 L481.5 66.4 L482.6 66.8 L483.8 67.3 L484.9 67.8 L486.1 68.3 L487.2 68.9 L488.4 69.4 L489.6 69.9 L490.7 70.5 L491.9 71.1 L493.0 71.7 L494.1 72.3 L495.3 72.9 L496.4 73.6 L497.6 74.2 L498.8 74.9 L499.9 75.6 L501.1 76.3 L502.2 77.0 L503.4 77.7 L504.5 78.5 L505.6 79.2 L506.8 80.0 L507.9 80.8 L509.1 81.6 L510.2 82.5 L511.4 83.3 L512.5 84.2 L513.7 85.1 L514.9 86.0 L516.0 86.9 L517.1 87.9 L518.3 88.8 L519.5 89.8 L520.6 90.8 L521.8 91.8 L522.9 92.9 L524.0 93.9 L525.2 95.0 L526.4 96.1 L527.5 97.2 L528.6 98.3 L529.8 99.5 L531.0 100.6 L532.1 101.8 L533.2 103.0 L534.4 104.2 L535.5 105.4 L536.7 106.7 L537.9 108.0 L539.0 109.2 L540.1 110.5 L541.3 111.9 L542.5 113.2 L543.6 114.5 L544.8 115.9 L545.9 117.3 L547.0 118.6 L548.2 120.0 L549.4 121.4 L550.5 122.9 L551.6 124.3 L552.8 125.7 L554.0 127.2 L555.1 128.7 L556.2 130.1 L557.4 131.6 L558.5 133.1 L559.7 134.6 L560.9 136.1 L562.0 137.6 L563.1 139.1 L564.3 140.6 L565.5 142.2 L566.6 143.7 L567.8 145.2 L568.9 146.7 L570.0 148.3 L571.2 149.8 L572.4 151.3 L573.5 152.9 L574.6 154.4 L575.8 155.9 L577.0 157.4 L578.1 158.9 L579.2 160.4 L580.4 161.9 L581.5 163.4 L582.7 164.9 L583.9 166.4 L585.0 167.9 L586.1 169.3 L587.3 170.8 L588.5 172.2 L589.6 173.6 L590.8 175.1 L591.9 176.5 L593.0 177.9 L594.2 179.2 L595.4 180.6 L596.5 182.0 L597.6 183.3 L598.8 184.6 L600.0 185.9 L601.1 187.2 L602.2 188.5 L603.4 189.8 L604.5 191.0 L605.7 192.2 L606.9 193.4 L608.0 194.6 L609.2 195.8 L610.3 197.0 L611.5 198.1 L612.6 199.2 L613.8 200.3 L614.9 201.4 L616.1 202.5 L617.2 203.5 L618.4 204.5 L619.5 205.5 L620.6 206.5 L621.8 207.5 L623.0 208.5 L624.1 209.4 L625.2 210.3 L626.4 211.2 L627.5 212.1 L628.7 213.0 L629.9 213.8 L631.0 214.7 L632.1 215.5 L633.3 216.3 L634.5 217.0 L635.6 217.8 L636.8 218.5 L637.9 219.3 L639.0 220.0 L640.2 220.7 L641.4 221.4 L642.5 222.0 L643.6 222.7 L644.8 223.3 L646.0 223.9 L647.1 224.5 L648.2 225.1 L649.4 225.7 L650.5 226.3 L651.7 226.8 L652.9 227.3 L654.0 227.9 L655.1 228.4 L656.3 228.9 L657.5 229.3 L658.6 229.8 L659.8 230.3 L660.9 230.7 L662.0 231.1 L663.2 231.6 L664.4 232.0 L665.5 232.4 L666.6 232.8 L667.8 233.1 L669.0 233.5 L670.1 233.9 L671.2 234.2 L672.4 234.6 L673.5 234.9 L674.7 235.2 L675.8 235.5 L677.0 235.8 L678.1 236.1 L679.3 236.4 L680.5 236.7 L681.6 237.0 L682.8 237.2 L683.9 237.5 L685.0 237.7 L686.2 238.0 L687.4 238.2 L688.5 238.5 L689.6 238.7 L690.8 238.9 L692.0 239.1 L693.1 239.3 L694.2 239.5 L695.4 239.7 L696.5 239.9 L697.7 240.1 L698.9 240.2" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2"/>
+<circle cx="623.33" cy="208.78" r="3.6" fill="var(--fig-blue, #1F5FA8)"/>
+<line x1="620.95" y1="63.8" x2="643.3" y2="63.8" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2"/>
+<text x="646.51" y="67.8" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">P = 16</text>
+<line x1="620.95" y1="81.8" x2="643.3" y2="81.8" stroke="var(--fig-violet, #6733C4)" stroke-width="2.2"/>
+<text x="646.51" y="85.8" font-size="12" fill="var(--fig-violet, #6733C4)" font-weight="600">P = 8</text>
+<line x1="620.95" y1="99.8" x2="643.3" y2="99.8" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2"/>
+<text x="646.51" y="103.8" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">P = 4</text>
+<line x1="470" y1="225.74" x2="700" y2="225.74" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="474" y="240.74" font-size="11" fill="var(--fig-green, #16704A)" font-weight="600">V3 实测 10.3%</text>
+<text x="440" y="302" font-size="11" fill="var(--fig-muted, #74716A)">圆点：m = 4P（GPipe 的经验法则）</text>
+</svg>

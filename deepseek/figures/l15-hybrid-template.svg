@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>V3.1 的混合思考：同一组参数，靠提示的最后一个 token 切换模式</title>
+<defs><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">① 非思考模式（首轮）：提示以 &lt;/think&gt; 结尾，模型直接写回答</text>
+<rect x="16" y="34" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="39.2" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹bos›</text>
+<rect x="66.4" y="34" width="62" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="97.4" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">系统提示</text>
+<rect x="132.4" y="34" width="53.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="159.2" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹User›</text>
+<rect x="190" y="34" width="38" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="209" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">问题</text>
+<rect x="232" y="34" width="89.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="276.8" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹Assistant›</text>
+<rect x="325.6" y="34" width="71.6" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" rx="4"/>
+<text x="361.4" y="51.5" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">&lt;/think&gt;</text>
+<text x="361.4" y="74" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">id 128799</text>
+<line x1="404.2" y1="26" x2="404.2" y2="68" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="411.2" y="34" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="430.2" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">回答</text>
+<rect x="453.2" y="34" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="476.4" y="51.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹eos›</text>
+<text x="16" y="112" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">② 思考模式（首轮）：提示以 &lt;think&gt; 结尾，模型先写思考，自己写出 &lt;/think&gt;，再写回答</text>
+<rect x="16" y="124" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="39.2" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹bos›</text>
+<rect x="66.4" y="124" width="62" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="97.4" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">系统提示</text>
+<rect x="132.4" y="124" width="53.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="159.2" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹User›</text>
+<rect x="190" y="124" width="38" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="209" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">问题</text>
+<rect x="232" y="124" width="89.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="276.8" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹Assistant›</text>
+<rect x="325.6" y="124" width="64.4" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" rx="4"/>
+<text x="357.8" y="141.5" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">&lt;think&gt;</text>
+<text x="357.8" y="164" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">id 128798</text>
+<line x1="397" y1="116" x2="397" y2="158" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="404" y="124" width="62" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="435" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">思考内容</text>
+<rect x="470" y="124" width="71.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="505.8" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/think&gt;</text>
+<rect x="545.6" y="124" width="38" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="564.6" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">回答</text>
+<rect x="587.6" y="124" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="610.8" y="141.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹eos›</text>
+<text x="16" y="202" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">③ 多轮：历史轮次一律写成 &lt;/think&gt;回答‹eos›，思考内容被删掉，&lt;/think&gt; 保留</text>
+<rect x="16" y="250" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="39.2" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹bos›</text>
+<rect x="66.4" y="250" width="62" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="97.4" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">系统提示</text>
+<rect x="132.4" y="250" width="53.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="159.2" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹User›</text>
+<rect x="190" y="250" width="49.2" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="214.6" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">问题<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="243.2" y="250" width="89.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="288" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹Assistant›</text>
+<rect x="336.8" y="250" width="71.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="372.6" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/think&gt;</text>
+<rect x="412.4" y="250" width="49.2" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="437" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">回答<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="465.6" y="250" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="488.8" y="267.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹eos›</text>
+<rect x="292.8" y="214" width="212" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4" stroke-dasharray="4 3"/>
+<text x="398.8" y="230.5" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">&lt;think&gt; 第 1 轮的思考（已删除）</text>
+<line x1="300.8" y1="226" x2="496.8" y2="226" stroke="var(--fig-red, #A3231C)" stroke-width="1.2"/>
+<line x1="312.8" y1="238" x2="334.8" y2="250" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" marker-end="url(#ah-red)"/>
+<text x="522" y="267" font-size="12" fill="var(--fig-muted, #74716A)">← 第 1 轮（历史）</text>
+<rect x="16" y="300" width="53.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="42.8" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹User›</text>
+<rect x="73.6" y="300" width="49.2" height="26" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="4"/>
+<text x="98.2" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">问题<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="126.8" y="300" width="89.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="171.6" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹Assistant›</text>
+<rect x="220.4" y="300" width="64.4" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" rx="4"/>
+<text x="252.6" y="317.5" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">&lt;think&gt;</text>
+<text x="252.6" y="340" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">或 &lt;/think&gt;</text>
+<line x1="291.8" y1="292" x2="291.8" y2="334" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="298.8" y="300" width="73.2" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="4"/>
+<text x="335.4" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">思考内容<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="376" y="300" width="71.6" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="411.8" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;/think&gt;</text>
+<rect x="451.6" y="300" width="49.2" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="4"/>
+<text x="476.2" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">回答<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="504.8" y="300" width="46.4" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="4"/>
+<text x="528" y="317.5" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">‹eos›</text>
+<text x="561.2" y="317" font-size="12" fill="var(--fig-muted, #74716A)">← 第 2 轮（当前）</text>
+<rect x="16" y="359" width="16" height="14" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="3"/>
+<text x="38" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">模板的特殊 token</text>
+<rect x="153.2" y="359" width="16" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="3"/>
+<text x="175.2" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">用户给的文本</text>
+<rect x="259.2" y="359" width="16" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.16" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<text x="281.2" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">切换模式的 token</text>
+<rect x="396.4" y="359" width="16" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="418.4" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">模型生成：思考</text>
+<rect x="514.4" y="359" width="16" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="536.4" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">模型生成：回答</text>
+<line x1="636.4" y1="357" x2="636.4" y2="373" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="644.4" y="370" font-size="12" fill="var(--fig-ink, #1C1B19)">提示到此为止</text>
+</svg>

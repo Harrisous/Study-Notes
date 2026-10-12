@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 332" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>SWA Bounded Replay：精确重建要的历史 vs 只回放一个窗口</title>
+
+<rect x="92" y="30" width="496.4" height="12" fill="var(--fig-amber, #8A6508)" fill-opacity="0.45" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="92" y="24" font-size="12" fill="var(--fig-amber, #8A6508)">全局 KV：前缀的全部位置都从 SSD 读回，精确、不重算</text>
+<rect x="588.4" y="30" width="146" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="82" y="206" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">层 1</text>
+<rect x="121.2" y="190" width="350.4" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" stroke-dasharray="3 2"/>
+<rect x="471.6" y="190" width="116.8" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="588.4" y="190" width="146" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<line x1="92" y1="190" x2="92" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="106.6" y1="190" x2="106.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="121.2" y1="190" x2="121.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="135.8" y1="190" x2="135.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="150.4" y1="190" x2="150.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="165" y1="190" x2="165" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="179.6" y1="190" x2="179.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="194.2" y1="190" x2="194.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="208.8" y1="190" x2="208.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="223.4" y1="190" x2="223.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="238" y1="190" x2="238" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="252.6" y1="190" x2="252.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="267.2" y1="190" x2="267.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="281.8" y1="190" x2="281.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="296.4" y1="190" x2="296.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="311" y1="190" x2="311" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="325.6" y1="190" x2="325.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="340.2" y1="190" x2="340.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="354.8" y1="190" x2="354.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="369.4" y1="190" x2="369.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="384" y1="190" x2="384" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="398.6" y1="190" x2="398.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="413.2" y1="190" x2="413.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="427.8" y1="190" x2="427.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="442.4" y1="190" x2="442.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="457" y1="190" x2="457" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="471.6" y1="190" x2="471.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="486.2" y1="190" x2="486.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="500.8" y1="190" x2="500.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="515.4" y1="190" x2="515.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="530" y1="190" x2="530" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="544.6" y1="190" x2="544.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="559.2" y1="190" x2="559.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="573.8" y1="190" x2="573.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="588.4" y1="190" x2="588.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="603" y1="190" x2="603" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="617.6" y1="190" x2="617.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="632.2" y1="190" x2="632.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="646.8" y1="190" x2="646.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="661.4" y1="190" x2="661.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="676" y1="190" x2="676" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="690.6" y1="190" x2="690.6" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="705.2" y1="190" x2="705.2" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="719.8" y1="190" x2="719.8" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="734.4" y1="190" x2="734.4" y2="214" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<text x="82" y="164" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">层 2</text>
+<rect x="238" y="148" width="233.6" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" stroke-dasharray="3 2"/>
+<rect x="471.6" y="148" width="116.8" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="588.4" y="148" width="146" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<line x1="92" y1="148" x2="92" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="106.6" y1="148" x2="106.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="121.2" y1="148" x2="121.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="135.8" y1="148" x2="135.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="150.4" y1="148" x2="150.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="165" y1="148" x2="165" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="179.6" y1="148" x2="179.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="194.2" y1="148" x2="194.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="208.8" y1="148" x2="208.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="223.4" y1="148" x2="223.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="238" y1="148" x2="238" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="252.6" y1="148" x2="252.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="267.2" y1="148" x2="267.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="281.8" y1="148" x2="281.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="296.4" y1="148" x2="296.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="311" y1="148" x2="311" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="325.6" y1="148" x2="325.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="340.2" y1="148" x2="340.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="354.8" y1="148" x2="354.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="369.4" y1="148" x2="369.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="384" y1="148" x2="384" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="398.6" y1="148" x2="398.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="413.2" y1="148" x2="413.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="427.8" y1="148" x2="427.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="442.4" y1="148" x2="442.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="457" y1="148" x2="457" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="471.6" y1="148" x2="471.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="486.2" y1="148" x2="486.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="500.8" y1="148" x2="500.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="515.4" y1="148" x2="515.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="530" y1="148" x2="530" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="544.6" y1="148" x2="544.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="559.2" y1="148" x2="559.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="573.8" y1="148" x2="573.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="588.4" y1="148" x2="588.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="603" y1="148" x2="603" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="617.6" y1="148" x2="617.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="632.2" y1="148" x2="632.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="646.8" y1="148" x2="646.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="661.4" y1="148" x2="661.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="676" y1="148" x2="676" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="690.6" y1="148" x2="690.6" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="705.2" y1="148" x2="705.2" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="719.8" y1="148" x2="719.8" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="734.4" y1="148" x2="734.4" y2="172" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<text x="82" y="122" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">层 3</text>
+<rect x="354.8" y="106" width="116.8" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" stroke-dasharray="3 2"/>
+<rect x="471.6" y="106" width="116.8" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="588.4" y="106" width="146" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<line x1="92" y1="106" x2="92" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="106.6" y1="106" x2="106.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="121.2" y1="106" x2="121.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="135.8" y1="106" x2="135.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="150.4" y1="106" x2="150.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="165" y1="106" x2="165" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="179.6" y1="106" x2="179.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="194.2" y1="106" x2="194.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="208.8" y1="106" x2="208.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="223.4" y1="106" x2="223.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="238" y1="106" x2="238" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="252.6" y1="106" x2="252.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="267.2" y1="106" x2="267.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="281.8" y1="106" x2="281.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="296.4" y1="106" x2="296.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="311" y1="106" x2="311" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="325.6" y1="106" x2="325.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="340.2" y1="106" x2="340.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="354.8" y1="106" x2="354.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="369.4" y1="106" x2="369.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="384" y1="106" x2="384" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="398.6" y1="106" x2="398.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="413.2" y1="106" x2="413.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="427.8" y1="106" x2="427.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="442.4" y1="106" x2="442.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="457" y1="106" x2="457" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="471.6" y1="106" x2="471.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="486.2" y1="106" x2="486.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="500.8" y1="106" x2="500.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="515.4" y1="106" x2="515.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="530" y1="106" x2="530" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="544.6" y1="106" x2="544.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="559.2" y1="106" x2="559.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="573.8" y1="106" x2="573.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="588.4" y1="106" x2="588.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="603" y1="106" x2="603" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="617.6" y1="106" x2="617.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="632.2" y1="106" x2="632.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="646.8" y1="106" x2="646.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="661.4" y1="106" x2="661.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="676" y1="106" x2="676" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="690.6" y1="106" x2="690.6" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="705.2" y1="106" x2="705.2" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="719.8" y1="106" x2="719.8" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="734.4" y1="106" x2="734.4" y2="130" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<text x="82" y="80" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">层 4</text>
+<rect x="471.6" y="64" width="0" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="0.8" stroke-dasharray="3 2"/>
+<rect x="471.6" y="64" width="116.8" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<rect x="588.4" y="64" width="146" height="24" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<line x1="92" y1="64" x2="92" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="106.6" y1="64" x2="106.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="121.2" y1="64" x2="121.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="135.8" y1="64" x2="135.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="150.4" y1="64" x2="150.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="165" y1="64" x2="165" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="179.6" y1="64" x2="179.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="194.2" y1="64" x2="194.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="208.8" y1="64" x2="208.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="223.4" y1="64" x2="223.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="238" y1="64" x2="238" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="252.6" y1="64" x2="252.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="267.2" y1="64" x2="267.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="281.8" y1="64" x2="281.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="296.4" y1="64" x2="296.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="311" y1="64" x2="311" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="325.6" y1="64" x2="325.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="340.2" y1="64" x2="340.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="354.8" y1="64" x2="354.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="369.4" y1="64" x2="369.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="384" y1="64" x2="384" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="398.6" y1="64" x2="398.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="413.2" y1="64" x2="413.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="427.8" y1="64" x2="427.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="442.4" y1="64" x2="442.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="457" y1="64" x2="457" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="471.6" y1="64" x2="471.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="486.2" y1="64" x2="486.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="500.8" y1="64" x2="500.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="515.4" y1="64" x2="515.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="530" y1="64" x2="530" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="544.6" y1="64" x2="544.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="559.2" y1="64" x2="559.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="573.8" y1="64" x2="573.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="588.4" y1="64" x2="588.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="603" y1="64" x2="603" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="617.6" y1="64" x2="617.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="632.2" y1="64" x2="632.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="646.8" y1="64" x2="646.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="661.4" y1="64" x2="661.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="676" y1="64" x2="676" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="690.6" y1="64" x2="690.6" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="705.2" y1="64" x2="705.2" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="719.8" y1="64" x2="719.8" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="734.4" y1="64" x2="734.4" y2="88" stroke="var(--fig-surface, #FFFFFF)" stroke-width="0.6"/>
+<line x1="471.6" y1="46" x2="471.6" y2="222" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<line x1="588.4" y1="46" x2="588.4" y2="222" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="471.6" y="236" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">s</text>
+<text x="588.4" y="236" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">h</text>
+<circle cx="508.1" cy="160" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<line x1="471.6" y1="139" x2="515.4" y2="139" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2"/>
+<line x1="398.6" y1="139" x2="471.6" y2="139" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" stroke-dasharray="3 2"/>
+<text x="394.6" y="143" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">窗口被截掉的部分</text>
+<text x="121.2" y="254" font-size="12" fill="var(--fig-red, #A3231C)">精确重建：每往下一层多要 n<tspan baseline-shift="sub" font-size="11">win</tspan> 个位置，最底层要 L × n<tspan baseline-shift="sub" font-size="11">win</tspan> 个（红色虚线）</text>
+<text x="121.2" y="274" font-size="12" fill="var(--fig-blue, #1F5FA8)">Bounded Replay：每层只重算 [s, h) 这 n<tspan baseline-shift="sub" font-size="11">win</tspan> 个位置（蓝），窗口在 s 处截断</text>
+<text x="121.2" y="294" font-size="12" fill="var(--fig-green, #16704A)">新输入（绿）从 h 开始正常 prefill：同时写全局 KV 与 SWA KV</text>
+<text x="121.2" y="318" font-size="12" fill="var(--fig-muted, #74716A)">示意：n<tspan baseline-shift="sub" font-size="11">win</tspan> = 8、4 层。V4.1：n<tspan baseline-shift="sub" font-size="11">win</tspan> = 128；按论文的口径，精确重建要 L × n<tspan baseline-shift="sub" font-size="11">win</tspan> 个 token，有界回放只要 128 个。</text>
+</svg>

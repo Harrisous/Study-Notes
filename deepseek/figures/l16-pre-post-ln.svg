@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Post-LN 与 Pre-LN：LayerNorm 在传送带上，还是在工位里</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="180" y="28" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(a) Post-LN：LN 在传送带上</text>
+<text x="106" y="50" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11">0</tspan></text>
+<line x1="106" y1="62" x2="106" y2="127" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<circle cx="106" cy="82" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M106 82 H260 V92" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="222" y="94" width="76" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="260" y="114.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<path d="M260 124 V136 H117" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="106" cy="136" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="106" y="141" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="106" y1="145" x2="106" y2="150" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<rect x="82" y="150" width="48" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="5"/>
+<text x="106" y="167" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">LN</text>
+<text x="74" y="167" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="end">× c<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<line x1="106" y1="174" x2="106" y2="227" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<circle cx="106" cy="182" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M106 182 H260 V192" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="222" y="194" width="76" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="260" y="214.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<path d="M260 224 V236 H117" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="106" cy="236" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="106" y="241" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="106" y1="245" x2="106" y2="250" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<rect x="82" y="250" width="48" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="5"/>
+<text x="106" y="267" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">LN</text>
+<text x="74" y="267" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="end">× c<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="106" y1="274" x2="106" y2="327" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<circle cx="106" cy="282" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M106 282 H260 V292" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="222" y="294" width="76" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="260" y="314.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<path d="M260 324 V336 H117" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="106" cy="336" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="106" y="341" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<line x1="106" y1="345" x2="106" y2="350" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5" stroke-linecap="butt"/>
+<rect x="82" y="350" width="48" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="5"/>
+<text x="106" y="367" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">LN</text>
+<text x="74" y="367" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="end">× c<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<line x1="106" y1="374" x2="106" y2="384" stroke="var(--fig-ink, #1C1B19)" stroke-width="4.5"/>
+<line x1="106" y1="382" x2="106" y2="398" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="120" y="396" font-size="12" fill="var(--fig-muted, #74716A)">……（共 L 个子层）</text>
+<text x="18" y="452" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">直通项：c<tspan baseline-shift="sub" font-size="11">1</tspan>c<tspan baseline-shift="sub" font-size="11">2</tspan>⋯c<tspan baseline-shift="sub" font-size="11"><tspan font-style="italic">L</tspan></tspan></text>
+<text x="18" y="474" font-size="12" fill="var(--fig-red, #A3231C)">例：每层 c = 1/√2，60 层后 ≈ 9.3 × 10<tspan baseline-shift="super" font-size="11">-10</tspan></text>
+<text x="18" y="496" font-size="12" fill="var(--fig-ink, #1C1B19)">⇒ 底层梯度消失；训练易发散，要 warm-up</text>
+<text x="18" y="518" font-size="12" fill="var(--fig-muted, #74716A)">带子宽度不变：每一站都被重新归一化</text>
+<line x1="385" y1="44" x2="385" y2="520" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="562" y="28" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(b) Pre-LN：LN 在工位里</text>
+<text x="488" y="50" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">x</tspan><tspan baseline-shift="sub" font-size="11">0</tspan></text>
+<line x1="488" y1="62" x2="488" y2="127" stroke="var(--fig-ink, #1C1B19)" stroke-width="4" stroke-linecap="butt"/>
+<circle cx="488" cy="82" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M488 82 H584 V92" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="562" y="94" width="44" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="584" y="113.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LN</text>
+<line x1="606" y1="109" x2="622" y2="109" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="624" y="94" width="60" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="654" y="114.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<path d="M654 124 V136 H499" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="488" cy="136" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="488" y="141" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="472" y="141" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end">× 1</text>
+<line x1="488" y1="145" x2="488" y2="227" stroke="var(--fig-ink, #1C1B19)" stroke-width="5.66" stroke-linecap="butt"/>
+<circle cx="488" cy="182" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M488 182 H584 V192" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="562" y="194" width="44" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="584" y="213.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LN</text>
+<line x1="606" y1="209" x2="622" y2="209" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="624" y="194" width="60" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="654" y="214.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<path d="M654 224 V236 H499" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="488" cy="236" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="488" y="241" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="472" y="241" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end">× 1</text>
+<line x1="488" y1="245" x2="488" y2="327" stroke="var(--fig-ink, #1C1B19)" stroke-width="6.93" stroke-linecap="butt"/>
+<circle cx="488" cy="282" r="3.4" fill="var(--fig-ink, #1C1B19)"/>
+<path d="M488 282 H584 V292" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="562" y="294" width="44" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="584" y="313.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">LN</text>
+<line x1="606" y1="309" x2="622" y2="309" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="624" y="294" width="60" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="654" y="314.04" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<path d="M654 324 V336 H499" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<circle cx="488" cy="336" r="9" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="488" y="341" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">+</text>
+<text x="472" y="341" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="end">× 1</text>
+<line x1="488" y1="345" x2="488" y2="384" stroke="var(--fig-ink, #1C1B19)" stroke-width="8"/>
+<line x1="488" y1="382" x2="488" y2="398" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="502" y="396" font-size="12" fill="var(--fig-muted, #74716A)">……（共 L 个子层）</text>
+<text x="400" y="452" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">直通项：1 × 1 × ⋯ × 1 = 1</text>
+<text x="400" y="474" font-size="12" fill="var(--fig-green, #16704A)">梯度沿带子原样直达底层</text>
+<text x="400" y="496" font-size="12" fill="var(--fig-ink, #1C1B19)">⇒ 但带子越来越粗（范数平方 ∝ 层数）</text>
+<text x="400" y="518" font-size="12" fill="var(--fig-muted, #74716A)">深层工位放上去的增量占比越来越小</text>
+</svg>

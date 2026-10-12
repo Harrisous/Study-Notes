@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>从分布里采样：把 [0,1) 按概率切段，再撒一个均匀的点</title>
+<defs><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="110" y="22" font-size="12" fill="var(--fig-ink, #1C1B19)">U 在 [0, 1) 上均匀；它落在哪一段，就选哪个 token</text>
+<text x="16" y="98" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">原分布</text>
+<text x="16" y="115" font-size="12" fill="var(--fig-muted, #74716A)">τ = 1</text>
+<rect x="110" y="84" width="298.4" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.62" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="259.2" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#0</text>
+<text x="259.2" y="113" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.563</text>
+<rect x="408.4" y="84" width="109.78" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.46" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="463.29" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#1</text>
+<text x="463.29" y="113" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.207</text>
+<rect x="518.18" y="84" width="66.58" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.32" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="551.47" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#2</text>
+<text x="551.47" y="113" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.126</text>
+<rect x="584.76" y="84" width="40.38" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="604.95" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#3</text>
+<text x="604.95" y="113" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.076</text>
+<rect x="625.14" y="84" width="14.86" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="632.57" y="78" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#4</text>
+<line x1="110" y1="118" x2="110" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="110" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="408.4" y1="118" x2="408.4" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="408.4" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.563</text>
+<line x1="518.18" y1="118" x2="518.18" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="518.18" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.770</text>
+<line x1="584.76" y1="118" x2="584.76" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="584.76" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.896</text>
+<line x1="625.14" y1="118" x2="625.14" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="640" y1="118" x2="640" y2="124" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="640" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="621.14" y="148" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">F₄ = 0.972</text>
+<line x1="269" y1="60" x2="269" y2="82" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" marker-end="url(#ah-red)"/>
+<text x="273" y="58" font-size="11" fill="var(--fig-red, #A3231C)">U=0.30→#0</text>
+<line x1="481" y1="60" x2="481" y2="82" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" marker-end="url(#ah-red)"/>
+<text x="485" y="58" font-size="11" fill="var(--fig-red, #A3231C)">U=0.70→#1</text>
+<line x1="613.5" y1="60" x2="613.5" y2="82" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" marker-end="url(#ah-red)"/>
+<text x="617.5" y="58" font-size="11" fill="var(--fig-red, #A3231C)">U=0.95→#3</text>
+<text x="16" y="214" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">top-k</text>
+<text x="16" y="231" font-size="12" fill="var(--fig-muted, #74716A)">k = 2</text>
+<rect x="110" y="200" width="387.46" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.62" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="303.73" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#0</text>
+<text x="303.73" y="229" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.731</text>
+<rect x="497.46" y="200" width="142.54" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.46" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="568.73" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#1</text>
+<text x="568.73" y="229" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.269</text>
+<text x="110" y="250" font-size="12" fill="var(--fig-muted, #74716A)">只留最大的 2 个（原质量 0.7701），各除以 0.7701 → (0.7311, 0.2689)</text>
+<rect x="646" y="208" width="20" height="18" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="670" y="222" font-size="11" fill="var(--fig-red, #A3231C)">#2–#4</text>
+<text x="670" y="236" font-size="11" fill="var(--fig-red, #A3231C)">删去</text>
+<text x="16" y="316" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">top-p</text>
+<text x="16" y="333" font-size="12" fill="var(--fig-muted, #74716A)">阈值 0.9</text>
+<rect x="110" y="302" width="307.01" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.62" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="263.5" y="317" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#0</text>
+<text x="263.5" y="331" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.579</text>
+<rect x="417.01" y="302" width="112.94" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.46" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="473.48" y="317" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#1</text>
+<text x="473.48" y="331" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.213</text>
+<rect x="529.95" y="302" width="68.5" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.32" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="564.2" y="317" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#2</text>
+<text x="564.2" y="331" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.129</text>
+<rect x="598.45" y="302" width="41.55" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="619.23" y="317" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">#3</text>
+<text x="619.23" y="331" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.078</text>
+<text x="110" y="352" font-size="12" fill="var(--fig-muted, #74716A)">累计概率首次 ≥ 0.9 的最小集合 {#0…#3}（质量 0.9720），再重新归一化</text>
+<rect x="646" y="310" width="20" height="18" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="670" y="324" font-size="11" fill="var(--fig-red, #A3231C)">#4</text>
+<text x="670" y="338" font-size="11" fill="var(--fig-red, #A3231C)">删去</text>
+</svg>

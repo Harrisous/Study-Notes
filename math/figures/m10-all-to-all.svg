@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>all-to-all：块矩阵转置，以及 V3 一个 token 的通信字节</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="156" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">发送前：第 i 行是 GPU i 要发出的块</text>
+<text x="80" y="91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 0</text>
+<rect x="88" y="70" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="103.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→0</text>
+<rect x="122" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="137.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→1</text>
+<rect x="156" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="171.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→2</text>
+<rect x="190" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="205.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→3</text>
+<text x="80" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 1</text>
+<rect x="88" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="103.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→0</text>
+<rect x="122" y="104" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="137.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→1</text>
+<rect x="156" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="171.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→2</text>
+<rect x="190" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="205.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→3</text>
+<text x="80" y="159" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 2</text>
+<rect x="88" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="103.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→0</text>
+<rect x="122" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="137.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→1</text>
+<rect x="156" y="138" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="171.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→2</text>
+<rect x="190" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="205.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→3</text>
+<text x="80" y="193" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 3</text>
+<rect x="88" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="103.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→0</text>
+<rect x="122" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="137.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→1</text>
+<rect x="156" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="171.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→2</text>
+<rect x="190" y="172" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="205.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→3</text>
+<text x="390" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">发送后：GPU j 收齐所有“→j”</text>
+<text x="314" y="91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 0</text>
+<rect x="322" y="70" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="337.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→0</text>
+<rect x="356" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="371.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→0</text>
+<rect x="390" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="405.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→0</text>
+<rect x="424" y="70" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="3"/>
+<text x="439.5" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→0</text>
+<text x="314" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 1</text>
+<rect x="322" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="337.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→1</text>
+<rect x="356" y="104" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="371.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→1</text>
+<rect x="390" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="405.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→1</text>
+<rect x="424" y="104" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="439.5" y="124" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→1</text>
+<text x="314" y="159" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 2</text>
+<rect x="322" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="337.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→2</text>
+<rect x="356" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="371.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→2</text>
+<rect x="390" y="138" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="405.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→2</text>
+<rect x="424" y="138" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.44" rx="3"/>
+<text x="439.5" y="158" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→2</text>
+<text x="314" y="193" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 3</text>
+<rect x="322" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="337.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0→3</text>
+<rect x="356" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="371.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1→3</text>
+<rect x="390" y="172" width="31" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" rx="3"/>
+<text x="405.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2→3</text>
+<rect x="424" y="172" width="31" height="31" fill="var(--fig-muted, #74716A)" fill-opacity="0.25" rx="3"/>
+<text x="439.5" y="192" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3→3</text>
+<line x1="232" y1="138" x2="266" y2="138" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① all-to-all：每张卡给其余每张卡各发一块不同的数据</text>
+<text x="20" y="232" font-size="12" fill="var(--fig-ink, #1C1B19)">成对交换：第 k 步，GPU i 与 GPU (i XOR k) 互换一块，</text>
+<text x="20" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)">共 p − 1 = 3 步。灰色对角块留在本卡，不上网络。</text>
+<text x="20" y="274" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">带宽项只看每卡要发出的总字节 S：</text>
+<text x="20" y="292" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">时间 ≈ (p − 1)α + Sβ</text>
+<text x="474" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② V3 一个 token 的 MoE 通信（示意）</text>
+<text x="474" y="62" font-size="12" fill="var(--fig-ink, #1C1B19)">dispatch，8 份</text>
+<rect x="474" y="69" width="92.81" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" rx="2"/>
+<text x="572.81" y="83" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">57.8 KiB</text>
+<text x="474" y="112" font-size="12" fill="var(--fig-ink, #1C1B19)">combine，8 份</text>
+<rect x="474" y="119" width="180" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="2"/>
+<text x="660" y="133" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">112.0 KiB</text>
+<text x="474" y="162" font-size="12" fill="var(--fig-ink, #1C1B19)">跨节点 dispatch，≤ 4 份</text>
+<rect x="474" y="169" width="46.41" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" rx="2"/>
+<text x="526.41" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">28.9 KiB</text>
+<text x="474" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)">跨节点 combine，≤ 4 份</text>
+<rect x="474" y="219" width="90" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.85" rx="2"/>
+<text x="570" y="233" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">56.0 KiB</text>
+<text x="474" y="272" font-size="11" fill="var(--fig-muted, #74716A)">每份 dispatch：FP8 的 7168 字节</text>
+<text x="474" y="288" font-size="11" fill="var(--fig-muted, #74716A)">+ 每 128 个数一个 FP32 缩放 = 7392 字节；</text>
+<text x="474" y="304" font-size="11" fill="var(--fig-muted, #74716A)">每份 combine：BF16，14,336 字节。</text>
+<text x="474" y="320" font-size="11" fill="var(--fig-muted, #74716A)">节点受限路由把跨节点的份数压到 4 以内。</text>
+</svg>

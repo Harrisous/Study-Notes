@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>残差流是一条传送带：每个子层读一份、加回一个增量</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="10" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">残差流 = 嵌入 + 所有子层写回的增量之和（GPT-2 small：12 块 × 2 个子层 = 24 个“工位”）</text>
+<line x1="56" y1="160" x2="712" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="5"/>
+<line x1="712" y1="160" x2="736" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="5" marker-end="url(#ah-ink)"/>
+<text x="48" y="165" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(0)</tspan></text>
+<text x="742" y="148" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(12)</tspan></text>
+<text x="10" y="46" font-size="12" fill="var(--fig-muted, #74716A)">传送带上的“件”：每个位置一条 768 维向量，从左往右流；工位先经 LN 读一份，算完把增量加回（⊕）</text>
+<rect x="98" y="68" width="60" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="128" y="85.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">注意力</text>
+<text x="128" y="101.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 1 块</text>
+<line x1="112" y1="156" x2="112" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="108" y="138" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="144" y1="110" x2="144" y2="151" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<circle cx="144" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="140.15" y1="160" x2="147.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="144" y1="156.15" x2="144" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="149" y="130" font-size="12" fill="var(--fig-blue, #1F5FA8)">+<tspan font-weight="700">u</tspan></text>
+<rect x="184" y="208" width="60" height="42" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="214" y="225.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">FFN</text>
+<text x="214" y="241.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 1 块</text>
+<line x1="198" y1="164" x2="198" y2="206" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="194" y="190" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="230" y1="208" x2="230" y2="169" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<circle cx="230" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="226.15" y1="160" x2="233.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="230" y1="156.15" x2="230" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="235" y="202" font-size="12" fill="var(--fig-muted, #74716A)">+<tspan font-weight="700">m</tspan></text>
+<rect x="270" y="68" width="60" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="300" y="85.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">注意力</text>
+<text x="300" y="101.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 2 块</text>
+<line x1="284" y1="156" x2="284" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="280" y="138" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="316" y1="110" x2="316" y2="151" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<circle cx="316" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="312.15" y1="160" x2="319.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="316" y1="156.15" x2="316" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="321" y="130" font-size="12" fill="var(--fig-blue, #1F5FA8)">+<tspan font-weight="700">u</tspan></text>
+<rect x="356" y="208" width="60" height="42" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="386" y="225.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">FFN</text>
+<text x="386" y="241.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 2 块</text>
+<line x1="370" y1="164" x2="370" y2="206" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="366" y="190" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="402" y1="208" x2="402" y2="169" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<circle cx="402" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="398.15" y1="160" x2="405.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="402" y1="156.15" x2="402" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="407" y="202" font-size="12" fill="var(--fig-muted, #74716A)">+<tspan font-weight="700">m</tspan></text>
+<rect x="530" y="68" width="60" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="560" y="85.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">注意力</text>
+<text x="560" y="101.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 12 块</text>
+<line x1="544" y1="156" x2="544" y2="112" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="540" y="138" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="576" y1="110" x2="576" y2="151" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<circle cx="576" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="572.15" y1="160" x2="579.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="576" y1="156.15" x2="576" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="581" y="130" font-size="12" fill="var(--fig-blue, #1F5FA8)">+<tspan font-weight="700">u</tspan></text>
+<rect x="616" y="208" width="60" height="42" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="646" y="225.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">FFN</text>
+<text x="646" y="241.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 12 块</text>
+<line x1="630" y1="164" x2="630" y2="206" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="626" y="190" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">LN</text>
+<line x1="662" y1="208" x2="662" y2="169" stroke="var(--fig-muted, #74716A)" stroke-width="1.6" marker-end="url(#ah-muted)"/>
+<circle cx="662" cy="160" r="7" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="658.15" y1="160" x2="665.85" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="662" y1="156.15" x2="662" y2="163.85" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="667" y="202" font-size="12" fill="var(--fig-muted, #74716A)">+<tspan font-weight="700">m</tspan></text>
+<text x="468" y="146" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">……</text>
+<text x="468" y="194" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 3–11 块</text>
+<line x1="10" y1="264" x2="750" y2="264" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="286" font-size="12.5" fill="var(--fig-ink, #1C1B19)">前向：<tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(12)</tspan> = <tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(0)</tspan> + Σ<tspan baseline-shift="sub" font-size="11">l=1</tspan><tspan baseline-shift="super" font-size="11" dx="-15.4">12</tspan><tspan dx="3.3">（</tspan><tspan font-weight="700">u</tspan><tspan baseline-shift="super" font-size="11">(l)</tspan> + <tspan font-weight="700">m</tspan><tspan baseline-shift="super" font-size="11">(l)</tspan>）。每个工位只加不改：它读得到前面所有工位写下的东西，</text>
+<text x="10" y="308" font-size="12.5" fill="var(--fig-ink, #1C1B19)">却擦不掉它们，除非自己写一个方向相反的增量。反向：梯度沿传送带原样流回，∂<tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(12)</tspan>/∂<tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(l)</tspan> = I + （经过工位的各项）。</text>
+</svg>

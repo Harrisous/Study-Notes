@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 276" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3 的一个训练步：实测各阶段耗时与同样运算量的峰值耗时</title>
+
+<text x="40" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">V3 在 2048 块 H800 上的一个训练步（62,914,560 个 token）</text>
+<text x="40" y="50" font-size="12" fill="var(--fig-muted, #74716A)">实测：每步 19.926 s（Insights 表 4）</text>
+<rect x="40" y="58" width="37.43" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="58.71" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">1F</text>
+<text x="58.71" y="91" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.13 s</text>
+<rect x="77.43" y="58" width="68.23" height="40" fill="var(--fig-red, #A3231C)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="111.54" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">bubble</text>
+<text x="111.54" y="91" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2.06 s</text>
+<rect x="145.66" y="58" width="65.91" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="178.62" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">1B</text>
+<text x="178.62" y="91" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.99 s</text>
+<rect x="211.57" y="58" width="15.9" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="227.47" y="58" width="462.06" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="458.5" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">1F1B</text>
+<text x="458.5" y="91" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">13.95 s</text>
+<rect x="689.53" y="58" width="9.61" height="40" fill="var(--fig-muted, #74716A)" fill-opacity="0.6" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<line x1="219.52" y1="98" x2="219.52" y2="110" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="219.52" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1W 0.48</text>
+<line x1="694.34" y1="98" x2="694.34" y2="110" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="694.34" y="122" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">opt 0.29</text>
+<text x="40" y="152" font-size="12" fill="var(--fig-muted, #74716A)">同样的运算量，每块卡都以 990 TFLOP/s 满速运行：7.77 s</text>
+<rect x="40" y="160" width="257.41" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="168.71" y="185" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">7.77 s</text>
+<text x="307.41" y="185" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">÷ 19.93 s = 39.0%（MFU）</text>
+<text x="40" y="238" font-size="11" fill="var(--fig-muted, #74716A)">红色：流水线气泡 2.06 s，占一步的 10.3%。1F、1B、1W 按论文定义为前向、对输入的反向、对权重的反向；</text>
+<text x="40" y="256" font-size="11" fill="var(--fig-muted, #74716A)">bubble、1F1B、opt 三行论文没有另行定义，名字照抄。各段之和 19.90 s，与每步 19.926 s 相差 0.026 s。</text>
+</svg>

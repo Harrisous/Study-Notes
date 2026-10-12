@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>过程监督下每个 token 的优势：后面各步归一化奖励之和</title>
+
+<text x="16" y="114" font-size="15" fill="var(--fig-ink, #1C1B19)" font-weight="700">o₁</text>
+<text x="204" y="48" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1 步：PRM 分 0.9</text>
+<text x="204" y="64" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">归一化 +0.83</text>
+<rect x="110" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" rx="3"/>
+<rect x="110" y="72" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="148" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" rx="3"/>
+<rect x="148" y="72" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="186" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" rx="3"/>
+<rect x="186" y="72" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="224" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" rx="3"/>
+<rect x="224" y="72" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="262" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.28" rx="3"/>
+<rect x="262" y="72" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="204" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="middle" font-weight="700">−0.53</text>
+<rect x="110" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="148" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="186" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="224" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="262" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<text x="387" y="48" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 2 步：PRM 分 0.8</text>
+<text x="387" y="64" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">归一化 +0.45</text>
+<rect x="312" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.53" rx="3"/>
+<rect x="312" y="72" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="350" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.53" rx="3"/>
+<rect x="350" y="72" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="388" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.53" rx="3"/>
+<rect x="388" y="72" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="426" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.53" rx="3"/>
+<rect x="426" y="72" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="387" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="middle" font-weight="700">−1.36</text>
+<rect x="312" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="350" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="388" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="426" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<text x="532" y="48" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 3 步：PRM 分 0.2</text>
+<text x="532" y="64" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">归一化 −1.82</text>
+<rect x="476" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.67" rx="3"/>
+<rect x="476" y="72" width="36" height="30" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="3"/>
+<rect x="514" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.67" rx="3"/>
+<rect x="514" y="72" width="36" height="30" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="3"/>
+<rect x="552" y="72" width="36" height="30" fill="var(--fig-red, #A3231C)" fill-opacity="0.67" rx="3"/>
+<rect x="552" y="72" width="36" height="30" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="3"/>
+<text x="532" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="middle" font-weight="700">−1.82</text>
+<rect x="476" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="514" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<rect x="552" y="110" width="36" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.25" rx="3"/>
+<text x="606" y="92" font-size="12" fill="var(--fig-ink, #1C1B19)">← 过程优势</text>
+<text x="606" y="126" font-size="12" fill="var(--fig-muted, #74716A)">← 结果优势 −1.00</text>
+<text x="16" y="254" font-size="15" fill="var(--fig-ink, #1C1B19)" font-weight="700">o₂</text>
+<text x="185" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1 步：PRM 分 0.6</text>
+<text x="185" y="204" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">归一化 −0.30</text>
+<rect x="110" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.28" rx="3"/>
+<rect x="110" y="212" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="148" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.28" rx="3"/>
+<rect x="148" y="212" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="186" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.28" rx="3"/>
+<rect x="186" y="212" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<rect x="224" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.28" rx="3"/>
+<rect x="224" y="212" width="36" height="30" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="185" y="232" font-size="13" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="middle" font-weight="700">+0.53</text>
+<rect x="110" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="148" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="186" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="224" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<text x="387" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 2 步：PRM 分 0.9</text>
+<text x="387" y="204" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">归一化 +0.83</text>
+<rect x="274" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="274" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="312" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="312" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="350" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="350" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="388" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="388" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="426" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="426" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="464" y="212" width="36" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.37" rx="3"/>
+<rect x="464" y="212" width="36" height="30" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<text x="387" y="232" font-size="13" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="middle" font-weight="700">+0.83</text>
+<rect x="274" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="312" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="350" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="388" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="426" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<rect x="464" y="250" width="36" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.25" rx="3"/>
+<text x="518" y="232" font-size="12" fill="var(--fig-ink, #1C1B19)">← 过程优势</text>
+<text x="518" y="266" font-size="12" fill="var(--fig-muted, #74716A)">← 结果优势 +1.00</text>
+<text x="16" y="330" font-size="12" fill="var(--fig-ink, #1C1B19)">整组 5 个步奖励一起归一化：均值 0.68，总体标准差 0.2638。</text>
+<text x="16" y="350" font-size="12" fill="var(--fig-ink, #1C1B19)">o₁ 第 1 步本身得分高（0.9），它的 token 优势却是负的：后缀和把后面那个坏步（0.2）也算了进来。</text>
+<text x="16" y="370" font-size="12" fill="var(--fig-muted, #74716A)">结果监督（设 o₁ 答错、o₂ 答对，G = 2）：每条回答的所有 token 共用 −1 或 +1，分不出哪一步出了错。</text>
+<text x="16" y="390" font-size="12" fill="var(--fig-muted, #74716A)">每步的 token 个数只是示意。</text>
+</svg>

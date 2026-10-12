@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 426" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MoE 的演进：1991 年至 2024 年各代模型的总参数与激活参数</title>
+
+<text x="16" y="24" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">时间</text>
+<text x="84" y="24" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">模型</text>
+<text x="228" y="24" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">MoE 层的位置与专家配置</text>
+<text x="468" y="24" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">参数量（对数刻度）</text>
+<line x1="468" y1="48" x2="468" y2="364" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="468" y="44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1B</text>
+<line x1="535.27" y1="48" x2="535.27" y2="364" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="535.27" y="44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10B</text>
+<line x1="602.55" y1="48" x2="602.55" y2="364" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="602.55" y="44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100B</text>
+<line x1="669.82" y1="48" x2="669.82" y2="364" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="669.82" y="44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1T</text>
+<text x="16" y="68" font-size="12" fill="var(--fig-muted, #74716A)">1991</text>
+<text x="84" y="68" font-size="12" fill="var(--fig-ink, #1C1B19)">Jacobs 等</text>
+<text x="228" y="68" font-size="12" fill="var(--fig-ink, #1C1B19)">4 或 8 个专家，全部参与计算</text>
+<text x="468" y="68" font-size="12" fill="var(--fig-muted, #74716A)">玩具任务，参数量可忽略</text>
+<text x="16" y="102" font-size="12" fill="var(--fig-muted, #74716A)">2017-01</text>
+<text x="84" y="102" font-size="12" fill="var(--fig-ink, #1C1B19)">Shazeer 等</text>
+<text x="228" y="102" font-size="12" fill="var(--fig-ink, #1C1B19)">LSTM 层之间；最多 131,072 专家</text>
+<line x1="468" y1="98" x2="611.74" y2="98" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="611.74" cy="98" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="620.74" y="102" font-size="11" fill="var(--fig-ink, #1C1B19)">137B</text>
+<text x="16" y="136" font-size="12" fill="var(--fig-muted, #74716A)">2020-06</text>
+<text x="84" y="136" font-size="12" fill="var(--fig-ink, #1C1B19)">GShard</text>
+<text x="228" y="136" font-size="12" fill="var(--fig-ink, #1C1B19)">每隔一层；每层 2048 专家，top-2</text>
+<line x1="468" y1="132" x2="654.89" y2="132" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="654.89" cy="132" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="663.89" y="136" font-size="11" fill="var(--fig-ink, #1C1B19)">600B</text>
+<text x="16" y="170" font-size="12" fill="var(--fig-muted, #74716A)">2021-01</text>
+<text x="84" y="170" font-size="12" fill="var(--fig-ink, #1C1B19)">Switch-C</text>
+<text x="228" y="170" font-size="12" fill="var(--fig-ink, #1C1B19)">每层；2048 专家，top-1</text>
+<line x1="468" y1="166" x2="683.02" y2="166" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="683.02" cy="166" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="692.02" y="170" font-size="11" fill="var(--fig-ink, #1C1B19)">1571B</text>
+<text x="16" y="204" font-size="12" fill="var(--fig-muted, #74716A)">2022-02</text>
+<text x="84" y="204" font-size="12" fill="var(--fig-ink, #1C1B19)">ST-MoE-32B</text>
+<text x="228" y="204" font-size="12" fill="var(--fig-ink, #1C1B19)">每 4 层一个；32 专家，top-2</text>
+<line x1="468" y1="200" x2="631.46" y2="200" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="631.46" cy="200" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="640.46" y="204" font-size="11" fill="var(--fig-ink, #1C1B19)">269B</text>
+<text x="16" y="238" font-size="12" fill="var(--fig-muted, #74716A)">2024-01</text>
+<text x="84" y="238" font-size="12" fill="var(--fig-ink, #1C1B19)">Mixtral 8x7B</text>
+<text x="228" y="238" font-size="12" fill="var(--fig-ink, #1C1B19)">每层；8 专家，top-2</text>
+<line x1="468" y1="234" x2="580.3" y2="234" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="580.3" cy="234" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="589.3" y="238" font-size="11" fill="var(--fig-ink, #1C1B19)">46.7B</text>
+<circle cx="542.71" cy="234" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="542.71" y="226" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">12.9B</text>
+<rect x="8" y="252" width="724" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" rx="4"/>
+<text x="16" y="272" font-size="12" fill="var(--fig-muted, #74716A)">2024-01</text>
+<text x="84" y="272" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">DeepSeekMoE 16B</text>
+<text x="228" y="272" font-size="12" fill="var(--fig-ink, #1C1B19)">2 共享 + 64 路由选 6</text>
+<line x1="468" y1="268" x2="549.73" y2="268" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="549.73" cy="268" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="558.73" y="272" font-size="11" fill="var(--fig-ink, #1C1B19)">16.4B</text>
+<circle cx="498.08" cy="268" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="498.08" y="260" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">2.8B</text>
+<rect x="8" y="286" width="724" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" rx="4"/>
+<text x="16" y="306" font-size="12" fill="var(--fig-muted, #74716A)">2024-01</text>
+<text x="84" y="306" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">DeepSeekMoE 145B</text>
+<text x="228" y="306" font-size="12" fill="var(--fig-ink, #1C1B19)">4 共享 + 128 路由选 12（初步）</text>
+<line x1="468" y1="302" x2="613.32" y2="302" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="613.32" cy="302" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="622.32" y="306" font-size="11" fill="var(--fig-ink, #1C1B19)">144.6B</text>
+<circle cx="558.57" cy="302" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="558.57" y="294" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">22.2B</text>
+<rect x="8" y="320" width="724" height="31" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" rx="4"/>
+<text x="16" y="340" font-size="12" fill="var(--fig-muted, #74716A)">2024-05</text>
+<text x="84" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">DeepSeek-V2-Lite</text>
+<text x="228" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)">2 共享 + 64 路由选 6</text>
+<line x1="468" y1="336" x2="548.45" y2="336" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-opacity="0.45"/>
+<circle cx="548.45" cy="336" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="557.45" y="340" font-size="11" fill="var(--fig-ink, #1C1B19)">15.7B</text>
+<circle cx="493.58" cy="336" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="493.58" y="328" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">2.4B</text>
+<circle cx="256" cy="380" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<text x="266" y="384" font-size="12" fill="var(--fig-ink, #1C1B19)">总参数（Shazeer 一行只计 MoE 层）</text>
+<circle cx="504" cy="380" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="514" y="384" font-size="12" fill="var(--fig-ink, #1C1B19)">每 token 激活参数</text>
+<text x="16" y="410" font-size="12" fill="var(--fig-muted, #74716A)">145B 只见于 DeepSeekMoE 的 arXiv v1（训练 245B token 的初步结果），正式发表版已删去。</text>
+</svg>

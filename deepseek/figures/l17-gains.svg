@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 512" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Engram-27B 相对 MoE-27B 的提升，以及推理时关掉 Engram 后各基准保留的性能</title>
+
+<text x="20" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) Engram-27B − MoE-27B（分）</text>
+<text x="20" y="40" font-size="11.5" fill="var(--fig-muted, #74716A)">表 1 全部 27 项，按提升排序</text>
+<line x1="118" y1="52" x2="118" y2="468.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="118" y="482.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="172" y1="52" x2="172" y2="468.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="172" y="482.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+2</text>
+<line x1="226" y1="52" x2="226" y2="468.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="226" y="482.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+4</text>
+<line x1="280" y1="52" x2="280" y2="468.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="280" y="482.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+6</text>
+<line x1="334" y1="52" x2="334" y2="468.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="334" y="482.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+8</text>
+<rect x="118" y="58" width="202.5" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="68.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">CCPM</text>
+<text x="325.5" y="68.5" font-size="11" fill="var(--fig-green, #16704A)">+7.5</text>
+<rect x="118" y="73.2" width="135" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="83.7" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">BBH</text>
+<text x="258" y="83.7" font-size="11" fill="var(--fig-green, #16704A)">+5.0</text>
+<rect x="118" y="88.4" width="126.9" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="98.9" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">C-Eval</text>
+<text x="249.9" y="98.9" font-size="11" fill="var(--fig-green, #16704A)">+4.7</text>
+<rect x="118" y="103.6" width="108" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="114.1" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">CMMLU</text>
+<text x="231" y="114.1" font-size="11" fill="var(--fig-green, #16704A)">+4.0</text>
+<rect x="118" y="118.8" width="99.9" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="129.3" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">ARC-Challenge</text>
+<text x="222.9" y="129.3" font-size="11" fill="var(--fig-green, #16704A)">+3.7</text>
+<rect x="118" y="134" width="94.5" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="144.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">C3</text>
+<text x="217.5" y="144.5" font-size="11" fill="var(--fig-muted, #74716A)">+3.5</text>
+<rect x="118" y="149.2" width="91.8" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="159.7" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MMLU-Redux</text>
+<text x="214.8" y="159.7" font-size="11" fill="var(--fig-muted, #74716A)">+3.4</text>
+<rect x="118" y="164.4" width="89.1" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="174.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">DROP</text>
+<text x="212.1" y="174.9" font-size="11" fill="var(--fig-muted, #74716A)">+3.3</text>
+<rect x="118" y="179.6" width="86.4" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="190.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">AGIEval</text>
+<text x="209.4" y="190.1" font-size="11" fill="var(--fig-muted, #74716A)">+3.2</text>
+<rect x="118" y="194.8" width="81" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="205.3" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">MMLU</text>
+<text x="204" y="205.3" font-size="11" fill="var(--fig-green, #16704A)">+3.0</text>
+<rect x="118" y="210" width="81" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="220.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">HumanEval</text>
+<text x="204" y="220.5" font-size="11" fill="var(--fig-muted, #74716A)">+3.0</text>
+<rect x="118" y="225.2" width="75.6" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="235.7" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">RACE-H</text>
+<text x="198.6" y="235.7" font-size="11" fill="var(--fig-muted, #74716A)">+2.8</text>
+<rect x="118" y="240.4" width="70.2" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="250.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MGSM</text>
+<text x="193.2" y="250.9" font-size="11" fill="var(--fig-muted, #74716A)">+2.6</text>
+<rect x="118" y="255.6" width="67.5" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="266.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">ARC-Easy</text>
+<text x="190.5" y="266.1" font-size="11" fill="var(--fig-muted, #74716A)">+2.5</text>
+<rect x="118" y="270.8" width="64.8" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="281.3" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MATH</text>
+<text x="187.8" y="281.3" font-size="11" fill="var(--fig-muted, #74716A)">+2.4</text>
+<rect x="118" y="286" width="59.4" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="296.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">GSM8K</text>
+<text x="182.4" y="296.5" font-size="11" fill="var(--fig-muted, #74716A)">+2.2</text>
+<rect x="118" y="301.2" width="51.3" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="311.7" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">TriviaQA</text>
+<text x="174.3" y="311.7" font-size="11" fill="var(--fig-green, #16704A)">+1.9</text>
+<rect x="118" y="316.4" width="51.3" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="326.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">RACE-M</text>
+<text x="174.3" y="326.9" font-size="11" fill="var(--fig-muted, #74716A)">+1.9</text>
+<rect x="118" y="331.6" width="48.6" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="342.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MMLU-Pro</text>
+<text x="171.6" y="342.1" font-size="11" fill="var(--fig-muted, #74716A)">+1.8</text>
+<rect x="118" y="346.8" width="43.2" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="357.3" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">PIQA</text>
+<text x="166.2" y="357.3" font-size="11" fill="var(--fig-muted, #74716A)">+1.6</text>
+<rect x="118" y="362" width="43.2" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="372.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MBPP</text>
+<text x="166.2" y="372.5" font-size="11" fill="var(--fig-muted, #74716A)">+1.6</text>
+<rect x="118" y="377.2" width="40.5" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="387.7" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">TriviaQA-ZH</text>
+<text x="163.5" y="387.7" font-size="11" fill="var(--fig-muted, #74716A)">+1.5</text>
+<rect x="118" y="392.4" width="40.5" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="402.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">CruxEval-i</text>
+<text x="163.5" y="402.9" font-size="11" fill="var(--fig-muted, #74716A)">+1.5</text>
+<rect x="118" y="407.6" width="24.3" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="418.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">HellaSwag</text>
+<text x="147.3" y="418.1" font-size="11" fill="var(--fig-muted, #74716A)">+0.9</text>
+<rect x="118" y="422.8" width="24.3" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.28"/>
+<text x="112" y="433.3" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">CruxEval-o</text>
+<text x="147.3" y="433.3" font-size="11" fill="var(--fig-muted, #74716A)">+0.9</text>
+<rect x="118" y="438" width="5.4" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="448.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">PopQA</text>
+<text x="128.4" y="448.5" font-size="11" fill="var(--fig-green, #16704A)">+0.2</text>
+<rect x="118" y="453.2" width="5.4" height="11.7" fill="var(--fig-green, #16704A)" fill-opacity="0.55"/>
+<text x="112" y="463.7" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">WinoGrande</text>
+<text x="128.4" y="463.7" font-size="11" fill="var(--fig-green, #16704A)">+0.2</text>
+<text x="396" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 推理时把 Engram 输出置零，性能保留的比例</text>
+<text x="396" y="40" font-size="11.5" fill="var(--fig-muted, #74716A)">据论文图 6 的标注；横线 = 100%</text>
+<text x="396" y="66" font-size="11.5" fill="var(--fig-green, #16704A)" font-weight="700">阅读理解</text>
+<rect x="508" y="70.5" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="70.5" width="186" height="11.2" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="502" y="80.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">C3</text>
+<text x="738" y="80.5" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">93%</text>
+<rect x="508" y="85.7" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="85.7" width="178" height="11.2" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="502" y="95.7" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">RACE-Middle</text>
+<text x="738" y="95.7" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">89%</text>
+<rect x="508" y="100.9" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="100.9" width="168" height="11.2" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="502" y="110.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">RACE-High</text>
+<text x="738" y="110.9" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">84%</text>
+<rect x="508" y="116.1" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="116.1" width="162" height="11.2" fill="var(--fig-green, #16704A)" fill-opacity="0.6"/>
+<text x="502" y="126.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">DROP</text>
+<text x="738" y="126.1" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="end">81%</text>
+<text x="396" y="143.3" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">常识推理</text>
+<rect x="508" y="147.8" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="147.8" width="170" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="157.8" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">HellaSwag</text>
+<text x="738" y="157.8" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">85%</text>
+<rect x="508" y="163" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="163" width="162" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="173" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">ARC-Challenge</text>
+<text x="738" y="173" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">81%</text>
+<rect x="508" y="178.2" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="178.2" width="162" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="188.2" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">PIQA</text>
+<text x="738" y="188.2" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">81%</text>
+<text x="396" y="205.4" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">知识密集推理</text>
+<rect x="508" y="209.9" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="209.9" width="156" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="219.9" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">CMMLU</text>
+<text x="738" y="219.9" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">78%</text>
+<rect x="508" y="225.1" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="225.1" width="150" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="235.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MMLU</text>
+<text x="738" y="235.1" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">75%</text>
+<rect x="508" y="240.3" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="240.3" width="144" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="250.3" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MMLU-Pro</text>
+<text x="738" y="250.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">72%</text>
+<text x="396" y="267.5" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">代码</text>
+<rect x="508" y="272" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="272" width="152" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="282" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">CruxEval</text>
+<text x="738" y="282" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">76%</text>
+<rect x="508" y="287.2" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="287.2" width="136" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="297.2" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MBPP</text>
+<text x="738" y="297.2" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">68%</text>
+<rect x="508" y="302.4" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="302.4" width="116" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="312.4" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">HumanEval</text>
+<text x="738" y="312.4" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">58%</text>
+<text x="396" y="329.6" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">算法推理</text>
+<rect x="508" y="334.1" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="334.1" width="134" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="344.1" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">BBH</text>
+<text x="738" y="344.1" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">67%</text>
+<rect x="508" y="349.3" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="349.3" width="124" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="359.3" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">GSM8K</text>
+<text x="738" y="359.3" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">62%</text>
+<rect x="508" y="364.5" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="364.5" width="88" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="374.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MGSM</text>
+<text x="738" y="374.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">44%</text>
+<rect x="508" y="379.7" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="379.7" width="72" height="11.2" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="502" y="389.7" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">MATH</text>
+<text x="738" y="389.7" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="end">36%</text>
+<text x="396" y="406.9" font-size="11.5" fill="var(--fig-red, #A3231C)" font-weight="700">事实知识</text>
+<rect x="508" y="411.4" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="411.4" width="88" height="11.2" fill="var(--fig-red, #A3231C)" fill-opacity="0.6"/>
+<text x="502" y="421.4" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">TriviaQA-ZH</text>
+<text x="738" y="421.4" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">44%</text>
+<rect x="508" y="426.6" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="426.6" width="88" height="11.2" fill="var(--fig-red, #A3231C)" fill-opacity="0.6"/>
+<text x="502" y="436.6" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">PopQA</text>
+<text x="738" y="436.6" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">44%</text>
+<rect x="508" y="441.8" width="200" height="11.2" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.9"/>
+<rect x="508" y="441.8" width="58" height="11.2" fill="var(--fig-red, #A3231C)" fill-opacity="0.6"/>
+<text x="502" y="451.8" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">TriviaQA</text>
+<text x="738" y="451.8" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">29%</text>
+<line x1="708" y1="52" x2="708" y2="459" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="508" y1="52" x2="508" y2="459" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="20" y="505" font-size="11.5" fill="var(--fig-muted, #74716A)">注意：(b) 是训练后硬关掉一个一直在用的模块（训练-推理不一致），不能读成“知识有多少比例存在 Engram 里”。</text>
+</svg>

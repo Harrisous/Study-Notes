@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MHA、MQA、GQA 的质量与解码成本（据 Shazeer 2019 表 1–2 与 Ainslie 等人 2023 表 1）</title>
+
+<text x="16" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ Shazeer：WMT14 英→德翻译</text>
+<line x1="64" y1="50" x2="64" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="64" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="117.2" y1="50" x2="117.2" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="117.2" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="170.4" y1="50" x2="170.4" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="170.4" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="223.6" y1="50" x2="223.6" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="223.6" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="276.8" y1="50" x2="276.8" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="276.8" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="330" y1="50" x2="330" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="330" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="64" y1="290" x2="330" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="294" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">25.6</text>
+<line x1="64" y1="221.43" x2="330" y2="221.43" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="225.43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">26.0</text>
+<line x1="64" y1="152.86" x2="330" y2="152.86" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="156.86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">26.4</text>
+<line x1="64" y1="84.29" x2="330" y2="84.29" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="58" y="88.29" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">26.8</text>
+<line x1="64" y1="290" x2="330" y2="290" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="64" y1="50" x2="64" y2="290" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="197" y="328" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">解码器每 token 摊销时间（μs）</text>
+<text x="24" y="170" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 170)">dev BLEU</text>
+<rect x="65" y="187.14" width="264" height="68.57" fill="var(--fig-red, #A3231C)" fill-opacity="0.1"/>
+<text x="322" y="229.71" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">KV 同样缩小 8 倍的 MHA</text>
+<text x="322" y="246.71" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">（减 h 或 d<tspan baseline-shift="sub" font-size="11">k</tspan>）：BLEU 25.8–26.2</text>
+<circle cx="308.72" cy="101.43" r="6" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="84.22" cy="135.71" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="298.72" y="105.43" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">MHA 46 μs，26.7</text>
+<text x="94.22" y="139.71" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">MQA 3.8 μs，26.5</text>
+<text x="197" y="171.71" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">解码快 12 倍，BLEU 只低 0.2</text>
+<text x="376" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ Ainslie 等人：T5 摘要/翻译/问答平均</text>
+<line x1="430" y1="50" x2="430" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="497.5" y1="50" x2="497.5" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="497.5" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="565" y1="50" x2="565" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="565" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="632.5" y1="50" x2="632.5" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="632.5" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.2</text>
+<line x1="700" y1="50" x2="700" y2="290" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="306" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.6</text>
+<line x1="430" y1="260" x2="700" y2="260" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="424" y="264" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">46.0</text>
+<line x1="430" y1="200" x2="700" y2="200" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="424" y="204" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">46.4</text>
+<line x1="430" y1="140" x2="700" y2="140" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="424" y="144" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">46.8</text>
+<line x1="430" y1="80" x2="700" y2="80" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="424" y="84" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">47.2</text>
+<line x1="430" y1="290" x2="700" y2="290" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="430" y1="50" x2="430" y2="290" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="565" y="328" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每个样本的推理时间（s）</text>
+<text x="390" y="170" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 390 170)">平均分</text>
+<circle cx="492.44" cy="260" r="6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="684.81" cy="80" r="6" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="470.5" cy="170" r="6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="477.25" cy="95" r="6" fill="var(--fig-green, #16704A)"/>
+<text x="674.81" y="84" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">MHA-XXL 1.51 s，47.2</text>
+<text x="487.25" y="113" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">GQA-8-XXL 0.28 s，47.1</text>
+<text x="480.5" y="174" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">MQA-XXL 0.24 s，46.6</text>
+<text x="502.44" y="264" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">MHA-Large 0.37 s，46.0</text>
+<text x="16" y="364" font-size="12" fill="var(--fig-muted, #74716A)">两张图各自的数据来自不同的论文、任务与硬件，不能横向比较；只比较同一张图里的点。</text>
+<text x="16" y="384" font-size="12" fill="var(--fig-muted, #74716A)">GQA-8 用 8 组 KV 头；XXL 与 Large 是 T5 的两个规模，MQA/GQA 版本由 MHA-XXL 转换后续训 5% 得到。</text>
+</svg>

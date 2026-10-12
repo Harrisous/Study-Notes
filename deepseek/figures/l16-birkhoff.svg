@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Birkhoff 多面体：n = 2 是线段，n = 3 画不出来，只画一个切片</title>
+
+<text x="20" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 𝓑<tspan baseline-shift="sub" font-size="11">2</tspan>：一条线段</text>
+<line x1="50" y1="150" x2="210" y2="150" stroke="var(--fig-green, #16704A)" stroke-width="3"/>
+<circle cx="50" cy="150" r="5" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="210" cy="150" r="5" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="130" cy="150" r="5" fill="var(--fig-green, #16704A)"/>
+<rect x="39" y="90" width="10" height="10" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="50" y="90" width="10" height="10" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="39" y="101" width="10" height="10" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="50" y="101" width="10" height="10" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<text x="50" y="174" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">I（a = 1）</text>
+<rect x="199" y="90" width="10" height="10" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="210" y="90" width="10" height="10" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="199" y="101" width="10" height="10" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="210" y="101" width="10" height="10" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<text x="210" y="174" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">交换（a = 0）</text>
+<rect x="119" y="90" width="10" height="10" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1.5"/>
+<rect x="130" y="90" width="10" height="10" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1.5"/>
+<rect x="119" y="101" width="10" height="10" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1.5"/>
+<rect x="130" y="101" width="10" height="10" fill="var(--fig-green, #16704A)" fill-opacity="0.6" rx="1.5"/>
+<text x="130" y="174" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">J<tspan baseline-shift="sub" font-size="11">2</tspan>（a = ½）</text>
+<text x="20" y="214" font-size="12" fill="var(--fig-ink, #1C1B19)">每个 2×2 双随机矩阵都是</text>
+<text x="20" y="234" font-size="12" fill="var(--fig-ink, #1C1B19)">[[a, 1−a], [1−a, a]]，0 ≤ a ≤ 1</text>
+<text x="20" y="258" font-size="12" fill="var(--fig-muted, #74716A)">1 个自由度 = (2−1)²；2! = 2 个顶点</text>
+<line x1="262" y1="40" x2="262" y2="400" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="280" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 𝓑<tspan baseline-shift="sub" font-size="11">3</tspan> 的一个二维切片</text>
+<polygon points="318,312 478,312 398,150" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<circle cx="318" cy="312" r="5" fill="var(--fig-violet, #6733C4)"/>
+<rect x="303" y="324" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="313" y="324" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="323" y="324" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="303" y="334" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="313" y="334" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="323" y="334" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="303" y="344" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="313" y="344" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="323" y="344" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<text x="297" y="344" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">I</text>
+<circle cx="478" cy="312" r="5" fill="var(--fig-violet, #6733C4)"/>
+<rect x="463" y="324" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="473" y="324" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="483" y="324" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="463" y="334" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="473" y="334" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="483" y="334" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="463" y="344" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="473" y="344" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="483" y="344" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<text x="499" y="344" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">C</text>
+<circle cx="398" cy="150" r="5" fill="var(--fig-violet, #6733C4)"/>
+<rect x="412" y="135" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="422" y="135" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="432" y="135" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="412" y="145" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="422" y="145" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="432" y="145" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="412" y="155" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="422" y="155" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="432" y="155" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<text x="448" y="155" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">C²</text>
+<circle cx="398" cy="258" r="5" fill="var(--fig-green, #16704A)"/>
+<text x="407" y="262" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">J<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<circle cx="374" cy="295.8" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="382" y="289.8" font-size="11" fill="var(--fig-blue, #1F5FA8)">0.6I+0.3C+0.1C²</text>
+<text x="280" y="384" font-size="12" fill="var(--fig-ink, #1C1B19)">C = 循环移位；切片内的点 = aI + bC + cC²</text>
+<text x="280" y="404" font-size="12" fill="var(--fig-muted, #74716A)">𝓑<tspan baseline-shift="sub" font-size="11">3</tspan> 本身是 4 维，有 3! = 6 个顶点</text>
+<line x1="512" y1="40" x2="512" y2="400" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="528" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(c) 一个双随机矩阵 = 置换的凸组合</text>
+<rect x="540" y="46" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.67" rx="1.5"/>
+<rect x="555" y="46" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.32" rx="1.5"/>
+<rect x="570" y="46" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.41" rx="1.5"/>
+<rect x="540" y="61" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.32" rx="1.5"/>
+<rect x="555" y="61" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.67" rx="1.5"/>
+<rect x="570" y="61" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.41" rx="1.5"/>
+<rect x="540" y="76" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.41" rx="1.5"/>
+<rect x="555" y="76" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.41" rx="1.5"/>
+<rect x="570" y="76" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.58" rx="1.5"/>
+<text x="596" y="60" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">SK(A) 的极限</text>
+<text x="596" y="78" font-size="11" fill="var(--fig-muted, #74716A)">A = [[4,1,1],[1,4,1],[2,2,2]]</text>
+<text x="596" y="94" font-size="11" fill="var(--fig-muted, #74716A)">（§5 的算例）</text>
+<rect x="532" y="124" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="124" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="124" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="134" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="134" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="134" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="144" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="144" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="144" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="572" y="130" width="127.57" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" rx="3"/>
+<text x="705.57" y="144" font-size="12" fill="var(--fig-ink, #1C1B19)">0.47247</text>
+<rect x="532" y="168" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="168" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="168" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="178" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="178" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="178" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="188" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="188" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="188" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="572" y="174" width="39.76" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" rx="3"/>
+<text x="617.76" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)">0.14725</text>
+<rect x="532" y="212" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="212" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="212" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="222" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="222" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="222" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="232" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="232" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="232" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="572" y="218" width="39.76" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" rx="3"/>
+<text x="617.76" y="232" font-size="12" fill="var(--fig-ink, #1C1B19)">0.14725</text>
+<rect x="532" y="256" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="256" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="256" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="266" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="266" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="266" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="276" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="276" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="276" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="572" y="262" width="31.46" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" rx="3"/>
+<text x="609.46" y="276" font-size="12" fill="var(--fig-ink, #1C1B19)">0.11652</text>
+<rect x="532" y="300" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="300" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="300" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="310" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="310" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="310" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="532" y="320" width="9" height="9" fill="var(--fig-violet, #6733C4)" fill-opacity="1" rx="1.5"/>
+<rect x="542" y="320" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="552" y="320" width="9" height="9" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="1.5"/>
+<rect x="572" y="306" width="31.46" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" rx="3"/>
+<text x="609.46" y="320" font-size="12" fill="var(--fig-ink, #1C1B19)">0.11652</text>
+<text x="528" y="356" font-size="12" fill="var(--fig-muted, #74716A)">权重之和 = 1.0000（分解不唯一）</text>
+</svg>

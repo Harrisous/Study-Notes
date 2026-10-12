@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 392" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-R1-Zero 训练中的 AIME 2024 正确率（据论文图 1a 的数据重绘）</title>
+
+<line x1="62" y1="330" x2="736" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0%</text>
+<line x1="62" y1="268" x2="736" y2="268" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20%</text>
+<line x1="62" y1="206" x2="736" y2="206" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="210" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40%</text>
+<line x1="62" y1="144" x2="736" y2="144" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="148" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60%</text>
+<line x1="62" y1="82" x2="736" y2="82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="86" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">80%</text>
+<line x1="62" y1="20" x2="736" y2="20" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="24" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<line x1="62" y1="20" x2="62" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="191.62" y1="20" x2="191.62" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="191.62" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2,000</text>
+<line x1="321.23" y1="20" x2="321.23" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="321.23" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4,000</text>
+<line x1="450.85" y1="20" x2="450.85" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="450.85" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6,000</text>
+<line x1="580.46" y1="20" x2="580.46" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="580.46" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8,000</text>
+<line x1="710.08" y1="20" x2="710.08" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="710.08" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10,000</text>
+<line x1="62" y1="330" x2="736" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="399" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">RL 训练步数</text>
+<line x1="62" y1="212.82" x2="736" y2="212.82" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="732" y="229.82" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">人类参赛者平均 37.8%</text>
+<line x1="593.42" y1="44.8" x2="593.42" y2="330" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="587.42" y="240.1" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">第 8,200 步：最大长度</text>
+<text x="587.42" y="256.1" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="end">32,768 → 65,536</text>
+<path d="M74.96 251.57 L87.92 224.6 L100.88 232.97 L113.85 222.43 L126.81 191.43 L139.77 154.23 L152.73 158.57 L165.69 179.03 L191.62 160.43 L217.54 139.97 L243.46 102.77 L269.38 117.03 L295.31 92.23 L321.23 92.23 L334.19 102.77 L347.15 92.23 L360.12 115.17 L373.08 102.77 L386.04 110.83 L399 88.2 L411.96 104.63 L424.92 82 L437.88 82 L450.85 88.2 L463.81 82 L476.77 61.23 L502.69 92.23 L515.65 71.77 L528.62 82 L541.58 71.77 L554.54 77.97 L567.5 79.83 L580.46 75.8 L593.42 71.77 L606.38 61.23 L619.35 61.23 L632.31 61.23 L645.27 61.23 L658.23 61.23 L671.19 61.23 L684.15 61.23 L697.12 61.23 L710.08 61.23" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M74.96 281.64 L87.92 260.25 L100.88 253.74 L113.85 241.03 L126.81 231.73 L139.77 214.99 L152.73 202.28 L165.69 213.13 L191.62 211.89 L217.54 179.65 L243.46 166.01 L269.38 171.28 L295.31 149.27 L321.23 144 L334.19 143.38 L347.15 157.02 L360.12 150.51 L373.08 153.61 L386.04 162.6 L399 134.39 L411.96 151.75 L424.92 147.1 L437.88 138.73 L450.85 130.36 L463.81 136.25 L476.77 116.72 L502.69 124.47 L515.65 117.65 L528.62 127.88 L541.58 120.13 L554.54 121.37 L567.5 122.61 L580.46 116.72 L593.42 120.13 L606.38 109.9 L619.35 101.22 L632.31 99.36 L645.27 102.15 L658.23 89.13 L671.19 92.23 L684.15 92.23 L697.12 96.88 L710.08 90.37" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="74.96" cy="281.64" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="87.92" cy="260.25" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="100.88" cy="253.74" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="113.85" cy="241.03" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="126.81" cy="231.73" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="139.77" cy="214.99" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="152.73" cy="202.28" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="165.69" cy="213.13" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="191.62" cy="211.89" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="217.54" cy="179.65" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="243.46" cy="166.01" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="269.38" cy="171.28" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="295.31" cy="149.27" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="321.23" cy="144" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="334.19" cy="143.38" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="347.15" cy="157.02" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="360.12" cy="150.51" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="373.08" cy="153.61" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="386.04" cy="162.6" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="399" cy="134.39" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="411.96" cy="151.75" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="424.92" cy="147.1" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="437.88" cy="138.73" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="450.85" cy="130.36" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="463.81" cy="136.25" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="476.77" cy="116.72" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="502.69" cy="124.47" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="515.65" cy="117.65" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="528.62" cy="127.88" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="541.58" cy="120.13" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="554.54" cy="121.37" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="567.5" cy="122.61" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="580.46" cy="116.72" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="593.42" cy="120.13" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="606.38" cy="109.9" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="619.35" cy="101.22" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="632.31" cy="99.36" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="645.27" cy="102.15" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="658.23" cy="89.13" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="671.19" cy="92.23" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="684.15" cy="92.23" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="697.12" cy="96.88" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="710.08" cy="90.37" r="2.3" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="74.96" cy="281.64" r="4.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="82.96" y="299.64" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">第 200 步：15.6%</text>
+<circle cx="606.38" cy="109.9" r="4.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<line x1="609.38" y1="113.9" x2="636.38" y2="140" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.9"/>
+<text x="638.38" y="152" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 8,400 步：71.0%</text>
+<text x="638.38" y="168" font-size="12" fill="var(--fig-muted, #74716A)">（v1 报告的数字）</text>
+<circle cx="658.23" cy="89.13" r="4.2" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<line x1="658.23" y1="84.13" x2="672.23" y2="37.95" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9"/>
+<text x="736" y="33.95" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">最高点：第 9,200 步 77.7%</text>
+<line x1="80" y1="34" x2="104" y2="34" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<text x="110" y="38" font-size="12" fill="var(--fig-ink, #1C1B19)">pass@1（每题 16 个样本的平均正确率）</text>
+<line x1="80" y1="54" x2="104" y2="54" stroke="var(--fig-green, #16704A)" stroke-width="2"/>
+<text x="110" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)">cons@16（16 个样本多数投票）</text>
+<text x="80" y="78" font-size="12" fill="var(--fig-muted, #74716A)">Nature 版正文的 77.9% 不在这条曲线上（出处未说明）</text>
+</svg>

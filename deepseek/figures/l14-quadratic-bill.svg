@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>稠密注意力每 token FLOPs 随位置 T 的增长（DeepSeek-V3 维度，61 层，双对数坐标）</title>
+
+<line x1="92" y1="340" x2="560" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="344" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="92" y1="240" x2="560" y2="240" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="244" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="92" y1="140" x2="560" y2="140" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="144" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="92" y1="40" x2="560" y2="40" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="92" y1="40" x2="92" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="92" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">512</text>
+<line x1="209" y1="40" x2="209" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="209" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2K</text>
+<line x1="326" y1="40" x2="326" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="326" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8K</text>
+<line x1="443" y1="40" x2="443" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32K</text>
+<line x1="560" y1="40" x2="560" y2="340" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="560" y="358" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128K</text>
+<line x1="92" y1="340" x2="560" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="92" y1="40" x2="92" y2="340" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="326" y="382" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">位置 T（这个 token 能看到的 token 数，对数刻度，1K = 1024）</text>
+<text x="24" y="190" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 190)">每 token、全部 61 层的 GFLOPs（对数刻度）</text>
+<line x1="92" y1="153.08" x2="560" y2="153.08" stroke="var(--fig-muted, #74716A)" stroke-width="2.2" stroke-dasharray="7 4"/>
+<text x="570" y="149.08" font-size="13" fill="var(--fig-muted, #74716A)" font-weight="600">其余全部矩阵乘</text>
+<text x="570" y="166.08" font-size="12" fill="var(--fig-muted, #74716A)">2N = 74 GFLOPs</text>
+<text x="570" y="182.08" font-size="12" fill="var(--fig-muted, #74716A)">（与 T 无关）</text>
+<line x1="92" y1="299.2" x2="560" y2="58.38" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.8"/>
+<text x="570" y="62.38" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">稠密注意力</text>
+<text x="570" y="79.38" font-size="12" fill="var(--fig-blue, #1F5FA8)">61 × 81,920 × T</text>
+<circle cx="375.97" cy="153.08" r="4.5" fill="var(--fig-ink, #1C1B19)"/>
+<line x1="375.97" y1="158.08" x2="375.97" y2="340" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="383.97" y="197.08" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">T ≈ 14,808：注意力 = 其余之和</text>
+<circle cx="267.5" cy="208.89" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="255.5" y="198.89" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">4K：20.5 GF，占 21.7%</text>
+<circle cx="443" cy="118.58" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="435" y="106.58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">32K：163.7 GF，占 68.9%</text>
+<circle cx="560" cy="58.38" r="4" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="552" y="46.38" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">128K：655.0 GF，占 89.8%</text>
+<text x="387.97" y="296" font-size="12" fill="var(--fig-muted, #74716A)">斜率 1：位置每翻一倍，</text>
+<text x="387.97" y="314" font-size="12" fill="var(--fig-muted, #74716A)">这个 token 的注意力账单翻一倍</text>
+</svg>

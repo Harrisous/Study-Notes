@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 404" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>欧拉公式：e 的 iφ 次方是单位圆上角度为 φ 的点；它的泰勒级数一项一项地转进这个点</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="185" y="26" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">① e<tspan baseline-shift="super" font-size="11">iφ</tspan> = cos φ + i sin φ：单位圆上角度为 φ 的点</text>
+<line x1="36.46" y1="211.6" x2="340.9" y2="211.6" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="187.5" y1="270.6" x2="187.5" y2="67.64" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<path d="M294.44 261.47 A118 118 0 1 0 80.56 261.47" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<path d="M305.5 211.6 A118 118 0 0 0 251.26 112.31" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="4" stroke-opacity="0.55"/>
+<line x1="251.26" y1="112.31" x2="251.26" y2="211.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.8"/>
+<line x1="251.26" y1="112.31" x2="187.5" y2="112.31" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.8"/>
+<text x="251.26" y="226.6" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">cos 1 = 0.540</text>
+<text x="183.5" y="127.31" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">sin 1 = 0.841</text>
+<text x="312.72" y="188.05" font-size="12" fill="var(--fig-red, #A3231C)">弧长 1</text>
+<line x1="187.5" y1="93.6" x2="145.02" y2="93.6" stroke="var(--fig-green, #16704A)" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<line x1="86.39" y1="150.77" x2="64.49" y2="187.17" stroke="var(--fig-green, #16704A)" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<line x1="69.5" y1="211.6" x2="69.5" y2="254.08" stroke="var(--fig-green, #16704A)" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<circle cx="305.5" cy="211.6" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="311.5" y="227.6" font-size="12.5" fill="var(--fig-ink, #1C1B19)">1 = e<tspan baseline-shift="super" font-size="11">i0</tspan></text>
+<circle cx="289.69" cy="152.6" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="297.69" y="150.6" font-size="12.5" fill="var(--fig-ink, #1C1B19)">e<tspan baseline-shift="super" font-size="11">iπ/6</tspan></text>
+<line x1="187.5" y1="211.6" x2="251.26" y2="112.31" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" stroke-opacity="0.8"/>
+<circle cx="251.26" cy="112.31" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="259.26" y="106.31" font-size="12.5" fill="var(--fig-ink, #1C1B19)">e<tspan baseline-shift="super" font-size="11">i·1</tspan></text>
+<circle cx="187.5" cy="93.6" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="195.5" y="85.6" font-size="12.5" fill="var(--fig-ink, #1C1B19)">i = e<tspan baseline-shift="super" font-size="11">iπ/2</tspan></text>
+<circle cx="138.39" cy="104.3" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="130.39" y="96.3" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">e<tspan baseline-shift="super" font-size="11">2i</tspan></text>
+<circle cx="69.5" cy="211.6" r="4.2" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="65.5" y="227.6" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">−1 = e<tspan baseline-shift="super" font-size="11">iπ</tspan></text>
+<text x="185" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">角度 φ 用弧度量：沿单位圆走过的弧长就是 φ。</text>
+<text x="185" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">|e<tspan baseline-shift="super" font-size="11">iφ</tspan>|² = cos²φ + sin²φ = 1，所以这些点都在圆上。</text>
+<text x="185" y="358" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">绿箭头：速度 i·e<tspan baseline-shift="super" font-size="11">iφ</tspan>，永远垂直于半径（推导二）。</text>
+<text x="185" y="378" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">e<tspan baseline-shift="super" font-size="11">iπ</tspan> = −1：转半圈就是“掉头”。</text>
+<line x1="372" y1="44" x2="372" y2="388" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="556" y="26" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">② φ = 2 时，级数 Σ (2i)ⁿ/n! 一项一项走向 e<tspan baseline-shift="super" font-size="11">2i</tspan></text>
+<line x1="396.6" y1="275.6" x2="668" y2="275.6" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="525.4" y1="312.4" x2="525.4" y2="64" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<path d="M616.9 285.22 A92 92 0 1 0 433.9 285.22" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="525.4" y1="275.6" x2="617.4" y2="275.6" stroke="var(--fig-orange, #B4460C)" stroke-width="2" marker-end="url(#ah-orange)"/>
+<text x="571.4" y="291.6" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">1</text>
+<line x1="617.4" y1="275.6" x2="617.4" y2="91.6" stroke="var(--fig-violet, #6733C4)" stroke-width="2" marker-end="url(#ah-violet)"/>
+<text x="625.4" y="187.6" font-size="12" fill="var(--fig-violet, #6733C4)">+2i</text>
+<line x1="617.4" y1="91.6" x2="433.4" y2="91.6" stroke="var(--fig-orange, #B4460C)" stroke-width="2" marker-end="url(#ah-orange)"/>
+<text x="525.4" y="83.6" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">−2</text>
+<line x1="433.4" y1="91.6" x2="433.4" y2="214.27" stroke="var(--fig-violet, #6733C4)" stroke-width="2" marker-end="url(#ah-violet)"/>
+<text x="440.4" y="156.93" font-size="12" fill="var(--fig-violet, #6733C4)">−1.333i</text>
+<line x1="433.4" y1="214.27" x2="494.73" y2="214.27" stroke="var(--fig-orange, #B4460C)" stroke-width="2" marker-end="url(#ah-orange)"/>
+<text x="478.07" y="230.27" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">+0.667</text>
+<line x1="494.73" y1="214.27" x2="494.73" y2="189.73" stroke="var(--fig-violet, #6733C4)" stroke-width="2" marker-end="url(#ah-violet)"/>
+<text x="502.73" y="204" font-size="12" fill="var(--fig-violet, #6733C4)">+0.267i</text>
+<line x1="494.73" y1="189.73" x2="486.56" y2="189.73" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" marker-end="url(#ah-orange)"/>
+<line x1="486.56" y1="189.73" x2="486.56" y2="192.07" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<line x1="486.56" y1="192.07" x2="487.14" y2="192.07" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4"/>
+<line x1="487.14" y1="192.07" x2="487.14" y2="191.94" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4"/>
+<line x1="487.14" y1="191.94" x2="487.11" y2="191.94" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4"/>
+<line x1="487.11" y1="191.94" x2="487.11" y2="191.94" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4"/>
+<circle cx="487.11" cy="191.94" r="5.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1.2"/>
+<text x="497.11" y="175.94" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">e<tspan baseline-shift="super" font-size="11">2i</tspan> = −0.416 + 0.909i</text>
+<line x1="525.4" y1="275.6" x2="487.11" y2="191.94" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-opacity="0.5"/>
+<circle cx="617.4" cy="275.6" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="617.4" cy="91.6" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="433.4" cy="91.6" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="433.4" cy="214.27" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="494.73" cy="214.27" r="2.6" fill="var(--fig-ink, #1C1B19)"/>
+<text x="556" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每一项 = 上一项转 90° 再乘 2/n（橙：实数项，紫：虚数项）</text>
+<text x="556" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">前 8 项之和 −0.422 + 0.908i，离 e<tspan baseline-shift="super" font-size="11">2i</tspan> 还差 0.006；</text>
+<text x="556" y="358" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">前 12 项之和离 e<tspan baseline-shift="super" font-size="11">2i</tspan> 只差 8.5 × 10⁻⁶</text>
+</svg>

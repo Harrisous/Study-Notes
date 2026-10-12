@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>信息量 h(p) = −log₂ p：概率越小，意外越大</title>
+
+<line x1="64" y1="314" x2="452" y2="314" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="64" y1="274" x2="452" y2="274" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="64" y1="234" x2="452" y2="234" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="238" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="64" y1="194" x2="452" y2="194" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<line x1="64" y1="154" x2="452" y2="154" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="158" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<line x1="64" y1="114" x2="452" y2="114" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="118" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5</text>
+<line x1="64" y1="74" x2="452" y2="74" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="78" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<line x1="64" y1="34" x2="452" y2="34" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">7</text>
+<line x1="452" y1="256.29" x2="457" y2="256.29" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="460" y="260.29" font-size="11" fill="var(--fig-muted, #74716A)">1</text>
+<line x1="452" y1="198.58" x2="457" y2="198.58" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="460" y="202.58" font-size="11" fill="var(--fig-muted, #74716A)">2</text>
+<line x1="452" y1="140.88" x2="457" y2="140.88" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="460" y="144.88" font-size="11" fill="var(--fig-muted, #74716A)">3</text>
+<line x1="452" y1="83.17" x2="457" y2="83.17" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="460" y="87.17" font-size="11" fill="var(--fig-muted, #74716A)">4</text>
+<line x1="64" y1="314" x2="64" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="64" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="102.8" y1="314" x2="102.8" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="102.8" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1</text>
+<line x1="141.6" y1="314" x2="141.6" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="141.6" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="180.4" y1="314" x2="180.4" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="180.4" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.3</text>
+<line x1="219.2" y1="314" x2="219.2" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="219.2" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="258" y1="314" x2="258" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="258" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<line x1="296.8" y1="314" x2="296.8" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="296.8" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="335.6" y1="314" x2="335.6" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="335.6" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.7</text>
+<line x1="374.4" y1="314" x2="374.4" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="374.4" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="413.2" y1="314" x2="413.2" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="413.2" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.9</text>
+<line x1="452" y1="314" x2="452" y2="318" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="452" y="331" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="64" y1="314" x2="452" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="64" y1="34" x2="64" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="452" y1="34" x2="452" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="258" y="352" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">事件的概率 p</text>
+<text x="20" y="174" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 174)">信息量（bits）</text>
+<text x="486" y="174" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(90 486 174)">信息量（nats）</text>
+<path d="M67.0 34.0 L67.1 34.7 L67.1 35.4 L67.1 36.1 L67.2 36.8 L67.2 37.5 L67.3 38.2 L67.3 38.9 L67.3 39.6 L67.4 40.3 L67.4 41.0 L67.5 41.7 L67.5 42.4 L67.5 43.1 L67.6 43.8 L67.6 44.5 L67.7 45.2 L67.7 45.9 L67.8 46.6 L67.8 47.3 L67.9 48.0 L67.9 48.7 L68.0 49.4 L68.0 50.1 L68.1 50.8 L68.1 51.5 L68.2 52.2 L68.2 52.9 L68.3 53.6 L68.3 54.3 L68.4 55.0 L68.4 55.7 L68.5 56.4 L68.5 57.1 L68.6 57.8 L68.6 58.5 L68.7 59.2 L68.7 59.9 L68.8 60.6 L68.9 61.3 L68.9 62.0 L69.0 62.7 L69.0 63.4 L69.1 64.1 L69.2 64.8 L69.2 65.5 L69.3 66.2 L69.4 66.9 L69.4 67.6 L69.5 68.3 L69.6 69.0 L69.6 69.7 L69.7 70.4 L69.8 71.1 L69.8 71.8 L69.9 72.5 L70.0 73.2 L70.1 73.9 L70.1 74.6 L70.2 75.3 L70.3 76.0 L70.4 76.7 L70.4 77.4 L70.5 78.1 L70.6 78.8 L70.7 79.5 L70.8 80.2 L70.8 80.9 L70.9 81.6 L71.0 82.3 L71.1 83.0 L71.2 83.7 L71.3 84.4 L71.3 85.1 L71.4 85.8 L71.5 86.5 L71.6 87.2 L71.7 87.9 L71.8 88.6 L71.9 89.3 L72.0 90.0 L72.1 90.7 L72.2 91.4 L72.3 92.1 L72.4 92.8 L72.5 93.5 L72.6 94.2 L72.7 94.9 L72.8 95.6 L72.9 96.3 L73.0 97.0 L73.1 97.7 L73.3 98.4 L73.4 99.1 L73.5 99.8 L73.6 100.5 L73.7 101.2 L73.8 101.9 L74.0 102.6 L74.1 103.3 L74.2 104.0 L74.3 104.7 L74.4 105.4 L74.6 106.1 L74.7 106.8 L74.8 107.5 L75.0 108.2 L75.1 108.9 L75.2 109.6 L75.4 110.3 L75.5 111.0 L75.7 111.7 L75.8 112.4 L75.9 113.1 L76.1 113.8 L76.2 114.5 L76.4 115.2 L76.5 115.9 L76.7 116.6 L76.8 117.3 L77.0 118.0 L77.2 118.7 L77.3 119.4 L77.5 120.1 L77.6 120.8 L77.8 121.5 L78.0 122.2 L78.1 122.9 L78.3 123.6 L78.5 124.3 L78.7 125.0 L78.9 125.7 L79.0 126.4 L79.2 127.1 L79.4 127.8 L79.6 128.5 L79.8 129.2 L80.0 129.9 L80.2 130.6 L80.4 131.3 L80.6 132.0 L80.8 132.7 L81.0 133.4 L81.2 134.1 L81.4 134.8 L81.6 135.5 L81.8 136.2 L82.0 136.9 L82.3 137.6 L82.5 138.3 L82.7 139.0 L82.9 139.7 L83.2 140.4 L83.4 141.1 L83.6 141.8 L83.9 142.5 L84.1 143.2 L84.4 143.9 L84.6 144.6 L84.9 145.3 L85.1 146.0 L85.4 146.7 L85.6 147.4 L85.9 148.1 L86.2 148.8 L86.4 149.5 L86.7 150.2 L87.0 150.9 L87.3 151.6 L87.5 152.3 L87.8 153.0 L88.1 153.7 L88.4 154.4 L88.7 155.1 L89.0 155.8 L89.3 156.5 L89.6 157.2 L89.9 157.9 L90.3 158.6 L90.6 159.3 L90.9 160.0 L91.2 160.7 L91.6 161.4 L91.9 162.1 L92.2 162.8 L92.6 163.5 L92.9 164.2 L93.3 164.9 L93.6 165.6 L94.0 166.3 L94.4 167.0 L94.7 167.7 L95.1 168.4 L95.5 169.1 L95.9 169.8 L96.3 170.5 L96.7 171.2 L97.1 171.9 L97.5 172.6 L97.9 173.3 L98.3 174.0 L98.7 174.7 L99.1 175.4 L99.6 176.1 L100.0 176.8 L100.4 177.5 L100.9 178.2 L101.3 178.9 L101.8 179.6 L102.3 180.3 L102.7 181.0 L103.2 181.7 L103.7 182.4 L104.2 183.1 L104.6 183.8 L105.1 184.5 L105.6 185.2 L106.1 185.9 L106.7 186.6 L107.2 187.3 L107.7 188.0 L108.2 188.7 L108.8 189.4 L109.3 190.1 L109.9 190.8 L110.4 191.5 L111.0 192.2 L111.6 192.9 L112.2 193.6 L112.8 194.3 L113.3 195.0 L114.0 195.7 L114.6 196.4 L115.2 197.1 L115.8 197.8 L116.4 198.5 L117.1 199.2 L117.7 199.9 L118.4 200.6 L119.0 201.3 L119.7 202.0 L120.4 202.7 L121.1 203.4 L121.8 204.1 L122.5 204.8 L123.2 205.5 L123.9 206.2 L124.6 206.9 L125.4 207.6 L126.1 208.3 L126.9 209.0 L127.7 209.7 L128.4 210.4 L129.2 211.1 L130.0 211.8 L130.8 212.5 L131.6 213.2 L132.5 213.9 L133.3 214.6 L134.2 215.3 L135.0 216.0 L135.9 216.7 L136.8 217.4 L137.6 218.1 L138.5 218.8 L139.4 219.5 L140.4 220.2 L141.3 220.9 L142.2 221.6 L143.2 222.3 L144.2 223.0 L145.1 223.7 L146.1 224.4 L147.1 225.1 L148.2 225.8 L149.2 226.5 L150.2 227.2 L151.3 227.9 L152.3 228.6 L153.4 229.3 L154.5 230.0 L155.6 230.7 L156.7 231.4 L157.9 232.1 L159.0 232.8 L160.2 233.5 L161.3 234.2 L162.5 234.9 L163.7 235.6 L164.9 236.3 L166.2 237.0 L167.4 237.7 L168.7 238.4 L170.0 239.1 L171.3 239.8 L172.6 240.5 L173.9 241.2 L175.2 241.9 L176.6 242.6 L178.0 243.3 L179.4 244.0 L180.8 244.7 L182.2 245.4 L183.6 246.1 L185.1 246.8 L186.6 247.5 L188.1 248.2 L189.6 248.9 L191.1 249.6 L192.7 250.3 L194.2 251.0 L195.8 251.7 L197.4 252.4 L199.1 253.1 L200.7 253.8 L202.4 254.5 L204.1 255.2 L205.8 255.9 L207.5 256.6 L209.3 257.3 L211.0 258.0 L212.8 258.7 L214.6 259.4 L216.5 260.1 L218.3 260.8 L220.2 261.5 L222.1 262.2 L224.1 262.9 L226.0 263.6 L228.0 264.3 L230.0 265.0 L232.0 265.7 L234.1 266.4 L236.1 267.1 L238.2 267.8 L240.4 268.5 L242.5 269.2 L244.7 269.9 L246.9 270.6 L249.1 271.3 L251.4 272.0 L253.7 272.7 L256.0 273.4 L258.3 274.1 L260.7 274.8 L263.1 275.5 L265.5 276.2 L268.0 276.9 L270.5 277.6 L273.0 278.3 L275.6 279.0 L278.1 279.7 L280.8 280.4 L283.4 281.1 L286.1 281.8 L288.8 282.5 L291.5 283.2 L294.3 283.9 L297.1 284.6 L300.0 285.3 L302.8 286.0 L305.8 286.7 L308.7 287.4 L311.7 288.1 L314.7 288.8 L317.8 289.5 L320.9 290.2 L324.0 290.9 L327.2 291.6 L330.4 292.3 L333.6 293.0 L336.9 293.7 L340.3 294.4 L343.6 295.1 L347.0 295.8 L350.5 296.5 L354.0 297.2 L357.5 297.9 L361.1 298.6 L364.7 299.3 L368.4 300.0 L372.1 300.7 L375.9 301.4 L379.7 302.1 L383.6 302.8 L387.5 303.5 L391.4 304.2 L395.4 304.9 L399.4 305.6 L403.5 306.3 L407.7 307.0 L411.9 307.7 L416.1 308.4 L420.4 309.1 L424.8 309.8 L429.2 310.5 L433.6 311.2 L438.1 311.9 L442.7 312.6 L447.3 313.3 L452.0 314.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6"/>
+<circle cx="413.2" cy="307.92" r="4.2" fill="var(--fig-ink, #1C1B19)"/>
+<text x="427.2" y="287.92" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">p = 0.9：0.15 bit</text>
+<circle cx="258" cy="274" r="4.2" fill="var(--fig-ink, #1C1B19)"/>
+<text x="268" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)">硬币正面 1/2：1 bit</text>
+<circle cx="128.67" cy="210.6" r="4.2" fill="var(--fig-ink, #1C1B19)"/>
+<text x="138.67" y="202.6" font-size="12" fill="var(--fig-ink, #1C1B19)">骰子某一面 1/6：2.585 bits</text>
+<circle cx="102.8" cy="181.12" r="4.2" fill="var(--fig-ink, #1C1B19)"/>
+<text x="114.8" y="169.12" font-size="12" fill="var(--fig-ink, #1C1B19)">p = 0.1：3.32 bits</text>
+<circle cx="67.88" cy="48.25" r="4.2" fill="var(--fig-ink, #1C1B19)"/>
+<text x="79.88" y="54.25" font-size="12" fill="var(--fig-ink, #1C1B19)">p = 0.01：6.64 bits = 4.61 nats</text>
+<text x="442" y="54" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">p → 1 时 h → 0（毫不意外）</text>
+<text x="442" y="72" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">p → 0 时 h → ∞</text>
+<rect x="500" y="44" width="204" height="262" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="8"/>
+<text x="602" y="68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">独立事件：意外相加</text>
+<circle cx="560" cy="114" r="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.15" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4"/>
+<text x="560" y="119" font-size="14" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">正</text>
+<text x="560" y="154" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">硬币 1</text>
+<text x="560" y="174" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p = 1/2</text>
+<text x="560" y="192" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">h = 1 bit</text>
+<circle cx="644" cy="114" r="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.15" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4"/>
+<text x="644" y="119" font-size="14" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">正</text>
+<text x="644" y="154" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">硬币 2</text>
+<text x="644" y="174" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p = 1/2</text>
+<text x="644" y="192" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">h = 1 bit</text>
+<text x="602" y="120" font-size="16" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<line x1="520" y1="208" x2="684" y2="208" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="602" y="232" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">两枚都是正面</text>
+<text x="602" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">p = 1/2 × 1/2 = 1/4</text>
+<text x="602" y="274" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">h = −log₂(1/4) = 2 bits</text>
+<text x="602" y="294" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">= 1 + 1</text>
+</svg>

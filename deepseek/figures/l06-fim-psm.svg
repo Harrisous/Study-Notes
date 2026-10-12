@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>FIM 的 PSM 格式：把中段挪到末尾</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker></defs>
+<text x="16" y="32" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 原始文档，按字符随机切成三段（↵ 表示换行）</text>
+<rect x="16" y="44" width="186.1" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="109.0" y="64.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">def add(a, b):↵    ret</text>
+<rect x="202.1" y="44" width="59.6" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="5"/>
+<text x="231.9" y="64.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">urn a </text>
+<rect x="261.7" y="44" width="49.3" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="286.3" y="64.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ b↵</text>
+<text x="16" y="94" font-size="12" fill="var(--fig-blue, #1F5FA8)">前缀 prefix</text>
+<text x="216.4" y="94" font-size="12" fill="var(--fig-green, #16704A)">中段 middle</text>
+<text x="16" y="136" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② PSM 训练序列：前缀、后缀在前，中段挪到最后（以 0.5 的概率对每个文档这样做）</text>
+<rect x="16" y="150" width="118.77" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="75.4" y="170.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁begin｜&gt;</text>
+<rect x="137.77" y="150" width="186.1" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="230.8" y="170.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">def add(a, b):↵    ret</text>
+<rect x="326.87" y="150" width="111.75" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="382.7" y="170.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁hole｜&gt;</text>
+<rect x="441.62" y="150" width="49.3" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="466.3" y="170.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ b↵</text>
+<rect x="16" y="190" width="104.74" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="68.4" y="210.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁end｜&gt;</text>
+<rect x="123.74" y="190" width="59.6" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="5"/>
+<text x="153.5" y="210.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">urn a </text>
+<rect x="186.34" y="190" width="165.38" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="269.0" y="210.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜end▁of▁sentence｜&gt;</text>
+<text x="363.72" y="210" font-size="12" fill="var(--fig-muted, #74716A)">（接上一行，是同一条序列）</text>
+<text x="16" y="242" font-size="12" fill="var(--fig-muted, #74716A)">发布的分词器中的 token id：fim▁begin 32016，fim▁hole 32015，fim▁end 32017，</text>
+<text x="16" y="260" font-size="12" fill="var(--fig-muted, #74716A)">end▁of▁sentence 32014。报告正文写作 fim_start / fim_hole / fim_end。</text>
+<text x="16" y="304" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 推理：光标停在代码中间时，只给到 &lt;｜fim▁end｜&gt;，让模型写出中段</text>
+<rect x="16" y="318" width="118.77" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="75.4" y="338.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁begin｜&gt;</text>
+<rect x="137.77" y="318" width="186.1" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="230.8" y="338.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">def add(a, b):↵    ret</text>
+<rect x="326.87" y="318" width="111.75" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="382.7" y="338.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁hole｜&gt;</text>
+<rect x="441.62" y="318" width="49.3" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="5"/>
+<text x="466.3" y="338.0" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ b↵</text>
+<rect x="493.92" y="318" width="104.74" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="5"/>
+<text x="546.3" y="338.0" font-size="12" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">&lt;｜fim▁end｜&gt;</text>
+<line x1="604.66" y1="333" x2="638.66" y2="333" stroke="var(--fig-green, #16704A)" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<text x="644.66" y="338" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">生成：urn a</text>
+<text x="16" y="374" font-size="12" fill="var(--fig-muted, #74716A)">读到 &lt;｜fim▁end｜&gt; 时，模型已经看过前缀和后缀，接下来要预测的恰好是中段；</text>
+<text x="16" y="392" font-size="12" fill="var(--fig-muted, #74716A)">所以训练不需要新的损失函数，重排后的序列照常做下一词预测。</text>
+</svg>

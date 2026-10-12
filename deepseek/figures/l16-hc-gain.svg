@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>HC 在 27B 模型上的增益：单层与复合（据 mHC 论文图 3 重绘，数字化值）</title>
+
+<text x="20" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 单层 H<tspan baseline-shift="super" font-size="11">res</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">（对数纵轴）</tspan></text>
+<line x1="60" y1="329.75" x2="350" y2="329.75" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="333.75" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="60" y1="282.39" x2="350" y2="282.39" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="286.39" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="60" y1="235.03" x2="350" y2="235.03" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="239.03" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<line x1="60" y1="172.43" x2="350" y2="172.43" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="176.43" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5</text>
+<line x1="60" y1="125.06" x2="350" y2="125.06" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="129.06" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="60" y1="77.7" x2="350" y2="77.7" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="81.7" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20</text>
+<line x1="60" y1="50" x2="60" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="60" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="104.24" y1="50" x2="104.24" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="104.24" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="153.39" y1="50" x2="153.39" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="153.39" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="202.54" y1="50" x2="202.54" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="202.54" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="251.69" y1="50" x2="251.69" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="251.69" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="300.85" y1="50" x2="300.85" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="300.85" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="350" y1="50" x2="350" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="350" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="60" y1="345" x2="350" y2="345" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="60" y1="50" x2="60" y2="345" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="205" y="383" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">子层编号 <tspan font-style="italic">l</tspan>（30 个块 × 注意力 / FFN）</text>
+<line x1="60" y1="282.39" x2="350" y2="282.39" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="M60.0 82.3 L64.9 281.0 L69.8 288.8 L74.7 285.6 L79.7 287.6 L84.6 312.5 L89.5 298.9 L94.4 308.7 L99.3 280.4 L104.2 296.9 L109.2 271.7 L114.1 294.5 L119.0 270.5 L123.9 274.6 L128.8 263.4 L133.7 296.0 L138.6 281.7 L143.6 279.7 L148.5 259.9 L153.4 290.4 L158.3 260.4 L163.2 309.0 L168.1 262.4 L173.1 285.4 L178.0 272.3 L182.9 300.3 L187.8 277.8 L192.7 293.7 L197.6 272.3 L202.5 285.5 L207.5 260.9 L212.4 282.9 L217.3 250.7 L222.2 269.4 L227.1 272.3 L232.0 258.0 L236.9 271.1 L241.9 294.4 L246.8 275.3 L251.7 281.0 L256.6 280.4 L261.5 275.9 L266.4 248.6 L271.4 273.4 L276.3 267.7 L281.2 278.4 L286.1 270.5 L291.0 269.9 L295.9 263.9 L300.8 289.2 L305.8 277.8 L310.7 252.4 L315.6 239.6 L320.5 249.0 L325.4 256.1 L330.3 248.6 L335.3 211.8 L340.2 215.0 L345.1 132.1 L350.0 69.7" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M60.0 151.3 L64.9 282.7 L69.8 291.8 L74.7 294.3 L79.7 281.7 L84.6 302.9 L89.5 286.8 L94.4 288.4 L99.3 281.0 L104.2 270.5 L109.2 286.6 L114.1 288.8 L119.0 283.4 L123.9 286.3 L128.8 282.4 L133.7 285.0 L138.6 298.9 L143.6 294.1 L148.5 265.5 L153.4 287.7 L158.3 265.5 L163.2 306.6 L168.1 273.4 L173.1 268.2 L178.0 270.5 L182.9 286.4 L187.8 258.4 L192.7 285.9 L197.6 269.4 L202.5 295.3 L207.5 264.5 L212.4 303.5 L217.3 267.1 L222.2 284.2 L227.1 263.9 L232.0 274.6 L236.9 281.0 L241.9 288.0 L246.8 270.5 L251.7 267.7 L256.6 279.7 L261.5 286.3 L266.4 243.4 L271.4 270.5 L276.3 267.1 L281.2 284.6 L286.1 268.8 L291.0 274.0 L295.9 252.4 L300.8 298.0 L305.8 276.5 L310.7 246.9 L315.6 253.3 L320.5 259.4 L325.4 258.4 L330.3 244.5 L335.3 216.1 L340.2 211.3 L345.1 153.9 L350.0 112.6" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.9" stroke-linejoin="round"/>
+<text x="67.37" y="86.3" font-size="12" fill="var(--fig-ink, #1C1B19)"><tspan font-style="italic">l</tspan> = 1：前向 18.7，反向 6.81</text>
+<text x="346" y="61.66" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end"><tspan font-style="italic">l</tspan> = 60：22.5</text>
+<text x="202.54" y="333.75" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">绿虚线：增益 = 1</text>
+<text x="410" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 复合映射（对数纵轴）</text>
+<line x1="450" y1="345" x2="740" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="349" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="450" y1="271.25" x2="740" y2="271.25" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="275.25" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="450" y1="197.5" x2="740" y2="197.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="201.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="450" y1="123.75" x2="740" y2="123.75" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="127.75" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="450" y1="50" x2="740" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="450" y1="50" x2="450" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="450" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="494.24" y1="50" x2="494.24" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494.24" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="543.39" y1="50" x2="543.39" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="543.39" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="592.54" y1="50" x2="592.54" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="592.54" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="641.69" y1="50" x2="641.69" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="641.69" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="690.85" y1="50" x2="690.85" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="690.85" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="740" y1="50" x2="740" y2="345" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="740" y="362" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="450" y1="345" x2="740" y2="345" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="450" y1="50" x2="450" y2="345" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="595" y="383" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">子层编号 <tspan font-style="italic">l</tspan>（30 个块 × 注意力 / FFN）</text>
+<line x1="450" y1="345" x2="740" y2="345" stroke="var(--fig-green, #16704A)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="M450.0 251.2 L454.9 239.8 L459.8 238.7 L464.7 237.4 L469.7 238.5 L474.6 239.9 L479.5 241.9 L484.4 245.0 L489.3 249.5 L494.2 249.0 L499.2 252.2 L504.1 257.8 L509.0 261.4 L513.9 271.8 L518.8 274.7 L523.7 274.7 L528.6 275.3 L533.6 273.7 L538.5 274.7 L543.4 272.4 L548.3 273.6 L553.2 277.1 L558.1 279.6 L563.1 277.6 L568.0 276.9 L572.9 281.6 L577.8 279.3 L582.7 280.5 L587.6 281.8 L592.5 285.2 L597.5 285.5 L602.4 283.3 L607.3 285.2 L612.2 285.8 L617.1 284.0 L622.0 284.1 L626.9 284.0 L631.9 284.9 L636.8 284.2 L641.7 289.6 L646.6 293.8 L651.5 293.9 L656.4 295.4 L661.4 293.1 L666.3 294.6 L671.2 291.9 L676.1 289.6 L681.0 289.5 L685.9 289.7 L690.8 292.0 L695.8 292.5 L700.7 287.0 L705.6 281.8 L710.5 276.8 L715.4 274.1 L720.3 266.8 L725.3 264.9 L730.2 257.8 L735.1 231.4 L740.0 145.4" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M450.0 167.0 L454.9 238.7 L459.8 242.3 L464.7 243.3 L469.7 241.1 L474.6 239.4 L479.5 236.2 L484.4 234.0 L489.3 230.3 L494.2 227.0 L499.2 222.2 L504.1 218.0 L509.0 212.5 L513.9 208.7 L518.8 203.5 L523.7 200.6 L528.6 195.6 L533.6 193.0 L538.5 192.2 L543.4 199.4 L548.3 186.5 L553.2 176.9 L558.1 175.5 L563.1 174.5 L568.0 168.9 L572.9 166.5 L577.8 163.6 L582.7 162.5 L587.6 151.5 L592.5 153.9 L597.5 146.7 L602.4 142.9 L607.3 141.0 L612.2 134.3 L617.1 129.4 L622.0 126.8 L626.9 117.9 L631.9 116.1 L636.8 112.1 L641.7 114.6 L646.6 109.3 L651.5 111.6 L656.4 104.9 L661.4 91.5 L666.3 92.7 L671.2 95.4 L676.1 92.5 L681.0 94.5 L685.9 90.9 L690.8 94.3 L695.8 91.0 L700.7 90.5 L705.6 100.9 L710.5 111.2 L715.4 121.0 L720.3 130.7 L725.3 146.9 L730.2 172.8 L735.1 204.9 L740.0 265.4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="700.68" cy="90.54" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="464.75" y="63.8" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">反向峰值 ≈ 2825（<tspan font-style="italic">l</tspan> = 52，数字化）</text>
+<text x="464.75" y="80.8" font-size="12" fill="var(--fig-red, #A3231C)">论文文字：峰值约 3000</text>
+<line x1="612.2" y1="75.8" x2="695.68" y2="87.54" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="740" cy="145.38" r="3.5" fill="var(--fig-ink, #1C1B19)"/>
+<text x="728.2" y="226.85" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end"><tspan font-style="italic">l</tspan> = 60 的圆点：509</text>
+<text x="454.92" y="159.02" font-size="12" fill="var(--fig-red, #A3231C)">259</text>
+<line x1="170" y1="402" x2="200" y2="402" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<text x="206" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)">前向增益：最大 |行和|</text>
+<line x1="420" y1="402" x2="450" y2="402" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<text x="456" y="406" font-size="12" fill="var(--fig-red, #A3231C)">反向增益：最大 |列和|</text>
+<text x="380" y="426" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(b) 中前向 = 第 1..<tspan font-style="italic">l</tspan> 个子层之积，反向 = 第 <tspan font-style="italic">l</tspan>..60 个子层之积</text>
+</svg>

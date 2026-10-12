@@ -1,0 +1,24 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). The answers of lesson 0's nine exercises.
+k933 | 1-\frac{25{,}920}{389{,}120}=93.3\%,\qquad 1-\frac{69{,}120}{389{,}120}=82.2\%
+k105 | 5{,}031/48{,}068=\p{r}{10.5\%}
+k40 | 74.4\mathrm{T}/183.5\mathrm{T}=40.5\%
+k14 | 16/49=0.33,\quad 8/49=0.16,\quad 12/49=\p{r}{0.245}
+ds | AB\mathbf 1=A\mathbf 1=\mathbf 1,\qquad \mathbf 1^{\top}AB=\mathbf 1^{\top}B=\mathbf 1^{\top}
+i68 | 128\times4/8+128/32=64+4=\p{r}{68}
+e4a | 2\times16\times128\times28\times2=\p{r}{229{,}376}
+e4b | (512+64)\times27\times2=\p{r}{31{,}104}
+e4c | 229{,}376/31{,}104=7.37,\qquad 229{,}376/69{,}120=3.32
+e5a | 5{,}031.44\times2^{20}=5.28\times10^{9}\ \mathrm{B},\qquad 80/5.28\approx\p{r}{15.2}
+e5b | 48{,}068\times2^{17}=6.30\times10^{9}\ \mathrm{B},\qquad 80/6.30\approx\p{r}{12.7}
+e5c | 80\times10^{9}/389{,}120\approx\p{r}{205{,}592}
+e6a | 2.5\times(584+68)=1{,}630:\quad \frac{3{,}514.25}{1{,}630}=\p{s}{2.16},\ \ \frac{1{,}630}{890}=\p{p}{1.83}
+e6b | 2.5\times(528+68)=1{,}490:\quad \frac{3{,}514.25}{1{,}490}=\p{s}{2.36},\ \ \frac{1{,}490}{890}=\p{p}{1.67}
+e7a | 5.54^{365/393}\approx\p{r}{4.9}
+e7b | 79.0^{365/623}\approx\p{r}{12.9}
+e7c | 437.2^{365/1016}\approx 8.9
+e8 | n_{\mathrm{dim}}^{\mathrm{MHA}}=2n_hd_h,\quad n_{\mathrm{dim}}^{\mathrm{GQA}}=2n_gd_h,\quad n_{\mathrm{dim}}^{\mathrm{MQA}}=2d_h,\quad n_{\mathrm{dim}}^{\mathrm{MLA}}=d_c+d_h^R
+e8b | d_c+d_h^R=4d_h+\tfrac12d_h=2\times\p{r}{2.25}\times d_h
+e9a | s=2^{\lceil y\rceil}\ \ge\ 2^{y}=\frac{a}{448}\ \Rightarrow\ \frac{a}{s}\le448
+e9b | s=2^{\lceil y\rceil}<2^{y+1}=\frac{2a}{448}\ \Rightarrow\ \frac{a}{s}>224
+e9c | \mathbb E[u]=\int_0^1 2^{-v}\,dv=\frac{1}{2\ln2}\approx\p{r}{0.721}
+e9d | a=1{,}000:\ s=4,\ u=\frac{250}{448}=0.558;\qquad \lfloor\cdot\rfloor:\ s=2,\ \frac{a}{s}=500>448

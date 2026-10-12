@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>mHC 在 27B 模型上的增益：单层与复合都在 1 附近（据 mHC 论文图 7 重绘，数字化值）</title>
+
+<text x="20" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 单层 H<tspan baseline-shift="super" font-size="11">res</tspan><tspan baseline-shift="sub" font-size="11" dx="-16.06"><tspan font-style="italic">l</tspan></tspan><tspan dx="12.32">（线性纵轴）</tspan></text>
+<line x1="60" y1="330" x2="350" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.9</text>
+<line x1="60" y1="298.89" x2="350" y2="298.89" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="302.89" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.0</text>
+<line x1="60" y1="236.67" x2="350" y2="236.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="240.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.2</text>
+<line x1="60" y1="174.44" x2="350" y2="174.44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="178.44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.4</text>
+<line x1="60" y1="112.22" x2="350" y2="112.22" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="116.22" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.6</text>
+<line x1="60" y1="50" x2="350" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="53" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.8</text>
+<line x1="60" y1="50" x2="60" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="60" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="104.24" y1="50" x2="104.24" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="104.24" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="153.39" y1="50" x2="153.39" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="153.39" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="202.54" y1="50" x2="202.54" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="202.54" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="251.69" y1="50" x2="251.69" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="251.69" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="300.85" y1="50" x2="300.85" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="300.85" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="350" y1="50" x2="350" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="350" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="60" y1="330" x2="350" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="60" y1="50" x2="60" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="205" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">子层编号 <tspan font-style="italic">l</tspan></text>
+<rect x="60" y="297.53" width="290" height="2.56" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.55"/>
+<path d="M60.0 287.4 L64.9 290.5 L69.8 290.5 L74.7 288.6 L79.7 288.9 L84.6 282.1 L89.5 279.9 L94.4 282.1 L99.3 286.1 L104.2 284.9 L109.2 287.7 L114.1 288.9 L119.0 285.2 L123.9 288.0 L128.8 289.6 L133.7 286.1 L138.6 285.2 L143.6 288.9 L148.5 284.9 L153.4 291.1 L158.3 293.3 L163.2 292.4 L168.1 292.4 L173.1 295.2 L178.0 295.5 L182.9 294.8 L187.8 291.7 L192.7 292.0 L197.6 288.9 L202.5 286.4 L207.5 286.8 L212.4 283.6 L217.3 286.8 L222.2 285.2 L227.1 286.4 L232.0 287.1 L236.9 288.3 L241.9 292.0 L246.8 289.6 L251.7 289.6 L256.6 289.6 L261.5 292.4 L266.4 287.7 L271.4 288.3 L276.3 288.3 L281.2 291.7 L286.1 291.1 L291.0 290.8 L295.9 292.4 L300.8 291.1 L305.8 290.2 L310.7 290.5 L315.6 291.4 L320.5 288.3 L325.4 293.0 L330.3 288.6 L335.3 289.2 L340.2 283.0 L345.1 292.0 L350.0 297.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="202.54" y="318.89" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">前向：1.0000–1.0005（灰色细带）</text>
+<text x="202.54" y="261.56" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">反向：1.006–1.061（绿线）</text>
+<text x="410" y="26" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 复合映射（线性纵轴）</text>
+<line x1="450" y1="330" x2="740" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.9</text>
+<line x1="450" y1="298.89" x2="740" y2="298.89" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="302.89" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.0</text>
+<line x1="450" y1="236.67" x2="740" y2="236.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="240.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.2</text>
+<line x1="450" y1="174.44" x2="740" y2="174.44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="178.44" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.4</text>
+<line x1="450" y1="112.22" x2="740" y2="112.22" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="116.22" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.6</text>
+<line x1="450" y1="50" x2="740" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="443" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.8</text>
+<line x1="450" y1="50" x2="450" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="450" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="494.24" y1="50" x2="494.24" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494.24" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="543.39" y1="50" x2="543.39" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="543.39" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="592.54" y1="50" x2="592.54" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="592.54" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="641.69" y1="50" x2="641.69" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="641.69" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="690.85" y1="50" x2="690.85" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="690.85" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="740" y1="50" x2="740" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="740" y="347" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="450" y1="330" x2="740" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="450" y1="50" x2="450" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="595" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">子层编号 <tspan font-style="italic">l</tspan></text>
+<rect x="450" y="295.64" width="290" height="4.42" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.55"/>
+<path d="M450.0 264.7 L454.9 276.8 L459.8 226.4 L464.7 233.2 L469.7 242.3 L474.6 197.8 L479.5 181.3 L484.4 158.6 L489.3 141.2 L494.2 134.6 L499.2 126.2 L504.1 126.8 L509.0 126.5 L513.9 123.7 L518.8 122.8 L523.7 126.8 L528.6 112.5 L533.6 105.1 L538.5 104.8 L543.4 97.0 L548.3 98.2 L553.2 97.9 L558.1 97.9 L563.1 99.5 L568.0 101.0 L572.9 102.6 L577.8 105.1 L582.7 112.5 L587.6 118.4 L592.5 126.2 L597.5 142.1 L602.4 143.0 L607.3 137.1 L612.2 139.3 L617.1 148.3 L622.0 155.8 L626.9 163.9 L631.9 171.3 L636.8 176.0 L641.7 181.9 L646.6 189.1 L651.5 195.9 L656.4 200.9 L661.4 210.5 L666.3 212.1 L671.2 214.9 L676.1 218.6 L681.0 219.6 L685.9 222.0 L690.8 226.7 L695.8 230.4 L700.7 233.2 L705.6 236.7 L710.5 243.8 L715.4 255.0 L720.3 259.7 L725.3 270.6 L730.2 279.6 L735.1 290.5 L740.0 297.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="543.39" cy="96.98" r="4" fill="var(--fig-green, #16704A)"/>
+<text x="539.39" y="60.89" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">反向最大 ≈ 1.65（<tspan font-style="italic">l</tspan> = 20）</text>
+<text x="539.39" y="77.89" font-size="12" fill="var(--fig-green, #16704A)">论文文字：约 1.6</text>
+<text x="592.54" y="318.89" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">前向：1.0001–1.0066（灰色细带）</text>
+<text x="20" y="396" font-size="12" fill="var(--fig-ink, #1C1B19)">对照 HC（图 16.5）：复合反向增益峰值约 2825，是这里 1.65 的约 1700 倍，相差三个多数量级。</text>
+<text x="20" y="414" font-size="12" fill="var(--fig-muted, #74716A)">理论上界：行和精确为 1 的非负矩阵之积，反向增益不超过 n = 4（§4）；实测远低于上界。</text>
+</svg>

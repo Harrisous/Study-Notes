@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>吸收的两种做法：预乘成一块，还是改变乘法顺序</title>
+
+<text x="16" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">预乘：离线把 (<tspan font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UK</tspan><tspan dy="9.8" font-size="11">i</tspan><tspan dy="-4.2">)</tspan><tspan dy="-5.6" font-size="11">⊤</tspan><tspan dy="5.6" font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UQ</tspan><tspan dy="9.8" font-size="11">i</tspan><tspan dy="-4.2"> 乘成一整块</tspan></text>
+<rect x="96" y="36" width="430.08" height="143.36" fill="var(--fig-muted, #74716A)" fill-opacity="0.16" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="2"/>
+<text x="311.04" y="95.68" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">(<tspan font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UK</tspan><tspan dy="9.8" font-size="11">i</tspan><tspan dy="-4.2">)</tspan><tspan dy="-5.6" font-size="11">⊤</tspan><tspan dy="5.6" font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UQ</tspan><tspan dy="9.8" font-size="11">i</tspan></text>
+<text x="311.04" y="115.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[512 × 1536]，稠密，每个数都要存</text>
+<text x="311.04" y="135.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">786,432 个参数</text>
+<text x="88" y="111.68" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">512</text>
+<text x="311.04" y="193.36" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">1536</text>
+<text x="548.08" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)">每头、每 token：</text>
+<text x="548.08" y="78" font-size="12" fill="var(--fig-blue, #1F5FA8)">× <tspan font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">Q</tspan><tspan dy="8.4" font-size="11">t</tspan><tspan dy="-3.6"> [1536] → </tspan><tspan font-weight="700">q̃</tspan><tspan dy="3.6" font-size="11">t,i</tspan><tspan dy="-3.6"> [512]</tspan></text>
+<text x="548.08" y="102" font-size="12" fill="var(--fig-ink, #1C1B19)">2 × 512 × 1536</text>
+<text x="548.08" y="120" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">= 1,572,864 次运算</text>
+<line x1="12" y1="204" x2="748" y2="204" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="228" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="700">改变顺序：两块瘦矩阵分开存，先乘 <tspan font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UQ</tspan><tspan dy="9.8" font-size="11">i</tspan><tspan dy="-4.2">，再乘 (</tspan><tspan font-weight="700">W</tspan><tspan dy="-5.6" font-size="11">UK</tspan><tspan dy="9.8" font-size="11">i</tspan><tspan dy="-4.2">)</tspan><tspan dy="-5.6" font-size="11">⊤</tspan></text>
+<rect x="96" y="242" width="430.08" height="35.84" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="2"/>
+<text x="311.04" y="264.92" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">UQ</tspan><tspan dy="8.8" font-size="11">i</tspan><tspan dy="-3.8">  [128 × 1536]  196,608</tspan></text>
+<rect x="56.16" y="281.84" width="35.84" height="143.36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="2"/>
+<text x="74.08" y="357.52" font-size="11.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle">512</text>
+<text x="74.08" y="439.2" font-size="11.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle">128</text>
+<rect x="96" y="281.84" width="430.08" height="143.36" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2" stroke-dasharray="5 4"/>
+<text x="106" y="303.84" font-size="12.5" fill="var(--fig-violet, #6733C4)" font-weight="700">← (<tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">UK</tspan><tspan dy="8.8" font-size="11">i</tspan><tspan dy="-3.8">)</tspan><tspan dy="-5" font-size="11">⊤</tspan><tspan dy="5">  [512 × 128]  65,536</tspan></text>
+<text x="311.04" y="361.52" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">虚线框 = 两块相乘会得到的 [512 × 1536]</text>
+<text x="311.04" y="379.52" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">这里从不把它算出来，也不存</text>
+<text x="311.04" y="413.2" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">两条色块合计 262,144 个参数，是整块的 1/3</text>
+<text x="548.08" y="264" font-size="12" fill="var(--fig-ink, #1C1B19)">每头、每 token：</text>
+<text x="548.08" y="284" font-size="12" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UQ</tspan><tspan dy="8.4" font-size="11">i</tspan><tspan dy="-3.6" font-weight="700">c</tspan><tspan dy="-4.8" font-size="11">Q</tspan><tspan dy="8.4" font-size="11">t</tspan><tspan dy="-3.6"> → </tspan><tspan font-weight="700">q</tspan><tspan dy="-4.8" font-size="11">C</tspan><tspan dy="8.4" font-size="11">t,i</tspan><tspan dy="-3.6"> [128]</tspan></text>
+<text x="548.08" y="302" font-size="12" fill="var(--fig-ink, #1C1B19)">2 × 128 × 1536 = 393,216</text>
+<text x="548.08" y="326" font-size="12" fill="var(--fig-violet, #6733C4)">(<tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UK</tspan><tspan dy="8.4" font-size="11">i</tspan><tspan dy="-3.6">)</tspan><tspan dy="-4.8" font-size="11">⊤</tspan><tspan dy="4.8" font-weight="700">q</tspan><tspan dy="-4.8" font-size="11">C</tspan><tspan dy="8.4" font-size="11">t,i</tspan><tspan dy="-3.6"> → </tspan><tspan font-weight="700">q̃</tspan><tspan dy="3.6" font-size="11">t,i</tspan><tspan dy="-3.6"> [512]</tspan></text>
+<text x="548.08" y="344" font-size="12" fill="var(--fig-ink, #1C1B19)">2 × 512 × 128 = 131,072</text>
+<text x="548.08" y="368" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">合计 524,288 次运算</text>
+<text x="548.08" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">（预乘的 1/3）</text>
+<text x="16" y="470" font-size="12" fill="var(--fig-ink, #1C1B19)">每层 128 个头：预乘 100,663,296 个参数、201,326,592 次运算；改变顺序 33,554,432 个参数、67,108,864 次运算。</text>
+<text x="16" y="488" font-size="12" fill="var(--fig-muted, #74716A)">差 3 倍的原因：中间维 d<tspan dy="3.6" font-size="11">h</tspan><tspan dy="-3.6"> = 128 远小于两端的 512、1536，512 × 1536 ÷ (128 × (512 + 1536)) = 3。</tspan></text>
+</svg>

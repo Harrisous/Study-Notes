@@ -1,0 +1,12 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.10)–(0.13) and the numbers of lesson 0 §5.
+ntp | \mathcal L(\theta)=-\frac1T\sum_{t=1}^{T}\log \p{p}{p_\theta(x_t\mid x_{<t})}
+rl | \max_{\pi_\theta}\ \mathbb E_{q\sim\mathcal D,\ o\sim\pi_\theta(\cdot\mid q)}\big[\p{r}{r(q,o)}\big]-\p{k}{\beta\,\mathrm{KL}\big[\pi_\theta\,\Vert\,\pi_{\mathrm{ref}}\big]}
+adv | \hat A_i=\frac{r_i-\p{m}{\mathrm{mean}(r_1,\dots,r_G)}}{\p{s}{\mathrm{std}(r_1,\dots,r_G)}}
+std | \mathrm{std}=\sqrt{0.25\times0.75}=0.433
+exA | \hat A=\big(\p{a}{1.732},\ -0.577,\ -0.577,\ -0.577\big),\qquad\textstyle\sum_i\hat A_i=0
+rare | \sqrt{\frac{1-p}{p}}\;\Big|_{p=0.25}=\p{r}{1.732}
+v32 | \hat A_1=1-0.25=\p{r}{0.75}
+mtp | \mathcal L_{\mathrm{MTP}}=\frac{\p{l}{\lambda}}{\p{d}{D}}\sum_{k=1}^{D}\mathcal L^{(k)}
+v3post | 5\mathrm{K}\,/\,2{,}664\mathrm{K}\approx\p{r}{0.19\%}
+r1pct | 147\mathrm{K}\,/\,2{,}788\mathrm{K}\approx\p{r}{5.3\%}
+v32min | 2{,}664\mathrm{K}\times10\%\approx\p{r}{266\mathrm{K}}

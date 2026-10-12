@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数学补课：读懂 DeepSeek 需要的本科数学</title>
+<meta name="description" content="为 DeepSeek 科技树课程准备的 11 课数学补课：线性代数、概率、信息论、微积分、优化、浮点数、强化学习、算力算术。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+<!-- Built by .cursor/skills/lesson-markdown/scripts/build_index.py from src/index.yaml -->
+<style>
+:root{
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", Roboto, Helvetica, Arial, sans-serif;
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", ui-serif, Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --bg:#FBFAF7; --surface:#FFFFFF; --surface-2:#F4F2ED; --ink:#1C1B19; --ink-2:#4A4843; --muted:#7A776F; --line:#E4E0D7;
+  --blue:#2563EB; --blue-bg:#EBF1FE; --purple:#7038B8; --purple-bg:#F3EDFC; --green:#16704A; --green-bg:#E9F4EE;
+  --amber:#8A6508; --amber-bg:#FCF7E8;
+  --maxw: 860px; --r: 12px;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 4px 14px rgba(28,27,25,.05);
+  --shadow-lift: 0 2px 4px rgba(28,27,25,.06), 0 12px 28px rgba(28,27,25,.10);
+}
+html[data-theme="dark"]{
+  --bg:#14161A; --surface:#1B1E24; --surface-2:#22262D; --ink:#ECEAE5; --ink-2:#C3C0B9; --muted:#8E8B84; --line:#2E333B;
+  --blue:#7DA6FF; --blue-bg:#1B2436; --purple:#B490F0; --purple-bg:#261D38; --green:#5EC191; --green-bg:#12251C;
+  --amber:#DFB44E; --amber-bg:#262010;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  --shadow-lift: 0 2px 6px rgba(0,0,0,.35), 0 14px 32px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.bar{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:650;display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));flex:none}
+.pill{font-size:.875rem;color:var(--muted);padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;font:inherit;font-size:.875rem;cursor:pointer}
+.pill:hover{color:var(--ink);border-color:var(--muted)}
+.actions{display:flex;gap:10px;align-items:center}
+.hero{padding:56px 0 28px}
+h1{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.2;margin:0 0 14px;font-weight:700;text-wrap:balance}
+.lede{color:var(--ink-2);font-size:1.06rem;max-width:62ch;margin:0}
+.aside{margin:22px 0 0;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink-2);font-size:.94rem}
+.aside b{color:var(--ink)}
+h2{font-size:.78rem;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:46px 0 6px}
+.blurb{color:var(--muted);font-size:.92rem;margin:0 0 14px;max-width:70ch}
+.grid{display:grid;gap:12px}
+@media (min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
+a.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--muted)}
+a.card:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.card.wip{opacity:.55;box-shadow:none}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:2px 9px;border-radius:999px;margin-bottom:8px;color:var(--blue);background:var(--blue-bg)}
+.tag.m{color:var(--green);background:var(--green-bg)}
+.tag.x{color:var(--purple);background:var(--purple-bg)}
+.card h3{font-family:var(--serif);font-size:1.08rem;line-height:1.35;margin:0 0 4px;font-weight:700}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6}
+.wipnote{font-size:.75rem;color:var(--amber);margin-left:6px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:.875rem}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../index.html"><span class="dot"></span>Study Notes</a>
+<span class="actions"><a class="pill" href="../index.html">全部笔记</a><button class="pill" id="theme" type="button">深色</button></span></div></header>
+<main class="wrap">
+<section class="hero"><h1>数学补课：读懂 DeepSeek 需要的本科数学</h1><p class="lede">每一课只讲读懂大模型论文真正需要的那部分数学，从定义讲起，配手算例子和带答案的练习。每一节都标明它在 DeepSeek 课程的哪一课被用到。</p><div class="aside"><b>怎么用：</b>不必从头读完。读 <a href="../deepseek/index.html" style="color:var(--blue)">DeepSeek 科技树</a> 时遇到黄色“前置知识”框，点进对应小节补课即可；也可以按顺序把这 11 课当作一门独立的小课来读。</div></section>
+<h2>线性代数</h2>
+<div class="grid">
+<a class="card" href="m01-vectors-matrices.html"><span class="tag m">M01</span><h3>向量、矩阵乘法与形状思维</h3><p>点积与相似度、矩阵乘法的三种读法、einsum 与注意力里的形状、2mnk 次运算。</p></a>
+<a class="card" href="m02-rank-svd-lowrank.html"><span class="tag m">M02</span><h3>秩、低秩分解与 SVD</h3><p>秩与列空间、低秩分解、奇异值分解与最优低秩近似、矩阵结合律与“吸收”。</p></a>
+<a class="card" href="m03-rotation-complex.html"><span class="tag m">M03</span><h3>正交矩阵、旋转与复数</h3><p>二维旋转、欧拉公式、旋转的复合与相对位置，RoPE 的全部数学。</p></a>
+<a class="card" href="m11-doubly-stochastic-sinkhorn.html"><span class="tag m">M11</span><h3>双随机矩阵与 Sinkhorn 迭代</h3><p>Birkhoff 多面体、谱范数不超过 1 的证明、交替归一化为什么会收敛。</p></a>
+</div>
+<h2>概率与信息</h2>
+<div class="grid">
+<a class="card" href="m04-probability.html"><span class="tag m">M04</span><h3>概率与统计：期望、方差、softmax 与采样</h3><p>独立和的方差与 √d、softmax 与温度、无偏估计、蒙特卡洛与重要性采样。</p></a>
+<a class="card" href="m05-information-theory.html"><span class="tag m">M05</span><h3>信息论：熵、交叉熵、KL 与困惑度</h3><p>交叉熵即负对数似然、KL 的非负性、前向与反向 KL、KL 的三种估计器。</p></a>
+</div>
+<h2>微积分与优化</h2>
+<div class="grid">
+<a class="card" href="m06-calculus-backprop.html"><span class="tag m">M06</span><h3>微积分与反向传播</h3><p>链式法则、雅可比、softmax 的梯度、交叉熵对 logits 的梯度 p−y、残差的梯度高速公路。</p></a>
+<a class="card" href="m07-optimization.html"><span class="tag m">M07</span><h3>优化器：从 SGD 到 AdamW 再到 Muon</h3><p>动量、Adam 的偏差修正、解耦权重衰减、学习率调度、牛顿–舒尔茨正交化。</p></a>
+</div>
+<h2>数值、强化学习与系统</h2>
+<div class="grid">
+<a class="card" href="m08-floating-point.html"><span class="tag m">M08</span><h3>浮点数与量化：从 FP32 到 FP4</h3><p>IEEE 754、BF16/FP8/FP4 的位布局、动态范围与精度、缩放因子与细粒度量化。</p></a>
+<a class="card" href="m09-rl-math.html"><span class="tag m">M09</span><h3>强化学习数学：策略梯度到 PPO</h3><p>对数导数技巧、基线与方差、优势与 GAE、重要性采样、PPO 裁剪。</p></a>
+<a class="card" href="m10-compute-arithmetic.html"><span class="tag m">M10</span><h3>算力算术：FLOPs、带宽、roofline 与通信</h3><p>数清楚一次矩阵乘法、算术强度、屋顶线模型、四种并行与集合通信的代价。</p></a>
+</div>
+</main>
+<footer class="wrap">源文件在 <code>math/src/</code>（Markdown）。</footer>
+<script>
+(function(){
+  var btn = document.getElementById('theme'), root = document.documentElement;
+  function apply(t){ root.setAttribute('data-theme', t); btn.textContent = t === 'dark' ? '浅色' : '深色'; }
+  var saved = null; try { saved = localStorage.getItem('study-notes-theme'); } catch (e) {}
+  apply(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next); try { localStorage.setItem('study-notes-theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>

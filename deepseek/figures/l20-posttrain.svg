@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>主线 D 的总账：后训练的显存与算力</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker></defs>
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(a) 7B 策略的模型状态显存（GB，按 16 字节/训练参数、2 字节/冻结参数）</text>
+<line x1="110" y1="50" x2="110" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="110" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="206.15" y1="50" x2="206.15" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="206.15" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="302.31" y1="50" x2="302.31" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="302.31" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="398.46" y1="50" x2="398.46" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="398.46" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">150</text>
+<line x1="494.62" y1="50" x2="494.62" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="494.62" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200</text>
+<line x1="590.77" y1="50" x2="590.77" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="590.77" y="46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">250</text>
+<text x="100" y="74" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">SFT</text>
+<rect x="110" y="62" width="215.38" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="331.38" y="75" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">112 GB</text>
+<text x="100" y="110" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">DPO</text>
+<rect x="110" y="98" width="215.38" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<rect x="325.38" y="98" width="26.92" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="358.31" y="111" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">126 GB</text>
+<text x="100" y="146" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">GRPO</text>
+<rect x="110" y="134" width="215.38" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<rect x="325.38" y="134" width="26.92" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<rect x="352.31" y="134" width="26.92" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="385.23" y="147" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">140 GB</text>
+<text x="100" y="182" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">PPO</text>
+<rect x="110" y="170" width="215.38" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<rect x="325.38" y="170" width="215.38" height="18" fill="var(--fig-red, #A3231C)" fill-opacity="0.35" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<rect x="540.77" y="170" width="26.92" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<rect x="567.69" y="170" width="26.92" height="18" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="600.62" y="183" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">252 GB</text>
+<rect x="110" y="204" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.6" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="127" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)">策略（训练）</text>
+<rect x="238" y="204" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.35" stroke="var(--fig-red, #A3231C)" stroke-width="0.8"/>
+<text x="255" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)">价值网络（训练）</text>
+<rect x="366" y="204" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="383" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)">参考模型（冻结）</text>
+<rect x="494" y="204" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.18" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="511" y="215" font-size="12" fill="var(--fig-ink, #1C1B19)">奖励模型（冻结）</text>
+<text x="10" y="252" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">(b) 后训练 GPU 小时占 V3 预训练（2,664K H800 小时）的比例（对数刻度）</text>
+<line x1="330" y1="278" x2="330" y2="396" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="330" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.1%</text>
+<line x1="479.37" y1="278" x2="479.37" y2="396" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="479.37" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1%</text>
+<line x1="628.73" y1="278" x2="628.73" y2="396" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="628.73" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10%</text>
+<text x="320" y="298" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3 的后训练</text>
+<text x="320" y="313" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5K GPU 小时 · 第 12 课 §1</text>
+<rect x="330" y="290" width="40.84" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.5" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<text x="376.84" y="303" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">0.188%</text>
+<text x="320" y="338" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">R1 公开账单（R1-Zero + SFT 数据 + R1）</text>
+<text x="320" y="353" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">147K GPU 小时 · 第 13 课 §8</text>
+<rect x="330" y="330" width="260.16" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.5" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<text x="596.16" y="343" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">5.5%</text>
+<text x="320" y="378" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.2（“超过预训练成本的 10%”，下限）</text>
+<text x="320" y="393" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">&gt; 266.4K GPU 小时（按 V3 基数） · 第 15 课 §1</text>
+<rect x="330" y="370" width="298.73" height="18" fill="var(--fig-green, #16704A)" fill-opacity="0.25" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="4 3"/>
+<line x1="628.73" y1="379" x2="664.73" y2="379" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<text x="670.73" y="383" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">&gt; 10%</text>
+<text x="10" y="432" font-size="12" fill="var(--fig-muted, #74716A)">(b) 三行的口径不同：V3 与 R1 是论文列出的 GPU 小时；V3.2 只说“超过预训练成本的 10%”，基数与分子都没有披露。</text>
+</svg>

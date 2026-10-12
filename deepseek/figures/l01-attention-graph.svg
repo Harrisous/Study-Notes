@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>缩放点积注意力（单头）：计算图与每一步的形状</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="30" y="16" width="90" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="75" y="34.18" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">Q</text>
+<text x="75" y="51.18" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[T, 64]</text>
+<rect x="135" y="16" width="90" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="180" y="34.18" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">K</text>
+<text x="180" y="51.18" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[T, 64]</text>
+<rect x="240" y="16" width="90" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="285" y="34.18" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">V</text>
+<text x="285" y="51.18" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[T, 64]</text>
+<line x1="75" y1="60" x2="75" y2="92" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<line x1="180" y1="60" x2="180" y2="92" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<rect x="30" y="92" width="195" height="34" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="127.5" y="113.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MatMul：S = QK<tspan baseline-shift="super" font-size="11">⊤</tspan></text>
+<text x="233" y="114" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, T]</text>
+<rect x="30" y="152" width="195" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="127.5" y="173.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Scale：除以 √d<tspan baseline-shift="sub" font-size="11">k</tspan> = √64 = 8</text>
+<text x="233" y="174" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, T]</text>
+<line x1="127" y1="126" x2="127" y2="152" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="30" y="212" width="195" height="34" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="6"/>
+<text x="127.5" y="233.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Mask：j &gt; t 的格子加上 −∞</text>
+<text x="233" y="234" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, T]</text>
+<line x1="127" y1="186" x2="127" y2="212" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="30" y="272" width="195" height="34" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="127.5" y="293.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SoftMax：逐行归一化 → A</text>
+<text x="233" y="294" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, T]</text>
+<line x1="127" y1="246" x2="127" y2="272" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="30" y="352" width="300" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="180" y="373.68" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MatMul：O = A V</text>
+<text x="338" y="374" font-size="12" fill="var(--fig-muted, #74716A)" font-family="ui-monospace, 'Cascadia Mono', Consolas, monospace">[T, 64]</text>
+<line x1="127" y1="306" x2="127" y2="352" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="134" y="334" font-size="12" fill="var(--fig-muted, #74716A)">A  [T, T]</text>
+<path d="M285 60 V330 H285 V352" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="180" y1="386" x2="180" y2="414" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<rect x="120" y="414" width="120" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="180" y="435.68" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">O  [T, 64]</text>
+<text x="252" y="436" font-size="12" fill="var(--fig-muted, #74716A)">第 t 行 = 位置 t 的输出</text>
+<text x="384" y="104" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">示意：T = 8 个位置（随机数据）</text>
+<text x="384" y="124" font-size="12" fill="var(--fig-muted, #74716A)">第 t 行 = 位置 t 看向各位置 j 的分数或权重</text>
+<text x="436" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">打分表</text>
+<rect x="384" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="397" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.52"/>
+<rect x="410" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.49"/>
+<rect x="423" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.37"/>
+<rect x="436" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.62"/>
+<rect x="449" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.42"/>
+<rect x="462" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.5"/>
+<rect x="475" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.56"/>
+<rect x="384" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="397" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.34"/>
+<rect x="410" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45"/>
+<rect x="423" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.59"/>
+<rect x="436" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1"/>
+<rect x="449" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.49"/>
+<rect x="462" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3"/>
+<rect x="475" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.32"/>
+<rect x="384" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="397" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.36"/>
+<rect x="410" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.38"/>
+<rect x="423" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.54"/>
+<rect x="436" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35"/>
+<rect x="449" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.43"/>
+<rect x="462" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.47"/>
+<rect x="475" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.44"/>
+<rect x="384" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.47"/>
+<rect x="397" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.36"/>
+<rect x="410" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="423" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.64"/>
+<rect x="436" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.15"/>
+<rect x="449" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45"/>
+<rect x="462" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.33"/>
+<rect x="475" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.42"/>
+<rect x="384" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.54"/>
+<rect x="397" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.56"/>
+<rect x="410" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.69"/>
+<rect x="423" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.13"/>
+<rect x="436" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="449" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.36"/>
+<rect x="462" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.23"/>
+<rect x="475" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="384" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.51"/>
+<rect x="397" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.52"/>
+<rect x="410" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.61"/>
+<rect x="423" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1"/>
+<rect x="436" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.39"/>
+<rect x="449" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="462" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.23"/>
+<rect x="475" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.38"/>
+<rect x="384" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.21"/>
+<rect x="397" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.61"/>
+<rect x="410" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.8"/>
+<rect x="423" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.27"/>
+<rect x="436" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.26"/>
+<rect x="449" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="462" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08"/>
+<rect x="475" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.51"/>
+<rect x="384" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.32"/>
+<rect x="397" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.58"/>
+<rect x="410" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.66"/>
+<rect x="423" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28"/>
+<rect x="436" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.42"/>
+<rect x="449" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="462" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.26"/>
+<rect x="475" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.49"/>
+<rect x="383" y="149" width="105" height="105" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="436" y="272" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">S = QK<tspan baseline-shift="super" font-size="11">⊤</tspan>/√d<tspan baseline-shift="sub" font-size="11">k</tspan></text>
+<line x1="492" y1="202" x2="504" y2="202" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<text x="562" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">加掩码</text>
+<rect x="510" y="150" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="523" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="536" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="549" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="562" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="575" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="588" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="523" y="163" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.34"/>
+<rect x="536" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="549" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="562" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="575" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="588" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6"/>
+<rect x="523" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.36"/>
+<rect x="536" y="176" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.38"/>
+<rect x="549" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="562" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="575" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="588" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.47"/>
+<rect x="523" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.36"/>
+<rect x="536" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="549" y="189" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.64"/>
+<rect x="562" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="575" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="588" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.54"/>
+<rect x="523" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.56"/>
+<rect x="536" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.69"/>
+<rect x="549" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.13"/>
+<rect x="562" y="202" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="575" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="588" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.51"/>
+<rect x="523" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.52"/>
+<rect x="536" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.61"/>
+<rect x="549" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1"/>
+<rect x="562" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.39"/>
+<rect x="575" y="215" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.48"/>
+<rect x="588" y="215" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="601" y="215" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.21"/>
+<rect x="523" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.61"/>
+<rect x="536" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.8"/>
+<rect x="549" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.27"/>
+<rect x="562" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.26"/>
+<rect x="575" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="588" y="228" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08"/>
+<rect x="601" y="228" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="510" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.32"/>
+<rect x="523" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.58"/>
+<rect x="536" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.66"/>
+<rect x="549" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28"/>
+<rect x="562" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.42"/>
+<rect x="575" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.46"/>
+<rect x="588" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.26"/>
+<rect x="601" y="241" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.49"/>
+<rect x="509" y="149" width="105" height="105" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="562" y="272" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">S + M</text>
+<line x1="618" y1="202" x2="630" y2="202" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<text x="688" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">按行归一化</text>
+<rect x="636" y="150" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.96"/>
+<rect x="649" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="662" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="675" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="688" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="701" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="714" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="150" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="163" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.65"/>
+<rect x="649" y="163" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.37"/>
+<rect x="662" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="675" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="688" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="701" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="714" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="163" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="176" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.58"/>
+<rect x="649" y="176" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24"/>
+<rect x="662" y="176" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26"/>
+<rect x="675" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="688" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="701" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="714" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="176" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="189" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25"/>
+<rect x="649" y="189" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18"/>
+<rect x="662" y="189" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.25"/>
+<rect x="675" y="189" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.47"/>
+<rect x="688" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="701" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="714" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="189" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="202" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24"/>
+<rect x="649" y="202" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26"/>
+<rect x="662" y="202" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.42"/>
+<rect x="675" y="202" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.09"/>
+<rect x="688" y="202" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.19"/>
+<rect x="701" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="714" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="202" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23"/>
+<rect x="649" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24"/>
+<rect x="662" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.33"/>
+<rect x="675" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.09"/>
+<rect x="688" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16"/>
+<rect x="701" y="215" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.21"/>
+<rect x="714" y="215" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="727" y="215" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.09"/>
+<rect x="649" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26"/>
+<rect x="662" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.52"/>
+<rect x="675" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1"/>
+<rect x="688" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1"/>
+<rect x="701" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16"/>
+<rect x="714" y="228" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08"/>
+<rect x="727" y="228" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.55"/>
+<rect x="636" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12"/>
+<rect x="649" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24"/>
+<rect x="662" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.32"/>
+<rect x="675" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.11"/>
+<rect x="688" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.15"/>
+<rect x="701" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17"/>
+<rect x="714" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1"/>
+<rect x="727" y="241" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18"/>
+<rect x="635" y="149" width="105" height="105" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="688" y="272" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A = softmax(S + M)</text>
+<text x="384" y="304" font-size="12" fill="var(--fig-muted, #74716A)">紫色深浅 = 分数高低；红色 = −∞，exp(−∞) = 0；</text>
+<text x="384" y="324" font-size="12" fill="var(--fig-muted, #74716A)">蓝色深浅 = 权重大小，每一行的权重加起来等于 1。</text>
+<text x="384" y="350" font-size="12" fill="var(--fig-muted, #74716A)">第 1 行只剩一个格子：第一个 token 只能“看见”自己。</text>
+</svg>

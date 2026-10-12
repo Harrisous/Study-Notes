@@ -1,0 +1,376 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 494" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>专家并行下一个 token 要把隐藏状态发给几台设备：不受限 vs 设备受限（M = 3）</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker></defs>
+<text x="18" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 不受限 Top-6：6 个专家恰好分散在 5 台设备上</text>
+<rect x="184" y="90" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="189" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="215" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 1</text>
+<rect x="255" y="90" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="260" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="111" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="302" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="286" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 2</text>
+<rect x="326" y="90" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="331" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="139" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="359" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="357" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 3</text>
+<rect x="397" y="90" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="402" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="428" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 4</text>
+<rect x="468" y="90" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="473" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="97" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="515" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="153" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="501" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="499" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 5</text>
+<rect x="539" y="90" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="544" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="125" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="572" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="570" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 6</text>
+<rect x="610" y="90" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="615" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="641" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 7</text>
+<rect x="681" y="90" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="686" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="97" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="111" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="700" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="111" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="125" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="139" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="153" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="712" y="187" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 8</text>
+<rect x="18" y="104" width="134" height="52" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="85" y="127.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">token t</text>
+<text x="85" y="143.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">u<tspan baseline-shift="sub" font-size="11">t</tspan>：5120 维</text>
+<path d="M152 122.0 C 170.0 66.0, 256.0 66.0, 286.0 88.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 122.0 C 170.0 59.0, 327.0 59.0, 357.0 88.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 122.0 C 170.0 52.0, 469.0 52.0, 499.0 88.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 122.0 C 170.0 45.0, 540.0 45.0, 570.0 88.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 122.0 C 170.0 38.0, 682.0 38.0, 712.0 88.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<text x="184" y="212" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">发出 5 份隐藏状态（dispatch），专家算完再收回 5 份（combine）</text>
+<text x="184" y="230" font-size="12" fill="var(--fig-muted, #74716A)">V2 的 160 个专家均匀随机取 6 个时，平均会触及 4.46 台设备（见图 10.5）</text>
+<text x="18" y="286" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 设备受限路由（M = 3）：先选 3 台设备，只在这 3 台的 60 个专家里取 Top-6</text>
+<rect x="184" y="326" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="189" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="189" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="203" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="217" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="231" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="215" y="423" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 1</text>
+<rect x="255" y="326" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="260" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="347" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="302" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="361" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="260" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="260" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="274" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="288" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="302" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="286" y="423" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 2</text>
+<rect x="326" y="326" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="331" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="331" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="345" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="359" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="373" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="357" y="423" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 3</text>
+<rect x="397" y="326" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="402" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="402" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="416" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="430" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="444" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="428" y="423" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 4</text>
+<rect x="468" y="326" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="473" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="333" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="515" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="501" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="473" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="487" y="389" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="501" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="515" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="499" y="423" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 5</text>
+<rect x="539" y="326" width="62" height="80" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<rect x="544" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="361" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="572" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="375" width="11" height="11" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.9" rx="2"/>
+<rect x="586" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="544" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="558" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="572" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="586" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="570" y="423" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">设备 6</text>
+<rect x="610" y="326" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="615" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="615" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="629" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="643" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="657" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="641" y="423" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 7</text>
+<rect x="681" y="326" width="62" height="80" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="6"/>
+<rect x="686" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="333" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="347" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="361" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="375" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="686" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="700" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="714" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<rect x="728" y="389" width="11" height="11" fill="var(--fig-muted, #74716A)" fill-opacity="0.12" stroke="var(--fig-muted, #74716A)" stroke-width="0.6" stroke-opacity="0.5" rx="2"/>
+<text x="712" y="423" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">设备 8</text>
+<rect x="18" y="340" width="134" height="52" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="85" y="363.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">token t</text>
+<text x="85" y="379.05" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">u<tspan baseline-shift="sub" font-size="11">t</tspan>：5120 维</text>
+<path d="M152 358.0 C 170.0 302.0, 256.0 302.0, 286.0 324.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 358.0 C 170.0 295.0, 469.0 295.0, 499.0 324.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<path d="M152 358.0 C 170.0 288.0, 540.0 288.0, 570.0 324.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<text x="184" y="448" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">最多发出 3 份：每台设备每步最多向外发送 M·T = 3T 份隐藏状态</text>
+<text x="184" y="466" font-size="12" fill="var(--fig-muted, #74716A)">代价：从 160 个专家中任选 6 个的自由度，缩小为“最多跨 3 台设备”的组合</text>
+</svg>

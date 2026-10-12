@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 432" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>环形 all-reduce：p = 4 时的 reduce-scatter 与 all-gather</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① reduce-scatter：每步把一块发给右邻，右邻把它加到自己那块上（黑框 = 下一步要发出的块）</text>
+<text x="126" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">开始：各有一份</text>
+<text x="62" y="80" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 0</text>
+<rect x="70" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<rect x="69" y="61" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="83" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="98" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="111" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="126" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="139" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="154" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="167" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="62" y="108" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 1</text>
+<rect x="70" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="83" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="98" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<rect x="97" y="89" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="111" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="126" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="139" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="154" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="167" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="62" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 2</text>
+<rect x="70" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="83" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="98" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="111" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="126" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<rect x="125" y="117" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="139" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="154" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="167" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="62" y="164" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 3</text>
+<rect x="70" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="83" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="98" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="111" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="126" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="139" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="154" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<rect x="153" y="145" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="167" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="83" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="111" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="139" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="167" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="294" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 1 步后</text>
+<rect x="238" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="251" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="266" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="279" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="294" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="307" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="322" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<rect x="321" y="61" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="335" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">03</text>
+<rect x="238" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<rect x="237" y="89" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="251" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">01</text>
+<rect x="266" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="279" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="294" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="307" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="322" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="335" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="238" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="251" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="266" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<rect x="265" y="117" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="279" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<rect x="294" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="307" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="322" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="335" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="238" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="251" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="266" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="279" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="294" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<rect x="293" y="145" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="307" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">23</text>
+<rect x="322" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="335" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="251" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="279" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="307" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="335" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="462" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 2 步后</text>
+<rect x="406" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="419" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="434" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="447" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="462" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<rect x="461" y="61" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="475" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">023</text>
+<rect x="490" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="503" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">03</text>
+<rect x="406" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="419" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">01</text>
+<rect x="434" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="447" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="462" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="475" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="490" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<rect x="489" y="89" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="503" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">013</text>
+<rect x="406" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<rect x="405" y="117" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="419" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">012</text>
+<rect x="434" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="447" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<rect x="462" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="475" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="490" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="503" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="406" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="419" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="434" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<rect x="433" y="145" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="447" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">123</text>
+<rect x="462" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="475" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">23</text>
+<rect x="490" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="503" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="419" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="447" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="475" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="503" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="630" y="52" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 3 步后</text>
+<rect x="574" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="587" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="602" y="62" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="601" y="61" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="615" y="79" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="630" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="643" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">023</text>
+<rect x="658" y="62" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="671" y="79" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">03</text>
+<rect x="574" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="587" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">01</text>
+<rect x="602" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="615" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="630" y="90" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="629" y="89" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="643" y="107" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="658" y="90" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="671" y="107" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">013</text>
+<rect x="574" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="587" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">012</text>
+<rect x="602" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="615" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<rect x="630" y="118" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="643" y="135" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="658" y="118" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="657" y="117" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="671" y="135" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="574" y="146" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="573" y="145" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="587" y="163" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="602" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="615" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">123</text>
+<rect x="630" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="643" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">23</text>
+<rect x="658" y="146" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" rx="3"/>
+<text x="671" y="163" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="587" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="615" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="643" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="671" y="187" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="630" y="206" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">每卡各有一块“全和”Σ</text>
+<text x="16" y="250" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② all-gather：把加好的 Σ 块沿环再传一圈，收到的直接覆盖</text>
+<text x="126" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 4 步后</text>
+<text x="62" y="308" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 0</text>
+<rect x="70" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="69" y="289" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="83" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="98" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="111" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="126" y="290" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="139" y="307" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">023</text>
+<rect x="154" y="290" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="167" y="307" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">03</text>
+<text x="62" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 1</text>
+<rect x="70" y="318" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="83" y="335" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">01</text>
+<rect x="98" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="97" y="317" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="111" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="126" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="139" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="154" y="318" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="167" y="335" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">013</text>
+<text x="62" y="364" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 2</text>
+<rect x="70" y="346" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="83" y="363" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">012</text>
+<rect x="98" y="346" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="111" y="363" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<rect x="126" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="125" y="345" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="139" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="154" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="167" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<text x="62" y="392" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">GPU 3</text>
+<rect x="70" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="83" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="98" y="374" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="111" y="391" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">123</text>
+<rect x="126" y="374" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="3"/>
+<text x="139" y="391" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">23</text>
+<rect x="154" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="153" y="373" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="167" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<text x="83" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="111" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="139" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="167" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="294" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 5 步后</text>
+<rect x="238" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="251" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="266" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="279" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="294" y="290" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="307" y="307" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">023</text>
+<rect x="322" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="321" y="289" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="335" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="238" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="237" y="317" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="251" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="266" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="279" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="294" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="307" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="322" y="318" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="335" y="335" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">013</text>
+<rect x="238" y="346" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="251" y="363" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">012</text>
+<rect x="266" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="265" y="345" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="279" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="294" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="307" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="322" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="335" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="238" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="251" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="266" y="374" width="26" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.36" rx="3"/>
+<text x="279" y="391" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">123</text>
+<rect x="294" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<rect x="293" y="373" width="28" height="28" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" rx="4"/>
+<text x="307" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="322" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="335" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<text x="251" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="279" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="307" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="335" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<text x="462" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">第 6 步后</text>
+<rect x="406" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="419" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="434" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="447" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="462" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="475" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="490" y="290" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="503" y="307" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="406" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="419" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="434" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="447" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="462" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="475" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="490" y="318" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="503" y="335" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="406" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="419" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="434" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="447" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="462" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="475" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="490" y="346" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="503" y="363" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="406" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="419" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="434" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="447" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="462" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="475" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<rect x="490" y="374" width="26" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.55" rx="3"/>
+<text x="503" y="391" font-size="11" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="600">Σ</text>
+<text x="419" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块0</text>
+<text x="447" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块1</text>
+<text x="475" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块2</text>
+<text x="503" y="415" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">块3</text>
+<rect x="558" y="272" width="172" height="150" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="6"/>
+<text x="570" y="296" font-size="12" fill="var(--fig-ink, #1C1B19)">消息共 S 字节</text>
+<text x="570" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)">每步每卡发 S/p</text>
+<text x="570" y="340" font-size="12" fill="var(--fig-ink, #1C1B19)">共 2(p−1) = 6 步</text>
+<text x="570" y="362" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">每卡共发 2(p−1)S/p</text>
+<text x="570" y="384" font-size="12" fill="var(--fig-ink, #1C1B19)">= 1.5S（p = 4）</text>
+<text x="570" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)">p 很大时趋于 2S</text>
+</svg>

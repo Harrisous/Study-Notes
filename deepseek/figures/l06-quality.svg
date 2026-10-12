@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>最优分配指数 a（给模型）与 b（给数据），以及算力 ×10 时两者各乘多少</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="200" y="36" font-size="12" fill="var(--fig-muted, #74716A)">新增算力的“分成”：a 给模型，b 给数据（a + b = 1）</text>
+<line x1="200" y1="56" x2="200" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="200" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0</text>
+<line x1="264" y1="56" x2="264" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="264" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="328" y1="56" x2="328" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="328" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="392" y1="56" x2="392" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="392" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="456" y1="56" x2="456" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="456" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="520" y1="56" x2="520" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="520" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.0</text>
+<line x1="360" y1="52" x2="360" y2="304" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="360" y="50" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5</text>
+<text x="540" y="36" font-size="12" fill="var(--fig-muted, #74716A)">算力 ×10 时</text>
+<text x="540" y="52" font-size="12" fill="var(--fig-muted, #74716A)">模型 ×　　数据 ×</text>
+<text x="190" y="88" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">Kaplan 等（WebText2）</text>
+<rect x="200" y="70" width="233.6" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="433.6" y="70" width="86.4" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.15" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="208" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)">a = 0.73</text>
+<text x="512" y="88" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">b = 0.27</text>
+<text x="540" y="88" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">5.37</text>
+<text x="604" y="88" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">1.86</text>
+<text x="190" y="136" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">Chinchilla（MassiveText）</text>
+<rect x="200" y="118" width="156.8" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="356.8" y="118" width="163.2" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.15" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="208" y="136" font-size="12" fill="var(--fig-ink, #1C1B19)">a = 0.49</text>
+<text x="512" y="136" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">b = 0.51</text>
+<text x="540" y="136" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">3.09</text>
+<text x="604" y="136" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">3.24</text>
+<text x="190" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">DeepSeek 早期内部数据</text>
+<rect x="200" y="180" width="144" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="344" y="180" width="176" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="208" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)">a = 0.450</text>
+<text x="512" y="198" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">b = 0.550</text>
+<text x="540" y="198" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">2.82</text>
+<text x="604" y="198" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">3.55</text>
+<text x="190" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">DeepSeek 当前内部数据</text>
+<rect x="200" y="228" width="167.68" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="367.68" y="228" width="152.32" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="208" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)">a = 0.524</text>
+<text x="512" y="246" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">b = 0.476</text>
+<text x="540" y="246" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">3.34</text>
+<text x="604" y="246" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">2.99</text>
+<text x="190" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">DeepSeek OpenWebText2</text>
+<rect x="200" y="276" width="184.96" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.45" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<rect x="384.96" y="276" width="135.04" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.35" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="208" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)">a = 0.578</text>
+<text x="512" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">b = 0.422</text>
+<text x="540" y="294" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">3.78</text>
+<text x="604" y="294" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">2.64</text>
+<line x1="690" y1="180" x2="690" y2="302" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<text x="700" y="233" font-size="12" fill="var(--fig-ink, #1C1B19)">数据质量</text>
+<text x="700" y="251" font-size="12" fill="var(--fig-ink, #1C1B19)">由低到高</text>
+<line x1="20" y1="168" x2="740" y2="168" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+</svg>

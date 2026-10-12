@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>分段提升为什么有效：让低精度累加器里的数永远不长大</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="16" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) DeepSeek-V3 的 FP8 矩阵乘法里，一个输出元素怎样累加（N<tspan baseline-shift="sub" font-size="11">C</tspan> = 128）</text>
+<rect x="24" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="35" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="46" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="57" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="68" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="79" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="90" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="101" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="112" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="123" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="134" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="145" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="156" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<rect x="167" y="66" width="9.5" height="26" fill="var(--fig-orange, #B4460C)" fill-opacity="0" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8" stroke-opacity="0.7"/>
+<text x="171" y="83" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">…</text>
+<text x="24" y="56" font-size="12" fill="var(--fig-ink, #1C1B19)">第 j 块：128 个乘积</text>
+<text x="24" y="110" font-size="12" fill="var(--fig-muted, #74716A)">FP8 输入逐个相乘</text>
+<line x1="184" y1="79" x2="228" y2="79" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="232" y="52" width="190" height="56" fill="var(--fig-orange, #B4460C)" fill-opacity="0.12" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" rx="6"/>
+<text x="327" y="75" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">Tensor Core 累加器</text>
+<text x="327" y="95" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">约 14 位有效数字</text>
+<text x="327" y="126" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">只装第 j 块的部分和</text>
+<text x="327" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">装满 128 项就清零重来</text>
+<line x1="426" y1="80" x2="536" y2="80" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<text x="481" y="72" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">每 128 项</text>
+<text x="481" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">复制出去</text>
+<rect x="540" y="52" width="204" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="6"/>
+<text x="642" y="75" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">CUDA core 上的 FP32 寄存器</text>
+<text x="642" y="95" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">总和 += 部分和 × s<tspan baseline-shift="sub" font-size="11">a</tspan> s<tspan baseline-shift="sub" font-size="11">w</tspan></text>
+<text x="642" y="126" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">在这里乘上两个缩放因子</text>
+<text x="642" y="142" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">FP32 有 24 位有效数字</text>
+<text x="16" y="196" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 为什么有效：累加器里的数不长大，它的半个 ulp 就一直小于大多数加数（§5 的 BF16 实验）</text>
+<rect x="82" y="251.86" width="514" height="60.35" fill="var(--fig-muted, #74716A)" fill-opacity="0.13"/>
+<line x1="82" y1="251.86" x2="596" y2="251.86" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="82" y1="421.83" x2="596" y2="421.83" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="425.83" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-16</tspan></text>
+<line x1="82" y1="385.5" x2="596" y2="385.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="389.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-14</tspan></text>
+<line x1="82" y1="349.17" x2="596" y2="349.17" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="353.17" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-12</tspan></text>
+<line x1="82" y1="312.83" x2="596" y2="312.83" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="316.83" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-10</tspan></text>
+<line x1="82" y1="276.5" x2="596" y2="276.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="280.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<line x1="82" y1="240.17" x2="596" y2="240.17" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="76" y="244.17" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="82" y1="440" x2="82" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="82" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="167.67" y1="440" x2="167.67" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="167.67" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">256</text>
+<line x1="253.33" y1="440" x2="253.33" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="253.33" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">512</text>
+<line x1="339" y1="440" x2="339" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="339" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">768</text>
+<line x1="424.67" y1="440" x2="424.67" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="424.67" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1024</text>
+<line x1="510.33" y1="440" x2="510.33" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="510.33" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1280</text>
+<line x1="596" y1="440" x2="596" y2="444" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="596" y="458" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1536</text>
+<line x1="124.83" y1="222" x2="124.83" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="167.67" y1="222" x2="167.67" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="210.5" y1="222" x2="210.5" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="253.33" y1="222" x2="253.33" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="296.17" y1="222" x2="296.17" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="339" y1="222" x2="339" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="381.83" y1="222" x2="381.83" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="424.67" y1="222" x2="424.67" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="467.5" y1="222" x2="467.5" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="510.33" y1="222" x2="510.33" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="553.17" y1="222" x2="553.17" y2="440" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+<line x1="82" y1="440" x2="596" y2="440" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="82" y1="222" x2="82" y2="440" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="339" y="478" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">已加的项数（绿色细虚线：每 128 项一块）</text>
+<text x="22" y="331" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 22 331)">累加器里那个数的半个 ulp（对数刻度）</text>
+<path d="M82.0 421.8 L82.3 421.8 L82.3 403.7 L83.3 403.7 L83.3 385.5 L84.0 385.5 L84.0 367.3 L85.3 367.3 L85.3 349.2 L90.4 349.2 L90.4 331.0 L97.7 331.0 L97.7 312.8 L113.1 312.8 L113.1 294.7 L124.8 294.7 L124.8 440.0 L125.2 440.0 L125.2 421.8 L125.5 421.8 L125.5 403.7 L126.2 403.7 L126.2 385.5 L126.8 385.5 L126.8 367.3 L128.5 367.3 L128.5 349.2 L133.2 349.2 L133.2 331.0 L140.6 331.0 L140.6 312.8 L155.6 312.8 L155.6 294.7 L167.7 294.7 L167.7 403.7 L168.3 403.7 L168.3 385.5 L169.0 385.5 L169.0 367.3 L171.7 367.3 L171.7 349.2 L175.0 349.2 L175.0 331.0 L182.4 331.0 L182.4 312.8 L198.8 312.8 L198.8 294.7 L210.5 294.7 L210.5 403.7 L210.8 403.7 L210.8 385.5 L211.8 385.5 L211.8 367.3 L213.2 367.3 L213.2 349.2 L217.5 349.2 L217.5 331.0 L224.2 331.0 L224.2 312.8 L241.0 312.8 L241.0 294.7 L253.3 294.7 L253.3 403.7 L254.0 403.7 L254.0 385.5 L255.0 385.5 L255.0 367.3 L257.7 367.3 L257.7 349.2 L261.4 349.2 L261.4 331.0 L269.4 331.0 L269.4 312.8 L288.1 312.8 L288.1 294.7 L296.2 294.7 L296.2 440.0 L296.8 440.0 L296.8 403.7 L297.2 403.7 L297.2 385.5 L298.2 385.5 L298.2 367.3 L300.2 367.3 L300.2 349.2 L304.9 349.2 L304.9 331.0 L313.9 331.0 L313.9 312.8 L328.6 312.8 L328.6 294.7 L339.0 294.7 L339.0 421.8 L339.3 421.8 L339.3 403.7 L340.0 403.7 L340.0 385.5 L341.0 385.5 L341.0 367.3 L344.4 367.3 L344.4 349.2 L348.7 349.2 L348.7 331.0 L356.7 331.0 L356.7 312.8 L373.5 312.8 L373.5 294.7 L381.8 294.7 L381.8 440.0 L382.2 440.0 L382.2 421.8 L382.5 421.8 L382.5 403.7 L382.8 403.7 L382.8 385.5 L383.5 385.5 L383.5 367.3 L384.8 367.3 L384.8 349.2 L389.2 349.2 L389.2 331.0 L398.2 331.0 L398.2 312.8 L413.6 312.8 L413.6 294.7 L424.7 294.7 L424.7 421.8 L425.0 421.8 L425.0 403.7 L426.0 403.7 L426.0 385.5 L427.0 385.5 L427.0 367.3 L429.4 367.3 L429.4 349.2 L434.4 349.2 L434.4 331.0 L441.4 331.0 L441.4 312.8 L459.8 312.8 L459.8 294.7 L467.5 294.7 L467.5 421.8 L467.8 421.8 L467.8 403.7 L468.8 403.7 L468.8 385.5 L470.2 385.5 L470.2 367.3 L471.9 367.3 L471.9 349.2 L474.9 349.2 L474.9 331.0 L483.6 331.0 L483.6 312.8 L502.6 312.8 L502.6 294.7 L510.3 294.7 L510.3 421.8 L510.7 421.8 L510.7 403.7 L511.0 403.7 L511.0 385.5 L512.0 385.5 L512.0 367.3 L514.3 367.3 L514.3 349.2 L518.0 349.2 L518.0 331.0 L529.4 331.0 L529.4 312.8 L546.5 312.8 L546.5 294.7 L553.2 294.7 L553.2 440.0 L553.5 440.0 L553.5 403.7 L554.2 403.7 L554.2 385.5 L554.5 385.5 L554.5 367.3 L556.2 367.3 L556.2 349.2 L559.2 349.2 L559.2 331.0 L569.2 331.0 L569.2 312.8 L586.6 312.8 L586.6 294.7 L596.0 294.7" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M82.0 421.8 L82.3 421.8 L82.3 403.7 L83.3 403.7 L83.3 385.5 L84.0 385.5 L84.0 367.3 L85.3 367.3 L85.3 349.2 L90.4 349.2 L90.4 331.0 L97.7 331.0 L97.7 312.8 L113.1 312.8 L113.1 294.7 L145.2 294.7 L145.2 276.5 L210.5 276.5 L210.5 258.3 L415.0 258.3 L415.0 240.2 L596.0 240.2" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="415.3" cy="240.17" r="4" fill="var(--fig-orange, #B4460C)"/>
+<text x="405.3" y="228.17" font-size="12" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">第 996 项，和到 4：半个 ulp = 1/64 &gt; 0.01，</text>
+<text x="405.3" y="244.17" font-size="12" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">此后每一项都被吞没</text>
+<text x="590" y="267.86" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">最大的加数 0.01</text>
+<line x1="612" y1="232" x2="636" y2="232" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4"/>
+<text x="642" y="236" font-size="12" fill="var(--fig-orange, #B4460C)">顺序累加</text>
+<text x="642" y="252" font-size="12" fill="var(--fig-muted, #74716A)">和一直长大</text>
+<line x1="612" y1="276" x2="636" y2="276" stroke="var(--fig-green, #16704A)" stroke-width="1.8"/>
+<text x="642" y="280" font-size="12" fill="var(--fig-green, #16704A)">分段累加</text>
+<text x="642" y="296" font-size="12" fill="var(--fig-muted, #74716A)">每 128 项清零，</text>
+<text x="642" y="312" font-size="12" fill="var(--fig-muted, #74716A)">半个 ulp ≤ 1/512</text>
+<rect x="612" y="328" width="24" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.13"/>
+<text x="642" y="340" font-size="12" fill="var(--fig-muted, #74716A)">89% 的加数</text>
+<text x="642" y="356" font-size="12" fill="var(--fig-muted, #74716A)">在 0.001–0.01</text>
+<text x="612" y="388" font-size="12" fill="var(--fig-muted, #74716A)">加数小于曲线的</text>
+<text x="612" y="405" font-size="12" fill="var(--fig-muted, #74716A)">高度就被吞没</text>
+<text x="612" y="422" font-size="12" fill="var(--fig-muted, #74716A)">（M8.8）</text>
+</svg>

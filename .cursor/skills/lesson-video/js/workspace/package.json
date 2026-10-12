@@ -1,0 +1,13 @@
+{
+  "name": "study-notes-video",
+  "private": true,
+  "description": "Remotion workspace for Study-Notes lesson videos; sources live in the repo, only deps and generated media live here.",
+  "scripts": {},
+  "dependencies": {
+    "@remotion/cli": "^4.0.530",
+    "@remotion/media-utils": "^4.0.530",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.530"
+  }
+}

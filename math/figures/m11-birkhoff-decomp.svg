@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 476" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>把主算例 A 拆成 4 个置换矩阵的凸组合：每一步找一条全为正的对角线，减去它上面的最小值</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="24" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 结果：A 等于 4 个置换矩阵的加权和，权重非负、加起来是 1</text>
+<rect x="42" y="52" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="56" y="71" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="74" y="52" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="88" y="71" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<text x="120" y="71" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="42" y="84" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="56" y="103" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="74" y="84" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="88" y="103" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="106" y="84" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="120" y="103" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="42" y="116" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="56" y="135" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="74" y="116" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="88" y="135" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="106" y="116" width="28" height="28" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="120" y="135" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<path d="M41 50 h-5 v96 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M135 50 h5 v96 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="152" y="104" font-size="20" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">=</text>
+<text x="190" y="104" font-size="15" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="211" y="69" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="231" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="251" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="211" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="231" y="89" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="251" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="211" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="231" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="251" y="109" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<text x="240" y="144" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">(1,2,3)</text>
+<text x="284" y="104" font-size="18" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<text x="316" y="104" font-size="15" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="337" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="357" y="69" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="377" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="337" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="357" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="377" y="89" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="337" y="109" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="357" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="377" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<text x="366" y="144" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">(2,3,1)</text>
+<text x="410" y="104" font-size="18" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<text x="442" y="104" font-size="15" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="463" y="69" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="483" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="503" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="463" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="483" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="503" y="89" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="463" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="483" y="109" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="503" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<text x="492" y="144" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">(1,3,2)</text>
+<text x="536" y="104" font-size="18" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+</text>
+<text x="568" y="104" font-size="15" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">0.1</text>
+<rect x="589" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="609" y="69" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="629" y="69" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="589" y="89" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<rect x="609" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="629" y="89" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="589" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="609" y="109" width="18" height="18" fill="var(--fig-grid, #EDE9E0)" fill-opacity="1" rx="3"/>
+<rect x="629" y="109" width="18" height="18" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" rx="3"/>
+<text x="618" y="144" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">(2,1,3)</text>
+<text x="24" y="188" font-size="12" fill="var(--fig-muted, #74716A)">紫格 = 1，灰格 = 0；每个小方块下面是置换的一行写法 (π(1), π(2), π(3))：第 i 行的 1 在第 π(i) 列。</text>
+<text x="24" y="226" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 贪心过程：蓝框 = 选中的一条正对角线，红字 = 其中最小的那个数（它被减成 0）</text>
+<text x="24" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 1 步：余量 R₀</text>
+<rect x="34" y="264" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="49" y="284" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="68" y="264" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="83" y="284" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<text x="117" y="284" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="34" y="298" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="49" y="318" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<rect x="68" y="298" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="83" y="318" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="102" y="298" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="117" y="318" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="34" y="332" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="49" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="68" y="332" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="83" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="102" y="332" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="117" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<path d="M33 262 h-5 v102 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M133 262 h5 v102 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="24" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角线 (1,2,3)：</text>
+<text x="24" y="404" font-size="12" fill="var(--fig-muted, #74716A)">0.6、0.3、0.4，最小 0.3</text>
+<text x="24" y="422" font-size="12" fill="var(--fig-muted, #74716A)">每行、每列之和都是 1</text>
+<line x1="146" y1="313" x2="200" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<text x="170" y="304" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3·P</text>
+<text x="210" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 2 步：余量 R₁</text>
+<rect x="220" y="264" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="235" y="284" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="254" y="264" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="269" y="284" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.4</text>
+<text x="303" y="284" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="220" y="298" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="235" y="318" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<text x="269" y="318" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="288" y="298" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="303" y="318" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<rect x="220" y="332" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="235" y="352" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="254" y="332" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="269" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.3</text>
+<rect x="288" y="332" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="303" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<path d="M219 262 h-5 v102 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M319 262 h5 v102 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="210" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角线 (2,3,1)：</text>
+<text x="210" y="404" font-size="12" fill="var(--fig-muted, #74716A)">0.4、0.6、0.3，最小 0.3</text>
+<text x="210" y="422" font-size="12" fill="var(--fig-muted, #74716A)">每行、每列之和都是 0.7</text>
+<line x1="332" y1="313" x2="386" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<text x="356" y="304" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3·P</text>
+<text x="396" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 3 步：余量 R₂</text>
+<rect x="406" y="264" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="421" y="284" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="440" y="264" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="455" y="284" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<text x="489" y="284" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="406" y="298" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="421" y="318" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<text x="455" y="318" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="474" y="298" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="489" y="318" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.3</text>
+<text x="421" y="352" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="440" y="332" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="455" y="352" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.3</text>
+<rect x="474" y="332" width="30" height="30" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="489" y="352" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.1</text>
+<path d="M405 262 h-5 v102 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M505 262 h5 v102 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="396" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角线 (1,3,2)：</text>
+<text x="396" y="404" font-size="12" fill="var(--fig-muted, #74716A)">0.3、0.3、0.3，最小 0.3</text>
+<text x="396" y="422" font-size="12" fill="var(--fig-muted, #74716A)">每行、每列之和都是 0.4</text>
+<line x1="518" y1="313" x2="572" y2="313" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<text x="542" y="304" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3·P</text>
+<text x="582" y="252" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">第 4 步：余量 R₃</text>
+<text x="607" y="284" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="626" y="264" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="641" y="284" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.1</text>
+<text x="675" y="284" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="592" y="298" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="607" y="318" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.1</text>
+<text x="641" y="318" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="675" y="318" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="607" y="352" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="641" y="352" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="660" y="332" width="30" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" rx="4"/>
+<text x="675" y="352" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.1</text>
+<path d="M591 262 h-5 v102 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<path d="M691 262 h5 v102 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="582" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角线 (2,1,3)：</text>
+<text x="582" y="404" font-size="12" fill="var(--fig-muted, #74716A)">0.1、0.1、0.1，最小 0.1</text>
+<text x="582" y="422" font-size="12" fill="var(--fig-muted, #74716A)">每行、每列之和都是 0.1</text>
+<text x="24" y="464" font-size="12" fill="var(--fig-muted, #74716A)">第 4 步减完余量全为 0，权重 0.3 + 0.3 + 0.3 + 0.1 = 1。</text>
+</svg>

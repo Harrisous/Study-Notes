@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>H800 上解码注意力的屋顶线：MHA、GQA 与吸收后的 MLA</title>
+
+<line x1="74" y1="330" x2="690" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="68" y="334" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="74" y1="237.91" x2="690" y2="237.91" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="68" y="241.91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="74" y1="145.82" x2="690" y2="145.82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="68" y="149.82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="74" y1="53.72" x2="690" y2="53.72" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="68" y="57.72" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="125.48" y1="26" x2="125.48" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="125.48" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="296.49" y1="26" x2="296.49" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="296.49" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="467.51" y1="26" x2="467.51" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="467.51" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="638.52" y1="26" x2="638.52" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="638.52" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1000</text>
+<line x1="74" y1="330" x2="690" y2="330" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="74" y1="26" x2="74" y2="330" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<text x="382" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">算术强度（每读 1 字节缓存做多少次运算，FLOP/B，对数刻度）</text>
+<text x="20" y="178" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 20 178)">可达算力（TFLOP/s，对数刻度）</text>
+<path d="M74 309.37 L547.98 54.12 L690 54.12" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M537.96 59.52 L690 59.52" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" stroke-dasharray="5 4" stroke-linejoin="round"/>
+<text x="155.59" y="253.43" font-size="12" fill="var(--fig-ink, #1C1B19)" transform="rotate(-28.3 155.59 253.43)">带宽斜线 3.35 TB/s</text>
+<text x="686" y="47.12" font-size="11.5" fill="var(--fig-ink, #1C1B19)" text-anchor="end">名义峰值 990</text>
+<text x="686" y="75.52" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">降频后约 865</text>
+<line x1="547.98" y1="330" x2="547.98" y2="54.12" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="537.96" y1="330" x2="537.96" y2="59.52" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="552.98" y="322" font-size="11" fill="var(--fig-muted, #74716A)">295.5</text>
+<text x="532.96" y="322" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">258.2</text>
+<text x="552.98" y="308" font-size="11" fill="var(--fig-muted, #74716A)">屋脊点</text>
+<circle cx="125.48" cy="281.65" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="135.48" y="285.65" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">MHA 式缓存：1 FLOP/B → 3.4 TFLOP/s</text>
+<circle cx="279.92" cy="198.48" r="6" fill="var(--fig-muted, #74716A)" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="289.92" y="202.48" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">GQA-8（DeepSeek 67B）：8 FLOP/B → 26.8 TFLOP/s</text>
+<circle cx="533.08" cy="62.15" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="521.08" y="64.15" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end" font-weight="600">MLA 吸收，s<tspan dy="3.6" font-size="11">q</tspan><tspan dy="-3.6"> = 1：241.8 FLOP/B，紧贴屋脊点左侧</tspan></text>
+<circle cx="584.56" cy="54.12" r="6" fill="var(--fig-orange, #B4460C)" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="578.56" y="40.12" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="end" font-weight="600">MLA 吸收，s<tspan dy="3.6" font-size="11">q</tspan><tspan dy="-3.6"> = 2（MTP）：483.6 FLOP/B</tspan></text>
+</svg>

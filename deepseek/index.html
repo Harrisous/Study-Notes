@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek 科技树：从 GPT 到 DeepSeek-V4.1</title>
+<meta name="description" content="一门从标准 GPT Transformer 讲到 DeepSeek-V4.1-Flash 的中文课程：每个架构与训练创新背后的问题、公式、推导和账单。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+<!-- Built by .cursor/skills/lesson-markdown/scripts/build_index.py from src/index.yaml -->
+<style>
+:root{
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", Roboto, Helvetica, Arial, sans-serif;
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", ui-serif, Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --bg:#FBFAF7; --surface:#FFFFFF; --surface-2:#F4F2ED; --ink:#1C1B19; --ink-2:#4A4843; --muted:#7A776F; --line:#E4E0D7;
+  --blue:#2563EB; --blue-bg:#EBF1FE; --purple:#7038B8; --purple-bg:#F3EDFC; --green:#16704A; --green-bg:#E9F4EE;
+  --amber:#8A6508; --amber-bg:#FCF7E8;
+  --maxw: 860px; --r: 12px;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 4px 14px rgba(28,27,25,.05);
+  --shadow-lift: 0 2px 4px rgba(28,27,25,.06), 0 12px 28px rgba(28,27,25,.10);
+}
+html[data-theme="dark"]{
+  --bg:#14161A; --surface:#1B1E24; --surface-2:#22262D; --ink:#ECEAE5; --ink-2:#C3C0B9; --muted:#8E8B84; --line:#2E333B;
+  --blue:#7DA6FF; --blue-bg:#1B2436; --purple:#B490F0; --purple-bg:#261D38; --green:#5EC191; --green-bg:#12251C;
+  --amber:#DFB44E; --amber-bg:#262010;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  --shadow-lift: 0 2px 6px rgba(0,0,0,.35), 0 14px 32px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.bar{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:650;display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));flex:none}
+.pill{font-size:.875rem;color:var(--muted);padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;font:inherit;font-size:.875rem;cursor:pointer}
+.pill:hover{color:var(--ink);border-color:var(--muted)}
+.actions{display:flex;gap:10px;align-items:center}
+.hero{padding:56px 0 28px}
+h1{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.2;margin:0 0 14px;font-weight:700;text-wrap:balance}
+.lede{color:var(--ink-2);font-size:1.06rem;max-width:62ch;margin:0}
+.aside{margin:22px 0 0;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink-2);font-size:.94rem}
+.aside b{color:var(--ink)}
+h2{font-size:.78rem;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:46px 0 6px}
+.blurb{color:var(--muted);font-size:.92rem;margin:0 0 14px;max-width:70ch}
+.grid{display:grid;gap:12px}
+@media (min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
+a.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--muted)}
+a.card:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.card.wip{opacity:.55;box-shadow:none}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:2px 9px;border-radius:999px;margin-bottom:8px;color:var(--blue);background:var(--blue-bg)}
+.tag.m{color:var(--green);background:var(--green-bg)}
+.tag.x{color:var(--purple);background:var(--purple-bg)}
+.card h3{font-family:var(--serif);font-size:1.08rem;line-height:1.35;margin:0 0 4px;font-weight:700}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6}
+.wipnote{font-size:.75rem;color:var(--amber);margin-left:6px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:.875rem}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../index.html"><span class="dot"></span>Study Notes</a>
+<span class="actions"><a class="pill" href="../index.html">全部笔记</a><button class="pill" id="theme" type="button">深色</button></span></div></header>
+<main class="wrap">
+<section class="hero"><h1>DeepSeek 科技树：从 GPT 到 DeepSeek-V4.1</h1><p class="lede">从标准 GPT 的一次前向传播讲起，沿着 DeepSeek 的每一篇技术报告一路走到 2026 年 9 月的 V4.1-Flash。每一课回答同一类问题：上一代模型的账单是什么，这一代用什么数学把它压下去，代价又是什么。</p><div class="aside"><b>怎么读：</b>按顺序读，每课都接着上一课留下的问题。数学不熟的地方，课里的黄色“前置知识”框会链接到 <a href="../math/index.html" style="color:var(--blue)">数学补课</a> 的对应小节。<b>六条主线</b>：注意力与 KV cache 经济学 · 前馈层的稀疏化（MoE） · 数值精度与训练系统 · 训练目标与后训练（RL） · 残差流与记忆 · 规模化规律与优化器。</div></section>
+<h2>总览</h2>
+<div class="grid">
+<a class="card" href="lesson-00-tech-tree.html"><span class="tag x">第 0 课</span><h3>科技树总览</h3><p>一张时间轴、六条主线、每个模型的规格表，以及这门课的读法。</p></a>
+</div>
+<h2>第一部分 · GPT 的地基</h2>
+<p class="blurb">标准 GPT 的架构、训练、对齐与推理。后面所有 DeepSeek 的创新，都是在给这四课里的某一张账单打折。</p>
+<div class="grid">
+<a class="card" href="lesson-01-transformer-anatomy.html"><span class="tag">第 1 课</span><h3>Transformer 解剖：GPT 的一次前向传播</h3><p>从 token 到 logits，每一步的张量形状、公式和它在数学上的意义。</p></a>
+<a class="card" href="lesson-02-gpt-training.html"><span class="tag">第 2 课</span><h3>GPT 的训练：预训练、优化与 scaling laws</h3><p>下一词预测、交叉熵、AdamW 与学习率调度、6ND 与规模化规律。</p></a>
+<a class="card" href="lesson-03-alignment-rlhf.html"><span class="tag">第 3 课</span><h3>从预训练模型到助手：SFT、RLHF 与 DPO</h3><p>奖励模型、PPO 的裁剪目标、KL 约束与 DPO 的闭式推导。</p></a>
+<a class="card" href="lesson-04-inference-kv-cache.html"><span class="tag">第 4 课</span><h3>推理：自回归解码、KV cache 与带宽墙</h3><p>KV cache 从零推导、每 token 的字节账单、roofline、MQA/GQA 与投机解码。</p></a>
+<a class="card" href="lesson-05-modern-block.html"><span class="tag">第 5 课</span><h3>现代 Transformer 积木</h3><p>RoPE 的复数推导、RMSNorm、SwiGLU，以及 YaRN 这类上下文扩展方法。</p></a>
+</div>
+<h2>第二部分 · DeepSeek 的起点（2024 上半年）</h2>
+<div class="grid">
+<a class="card" href="lesson-06-deepseek-llm.html"><span class="tag">第 6 课</span><h3>DeepSeek LLM：以长期主义做 scaling</h3><p>超参数的规模化规律、用非嵌入 FLOPs 度量模型规模、数据质量如何改变最优分配。</p></a>
+<a class="card" href="lesson-07-deepseekmoe.html"><span class="tag">第 7 课</span><h3>DeepSeekMoE：细粒度专家与共享专家</h3><p>MoE 的来龙去脉、组合数爆炸的直觉、共享专家与负载均衡损失。</p></a>
+<a class="card" href="lesson-08-deepseekmath-grpo.html"><span class="tag">第 8 课</span><h3>DeepSeekMath 与 GRPO</h3><p>去掉价值网络的组相对策略优化、KL 的无偏估计器、统一的梯度视角。</p></a>
+</div>
+<h2>第三部分 · V2 与 V3（2024）</h2>
+<div class="grid">
+<a class="card" href="lesson-09-v2-mla.html"><span class="tag">第 9 课</span><h3>DeepSeek-V2（上）：多头潜在注意力 MLA</h3><p>低秩 KV 压缩、矩阵吸收、解耦 RoPE，以及每 token 缓存省下了多少字节。</p></a>
+<a class="card" href="lesson-10-v2-moe-training.html"><span class="tag">第 10 课</span><h3>DeepSeek-V2（下）：规模化 MoE、长上下文与对齐</h3><p>设备受限路由、三种均衡损失、YaRN 扩到 128K、GRPO 对齐。</p></a>
+<a class="card" href="lesson-11-v3-architecture.html"><span class="tag">第 11 课</span><h3>DeepSeek-V3（上）：无辅助损失均衡与多 token 预测</h3><p>用一个只管路由的偏置代替辅助损失；MTP 的因果链与投机解码。</p></a>
+<a class="card" href="lesson-12-v3-infrastructure.html"><span class="tag">第 12 课</span><h3>DeepSeek-V3（下）：FP8、DualPipe 与训练成本</h3><p>细粒度 FP8 量化、累加精度、流水线气泡、跨节点通信与推理部署。</p></a>
+</div>
+<h2>第四部分 · 推理模型与稀疏注意力（2025）</h2>
+<div class="grid">
+<a class="card" href="lesson-13-r1-reasoning.html"><span class="tag">第 13 课</span><h3>DeepSeek-R1：用强化学习激发推理</h3><p>R1-Zero 的纯 RL、规则奖励、多阶段流水线、蒸馏与失败的尝试。</p></a>
+<a class="card" href="lesson-14-sparse-attention.html"><span class="tag">第 14 课</span><h3>稀疏注意力：从 NSA 到 DSA</h3><p>可训练的原生稀疏注意力、lightning indexer 与 top-k 选择。</p></a>
+<a class="card" href="lesson-15-v3-2-agents.html"><span class="tag">第 15 课</span><h3>DeepSeek-V3.1 / V3.2：混合思考、规模化 RL 与智能体</h3><p>一模两用的思考模式、稳定规模化 GRPO 的改动、智能体任务合成。</p></a>
+</div>
+<h2>第五部分 · 新架构（2025 年末至今）</h2>
+<div class="grid">
+<a class="card" href="lesson-16-mhc.html"><span class="tag">第 16 课</span><h3>残差流的新几何：Hyper-Connections 与 mHC</h3><p>多条残差流、双随机矩阵与 Sinkhorn 迭代，让信号既不爆炸也不消失。</p></a>
+<a class="card" href="lesson-17-engram-ocr.html"><span class="tag">第 17 课</span><h3>记忆的另外两种形态：Engram 与 DeepSeek-OCR</h3><p>N-gram 查表式条件记忆，以及把文字上下文压成视觉 token。</p></a>
+<a class="card" href="lesson-18-v4.html"><span class="tag">第 18 课</span><h3>DeepSeek-V4：百万 token 上下文</h3><p>CSA 与 HCA 混合注意力、mHC、Muon 优化器与百万上下文的账单。</p></a>
+<a class="card" href="lesson-19-v4-1-flash.html"><span class="tag">第 19 课</span><h3>DeepSeek-V4.1-Flash：把 KV cache 压到极限</h3><p>因果编码器-解码器、跨层 KV 复用、FP4 KV 缓存与持久化缓存的回放。</p></a>
+</div>
+<h2>复盘</h2>
+<div class="grid">
+<a class="card" href="lesson-20-retrospective.html"><span class="tag x">第 20 课</span><h3>总复盘：六条主线与开放问题</h3><p>每条主线的演进表、被放弃的路线，以及跨课的综合练习。</p></a>
+<a class="card" href="../math/index.html"><span class="tag m">数学补课</span><h3>数学补课（11 课）</h3><p>线性代数、概率与信息论、微积分、优化、浮点数、强化学习数学、算力算术、双随机矩阵。</p></a>
+</div>
+</main>
+<footer class="wrap">课程源文件在 <code>deepseek/src/</code>（Markdown），研究笔记与勘误在 <code>deepseek/reference-docs/</code>。</footer>
+<script>
+(function(){
+  var btn = document.getElementById('theme'), root = document.documentElement;
+  function apply(t){ root.setAttribute('data-theme', t); btn.textContent = t === 'dark' ? '浅色' : '深色'; }
+  var saved = null; try { saved = localStorage.getItem('study-notes-theme'); } catch (e) {}
+  apply(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next); try { localStorage.setItem('study-notes-theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 440" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>每 token 全局 KV 字节随发布时间的变化</title>
+
+<line x1="78" y1="372.06" x2="610" y2="372.06" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="364.52" x2="610" y2="364.52" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="358.37" x2="610" y2="358.37" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="353.16" x2="610" y2="353.16" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="348.65" x2="610" y2="348.65" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="344.67" x2="610" y2="344.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="341.11" x2="610" y2="341.11" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="78" y1="317.7" x2="610" y2="317.7" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="304" x2="610" y2="304" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="294.28" x2="610" y2="294.28" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="286.75" x2="610" y2="286.75" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="280.59" x2="610" y2="280.59" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="275.38" x2="610" y2="275.38" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="270.87" x2="610" y2="270.87" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="266.89" x2="610" y2="266.89" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<text x="70" y="345.11" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">3</tspan></text>
+<line x1="78" y1="263.33" x2="610" y2="263.33" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="78" y1="239.92" x2="610" y2="239.92" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="226.22" x2="610" y2="226.22" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="216.51" x2="610" y2="216.51" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="208.97" x2="610" y2="208.97" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="202.81" x2="610" y2="202.81" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="197.6" x2="610" y2="197.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="193.09" x2="610" y2="193.09" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="189.11" x2="610" y2="189.11" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<text x="70" y="267.33" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="78" y1="185.56" x2="610" y2="185.56" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="78" y1="162.14" x2="610" y2="162.14" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="148.45" x2="610" y2="148.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="138.73" x2="610" y2="138.73" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="131.19" x2="610" y2="131.19" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="125.03" x2="610" y2="125.03" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="119.83" x2="610" y2="119.83" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="115.32" x2="610" y2="115.32" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="111.34" x2="610" y2="111.34" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<text x="70" y="189.56" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<line x1="78" y1="107.78" x2="610" y2="107.78" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="78" y1="84.36" x2="610" y2="84.36" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="70.67" x2="610" y2="70.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="60.95" x2="610" y2="60.95" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="53.41" x2="610" y2="53.41" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="47.25" x2="610" y2="47.25" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="42.05" x2="610" y2="42.05" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="37.54" x2="610" y2="37.54" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<line x1="78" y1="33.56" x2="610" y2="33.56" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.8"/>
+<text x="70" y="111.78" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">6</tspan></text>
+<line x1="78" y1="30" x2="610" y2="30" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="70" y="34" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">7</tspan></text>
+<text x="24" y="205" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 24 205)">每 token 全局 KV（字节，对数轴）</text>
+<line x1="610" y1="340.31" x2="615" y2="340.31" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="618" y="344.31" font-size="12" fill="var(--fig-muted, #74716A)">1 GiB</text>
+<line x1="610" y1="262.53" x2="615" y2="262.53" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="618" y="266.53" font-size="12" fill="var(--fig-muted, #74716A)">10 GiB</text>
+<line x1="610" y1="184.75" x2="615" y2="184.75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="618" y="188.75" font-size="12" fill="var(--fig-muted, #74716A)">100 GiB</text>
+<line x1="610" y1="106.98" x2="615" y2="106.98" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="618" y="110.98" font-size="12" fill="var(--fig-muted, #74716A)">1000 GiB</text>
+<text x="714" y="205" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(90 714 205)">一个 1M（2<tspan baseline-shift="super" font-size="11">20</tspan>）token 请求的 KV</text>
+<line x1="78" y1="380" x2="610" y2="380" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="78" y1="380" x2="78" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="78" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 月</text>
+<line x1="122.66" y1="380" x2="122.66" y2="386" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="122.66" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2024</text>
+<line x1="122.66" y1="30" x2="122.66" y2="380" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<line x1="166.83" y1="380" x2="166.83" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="166.83" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4 月</text>
+<line x1="211" y1="380" x2="211" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="211" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7 月</text>
+<line x1="255.66" y1="380" x2="255.66" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="255.66" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 月</text>
+<line x1="300.31" y1="380" x2="300.31" y2="386" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="300.31" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2025</text>
+<line x1="300.31" y1="30" x2="300.31" y2="380" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<line x1="344" y1="380" x2="344" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="344" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4 月</text>
+<line x1="388.17" y1="380" x2="388.17" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="388.17" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7 月</text>
+<line x1="432.83" y1="380" x2="432.83" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="432.83" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 月</text>
+<line x1="477.49" y1="380" x2="477.49" y2="386" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="477.49" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2026</text>
+<line x1="477.49" y1="30" x2="477.49" y2="380" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.8"/>
+<line x1="521.17" y1="380" x2="521.17" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="521.17" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4 月</text>
+<line x1="565.34" y1="380" x2="565.34" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="565.34" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7 月</text>
+<line x1="610" y1="380" x2="610" y2="383" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="610" y="397" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 月</text>
+<text x="344" y="424" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">公开发布日</text>
+<line x1="78" y1="194.7" x2="610" y2="194.7" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="606" y="188.7" font-size="11.5" fill="var(--fig-red, #A3231C)" text-anchor="end">80 GB 显存恰好放下一个 1M token 请求的 KV（76,294 字节/token）</text>
+<line x1="78" y1="55.37" x2="610" y2="55.37" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" stroke-dasharray="2 3"/>
+<text x="606" y="49.37" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">参照：GPT-3 175B（2020，MHA）4,718,592</text>
+<path d="M106.64 139.66 L183.82 198.03 L297.4 197.47 L462.44 210.3 L532.34 298.66 L599.81 345.05" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6" stroke-dasharray="6 4" stroke-opacity="0.8"/>
+<text x="135.23" y="176.85" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end" font-weight="700">÷5.63</text>
+<text x="379.92" y="223.89" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">÷1.46</text>
+<text x="489.39" y="248.48" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="end" font-weight="700">÷13.68</text>
+<text x="574.07" y="325.85" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="700">÷3.95</text>
+<circle cx="106.64" cy="131.77" r="4.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.6"/>
+<text x="116.64" y="125.77" font-size="12" fill="var(--fig-muted, #74716A)">7B（MHA） 491,520</text>
+<circle cx="106.64" cy="139.66" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="116.64" y="143.66" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">67B（GQA-8） 389,120</text>
+<circle cx="127.51" cy="157.51" r="4.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.6"/>
+<text x="137.51" y="158.51" font-size="12" fill="var(--fig-muted, #74716A)">MoE 16B（MHA） 229,376</text>
+<circle cx="183.82" cy="198.03" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="174.82" y="216.03" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">V2 69,120</text>
+<circle cx="183.82" cy="231.16" r="5.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.8"/>
+<text x="193.82" y="236.16" font-size="12" fill="var(--fig-ink, #1C1B19)">V2 部署（平均 6 bit） 25,920</text>
+<circle cx="297.4" cy="197.47" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="303.4" y="216.47" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">V3 70,272</text>
+<circle cx="462.44" cy="210.3" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="472.44" y="214.3" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">V3.2 48,068</text>
+<circle cx="532.34" cy="286.54" r="4.5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.6"/>
+<text x="503.34" y="287.54" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">V4-Pro（推算） 5,031</text>
+<circle cx="532.34" cy="298.66" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="523.34" y="312.66" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">V4-Flash 3,514</text>
+<circle cx="599.81" cy="345.05" r="5.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2"/>
+<text x="590.81" y="362.05" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">V4.1-Flash 890</text>
+</svg>

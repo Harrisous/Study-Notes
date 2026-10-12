@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>RoPE 各对维度的波长（128 维与 64 维，底数 10000，对数纵轴）</title>
+
+<line x1="92" y1="360" x2="600" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="364" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">0</tspan></text>
+<line x1="92" y1="298" x2="600" y2="298" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="302" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">1</tspan></text>
+<line x1="92" y1="236" x2="600" y2="236" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="240" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">2</tspan></text>
+<line x1="92" y1="174" x2="600" y2="174" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="178" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">3</tspan></text>
+<line x1="92" y1="112" x2="600" y2="112" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="116" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="92" y1="50" x2="600" y2="50" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<line x1="92" y1="50" x2="92" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="92" y="377" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="92" y="42" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<line x1="219" y1="50" x2="219" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="219" y="377" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<text x="219" y="42" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">8</text>
+<line x1="346" y1="50" x2="346" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="346" y="377" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<text x="346" y="42" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">16</text>
+<line x1="473" y1="50" x2="473" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="473" y="377" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">48</text>
+<text x="473" y="42" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">24</text>
+<line x1="600" y1="50" x2="600" y2="360" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="600" y="377" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<text x="600" y="42" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">32</text>
+<line x1="92" y1="360" x2="600" y2="360" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="92" y1="50" x2="92" y2="360" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="346" y="396" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 i 对（d<tspan baseline-shift="sub" font-size="11">h</tspan> = 128，共 64 对）</text>
+<text x="346" y="24" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">第 i 对（DeepSeek 的 64 维 RoPE，共 32 对）</text>
+<text x="24" y="205" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 24 205)">波长 λ<tspan baseline-shift="sub" font-size="11">i</tspan>（token，对数刻度）</text>
+<line x1="92" y1="154.7" x2="600" y2="154.7" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="606" y="166.7" font-size="12" fill="var(--fig-muted, #74716A)">LLaMA 预训练长度 2048</text>
+<line x1="92" y1="136.03" x2="600" y2="136.03" stroke="var(--fig-amber, #8A6508)" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="606" y="136.03" font-size="12" fill="var(--fig-amber, #8A6508)">DeepSeek 预训练长度 4096</text>
+<rect x="92" y="50" width="508" height="86.03" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08"/>
+<path d="M92 310.51 L99.94 306.64 L107.88 302.76 L115.81 298.89 L123.75 295.01 L131.69 291.14 L139.62 287.26 L147.56 283.39 L155.5 279.51 L163.44 275.64 L171.38 271.76 L179.31 267.89 L187.25 264.01 L195.19 260.14 L203.12 256.26 L211.06 252.39 L219 248.51 L226.94 244.64 L234.88 240.76 L242.81 236.89 L250.75 233.01 L258.69 229.14 L266.62 225.26 L274.56 221.39 L282.5 217.51 L290.44 213.64 L298.38 209.76 L306.31 205.89 L314.25 202.01 L322.19 198.14 L330.12 194.26 L338.06 190.39 L346 186.51 L353.94 182.64 L361.88 178.76 L369.81 174.89 L377.75 171.01 L385.69 167.14 L393.62 163.26 L401.56 159.39 L409.5 155.51 L417.44 151.64 L425.38 147.76 L433.31 143.89 L441.25 140.01 L449.19 136.14 L457.12 132.26 L465.06 128.39 L473 124.51 L480.94 120.64 L488.88 116.76 L496.81 112.89 L504.75 109.01 L512.69 105.14 L520.62 101.26 L528.56 97.39 L536.5 93.51 L544.44 89.64 L552.38 85.76 L560.31 81.89 L568.25 78.01 L576.19 74.14 L584.12 70.26 L592.06 66.39" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" stroke-linejoin="round"/>
+<circle cx="92" cy="310.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="99.94" cy="306.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="107.88" cy="302.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="115.81" cy="298.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="123.75" cy="295.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="131.69" cy="291.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="139.62" cy="287.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="147.56" cy="283.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="155.5" cy="279.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="163.44" cy="275.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="171.38" cy="271.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="179.31" cy="267.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="187.25" cy="264.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="195.19" cy="260.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="203.12" cy="256.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="211.06" cy="252.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="219" cy="248.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="226.94" cy="244.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="234.88" cy="240.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="242.81" cy="236.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="250.75" cy="233.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="258.69" cy="229.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="266.62" cy="225.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="274.56" cy="221.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="282.5" cy="217.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="290.44" cy="213.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="298.38" cy="209.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="306.31" cy="205.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="314.25" cy="202.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="322.19" cy="198.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="330.12" cy="194.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="338.06" cy="190.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="346" cy="186.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="353.94" cy="182.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="361.88" cy="178.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="369.81" cy="174.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="377.75" cy="171.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="385.69" cy="167.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="393.62" cy="163.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="401.56" cy="159.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="409.5" cy="155.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="417.44" cy="151.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="425.38" cy="147.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="433.31" cy="143.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="441.25" cy="140.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="449.19" cy="136.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="457.12" cy="132.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="465.06" cy="128.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="473" cy="124.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="480.94" cy="120.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="488.88" cy="116.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="496.81" cy="112.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="504.75" cy="109.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="512.69" cy="105.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="520.62" cy="101.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="528.56" cy="97.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="536.5" cy="93.51" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="544.44" cy="89.64" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="552.38" cy="85.76" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="560.31" cy="81.89" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="568.25" cy="78.01" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="576.19" cy="74.14" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="584.12" cy="70.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="592.06" cy="66.39" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="92" cy="310.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="107.88" cy="302.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="123.75" cy="295.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="139.62" cy="287.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="155.5" cy="279.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="171.38" cy="271.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="187.25" cy="264.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="203.12" cy="256.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="219" cy="248.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="234.88" cy="240.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="250.75" cy="233.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="266.62" cy="225.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="282.5" cy="217.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="298.38" cy="209.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="314.25" cy="202.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="330.12" cy="194.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="346" cy="186.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="361.88" cy="178.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="377.75" cy="171.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="393.62" cy="163.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="409.5" cy="155.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="425.38" cy="147.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="441.25" cy="140.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="457.12" cy="132.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="473" cy="124.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="488.88" cy="116.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="504.75" cy="109.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="520.62" cy="101.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="536.5" cy="93.51" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="552.38" cy="85.76" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="568.25" cy="78.01" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<circle cx="584.12" cy="70.26" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="244.4" y="84.77" font-size="12.5" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">λ &gt; 4096：在 4K 内转不满一圈</text>
+<text x="244.4" y="102.77" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">128 维：18 对（2048 内：23 对）</text>
+<text x="244.4" y="119.77" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">64 维：9 对（i = 23 … 31）</text>
+<text x="104" y="328.51" font-size="12" fill="var(--fig-ink, #1C1B19)">λ<tspan baseline-shift="sub" font-size="11">0</tspan> = 2π ≈ 6.28</text>
+<text x="586.06" y="54.39" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">54,410</text>
+<text x="586.12" y="92.26" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">47,117</text>
+<circle cx="614" cy="250" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="624" y="254" font-size="12" fill="var(--fig-blue, #1F5FA8)">d<tspan baseline-shift="sub" font-size="11">h</tspan> = 128</text>
+<circle cx="614" cy="270" r="5.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6"/>
+<text x="624" y="274" font-size="12" fill="var(--fig-violet, #6733C4)">64 维（DeepSeek）</text>
+<text x="608" y="294" font-size="11.5" fill="var(--fig-muted, #74716A)">同一条曲线：</text>
+<text x="608" y="310" font-size="11.5" fill="var(--fig-muted, #74716A)">64 维的第 i 对</text>
+<text x="608" y="326" font-size="11.5" fill="var(--fig-muted, #74716A)">= 128 维的第 2i 对</text>
+</svg>

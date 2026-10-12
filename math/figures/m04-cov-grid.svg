@@ -1,0 +1,408 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 370" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>和的方差 = n×n 协方差表里所有格子之和</title>
+
+<text x="24" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Var(X<tspan baseline-shift="sub" font-size="11">1</tspan> + … + X<tspan baseline-shift="sub" font-size="11">8</tspan>) = 把 8×8 表里的 Cov(X<tspan baseline-shift="sub" font-size="11">i</tspan>, X<tspan baseline-shift="sub" font-size="11">j</tspan>) 全部加起来（每个 Var(X<tspan baseline-shift="sub" font-size="11">i</tspan>) = σ² = 1）</text>
+<text x="144" y="56" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">不相关（ρ = 0）</text>
+<text x="144" y="73" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j = 1 … 8</text>
+<text x="48" y="180" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-style="italic">i</text>
+<rect x="56" y="88" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="67" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="78" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="88" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="103" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="110" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="89" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="100" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="110" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="132" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="111" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="122" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="132" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="147" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="154" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="133" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="144" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="154" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="169" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="176" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="155" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="166" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="176" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="191" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="198" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="177" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="188" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="198" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="213" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="220" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="199" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="210" y="220" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="221" y="235" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="56" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="67" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="78" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="89" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="100" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="111" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="122" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="133" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="144" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="155" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="166" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="177" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="188" y="242" width="22" height="22" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="199" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="210" y="242" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="221" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="34" y="288" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角 8 格 × 1 = 8</text>
+<text x="34" y="307" font-size="12" fill="var(--fig-muted, #74716A)">交叉 56 格 × 0 = 0</text>
+<text x="34" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">和的方差 8，标准差 2.83</text>
+<text x="388" y="56" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">两两相关，ρ = 0.3</text>
+<text x="388" y="73" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j = 1 … 8</text>
+<text x="292" y="180" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-style="italic">i</text>
+<rect x="300" y="88" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="311" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="322" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="110" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="333" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="344" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="132" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="355" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="366" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="154" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="377" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="388" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="176" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="399" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="410" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="198" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="421" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="432" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="220" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="443" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="454" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="465" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="300" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="311" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="322" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="333" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="344" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="355" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="366" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="377" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="388" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="399" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="410" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="421" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="432" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.23" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="443" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">.3</text>
+<rect x="454" y="242" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="465" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="278" y="288" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角 8 格 × 1 = 8</text>
+<text x="278" y="307" font-size="12" fill="var(--fig-red, #A3231C)">交叉 56 格 × 0.3 = 16.8</text>
+<text x="278" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">和的方差 24.8，标准差 4.98</text>
+<text x="632" y="56" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">完全相关（ρ = 1）</text>
+<text x="632" y="73" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">j = 1 … 8</text>
+<text x="536" y="180" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end" font-style="italic">i</text>
+<rect x="544" y="88" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="555" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="88" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="103" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="110" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="577" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="110" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="125" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="132" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="599" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="132" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="147" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="154" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="621" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="154" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="169" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="176" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="643" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="176" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="191" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="198" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="665" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="198" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="213" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="220" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="687" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="220" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="709" y="235" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="544" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="555" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="566" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="577" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="588" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="599" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="610" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="621" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="632" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="643" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="654" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="665" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="676" y="242" width="22" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.58" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="687" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="698" y="242" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="709" y="257" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="522" y="288" font-size="12" fill="var(--fig-blue, #1F5FA8)">对角 8 格 × 1 = 8</text>
+<text x="522" y="307" font-size="12" fill="var(--fig-red, #A3231C)">交叉 56 格 × 1 = 56</text>
+<text x="522" y="328" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">和的方差 64，标准差 8.00</text>
+<text x="24" y="356" font-size="12" fill="var(--fig-muted, #74716A)">n 翻倍：对角格数翻倍（方差 ∝ n），全部格数翻 4 倍（∝ n²）。交叉格只要不是 0，n 大时就占主导。</text>
+</svg>

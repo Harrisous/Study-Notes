@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 356" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>旋转矩阵的两列就是两个坐标轴被转到的位置；旋转一个向量就是给它的角度加上 φ</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="185" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">① 两个坐标轴转到哪里，矩阵的两列就是什么</text>
+<line x1="40" y1="227.2" x2="279.54" y2="227.2" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="128.5" y1="253.16" x2="128.5" y2="85.6" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<path d="M245.35 243.62 A118 118 0 1 0 11.65 243.62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="128.5" y1="227.2" x2="246.5" y2="227.2" stroke="var(--fig-muted, #74716A)" stroke-width="1.8" marker-end="url(#ah-muted)"/>
+<text x="252.5" y="232.2" font-size="13" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<line x1="128.5" y1="227.2" x2="128.5" y2="109.2" stroke="var(--fig-muted, #74716A)" stroke-width="1.8" marker-end="url(#ah-muted)"/>
+<text x="136.5" y="115.2" font-size="13" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="230.69" y1="168.2" x2="230.69" y2="227.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+<line x1="230.69" y1="168.2" x2="128.5" y2="168.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+<line x1="69.5" y1="125.01" x2="69.5" y2="227.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+<line x1="69.5" y1="125.01" x2="128.5" y2="125.01" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+<line x1="128.5" y1="227.2" x2="230.69" y2="168.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<line x1="128.5" y1="227.2" x2="69.5" y2="125.01" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" marker-end="url(#ah-blue)"/>
+<text x="236.69" y="162.2" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">R<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> = (cos φ, sin φ)</text>
+<text x="39.5" y="89.01" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">R<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> = (−sin φ, cos φ)</text>
+<text x="230.69" y="243.2" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0.866</text>
+<text x="132.5" y="181.2" font-size="11.5" fill="var(--fig-blue, #1F5FA8)">0.5</text>
+<text x="69.5" y="243.2" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">−0.5</text>
+<text x="123.5" y="120.01" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">0.866</text>
+<path d="M170.98 227.2 A42.48 42.48 0 0 0 165.29 205.96" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<text x="180.93" y="218.15" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">φ</text>
+<path d="M128.5 184.72 A42.48 42.48 0 0 0 107.26 190.41" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<text x="114.15" y="178.63" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">φ</text>
+<text x="40" y="313" font-size="13" fill="var(--fig-ink, #1C1B19)">R(30°) =</text>
+<rect x="112" y="292" width="46" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<rect x="162" y="292" width="46" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" rx="4"/>
+<text x="135" y="308" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.866</text>
+<text x="185" y="308" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">−0.5</text>
+<text x="135" y="334" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.5</text>
+<text x="185" y="334" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.866</text>
+<path d="M111 290 h-5 v52 h5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<path d="M209 290 h5 v52 h-5" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3"/>
+<text x="224" y="308" font-size="12" fill="var(--fig-blue, #1F5FA8)">第 1 列 = R<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="224" y="332" font-size="12" fill="var(--fig-blue, #1F5FA8)">第 2 列 = R<tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="372" y1="40" x2="372" y2="330" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="560" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">② 转一个向量：角度加上 φ，长度不变</text>
+<line x1="410" y1="228.4" x2="716" y2="228.4" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="435.2" y1="250" x2="435.2" y2="62.8" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<path d="M579.2 156.4 A161 161 0 0 0 523.91 94.05" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="435.2" y1="228.4" x2="579.2" y2="156.4" stroke="var(--fig-muted, #74716A)" stroke-width="2.2" marker-end="url(#ah-muted)"/>
+<line x1="435.2" y1="228.4" x2="523.91" y2="94.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.4" marker-end="url(#ah-ink)"/>
+<text x="585.2" y="160.4" font-size="12.5" fill="var(--fig-muted, #74716A)"><tspan font-weight="700">x</tspan> = (2, 1)</text>
+<text x="529.91" y="90.05" font-size="12.5" fill="var(--fig-ink, #1C1B19)">R(30°)<tspan font-weight="700">x</tspan> = (1.232, 1.866)</text>
+<path d="M489.2 228.4 A54 54 0 0 0 483.5 204.25" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.6"/>
+<text x="501.77" y="217.68" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">α</text>
+<path d="M502.82 194.59 A75.6 75.6 0 0 0 476.85 165.31" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.8"/>
+<text x="502" y="174.17" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">φ</text>
+<text x="560" y="262" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">α = 26.57°，α + φ = 56.57°</text>
+<text x="560" y="283" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">两支箭头一样长：‖<tspan font-weight="700">x</tspan>‖ = ‖R<tspan font-weight="700">x</tspan>‖ = √5 ≈ 2.236（虚线圆弧）</text>
+<text x="560" y="312" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">极坐标：(r cos α, r sin α) → (r cos(α+φ), r sin(α+φ))</text>
+<text x="560" y="333" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">与 R(φ) 乘出来的结果对比，就得到和角公式 (M3.5)</text>
+</svg>

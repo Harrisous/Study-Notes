@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 572" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3 各组件的数值精度：只有线性层的乘法用 FP8</title>
+
+<rect x="30" y="9" width="36" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.18" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="10"/>
+<text x="48" y="23" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">FP8</text>
+<text x="72" y="23" font-size="11" fill="var(--fig-muted, #74716A)">低精度乘法 / 存储 / 通信</text>
+<rect x="230" y="9" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="252" y="23" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<text x="280" y="23" font-size="11" fill="var(--fig-muted, #74716A)">半精度</text>
+<rect x="430" y="9" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="452" y="23" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<text x="480" y="23" font-size="11" fill="var(--fig-muted, #74716A)">单精度</text>
+<rect x="30" y="50" width="300" height="30" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="69" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">嵌入层 Embedding</text>
+<rect x="344" y="57" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="366" y="71" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<rect x="18" y="86" width="712" height="322" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="10" stroke-dasharray="6 4"/>
+<text x="26" y="102" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">Transformer 块 × 61</text>
+<rect x="30" y="110" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="129" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">RMSNorm</text>
+<rect x="344" y="115" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="366" y="129" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<rect x="30" y="140" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="159" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">MLA 的线性投影（下投影、上投影）</text>
+<rect x="344" y="145" width="36" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.18" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="10"/>
+<text x="362" y="159" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">FP8</text>
+<text x="386" y="159" font-size="11" fill="var(--fig-muted, #74716A)">GEMM 输入</text>
+<rect x="30" y="170" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="189" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">RoPE</text>
+<rect x="344" y="175" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="366" y="189" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<rect x="30" y="200" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="219" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">核心注意力 softmax(QKᵀ)V</text>
+<rect x="344" y="205" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="366" y="219" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<rect x="30" y="230" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="249" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">注意力输出投影 Wᴼ</text>
+<rect x="344" y="235" width="36" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.18" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="10"/>
+<text x="362" y="249" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">FP8</text>
+<text x="386" y="249" font-size="11" fill="var(--fig-muted, #74716A)">GEMM；输入按 E5M6 缓存给反向</text>
+<rect x="30" y="260" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="279" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">RMSNorm</text>
+<rect x="344" y="265" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="366" y="279" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<rect x="30" y="290" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="309" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">路由器（门控打分）</text>
+<rect x="344" y="295" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="366" y="309" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<rect x="30" y="320" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="339" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">dispatch：把 token 发给专家</text>
+<rect x="344" y="325" width="36" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.18" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="10"/>
+<text x="362" y="339" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">FP8</text>
+<text x="386" y="339" font-size="11" fill="var(--fig-muted, #74716A)">通信</text>
+<rect x="30" y="350" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="369" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">专家 FFN（路由 + 共享）</text>
+<rect x="344" y="355" width="36" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.18" stroke="var(--fig-orange, #B4460C)" stroke-width="1.1" rx="10"/>
+<text x="362" y="369" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">FP8</text>
+<text x="386" y="369" font-size="11" fill="var(--fig-muted, #74716A)">GEMM；SwiGLU 输入按 FP8 缓存，反向重算</text>
+<rect x="30" y="380" width="300" height="26" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="399" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">combine：把专家输出收回来</text>
+<rect x="344" y="385" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="366" y="399" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<text x="394" y="399" font-size="11" fill="var(--fig-muted, #74716A)">通信</text>
+<rect x="30" y="430" width="300" height="30" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="449" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">输出头 Output Head</text>
+<rect x="344" y="437" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="366" y="451" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<rect x="30" y="468" width="300" height="30" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="487" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">交叉熵损失</text>
+<rect x="344" y="475" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="366" y="489" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<rect x="30" y="506" width="300" height="30" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="40" y="525" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">MTP 模块的线性投影</text>
+<rect x="344" y="513" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="366" y="527" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<rect x="468" y="414" width="244" height="134" fill="var(--fig-amber, #8A6508)" fill-opacity="0.06" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="8"/>
+<text x="480" y="432" font-size="12" fill="var(--fig-amber, #8A6508)" font-weight="600">优化器与梯度（不在前向路径上）</text>
+<rect x="480" y="445" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="502" y="459" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<text x="530" y="459" font-size="11" fill="var(--fig-muted, #74716A)">主权重</text>
+<rect x="480" y="470" width="44" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.18" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="10"/>
+<text x="502" y="484" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">FP32</text>
+<text x="530" y="484" font-size="11" fill="var(--fig-muted, #74716A)">权重梯度</text>
+<rect x="480" y="495" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="502" y="509" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<text x="530" y="509" font-size="11" fill="var(--fig-muted, #74716A)">AdamW 一阶矩</text>
+<rect x="480" y="520" width="44" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="10"/>
+<text x="502" y="534" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">BF16</text>
+<text x="530" y="534" font-size="11" fill="var(--fig-muted, #74716A)">AdamW 二阶矩</text>
+<text x="30" y="562" font-size="11" fill="var(--fig-muted, #74716A)">据 Insights 论文图 1 与 V3 技术报告 §3.3.1、§3.3.3 整理；各组件之间传递的激活都是 BF16。</text>
+</svg>

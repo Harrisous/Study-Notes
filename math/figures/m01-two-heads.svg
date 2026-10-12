@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 408" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>两个小头各自做 softmax，能分别盯住两个 token；一个大头把分数加在一起，只能对半平均</title>
+
+<text x="16" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 查询与两个键（d = 4，按头切成两段）</text>
+<path d="M72 56 v-6 h64 v6" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="104" y="46" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">头 1</text>
+<path d="M152 56 v-6 h64 v6" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="184" y="46" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">头 2</text>
+<text x="58" y="80" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600"><tspan font-weight="700">q</tspan></text>
+<rect x="71" y="62" width="32" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="3"/>
+<text x="87" y="80" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="105" y="62" width="32" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="3"/>
+<text x="121" y="80" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="151" y="62" width="32" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="3"/>
+<text x="167" y="80" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="185" y="62" width="32" height="26" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="3"/>
+<text x="201" y="80" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="58" y="116" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="71" y="98" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="87" y="116" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="105" y="98" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="121" y="116" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="151" y="98" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="167" y="116" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="185" y="98" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="201" y="116" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<text x="58" y="152" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="71" y="134" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="87" y="152" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="105" y="134" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="121" y="152" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0</text>
+<rect x="151" y="134" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="167" y="152" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="185" y="134" width="32" height="26" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="3"/>
+<text x="201" y="152" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<line x1="300" y1="40" x2="300" y2="172" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="318" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 分数：各头只点乘自己那一段</text>
+<text x="340" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">键</text>
+<text x="440" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">头 1 分数</text>
+<text x="540" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">头 2 分数</text>
+<text x="648" y="62" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">大头 = 两段之和</text>
+<line x1="318" y1="72" x2="708" y2="72" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="340" y="100" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="440" y="100" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">2</text>
+<text x="540" y="100" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0</text>
+<text x="648" y="100" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2 + 0 = 2</text>
+<text x="340" y="134" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="440" y="134" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">0</text>
+<text x="540" y="134" font-size="14" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">2</text>
+<text x="648" y="134" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0 + 2 = 2</text>
+<text x="318" y="166" font-size="12" fill="var(--fig-muted, #74716A)">头 1 只看前两维，头 2 只看后两维；大头看全部四维。</text>
+<line x1="16" y1="190" x2="704" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="216" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 各自做 softmax 得到的注意力权重</text>
+<text x="130" y="240" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">头 1：softmax(2, 0)</text>
+<line x1="60" y1="314" x2="200" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="56" y="318" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="60" y1="360" x2="200" y2="360" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<rect x="80" y="278.97" width="36" height="81.03" fill="var(--fig-violet, #6733C4)" fill-opacity="0.62" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="98" y="272.97" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.881</text>
+<text x="98" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 1</text>
+<rect x="144" y="349.03" width="36" height="10.97" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="162" y="343.03" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.119</text>
+<text x="162" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 2</text>
+<text x="130" y="398" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle">主要看 token 1</text>
+<text x="360" y="240" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">头 2：softmax(0, 2)</text>
+<line x1="290" y1="314" x2="430" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="290" y1="360" x2="430" y2="360" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<rect x="310" y="349.03" width="36" height="10.97" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="328" y="343.03" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.119</text>
+<text x="328" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 1</text>
+<rect x="374" y="278.97" width="36" height="81.03" fill="var(--fig-violet, #6733C4)" fill-opacity="0.62" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="392" y="272.97" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.881</text>
+<text x="392" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 2</text>
+<text x="360" y="398" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle">主要看 token 2</text>
+<text x="590" y="240" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">一个大头：softmax(2, 2)</text>
+<line x1="520" y1="314" x2="660" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="520" y1="360" x2="660" y2="360" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<rect x="540" y="314" width="36" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="558" y="308" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.500</text>
+<text x="558" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 1</text>
+<rect x="604" y="314" width="36" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.28" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="622" y="308" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.500</text>
+<text x="622" y="376" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">token 2</text>
+<text x="590" y="398" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">平局：对半平均</text>
+</svg>

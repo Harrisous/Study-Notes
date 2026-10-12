@@ -1,0 +1,3 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). The scope example of lesson 0 §10 (worked in §2).
+p933 | 1-\frac{25{,}920}{389{,}120}=93.3\%
+p822 | 1-\frac{69{,}120}{389{,}120}=\p{r}{82.2\%}

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MHA、GQA、MQA 的头共享方式，以及把多头检查点转成 GQA 的均值池化</title>
+
+<text x="16" y="22" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 8 个查询头如何共用键和值（每条连线：这个查询头读哪一对 K、V）</text>
+<text x="126" y="56" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">MHA</text>
+<text x="126" y="74" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">n<tspan baseline-shift="sub" font-size="11">g</tspan> = n<tspan baseline-shift="sub" font-size="11">h</tspan> = 8：各用各的</text>
+<rect x="25" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="51" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="77" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="103" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="129" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="155" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="181" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="207" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="19" y="111" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">Q</text>
+<line x1="35" y1="118" x2="37.62" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="27.62" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="27.62" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="61" y1="118" x2="62.88" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="52.88" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="52.88" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="87" y1="118" x2="88.12" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="78.12" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="78.12" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="113" y1="118" x2="113.38" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="103.38" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="103.38" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="139" y1="118" x2="138.62" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="128.62" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="128.62" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="165" y1="118" x2="163.88" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="153.88" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="153.88" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="191" y1="118" x2="189.12" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="179.12" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="179.12" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<line x1="217" y1="118" x2="214.38" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="204.38" y="206" width="20" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="3"/>
+<rect x="204.38" y="232" width="20" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="3"/>
+<text x="19" y="221" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">K</text>
+<text x="19" y="247" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">V</text>
+<rect x="22" y="264" width="208" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" rx="5"/>
+<text x="126" y="282" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">缓存 2n<tspan baseline-shift="sub" font-size="11">g</tspan>d<tspan baseline-shift="sub" font-size="11">h</tspan> = 16 d<tspan baseline-shift="sub" font-size="11">h</tspan> / token / 层</text>
+<text x="362" y="56" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">GQA</text>
+<text x="362" y="74" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">n<tspan baseline-shift="sub" font-size="11">g</tspan> = 2：每 4 个查询头一组</text>
+<rect x="261" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="287" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="313" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="339" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="365" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="391" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="417" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="443" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="255" y="111" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">Q</text>
+<line x1="271" y1="118" x2="311.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="297" y1="118" x2="311.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="323" y1="118" x2="311.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="349" y1="118" x2="311.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="289.5" y="206" width="44" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="289.5" y="232" width="44" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="3"/>
+<line x1="375" y1="118" x2="412.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="401" y1="118" x2="412.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="427" y1="118" x2="412.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="453" y1="118" x2="412.5" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="390.5" y="206" width="44" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="390.5" y="232" width="44" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="3"/>
+<text x="255" y="221" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">K</text>
+<text x="255" y="247" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">V</text>
+<rect x="258" y="264" width="208" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" rx="5"/>
+<text x="362" y="282" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">缓存 2n<tspan baseline-shift="sub" font-size="11">g</tspan>d<tspan baseline-shift="sub" font-size="11">h</tspan> = 4 d<tspan baseline-shift="sub" font-size="11">h</tspan> / token / 层</text>
+<text x="598" y="56" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">MQA</text>
+<text x="598" y="74" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">n<tspan baseline-shift="sub" font-size="11">g</tspan> = 1：全部共用一对</text>
+<rect x="497" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="523" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="549" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="575" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="601" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="627" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="653" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<rect x="679" y="96" width="20" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="3"/>
+<text x="491" y="111" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">Q</text>
+<line x1="507" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="533" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="559" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="585" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="611" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="637" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="663" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="689" y1="118" x2="598" y2="204" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<rect x="576" y="206" width="44" height="22" fill="var(--fig-violet, #6733C4)" fill-opacity="0.45" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="3"/>
+<rect x="576" y="232" width="44" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="3"/>
+<text x="491" y="221" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end" font-weight="600">K</text>
+<text x="491" y="247" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">V</text>
+<rect x="494" y="264" width="208" height="26" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" rx="5"/>
+<text x="598" y="282" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">缓存 2n<tspan baseline-shift="sub" font-size="11">g</tspan>d<tspan baseline-shift="sub" font-size="11">h</tspan> = 2 d<tspan baseline-shift="sub" font-size="11">h</tspan> / token / 层</text>
+<line x1="16" y1="302" x2="704" y2="302" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="324" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ 从 MHA 检查点改成 GQA：组内 K、V 投影矩阵取平均，再续训一小段（uptraining）</text>
+<rect x="40" y="348" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="62" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">K</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="102" y="348" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="124" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">K</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="164" y="348" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="186" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">K</tspan><tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="226" y="348" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.38" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="248" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">W<tspan baseline-shift="super" font-size="11">K</tspan><tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="282" y="382" font-size="18" fill="var(--fig-muted, #74716A)">→</text>
+<text x="330" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">取平均</text>
+<text x="330" y="386" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(1/4)Σ</text>
+<rect x="368" y="348" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.35" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" rx="4"/>
+<text x="390" y="382" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">W<tspan baseline-shift="super" font-size="11">K</tspan><tspan baseline-shift="sub" font-size="11">g</tspan></text>
+<text x="428" y="368" font-size="12" fill="var(--fig-ink, #1C1B19)">V 的投影同样处理。之后按原预训练配方</text>
+<text x="428" y="386" font-size="12" fill="var(--fig-ink, #1C1B19)">再训练原步数的 5%，约 600 TPUv3 芯片·天。</text>
+<text x="428" y="404" font-size="12" fill="var(--fig-muted, #74716A)">消融：取平均 &gt; 只取第一个头 &gt; 随机初始化。</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Engram 的一层：键值投影、上下文门控、短卷积与多分支集成（Engram-27B 的形状）</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="672" y="22" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">mHC 残差流 ×4</text>
+<line x1="636" y1="34" x2="636" y2="440" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" stroke-opacity="1"/>
+<line x1="660" y1="34" x2="660" y2="440" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" stroke-opacity="0.35"/>
+<line x1="684" y1="34" x2="684" y2="440" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" stroke-opacity="0.35"/>
+<line x1="708" y1="34" x2="708" y2="440" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" stroke-opacity="0.35"/>
+<circle cx="636" cy="414" r="8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6"/>
+<text x="636" y="418.5" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">+</text>
+<circle cx="660" cy="414" r="8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="660" y="418.5" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">+</text>
+<circle cx="684" cy="414" r="8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="684" y="418.5" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">+</text>
+<circle cx="708" cy="414" r="8" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<text x="708" y="418.5" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">+</text>
+<text x="672" y="460" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">每条流各得一个 α<tspan baseline-shift="super" font-size="11">(m)</tspan>·<tspan font-weight="700">v</tspan></text>
+<rect x="20" y="52" width="176" height="36" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="108" y="74.86" font-size="13.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">e</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">1280</tspan></text>
+<text x="116" y="112" font-size="11.5" fill="var(--fig-muted, #74716A)">16 行 × 80 维拼成（图 17.2）</text>
+<line x1="108" y1="90" x2="108" y2="124" stroke="var(--fig-orange, #B4460C)" stroke-width="1.6" marker-end="url(#ah-orange)"/>
+<rect x="20" y="126" width="176" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.04" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="6"/>
+<text x="108" y="148" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">一次 FP8 矩阵乘法</text>
+<text x="108" y="168" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">[W<tspan baseline-shift="super" font-size="11">V</tspan>; W<tspan baseline-shift="super" font-size="11">K,(1)</tspan>; …; W<tspan baseline-shift="super" font-size="11">K,(4)</tspan>]</text>
+<text x="108" y="188" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">12,800 × 1,280</text>
+<text x="108" y="204" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">16.4M 权重 / 层</text>
+<rect x="20" y="262" width="176" height="36" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="108" y="284.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">v</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">2560</tspan>（4 条流共享）</text>
+<line x1="108" y1="212" x2="108" y2="258" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<text x="116" y="240" font-size="12" fill="var(--fig-green, #16704A)">值</text>
+<rect x="232" y="150" width="168" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="316" y="172.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">(m)</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">2560</tspan>，m = 1…4</text>
+<line x1="198" y1="168" x2="228" y2="168" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<text x="214" y="160" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">键</text>
+<rect x="440" y="52" width="150" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="515" y="74.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">(m)</tspan> ∈ ℝ<tspan baseline-shift="super" font-size="11">2560</tspan></text>
+<line x1="636" y1="70" x2="594" y2="70" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+<text x="612" y="62" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">读</text>
+<text x="515" y="106" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">Query：看过前文的隐藏状态</text>
+<rect x="232" y="216" width="168" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="316" y="235.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">RMSNorm</text>
+<rect x="440" y="216" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="515" y="235.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">RMSNorm</text>
+<line x1="316" y1="188" x2="316" y2="212" stroke="var(--fig-violet, #6733C4)" stroke-width="1.5" marker-end="url(#ah-violet)"/>
+<line x1="515" y1="110" x2="515" y2="212" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+<circle cx="418" cy="280" r="15" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="418" y="285" font-size="20" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">·</text>
+<line x1="316" y1="248" x2="407" y2="269" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<line x1="515" y1="248" x2="429" y2="269" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<text x="442" y="285" font-size="12" fill="var(--fig-ink, #1C1B19)">点积 ÷ √2560 = s<tspan baseline-shift="sub" font-size="11">t</tspan>，|s<tspan baseline-shift="sub" font-size="11">t</tspan>| ≤ 50.6</text>
+<rect x="334" y="312" width="168" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.06" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="5" stroke-dasharray="5 3"/>
+<text x="418" y="332" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">sign(s)·√|s|（仅开源代码）</text>
+<line x1="418" y1="296" x2="418" y2="308" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="358" y="356" width="120" height="30" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="418" y="375.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">σ → α<tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">(m)</tspan> ∈ (0,1)</text>
+<line x1="418" y1="344" x2="418" y2="352" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<circle cx="290" cy="414" r="14" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.5"/>
+<text x="290" y="419" font-size="15" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">×</text>
+<path d="M196 280 H290 V396" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="358" y1="380" x2="302" y2="406" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="270" y="446" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle"><tspan font-weight="700">ṽ</tspan><tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">(m)</tspan> = α<tspan baseline-shift="sub" font-size="11">t</tspan><tspan baseline-shift="super" font-size="11" dx="-3.74">(m)</tspan> <tspan font-weight="700">v</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<rect x="348" y="397" width="236" height="34" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="5" stroke-dasharray="5 3"/>
+<text x="466" y="413" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle">短卷积 w = 4，δ = 3，SiLU，+ 残差</text>
+<text x="466" y="427" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">27B 有；V4.1-Flash 去掉</text>
+<line x1="305" y1="414" x2="345" y2="414" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<line x1="585" y1="414" x2="625" y2="414" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<text x="608" y="406" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700"><tspan font-weight="700">Y</tspan></text>
+</svg>

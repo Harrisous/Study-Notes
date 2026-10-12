@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 418" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Sinkhorn–Knopp 定理的三种情形：完全支撑、有支撑无完全支撑、没有支撑</title>
+
+<text x="24" y="28" font-size="13" fill="var(--fig-green, #16704A)" font-weight="600">(a) 元素全为正：完全支撑</text>
+<rect x="46" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="66" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="90" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="110" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="134" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="154" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="46" y="98" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="66" y="123" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="90" y="98" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="110" y="123" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="134" y="98" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="154" y="123" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="46" y="142" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="66" y="167" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="90" y="142" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="110" y="167" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="134" y="142" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="154" y="167" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<circle cx="66" cy="74" r="17" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<circle cx="110" cy="118" r="17" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<circle cx="154" cy="162" r="17" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<text x="24" y="208" font-size="12" fill="var(--fig-muted, #74716A)">6 条对角线全为正（绿圈是其中一条）</text>
+<text x="24" y="228" font-size="12" fill="var(--fig-green, #16704A)">→ 收敛到唯一的 D₁AD₂，几何级数地快</text>
+<text x="24" y="256" font-size="12" fill="var(--fig-muted, #74716A)">极限（两位小数）：</text>
+<text x="54" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.6</text>
+<text x="94" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.18</text>
+<text x="134" y="280" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.22</text>
+<text x="54" y="298" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.28</text>
+<text x="94" y="298" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.51</text>
+<text x="134" y="298" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.21</text>
+<text x="54" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.13</text>
+<text x="94" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.31</text>
+<text x="134" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.57</text>
+<path d="M36 267 h-4 v54 h4" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<path d="M152 267 h4 v54 h-4" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="280" y="28" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">(b) 有支撑，无完全支撑</text>
+<rect x="322" y="54" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="345" y="82" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="372" y="54" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<rect x="372" y="54" width="46" height="46" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" rx="4"/>
+<text x="395" y="82" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="322" y="104" width="46" height="46" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="345" y="132" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="372" y="104" width="46" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="395" y="132" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<circle cx="345" cy="77" r="20" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<circle cx="395" cy="127" r="20" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2"/>
+<text x="280" y="208" font-size="12" fill="var(--fig-muted, #74716A)">正对角线只有主对角线（绿圈）；</text>
+<text x="280" y="228" font-size="12" fill="var(--fig-red, #A3231C)">红框的 1 不在任何正对角线上</text>
+<text x="280" y="248" font-size="12" fill="var(--fig-violet, #6733C4)">→ 它被压向 0，极限是 I，不是 D₁AD₂</text>
+<text x="280" y="268" font-size="12" fill="var(--fig-violet, #6733C4)">→ 慢：第 t 轮后还剩 1/(2t+1)</text>
+<text x="330" y="296" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="370" y="296" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<text x="330" y="314" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<text x="370" y="314" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<path d="M312 283 h-4 v36 h4" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<path d="M388 283 h4 v36 h-4" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="400" y="300" font-size="12" fill="var(--fig-muted, #74716A)">（t → ∞）</text>
+<text x="520" y="28" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="600">(c) 没有正对角线：没有支撑</text>
+<rect x="542" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="562" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="586" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="606" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="630" y="54" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="650" y="79" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="542" y="98" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="562" y="123" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="586" y="98" width="40" height="40" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="606" y="123" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="630" y="98" width="40" height="40" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="650" y="123" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="542" y="142" width="40" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" rx="4"/>
+<text x="562" y="167" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="586" y="142" width="40" height="40" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="606" y="167" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<rect x="630" y="142" width="40" height="40" fill="var(--fig-grid, #EDE9E0)" rx="4"/>
+<text x="650" y="167" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="520" y="208" font-size="12" fill="var(--fig-muted, #74716A)">第 2、3 行都只能用第 1 列，</text>
+<text x="520" y="228" font-size="12" fill="var(--fig-muted, #74716A)">凑不出一条全为正的对角线</text>
+<text x="520" y="248" font-size="12" fill="var(--fig-red, #A3231C)">→ 永远到不了双随机矩阵：</text>
+<text x="520" y="270" font-size="12" fill="var(--fig-muted, #74716A)">行步之后趋向</text>
+<text x="647" y="270" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="681" y="270" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5</text>
+<text x="715" y="270" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5</text>
+<text x="647" y="288" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">1</text>
+<text x="681" y="288" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="715" y="288" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="647" y="306" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">1</text>
+<text x="681" y="306" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="715" y="306" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<path d="M632 257 h-4 v54 h4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<path d="M730 257 h4 v54 h-4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<text x="520" y="340" font-size="12" fill="var(--fig-muted, #74716A)">列步之后趋向</text>
+<text x="647" y="340" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="681" y="340" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">1</text>
+<text x="715" y="340" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">1</text>
+<text x="647" y="358" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5</text>
+<text x="681" y="358" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="715" y="358" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="647" y="376" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.5</text>
+<text x="681" y="376" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="715" y="376" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<path d="M632 327 h-4 v54 h4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<path d="M730 327 h4 v54 h-4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<text x="24" y="410" font-size="11" fill="var(--fig-muted, #74716A)">蓝格 = 正元素，灰格 = 0。定理与术语据 Sinkhorn 与 Knopp（1967）；极限由生成脚本迭代 200 轮得到。</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeekMoE 2B 验证实验：计算量与 Pile 损失</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker></defs>
+<line x1="80" y1="310.65" x2="700" y2="310.65" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="314.65" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.80</text>
+<line x1="80" y1="262.26" x2="700" y2="262.26" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="266.26" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.85</text>
+<line x1="80" y1="213.87" x2="700" y2="213.87" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="217.87" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.90</text>
+<line x1="80" y1="165.48" x2="700" y2="165.48" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="169.48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.95</text>
+<line x1="80" y1="117.1" x2="700" y2="117.1" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="121.1" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.00</text>
+<line x1="80" y1="68.71" x2="700" y2="68.71" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="72" y="72.71" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.05</text>
+<line x1="80" y1="30" x2="80" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="80" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2T</text>
+<line x1="235" y1="30" x2="235" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="235" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4T</text>
+<line x1="390" y1="30" x2="390" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="390" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8T</text>
+<line x1="545" y1="30" x2="545" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="545" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16T</text>
+<line x1="700" y1="30" x2="700" y2="330" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32T</text>
+<line x1="80" y1="330" x2="700" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="80" y1="30" x2="80" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="390" y="370" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">每 2K token 的计算量（FLOPs，对数刻度）</text>
+<text x="22" y="180" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 22 180)">Pile 损失（越低越好）</text>
+<line x1="251.17" y1="302.9" x2="641.19" y2="302.9" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="428.43" y="322.9" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">同样的 Pile 损失：GShard×1.5 要 1.35 倍计算，Dense×16 要 5.7 倍</text>
+<line x1="265.17" y1="255.81" x2="265.17" y2="296.9" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<text x="257.17" y="278.35" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end">同计算、同参数：−0.059</text>
+<circle cx="163.09" cy="59.03" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.8"/>
+<text x="173.09" y="63.03" font-size="12" fill="var(--fig-ink, #1C1B19)">Dense（0.2B） 2.060</text>
+<circle cx="163.09" cy="182.9" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.8"/>
+<text x="173.09" y="186.9" font-size="12" fill="var(--fig-ink, #1C1B19)">Hash Layer 1.932</text>
+<circle cx="163.09" cy="232.26" r="5" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-muted, #74716A)" stroke-width="1.8"/>
+<text x="173.09" y="236.26" font-size="12" fill="var(--fig-ink, #1C1B19)">Switch 1.881</text>
+<circle cx="251.17" cy="245.81" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<text x="261.17" y="249.81" font-size="12" fill="var(--fig-ink, #1C1B19)">GShard 1.867</text>
+<circle cx="251.17" cy="302.9" r="6" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8"/>
+<text x="239.17" y="307.9" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">DeepSeekMoE 1.808</text>
+<circle cx="318.09" cy="302.9" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<text x="318.09" y="290.9" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GShard×1.5 1.808</text>
+<circle cx="641.19" cy="304.84" r="5" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8"/>
+<text x="641.19" y="292.84" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Dense×16 1.806</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>四种方法在 DeepSeekMath-Instruct 1.3B 上的训练曲线（论文图 5 重绘）</title>
+
+<line x1="50" y1="262" x2="272" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">56</text>
+<line x1="50" y1="218.4" x2="272" y2="218.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="222.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">58</text>
+<line x1="50" y1="174.8" x2="272" y2="174.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="178.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60</text>
+<line x1="50" y1="131.2" x2="272" y2="131.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="135.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">62</text>
+<line x1="50" y1="87.6" x2="272" y2="87.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="91.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">64</text>
+<line x1="50" y1="44" x2="272" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">66</text>
+<line x1="50" y1="44" x2="50" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="105.5" y1="44" x2="105.5" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="105.5" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2000</text>
+<line x1="161" y1="44" x2="161" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="161" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4000</text>
+<line x1="216.5" y1="44" x2="216.5" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="216.5" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6000</text>
+<line x1="272" y1="44" x2="272" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="272" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8000</text>
+<line x1="50" y1="262" x2="272" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="50" y1="44" x2="50" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">GSM8K（%）</text>
+<text x="161" y="298" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">训练步数</text>
+<path d="M50 253.28 L77.75 181.34 L105.5 183.52 L133.25 146.46 L161 161.72 L188.75 196.6 L216.5 176.98 L244.25 170.44 L272 168.26" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
+<path d="M50 253.28 L77.75 163.9 L105.5 124.66 L133.25 179.16 L161 176.98 L188.75 139.92 L216.5 159.54 L244.25 115.94 L272 126.84" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M50 253.28 L77.75 168.26 L105.5 142.1 L133.25 133.38 L161 85.42 L188.75 100.68 L216.5 87.6 L244.25 115.94 L272 118.12" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M50 253.28 L77.75 163.9 L105.5 142.1 L133.25 137.74 L161 91.96 L188.75 102.86 L216.5 72.34 L244.25 70.16 L272 67.98" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6" stroke-linejoin="round"/>
+<text x="278" y="71.98" font-size="11.5" fill="var(--fig-violet, #6733C4)" font-weight="600">GRPO+PS 64.9</text>
+<text x="278" y="109.04" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">GRPO+OS 63.2</text>
+<text x="278" y="137.38" font-size="11.5" fill="var(--fig-amber, #8A6508)" font-weight="600">Online RFT 61.9</text>
+<text x="278" y="176.62" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">RFT 60.1</text>
+<line x1="420" y1="262" x2="642" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">26</text>
+<line x1="420" y1="218.4" x2="642" y2="218.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="222.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">27</text>
+<line x1="420" y1="174.8" x2="642" y2="174.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="178.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">28</text>
+<line x1="420" y1="131.2" x2="642" y2="131.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="135.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">29</text>
+<line x1="420" y1="87.6" x2="642" y2="87.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="91.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">30</text>
+<line x1="420" y1="44" x2="642" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">31</text>
+<line x1="420" y1="44" x2="420" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="420" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="475.5" y1="44" x2="475.5" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="475.5" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2000</text>
+<line x1="531" y1="44" x2="531" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="531" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4000</text>
+<line x1="586.5" y1="44" x2="586.5" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="586.5" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6000</text>
+<line x1="642" y1="44" x2="642" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="642" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8000</text>
+<line x1="420" y1="262" x2="642" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="420" y1="44" x2="420" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="390" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">MATH（%）</text>
+<text x="531" y="298" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">训练步数</text>
+<path d="M420 240.2 L447.75 170.44 L475.5 174.8 L503.25 196.6 L531 183.52 L558.75 174.8 L586.5 179.16 L614.25 192.24 L642 200.96" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
+<path d="M420 240.2 L447.75 192.24 L475.5 166.08 L503.25 148.64 L531 78.88 L558.75 113.76 L586.5 131.2 L614.25 135.56 L642 126.84" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M420 240.2 L447.75 170.44 L475.5 131.2 L503.25 122.48 L531 87.6 L558.75 96.32 L586.5 83.24 L614.25 109.4 L642 118.12" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M420 240.2 L447.75 139.92 L475.5 105.04 L503.25 96.32 L531 74.52 L558.75 100.68 L586.5 70.16 L614.25 105.04 L642 100.68" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6" stroke-linejoin="round"/>
+<text x="648" y="104.68" font-size="11.5" fill="var(--fig-violet, #6733C4)" font-weight="600">GRPO+PS 29.7</text>
+<text x="648" y="122.12" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" font-weight="600">GRPO+OS 29.3</text>
+<text x="648" y="137.12" font-size="11.5" fill="var(--fig-amber, #8A6508)" font-weight="600">Online RFT 29.0</text>
+<text x="648" y="183.16" font-size="11.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">RFT 27.9</text>
+<text x="16" y="330" font-size="11.5" fill="var(--fig-muted, #74716A)">右侧数字：最后 5 个点（每 200 步一点）的平均。曲线为每 1,000 步取样；RFT 用虚线，因为它的数据来自冻结的 SFT 模型（离线）。</text>
+</svg>

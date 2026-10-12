@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>均衡的范围：序列级约束与 batch 级约束</title>
+
+<text x="66" y="40" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓐ 序列级约束</text>
+<text x="66" y="58" font-size="11" fill="var(--fig-muted, #74716A)">每一行（每个序列）都要摊平</text>
+<text x="58" y="86" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">代码</text>
+<rect x="66" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="90" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="114" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="138" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="162" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="186" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="210" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="234" y="70" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<text x="58" y="110" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">数学</text>
+<rect x="66" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="90" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="114" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="138" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="162" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="186" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="210" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="234" y="94" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<text x="58" y="134" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">百科</text>
+<rect x="66" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="90" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="114" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="138" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="162" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="186" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="210" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<rect x="234" y="118" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.38" rx="2"/>
+<text x="77" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="101" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="125" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="149" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="173" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="197" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="221" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="245" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="162" y="172" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家编号</text>
+<text x="66" y="220" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓑ batch 级约束</text>
+<text x="66" y="238" font-size="11" fill="var(--fig-muted, #74716A)">只要求各列之和（整个 batch）摊平</text>
+<text x="58" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">代码</text>
+<rect x="66" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.8" rx="2"/>
+<rect x="90" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.74" rx="2"/>
+<rect x="114" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="2"/>
+<rect x="138" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="2"/>
+<rect x="162" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<rect x="186" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<rect x="210" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<rect x="234" y="250" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<text x="58" y="290" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">数学</text>
+<rect x="66" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" rx="2"/>
+<rect x="90" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.23" rx="2"/>
+<rect x="114" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.77" rx="2"/>
+<rect x="138" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.74" rx="2"/>
+<rect x="162" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<rect x="186" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.26" rx="2"/>
+<rect x="210" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.29" rx="2"/>
+<rect x="234" y="274" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.29" rx="2"/>
+<text x="58" y="314" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">百科</text>
+<rect x="66" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="2"/>
+<rect x="90" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="2"/>
+<rect x="114" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" rx="2"/>
+<rect x="138" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.17" rx="2"/>
+<rect x="162" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.62" rx="2"/>
+<rect x="186" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.62" rx="2"/>
+<rect x="210" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.59" rx="2"/>
+<rect x="234" y="298" width="22" height="22" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.59" rx="2"/>
+<text x="77" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="101" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="125" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="149" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="173" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="197" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="221" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<text x="245" y="336" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<text x="162" y="352" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">专家编号</text>
+<text x="268" y="290" font-size="11" fill="var(--fig-green, #16704A)">各列之和</text>
+<text x="268" y="306" font-size="11" fill="var(--fig-green, #16704A)">≈ 相等</text>
+<text x="16" y="392" font-size="11" fill="var(--fig-muted, #74716A)">左侧两格为示意（颜色深 = 该领域的 token 更多地去这个专家），不是论文数据。</text>
+<line x1="330" y1="30" x2="330" y2="370" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="350" y="40" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">Ⓒ 验证损失（V3 §4.5.3，越低越好）</text>
+<text x="350" y="58" font-size="11" fill="var(--fig-muted, #74716A)">两个纵轴都不从 0 开始；差值只有 0.005</text>
+<text x="690" y="116" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">1B MoE</text>
+<line x1="400" y1="196" x2="680" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="200" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.249</text>
+<line x1="400" y1="177.82" x2="680" y2="177.82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="181.82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.251</text>
+<line x1="400" y1="159.64" x2="680" y2="159.64" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="163.64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.253</text>
+<line x1="400" y1="141.45" x2="680" y2="141.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="145.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.255</text>
+<line x1="400" y1="123.27" x2="680" y2="123.27" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="127.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.257</text>
+<line x1="400" y1="105.09" x2="680" y2="105.09" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="109.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.259</text>
+<rect x="420" y="114.18" width="56" height="81.82" fill="var(--fig-muted, #74716A)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="448" y="109.18" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.258</text>
+<rect x="510" y="159.64" width="56" height="36.36" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="538" y="154.64" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.253</text>
+<rect x="600" y="159.64" width="56" height="36.36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="628" y="154.64" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.253</text>
+<line x1="400" y1="196" x2="680" y2="196" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="690" y="254" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">3B MoE</text>
+<line x1="400" y1="334" x2="680" y2="334" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="338" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.076</text>
+<line x1="400" y1="315.82" x2="680" y2="315.82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="319.82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.078</text>
+<line x1="400" y1="297.64" x2="680" y2="297.64" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="301.64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.080</text>
+<line x1="400" y1="279.45" x2="680" y2="279.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="283.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.082</text>
+<line x1="400" y1="261.27" x2="680" y2="261.27" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="265.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.084</text>
+<line x1="400" y1="243.09" x2="680" y2="243.09" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="394" y="247.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2.086</text>
+<rect x="420" y="252.18" width="56" height="81.82" fill="var(--fig-muted, #74716A)" fill-opacity="0.6" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="448" y="247.18" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.085</text>
+<rect x="510" y="297.64" width="56" height="36.36" fill="var(--fig-green, #16704A)" fill-opacity="0.6" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="538" y="292.64" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.080</text>
+<rect x="600" y="297.64" width="56" height="36.36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.6" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="628" y="292.64" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">2.080</text>
+<line x1="400" y1="334" x2="680" y2="334" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="448" y="348" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">序列级辅助损失</text>
+<text x="538" y="348" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">无辅助损失</text>
+<text x="628" y="348" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">batch 级辅助损失</text>
+<text x="538" y="364" font-size="11" fill="var(--fig-green, #16704A)" text-anchor="middle">（偏置）</text>
+<text x="448" y="364" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（每个序列）</text>
+<text x="628" y="364" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">（整个 batch）</text>
+</svg>

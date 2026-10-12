@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek LLM 的完整配方：数据、分词、架构、预训练、对齐，以及为预训练定超参数的小规模 scaling 实验</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="11" y="22" font-size="12" fill="var(--fig-muted, #74716A)">数据（DeepSeek LLM §2.1）</text>
+<rect x="11" y="34" width="130" height="84" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="76" y="63.55" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">原始语料</text>
+<text x="76" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Common Crawl 等</text>
+<text x="76" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（91 个 dump）</text>
+<line x1="143" y1="76" x2="161" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="163" y="34" width="130" height="84" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="8"/>
+<text x="228" y="63.55" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">① 去重</text>
+<text x="228" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">跨 91 个 dump</text>
+<text x="228" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">去掉 89.8% 文档</text>
+<text x="287" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<line x1="295" y1="76" x2="313" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="315" y="34" width="130" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="380" y="63.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">② 过滤</text>
+<text x="380" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">语言学 + 语义</text>
+<text x="380" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">质量评估</text>
+<text x="439" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<line x1="447" y1="76" x2="465" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="467" y="34" width="130" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="532" y="63.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">③ 重混</text>
+<text x="532" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">提高少数领域</text>
+<text x="532" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">的占比</text>
+<text x="591" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<line x1="599" y1="76" x2="617" y2="76" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="619" y="34" width="130" height="84" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="684" y="63.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">预训练语料</text>
+<text x="684" y="83.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2T tokens</text>
+<text x="684" y="100.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">中英为主</text>
+<text x="743" y="49" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<text x="11" y="184" font-size="12" fill="var(--fig-muted, #74716A)">模型与训练（§2.1–§2.3、§4）</text>
+<rect x="11" y="196" width="108" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="65" y="225.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">分词器</text>
+<text x="65" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">BBPE</text>
+<text x="65" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">词表 102400</text>
+<text x="114" y="211" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§2</text>
+<line x1="121" y1="238" x2="135" y2="238" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="137" y="196" width="108" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="191" y="225.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">架构</text>
+<text x="191" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7B：30 层 MHA</text>
+<text x="191" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">67B：95 层 GQA</text>
+<text x="240" y="211" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§3</text>
+<line x1="247" y1="238" x2="261" y2="238" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="263" y="196" width="108" height="84" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="317" y="225.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">预训练</text>
+<text x="317" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">AdamW</text>
+<text x="317" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">多步学习率</text>
+<text x="366" y="211" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§4</text>
+<line x1="373" y1="238" x2="387" y2="238" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="389" y="196" width="108" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="443" y="225.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">SFT</text>
+<text x="443" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">150 万条</text>
+<text x="443" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">指令数据</text>
+<text x="492" y="211" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§8</text>
+<line x1="499" y1="238" x2="513" y2="238" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="515" y="196" width="108" height="84" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="569" y="225.55" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">DPO</text>
+<text x="569" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">偏好对</text>
+<text x="569" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1 个 epoch</text>
+<text x="618" y="211" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">§8</text>
+<line x1="625" y1="238" x2="639" y2="238" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="641" y="196" width="108" height="84" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="695" y="225.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">DeepSeek</text>
+<text x="695" y="245.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Chat</text>
+<text x="695" y="262.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7B / 67B</text>
+<path d="M684.0 120.0 V 160.0 H 337.0 V 192.0" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.6" marker-end="url(#ah-green)"/>
+<text x="678" y="152" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end">喂给预训练</text>
+<rect x="80.3" y="330" width="289.8" height="70" fill="var(--fig-violet, #6733C4)" fill-opacity="0.06" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="8" stroke-dasharray="5 4"/>
+<text x="225.2" y="361.05" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">小规模 scaling 实验（§5–§7）</text>
+<text x="225.2" y="381.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">算力 10<tspan baseline-shift="super" font-size="11">17</tspan>–3×10<tspan baseline-shift="super" font-size="11">20</tspan> FLOPs，拟合幂律</text>
+<line x1="317" y1="328" x2="317" y2="284" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<text x="323" y="316" font-size="12" fill="var(--fig-violet, #6733C4)">最优 η、B</text>
+<line x1="191" y1="328" x2="191" y2="284" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<text x="185" y="316" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">模型/数据分配</text>
+<text x="396.1" y="352" font-size="12" fill="var(--fig-muted, #74716A)">只在左侧小预算上做实验，</text>
+<text x="396.1" y="370" font-size="12" fill="var(--fig-muted, #74716A)">外推到 7B、67B 的</text>
+<text x="396.1" y="388" font-size="12" fill="var(--fig-muted, #74716A)">一次性大训练</text>
+</svg>

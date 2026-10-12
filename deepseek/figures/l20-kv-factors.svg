@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>主线 A 的总账：每 token KV 从 389,120 字节到 890 字节，437 倍拆成五个因子</title>
+
+<line x1="150" y1="62" x2="150" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="150" y="56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">×1</text>
+<line x1="323.53" y1="62" x2="323.53" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="323.53" y="56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">×10</text>
+<line x1="497.06" y1="62" x2="497.06" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="497.06" y="56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">×100</text>
+<line x1="670.59" y1="62" x2="670.59" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="670.59" y="56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">×1,000</text>
+<text x="150" y="20" font-size="12" fill="var(--fig-muted, #74716A)">累计缩小倍数（对数刻度，从 DeepSeek LLM 67B 算起）</text>
+<rect x="150" y="30" width="12" height="12" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="167" y="41" font-size="12" fill="var(--fig-ink, #1C1B19)">层数</text>
+<rect x="236" y="30" width="12" height="12" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="253" y="41" font-size="12" fill="var(--fig-ink, #1C1B19)">跨层共享</text>
+<rect x="322" y="30" width="12" height="12" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="339" y="41" font-size="12" fill="var(--fig-ink, #1C1B19)">序列维</text>
+<rect x="408" y="30" width="12" height="12" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<text x="425" y="41" font-size="12" fill="var(--fig-ink, #1C1B19)">条目维</text>
+<rect x="494" y="30" width="12" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="511" y="41" font-size="12" fill="var(--fig-ink, #1C1B19)">精度</text>
+<rect x="586" y="30" width="12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="603" y="41" font-size="12" fill="var(--fig-red, #A3231C)">反向（缓存变大）</text>
+<text x="140" y="86" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">67B → V2</text>
+<text x="140" y="103" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×5.63</text>
+<rect x="150" y="76" width="34.63" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="167.32" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×1.58</text>
+<rect x="184.63" y="76" width="95.6" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<text x="232.43" y="90" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×3.56</text>
+<line x1="280.23" y1="72" x2="280.23" y2="116" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="284.23" y="72" font-size="11" fill="var(--fig-ink, #1C1B19)">69,120 B</text>
+<text x="140" y="150" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V2 → V3</text>
+<text x="140" y="167" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×0.98</text>
+<rect x="278.98" y="164" width="1.25" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="286.23" y="174" font-size="11" fill="var(--fig-red, #A3231C)">×0.98（层数）</text>
+<line x1="278.98" y1="136" x2="278.98" y2="180" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="282.98" y="136" font-size="11" fill="var(--fig-ink, #1C1B19)">70,272 B</text>
+<text x="140" y="214" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V3 → V3.2</text>
+<text x="140" y="231" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×1.46</text>
+<rect x="278.98" y="204" width="43.74" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="300.86" y="218" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×1.79</text>
+<rect x="307.6" y="228" width="15.12" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="315.17" y="254" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">×0.82（条目维）</text>
+<line x1="307.6" y1="200" x2="307.6" y2="207" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<line x1="307.6" y1="221" x2="307.6" y2="244" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="311.6" y="200" font-size="11" fill="var(--fig-ink, #1C1B19)">48,068 B</text>
+<text x="140" y="278" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V3.2 → V4-Flash</text>
+<text x="140" y="295" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×13.7</text>
+<rect x="307.6" y="268" width="29.94" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="322.58" y="282" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×1.49</text>
+<rect x="337.55" y="268" width="152.69" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="413.89" y="282" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×7.58</text>
+<rect x="490.23" y="268" width="7.62" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<rect x="497.85" y="268" width="6.89" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="500.74" y="302" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">条目维 ×1.11 · 精度 ×1.10</text>
+<line x1="504.74" y1="264" x2="504.74" y2="308" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="508.74" y="264" font-size="11" fill="var(--fig-ink, #1C1B19)">3,514 B</text>
+<text x="140" y="342" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V4-Flash → V4.1</text>
+<text x="140" y="359" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×3.95</text>
+<rect x="504.74" y="332" width="5.73" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<rect x="510.46" y="332" width="169.66" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="595.3" y="346" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×9.50</text>
+<rect x="680.13" y="332" width="45.81" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="703.03" y="346" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×1.84</text>
+<text x="498.74" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">层数 ×1.08</text>
+<rect x="608.67" y="356" width="117.27" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<rect x="608.24" y="356" width="0.44" height="12" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="667.09" y="382" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">×0.21（序列维） · ×0.99（条目维）</text>
+<line x1="608.24" y1="328" x2="608.24" y2="335" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<line x1="608.24" y1="349" x2="608.24" y2="372" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="612.24" y="328" font-size="11" fill="var(--fig-ink, #1C1B19)">890 B</text>
+<line x1="10" y1="390" x2="740" y2="390" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="140" y="412" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">合计 67B → V4.1</text>
+<text x="140" y="429" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">×437</text>
+<rect x="150" y="402" width="69.05" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="184.53" y="416" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×2.50</text>
+<text x="184.53" y="438" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">15%</text>
+<rect x="219.05" y="402" width="169.66" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8"/>
+<text x="303.89" y="416" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×9.50</text>
+<text x="303.89" y="438" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">37%</text>
+<rect x="388.72" y="402" width="35.42" height="20" fill="var(--fig-violet, #6733C4)" fill-opacity="0.55" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="406.43" y="416" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×1.60</text>
+<text x="406.43" y="438" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8%</text>
+<rect x="424.14" y="402" width="87.66" height="20" fill="var(--fig-green, #16704A)" fill-opacity="0.55" stroke="var(--fig-green, #16704A)" stroke-width="0.8"/>
+<text x="467.97" y="416" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×3.20</text>
+<text x="467.97" y="438" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">19%</text>
+<rect x="511.8" y="402" width="96.44" height="20" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="560.02" y="416" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">×3.60</text>
+<text x="560.02" y="438" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">21%</text>
+<text x="10" y="494" font-size="12" fill="var(--fig-muted, #74716A)">竖线是每一代落到的位置（每 token 全局 KV 字节）。百分比是各因子在对数上的份额（与乘的先后无关）。</text>
+<text x="10" y="512" font-size="12" fill="var(--fig-muted, #74716A)">数据：第 9、11、14、18、19 课的配置与字节格式；由 l20_num.py 计算。</text>
+</svg>

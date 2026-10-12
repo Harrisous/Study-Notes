@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 322" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>同一个查询 q 与三个键：点积和余弦相似度给出不同的排名</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<line x1="28" y1="66" x2="28" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="78" y1="66" x2="78" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="128" y1="66" x2="128" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="178" y1="66" x2="178" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="228" y1="66" x2="228" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="278" y1="66" x2="278" y2="276" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="18" y1="246" x2="308" y2="246" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="18" y1="196" x2="308" y2="196" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="18" y1="146" x2="308" y2="146" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="18" y1="96" x2="308" y2="96" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="18" y1="196" x2="308" y2="196" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="78" y1="66" x2="78" y2="276" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="128" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="178" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="228" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="278" y="212" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<circle cx="78" cy="196" r="50" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="113.36" cy="160.64" r="3.2" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="126.51" cy="208.13" r="3.2" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="78" cy="146" r="3.2" fill="var(--fig-violet, #6733C4)"/>
+<circle cx="122.72" cy="173.64" r="3.2" fill="var(--fig-blue, #1F5FA8)"/>
+<line x1="78" y1="196" x2="128" y2="146" stroke="var(--fig-violet, #6733C4)" stroke-width="2.1" marker-end="url(#ah-violet)"/>
+<line x1="78" y1="196" x2="278" y2="246" stroke="var(--fig-violet, #6733C4)" stroke-width="2.1" marker-end="url(#ah-violet)"/>
+<line x1="78" y1="196" x2="78" y2="96" stroke="var(--fig-violet, #6733C4)" stroke-width="2.1" marker-end="url(#ah-violet)"/>
+<line x1="78" y1="196" x2="178" y2="146" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.8" marker-end="url(#ah-blue)"/>
+<text x="186" y="140" font-size="14" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">q</tspan> = (2, 1)</text>
+<text x="132" y="134" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> = (1, 1)</text>
+<text x="274" y="266" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> = (4, −1)</text>
+<text x="86" y="100" font-size="13" fill="var(--fig-violet, #6733C4)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">3</tspan> = (0, 2)</text>
+<text x="18" y="298" font-size="12" fill="var(--fig-muted, #74716A)">虚线圆半径为 1；圆上的点是各向量的方向（余弦只看它）</text>
+<rect x="340" y="34" width="368" height="194" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" rx="10"/>
+<text x="360" y="58" font-size="13" fill="var(--fig-muted, #74716A)" font-weight="600">键</text>
+<text x="430" y="58" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600"><tspan font-weight="700">q</tspan>·<tspan font-weight="700">k</tspan></text>
+<text x="520" y="58" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">|<tspan font-weight="700">k</tspan>|</text>
+<text x="600" y="58" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">cos</text>
+<text x="668" y="58" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600"></text>
+<text x="668" y="58" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="600">排名</text>
+<line x1="350" y1="67" x2="698" y2="67" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="360" y="92" font-size="14" fill="var(--fig-violet, #6733C4)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="430" y="92" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="520" y="92" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1.41</text>
+<text x="600" y="92" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0.949</text>
+<text x="668" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2 / 1</text>
+<text x="360" y="128" font-size="14" fill="var(--fig-violet, #6733C4)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="430" y="128" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">7</text>
+<text x="520" y="128" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4.12</text>
+<text x="600" y="128" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.759</text>
+<text x="668" y="128" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1 / 2</text>
+<text x="360" y="164" font-size="14" fill="var(--fig-violet, #6733C4)"><tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="430" y="164" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="520" y="164" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2.00</text>
+<text x="600" y="164" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.447</text>
+<text x="668" y="164" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3 / 3</text>
+<text x="360" y="202" font-size="12" fill="var(--fig-muted, #74716A)">排名写成“按点积 / 按余弦”。</text>
+<text x="360" y="219" font-size="12" fill="var(--fig-muted, #74716A)">最长的 <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> 点积最高，最同向的 <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> 余弦最高。</text>
+<text x="340" y="262" font-size="13" fill="var(--fig-ink, #1C1B19)">若直接对点积做 softmax（第 1 课），三个权重约为</text>
+<text x="340" y="286" font-size="13" fill="var(--fig-ink, #1C1B19)">  <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">1</tspan> 0.018，<tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> 0.976，<tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">3</tspan> 0.007</text>
+<text x="340" y="308" font-size="13" fill="var(--fig-ink, #1C1B19)">  <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">2</tspan> 几乎拿走全部注意力。</text>
+</svg>

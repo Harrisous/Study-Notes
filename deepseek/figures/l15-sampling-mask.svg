@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 392" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Keep Sampling Mask：训练时对 π_θ 施加采样时的截断掩码</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">① 采样：π<tspan baseline-shift="sub" font-size="11">old</tspan>，top-p = 0.95</text>
+<text x="16" y="46" font-size="12" fill="var(--fig-muted, #74716A)">核 = {a, b, c}（累计 0.95）</text>
+<line x1="16" y1="250" x2="216" y2="250" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="22" y="91.67" width="28" height="158.33" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="36" y="85.67" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.500</text>
+<text x="36" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">a</text>
+<rect x="62" y="155" width="28" height="95" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="76" y="149" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.300</text>
+<text x="76" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">b</text>
+<rect x="102" y="202.5" width="28" height="47.5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="116" y="196.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.150</text>
+<text x="116" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">c</text>
+<rect x="142" y="237.33" width="28" height="12.67" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="156" y="231.33" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.040</text>
+<text x="156" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">d</text>
+<rect x="182" y="246.83" width="28" height="3.17" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="196" y="240.83" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0.010</text>
+<text x="196" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">e</text>
+<text x="270" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">② 不保留掩码：π<tspan baseline-shift="sub" font-size="11">θ</tspan> 用全词表</text>
+<text x="270" y="46" font-size="12" fill="var(--fig-muted, #74716A)">d、e 在采样分布里概率为 0</text>
+<line x1="270" y1="250" x2="470" y2="250" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="276" y="107.5" width="28" height="142.5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="290" y="101.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.450</text>
+<text x="290" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">a</text>
+<rect x="316" y="145.5" width="28" height="104.5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="330" y="139.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.330</text>
+<text x="330" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">b</text>
+<rect x="356" y="212" width="28" height="38" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="370" y="206" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.120</text>
+<text x="370" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">c</text>
+<rect x="396" y="227.83" width="28" height="22.17" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<text x="410" y="221.83" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.070</text>
+<text x="410" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">d</text>
+<rect x="436" y="240.5" width="28" height="9.5" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.4" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<text x="450" y="234.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.030</text>
+<text x="450" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">e</text>
+<path d="M272.0 276.0 v6 H428.0 v-6" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="350" y="292" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">它自己的 top-p 核：{a, b, c, d}</text>
+<text x="524" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">③ Keep Sampling Mask</text>
+<text x="524" y="46" font-size="12" fill="var(--fig-muted, #74716A)">对 π<tspan baseline-shift="sub" font-size="11">θ</tspan> 施加同一个核 {a, b, c}</text>
+<line x1="524" y1="250" x2="724" y2="250" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="530" y="107.5" width="28" height="142.5" fill="var(--fig-green, #16704A)" fill-opacity="0.4" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="544" y="101.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.450</text>
+<text x="544" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">a</text>
+<rect x="570" y="145.5" width="28" height="104.5" fill="var(--fig-green, #16704A)" fill-opacity="0.4" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="584" y="139.5" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.330</text>
+<text x="584" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">b</text>
+<rect x="610" y="212" width="28" height="38" fill="var(--fig-green, #16704A)" fill-opacity="0.4" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="624" y="206" font-size="11" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">0.120</text>
+<text x="624" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">c</text>
+<rect x="650" y="250" width="28" height="0.8" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="664" y="244" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="664" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">d</text>
+<rect x="690" y="250" width="28" height="0.8" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="704" y="244" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="704" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">e</text>
+<rect x="16" y="308" width="728" height="78" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.6" rx="6"/>
+<text x="28" y="330" font-size="12" fill="var(--fig-ink, #1C1B19)">token c 的重要性比，分母是截断后的 π<tspan baseline-shift="sub" font-size="11">old</tspan>(c) = 0.15 / 0.95 = 0.1579：</text>
+<text x="28" y="352" font-size="12" fill="var(--fig-ink, #1C1B19)">② 分子用全词表的 π<tspan baseline-shift="sub" font-size="11">θ</tspan>(c)：0.12 / 0.1579 = 0.760</text>
+<text x="28" y="374" font-size="12" fill="var(--fig-ink, #1C1B19)">③ 分子用同一掩码、在核内重新归一化的 π<tspan baseline-shift="sub" font-size="11">θ</tspan>(c)：(0.12 / 0.90) / 0.1579 = 0.844</text>
+<text x="560" y="352" font-size="12" fill="var(--fig-red, #A3231C)">π<tspan baseline-shift="sub" font-size="11">θ</tspan> 落在旧核之外的概率：0.10</text>
+</svg>

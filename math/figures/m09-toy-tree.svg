@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>玩具模型的全部状态、价值与优势</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="12" y="164" width="124" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="74" y="187" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=”</text>
+<text x="74" y="208" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">V = 0.55（= J）</text>
+<rect x="258" y="78" width="124" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="320" y="101" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=5”</text>
+<text x="320" y="122" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">V = 0.85</text>
+<rect x="258" y="250" width="124" height="56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.07" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="320" y="273" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=6”</text>
+<text x="320" y="294" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">V = 0.10</text>
+<rect x="576" y="20" width="132" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.07" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="642" y="43" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=5！”</text>
+<text x="642" y="64" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">R = 1.0，概率 0.42</text>
+<rect x="576" y="110" width="132" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.07" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="642" y="133" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=5吧”</text>
+<text x="642" y="154" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">R = 0.5，概率 0.18</text>
+<rect x="576" y="196" width="132" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.07" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="642" y="219" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=6！”</text>
+<text x="642" y="240" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">R = 0.0，概率 0.20</text>
+<rect x="576" y="286" width="132" height="56" fill="var(--fig-green, #16704A)" fill-opacity="0.07" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="642" y="309" font-size="15" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">“2+3=6吧”</text>
+<text x="642" y="330" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">R = 0.2，概率 0.20</text>
+<line x1="136" y1="192" x2="256.37" y2="107.15" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="151" y="128" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="197" y="144" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“5” π = 0.6</text>
+<text x="197" y="161" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">A = +0.30</text>
+<line x1="136" y1="192" x2="256.37" y2="276.85" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="151" y="214" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="197" y="230" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“6” π = 0.4</text>
+<text x="197" y="247" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">A = −0.45</text>
+<line x1="382" y1="106" x2="574.08" y2="48.57" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="433" y="56" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="479" y="72" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“！” π = 0.7</text>
+<text x="479" y="89" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">A = +0.15</text>
+<line x1="382" y1="106" x2="574.03" y2="137.67" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="433" y="101" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="479" y="117" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“吧” π = 0.3</text>
+<text x="479" y="134" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">A = −0.35</text>
+<line x1="382" y1="278" x2="574.07" y2="224.54" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="433" y="230" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="479" y="246" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“！” π = 0.5</text>
+<text x="479" y="263" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">A = −0.10</text>
+<line x1="382" y1="278" x2="574.03" y2="313.64" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<rect x="433" y="275" width="92" height="38" fill="var(--fig-surface, #FFFFFF)" fill-opacity="1" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="5"/>
+<text x="479" y="291" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">“吧” π = 0.5</text>
+<text x="479" y="308" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">A = +0.10</text>
+<line x1="16" y1="366" x2="704" y2="366" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="384" font-size="12" fill="var(--fig-muted, #74716A)">V(“2+3=5”) = 0.7×1 + 0.3×0.5 = 0.85；V(“2+3=6”) = 0.5×0 + 0.5×0.2 = 0.10；V(“2+3=”) = 0.6×0.85 + 0.4×0.10 = 0.55</text>
+<text x="16" y="404" font-size="12" fill="var(--fig-muted, #74716A)">Q(s, a) = 走这一步之后的价值；A(s, a) = Q(s, a) − V(s)。例：A(“2+3=”, “5”) = 0.85 − 0.55 = +0.30。</text>
+<text x="16" y="424" font-size="12" fill="var(--fig-muted, #74716A)">每个状态上 Σ π(a|s)·A(s, a) = 0：0.6×0.30 + 0.4×(−0.45) = 0，0.7×0.15 + 0.3×(−0.35) = 0。</text>
+</svg>

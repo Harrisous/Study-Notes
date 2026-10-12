@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 452" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>语言模型里的四种记忆：两种旧的，两种本课新讲的</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<text x="192" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">参数化记忆：训练时写入，所有请求共用</text>
+<text x="568" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">上下文记忆：推理时写入，每个请求一份</text>
+<line x1="380" y1="12" x2="380" y2="440" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="20" y="44" width="344" height="150" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="8"/>
+<text x="34" y="68" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="700">FFN / MoE 专家权重</text>
+<text x="352" y="68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">第 1、7 课</text>
+<text x="34" y="94" font-size="12" fill="var(--fig-muted, #74716A)">怎样想起</text>
+<text x="100" y="94" font-size="12.5" fill="var(--fig-ink, #1C1B19)">隐藏状态逐层计算，知识分散在权重里</text>
+<text x="34" y="116" font-size="12" fill="var(--fig-muted, #74716A)">放在哪里</text>
+<text x="100" y="116" font-size="12.5" fill="var(--fig-ink, #1C1B19)">GPU 显存（HBM）</text>
+<text x="34" y="138" font-size="12" fill="var(--fig-muted, #74716A)">代价</text>
+<text x="100" y="138" font-size="12.5" fill="var(--fig-ink, #1C1B19)">拼出一个多 token 实体要耗掉前几层</text>
+<text x="34" y="160" font-size="12" fill="var(--fig-muted, #74716A)">选谁</text>
+<text x="100" y="160" font-size="12.5" fill="var(--fig-ink, #1C1B19)">MoE 由隐藏状态决定：算到那层才知道</text>
+<rect x="396" y="44" width="344" height="150" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="8"/>
+<text x="410" y="68" font-size="14" fill="var(--fig-amber, #8A6508)" font-weight="700">KV cache</text>
+<text x="728" y="68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">第 4、9、14 课</text>
+<text x="410" y="94" font-size="12" fill="var(--fig-muted, #74716A)">怎样记</text>
+<text x="476" y="94" font-size="12.5" fill="var(--fig-ink, #1C1B19)">每个 token 每层留下完整的键和值</text>
+<text x="410" y="116" font-size="12" fill="var(--fig-muted, #74716A)">放在哪里</text>
+<text x="476" y="116" font-size="12.5" fill="var(--fig-ink, #1C1B19)">HBM，随上下文长度线性增长</text>
+<text x="410" y="138" font-size="12" fill="var(--fig-muted, #74716A)">例</text>
+<text x="476" y="138" font-size="12.5" fill="var(--fig-ink, #1C1B19)">V4.1-Flash 全局 890 B/token</text>
+<text x="410" y="160" font-size="12" fill="var(--fig-muted, #74716A)"></text>
+<text x="476" y="160" font-size="12.5" fill="var(--fig-ink, #1C1B19)">一百万 token ≈ 0.89 GB（一个请求）</text>
+<rect x="20" y="262" width="344" height="170" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08" stroke="var(--fig-amber, #8A6508)" stroke-width="2.2" rx="8"/>
+<text x="34" y="286" font-size="14" fill="var(--fig-amber, #8A6508)" font-weight="700">Engram：查表式条件记忆</text>
+<text x="352" y="286" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">本课 §2–§5</text>
+<text x="34" y="312" font-size="12" fill="var(--fig-muted, #74716A)">怎样想起</text>
+<text x="100" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)">用最近 2–4 个 token 的 ID 算出行号</text>
+<text x="34" y="334" font-size="12" fill="var(--fig-muted, #74716A)">放在哪里</text>
+<text x="100" y="334" font-size="12.5" fill="var(--fig-ink, #1C1B19)">可以放主机内存，提前异步预取</text>
+<text x="34" y="356" font-size="12" fill="var(--fig-muted, #74716A)">例</text>
+<text x="100" y="356" font-size="12.5" fill="var(--fig-ink, #1C1B19)">V4.1-Flash：196.6B 参数，两个模块</text>
+<text x="34" y="378" font-size="12" fill="var(--fig-muted, #74716A)"></text>
+<text x="100" y="378" font-size="12.5" fill="var(--fig-ink, #1C1B19)">每 token 只取 48 行（与表大小无关）</text>
+<text x="34" y="400" font-size="12" fill="var(--fig-muted, #74716A)">状态</text>
+<text x="100" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)">已进入 V4.1-Flash（生产模型）</text>
+<rect x="396" y="262" width="344" height="170" fill="var(--fig-orange, #B4460C)" fill-opacity="0.08" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" rx="8"/>
+<text x="410" y="286" font-size="14" fill="var(--fig-orange, #B4460C)" font-weight="700">光学压缩：把旧上下文拍成图</text>
+<text x="728" y="286" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">本课 §6–§7</text>
+<text x="410" y="312" font-size="12" fill="var(--fig-muted, #74716A)">怎样记</text>
+<text x="476" y="312" font-size="12.5" fill="var(--fig-ink, #1C1B19)">文本渲染成图片，再编码成视觉 token</text>
+<text x="410" y="334" font-size="12" fill="var(--fig-muted, #74716A)">放在哪里</text>
+<text x="476" y="334" font-size="12.5" fill="var(--fig-ink, #1C1B19)">仍是 KV，但条目约少 10 倍</text>
+<text x="410" y="356" font-size="12" fill="var(--fig-muted, #74716A)">例</text>
+<text x="476" y="356" font-size="12.5" fill="var(--fig-ink, #1C1B19)">约 970 文本 token → 100 视觉 token</text>
+<text x="410" y="378" font-size="12" fill="var(--fig-muted, #74716A)"></text>
+<text x="476" y="378" font-size="12.5" fill="var(--fig-ink, #1C1B19)">压缩 9.7 倍，Fox 上 OCR 精度 96.8%</text>
+<text x="410" y="400" font-size="12" fill="var(--fig-muted, #74716A)">状态</text>
+<text x="476" y="400" font-size="12.5" fill="var(--fig-ink, #1C1B19)">OCR 已实测；当对话记忆用仍是设想</text>
+<line x1="192" y1="200" x2="192" y2="256" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<text x="204" y="224" font-size="12.5" fill="var(--fig-ink, #1C1B19)">静态的局部搭配</text>
+<text x="204" y="242" font-size="12.5" fill="var(--fig-ink, #1C1B19)">不必每次用深度重算</text>
+<line x1="568" y1="200" x2="568" y2="256" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.8" marker-end="url(#ah-ink)"/>
+<text x="580" y="224" font-size="12.5" fill="var(--fig-ink, #1C1B19)">旧的上下文</text>
+<text x="580" y="242" font-size="12.5" fill="var(--fig-ink, #1C1B19)">不必逐字全精度保存</text>
+</svg>

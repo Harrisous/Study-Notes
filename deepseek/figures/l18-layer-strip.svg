@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>逐层的注意力类型（config.json 的 compress_ratios）</title>
+
+<text x="84" y="60" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V4-Pro</text>
+<rect x="96.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="106.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="116.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="126.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="136.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="146.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="156.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="166.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="176.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="186.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="196.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="206.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="216.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="226.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="236.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="246.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="256.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="266.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="276.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="286.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="296.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="306.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="316.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="326.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="336.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="346.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="356.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="366.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="376.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="386.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="396.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="406.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="416.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="426.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="436.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="446.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="456.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="466.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="476.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="486.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="496.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="506.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="516.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="526.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="536.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="546.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="556.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="566.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="576.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="586.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="596.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="606.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="616.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="626.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="636.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="646.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="656.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="666.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="676.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="686.5" y="40" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="696.5" y="40" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="716.5" y="40" width="9" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="1"/>
+<rect x="715" y="38" width="11" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="2"/>
+<text x="721" y="32" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">MTP</text>
+<line x1="101" y1="70" x2="101" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="101" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="201" y1="70" x2="201" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="201" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="301" y1="70" x2="301" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="301" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="401" y1="70" x2="401" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="401" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="501" y1="70" x2="501" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="501" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="601" y1="70" x2="601" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="601" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="701" y1="70" x2="701" y2="75" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="701" y="88" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<text x="96" y="110" font-size="12" fill="var(--fig-ink, #1C1B19)">主干 61 层：30 层 CSA + 31 层 HCA；另有 1 个 MTP 层（纯滑动窗口）</text>
+<text x="84" y="170" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="700">V4-Flash</text>
+<rect x="96.5" y="150" width="9" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="1"/>
+<rect x="106.5" y="150" width="9" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="1"/>
+<rect x="116.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="126.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="136.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="146.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="156.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="166.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="176.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="186.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="196.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="206.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="216.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="226.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="236.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="246.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="256.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="266.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="276.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="286.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="296.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="306.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="316.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="326.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="336.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="346.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="356.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="366.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="376.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="386.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="396.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="406.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="416.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="426.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="436.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="446.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="456.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="466.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="476.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="486.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="496.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="506.5" y="150" width="9" height="30" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="1"/>
+<rect x="516.5" y="150" width="9" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="1"/>
+<rect x="536.5" y="150" width="9" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="1"/>
+<rect x="535" y="148" width="11" height="34" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="2"/>
+<text x="541" y="142" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">MTP</text>
+<line x1="101" y1="180" x2="101" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="101" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="201" y1="180" x2="201" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="201" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="301" y1="180" x2="301" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="301" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="401" y1="180" x2="401" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="401" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="501" y1="180" x2="501" y2="185" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="501" y="198" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<text x="96" y="220" font-size="12" fill="var(--fig-ink, #1C1B19)">主干 43 层：21 层 CSA + 20 层 HCA + 2 层纯滑动窗口；另有 1 个 MTP 层（纯滑动窗口）</text>
+<rect x="96" y="258" width="16" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75" rx="2"/>
+<text x="120" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)">CSA（m = 4，挑 top-k）</text>
+<rect x="316" y="258" width="16" height="16" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75" rx="2"/>
+<text x="340" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)">HCA（m′ = 128，全读）</text>
+<rect x="536" y="258" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" rx="2"/>
+<text x="560" y="271" font-size="12" fill="var(--fig-ink, #1C1B19)">纯滑动窗口（无压缩分支）</text>
+<text x="96" y="20" font-size="11" fill="var(--fig-muted, #74716A)">每格一层，自左向右为第 0 层到最后一层；层号为 0 起算</text>
+</svg>

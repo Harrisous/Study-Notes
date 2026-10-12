@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek LLM 的实验预算与真实训练算力，对数坐标</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<line x1="44" y1="26" x2="44" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">16</tspan></text>
+<line x1="119.56" y1="26" x2="119.56" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="119.56" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">17</tspan></text>
+<line x1="195.11" y1="26" x2="195.11" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="195.11" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">18</tspan></text>
+<line x1="270.67" y1="26" x2="270.67" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="270.67" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">19</tspan></text>
+<line x1="346.22" y1="26" x2="346.22" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="346.22" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">20</tspan></text>
+<line x1="421.78" y1="26" x2="421.78" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="421.78" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">21</tspan></text>
+<line x1="497.33" y1="26" x2="497.33" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="497.33" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">22</tspan></text>
+<line x1="572.89" y1="26" x2="572.89" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="572.89" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">23</tspan></text>
+<line x1="648.44" y1="26" x2="648.44" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="648.44" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">24</tspan></text>
+<line x1="724" y1="26" x2="724" y2="286" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="724" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="super" font-size="11">25</tspan></text>
+<line x1="44" y1="286" x2="724" y2="286" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="384" y="324" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">训练算力 C（FLOPs，对数刻度；C = M·D，见 §5）</text>
+<rect x="119.56" y="43" width="173.86" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="4"/>
+<text x="119.56" y="36" font-size="12" fill="var(--fig-blue, #1F5FA8)">超参数网格与拟合（正文：10<tspan baseline-shift="super" font-size="11">17</tspan>–2×10<tspan baseline-shift="super" font-size="11">19</tspan>）</text>
+<circle cx="346.22" cy="100" r="6" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="358.22" y="104" font-size="12" fill="var(--fig-blue, #1F5FA8)">10<tspan baseline-shift="super" font-size="11">20</tspan> 上验证公式（论文图 2b）</text>
+<circle cx="119.56" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="155.6" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="195.11" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="231.16" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="270.67" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="306.72" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="346.22" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<circle cx="382.27" cy="148" r="5" fill="var(--fig-violet, #6733C4)" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<line x1="119.56" y1="148" x2="382.27" y2="148" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-opacity="0.6"/>
+<text x="119.56" y="134" font-size="12" fill="var(--fig-violet, #6733C4)">IsoFLOP：8 个预算，10<tspan baseline-shift="super" font-size="11">17</tspan>–3×10<tspan baseline-shift="super" font-size="11">20</tspan></text>
+<polygon points="567.53,213 565.18,218.76 558.97,219.22 563.73,223.24 562.24,229.28 567.53,226 572.82,229.28 571.33,223.24 576.09,219.22 569.88,218.76" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="573.53" y="250" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end" font-weight="600">7B：8.49×10<tspan baseline-shift="super" font-size="11">22</tspan></text>
+<polygon points="643.7,213 641.35,218.76 635.14,219.22 639.9,223.24 638.41,229.28 643.7,226 648.99,229.28 647.51,223.24 652.26,219.22 646.05,218.76" fill="var(--fig-green, #16704A)" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="637.7" y="250" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">67B：8.65×10<tspan baseline-shift="super" font-size="11">23</tspan></text>
+<path d="M382.3 156.0 C 382.3 176.0, 567.5 176.0, 567.5 210.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah-ink)"/>
+<text x="494.9" y="202" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">×283</text>
+<path d="M382.3 156.0 C 382.3 148.0, 643.7 148.0, 643.7 210.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah-ink)"/>
+<text x="532.99" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">×2885</text>
+<text x="724" y="70" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">虚线：从最大一组 IsoFLOP 实验</text>
+<text x="724" y="86" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">（3×10<tspan baseline-shift="super" font-size="11">20</tspan>）外推到真实训练</text>
+<text x="299.41" y="57" font-size="12" fill="var(--fig-blue, #1F5FA8)">→ 到 67B 约 ×43,000</text>
+</svg>

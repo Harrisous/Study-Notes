@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一对前向 chunk 与反向 chunk 的重叠：每段通信都被另一个 chunk 的计算盖住</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="108" y="92" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">计算</text>
+<text x="108" y="109" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">大部分 SM</text>
+<rect x="119" y="74" width="100.96" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.24" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="3"/>
+<text x="169.48" y="99" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">MLP(B)▲</text>
+<rect x="221.96" y="74" width="55.54" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.24" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="3"/>
+<text x="249.73" y="92" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">MLP</text>
+<text x="249.73" y="107" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">(W)▲</text>
+<rect x="279.5" y="74" width="108.23" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="333.61" y="99" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">MLP(F)△</text>
+<rect x="388.72" y="70" width="6.06" height="48" fill="var(--fig-red, #A3231C)" fill-opacity="0.9"/>
+<rect x="395.78" y="74" width="181.51" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.24" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="3"/>
+<text x="486.54" y="99" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">ATTN(B)▲</text>
+<rect x="579.29" y="74" width="62.8" height="40" fill="var(--fig-violet, #6733C4)" fill-opacity="0.24" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="3"/>
+<text x="610.69" y="92" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">ATTN</text>
+<text x="610.69" y="107" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">(W)▲</text>
+<rect x="644.1" y="74" width="88.85" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.24" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3"/>
+<text x="688.52" y="99" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">ATTN(F)△</text>
+<rect x="733.94" y="70" width="6.06" height="48" fill="var(--fig-red, #A3231C)" fill-opacity="0.9"/>
+<text x="108" y="164" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">通信</text>
+<text x="108" y="181" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">少数 SM</text>
+<rect x="119" y="146" width="114.28" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3" stroke-dasharray="5 3"/>
+<text x="176.14" y="171" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">DISPATCH(F)△</text>
+<rect x="235.28" y="146" width="152.44" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="3" stroke-dasharray="5 3"/>
+<text x="311.5" y="171" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">DISPATCH(B)▲</text>
+<rect x="388.72" y="142" width="6.06" height="48" fill="var(--fig-red, #A3231C)" fill-opacity="0.9"/>
+<rect x="395.78" y="146" width="160.31" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="3" stroke-dasharray="5 3"/>
+<text x="475.94" y="171" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">COMBINE(F)△</text>
+<rect x="558.09" y="146" width="33.13" height="40" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="3" stroke-dasharray="5 3"/>
+<text x="574.66" y="171" font-size="12" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">PP</text>
+<rect x="593.22" y="146" width="139.72" height="40" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="3" stroke-dasharray="5 3"/>
+<text x="663.08" y="171" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">COMBINE(B)▲</text>
+<rect x="733.94" y="142" width="6.06" height="48" fill="var(--fig-red, #A3231C)" fill-opacity="0.9"/>
+<text x="118" y="30" font-size="12" fill="var(--fig-muted, #74716A)">时间 →（宽度按原图比例，示意，不是实测）</text>
+<line x1="118" y1="38" x2="740" y2="38" stroke="var(--fig-muted, #74716A)" stroke-width="1" marker-end="url(#ah-muted)"/>
+<rect x="16" y="217" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.3" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="36" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)">前向 chunk △</text>
+<rect x="170" y="217" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.3" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="190" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)">反向：对输入求梯度 ▲</text>
+<rect x="336" y="217" width="14" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.3" stroke="var(--fig-violet, #6733C4)" stroke-width="1"/>
+<text x="356" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)">反向：对权重求梯度 ▲</text>
+<rect x="502" y="217" width="14" height="14" fill="var(--fig-amber, #8A6508)" fill-opacity="0.3" stroke="var(--fig-amber, #8A6508)" stroke-width="1"/>
+<text x="522" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)">PP 通信</text>
+<rect x="596" y="217" width="14" height="14" fill="var(--fig-red, #A3231C)" fill-opacity="0.3" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<text x="616" y="229" font-size="12" fill="var(--fig-ink, #1C1B19)">屏障（同步点）</text>
+<text x="16" y="258" font-size="11" fill="var(--fig-muted, #74716A)">实线框 = 计算，虚线框 = 通信（dispatch：把 token 发给专家；combine：收回专家输出）；计算与通信的 SM 比例手动调。</text>
+<text x="16" y="278" font-size="11" fill="var(--fig-muted, #74716A)">每个 chunk 拆成 attention、dispatch、MLP、combine 四块；反向的 attention 与 MLP 再拆成“对输入”“对权重”两半。据 V3 报告图 4 重绘。</text>
+</svg>

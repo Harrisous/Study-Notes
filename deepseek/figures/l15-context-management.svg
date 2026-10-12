@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 404" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>测试时的上下文管理：触发点与三种策略</title>
+<defs><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="584" y="22" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">BrowseComp 得分</text>
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">一条搜索轨迹逐步填满 128K 窗口</text>
+<text x="16" y="69" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">触发时的上下文</text>
+<rect x="150" y="58" width="410" height="24" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<rect x="150" y="58" width="12.51" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="162.51" y="58" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="193.79" y="58" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="225.07" y="58" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="256.35" y="58" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="287.63" y="58" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="318.91" y="58" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="350.2" y="58" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="381.48" y="58" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="412.76" y="58" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="444.04" y="58" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="475.32" y="58" width="2.68" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<line x1="478" y1="42" x2="478" y2="330" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="478" y="38" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">80%：0.8 × 131,072 = 104,858</text>
+<text x="560" y="96" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">131,072</text>
+<text x="150" y="96" font-size="11" fill="var(--fig-muted, #74716A)">0</text>
+<text x="164.51" y="96" font-size="11" fill="var(--fig-muted, #74716A)">系统提示 + 问题</text>
+<text x="258.51" y="96" font-size="11" fill="var(--fig-muted, #74716A)">紫、黄每块 = 一步工具调用与结果</text>
+<text x="584" y="69" font-size="12" fill="var(--fig-ink, #1C1B19)">不做管理：51.4</text>
+<text x="584" y="85" font-size="11" fill="var(--fig-muted, #74716A)">约 20%+ 的题超过 128K</text>
+<line x1="16" y1="112" x2="744" y2="112" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="132" font-size="12" fill="var(--fig-muted, #74716A)">触发之后，三种策略把上下文变成：</text>
+<text x="16" y="163" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">Summary</text>
+<text x="16" y="179" font-size="11" fill="var(--fig-muted, #74716A)">把溢出的轨迹写成摘要，</text>
+<text x="16" y="193" font-size="11" fill="var(--fig-muted, #74716A)">重新开始 rollout</text>
+<rect x="150" y="152" width="410" height="24" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<rect x="150" y="152" width="12.51" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="162.51" y="152" width="18.77" height="24" fill="var(--fig-orange, #B4460C)" fill-opacity="0.25" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2"/>
+<text x="187.28" y="168.5" font-size="12" fill="var(--fig-orange, #B4460C)">摘要</text>
+<line x1="217.28" y1="164" x2="277.28" y2="164" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-muted)"/>
+<text x="283.28" y="168.5" font-size="11" fill="var(--fig-muted, #74716A)">在摘要之后继续搜索</text>
+<text x="584" y="163" font-size="12" fill="var(--fig-ink, #1C1B19)">最高 60.2</text>
+<text x="584" y="179" font-size="11" fill="var(--fig-muted, #74716A)">平均步数延长到 364</text>
+<text x="16" y="221" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">Discard-75%</text>
+<text x="16" y="237" font-size="11" fill="var(--fig-muted, #74716A)">丢掉最早 75% 的</text>
+<text x="16" y="251" font-size="11" fill="var(--fig-muted, #74716A)">工具调用历史</text>
+<rect x="150" y="210" width="410" height="24" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<rect x="150" y="210" width="12.51" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="162.51" y="211" width="236.62" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="2" stroke-dasharray="4 3"/>
+<text x="280.82" y="226.5" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">最早 75% 删掉</text>
+<rect x="399.13" y="210" width="31.28" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<rect x="430.41" y="210" width="31.28" height="24" fill="var(--fig-amber, #8A6508)" fill-opacity="0.22" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<rect x="461.69" y="210" width="16.31" height="24" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="0.8"/>
+<text x="484" y="226.5" font-size="11" fill="var(--fig-muted, #74716A)">后 25% 保留</text>
+<text x="584" y="221" font-size="12" fill="var(--fig-muted, #74716A)">论文只给了曲线</text>
+<text x="584" y="237" font-size="11" fill="var(--fig-muted, #74716A)">（图 6），没有单独数字</text>
+<text x="16" y="279" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">Discard-all</text>
+<text x="16" y="295" font-size="11" fill="var(--fig-muted, #74716A)">丢掉全部工具调用历史</text>
+<text x="16" y="309" font-size="11" fill="var(--fig-muted, #74716A)">（类似 new context 工具）</text>
+<rect x="150" y="268" width="410" height="24" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="3"/>
+<rect x="150" y="268" width="12.51" height="24" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<rect x="162.51" y="269" width="315.49" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.06" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="2" stroke-dasharray="4 3"/>
+<text x="320.26" y="284.5" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">工具调用历史全部删掉</text>
+<text x="584" y="279" font-size="12" fill="var(--fig-green, #16704A)" font-weight="700">67.6</text>
+<text x="584" y="295" font-size="11" fill="var(--fig-muted, #74716A)">与并行扩展相当，步数少得多</text>
+<text x="16" y="348" font-size="11" fill="var(--fig-muted, #74716A)">对照（Parallel-fewest-step）：独立采 N 条轨迹，选步数最少的一条。V3.2 表 2 的 BrowseComp 67.6* 就是 Discard-all 的成绩。</text>
+<text x="16" y="366" font-size="11" fill="var(--fig-muted, #74716A)">只有窗口长度与 80% 触发点按比例；“系统提示 + 问题”与每一步的方块长度是示意。</text>
+<text x="16" y="384" font-size="11" fill="var(--fig-muted, #74716A)">据 DeepSeek-V3.2 论文 §4.1、§4.4 绘制。</text>
+</svg>

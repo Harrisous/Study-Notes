@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3.2 的后训练：专家各自做 RL，蒸馏成一个模型，再做一次混合 RL</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<rect x="12" y="176" width="104" height="76" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="64" y="201.13" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V3.2 基座</text>
+<text x="64" y="218.68" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">DSA 续训后</text>
+<text x="64" y="236.23" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">的检查点</text>
+<text x="231" y="28" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">8 个专家（同一基座出发）</text>
+<rect x="156" y="40" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="60" font-size="12" fill="var(--fig-ink, #1C1B19)">数学</text>
+<rect x="266" y="47" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="59" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="55" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="77" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="97" font-size="12" fill="var(--fig-ink, #1C1B19)">编程</text>
+<rect x="266" y="84" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="96" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="92" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="114" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="134" font-size="12" fill="var(--fig-ink, #1C1B19)">通用逻辑推理</text>
+<rect x="266" y="121" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="133" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="129" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="151" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="171" font-size="12" fill="var(--fig-ink, #1C1B19)">通用智能体</text>
+<rect x="266" y="158" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="170" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="166" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="188" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="208" font-size="12" fill="var(--fig-ink, #1C1B19)">智能体编程</text>
+<rect x="266" y="195" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="207" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="203" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="225" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5"/>
+<text x="166" y="245" font-size="12" fill="var(--fig-ink, #1C1B19)">智能体搜索</text>
+<rect x="266" y="232" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="244" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="240" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="262" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5" stroke-dasharray="4 3"/>
+<text x="166" y="282" font-size="12" fill="var(--fig-ink, #1C1B19)">写作</text>
+<rect x="266" y="269" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="281" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="277" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<rect x="156" y="299" width="150" height="30" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.04" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="5" stroke-dasharray="4 3"/>
+<text x="166" y="319" font-size="12" fill="var(--fig-ink, #1C1B19)">通用问答</text>
+<rect x="266" y="306" width="32" height="16" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" rx="3"/>
+<text x="282" y="318" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">RL</text>
+<line x1="116" y1="214" x2="154" y2="314" stroke="var(--fig-muted, #74716A)" stroke-width="0.9"/>
+<text x="231" y="346" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">实线 6 个：论文所说的“专门领域”</text>
+<text x="231" y="361" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">虚线 2 个：写作与通用问答</text>
+<text x="417" y="28" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">专家生成训练数据</text>
+<rect x="346" y="70" width="142" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="417" y="94.91" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">思考模式数据</text>
+<text x="417" y="112.45" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">长思维链</text>
+<rect x="346" y="146" width="142" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.12" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="6"/>
+<text x="417" y="170.91" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">非思考模式数据</text>
+<text x="417" y="188.46" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">直接回答</text>
+<text x="417" y="222" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">两类数据由不同的模型生成</text>
+<line x1="308" y1="55" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="92" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="129" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="166" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="203" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="240" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="277" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="308" y1="314" x2="342" y2="137" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<line x1="417" y1="232" x2="417" y2="262" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="346" y="264" width="142" height="70" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="417" y="285.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">蒸馏（SFT）</text>
+<text x="417" y="303.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">→ 一个检查点</text>
+<text x="417" y="321.68" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">只比专家略差，RL 后抹平</text>
+<line x1="490" y1="299" x2="516" y2="262" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="520" y="110" width="228" height="196" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.06" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="634" y="132" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">混合 RL：一个阶段（GRPO）</text>
+<text x="634" y="150" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">推理、智能体、人类对齐合在一起</text>
+<rect x="530" y="162" width="208" height="62" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="634" y="180.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">推理与智能体任务</text>
+<text x="634" y="197.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规则判定的结果奖励</text>
+<text x="634" y="214.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ 长度惩罚 + 语言一致性奖励</text>
+<rect x="530" y="232" width="208" height="62" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6"/>
+<text x="634" y="250.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">通用任务</text>
+<text x="634" y="267.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">生成式奖励模型</text>
+<text x="634" y="284.68" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">+ 每道题自己的评分细则</text>
+<line x1="634" y1="308" x2="634" y2="330" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.5" marker-end="url(#ah-ink)"/>
+<rect x="550" y="332" width="168" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.18" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="634" y="356.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-V3.2</text>
+<text x="634" y="390" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">数千步混合 RL 之后的最终检查点</text>
+<text x="634" y="60" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">后训练预算：</text>
+<text x="634" y="78" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">“超过预训练成本的 10%”</text>
+<line x1="417" y1="336" x2="417" y2="392" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#ah-muted)"/>
+<rect x="332" y="394" width="170" height="40" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6" stroke-dasharray="5 3"/>
+<text x="417" y="418.68" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">DeepSeek-V3.2-Speciale</text>
+<text x="12" y="398" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">另一条 RL 分支：</text>
+<text x="12" y="416" font-size="12" fill="var(--fig-ink, #1C1B19)">只用推理数据、减小长度惩罚，</text>
+<text x="12" y="434" font-size="12" fill="var(--fig-ink, #1C1B19)">并入 DeepSeekMath-V2 的数据与奖励</text>
+<text x="12" y="462" font-size="11" fill="var(--fig-muted, #74716A)">据 DeepSeek-V3.2 论文第 3 节绘制。V3.2-Exp 的报告列出的专门领域是 5 个（没有“通用智能体”）。</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>mHC 的核在 DualPipe 里怎样与通信重叠（据 mHC 论文图 4 重绘，块长与位置仅示意）</title>
+
+<text x="12" y="28" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">一个流水线 stage 内的三条 GPU 流（时间向右）</text>
+<text x="10" y="82" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">普通</text>
+<text x="10" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">计算流</text>
+<line x1="74" y1="124" x2="752" y2="124" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="176" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">通信流</text>
+<line x1="74" y1="218" x2="752" y2="218" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="270" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">高优先级</text>
+<text x="10" y="287" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">计算流</text>
+<line x1="74" y1="312" x2="752" y2="312" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<rect x="79" y="58" width="44" height="58" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="4"/>
+<text x="101" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MLP</text>
+<text x="101" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="125" y="58" width="44" height="58" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="4"/>
+<text x="147" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MLP</text>
+<text x="147" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(W)</text>
+<rect x="171" y="58" width="44" height="58" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1" rx="4"/>
+<text x="193" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MLP</text>
+<text x="193" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="217" y="58" width="50" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="242" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">M</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">pre</tspan></text>
+<text x="242" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="269" y="58" width="60" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="299" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">A</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">post,res</tspan></text>
+<text x="299" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="331" y="58" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="353" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ATTN</text>
+<text x="353" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="377" y="58" width="50" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="402" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">A</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">pre</tspan></text>
+<text x="402" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="429" y="58" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="451" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ATTN</text>
+<text x="451" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(W)</text>
+<rect x="475" y="58" width="56" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="503" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">整段</text>
+<text x="503" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">重算(B)</text>
+<rect x="533" y="58" width="50" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="558" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">A</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">pre</tspan></text>
+<text x="558" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="585" y="58" width="44" height="58" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.1" rx="4"/>
+<text x="607" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">ATTN</text>
+<text x="607" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="631" y="58" width="60" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="661" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">A</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">post,res</tspan></text>
+<text x="661" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="693" y="58" width="50" height="58" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="718" y="80" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">M</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">pre</tspan></text>
+<text x="718" y="106" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="78" y="152" width="82" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="119" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DISPATCH</text>
+<text x="119" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="166" y="152" width="82" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="207" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DISPATCH</text>
+<text x="207" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="254" y="152" width="82" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="295" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">COMBINE</text>
+<text x="295" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="426" y="152" width="70" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="461" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">PP 收发</text>
+<text x="461" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="502" y="152" width="70" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="537" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">PP 收发</text>
+<text x="537" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="662" y="152" width="82" height="58" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.1" rx="4"/>
+<text x="703" y="178" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">COMBINE</text>
+<text x="703" y="200" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<rect x="342" y="246" width="78" height="58" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="4"/>
+<text x="381" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">M</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">post,res</tspan></text>
+<text x="381" y="294" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(F)</text>
+<rect x="578" y="246" width="78" height="58" fill="var(--fig-red, #A3231C)" fill-opacity="0.12" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="4"/>
+<text x="617" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">𝓕<tspan baseline-shift="super" font-size="11">M</tspan><tspan baseline-shift="sub" font-size="11" dx="-7.48">post,res</tspan></text>
+<text x="617" y="294" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">(B)</text>
+<text x="78" y="336" font-size="12" fill="var(--fig-muted, #74716A)">绿：mHC 的核；红：放到高优先级流的 MLP 层 post-res 核（在 COMBINE 与流水线收发之间）；琥珀：通信与重算。</text>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 的一层 MLA：完整数据流与真实维度</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<rect x="265" y="12" width="230" height="36" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="380" y="34.5" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">输入 <tspan font-weight="700">h</tspan><tspan dy="3.9" font-size="11">t</tspan><tspan dy="-3.9">  [5120]</tspan></text>
+<path d="M380 48 L380 58 L154 58 L154 74" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M380 58 L445 58 L445 74" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<path d="M380 58 L670 58 L670 74" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" marker-end="url(#ah-ink)"/>
+<rect x="54" y="76" width="200" height="40" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="154" y="95" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">DQ</tspan><tspan dy="5">：5120 → 1536</tspan></text>
+<text x="154" y="109" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7.9M 参数</text>
+<rect x="345" y="76" width="200" height="40" fill="var(--fig-orange, #B4460C)" fill-opacity="0.13" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="5"/>
+<text x="445" y="95" font-size="12.5" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">DKV</tspan><tspan dy="5">：5120 → 512</tspan></text>
+<text x="445" y="109" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2.6M 参数</text>
+<rect x="600" y="76" width="140" height="40" fill="var(--fig-red, #A3231C)" fill-opacity="0.13" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="5"/>
+<text x="670" y="95" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">KR</tspan><tspan dy="5">：5120 → 64</tspan></text>
+<text x="670" y="109" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.33M 参数</text>
+<line x1="154" y1="116" x2="154" y2="132" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="445" y1="116" x2="445" y2="132" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<line x1="670" y1="116" x2="670" y2="132" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<rect x="54" y="134" width="200" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="154" y="155.5" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">c</tspan><tspan dy="-5" font-size="11">Q</tspan><tspan dy="8.8" font-size="11">t</tspan><tspan dy="-3.8">  [1536]</tspan></text>
+<rect x="345" y="134" width="200" height="34" fill="var(--fig-orange, #B4460C)" fill-opacity="0.24" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="5"/>
+<text x="445" y="155.5" font-size="12.5" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">c</tspan><tspan dy="-5" font-size="11">KV</tspan><tspan dy="8.8" font-size="11">t</tspan><tspan dy="-3.8">  [512]</tspan></text>
+<rect x="600" y="134" width="140" height="34" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="5"/>
+<text x="670" y="155.5" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">RoPE（位置 t）</text>
+<line x1="154" y1="168" x2="154" y2="182" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="445" y1="168" x2="445" y2="182" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<line x1="670" y1="168" x2="670" y2="182" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<rect x="54" y="184" width="200" height="28" fill="var(--fig-muted, #74716A)" fill-opacity="0.08" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="5"/>
+<text x="154" y="202.5" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" font-weight="700">RMSNorm</text>
+<rect x="345" y="184" width="200" height="28" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6" rx="5"/>
+<text x="445" y="202.5" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">RMSNorm 之后缓存（512 维）</text>
+<rect x="600" y="184" width="140" height="34" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6" rx="5"/>
+<text x="670" y="205.5" font-size="12.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-5" font-size="11">R</tspan><tspan dy="8.8" font-size="11">t</tspan><tspan dy="-3.8">  [64]  缓存</tspan></text>
+<path d="M154 212 L154 222 L84 222 L84 236" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<path d="M154 212 L154 222 L224 222 L224 236" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<path d="M445 212 L445 222 L376 222 L376 236" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" marker-end="url(#ah-orange)"/>
+<path d="M445 212 L445 222 L514 222 L514 236" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" marker-end="url(#ah-orange)"/>
+<rect x="16" y="238" width="136" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="84" y="258" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UQ</tspan><tspan dy="4.6">：1536→128×128</tspan></text>
+<text x="84" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">25.2M 参数</text>
+<rect x="156" y="238" width="136" height="42" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.13" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="224" y="258" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">QR</tspan><tspan dy="4.6">：1536→128×64</tspan></text>
+<text x="224" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12.6M 参数</text>
+<rect x="310" y="238" width="132" height="42" fill="var(--fig-green, #16704A)" fill-opacity="0.13" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="376" y="258" font-size="11.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UV</tspan><tspan dy="4.6">：512→128×128</tspan></text>
+<text x="376" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8.4M 参数</text>
+<rect x="448" y="238" width="132" height="42" fill="var(--fig-violet, #6733C4)" fill-opacity="0.13" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="5"/>
+<text x="514" y="258" font-size="11.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UK</tspan><tspan dy="4.6">：512→128×128</tspan></text>
+<text x="514" y="272" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8.4M 参数</text>
+<line x1="84" y1="280" x2="84" y2="296" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="224" y1="280" x2="224" y2="296" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="376" y1="280" x2="376" y2="296" stroke="var(--fig-green, #16704A)" stroke-width="1.4" marker-end="url(#ah-green)"/>
+<line x1="514" y1="280" x2="514" y2="296" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<rect x="16" y="298" width="136" height="34" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="84" y="319.5" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">q</tspan><tspan dy="-4.8" font-size="11">C</tspan><tspan dy="8.4" font-size="11">t,i</tspan><tspan dy="-3.6">  [128] ×128 头</tspan></text>
+<rect x="156" y="298" width="136" height="34" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="5"/>
+<text x="224" y="319.5" font-size="11.5" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">RoPE→<tspan font-weight="700">q</tspan><tspan dy="-4.6" font-size="11">R</tspan><tspan dy="8" font-size="11">t,i</tspan><tspan dy="-3.4"> [64] ×128</tspan></text>
+<rect x="310" y="298" width="132" height="34" fill="var(--fig-green, #16704A)" fill-opacity="0.2" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="376" y="319.5" font-size="11.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700"><tspan font-weight="700">v</tspan><tspan dy="-4.6" font-size="11">C</tspan><tspan dy="8" font-size="11">t,i</tspan><tspan dy="-3.4">  [128] ×128</tspan></text>
+<rect x="448" y="298" width="132" height="34" fill="var(--fig-violet, #6733C4)" fill-opacity="0.2" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="5"/>
+<text x="514" y="319.5" font-size="11.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="-4.6" font-size="11">C</tspan><tspan dy="8" font-size="11">t,i</tspan><tspan dy="-3.4">  [128] ×128</tspan></text>
+<path d="M670 218 L670 350 L584 350 L584 362" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#ah-red)"/>
+<text x="676" y="270" font-size="11.5" fill="var(--fig-red, #A3231C)">同一个 <tspan font-weight="700">k</tspan><tspan dy="-4.6" font-size="11">R</tspan><tspan dy="8" font-size="11">t</tspan></text>
+<text x="676" y="286" font-size="11.5" fill="var(--fig-red, #A3231C)">复制给 128 个头</text>
+<text x="676" y="302" font-size="11.5" fill="var(--fig-red, #A3231C)">（MQA 式共享）</text>
+<path d="M84 332 L84 350 L154 350 L154 362" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" marker-end="url(#ah-blue)"/>
+<path d="M224 332 L224 350 L154 350" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.3"/>
+<path d="M514 332 L514 362" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" marker-end="url(#ah-violet)"/>
+<rect x="29" y="364" width="250" height="36" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.12" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="154" y="386.5" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700"><tspan font-weight="700">q</tspan><tspan dy="3.8" font-size="11">t,i</tspan><tspan dy="-3.8"> = [</tspan><tspan font-weight="700">q</tspan><tspan dy="-5" font-size="11">C</tspan><tspan dy="8.8" font-size="11">t,i</tspan><tspan dy="-3.8">; </tspan><tspan font-weight="700">q</tspan><tspan dy="-5" font-size="11">R</tspan><tspan dy="8.8" font-size="11">t,i</tspan><tspan dy="-3.8">]  [192]</tspan></text>
+<rect x="436" y="364" width="240" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="5"/>
+<text x="556" y="386.5" font-size="12.5" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700"><tspan font-weight="700">k</tspan><tspan dy="3.8" font-size="11">t,i</tspan><tspan dy="-3.8"> = [</tspan><tspan font-weight="700">k</tspan><tspan dy="-5" font-size="11">C</tspan><tspan dy="8.8" font-size="11">t,i</tspan><tspan dy="-3.8">; </tspan><tspan font-weight="700">k</tspan><tspan dy="-5" font-size="11">R</tspan><tspan dy="8.8" font-size="11">t</tspan><tspan dy="-3.8">]  [192]</tspan></text>
+<path d="M376 332 L376 426" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.3" marker-end="url(#ah-green)"/>
+<line x1="154" y1="400" x2="154" y2="426" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" marker-end="url(#ah-blue)"/>
+<line x1="556" y1="400" x2="556" y2="426" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" marker-end="url(#ah-violet)"/>
+<rect x="16" y="428" width="728" height="58" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="380" y="452" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力（每个头 i 各做一次，128 个头）：<tspan font-weight="700">o</tspan><tspan dy="3.9" font-size="11">t,i</tspan><tspan dy="-3.9"> = Σ</tspan><tspan dy="3.9" font-size="11">j ≤ t</tspan><tspan dy="-3.9"> softmax</tspan><tspan dy="3.9" font-size="11">j</tspan><tspan dy="-3.9">( </tspan><tspan font-weight="700">q</tspan><tspan dy="3.9" font-size="11">t,i</tspan><tspan dy="-9.1" font-size="11">⊤</tspan><tspan dy="5.2" font-weight="700">k</tspan><tspan dy="3.9" font-size="11">j,i</tspan><tspan dy="-3.9"> / √192 ) </tspan><tspan font-weight="700">v</tspan><tspan dy="-5.2" font-size="11">C</tspan><tspan dy="9.1" font-size="11">j,i</tspan></text>
+<text x="380" y="474" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">历史位置 j 的 <tspan font-weight="700">k</tspan><tspan dy="3.4" font-size="11">j,i</tspan><tspan dy="-3.4">、</tspan><tspan font-weight="700">v</tspan><tspan dy="-4.6" font-size="11">C</tspan><tspan dy="8" font-size="11">j,i</tspan><tspan dy="-3.4"> 由缓存里的 </tspan><tspan font-weight="700">c</tspan><tspan dy="-4.6" font-size="11">KV</tspan><tspan dy="8" font-size="11">j</tspan><tspan dy="-3.4"> 和 </tspan><tspan font-weight="700">k</tspan><tspan dy="-4.6" font-size="11">R</tspan><tspan dy="8" font-size="11">j</tspan><tspan dy="-3.4"> 得到（或者按 §3 吸收，根本不展开）</tspan></text>
+<line x1="380" y1="486" x2="380" y2="502" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="230" y="504" width="300" height="36" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="380" y="521" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">O</tspan><tspan dy="5">：128×128 = 16384 → 5120</tspan></text>
+<text x="380" y="535" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">83.9M 参数</text>
+<line x1="380" y1="540" x2="380" y2="552" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="270" y="554" width="220" height="30" fill="var(--fig-green, #16704A)" fill-opacity="0.12" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="380" y="573.5" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">输出 <tspan font-weight="700">u</tspan><tspan dy="3.8" font-size="11">t</tspan><tspan dy="-3.8">  [5120]，加回残差流</tspan></text>
+<rect x="22" y="558" width="20" height="14" fill="var(--fig-orange, #B4460C)" fill-opacity="0.24" stroke="var(--fig-amber, #8A6508)" stroke-width="2.6" rx="3"/>
+<text x="48" y="570" font-size="11.5" fill="var(--fig-amber, #8A6508)">推理时缓存</text>
+<text x="740" y="570" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="end">整层 149.2M 参数</text>
+</svg>

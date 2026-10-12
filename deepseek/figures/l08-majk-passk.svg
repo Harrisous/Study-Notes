@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>RL 前后的 Maj@K 与 Pass@K（论文图 7 重绘）</title>
+
+<line x1="50" y1="262" x2="310" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">80</text>
+<line x1="50" y1="207.5" x2="310" y2="207.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="211.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">85</text>
+<line x1="50" y1="153" x2="310" y2="153" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="157" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">90</text>
+<line x1="50" y1="98.5" x2="310" y2="98.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="102.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">95</text>
+<line x1="50" y1="44" x2="310" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="44" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="50" y1="44" x2="50" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="102" y1="44" x2="102" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="102" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="154" y1="44" x2="154" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="154" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="206" y1="44" x2="206" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="206" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="258" y1="44" x2="258" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="258" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<line x1="310" y1="44" x2="310" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="310" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<line x1="50" y1="262" x2="310" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="50" y1="44" x2="50" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">GSM8K（%，温度 0.7）</text>
+<text x="180" y="298" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K（采样个数，按原图等距排列）</text>
+<path d="M50 245.65 L102 198.78 L154 179.16 L206 160.63 L258 161.72 L310 158.45" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="50" cy="245.65" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="102" cy="198.78" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="154" cy="179.16" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="206" cy="160.63" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="258" cy="161.72" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="310" cy="158.45" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<path d="M50 172.62 L102 160.63 L154 151.91 L206 147.55 L258 145.37 L310 142.1" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="50" cy="172.62" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="102" cy="160.63" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="154" cy="151.91" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="206" cy="147.55" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="258" cy="145.37" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="310" cy="142.1" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<path d="M50 245.65 L102 127.93 L154 97.41 L206 79.97 L258 64.71 L310 53.81" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="50" cy="245.65" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="102" cy="127.93" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="154" cy="97.41" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="206" cy="79.97" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="258" cy="64.71" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="310" cy="53.81" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<path d="M50 172.62 L102 120.3 L154 103.95 L206 89.78 L258 83.24 L310 73.43" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="50" cy="172.62" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="102" cy="120.3" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="154" cy="103.95" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="206" cy="89.78" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="258" cy="83.24" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="310" cy="73.43" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="314" y="47.81" font-size="11.5" fill="var(--fig-muted, #74716A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">Pass 99.1</text>
+<text x="314" y="88.43" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">97.3</text>
+<text x="314" y="136.1" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">Maj 91.0</text>
+<text x="314" y="173.45" font-size="11.5" fill="var(--fig-muted, #74716A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">89.5</text>
+<circle cx="130" cy="111.5" r="9" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.5"/>
+<text x="142" y="133.5" font-size="11.5" fill="var(--fig-red, #A3231C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke">Pass 曲线在此交叉</text>
+<line x1="420" y1="262" x2="680" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="266" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40</text>
+<line x1="420" y1="218.4" x2="680" y2="218.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="222.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">50</text>
+<line x1="420" y1="174.8" x2="680" y2="174.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="178.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60</text>
+<line x1="420" y1="131.2" x2="680" y2="131.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="135.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">70</text>
+<line x1="420" y1="87.6" x2="680" y2="87.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="91.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">80</text>
+<line x1="420" y1="44" x2="680" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="414" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">90</text>
+<line x1="420" y1="44" x2="420" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="420" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="472" y1="44" x2="472" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="472" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<line x1="524" y1="44" x2="524" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="524" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8</text>
+<line x1="576" y1="44" x2="576" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="576" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16</text>
+<line x1="628" y1="44" x2="628" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="628" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32</text>
+<line x1="680" y1="44" x2="680" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="680" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64</text>
+<line x1="420" y1="262" x2="680" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="420" y1="44" x2="420" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<text x="390" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">MATH（%，温度 0.7）</text>
+<text x="550" y="298" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">K（采样个数，按原图等距排列）</text>
+<path d="M420 241.94 L472 217.53 L524 196.16 L576 183.52 L628 178.29 L680 175.24" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="420" cy="241.94" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="472" cy="217.53" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="524" cy="196.16" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="576" cy="183.52" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="628" cy="178.29" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="680" cy="175.24" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<path d="M420 214.48 L472 195.29 L524 185.26 L576 177.85 L628 173.06 L680 170.88" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="420" cy="214.48" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="472" cy="195.29" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="524" cy="185.26" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="576" cy="177.85" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="628" cy="173.06" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="680" cy="170.88" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<path d="M420 241.94 L472 156.05 L524 123.79 L576 95.45 L628 72.78 L680 54.9" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="420" cy="241.94" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="472" cy="156.05" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="524" cy="123.79" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="576" cy="95.45" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="628" cy="72.78" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<circle cx="680" cy="54.9" r="2.6" fill="var(--fig-muted, #74716A)"/>
+<path d="M420 214.48 L472 145.15 L524 118.99 L576 94.58 L628 74.08 L680 57.95" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="420" cy="214.48" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="472" cy="145.15" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="524" cy="118.99" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="576" cy="94.58" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="628" cy="74.08" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<circle cx="680" cy="57.95" r="2.6" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="684" y="48.9" font-size="11.5" fill="var(--fig-muted, #74716A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">Pass 87.5</text>
+<text x="684" y="72.95" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">86.8</text>
+<text x="684" y="164.88" font-size="11.5" fill="var(--fig-blue, #1F5FA8)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">Maj 60.9</text>
+<text x="684" y="190.24" font-size="11.5" fill="var(--fig-muted, #74716A)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">59.9</text>
+<circle cx="596.8" cy="86.38" r="9" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.5"/>
+<text x="584.8" y="90.38" font-size="11.5" fill="var(--fig-red, #A3231C)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end">交叉</text>
+<line x1="16" y1="344" x2="42" y2="344" stroke="var(--fig-muted, #74716A)" stroke-width="2.4"/>
+<text x="48" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)">Maj@K · Instruct</text>
+<line x1="192" y1="344" x2="218" y2="344" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<text x="224" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)">Maj@K · RL</text>
+<line x1="368" y1="344" x2="394" y2="344" stroke="var(--fig-muted, #74716A)" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="400" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)">Pass@K · Instruct</text>
+<line x1="544" y1="344" x2="570" y2="344" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="576" y="348" font-size="12" fill="var(--fig-ink, #1C1B19)">Pass@K · RL</text>
+</svg>

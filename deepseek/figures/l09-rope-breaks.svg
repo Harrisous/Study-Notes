@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 480" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>RoPE 为什么挡住矩阵吸收：乘法链与一个二维数值例子</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-violet, #6733C4)"/></marker></defs>
+<text x="16" y="24" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">给键施加 RoPE 之后，第 t 个查询对第 j 个历史 token 的分数：</text>
+<text x="40" y="64" font-size="17" fill="var(--fig-ink, #1C1B19)"><tspan font-weight="700">q</tspan><tspan dy="-6.8" font-size="13">⊤</tspan><tspan dy="6.8"> </tspan><tspan font-weight="700">R</tspan><tspan dy="5.1" font-size="13">t</tspan><tspan dy="-11.9" font-size="13">⊤</tspan><tspan dy="6.8"> </tspan><tspan font-weight="700">R</tspan><tspan dy="5.1" font-size="13">j</tspan><tspan dy="-5.1"> </tspan><tspan font-weight="700">W</tspan><tspan dy="-6.8" font-size="13">UK</tspan><tspan dy="6.8"> </tspan><tspan font-weight="700">c</tspan><tspan dy="5.1" font-size="13">j</tspan></text>
+<text x="210" y="64" font-size="17" fill="var(--fig-ink, #1C1B19)">=</text>
+<text x="236" y="64" font-size="17" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">q</tspan><tspan dy="-6.8" font-size="13">⊤</tspan></text>
+<rect x="266" y="42" width="116" height="32" fill="var(--fig-red, #A3231C)" fill-opacity="0.1" stroke="var(--fig-red, #A3231C)" stroke-width="1.6" rx="5"/>
+<text x="274" y="64" font-size="17" fill="var(--fig-red, #A3231C)"><tspan font-weight="700">R</tspan><tspan dy="5.1" font-size="13">j−t</tspan><tspan dy="-5.1"> </tspan><tspan font-weight="700">W</tspan><tspan dy="-6.8" font-size="13">UK</tspan></text>
+<text x="390" y="64" font-size="17" fill="var(--fig-orange, #B4460C)"><tspan font-weight="700">c</tspan><tspan dy="5.1" font-size="13">j</tspan></text>
+<text x="266" y="94" font-size="12.5" fill="var(--fig-red, #A3231C)">↑ 夹在中间的矩阵随 j 变：每个历史位置一个，找不到对所有 j 通用的 <tspan font-weight="700">q̃</tspan>。</text>
+<text x="40" y="126" font-size="12.5" fill="var(--fig-blue, #1F5FA8)">对照：没有 RoPE 时  <tspan font-weight="700">q</tspan><tspan dy="-5" font-size="11">⊤</tspan><tspan dy="5" font-weight="700">W</tspan><tspan dy="-5" font-size="11">UK</tspan><tspan dy="5" font-weight="700">c</tspan><tspan dy="3.8" font-size="11">j</tspan><tspan dy="-3.8"> = </tspan><tspan font-weight="700">q̃</tspan><tspan dy="-5" font-size="11">⊤</tspan><tspan dy="5" font-weight="700">c</tspan><tspan dy="3.8" font-size="11">j</tspan><tspan dy="-3.8">，其中 </tspan><tspan font-weight="700">q̃</tspan> = (<tspan font-weight="700">W</tspan><tspan dy="-5" font-size="11">UK</tspan><tspan dy="5">)</tspan><tspan dy="-5" font-size="11">⊤</tspan><tspan dy="5" font-weight="700">q</tspan> 与 j 无关，每步只算一次。</text>
+<line x1="12" y1="146" x2="728" y2="146" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="172" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">二维例子（d<tspan dy="3.9" font-size="11">h</tspan><tspan dy="-3.9"> = 2，θ = 0.5 rad/位置，t = 3）</tspan></text>
+<line x1="20" y1="190" x2="20" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="70" y1="190" x2="70" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="120" y1="190" x2="120" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="170" y1="190" x2="170" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="220" y1="190" x2="220" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="270" y1="190" x2="270" y2="450" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="420" x2="280" y2="420" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="370" x2="280" y2="370" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="320" x2="280" y2="320" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="270" x2="280" y2="270" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="220" x2="280" y2="220" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="15" y1="320" x2="280" y2="320" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.3"/>
+<line x1="70" y1="190" x2="70" y2="450" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.3"/>
+<text x="120" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="170" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="220" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="270" y="335" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="62" y="424" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">-2</text>
+<text x="62" y="374" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">-1</text>
+<text x="62" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<text x="62" y="224" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<path d="M220 270 L222.31 277.56 L224.24 285.22 L225.79 292.98 L226.94 300.8 L227.71 308.66 L228.08 316.56 L228.05 324.47 L227.63 332.36 L226.82 340.22 L225.61 348.03 L224.01 355.78 L222.03 363.43 L219.67 370.97 L216.94 378.39 L213.84 385.66 L210.37 392.77 L206.56 399.69 L202.41 406.42 L197.92 412.93 L193.12 419.21" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="3 3" stroke-linejoin="round"/>
+<line x1="70" y1="320" x2="192.34" y2="418.58" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<text x="201.12" y="433.21" font-size="11.5" fill="var(--fig-violet, #6733C4)">j = 1：转 −1 rad</text>
+<line x1="70" y1="320" x2="224.62" y2="347.86" stroke="var(--fig-violet, #6733C4)" stroke-width="1.6" marker-end="url(#ah-violet)"/>
+<text x="233.61" y="354.03" font-size="11.5" fill="var(--fig-violet, #6733C4)">j = 2：转 −0.5</text>
+<line x1="70" y1="320" x2="219.05" y2="270.32" stroke="var(--fig-violet, #6733C4)" stroke-width="2" marker-end="url(#ah-violet)"/>
+<text x="228" y="266" font-size="11.5" fill="var(--fig-violet, #6733C4)">j = 3：不转 = <tspan font-weight="700">W</tspan><tspan dy="-4.6" font-size="11">UK</tspan></text>
+<line x1="70" y1="320" x2="119.55" y2="220.89" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" marker-end="url(#ah-blue)"/>
+<text x="114" y="212" font-size="12.5" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700"><tspan font-weight="700">q</tspan> = (1, 2)</text>
+<text x="382" y="172" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">有效“吸收查询” <tspan font-weight="700">q̃</tspan><tspan dy="3.9" font-size="11">3,j</tspan><tspan dy="-3.9"> = </tspan><tspan font-weight="700">q</tspan><tspan dy="-5.2" font-size="11">⊤</tspan><tspan dy="5.2" font-weight="700">R</tspan>((j−3)θ)<tspan font-weight="700">W</tspan><tspan dy="-5.2" font-size="11">UK</tspan></text>
+<text x="382" y="204" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">j</text>
+<text x="412" y="204" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">旋转角</text>
+<text x="486" y="204" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600"><tspan font-weight="700">R</tspan> <tspan font-weight="700">W</tspan><tspan dy="-4.8" font-size="11">UK</tspan></text>
+<text x="612" y="204" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600"><tspan font-weight="700">q̃</tspan><tspan dy="3.6" font-size="11">3,j</tspan></text>
+<text x="682" y="204" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">分数</text>
+<line x1="382" y1="212" x2="724" y2="212" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="382" y="234" font-size="12.5" fill="var(--fig-ink, #1C1B19)">1</text>
+<text x="412" y="234" font-size="12.5" fill="var(--fig-ink, #1C1B19)">−1 rad</text>
+<text x="486" y="234" font-size="12.5" fill="var(--fig-violet, #6733C4)">(2.4624, −1.9841)</text>
+<text x="612" y="234" font-size="12.5" fill="var(--fig-red, #A3231C)" font-weight="700">−1.5058</text>
+<text x="682" y="234" font-size="12.5" fill="var(--fig-ink, #1C1B19)">−1.506</text>
+<text x="382" y="260" font-size="12.5" fill="var(--fig-ink, #1C1B19)">2</text>
+<text x="412" y="260" font-size="12.5" fill="var(--fig-ink, #1C1B19)">−0.5 rad</text>
+<text x="486" y="260" font-size="12.5" fill="var(--fig-violet, #6733C4)">(3.1122, −0.5607)</text>
+<text x="612" y="260" font-size="12.5" fill="var(--fig-red, #A3231C)" font-weight="700">1.9908</text>
+<text x="682" y="260" font-size="12.5" fill="var(--fig-ink, #1C1B19)">3.982</text>
+<text x="382" y="286" font-size="12.5" fill="var(--fig-ink, #1C1B19)">3</text>
+<text x="412" y="286" font-size="12.5" fill="var(--fig-ink, #1C1B19)">0 rad</text>
+<text x="486" y="286" font-size="12.5" fill="var(--fig-violet, #6733C4)">(3.0000, 1.0000)</text>
+<text x="612" y="286" font-size="12.5" fill="var(--fig-red, #A3231C)" font-weight="700">5.0000</text>
+<text x="682" y="286" font-size="12.5" fill="var(--fig-ink, #1C1B19)">−5.000</text>
+<line x1="382" y1="302" x2="724" y2="302" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="382" y="326" font-size="12.5" fill="var(--fig-ink, #1C1B19)">三个 <tspan font-weight="700">q̃</tspan> 各不相同（红色）。要算分数，只能对每个 j</text>
+<text x="382" y="346" font-size="12.5" fill="var(--fig-ink, #1C1B19)">重新造出 <tspan font-weight="700">R</tspan><tspan dy="3.8" font-size="11">j−t</tspan><tspan dy="-3.8" font-weight="700">W</tspan><tspan dy="-5" font-size="11">UK</tspan><tspan dy="5" font-weight="700">c</tspan><tspan dy="3.8" font-size="11">j</tspan><tspan dy="-3.8">，也就是把前缀的键全部重算；</tspan></text>
+<text x="382" y="366" font-size="12.5" fill="var(--fig-ink, #1C1B19)">或者把旋转后的键存进缓存，那又回到了 MHA 的缓存。</text>
+<text x="382" y="398" font-size="12.5" fill="var(--fig-blue, #1F5FA8)">没有 RoPE 时：<tspan font-weight="700">q̃</tspan> = 1·3 + 2·1 = 5，对所有 j 都一样，</text>
+<text x="382" y="418" font-size="12.5" fill="var(--fig-blue, #1F5FA8)">分数 5、10、−5 可以直接用缓存里的 c<tspan dy="3.8" font-size="11">j</tspan><tspan dy="-3.8"> 算。</tspan></text>
+<text x="382" y="450" font-size="11.5" fill="var(--fig-orange, #B4460C)">c<tspan dy="3.4" font-size="11">1</tspan><tspan dy="-3.4"> = 1，c</tspan><tspan dy="3.4" font-size="11">2</tspan><tspan dy="-3.4"> = 2，c</tspan><tspan dy="3.4" font-size="11">3</tspan><tspan dy="-3.4"> = −1（缓存的一维潜向量）</tspan></text>
+</svg>

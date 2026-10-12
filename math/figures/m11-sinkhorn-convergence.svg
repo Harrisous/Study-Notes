@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>Sinkhorn–Knopp 的收敛：正矩阵按几何级数收敛，logit 越悬殊越慢；有支撑无完全支撑时只有 1/t；没有正对角线时不收敛</title>
+
+<text x="20" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 第 t 轮后的最大列和误差（对数纵轴）</text>
+<line x1="70" y1="62.56" x2="400" y2="62.56" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="66.56" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="70" y1="95.38" x2="400" y2="95.38" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="99.38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="70" y1="128.19" x2="400" y2="128.19" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="132.19" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="70" y1="161.01" x2="400" y2="161.01" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="165.01" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="70" y1="193.82" x2="400" y2="193.82" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="197.82" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<line x1="70" y1="226.63" x2="400" y2="226.63" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="230.63" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-10</tspan></text>
+<line x1="70" y1="259.45" x2="400" y2="259.45" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="263.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-12</tspan></text>
+<line x1="70" y1="292.26" x2="400" y2="292.26" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="296.26" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-14</tspan></text>
+<line x1="70" y1="325.08" x2="400" y2="325.08" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="329.08" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-16</tspan></text>
+<line x1="70" y1="330" x2="70" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="70" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="146.15" y1="330" x2="146.15" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="146.15" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="230.77" y1="330" x2="230.77" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="230.77" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="315.38" y1="330" x2="315.38" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="315.38" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="400" y1="330" x2="400" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="400" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="70" y1="330" x2="400" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="56" x2="70" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="235" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">迭代轮数 t（每轮先列后行）</text>
+<line x1="230.77" y1="56" x2="230.77" y2="330" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="236.77" y="177.41" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">mHC 取 20 轮</text>
+<path d="M70.0 75.3 L78.5 87.1 L86.9 99.3 L95.4 111.6 L103.8 123.9 L112.3 136.2 L120.8 148.5 L129.2 160.9 L137.7 173.2 L146.2 185.5 L154.6 197.9 L163.1 210.2 L171.5 222.5 L180.0 234.9 L188.5 247.2 L196.9 259.5 L205.4 271.9 L213.8 284.2 L222.3 296.5 L230.8 309.5 L239.2 319.4" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M70.0 67.7 L78.5 76.3 L86.9 85.2 L95.4 94.3 L103.8 103.4 L112.3 112.5 L120.8 121.7 L129.2 130.8 L137.7 140.0 L146.2 149.1 L154.6 158.3 L163.1 167.4 L171.5 176.5 L180.0 185.7 L188.5 194.8 L196.9 204.0 L205.4 213.1 L213.8 222.3 L222.3 231.4 L230.8 240.6 L239.2 249.7 L247.7 258.8 L256.2 268.0 L264.6 277.1 L273.1 286.3 L281.5 295.4 L290.0 304.6 L298.5 314.5" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M70.0 63.0 L78.5 66.7 L86.9 69.7 L95.4 71.7 L103.8 73.7 L112.3 75.6 L120.8 77.4 L129.2 79.3 L137.7 81.1 L146.2 82.9 L154.6 84.8 L163.1 86.6 L171.5 88.5 L180.0 90.3 L188.5 92.2 L196.9 94.1 L205.4 95.9 L213.8 97.8 L222.3 99.7 L230.8 101.6 L239.2 103.5 L247.7 105.4 L256.2 107.2 L264.6 109.1 L273.1 111.0 L281.5 112.9 L290.0 114.8 L298.5 116.7 L306.9 118.5 L315.4 120.4 L323.8 122.3 L332.3 124.2 L340.8 126.1 L349.2 128.0 L357.7 129.9 L366.2 131.8 L374.6 133.6 L383.1 135.5 L391.5 137.4 L400.0 139.3" fill="none" stroke="var(--fig-amber, #8A6508)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M70.0 61.7 L78.5 64.1 L86.9 66.8 L95.4 69.3 L103.8 70.8 L112.3 72.2 L120.8 73.5 L129.2 74.6 L137.7 75.7 L146.2 76.7 L154.6 77.6 L163.1 78.4 L171.5 79.2 L180.0 80.0 L188.5 80.7 L196.9 81.4 L205.4 82.1 L213.8 82.7 L222.3 83.4 L230.8 84.0 L239.2 84.6 L247.7 85.2 L256.2 85.8 L264.6 86.4 L273.1 87.0 L281.5 87.5 L290.0 88.1 L298.5 88.7 L306.9 89.2 L315.4 89.8 L323.8 90.3 L332.3 90.9 L340.8 91.4 L349.2 92.0 L357.7 92.5 L366.2 93.1 L374.6 93.6 L383.1 94.2 L391.5 94.7 L400.0 95.3" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M70.0 61.4 L78.5 62.2 L86.9 63.0 L95.4 64.0 L103.8 65.5 L112.3 67.6 L120.8 69.6 L129.2 70.9 L137.7 72.1 L146.2 73.2 L154.6 74.2 L163.1 75.2 L171.5 76.0 L180.0 76.7 L188.5 77.4 L196.9 78.1 L205.4 78.7 L213.8 79.2 L222.3 79.7 L230.8 80.2 L239.2 80.7 L247.7 81.1 L256.2 81.5 L264.6 81.9 L273.1 82.3 L281.5 82.6 L290.0 83.0 L298.5 83.3 L306.9 83.6 L315.4 83.9 L323.8 84.2 L332.3 84.5 L340.8 84.7 L349.2 85.0 L357.7 85.3 L366.2 85.5 L374.6 85.8 L383.1 86.0 L391.5 86.2 L400.0 86.4" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M70.0 70.4 L78.5 74.0 L86.9 76.4 L95.4 78.2 L103.8 79.6 L112.3 80.8 L120.8 81.9 L129.2 82.8 L137.7 83.5 L146.2 84.3 L154.6 84.9 L163.1 85.5 L171.5 86.0 L180.0 86.6 L188.5 87.0 L196.9 87.5 L205.4 87.9 L213.8 88.3 L222.3 88.7 L230.8 89.0 L239.2 89.4 L247.7 89.7 L256.2 90.0 L264.6 90.3 L273.1 90.6 L281.5 90.9 L290.0 91.1 L298.5 91.4 L306.9 91.6 L315.4 91.9 L323.8 92.1 L332.3 92.3 L340.8 92.5 L349.2 92.7 L357.7 92.9 L366.2 93.1 L374.6 93.3 L383.1 93.5 L391.5 93.7 L400.0 93.9" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<path d="M70.0 61.6 L78.5 62.3 L86.9 62.5 L95.4 62.5 L103.8 62.6 L112.3 62.6 L120.8 62.6 L129.2 62.6 L137.7 62.6 L146.2 62.6 L154.6 62.6 L163.1 62.6 L171.5 62.6 L180.0 62.6 L188.5 62.6 L196.9 62.6 L205.4 62.6 L213.8 62.6 L222.3 62.6 L230.8 62.6 L239.2 62.6 L247.7 62.6 L256.2 62.6 L264.6 62.6 L273.1 62.6 L281.5 62.6 L290.0 62.6 L298.5 62.6 L306.9 62.6 L315.4 62.6 L323.8 62.6 L332.3 62.6 L340.8 62.6 L349.2 62.6 L357.7 62.6 L366.2 62.6 L374.6 62.6 L383.1 62.6 L391.5 62.6 L400.0 62.6" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="2 3" stroke-linejoin="round"/>
+<line x1="24" y1="396" x2="48" y2="396" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<text x="54" y="400" font-size="12" fill="var(--fig-blue, #1F5FA8)">3×3 算例（§5）</text>
+<line x1="224" y1="396" x2="248" y2="396" stroke="var(--fig-green, #16704A)" stroke-width="2.4"/>
+<text x="254" y="400" font-size="12" fill="var(--fig-green, #16704A)">4×4，exp(H̃)</text>
+<line x1="24" y1="416" x2="48" y2="416" stroke="var(--fig-amber, #8A6508)" stroke-width="2"/>
+<text x="54" y="420" font-size="12" fill="var(--fig-amber, #8A6508)">4×4，exp(3H̃)</text>
+<line x1="224" y1="416" x2="248" y2="416" stroke="var(--fig-orange, #B4460C)" stroke-width="2"/>
+<text x="254" y="420" font-size="12" fill="var(--fig-orange, #B4460C)">4×4，exp(5H̃)</text>
+<line x1="24" y1="436" x2="48" y2="436" stroke="var(--fig-red, #A3231C)" stroke-width="2"/>
+<text x="54" y="440" font-size="12" fill="var(--fig-red, #A3231C)">4×4，exp(10H̃)</text>
+<line x1="224" y1="436" x2="248" y2="436" stroke="var(--fig-violet, #6733C4)" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="254" y="440" font-size="12" fill="var(--fig-violet, #6733C4)">[1, 1; 0, 1]：1/(2t+1)</text>
+<line x1="24" y1="456" x2="48" y2="456" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="2 3"/>
+<text x="54" y="460" font-size="12" fill="var(--fig-muted, #74716A)">无正对角线：误差停在 1</text>
+<text x="444" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 只做 20 轮：logit 放大 s 倍</text>
+<line x1="500" y1="56" x2="730" y2="56" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="60" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="500" y1="98.15" x2="730" y2="98.15" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="102.15" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-2</tspan></text>
+<line x1="500" y1="140.31" x2="730" y2="140.31" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="144.31" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="500" y1="182.46" x2="730" y2="182.46" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="186.46" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-6</tspan></text>
+<line x1="500" y1="224.62" x2="730" y2="224.62" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="228.62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<line x1="500" y1="266.77" x2="730" y2="266.77" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="270.77" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-10</tspan></text>
+<line x1="500" y1="308.92" x2="730" y2="308.92" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="492" y="312.92" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-12</tspan></text>
+<line x1="500" y1="330" x2="500" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="500" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="557.5" y1="330" x2="557.5" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="557.5" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<line x1="615" y1="330" x2="615" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="615" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<line x1="672.5" y1="330" x2="672.5" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="672.5" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<line x1="730" y1="330" x2="730" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="730" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<line x1="500" y1="330" x2="730" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="500" y1="56" x2="500" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="615" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">logit 缩放 s：M⁽⁰⁾ = exp(s·H̃)</text>
+<path d="M516.8 321.0 L519.2 284.7 L521.6 255.0 L524.0 230.7 L526.4 210.5 L528.8 193.6 L531.1 179.3 L533.5 167.2 L535.9 156.8 L538.3 147.8 L540.7 140.0 L543.1 133.2 L545.5 127.3 L547.9 122.0 L550.3 117.3 L552.7 113.2 L555.1 109.4 L557.5 106.1 L559.9 103.2 L562.3 100.5 L564.7 98.1 L567.1 96.0 L569.5 94.1 L571.9 92.4 L574.3 90.9 L576.7 89.6 L579.1 88.5 L581.5 87.4 L583.9 86.6 L586.2 85.8 L588.6 85.1 L591.0 84.5 L593.4 84.0 L595.8 83.5 L598.2 83.1 L600.6 82.8 L603.0 82.5 L605.4 82.2 L607.8 82.0 L610.2 81.7 L612.6 81.6 L615.0 81.4 L617.4 81.2 L619.8 81.1 L622.2 80.9 L624.6 80.8 L627.0 80.7 L629.4 80.5 L631.8 80.4 L634.2 80.3 L636.6 80.2 L639.0 80.1 L641.4 80.0 L643.8 80.0 L646.1 79.9 L648.5 79.8 L650.9 79.7 L653.3 79.6 L655.7 79.6 L658.1 79.5 L660.5 79.4 L662.9 79.4 L665.3 79.3 L667.7 79.2 L670.1 79.2 L672.5 79.1 L674.9 79.0 L677.3 79.0 L679.7 78.9 L682.1 78.9 L684.5 78.8 L686.9 78.8 L689.3 78.7 L691.7 78.7 L694.1 78.6 L696.5 78.6 L698.9 78.5 L701.2 78.5 L703.6 78.4 L706.0 78.4 L708.4 78.3 L710.8 78.3 L713.2 78.2 L715.6 78.2 L718.0 78.1 L720.4 78.1 L722.8 78.0 L725.2 78.0 L727.6 77.9 L730.0 77.9" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4"/>
+<path d="M531.1 310.8 L533.5 286.0 L535.9 264.6 L538.3 246.2 L540.7 230.1 L543.1 215.9 L545.5 203.5 L547.9 192.4 L550.3 182.5 L552.7 173.6 L555.1 165.6 L557.5 158.5 L559.9 152.0 L562.3 146.1 L564.7 140.8 L567.1 136.1 L569.5 131.8 L571.9 128.0 L574.3 124.5 L576.7 121.5 L579.1 118.7 L581.5 116.3 L583.9 114.2 L586.2 112.3 L588.6 110.7 L591.0 109.3 L593.4 108.0 L595.8 106.9 L598.2 105.9 L600.6 105.0 L603.0 104.2 L605.4 103.4 L607.8 102.8 L610.2 102.1 L612.6 101.6 L615.0 101.0 L617.4 100.6 L619.8 100.1 L622.2 99.7 L624.6 99.3 L627.0 98.9 L629.4 98.6 L631.8 98.2 L634.2 97.9 L636.6 97.7 L639.0 97.4 L641.4 97.2 L643.8 97.0 L646.1 96.8 L648.5 96.6 L650.9 96.4 L653.3 96.3 L655.7 96.2 L658.1 96.0 L660.5 95.9 L662.9 95.8 L665.3 95.7 L667.7 95.6 L670.1 95.5 L672.5 95.4 L674.9 95.4 L677.3 95.3 L679.7 95.2 L682.1 95.1 L684.5 95.1 L686.9 95.0 L689.3 94.9 L691.7 94.9 L694.1 94.8 L696.5 94.8 L698.9 94.7 L701.2 94.7 L703.6 94.6 L706.0 94.5 L708.4 94.5 L710.8 94.4 L713.2 94.4 L715.6 94.3 L718.0 94.3 L720.4 94.2 L722.8 94.2 L725.2 94.1 L727.6 94.1 L730.0 94.0" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2" stroke-dasharray="5 3"/>
+<circle cx="519.17" cy="284.65" r="3.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="557.5" cy="106.13" r="3.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="595.83" cy="83.54" r="3.4" fill="var(--fig-orange, #B4460C)"/>
+<circle cx="691.67" cy="78.66" r="3.4" fill="var(--fig-orange, #B4460C)"/>
+<text x="506" y="396" font-size="12" fill="var(--fig-orange, #B4460C)">橙线：20 轮后的最大列和误差</text>
+<text x="506" y="416" font-size="12" fill="var(--fig-red, #A3231C)">红虚线：‖M⁽²⁰⁾‖₂ − 1（大于 0 即</text>
+<text x="506" y="434" font-size="12" fill="var(--fig-red, #A3231C)">谱范数超过 1）</text>
+<text x="506" y="454" font-size="12" fill="var(--fig-muted, #74716A)">圆点：s = 1、3、5、10</text>
+</svg>

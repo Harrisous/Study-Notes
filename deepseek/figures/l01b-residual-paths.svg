@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>黑板上的 3 层网络：梯度的 8 条路</title>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="10" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">反向传播：梯度从输出端（右）进来，往输入端（左）走；每一层都有两条路</text>
+<circle cx="70" cy="120" r="17" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="70" y="124.5" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">h</text>
+<text x="70" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">输入</text>
+<circle cx="270" cy="120" r="17" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="270" y="124.5" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">h</text>
+<text x="270" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 1 层输出</text>
+<circle cx="470" cy="120" r="17" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="470" y="124.5" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">h</text>
+<text x="470" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 2 层输出</text>
+<circle cx="670" cy="120" r="17" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6"/>
+<text x="670" y="124.5" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">h</text>
+<text x="670" y="156" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">第 3 层输出</text>
+<text x="700" y="98" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">梯度 1</text>
+<line x1="251" y1="120" x2="91" y2="120" stroke="var(--fig-green, #16704A)" stroke-width="3" marker-end="url(#ah-green)"/>
+<text x="170" y="138" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">捷径 ×1</text>
+<path d="M258 108 C 240 60, 236 57, 216 57" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5"/>
+<path d="M124 57 C 104 57, 100 60, 82 108" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5" marker-end="url(#ah-muted)"/>
+<rect x="124" y="42" width="92" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="170" y="61.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 1 层 ×0.1</text>
+<line x1="451" y1="120" x2="291" y2="120" stroke="var(--fig-green, #16704A)" stroke-width="3" marker-end="url(#ah-green)"/>
+<text x="370" y="138" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">捷径 ×1</text>
+<path d="M458 108 C 440 60, 436 57, 416 57" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5"/>
+<path d="M324 57 C 304 57, 300 60, 282 108" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5" marker-end="url(#ah-muted)"/>
+<rect x="324" y="42" width="92" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="370" y="61.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 2 层 ×0.1</text>
+<line x1="651" y1="120" x2="491" y2="120" stroke="var(--fig-green, #16704A)" stroke-width="3" marker-end="url(#ah-green)"/>
+<text x="570" y="138" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">捷径 ×1</text>
+<path d="M658 108 C 640 60, 636 57, 616 57" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5"/>
+<path d="M524 57 C 504 57, 500 60, 482 108" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.5" marker-end="url(#ah-muted)"/>
+<rect x="524" y="42" width="92" height="30" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" rx="6"/>
+<text x="570" y="61.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">第 3 层 ×0.1</text>
+<line x1="10" y1="178" x2="750" y2="178" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="10" y="200" font-size="12" fill="var(--fig-muted, #74716A)">把 8 条路按“穿过几层”分组（小方格从左到右是第 1、2、3 层；实心 = 穿过，×0.1；空心 = 走捷径，×1）</text>
+<text x="20" y="226" font-size="12.5" fill="var(--fig-green, #16704A)" font-weight="700">穿过 0 层：1 条</text>
+<rect x="20" y="240" width="16" height="16" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="2"/>
+<rect x="40" y="240" width="16" height="16" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="2"/>
+<rect x="60" y="240" width="16" height="16" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="2"/>
+<text x="90" y="252.5" font-size="12.5" fill="var(--fig-green, #16704A)">= 1</text>
+<text x="20" y="334" font-size="13" fill="var(--fig-green, #16704A)" font-weight="700">小计 1</text>
+<text x="205" y="226" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">穿过 1 层：3 条</text>
+<rect x="205" y="240" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="225" y="240" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="245" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="275" y="252.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.1</text>
+<rect x="205" y="264" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="225" y="264" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="245" y="264" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="275" y="276.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.1</text>
+<rect x="205" y="288" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="225" y="288" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="245" y="288" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="275" y="300.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.1</text>
+<text x="205" y="334" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">小计 0.3</text>
+<text x="390" y="226" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">穿过 2 层：3 条</text>
+<rect x="390" y="240" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="410" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="430" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="460" y="252.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.01</text>
+<rect x="390" y="264" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="410" y="264" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="430" y="264" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="460" y="276.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.01</text>
+<rect x="390" y="288" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="410" y="288" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="430" y="288" width="16" height="16" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="460" y="300.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.01</text>
+<text x="390" y="334" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">小计 0.03</text>
+<text x="575" y="226" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">穿过 3 层：1 条</text>
+<rect x="575" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="595" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<rect x="615" y="240" width="16" height="16" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="2"/>
+<text x="645" y="252.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)">= 0.001</text>
+<text x="575" y="334" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">小计 0.001</text>
+<rect x="567" y="208" width="172" height="136" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="6" stroke-dasharray="5 4"/>
+<text x="575" y="286" font-size="12" fill="var(--fig-muted, #74716A)">没有残差的网络，</text>
+<text x="575" y="304" font-size="12" fill="var(--fig-muted, #74716A)">只剩这一条路：0.001</text>
+<text x="20" y="382" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">合计：1 + 0.3 + 0.03 + 0.001 = 1.331 = 1.1³。绿色那条路一层也不穿过，贡献恒为 1。</text>
+</svg>

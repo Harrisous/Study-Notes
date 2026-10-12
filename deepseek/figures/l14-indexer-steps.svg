@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>lightning indexer 的一次打分：两个头、四个键（手算例）</title>
+
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">查询 token t 的 indexer：<tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">1</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan> = (1, 0)，<tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">2</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan> = (0, 1)；头权重 w = (0.5, 1.0)</text>
+<text x="247" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">s = 1</text>
+<text x="321" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">s = 2</text>
+<text x="395" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">s = 3</text>
+<text x="469" y="58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">s = 4</text>
+<text x="24" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)">键 <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan></text>
+<text x="247" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(2, −1)</text>
+<text x="321" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(−1, 3)</text>
+<text x="395" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(1, 1)</text>
+<text x="469" y="90" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(−2, −2)</text>
+<line x1="20" y1="100" x2="506" y2="100" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="24" y="120" font-size="12" fill="var(--fig-ink, #1C1B19)">头 1：<tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">1</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan> · <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan></text>
+<text x="247" y="120" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<text x="321" y="120" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−1</text>
+<text x="395" y="120" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="469" y="120" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−2</text>
+<text x="24" y="150" font-size="12" fill="var(--fig-muted, #74716A)">ReLU</text>
+<text x="247" y="150" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="307" y="135" width="28" height="21" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" rx="4"/>
+<text x="321" y="150" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="395" y="150" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="455" y="135" width="28" height="21" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" rx="4"/>
+<text x="469" y="150" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="24" y="180" font-size="12" fill="var(--fig-ink, #1C1B19)">× w<tspan baseline-shift="sub" font-size="11">1</tspan> = 0.5</text>
+<text x="247" y="180" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="321" y="180" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<text x="395" y="180" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0.5</text>
+<text x="469" y="180" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<line x1="20" y1="190" x2="506" y2="190" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="24" y="210" font-size="12" fill="var(--fig-ink, #1C1B19)">头 2：<tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">2</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan> · <tspan font-weight="700">k</tspan><tspan baseline-shift="sub" font-size="11">s</tspan><tspan baseline-shift="super" font-size="11" dx="-6.16">I</tspan></text>
+<text x="247" y="210" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−1</text>
+<text x="321" y="210" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="395" y="210" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<text x="469" y="210" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">−2</text>
+<text x="24" y="240" font-size="12" fill="var(--fig-muted, #74716A)">ReLU</text>
+<rect x="233" y="225" width="28" height="21" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" rx="4"/>
+<text x="247" y="240" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="321" y="240" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<text x="395" y="240" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1</text>
+<rect x="455" y="225" width="28" height="21" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" rx="4"/>
+<text x="469" y="240" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle">0</text>
+<text x="24" y="270" font-size="12" fill="var(--fig-ink, #1C1B19)">× w<tspan baseline-shift="sub" font-size="11">2</tspan> = 1.0</text>
+<text x="247" y="270" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<text x="321" y="270" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">3</text>
+<text x="395" y="270" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">1</text>
+<text x="469" y="270" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle">0</text>
+<line x1="20" y1="286" x2="506" y2="286" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="24" y="310" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="700">I<tspan baseline-shift="sub" font-size="11">t,s</tspan> = 两行相加</text>
+<text x="247" y="311" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">1</text>
+<rect x="293" y="292" width="56" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="5"/>
+<text x="321" y="311" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">3</text>
+<rect x="367" y="292" width="56" height="28" fill="var(--fig-violet, #6733C4)" fill-opacity="0.18" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4" rx="5"/>
+<text x="395" y="311" font-size="14" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">1.5</text>
+<text x="469" y="311" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">0</text>
+<text x="24" y="344" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">top-2（k = 2）</text>
+<text x="247" y="344" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">—</text>
+<text x="321" y="344" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">选中</text>
+<text x="395" y="344" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">选中</text>
+<text x="469" y="344" font-size="13" fill="var(--fig-muted, #74716A)" text-anchor="middle">—</text>
+<text x="528" y="70" font-size="12" fill="var(--fig-ink, #1C1B19)">ReLU：负的点积一律记 0</text>
+<text x="528" y="92" font-size="12" fill="var(--fig-ink, #1C1B19)">（红底的 0 就是被截断的）。</text>
+<text x="528" y="114" font-size="12" fill="var(--fig-muted, #74716A)">s = 1 在头 1 上得 2 分，</text>
+<text x="528" y="136" font-size="12" fill="var(--fig-muted, #74716A)">在头 2 上是 −1，被截成 0；</text>
+<text x="528" y="158" font-size="12" fill="var(--fig-muted, #74716A)">“无关”和“强烈相反”</text>
+<text x="528" y="180" font-size="12" fill="var(--fig-muted, #74716A)">在这个头上分不出来。</text>
+<text x="528" y="224" font-size="12" fill="var(--fig-ink, #1C1B19)">w 是由 <tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> 算出的实数，</text>
+<text x="528" y="246" font-size="12" fill="var(--fig-muted, #74716A)">可正可负：一个头可以投</text>
+<text x="528" y="268" font-size="12" fill="var(--fig-muted, #74716A)">“反对票”（本例两者都为正）。</text>
+<text x="528" y="312" font-size="12" fill="var(--fig-ink, #1C1B19)">没有 softmax：I 只用来排序，</text>
+<text x="528" y="334" font-size="12" fill="var(--fig-muted, #74716A)">绝对大小不影响选谁。</text>
+</svg>

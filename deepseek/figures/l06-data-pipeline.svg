@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek LLM 的三阶段数据管线与跨 dump 去重率</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="20" y="36" width="190" height="112" fill="var(--fig-red, #A3231C)" fill-opacity="0.07" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" rx="8"/>
+<text x="115" y="68.05" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">① 去重 deduplication</text>
+<text x="115" y="90.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">目标：同一内容只留一份</text>
+<text x="115" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">跨全部 91 个 dump 一起做</text>
+<text x="115" y="128.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（README：MinHash LSH）</text>
+<line x1="213" y1="92" x2="241" y2="92" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="244" y="36" width="190" height="112" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.07" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="339" y="68.05" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">② 过滤 filtering</text>
+<text x="339" y="90.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">目标：提高信息密度</text>
+<text x="339" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">语言学 + 语义两类评估</text>
+<text x="339" y="128.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（阈值与模型未公开）</text>
+<line x1="437" y1="92" x2="465" y2="92" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="468" y="36" width="190" height="112" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.07" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" rx="8"/>
+<text x="563" y="68.05" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">③ 重混 remixing</text>
+<text x="563" y="90.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">目标：纠正领域失衡</text>
+<text x="563" y="109.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">提高少数领域的占比</text>
+<text x="563" y="128.3" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（配比未公开）</text>
+<line x1="661" y1="92" x2="689" y2="92" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.6" marker-end="url(#ah-ink)"/>
+<rect x="692" y="50" width="48" height="84" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="1.4" rx="8"/>
+<text x="716" y="87.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">2T</text>
+<text x="716" y="108.8" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">tokens</text>
+<text x="20" y="22" font-size="12" fill="var(--fig-muted, #74716A)">论文 §2.1：去重与重混保证多样性，过滤提高信息密度</text>
+<line x1="92" y1="470" x2="600" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="474" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0%</text>
+<line x1="92" y1="417.2" x2="600" y2="417.2" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="421.2" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">20%</text>
+<line x1="92" y1="364.4" x2="600" y2="364.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="368.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">40%</text>
+<line x1="92" y1="311.6" x2="600" y2="311.6" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="315.6" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">60%</text>
+<line x1="92" y1="258.8" x2="600" y2="258.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="262.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">80%</text>
+<line x1="92" y1="206" x2="600" y2="206" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="84" y="210" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<line x1="92" y1="206" x2="92" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="92" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="168.46" y1="206" x2="168.46" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="168.46" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="269.54" y1="206" x2="269.54" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="269.54" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<line x1="346" y1="206" x2="346" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="346" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="422.46" y1="206" x2="422.46" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="422.46" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="523.54" y1="206" x2="523.54" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="523.54" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="600" y1="206" x2="600" y2="470" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="600" y="488" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100</text>
+<line x1="92" y1="470" x2="600" y2="470" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="92" y1="206" x2="92" y2="470" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="346" y="510" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">一起去重的 Common Crawl dump 个数（对数刻度）</text>
+<text x="28" y="338" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 28 338)">去重率（被删文档占比）</text>
+<path d="M92.0 470.0 L92.0 411.4 L168.5 346.7 L289.7 323.0 L366.1 285.5 L397.8 270.2 L433.0 268.6 L501.6 254.6 L589.6 232.9 L589.6 470.0 Z" fill="var(--fig-red, #A3231C)" fill-opacity="0.08"/>
+<path d="M92.0 411.4 L168.5 346.7 L289.7 323.0 L366.1 285.5 L397.8 270.2 L433.0 268.6 L501.6 254.6 L589.6 232.9" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2"/>
+<circle cx="92" cy="411.39" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="100" y="415.39" font-size="11" fill="var(--fig-red, #A3231C)">22.2</text>
+<circle cx="168.46" cy="346.71" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="168.46" y="336.71" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">46.7</text>
+<circle cx="289.65" cy="322.95" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="289.65" y="312.95" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">55.7</text>
+<circle cx="366.11" cy="285.46" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="366.11" y="275.46" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">69.9</text>
+<circle cx="397.85" cy="270.15" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="391.85" y="260.15" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="end">75.7</text>
+<circle cx="432.98" cy="268.57" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="440.98" y="286.57" font-size="11" fill="var(--fig-red, #A3231C)">76.3</text>
+<circle cx="501.65" cy="254.58" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="501.65" y="244.58" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">81.6</text>
+<circle cx="589.6" cy="232.93" r="4" fill="var(--fig-red, #A3231C)"/>
+<text x="589.6" y="222.93" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">89.8</text>
+<text x="620" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)">单个 dump 内去重：</text>
+<text x="620" y="268" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">删 22.2%，留 77.8%</text>
+<text x="620" y="306" font-size="12" fill="var(--fig-ink, #1C1B19)">91 个 dump 一起去重：</text>
+<text x="620" y="324" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">删 89.8%，留 10.2%</text>
+<text x="620" y="362" font-size="12" fill="var(--fig-muted, #74716A)">删掉的文档数是</text>
+<text x="620" y="380" font-size="12" fill="var(--fig-muted, #74716A)">单 dump 的 89.8/22.2</text>
+<text x="620" y="398" font-size="12" fill="var(--fig-muted, #74716A)">≈ 4.05 倍</text>
+</svg>

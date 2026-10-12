@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 368" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>两颗骰子：联合分布表、点数和的分布与已知和为 8 的条件分布</title>
+
+<text x="180" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">联合分布：36 格，每格 1/36</text>
+<text x="180" y="44" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">蓝骰子 B</text>
+<text x="38" y="172" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 38 172)">红骰子 A</text>
+<text x="95" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="129" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="163" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="197" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="231" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="265" y="64" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="70" y="91" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<text x="70" y="125" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<text x="70" y="159" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">3</text>
+<text x="70" y="193" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4</text>
+<text x="70" y="227" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">5</text>
+<text x="70" y="261" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6</text>
+<rect x="79" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.07" rx="3"/>
+<text x="95" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">2</text>
+<rect x="113" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="3"/>
+<text x="129" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="147" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="163" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="181" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="197" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="215" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.21" rx="3"/>
+<text x="231" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="249" y="71" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="265" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="79" y="105" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="3"/>
+<text x="95" y="125" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">3</text>
+<rect x="113" y="105" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="129" y="125" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="147" y="105" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="163" y="125" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="181" y="105" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.21" rx="3"/>
+<text x="197" y="125" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="215" y="105" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="231" y="125" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="249" y="105" width="32" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="265" y="125" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="79" y="139" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="95" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">4</text>
+<rect x="113" y="139" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="129" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="147" y="139" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.21" rx="3"/>
+<text x="163" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="181" y="139" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="197" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="215" y="139" width="32" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="231" y="159" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">8</text>
+<rect x="249" y="139" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="265" y="159" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<rect x="79" y="173" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="95" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">5</text>
+<rect x="113" y="173" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.21" rx="3"/>
+<text x="129" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="147" y="173" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="163" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="181" y="173" width="32" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="197" y="193" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="215" y="173" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="231" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<rect x="249" y="173" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="265" y="193" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">10</text>
+<rect x="79" y="207" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.21" rx="3"/>
+<text x="95" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">6</text>
+<rect x="113" y="207" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="129" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="147" y="207" width="32" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="163" y="227" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="181" y="207" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="197" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<rect x="215" y="207" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="231" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">10</text>
+<rect x="249" y="207" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="3"/>
+<text x="265" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">11</text>
+<rect x="79" y="241" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.24" rx="3"/>
+<text x="95" y="261" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">7</text>
+<rect x="113" y="241" width="32" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.28" rx="3"/>
+<text x="129" y="261" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="147" y="241" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.17" rx="3"/>
+<text x="163" y="261" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">9</text>
+<rect x="181" y="241" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.14" rx="3"/>
+<text x="197" y="261" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">10</text>
+<rect x="215" y="241" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" rx="3"/>
+<text x="231" y="261" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">11</text>
+<rect x="249" y="241" width="32" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.07" rx="3"/>
+<text x="265" y="261" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">12</text>
+<rect x="215" y="139" width="32" height="32" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="2.2" rx="3"/>
+<text x="78" y="296" font-size="12" fill="var(--fig-muted, #74716A)">格子里的数是点数和 S = A + B</text>
+<text x="78" y="314" font-size="12" fill="var(--fig-blue, #1F5FA8)">蓝格：S = 8，共 5 格</text>
+<text x="78" y="332" font-size="12" fill="var(--fig-ink, #1C1B19)">粗框：(A, B) = (3, 5)，5 格里的 1 格</text>
+<line x1="400" y1="274" x2="690" y2="274" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="400" y1="212.18" x2="690" y2="212.18" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="400" y1="150.36" x2="690" y2="150.36" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="400" y1="88.55" x2="690" y2="88.55" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="400" y1="274" x2="690" y2="274" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="400" y1="70" x2="400" y2="274" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="396" y1="274" x2="400" y2="274" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="393" y="278" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="396" y1="212.18" x2="400" y2="212.18" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="393" y="216.18" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2/36</text>
+<line x1="396" y1="150.36" x2="400" y2="150.36" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="393" y="154.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">4/36</text>
+<line x1="396" y1="88.55" x2="400" y2="88.55" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="393" y="92.55" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">6/36</text>
+<text x="545" y="24" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">点数和 S 的分布：P(S = s) = (6 − |s − 7|)/36</text>
+<rect x="403.18" y="243.09" width="20" height="30.91" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="413.18" y="238.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="413.18" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<rect x="429.55" y="212.18" width="20" height="61.82" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="439.55" y="207.18" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="439.55" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<rect x="455.91" y="181.27" width="20" height="92.73" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="465.91" y="176.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="465.91" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<rect x="482.27" y="150.36" width="20" height="123.64" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="492.27" y="145.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="492.27" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<rect x="508.64" y="119.45" width="20" height="154.55" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="518.64" y="114.45" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="518.64" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<rect x="535" y="88.55" width="20" height="185.45" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="545" y="83.55" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="545" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">7</text>
+<rect x="561.36" y="119.45" width="20" height="154.55" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.55" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2"/>
+<text x="571.36" y="114.45" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">5</text>
+<text x="571.36" y="290" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">8</text>
+<rect x="587.73" y="150.36" width="20" height="123.64" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="597.73" y="145.36" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="597.73" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">9</text>
+<rect x="614.09" y="181.27" width="20" height="92.73" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="624.09" y="176.27" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="624.09" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<rect x="640.45" y="212.18" width="20" height="61.82" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="650.45" y="207.18" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="650.45" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">11</text>
+<rect x="666.82" y="243.09" width="20" height="30.91" fill="var(--fig-muted, #74716A)" fill-opacity="0.28"/>
+<text x="676.82" y="238.09" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="676.82" y="290" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">12</text>
+<text x="545" y="308" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">s（柱顶数字 = 格子数）</text>
+<text x="400" y="328" font-size="13" fill="var(--fig-blue, #1F5FA8)">P(S = 8) = 5/36</text>
+<text x="400" y="346" font-size="13" fill="var(--fig-ink, #1C1B19)">P(A = 3 | S = 8) = (1/36) ÷ (5/36) = 1/5</text>
+</svg>

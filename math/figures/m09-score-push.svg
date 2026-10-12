@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 416" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>得分函数的推与拉：权重决定哪支箭头更长</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="18" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">玩具模型第一步（π(5) = 0.6，π(6) = 0.4），只画 logit z<tspan baseline-shift="sub" font-size="11">5</tspan> 的分量（z<tspan baseline-shift="sub" font-size="11">6</tspan> 的分量正好相反）</text>
+<text x="16" y="42" font-size="12" fill="var(--fig-muted, #74716A)">每支箭头 = 选到这个动作的概率 × 权重 × 得分函数（选“5”时 +0.4，选“6”时 −0.6）；一行箭头之和 = 期望</text>
+<text x="16" y="78" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 权重 = 1</text>
+<text x="16" y="97" font-size="12" fill="var(--fig-muted, #74716A)">只看得分函数本身</text>
+<text x="16" y="116" font-size="12" fill="var(--fig-ink, #1C1B19)">推与拉正好抵消</text>
+<line x1="417" y1="62" x2="417" y2="120" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="262" y1="120" x2="572" y2="120" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="262" y1="117" x2="262" y2="123" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="339.5" y1="117" x2="339.5" y2="123" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="417" y1="117" x2="417" y2="123" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="494.5" y1="117" x2="494.5" y2="123" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="572" y1="117" x2="572" y2="123" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="262" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3</text>
+<text x="417" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="572" y="136" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+0.3</text>
+<line x1="417" y1="74" x2="541" y2="74" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<text x="588" y="78" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">选“5”：+0.240</text>
+<line x1="417" y1="92" x2="293" y2="92" stroke="var(--fig-red, #A3231C)" stroke-width="2.6" marker-end="url(#ah-red)"/>
+<text x="588" y="96" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">选“6”：−0.240</text>
+<circle cx="417" cy="110" r="4.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="588" y="114" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">合力：0</text>
+<line x1="16" y1="146" x2="708" y2="146" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="168" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 权重 = 回报</text>
+<text x="16" y="187" font-size="12" fill="var(--fig-muted, #74716A)">Q(5) = 0.85，Q(6) = 0.10</text>
+<text x="16" y="206" font-size="12" fill="var(--fig-blue, #1F5FA8)">合力就是真梯度</text>
+<line x1="417" y1="152" x2="417" y2="210" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="262" y1="210" x2="572" y2="210" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="262" y1="207" x2="262" y2="213" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="339.5" y1="207" x2="339.5" y2="213" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="417" y1="207" x2="417" y2="213" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="494.5" y1="207" x2="494.5" y2="213" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="572" y1="207" x2="572" y2="213" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="262" y="226" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3</text>
+<text x="417" y="226" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="572" y="226" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+0.3</text>
+<line x1="417" y1="164" x2="522.4" y2="164" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<text x="588" y="168" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">选“5”：+0.204</text>
+<line x1="417" y1="182" x2="404.6" y2="182" stroke="var(--fig-red, #A3231C)" stroke-width="2.6" marker-end="url(#ah-red)"/>
+<text x="588" y="186" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">选“6”：−0.024</text>
+<line x1="417" y1="200" x2="510" y2="200" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3.4" marker-end="url(#ah-blue)"/>
+<text x="588" y="204" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">合力：+0.180</text>
+<line x1="16" y1="236" x2="708" y2="236" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="258" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 权重 = 回报 − 0.55</text>
+<text x="16" y="277" font-size="12" fill="var(--fig-muted, #74716A)">即优势 +0.30、−0.45</text>
+<text x="16" y="296" font-size="12" fill="var(--fig-blue, #1F5FA8)">两支都往右，合力不变</text>
+<line x1="417" y1="242" x2="417" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="262" y1="300" x2="572" y2="300" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="262" y1="297" x2="262" y2="303" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="339.5" y1="297" x2="339.5" y2="303" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="417" y1="297" x2="417" y2="303" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="494.5" y1="297" x2="494.5" y2="303" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="572" y1="297" x2="572" y2="303" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="262" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">−0.3</text>
+<text x="417" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="572" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+0.3</text>
+<line x1="417" y1="254" x2="454.2" y2="254" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<text x="588" y="258" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">选“5”：+0.072</text>
+<line x1="417" y1="272" x2="472.8" y2="272" stroke="var(--fig-red, #A3231C)" stroke-width="2.6" marker-end="url(#ah-red)"/>
+<text x="588" y="276" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">选“6”：+0.108</text>
+<line x1="417" y1="290" x2="510" y2="290" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3.4" marker-end="url(#ah-blue)"/>
+<text x="588" y="294" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">合力：+0.180</text>
+<line x1="16" y1="326" x2="708" y2="326" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="16" y="348" font-size="12.5" fill="var(--fig-ink, #1C1B19)" font-weight="600">④ 权重 = 回报 + 10</text>
+<text x="16" y="367" font-size="12" fill="var(--fig-muted, #74716A)">10.85、10.10</text>
+<text x="16" y="386" font-size="12" fill="var(--fig-blue, #1F5FA8)">两支巨大且反向，合力不变</text>
+<text x="16" y="404" font-size="11" fill="var(--fig-muted, #74716A)">（这一行横轴刻度是上面的 10 倍）</text>
+<line x1="417" y1="332" x2="417" y2="390" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="262" y1="390" x2="572" y2="390" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="262" y1="387" x2="262" y2="393" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="339.5" y1="387" x2="339.5" y2="393" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="417" y1="387" x2="417" y2="393" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="494.5" y1="387" x2="494.5" y2="393" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="572" y1="387" x2="572" y2="393" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="262" y="406" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">−3</text>
+<text x="417" y="406" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<text x="572" y="406" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">+3</text>
+<line x1="417" y1="344" x2="551.54" y2="344" stroke="var(--fig-green, #16704A)" stroke-width="2.6" marker-end="url(#ah-green)"/>
+<text x="588" y="348" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">选“5”：+2.604</text>
+<line x1="417" y1="362" x2="291.76" y2="362" stroke="var(--fig-red, #A3231C)" stroke-width="2.6" marker-end="url(#ah-red)"/>
+<text x="588" y="366" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">选“6”：−2.424</text>
+<line x1="417" y1="380" x2="426.3" y2="380" stroke="var(--fig-blue, #1F5FA8)" stroke-width="3.4" marker-end="url(#ah-blue)"/>
+<text x="588" y="384" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">合力：+0.180</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>总参数与每 token 激活参数</title>
+
+<line x1="90.9" y1="24" x2="90.9" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="90.9" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">5B</text>
+<line x1="155.81" y1="24" x2="155.81" y2="410" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="155.81" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">10B</text>
+<line x1="220.73" y1="24" x2="220.73" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="220.73" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">20B</text>
+<line x1="306.55" y1="24" x2="306.55" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="306.55" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">50B</text>
+<line x1="371.46" y1="24" x2="371.46" y2="410" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="371.46" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">100B</text>
+<line x1="436.38" y1="24" x2="436.38" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="436.38" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">200B</text>
+<line x1="522.19" y1="24" x2="522.19" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="522.19" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">500B</text>
+<line x1="587.11" y1="24" x2="587.11" y2="410" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="587.11" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1T</text>
+<line x1="652.03" y1="24" x2="652.03" y2="410" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="652.03" y="427" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2T</text>
+<line x1="70" y1="410" x2="690" y2="410" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="63" y="414" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">1B</text>
+<line x1="70" y1="354.11" x2="690" y2="354.11" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="63" y="358.11" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">2B</text>
+<line x1="70" y1="280.24" x2="690" y2="280.24" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="63" y="284.24" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">5B</text>
+<line x1="70" y1="224.35" x2="690" y2="224.35" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="63" y="228.35" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">10B</text>
+<line x1="70" y1="168.46" x2="690" y2="168.46" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="63" y="172.46" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">20B</text>
+<line x1="70" y1="94.59" x2="690" y2="94.59" stroke="var(--fig-grid, #EDE9E0)" stroke-width="0.9"/>
+<text x="63" y="98.59" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">50B</text>
+<line x1="70" y1="38.7" x2="690" y2="38.7" stroke="var(--fig-rule, #DCD7CC)" stroke-width="0.9"/>
+<text x="63" y="42.7" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="end">100B</text>
+<text x="380" y="452" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">总参数（对数轴）</text>
+<text x="22" y="217" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 22 217)">每 token 激活参数（对数轴）</text>
+<line x1="70" y1="298.23" x2="388.54" y2="24" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="210.86" y="171.96" font-size="11.5" fill="var(--fig-muted, #74716A)" transform="rotate(-40.73 210.86 171.96)">激活比 1（稠密）</text>
+<line x1="155.81" y1="410" x2="604.19" y2="24" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="270.43" y="306.33" font-size="11.5" fill="var(--fig-muted, #74716A)" transform="rotate(-40.73 270.43 306.33)">激活比 1/10</text>
+<line x1="220.73" y1="410" x2="669.1" y2="24" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="332.55" y="308.74" font-size="11.5" fill="var(--fig-muted, #74716A)" transform="rotate(-40.73 332.55 308.74)">激活比 1/20</text>
+<line x1="285.65" y1="410" x2="690" y2="61.89" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="409.44" y="298.43" font-size="11.5" fill="var(--fig-muted, #74716A)" transform="rotate(-40.73 409.44 298.43)">激活比 1/40</text>
+<line x1="350.56" y1="410" x2="690" y2="117.78" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="483.28" y="290.75" font-size="11.5" fill="var(--fig-muted, #74716A)" transform="rotate(-40.73 483.28 290.75)">激活比 1/80</text>
+<line x1="531.46" y1="186.46" x2="559.92" y2="186.46" stroke="var(--fig-amber, #8A6508)" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="559.92" cy="186.46" r="4" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-amber, #8A6508)" stroke-width="1.6"/>
+<text x="540.46" y="205.46" font-size="11.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke">虚线：再加 196B Engram 表</text>
+<text x="540.46" y="220.46" font-size="11.5" fill="var(--fig-amber, #8A6508)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke">合计约 748B</text>
+<line x1="531.46" y1="242.34" x2="531.46" y2="186.46" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2"/>
+<circle cx="122.41" cy="253.11" r="5.5" fill="var(--fig-ink, #1C1B19)"/>
+<text x="130.41" y="269.11" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke">DeepSeek LLM 7B  7 / 7</text>
+<circle cx="333.96" cy="70.99" r="5.5" fill="var(--fig-ink, #1C1B19)"/>
+<text x="341.96" y="86.99" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke">DeepSeek LLM 67B  67 / 67</text>
+<circle cx="202.15" cy="326.99" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="194.15" y="319.99" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">DeepSeekMoE 16B  16.4 / 2.8</text>
+<circle cx="198.06" cy="339.41" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="190.06" y="351.41" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">V2-Lite  15.7 / 2.4</text>
+<circle cx="451.88" cy="164.53" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="443.88" y="158.53" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">V2  236 / 21</text>
+<circle cx="549.74" cy="118.86" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="541.74" y="111.86" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">V3  671 / 37</text>
+<circle cx="469.22" cy="203.2" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="461.22" y="208.2" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">V4-Flash  284 / 13</text>
+<circle cx="631.13" cy="96.22" r="5.5" fill="var(--fig-violet, #6733C4)"/>
+<text x="623.13" y="88.22" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" text-anchor="end" font-weight="600">V4-Pro  1600 / 49</text>
+<circle cx="531.46" cy="186.46" r="5.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="539.46" y="177.46" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" font-weight="600">V4.1-Flash 解码  552 / 16</text>
+<circle cx="531.46" cy="242.34" r="5.5" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="539.46" y="247.34" font-size="12" fill="var(--fig-ink, #1C1B19)" stroke="var(--fig-surface, #FFFFFF)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" font-weight="600">V4.1-Flash 预填充  552 / 8</text>
+</svg>

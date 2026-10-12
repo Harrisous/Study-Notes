@@ -1,0 +1,17 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.6)–(0.7) and the numbers of lesson 0 §3.
+dense | C_{\mathrm{token}}\approx 2\,\p{n}{N}
+moe | \mathbf h'_t=\p{u}{\mathbf u_t}+\p{s}{\sum_{i=1}^{N_s}\mathrm{FFN}^{(s)}_i(\mathbf u_t)}+\p{r}{\sum_{i=1}^{N_r}\p{g}{g_{i,t}}\,\mathrm{FFN}^{(r)}_i(\mathbf u_t)}
+aff | s_{i,t}=\sigma\big(\p{d}{\mathbf u_t^{\top}\mathbf e_i}\big)
+sel | \mathcal S_t=\mathrm{TopK}\big(\{\p{sb}{s_{j,t}+b_j}\}_{j=1}^{N_r},\ K_r\big)
+gate | g_{i,t}=\frac{\p{s}{s_{i,t}}}{\sum_{j\in\mathcal S_t}s_{j,t}}\quad(i\in\mathcal S_t)
+over | b_i\leftarrow b_i-\gamma
+under | b_i\leftarrow b_i+\gamma
+c16 | \binom{16}{2}=\p{r}{120}
+c64 | \binom{64}{8}=\p{r}{4{,}426{,}165{,}368}
+r16 | \frac{2.8}{16.4}\approx\frac{1}{6}
+rv2 | \frac{21}{236}\approx\frac{1}{11}
+rv3 | \frac{37}{671}=5.5\%
+rpro | \frac{49}{1600}=3.1\%
+rdec | \frac{16}{552}=2.9\%
+rpre | \frac{8}{552}=1.45\%\approx\frac{1}{69}
+f40 | \frac{74.4\,\mathrm{T}}{183.5\,\mathrm{T}}\approx 40\%

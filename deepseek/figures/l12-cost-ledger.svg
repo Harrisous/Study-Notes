@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3 正式训练的 GPU 小时与美元（按论文表 1，按比例绘制）</title>
+
+<text x="40" y="28" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">正式训练一次：2,788K H800 GPU 小时 × 每小时 $2（假设租价）= $5.576M</text>
+<text x="40" y="50" font-size="12" fill="var(--fig-muted, #74716A)">柱长按 GPU 小时等比例；天数按 2048 张 GPU 同时工作计算</text>
+<rect x="40" y="92" width="611.54" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.22" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<rect x="651.54" y="92" width="27.32" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.22" stroke="var(--fig-violet, #6733C4)" stroke-width="1.4"/>
+<rect x="678.85" y="92" width="1.15" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.22" stroke="var(--fig-green, #16704A)" stroke-width="1.4"/>
+<text x="54" y="111" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="600">预训练 2,664K GPU·h（95.55%）</text>
+<text x="54" y="128" font-size="12" fill="var(--fig-ink, #1C1B19)">$5.328M · 14.8T token · 约 54.2 天</text>
+<line x1="665.19" y1="92" x2="665.19" y2="78" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2"/>
+<text x="663.19" y="72" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="end">上下文扩展 119K（4.27%）· $0.238M · 2.4 天</text>
+<line x1="679.43" y1="136" x2="679.43" y2="152" stroke="var(--fig-green, #16704A)" stroke-width="1.2"/>
+<text x="681.43" y="166" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end">后训练 5K（0.18%）</text>
+<text x="681.43" y="182" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="end">$0.01M · 0.1 天</text>
+<text x="40" y="166" font-size="12" fill="var(--fig-ink, #1C1B19)">对账：每万亿 token 180K GPU·h × 14.8T = 2,664K</text>
+<text x="40" y="182" font-size="12" fill="var(--fig-muted, #74716A)">与预训练一格恰好相等</text>
+<text x="40" y="228" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">不在这张账里的：</text>
+<rect x="40" y="240" width="148" height="62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="6" stroke-dasharray="5 4"/>
+<text x="114" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">先前的研究</text>
+<text x="114" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">与消融实验</text>
+<text x="114" y="320" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">论文明确排除</text>
+<rect x="204" y="240" width="148" height="62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="6" stroke-dasharray="5 4"/>
+<text x="278" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">集群购置</text>
+<text x="278" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">（$2 只是假设租价）</text>
+<text x="278" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">论文未讨论</text>
+<rect x="368" y="240" width="148" height="62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="6" stroke-dasharray="5 4"/>
+<text x="442" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">人员、数据</text>
+<text x="442" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">采集与标注</text>
+<text x="442" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">论文未讨论</text>
+<rect x="532" y="240" width="148" height="62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="6" stroke-dasharray="5 4"/>
+<text x="606" y="266" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">R1 等配套模型</text>
+<text x="606" y="284" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">的训练</text>
+<text x="606" y="320" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">论文未讨论</text>
+<text x="40" y="350" font-size="11" fill="var(--fig-muted, #74716A)">数据：DeepSeek-V3 技术报告表 1 与 §1；天数 = GPU 小时 ÷ 2048 ÷ 24</text>
+</svg>

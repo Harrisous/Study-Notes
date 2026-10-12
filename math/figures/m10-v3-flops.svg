@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V3 每个训练 token 的运算量拆分</title>
+
+<text x="40" y="30" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="600">DeepSeek-V3 每个训练 token：250.45 GFLOPs（前向 83.5 + 反向 167.0）</text>
+<text x="40" y="50" font-size="12" fill="var(--fig-muted, #74716A)">矩阵部分 = 6 × 每 token 激活的参数 36.62B；注意力打分按因果掩码、平均上下文 2048 计</text>
+<rect x="40" y="64" width="313.31" height="46" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="353.31" y="64" width="175" height="46" fill="var(--fig-orange, #B4460C)" fill-opacity="0.85" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="528.31" y="64" width="78.46" height="46" fill="var(--fig-green, #16704A)" fill-opacity="0.85" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="606.76" y="64" width="39.16" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="645.93" y="64" width="18.23" height="46" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="664.16" y="64" width="14.21" height="46" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.55" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<rect x="678.37" y="64" width="1.63" height="46" fill="var(--fig-violet, #6733C4)" fill-opacity="0.4" stroke="var(--fig-surface, #FFFFFF)" stroke-width="1"/>
+<text x="196.66" y="84" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">122.6</text>
+<text x="196.66" y="101" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">49%</text>
+<text x="440.81" y="84" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">68.5</text>
+<text x="440.81" y="101" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">27%</text>
+<text x="567.54" y="84" font-size="13" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle" font-weight="700">30.7</text>
+<text x="567.54" y="101" font-size="12" fill="var(--fig-surface, #FFFFFF)" text-anchor="middle">12%</text>
+<rect x="40" y="129" width="14" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1" rx="2"/>
+<text x="62" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)">路由专家（每 token 8 个）  122.61 GF（49.0%）</text>
+<rect x="370" y="129" width="14" height="14" fill="var(--fig-orange, #B4460C)" fill-opacity="0.85" stroke="var(--fig-orange, #B4460C)" stroke-width="1" rx="2"/>
+<text x="392" y="140" font-size="12" fill="var(--fig-ink, #1C1B19)">MLA 的投影矩阵  68.48 GF（27.3%）</text>
+<rect x="40" y="153" width="14" height="14" fill="var(--fig-green, #16704A)" fill-opacity="0.85" stroke="var(--fig-green, #16704A)" stroke-width="1" rx="2"/>
+<text x="62" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)">注意力打分与加权求和  30.70 GF（12.3%）</text>
+<rect x="370" y="153" width="14" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.85" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="2"/>
+<text x="392" y="164" font-size="12" fill="var(--fig-ink, #1C1B19)">共享专家  15.33 GF（6.1%）</text>
+<rect x="40" y="177" width="14" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.55" stroke="var(--fig-muted, #74716A)" stroke-width="1" rx="2"/>
+<text x="62" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)">前 3 层稠密 FFN  7.13 GF（2.8%）</text>
+<rect x="370" y="177" width="14" height="14" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.55" stroke="var(--fig-ink, #1C1B19)" stroke-width="1" rx="2"/>
+<text x="392" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)">输出头  5.56 GF（2.2%）</text>
+<rect x="40" y="201" width="14" height="14" fill="var(--fig-violet, #6733C4)" fill-opacity="0.4" stroke="var(--fig-violet, #6733C4)" stroke-width="1" rx="2"/>
+<text x="62" y="212" font-size="12" fill="var(--fig-ink, #1C1B19)">门控（路由打分）  0.64 GF（0.3%）</text>
+<text x="40" y="252" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">同一刻度下的对比：如果 671B 个参数对每个 token 全部参与计算（嵌入层照旧只查表）</text>
+<rect x="40" y="264" width="39.56" height="20" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.85"/>
+<text x="87.56" y="279" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="600">V3 实际：250 GF</text>
+<rect x="40" y="292" width="640" height="20" fill="var(--fig-muted, #74716A)" fill-opacity="0.35"/>
+<text x="674" y="307" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end" font-weight="600">全部激活：约 4051 GF（16.2 倍）</text>
+</svg>

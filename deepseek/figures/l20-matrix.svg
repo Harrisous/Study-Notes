@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>六条主线 × 八代模型：每一格是这一代在这条主线上的改动</title>
+
+<rect x="130" y="8" width="101" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.14" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="5"/>
+<text x="180.5" y="26" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="700">主线 A</text>
+<text x="180.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">注意力 · KV</text>
+<rect x="235" y="8" width="101" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.14" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" rx="5"/>
+<text x="285.5" y="26" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="700">主线 B</text>
+<text x="285.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MoE</text>
+<rect x="340" y="8" width="101" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14" stroke="var(--fig-orange, #B4460C)" stroke-width="1.2" rx="5"/>
+<text x="390.5" y="26" font-size="13" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="700">主线 C</text>
+<text x="390.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">数值 · 系统</text>
+<rect x="445" y="8" width="101" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="495.5" y="26" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">主线 D</text>
+<text x="495.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">目标 · 后训练</text>
+<rect x="550" y="8" width="101" height="44" fill="var(--fig-amber, #8A6508)" fill-opacity="0.14" stroke="var(--fig-amber, #8A6508)" stroke-width="1.2" rx="5"/>
+<text x="600.5" y="26" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="700">主线 E</text>
+<text x="600.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">残差 · 记忆</text>
+<rect x="655" y="8" width="101" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.14" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="705.5" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">主线 F</text>
+<text x="705.5" y="44" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规模 · 优化器</text>
+<rect x="4" y="64" width="752" height="52" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="10" y="86" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">DeepSeek LLM</text>
+<text x="10" y="104" font-size="12" fill="var(--fig-muted, #74716A)">2023-11</text>
+<rect x="131" y="68" width="99" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="4"/>
+<text x="180.5" y="86" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GQA-8 · 95 层</text>
+<text x="180.5" y="103" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">389 KB/token</text>
+<rect x="236" y="68" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="94" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">稠密 FFN</text>
+<rect x="341" y="68" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="94" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">BF16 混合精度</text>
+<rect x="446" y="68" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="94" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SFT + DPO</text>
+<rect x="551" y="68" width="99" height="44" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="0.9" rx="4"/>
+<text x="600.5" y="86" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Pre-RMSNorm</text>
+<text x="600.5" y="103" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">残差</text>
+<rect x="656" y="68" width="99" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.9" rx="4"/>
+<text x="705.5" y="86" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">超参数规律</text>
+<text x="705.5" y="103" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">C = MD</text>
+<text x="10" y="138" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">MoE / Math</text>
+<text x="10" y="156" font-size="12" fill="var(--fig-muted, #74716A)">2024-01～02</text>
+<text x="180.5" y="146" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="236" y="120" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="138" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">细粒度 + 共享</text>
+<text x="285.5" y="155" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2 + 64 选 6</text>
+<text x="390.5" y="146" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="446" y="120" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="138" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GRPO</text>
+<text x="495.5" y="155" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">去掉价值网络</text>
+<text x="600.5" y="146" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="705.5" y="146" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="4" y="168" width="752" height="52" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="10" y="190" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V2</text>
+<text x="10" y="208" font-size="12" fill="var(--fig-muted, #74716A)">2024-05</text>
+<rect x="131" y="172" width="99" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="4"/>
+<text x="180.5" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MLA</text>
+<text x="180.5" y="207" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">576 个数/层</text>
+<rect x="236" y="172" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">设备受限 M=3</text>
+<text x="285.5" y="207" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">三种均衡损失</text>
+<rect x="341" y="172" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">部署 FP8 权重</text>
+<text x="390.5" y="207" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">6 bit KV</text>
+<rect x="446" y="172" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="190" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">SFT + 两阶段</text>
+<text x="495.5" y="207" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">GRPO</text>
+<text x="600.5" y="198" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="705.5" y="198" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="10" y="242" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3</text>
+<text x="10" y="260" font-size="12" fill="var(--fig-muted, #74716A)">2024-12</text>
+<text x="180.5" y="250" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="236" y="224" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="242" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">偏置均衡</text>
+<text x="285.5" y="259" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">节点受限 M=4</text>
+<rect x="341" y="224" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="242" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP8 训练</text>
+<text x="390.5" y="259" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">DualPipe</text>
+<rect x="446" y="224" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="250" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">MTP（D = 1）</text>
+<text x="600.5" y="250" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="656" y="224" width="99" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.9" rx="4"/>
+<text x="705.5" y="242" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">学习率 / γ / λ</text>
+<text x="705.5" y="259" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">三条日程</text>
+<rect x="4" y="272" width="752" height="52" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="10" y="294" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">R1</text>
+<text x="10" y="312" font-size="12" fill="var(--fig-muted, #74716A)">2025-01</text>
+<text x="180.5" y="302" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="285.5" y="302" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="390.5" y="302" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="446" y="276" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规则奖励纯 RL</text>
+<text x="495.5" y="311" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">四阶段 · 蒸馏</text>
+<text x="600.5" y="302" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="705.5" y="302" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<text x="10" y="346" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V3.1 / V3.2</text>
+<text x="10" y="364" font-size="12" fill="var(--fig-muted, #74716A)">2025-08～12</text>
+<rect x="131" y="328" width="99" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="4"/>
+<text x="180.5" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DSA</text>
+<text x="180.5" y="363" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">top-2048</text>
+<text x="285.5" y="354" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="341" y="328" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">UE8M0 缩放</text>
+<text x="390.5" y="363" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">FP8 KV 656 B</text>
+<rect x="446" y="328" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">规模化 RL</text>
+<text x="495.5" y="363" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">智能体</text>
+<rect x="551" y="328" width="99" height="44" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="0.9" rx="4"/>
+<text x="600.5" y="346" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">OCR 光学压缩</text>
+<text x="600.5" y="363" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">mHC 论文</text>
+<text x="705.5" y="354" font-size="14" fill="var(--fig-rule, #DCD7CC)" text-anchor="middle">·</text>
+<rect x="4" y="376" width="752" height="52" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="10" y="398" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V4</text>
+<text x="10" y="416" font-size="12" fill="var(--fig-muted, #74716A)">2026-04</text>
+<rect x="131" y="380" width="99" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="4"/>
+<text x="180.5" y="398" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">CSA / HCA</text>
+<text x="180.5" y="415" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3,514 B/token</text>
+<rect x="236" y="380" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="398" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">取消节点限制</text>
+<text x="285.5" y="415" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">前 3 层哈希</text>
+<rect x="341" y="380" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="398" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP4 专家与</text>
+<text x="390.5" y="415" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">索引器</text>
+<rect x="446" y="380" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="398" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">专家 → 多教师</text>
+<text x="495.5" y="415" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">OPD</text>
+<rect x="551" y="380" width="99" height="44" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="0.9" rx="4"/>
+<text x="600.5" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">mHC（n = 4）</text>
+<rect x="656" y="380" width="99" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.9" rx="4"/>
+<text x="705.5" y="406" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Muon</text>
+<text x="10" y="450" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">V4.1-Flash</text>
+<text x="10" y="468" font-size="12" fill="var(--fig-muted, #74716A)">2026-09</text>
+<rect x="131" y="432" width="99" height="44" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.9" rx="4"/>
+<text x="180.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">CSA2 · CED</text>
+<text x="180.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">890 B/token</text>
+<rect x="236" y="432" width="99" height="44" fill="var(--fig-violet, #6733C4)" fill-opacity="0.1" stroke="var(--fig-violet, #6733C4)" stroke-width="0.9" rx="4"/>
+<text x="285.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">1 + 384 选 6</text>
+<text x="285.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">按模态偏置</text>
+<rect x="341" y="432" width="99" height="44" fill="var(--fig-orange, #B4460C)" fill-opacity="0.1" stroke="var(--fig-orange, #B4460C)" stroke-width="0.9" rx="4"/>
+<text x="390.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">FP4 主 KV</text>
+<text x="390.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">SWA 有界回放</text>
+<rect x="446" y="432" width="99" height="44" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.9" rx="4"/>
+<text x="495.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">算法不变</text>
+<text x="495.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">MTP → DSpark</text>
+<rect x="551" y="432" width="99" height="44" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="0.9" rx="4"/>
+<text x="600.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Engram 196B</text>
+<text x="600.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">单趟 mHC</text>
+<rect x="656" y="432" width="99" height="44" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.1" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.9" rx="4"/>
+<text x="705.5" y="450" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">45T 多模态</text>
+<text x="705.5" y="467" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">无稠密预热</text>
+<text x="10" y="502" font-size="12" fill="var(--fig-muted, #74716A)">出处：A 第 4、6、9、14、18、19 课；B 第 7、10、11、18、19 课；C 第 2、10、12、14、15、18、19 课；</text>
+<text x="10" y="520" font-size="12" fill="var(--fig-muted, #74716A)">D 第 3、6、8、10、11、13、15、18、19 课；E 第 5、16、17、19 课；F 第 6、11、18、19 课。</text>
+</svg>

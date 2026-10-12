@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 330" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>每 token 的 KV 字节（对数轴）</title>
+
+<line x1="200" y1="30" x2="200" y2="262" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="243.35" y1="30" x2="243.35" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="300.65" y1="30" x2="300.65" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="200" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="4.4" font-size="11">3</tspan> B</text>
+<line x1="344" y1="30" x2="344" y2="262" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="387.35" y1="30" x2="387.35" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="444.65" y1="30" x2="444.65" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="344" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="4.4" font-size="11">4</tspan> B</text>
+<line x1="488" y1="30" x2="488" y2="262" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="531.35" y1="30" x2="531.35" y2="262" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="488" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10<tspan baseline-shift="4.4" font-size="11">5</tspan> B</text>
+<text x="243.35" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2K</text>
+<text x="387.35" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20K</text>
+<text x="531.35" y="280" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">200K</text>
+<text x="190" y="53" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">GQA8，BF16（61 层）</text>
+<rect x="200" y="40" width="345.27" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="551.27" y="50" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">249,856 B</text>
+<text x="551.27" y="65" font-size="11" fill="var(--fig-muted, #74716A)">K、V 各 8 组 × 128 维</text>
+<text x="190" y="99" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3 的 MLA，BF16</text>
+<rect x="200" y="86" width="265.94" height="22" fill="var(--fig-muted, #74716A)" fill-opacity="0.35" stroke="var(--fig-muted, #74716A)" stroke-width="0.8"/>
+<text x="471.94" y="96" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">70,272 B</text>
+<text x="471.94" y="111" font-size="11" fill="var(--fig-muted, #74716A)">576 维 × 2 字节 × 61 层</text>
+<text x="190" y="145" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V3.2：MLA（FP8）+ indexer</text>
+<rect x="200" y="132" width="242.19" height="22" fill="var(--fig-amber, #8A6508)" fill-opacity="0.55" stroke="var(--fig-amber, #8A6508)" stroke-width="0.8"/>
+<text x="448.19" y="142" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">48,068 B</text>
+<text x="448.19" y="157" font-size="11" fill="var(--fig-muted, #74716A)">条目 40,016 + indexer 键 8,052</text>
+<text x="190" y="191" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4-Pro</text>
+<rect x="200" y="178" width="101.04" height="22" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="307.04" y="188" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">5,031.44 B</text>
+<text x="307.04" y="203" font-size="11" fill="var(--fig-muted, #74716A)">CSA 条目 4,380 + indexer 510 + HCA 141</text>
+<text x="190" y="237" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">V4-Flash</text>
+<rect x="200" y="224" width="78.6" height="22" fill="var(--fig-orange, #B4460C)" fill-opacity="0.55" stroke="var(--fig-orange, #B4460C)" stroke-width="0.8"/>
+<text x="284.6" y="234" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="700">3,514.25 B</text>
+<text x="284.6" y="249" font-size="11" fill="var(--fig-muted, #74716A)">CSA 条目 3,066 + indexer 357 + HCA 91</text>
+<text x="20" y="306" font-size="12" fill="var(--fig-orange, #B4460C)">相对 V3.2：Pro 小 9.55 倍（10.5%），Flash 小 13.68 倍（7.3%）；相对 GQA8：约 2%</text>
+<text x="20" y="326" font-size="11" fill="var(--fig-muted, #74716A)">只计随长度增长的部分（不含滑动窗口与未凑满的尾部状态）；V4 的 indexer 键按参考代码的 68 B 计。</text>
+</svg>

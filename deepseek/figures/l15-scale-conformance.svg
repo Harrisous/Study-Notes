@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>各版本检查点里 FP8 权重的缩放因子是否全是 2 的幂</title>
+
+<text x="16" y="22" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="700">缩放因子中 2 的整数次幂所占比例（1.000 = 全部是；0.000 = 一个也不是）</text>
+<text x="16" y="46" font-size="12" fill="var(--fig-muted, #74716A)">模块（读取的层）</text>
+<text x="356" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V3</text>
+<text x="468" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V3.1</text>
+<text x="580" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V3.1-Terminus</text>
+<text x="692" y="46" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">V3.2</text>
+<rect x="10" y="58" width="742" height="30" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="16" y="77" font-size="12" fill="var(--fig-ink, #1C1B19)">self_attn.q_a_proj</text>
+<text x="290" y="77" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 0、30、60 层</text>
+<rect x="306" y="62" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="77" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="62" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="468" y="77" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="530" y="62" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="580" y="77" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="642" y="62" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="77" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<text x="16" y="107" font-size="12" fill="var(--fig-ink, #1C1B19)">self_attn.kv_b_proj</text>
+<text x="290" y="107" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 0、30、60 层</text>
+<rect x="306" y="92" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="107" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="92" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="468" y="107" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="530" y="92" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="580" y="107" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="642" y="92" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="107" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="10" y="118" width="742" height="30" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="16" y="137" font-size="12" fill="var(--fig-ink, #1C1B19)">self_attn.o_proj</text>
+<text x="290" y="137" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 0、30、60 层</text>
+<rect x="306" y="122" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="137" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="122" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="468" y="137" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="530" y="122" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="580" y="137" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="642" y="122" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="692" y="137" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<text x="16" y="167" font-size="12" fill="var(--fig-ink, #1C1B19)">mlp.down_proj（稠密层）</text>
+<text x="290" y="167" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 0 层</text>
+<rect x="306" y="152" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="167" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="152" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="468" y="167" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="530" y="152" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="580" y="167" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="642" y="152" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="167" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="10" y="178" width="742" height="30" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="16" y="197" font-size="12" fill="var(--fig-ink, #1C1B19)">mlp.experts.7.down_proj</text>
+<text x="290" y="197" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 30、60 层</text>
+<rect x="306" y="182" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="197" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="182" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="468" y="197" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="530" y="182" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="580" y="197" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="642" y="182" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="197" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<text x="16" y="227" font-size="12" fill="var(--fig-ink, #1C1B19)">mlp.shared_experts.up_proj</text>
+<text x="290" y="227" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 30、60 层</text>
+<rect x="306" y="212" width="100" height="22" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" rx="4"/>
+<text x="356" y="227" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="700">0.000</text>
+<rect x="418" y="212" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="468" y="227" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="530" y="212" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="580" y="227" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="642" y="212" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="227" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<rect x="10" y="238" width="742" height="30" fill="var(--fig-grid, #EDE9E0)" fill-opacity="0.5"/>
+<text x="16" y="257" font-size="12" fill="var(--fig-ink, #1C1B19)">indexer.wq_b</text>
+<text x="290" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 30、60 层</text>
+<text x="356" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<text x="468" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<text x="580" y="257" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<rect x="642" y="242" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="257" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<text x="16" y="287" font-size="12" fill="var(--fig-ink, #1C1B19)">indexer.wk</text>
+<text x="290" y="287" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">第 30、60 层</text>
+<text x="356" y="287" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<text x="468" y="287" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<text x="580" y="287" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">无此模块</text>
+<rect x="642" y="272" width="100" height="22" fill="var(--fig-green, #16704A)" fill-opacity="0.16" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="4"/>
+<text x="692" y="287" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="700">1.000</text>
+<text x="16" y="320" font-size="12" fill="var(--fig-muted, #74716A)">所有版本的缩放因子张量都以 FP32（F32）存储；打包成 1 字节 UE8M0 是 DeepGEMM 在新硬件（SM100）上的做法。</text>
+<text x="16" y="338" font-size="12" fill="var(--fig-muted, #74716A)">V3.1 起，除 o_proj 外抽查到的权重缩放全是 2 的幂；Terminus 的模型卡承认 o_proj 不符合，V3.2 仍未改。</text>
+<text x="16" y="356" font-size="12" fill="var(--fig-muted, #74716A)">数据：用 HTTP Range 读取 safetensors 头与缩放张量（2026-09-24 读取，09-25 补全），只抽查了图中列出的层。</text>
+</svg>

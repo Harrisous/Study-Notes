@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 570" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>MTP 模块的结构与 token 对齐（D_MTP = 1）</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-muted, #74716A)"/></marker></defs>
+<text x="40" y="24" font-size="14" fill="var(--fig-ink, #1C1B19)" font-weight="700">主模型（61 层）</text>
+<rect x="40" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="57" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<rect x="80" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="97" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="120" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="137" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="160" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="177" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<rect x="200" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="217" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<rect x="240" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="257" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">6</tspan></text>
+<text x="40" y="546" font-size="12" fill="var(--fig-muted, #74716A)">输入 x<tspan baseline-shift="sub" font-size="11">1</tspan>…x<tspan baseline-shift="sub" font-size="11">6</tspan>（位置 i = 1…6）</text>
+<rect x="40" y="432" width="234" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="157" y="454.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">嵌入层 Emb（共享）</text>
+<rect x="40" y="300" width="234" height="96" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="157" y="345" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Transformer 块 × 61</text>
+<text x="157" y="361" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">MLA + DeepSeekMoE</text>
+<rect x="40" y="150" width="234" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="157" y="172.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">输出头 OutHead（共享）</text>
+<rect x="40" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="57" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="80" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="97" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="120" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="137" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<rect x="160" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="177" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<rect x="200" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="217" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">6</tspan></text>
+<rect x="240" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="257" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">7</tspan></text>
+<text x="40" y="76" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">目标 x<tspan baseline-shift="sub" font-size="11">2</tspan>…x<tspan baseline-shift="sub" font-size="11">7</tspan> → 交叉熵 ℒ<tspan baseline-shift="sub" font-size="11">Main</tspan></text>
+<line x1="157" y1="490" x2="157" y2="469" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="157" y1="430" x2="157" y2="397" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="157" y1="298" x2="157" y2="187" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<line x1="157" y1="148" x2="157" y2="115" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" marker-end="url(#ah-muted)"/>
+<circle cx="157" cy="262" r="3" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="400" y="24" font-size="14" fill="var(--fig-green, #16704A)" font-weight="700">MTP 模块 1（深度 k = 1）</text>
+<rect x="388" y="40" width="324" height="486" fill="var(--fig-green, #16704A)" fill-opacity="0.03" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="6" stroke-dasharray="5 4"/>
+<rect x="440" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="457" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<rect x="480" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="497" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="520" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="537" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<rect x="560" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="577" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<rect x="600" y="492" width="34" height="26" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.06" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" rx="4"/>
+<text x="617" y="509" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">6</tspan></text>
+<text x="440" y="546" font-size="12" fill="var(--fig-muted, #74716A)">输入 x<tspan baseline-shift="sub" font-size="11">2</tspan>…x<tspan baseline-shift="sub" font-size="11">6</tspan>（位置 i = 1…5 各取 x<tspan baseline-shift="sub" font-size="11">i+1</tspan>）</text>
+<rect x="530" y="440" width="170" height="30" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="615" y="459.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">嵌入层 Emb（共享）</text>
+<rect x="550" y="396" width="130" height="28" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="615" y="414.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">RMSNorm</text>
+<rect x="400" y="396" width="130" height="28" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="465" y="414.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">RMSNorm</text>
+<rect x="440" y="344" width="220" height="32" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.05" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.3" rx="6"/>
+<text x="550" y="364.32" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">拼接 [ · ; · ] → 14336 维</text>
+<rect x="420" y="290" width="260" height="36" fill="var(--fig-orange, #B4460C)" fill-opacity="0.12" stroke="var(--fig-orange, #B4460C)" stroke-width="1.3" rx="6"/>
+<text x="550" y="312.32" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">线性投影 W₁<tspan baseline-shift="super" font-size="11">MTP</tspan>：7168 × 14336</text>
+<rect x="420" y="214" width="260" height="54" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="6"/>
+<text x="550" y="238" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">Transformer 块 TRM₁</text>
+<text x="550" y="253.5" font-size="11.5" fill="var(--fig-muted, #74716A)" text-anchor="middle">1 层：MLA + MoE（256 + 1 个专家）</text>
+<rect x="440" y="150" width="220" height="36" fill="var(--fig-violet, #6733C4)" fill-opacity="0.12" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="6"/>
+<text x="550" y="172.32" font-size="12" fill="var(--fig-violet, #6733C4)" text-anchor="middle">输出头 OutHead（共享）</text>
+<rect x="440" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="457" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<rect x="480" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="497" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<rect x="520" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="537" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<rect x="560" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="577" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">6</tspan></text>
+<rect x="600" y="88" width="34" height="26" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.1" rx="4"/>
+<text x="617" y="105" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">x<tspan baseline-shift="sub" font-size="11">7</tspan></text>
+<text x="440" y="76" font-size="12" fill="var(--fig-green, #16704A)" font-weight="600">目标 x<tspan baseline-shift="sub" font-size="11">3</tspan>…x<tspan baseline-shift="sub" font-size="11">7</tspan> → 交叉熵 ℒ<tspan baseline-shift="sub" font-size="11">MTP</tspan><tspan baseline-shift="super" font-size="11">(1)</tspan></text>
+<line x1="615" y1="490" x2="615" y2="471" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="615" y1="440" x2="615" y2="425" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="615" y1="396" x2="600" y2="377" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="465" y1="396" x2="500" y2="377" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="550" y1="344" x2="550" y2="327" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="550" y1="290" x2="550" y2="269" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="550" y1="214" x2="550" y2="187" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<line x1="550" y1="148" x2="550" y2="115" stroke="var(--fig-muted, #74716A)" stroke-width="1.3" marker-end="url(#ah-muted)"/>
+<path d="M 157.0 262 H 398 V 410 H 399" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.8" marker-end="url(#ah-blue)"/>
+<text x="282" y="256" font-size="12" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">h</tspan><tspan baseline-shift="super" font-size="11">(0)</tspan><tspan baseline-shift="sub" font-size="11">i</tspan>（i = 1…5）</text>
+<path d="M 274 450 H 529" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path d="M 274 168 H 439" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="331" y="162" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">同一份参数</text>
+<text x="331" y="444" font-size="11" fill="var(--fig-violet, #6733C4)" text-anchor="middle">同一份参数</text>
+</svg>

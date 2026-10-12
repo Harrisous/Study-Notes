@@ -1,0 +1,11 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.16)–(0.18) and the numbers of lesson 0 §7.
+c6nd | C\approx\p{six}{6}\,N\,D
+kap | N_{\mathrm{opt}}\propto C^{\p{e}{0.73}}
+cmd | C=\p{m}{M}\,D,\qquad M=\p{a}{72\,l\,d^2}+\p{t}{12\,l\,d\,T}
+hp | \eta_{\mathrm{opt}}=0.3118\,C^{\p{a}{-0.125}},\qquad B_{\mathrm{opt}}=0.2920\,C^{\p{b}{0.3271}}
+x10 | 10^{0.3271}\approx\p{b}{2.12},\qquad 10^{-0.125}\approx\p{a}{0.75}
+alloc | M_{\mathrm{opt}}=0.1715\,C^{\p{m}{0.5243}},\qquad D_{\mathrm{opt}}=5.8316\,C^{\p{d}{0.4757}}
+sum1 | 0.5243+0.4757=1\quad\Leftarrow\quad M_{\mathrm{opt}}\,D_{\mathrm{opt}}=C
+muon | \begin{aligned}M_t&=\p{m}{\mu M_{t-1}+G_t}\\ O_t&=\p{o}{\mathrm{NS}(\mu M_t+G_t)}\cdot\p{s}{\sqrt{\max(n,m)}\cdot\gamma}\\ W_t&=\p{w}{W_{t-1}(1-\eta\lambda)-\eta\,O_t}\end{aligned}
+tpp3 | 14.8\mathrm{T}/671\mathrm{B}=\p{a}{22.1},\qquad 14.8\mathrm{T}/37\mathrm{B}=\p{b}{400}
+tpp41 | 45\mathrm{T}/552\mathrm{B}=\p{a}{81.5},\qquad 45\mathrm{T}/16\mathrm{B}=\p{b}{2{,}812.5}

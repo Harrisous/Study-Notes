@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 566" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>60 个混合矩阵连乘：无约束的会爆炸，只约束行和的有界但会超过 1，双随机的恒为 1；代价是乘积趋向“全部取平均”</title>
+
+<text x="20" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(a) 乘积的谱范数 ‖H<tspan baseline-shift="sub" font-size="11">L</tspan>⋯H<tspan baseline-shift="sub" font-size="11">1</tspan>‖<tspan baseline-shift="sub" font-size="11">2</tspan>（对数纵轴）</text>
+<line x1="70" y1="316.4" x2="380" y2="316.4" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="320.4" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="70" y1="277.53" x2="380" y2="277.53" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="281.53" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="70" y1="238.67" x2="380" y2="238.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="242.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">2</tspan></text>
+<line x1="70" y1="199.8" x2="380" y2="199.8" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="203.8" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">3</tspan></text>
+<line x1="70" y1="160.94" x2="380" y2="160.94" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="164.94" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">4</tspan></text>
+<line x1="70" y1="122.07" x2="380" y2="122.07" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="126.07" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<line x1="70" y1="83.21" x2="380" y2="83.21" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="62" y="87.21" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">6</tspan></text>
+<line x1="70" y1="330" x2="70" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="70" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="117.29" y1="330" x2="117.29" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="117.29" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">10</text>
+<line x1="169.83" y1="330" x2="169.83" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="169.83" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="222.37" y1="330" x2="222.37" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="222.37" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<line x1="274.92" y1="330" x2="274.92" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="274.92" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="327.46" y1="330" x2="327.46" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="327.46" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50</text>
+<line x1="380" y1="330" x2="380" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="380" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="70" y1="330" x2="380" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="70" y1="56" x2="70" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="225" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层数 L</text>
+<polygon points="70,308.34 75.25,304.51 80.51,301.34 85.76,299.09 91.02,296.76 96.27,294.61 101.53,292.88 106.78,291.18 112.03,288.88 117.29,287.86 122.54,286.1 127.8,284.57 133.05,283.43 138.31,282.16 143.56,280.67 148.81,279.17 154.07,277.73 159.32,275.95 164.58,274.8 169.83,273.74 175.08,272.31 180.34,271.08 185.59,269.91 190.85,268.58 196.1,267.6 201.36,266.17 206.61,265.14 211.86,264.23 217.12,263.84 222.37,262.21 227.63,261.35 232.88,260.18 238.14,259.34 243.39,257.64 248.64,256.84 253.9,255.59 259.15,254.48 264.41,253.59 269.66,252.7 274.92,251.47 280.17,250.26 285.42,249.55 290.68,247.72 295.93,246.53 301.19,246.62 306.44,245.6 311.69,244.33 316.95,243.01 322.2,241.53 327.46,240.34 332.71,239.33 337.97,238.56 343.22,238.53 348.47,237.35 353.73,236.11 358.98,235.7 364.24,234.34 369.49,233.01 374.75,231.76 380,231.39 380,285.24 374.75,285.57 369.49,286.51 364.24,286.37 358.98,287 353.73,288.33 348.47,288.05 343.22,288.87 337.97,289.41 332.71,289.97 327.46,290.2 322.2,290.33 316.95,289.99 311.69,290.59 306.44,290.67 301.19,291.58 295.93,292.14 290.68,292.25 285.42,293.32 280.17,292.94 274.92,294.21 269.66,293.58 264.41,294.6 259.15,294.5 253.9,294.02 248.64,294.4 243.39,295.68 238.14,295.83 232.88,295.96 227.63,297.42 222.37,296.86 217.12,297.03 211.86,298.57 206.61,298.64 201.36,298.84 196.1,300.18 190.85,299.84 185.59,300.43 180.34,300.7 175.08,301.31 169.83,301.77 164.58,301.99 159.32,302.23 154.07,303.4 148.81,303.84 143.56,304.41 138.31,304.94 133.05,305.4 127.8,305.82 122.54,306.04 117.29,306.86 112.03,307.34 106.78,307.8 101.53,308.49 96.27,308.93 91.02,309.53 85.76,310.11 80.51,310.69 75.25,311.51 70,312.88" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14"/>
+<path d="M70.0 310.5 L75.3 308.0 L80.5 306.3 L85.8 304.5 L91.0 303.0 L96.3 301.7 L101.5 300.6 L106.8 299.3 L112.0 298.3 L117.3 297.2 L122.5 296.3 L127.8 295.0 L133.1 294.2 L138.3 292.9 L143.6 292.1 L148.8 291.1 L154.1 290.4 L159.3 289.8 L164.6 288.5 L169.8 288.0 L175.1 287.2 L180.3 286.6 L185.6 285.9 L190.8 285.3 L196.1 284.3 L201.4 283.4 L206.6 282.3 L211.9 281.9 L217.1 280.8 L222.4 279.8 L227.6 279.0 L232.9 278.1 L238.1 277.7 L243.4 277.1 L248.6 276.3 L253.9 275.6 L259.2 274.9 L264.4 274.0 L269.7 272.9 L274.9 272.2 L280.2 271.7 L285.4 270.7 L290.7 270.2 L295.9 269.2 L301.2 268.4 L306.4 267.5 L311.7 266.5 L316.9 266.7 L322.2 266.1 L327.5 265.6 L332.7 264.1 L338.0 263.6 L343.2 262.8 L348.5 261.6 L353.7 261.5 L359.0 260.6 L364.2 260.1 L369.5 259.4 L374.7 258.6 L380.0 258.1" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M70.0 311.9 L75.3 307.5 L80.5 303.1 L85.8 298.7 L91.0 294.4 L96.3 290.2 L101.5 286.0 L106.8 281.8 L112.0 277.6 L117.3 273.4 L122.5 269.2 L127.8 265.1 L133.1 260.9 L138.3 256.8 L143.6 252.6 L148.8 248.4 L154.1 244.3 L159.3 240.1 L164.6 236.0 L169.8 231.8 L175.1 227.7 L180.3 223.5 L185.6 219.4 L190.8 215.2 L196.1 211.0 L201.4 206.9 L206.6 202.7 L211.9 198.6 L217.1 194.4 L222.4 190.3 L227.6 186.1 L232.9 182.0 L238.1 177.8 L243.4 173.6 L248.6 169.5 L253.9 165.3 L259.2 161.2 L264.4 157.0 L269.7 152.9 L274.9 148.7 L280.2 144.6 L285.4 140.4 L290.7 136.2 L295.9 132.1 L301.2 127.9 L306.4 123.8 L311.7 119.6 L316.9 115.5 L322.2 111.3 L327.5 107.2 L332.7 103.0 L338.0 98.9 L343.2 94.7 L348.5 90.5 L353.7 86.4 L359.0 82.2 L364.2 78.1 L369.5 73.9 L374.7 69.8 L380.0 65.6" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="70" y1="304.7" x2="380" y2="304.7" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<path d="M70.0 311.5 L75.3 311.3 L80.5 312.0 L85.8 311.3 L91.0 310.7 L96.3 310.2 L101.5 310.3 L106.8 310.6 L112.0 310.8 L117.3 310.8 L122.5 310.9 L127.8 310.8 L133.1 310.8 L138.3 310.8 L143.6 310.8 L148.8 310.8 L154.1 310.8 L159.3 310.8 L164.6 310.8 L169.8 310.8 L175.1 310.8 L180.3 310.8 L185.6 310.8 L190.8 310.8 L196.1 310.8 L201.4 310.8 L206.6 310.8 L211.9 310.8 L217.1 310.8 L222.4 310.8 L227.6 310.8 L232.9 310.8 L238.1 310.8 L243.4 310.8 L248.6 310.8 L253.9 310.8 L259.2 310.8 L264.4 310.8 L269.7 310.8 L274.9 310.8 L280.2 310.8 L285.4 310.8 L290.7 310.8 L295.9 310.8 L301.2 310.8 L306.4 310.8 L311.7 310.8 L316.9 310.8 L322.2 310.8 L327.5 310.8 L332.7 310.8 L338.0 310.8 L343.2 310.8 L348.5 310.8 L353.7 310.8 L359.0 310.8 L364.2 310.8 L369.5 310.8 L374.7 310.8 L380.0 310.8" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="2 3" stroke-linejoin="round"/>
+<path d="M70.0 315.9 L75.3 315.7 L80.5 315.6 L85.8 315.6 L91.0 315.6 L96.3 315.6 L101.5 315.6 L106.8 315.6 L112.0 315.6 L117.3 315.6 L122.5 315.6 L127.8 315.6 L133.1 315.6 L138.3 315.6 L143.6 315.6 L148.8 315.6 L154.1 315.6 L159.3 315.6 L164.6 315.6 L169.8 315.6 L175.1 315.6 L180.3 315.6 L185.6 315.6 L190.8 315.6 L196.1 315.6 L201.4 315.6 L206.6 315.6 L211.9 315.6 L217.1 315.6 L222.4 315.6 L227.6 315.6 L232.9 315.6 L238.1 315.6 L243.4 315.6 L248.6 315.6 L253.9 315.6 L259.2 315.6 L264.4 315.6 L269.7 315.6 L274.9 315.6 L280.2 315.6 L285.4 315.6 L290.7 315.6 L295.9 315.6 L301.2 315.6 L306.4 315.6 L311.7 315.6 L316.9 315.6 L322.2 315.6 L327.5 315.6 L332.7 315.6 L338.0 315.6 L343.2 315.6 L348.5 315.6 L353.7 315.6 L359.0 315.6 L364.2 315.6 L369.5 315.6 L374.7 315.6 L380.0 315.6" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M70.0 316.4 L75.3 316.4 L80.5 316.4 L85.8 316.4 L91.0 316.4 L96.3 316.4 L101.5 316.4 L106.8 316.4 L112.0 316.4 L117.3 316.4 L122.5 316.4 L127.8 316.4 L133.1 316.4 L138.3 316.4 L143.6 316.4 L148.8 316.4 L154.1 316.4 L159.3 316.4 L164.6 316.4 L169.8 316.4 L175.1 316.4 L180.3 316.4 L185.6 316.4 L190.8 316.4 L196.1 316.4 L201.4 316.4 L206.6 316.4 L211.9 316.4 L217.1 316.4 L222.4 316.4 L227.6 316.4 L232.9 316.4 L238.1 316.4 L243.4 316.4 L248.6 316.4 L253.9 316.4 L259.2 316.4 L264.4 316.4 L269.7 316.4 L274.9 316.4 L280.2 316.4 L285.4 316.4 L290.7 316.4 L295.9 316.4 L301.2 316.4 L306.4 316.4 L311.7 316.4 L316.9 316.4 L322.2 316.4 L327.5 316.4 L332.7 316.4 L338.0 316.4 L343.2 316.4 L348.5 316.4 L353.7 316.4 L359.0 316.4 L364.2 316.4 L369.5 316.4 L374.7 316.4 L380.0 316.4" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.6" stroke-linejoin="round"/>
+<rect x="84" y="58" width="152" height="114" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" rx="4"/>
+<text x="92" y="72" font-size="11" fill="var(--fig-muted, #74716A)">放大 1–2（线性纵轴）</text>
+<line x1="116" y1="144.33" x2="228" y2="144.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="112" y="148.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="116" y1="116" x2="228" y2="116" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="112" y="120" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1.5</text>
+<line x1="116" y1="87.67" x2="228" y2="87.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="112" y="91.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">2</text>
+<text x="116" y="164" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="171.05" y="164" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">30</text>
+<text x="228" y="164" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="116" y1="150" x2="228" y2="150" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="116" y1="78" x2="116" y2="150" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<line x1="116" y1="87.67" x2="228" y2="87.67" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="228" y="100.67" font-size="11" fill="var(--fig-blue, #1F5FA8)" text-anchor="end">上界 √4</text>
+<path d="M116.0 125.2 L117.9 124.4 L119.8 127.3 L121.7 124.5 L123.6 121.4 L125.5 119.1 L127.4 119.8 L129.3 120.9 L131.2 122.0 L133.1 122.2 L135.0 122.4 L136.9 122.2 L138.8 122.0 L140.7 121.9 L142.6 121.9 L144.5 121.9 L146.4 121.9 L148.3 122.0 L150.2 122.0 L152.1 122.0 L154.0 122.0 L155.9 122.0 L157.8 122.0 L159.7 122.0 L161.6 122.0 L163.5 122.0 L165.4 122.0 L167.3 122.0 L169.2 122.0 L171.1 122.0 L172.9 122.0 L174.8 122.0 L176.7 122.0 L178.6 122.0 L180.5 122.0 L182.4 122.0 L184.3 122.0 L186.2 122.0 L188.1 122.0 L190.0 122.0 L191.9 122.0 L193.8 122.0 L195.7 122.0 L197.6 122.0 L199.5 122.0 L201.4 122.0 L203.3 122.0 L205.2 122.0 L207.1 122.0 L209.0 122.0 L210.9 122.0 L212.8 122.0 L214.7 122.0 L216.6 122.0 L218.5 122.0 L220.4 122.0 L222.3 122.0 L224.2 122.0 L226.1 122.0 L228.0 122.0" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" stroke-dasharray="2 3" stroke-linejoin="round"/>
+<path d="M116.0 142.5 L117.9 141.9 L119.8 141.7 L121.7 141.6 L123.6 141.6 L125.5 141.6 L127.4 141.6 L129.3 141.7 L131.2 141.7 L133.1 141.7 L135.0 141.7 L136.9 141.7 L138.8 141.7 L140.7 141.7 L142.6 141.7 L144.5 141.7 L146.4 141.7 L148.3 141.7 L150.2 141.7 L152.1 141.7 L154.0 141.7 L155.9 141.7 L157.8 141.7 L159.7 141.7 L161.6 141.7 L163.5 141.7 L165.4 141.7 L167.3 141.7 L169.2 141.7 L171.1 141.7 L172.9 141.7 L174.8 141.7 L176.7 141.7 L178.6 141.7 L180.5 141.7 L182.4 141.7 L184.3 141.7 L186.2 141.7 L188.1 141.7 L190.0 141.7 L191.9 141.7 L193.8 141.7 L195.7 141.7 L197.6 141.7 L199.5 141.7 L201.4 141.7 L203.3 141.7 L205.2 141.7 L207.1 141.7 L209.0 141.7 L210.9 141.7 L212.8 141.7 L214.7 141.7 L216.6 141.7 L218.5 141.7 L220.4 141.7 L222.3 141.7 L224.2 141.7 L226.1 141.7 L228.0 141.7" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M116.0 144.3 L117.9 144.3 L119.8 144.3 L121.7 144.3 L123.6 144.3 L125.5 144.3 L127.4 144.3 L129.3 144.3 L131.2 144.3 L133.1 144.3 L135.0 144.3 L136.9 144.3 L138.8 144.3 L140.7 144.3 L142.6 144.3 L144.5 144.3 L146.4 144.3 L148.3 144.3 L150.2 144.3 L152.1 144.3 L154.0 144.3 L155.9 144.3 L157.8 144.3 L159.7 144.3 L161.6 144.3 L163.5 144.3 L165.4 144.3 L167.3 144.3 L169.2 144.3 L171.1 144.3 L172.9 144.3 L174.8 144.3 L176.7 144.3 L178.6 144.3 L180.5 144.3 L182.4 144.3 L184.3 144.3 L186.2 144.3 L188.1 144.3 L190.0 144.3 L191.9 144.3 L193.8 144.3 L195.7 144.3 L197.6 144.3 L199.5 144.3 L201.4 144.3 L203.3 144.3 L205.2 144.3 L207.1 144.3 L209.0 144.3 L210.9 144.3 L212.8 144.3 L214.7 144.3 L216.6 144.3 L218.5 144.3 L220.4 144.3 L222.3 144.3 L224.2 144.3 L226.1 144.3 L228.0 144.3" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="420" y="28" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">(b) 代价：乘积离 J 有多远 ‖P<tspan baseline-shift="sub" font-size="11">L</tspan> − J‖<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<line x1="470" y1="60.95" x2="730" y2="60.95" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="64.95" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="470" y1="126.98" x2="730" y2="126.98" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="130.98" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-4</tspan></text>
+<line x1="470" y1="193" x2="730" y2="193" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="197" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-8</tspan></text>
+<line x1="470" y1="259.02" x2="730" y2="259.02" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="263.02" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-12</tspan></text>
+<line x1="470" y1="325.05" x2="730" y2="325.05" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="462" y="329.05" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10<tspan baseline-shift="super" font-size="11">-16</tspan></text>
+<line x1="470" y1="330" x2="470" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="470" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="553.73" y1="330" x2="553.73" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="553.73" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">20</text>
+<line x1="641.86" y1="330" x2="641.86" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="641.86" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">40</text>
+<line x1="730" y1="330" x2="730" y2="334" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="730" y="348" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">60</text>
+<line x1="470" y1="330" x2="730" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="470" y1="56" x2="470" y2="330" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="600" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">层数 L</text>
+<path d="M470.0 61.9 L474.4 63.5 L478.8 65.1 L483.2 67.0 L487.6 68.8 L492.0 70.7 L496.4 72.6 L500.8 74.6 L505.3 76.6 L509.7 78.5 L514.1 80.6 L518.5 82.4 L522.9 84.5 L527.3 86.4 L531.7 88.5 L536.1 90.5 L540.5 92.6 L544.9 94.6 L549.3 96.6 L553.7 98.8 L558.1 100.9 L562.5 102.8 L566.9 104.8 L571.4 107.1 L575.8 109.2 L580.2 111.4 L584.6 113.5 L589.0 115.5 L593.4 117.6 L597.8 119.7 L602.2 121.8 L606.6 123.9 L611.0 126.1 L615.4 128.3 L619.8 130.6 L624.2 132.5 L628.6 134.7 L633.1 136.5 L637.5 138.7 L641.9 140.8 L646.3 142.8 L650.7 144.7 L655.1 146.8 L659.5 149.1 L663.9 151.3 L668.3 153.4 L672.7 155.5 L677.1 157.9 L681.5 159.9 L685.9 161.8 L690.3 163.8 L694.7 166.1 L699.2 168.2 L703.6 170.0 L708.0 172.2 L712.4 174.3 L716.8 176.4 L721.2 178.5 L725.6 180.4 L730.0 182.6" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M470.0 70.5 L474.4 80.0 L478.8 89.5 L483.2 99.1 L487.6 108.6 L492.0 118.1 L496.4 127.7 L500.8 137.2 L505.3 146.7 L509.7 156.3 L514.1 165.8 L518.5 175.3 L522.9 184.9 L527.3 194.4 L531.7 203.9 L536.1 213.5 L540.5 223.0 L544.9 232.5 L549.3 242.0 L553.7 251.6 L558.1 261.1 L562.5 270.6 L566.9 280.2 L571.4 289.7 L575.8 299.2" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M470.0 65.0 L474.4 74.0 L478.8 84.5 L483.2 95.6 L487.6 106.9 L492.0 118.3 L496.4 129.8 L500.8 141.3 L505.3 152.9 L509.7 164.4 L514.1 175.9 L518.5 187.5 L522.9 199.0 L527.3 210.5 L531.7 222.1 L536.1 233.6 L540.5 245.1 L544.9 256.7 L549.3 268.2 L553.7 279.7 L558.1 291.3 L562.5 302.8" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.2" stroke-dasharray="5 3" stroke-linejoin="round"/>
+<line x1="470" y1="308.54" x2="730" y2="308.54" stroke="var(--fig-muted, #74716A)" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="730" y="322.54" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">双精度的分辨率附近，曲线在此截断</text>
+<line x1="20" y1="402" x2="46" y2="402" stroke="var(--fig-red, #A3231C)" stroke-width="2.4"/>
+<text x="54" y="406" font-size="12" fill="var(--fig-red, #A3231C)">固定的 H = [1.2, 0.3; 0.1, 0.9]：60 层后 2.84×10<tspan baseline-shift="super" font-size="11">6</tspan></text>
+<rect x="20" y="418" width="26" height="12" fill="var(--fig-orange, #B4460C)" fill-opacity="0.14"/>
+<line x1="20" y1="424" x2="46" y2="424" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4"/>
+<text x="54" y="428" font-size="12" fill="var(--fig-orange, #B4460C)">随机 I + 0.2G：中位 31.67（色带：10%–90%）</text>
+<line x1="20" y1="446" x2="46" y2="446" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4"/>
+<text x="54" y="450" font-size="12" fill="var(--fig-blue, #1F5FA8)">行随机（逐行 softmax）：中位 1.047</text>
+<line x1="20" y1="468" x2="46" y2="468" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="2 3"/>
+<text x="54" y="472" font-size="12" fill="var(--fig-blue, #1F5FA8)">行随机：各层最大值，最高 1.45</text>
+<line x1="20" y1="490" x2="46" y2="490" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="54" y="494" font-size="12" fill="var(--fig-blue, #1F5FA8)">行随机的上界 √4 = 2</text>
+<line x1="20" y1="512" x2="46" y2="512" stroke="var(--fig-green, #16704A)" stroke-width="2.6"/>
+<text x="54" y="516" font-size="12" fill="var(--fig-green, #16704A)">双随机（Sinkhorn 20 次）：中位 1.000001，最高 1.0013</text>
+<line x1="440" y1="402" x2="466" y2="402" stroke="var(--fig-violet, #6733C4)" stroke-width="2.4"/>
+<text x="474" y="406" font-size="12" fill="var(--fig-violet, #6733C4)">循环矩阵 D：恰为 0.2646<tspan baseline-shift="super" font-size="11">L</tspan></text>
+<line x1="440" y1="424" x2="466" y2="424" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" stroke-dasharray="5 3"/>
+<text x="474" y="428" font-size="12" fill="var(--fig-blue, #1F5FA8)">主算例 A（第二特征值 0.2）</text>
+<line x1="440" y1="446" x2="466" y2="446" stroke="var(--fig-green, #16704A)" stroke-width="2.4"/>
+<text x="474" y="450" font-size="12" fill="var(--fig-green, #16704A)">随机双随机（充分迭代的投影）：中位</text>
+<text x="474" y="470" font-size="12" fill="var(--fig-green, #16704A)">L = 60 时 4.2×10<tspan baseline-shift="super" font-size="11">-8；各流都趋向同一个平均值</tspan></text>
+<text x="20" y="554" font-size="11" fill="var(--fig-muted, #74716A)">模拟：n = 4，每层独立抽一个矩阵，1000 次试验，numpy 种子 0。(a) 的行随机与双随机用同一组 logit 3I + Z，Z 为标准正态。</text>
+</svg>

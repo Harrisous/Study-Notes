@@ -1,0 +1,26 @@
+title: 数学补课：读懂 DeepSeek 需要的本科数学
+description: 为 DeepSeek 科技树课程准备的 11 课数学补课：线性代数、概率、信息论、微积分、优化、浮点数、强化学习、算力算术。
+lede: 每一课只讲读懂大模型论文真正需要的那部分数学，从定义讲起，配手算例子和带答案的练习。每一节都标明它在 DeepSeek 课程的哪一课被用到。
+back: ../index.html
+aside: <b>怎么用：</b>不必从头读完。读 <a href="../deepseek/index.html" style="color:var(--blue)">DeepSeek 科技树</a> 时遇到黄色“前置知识”框，点进对应小节补课即可；也可以按顺序把这 11 课当作一门独立的小课来读。
+footer: 源文件在 <code>math/src/</code>（Markdown）。
+sections:
+  - name: 线性代数
+    lessons:
+      - {file: m01-vectors-matrices.html, tag: M01, tagclass: m, title: 向量、矩阵乘法与形状思维, desc: 点积与相似度、矩阵乘法的三种读法、einsum 与注意力里的形状、2mnk 次运算。}
+      - {file: m02-rank-svd-lowrank.html, tag: M02, tagclass: m, title: 秩、低秩分解与 SVD, desc: 秩与列空间、低秩分解、奇异值分解与最优低秩近似、矩阵结合律与“吸收”。}
+      - {file: m03-rotation-complex.html, tag: M03, tagclass: m, title: 正交矩阵、旋转与复数, desc: 二维旋转、欧拉公式、旋转的复合与相对位置，RoPE 的全部数学。}
+      - {file: m11-doubly-stochastic-sinkhorn.html, tag: M11, tagclass: m, title: 双随机矩阵与 Sinkhorn 迭代, desc: Birkhoff 多面体、谱范数不超过 1 的证明、交替归一化为什么会收敛。}
+  - name: 概率与信息
+    lessons:
+      - {file: m04-probability.html, tag: M04, tagclass: m, title: 概率与统计：期望、方差、softmax 与采样, desc: 独立和的方差与 √d、softmax 与温度、无偏估计、蒙特卡洛与重要性采样。}
+      - {file: m05-information-theory.html, tag: M05, tagclass: m, title: 信息论：熵、交叉熵、KL 与困惑度, desc: 交叉熵即负对数似然、KL 的非负性、前向与反向 KL、KL 的三种估计器。}
+  - name: 微积分与优化
+    lessons:
+      - {file: m06-calculus-backprop.html, tag: M06, tagclass: m, title: 微积分与反向传播, desc: 链式法则、雅可比、softmax 的梯度、交叉熵对 logits 的梯度 p−y、残差的梯度高速公路。}
+      - {file: m07-optimization.html, tag: M07, tagclass: m, title: 优化器：从 SGD 到 AdamW 再到 Muon, desc: 动量、Adam 的偏差修正、解耦权重衰减、学习率调度、牛顿–舒尔茨正交化。}
+  - name: 数值、强化学习与系统
+    lessons:
+      - {file: m08-floating-point.html, tag: M08, tagclass: m, title: 浮点数与量化：从 FP32 到 FP4, desc: IEEE 754、BF16/FP8/FP4 的位布局、动态范围与精度、缩放因子与细粒度量化。}
+      - {file: m09-rl-math.html, tag: M09, tagclass: m, title: 强化学习数学：策略梯度到 PPO, desc: 对数导数技巧、基线与方差、优势与 GAE、重要性采样、PPO 裁剪。}
+      - {file: m10-compute-arithmetic.html, tag: M10, tagclass: m, title: 算力算术：FLOPs、带宽、roofline 与通信, desc: 数清楚一次矩阵乘法、算术强度、屋顶线模型、四种并行与集合通信的代价。}

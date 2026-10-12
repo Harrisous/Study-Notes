@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 366" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>多头注意力的分块结构：拆头是按行分块，合头是按列分块再相加</title>
+
+<text x="20" y="26" font-size="14" fill="var(--fig-blue, #1F5FA8)" font-weight="600">① 拆头：<tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">Q</tspan> 按行切成 12 块</text>
+<text x="20" y="46" font-size="12" fill="var(--fig-muted, #74716A)">每块 [d<tspan baseline-shift="sub" font-size="11">h</tspan>, d] = [64, 768]，一块对应一个头</text>
+<rect x="58" y="94" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="108.08" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="122.16" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.34" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="136.24" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="150.32" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="164.4" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="178.48" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="192.56" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="206.64" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="220.72" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="234.8" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="248.88" width="168.96" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="58" y="94" width="168.96" height="168.96" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="142.48" y="282.96" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle"><tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">Q</tspan>  [n<tspan baseline-shift="sub" font-size="11">h</tspan>d<tspan baseline-shift="sub" font-size="11">h</tspan>, d] = [768, 768]</text>
+<text x="50" y="133.2" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="700"><tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">Q</tspan><tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="242.96" y="184.48" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="256.96" y="94" width="12" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2"/>
+<text x="262.96" y="282.96" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="262.96" y="298.96" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768]</text>
+<text x="284.96" y="184.48" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="298.96" y="94" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="108.08" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="122.16" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.34" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="136.24" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="150.32" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="164.4" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="178.48" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="192.56" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="206.64" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="220.72" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="234.8" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.05" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="248.88" width="12" height="14.08" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.1" stroke="var(--fig-blue, #1F5FA8)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="298.96" y="94" width="12" height="168.96" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4"/>
+<text x="304.96" y="282.96" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="304.96" y="298.96" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768]</text>
+<line x1="314.96" y1="129.2" x2="324.96" y2="129.2" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="327.96" y="133.2" font-size="12" fill="var(--fig-blue, #1F5FA8)" font-weight="700"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,3</tspan></text>
+<text x="327.96" y="150.2" font-size="12" fill="var(--fig-muted, #74716A)">[64]</text>
+<text x="20" y="332.96" font-size="13" fill="var(--fig-blue, #1F5FA8)"><tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t,3</tspan> = <tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">Q</tspan><tspan baseline-shift="sub" font-size="11">3</tspan><tspan font-weight="700">h</tspan><tspan baseline-shift="sub" font-size="11">t</tspan>：拆头不做任何运算，</text>
+<text x="20" y="354.96" font-size="13" fill="var(--fig-ink, #1C1B19)">第 3 个头的查询就是大向量 <tspan font-weight="700">q</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> 的第 129–192 个分量。</text>
+<line x1="380" y1="16" x2="380" y2="350" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="396" y="26" font-size="14" fill="var(--fig-green, #16704A)" font-weight="600">② 合头：<tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">O</tspan> 按列切成 12 块</text>
+<text x="396" y="46" font-size="12" fill="var(--fig-muted, #74716A)">每块 [d, d<tspan baseline-shift="sub" font-size="11">h</tspan>] = [768, 64]</text>
+<rect x="400" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="414.08" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="428.16" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.22" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="442.24" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="456.32" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="470.4" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="484.48" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="498.56" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="512.64" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="526.72" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="540.8" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.03" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="554.88" y="94" width="14.08" height="168.96" fill="var(--fig-ink, #1C1B19)" fill-opacity="0.08" stroke="var(--fig-ink, #1C1B19)" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="400" y="94" width="168.96" height="168.96" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<line x1="435.2" y1="90" x2="435.2" y2="80" stroke="var(--fig-ink, #1C1B19)" stroke-width="1"/>
+<text x="435.2" y="76" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700"><tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">O</tspan><tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="484.48" y="282.96" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle"><tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">O</tspan>  [d, n<tspan baseline-shift="sub" font-size="11">h</tspan>d<tspan baseline-shift="sub" font-size="11">h</tspan>] = [768, 768]</text>
+<text x="584.96" y="184.48" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">×</text>
+<rect x="598.96" y="94" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="108.08" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="122.16" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.34" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="136.24" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="150.32" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="164.4" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="178.48" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="192.56" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="206.64" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="220.72" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="234.8" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.05" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="248.88" width="12" height="14.08" fill="var(--fig-green, #16704A)" fill-opacity="0.1" stroke="var(--fig-green, #16704A)" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598.96" y="94" width="12" height="168.96" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.4"/>
+<text x="604.96" y="282.96" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">拼接</text>
+<text x="604.96" y="298.96" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768]</text>
+<line x1="614.96" y1="129.2" x2="626.96" y2="129.2" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="630.96" y="133.2" font-size="12" fill="var(--fig-green, #16704A)" font-weight="700"><tspan font-weight="700">o</tspan><tspan baseline-shift="sub" font-size="11">t,3</tspan></text>
+<text x="672.96" y="184.48" font-size="18" fill="var(--fig-muted, #74716A)" text-anchor="middle">=</text>
+<rect x="688.96" y="94" width="12" height="168.96" fill="var(--fig-green, #16704A)" fill-opacity="0.14" stroke="var(--fig-green, #16704A)" stroke-width="1.4"/>
+<text x="694.96" y="282.96" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle"><tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan></text>
+<text x="694.96" y="298.96" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">[768]</text>
+<text x="396" y="332.96" font-size="13" fill="var(--fig-green, #16704A)"><tspan font-weight="700">u</tspan><tspan baseline-shift="sub" font-size="11">t</tspan> = Σ<tspan baseline-shift="sub" font-size="11">i</tspan> <tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">O</tspan><tspan baseline-shift="sub" font-size="11">i</tspan> <tspan font-weight="700">o</tspan><tspan baseline-shift="sub" font-size="11">t,i</tspan>：拼接后乘 <tspan font-weight="700">W</tspan><tspan baseline-shift="super" font-size="11">O</tspan>，</text>
+<text x="396" y="354.96" font-size="13" fill="var(--fig-ink, #1C1B19)">等于每个头各乘自己那一块，再相加。</text>
+</svg>

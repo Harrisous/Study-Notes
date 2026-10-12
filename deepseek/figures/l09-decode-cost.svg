@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>解码一步的算力与读缓存字节，三种算法</title>
+
+<text x="8" y="20" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">每层每步的运算量（GFLOPs）</text>
+<line x1="56" y1="300" x2="330" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.01</text>
+<line x1="56" y1="257.33" x2="330" y2="257.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="261.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="56" y1="214.67" x2="330" y2="214.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="218.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="56" y1="172" x2="330" y2="172" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="176" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="56" y1="129.33" x2="330" y2="129.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="133.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="56" y1="86.67" x2="330" y2="86.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="90.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="56" y1="44" x2="330" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="50" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10⁴</text>
+<line x1="56" y1="44" x2="56" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="56" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1K</text>
+<line x1="95.14" y1="44" x2="95.14" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="95.14" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2K</text>
+<line x1="134.29" y1="44" x2="134.29" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="134.29" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4K</text>
+<line x1="173.43" y1="44" x2="173.43" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="173.43" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8K</text>
+<line x1="212.57" y1="44" x2="212.57" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="212.57" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16K</text>
+<line x1="251.71" y1="44" x2="251.71" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="251.71" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32K</text>
+<line x1="290.86" y1="44" x2="290.86" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="290.86" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64K</text>
+<line x1="330" y1="44" x2="330" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="330" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128K</text>
+<line x1="56" y1="300" x2="330" y2="300" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="56" y1="44" x2="56" y2="300" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<text x="193" y="336" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">缓存里的 token 数 T（对数刻度）</text>
+<text x="14" y="172" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 14 172)">GFLOPs（对数刻度）</text>
+<path d="M56 149.08 L95.14 136.24 L134.29 123.4 L173.43 110.55 L212.57 97.71 L251.71 84.86 L290.86 72.02 L330 59.18" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="330" cy="59.18" r="3.2" fill="var(--fig-red, #A3231C)"/>
+<text x="101.14" y="156.24" font-size="12" fill="var(--fig-red, #A3231C)" font-weight="600">① 每步重新展开</text>
+<path d="M56 235.85 L95.14 224.01 L134.29 211.69 L173.43 199.11 L212.57 186.4 L251.71 173.63 L290.86 160.82 L330 147.99" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="330" cy="147.99" r="3.2" fill="var(--fig-blue, #1F5FA8)"/>
+<text x="208.57" y="174.4" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="end" font-weight="600">③ 吸收</text>
+<path d="M56 254.35 L95.14 244.37 L134.29 233.14 L173.43 221.15 L212.57 208.76 L251.71 196.14 L290.86 183.41 L330 170.62" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="330" cy="170.62" r="3.2" fill="var(--fig-muted, #74716A)"/>
+<text x="62" y="271.35" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">② 缓存展开后的 K、V</text>
+<text x="60" y="58" font-size="11.5" fill="var(--fig-ink, #1C1B19)">T = 4096：① 137.8，② 0.37，③ 1.17</text>
+<text x="60" y="75" font-size="11.5" fill="var(--fig-blue, #1F5FA8)">③ / ② → 3.4：吸收用算力换字节</text>
+<text x="388" y="20" font-size="13.5" fill="var(--fig-ink, #1C1B19)" font-weight="700">每层每步要读的缓存（MB，bf16）</text>
+<line x1="436" y1="300" x2="710" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="436" y1="257.33" x2="710" y2="257.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="261.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<line x1="436" y1="214.67" x2="710" y2="214.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="218.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10</text>
+<line x1="436" y1="172" x2="710" y2="172" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="176" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100</text>
+<line x1="436" y1="129.33" x2="710" y2="129.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="133.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1000</text>
+<line x1="436" y1="86.67" x2="710" y2="86.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="90.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10⁴</text>
+<line x1="436" y1="44" x2="710" y2="44" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="430" y="48" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10⁵</text>
+<line x1="436" y1="44" x2="436" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="436" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1K</text>
+<line x1="475.14" y1="44" x2="475.14" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="475.14" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2K</text>
+<line x1="514.29" y1="44" x2="514.29" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="514.29" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">4K</text>
+<line x1="553.43" y1="44" x2="553.43" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="553.43" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">8K</text>
+<line x1="592.57" y1="44" x2="592.57" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="592.57" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">16K</text>
+<line x1="631.71" y1="44" x2="631.71" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="631.71" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">32K</text>
+<line x1="670.86" y1="44" x2="670.86" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="670.86" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">64K</text>
+<line x1="710" y1="44" x2="710" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="710" y="316" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">128K</text>
+<line x1="436" y1="300" x2="710" y2="300" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="436" y1="44" x2="436" y2="300" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<text x="573" y="336" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">缓存里的 token 数 T（对数刻度）</text>
+<text x="394" y="172" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 394 172)">MB（对数刻度）</text>
+<path d="M436 175.26 L475.14 162.41 L514.29 149.57 L553.43 136.72 L592.57 123.88 L631.71 111.04 L670.86 98.19 L710 85.35" fill="none" stroke="var(--fig-muted, #74716A)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<circle cx="710" cy="85.35" r="3.2" fill="var(--fig-muted, #74716A)"/>
+<text x="442" y="193.26" font-size="12" fill="var(--fig-muted, #74716A)" font-weight="600">② 81,920 B / token</text>
+<path d="M436 254.27 L475.14 241.43 L514.29 228.58 L553.43 215.74 L592.57 202.9 L631.71 190.05 L670.86 177.21 L710 164.36" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="710" cy="164.36" r="3.2" fill="var(--fig-orange, #B4460C)"/>
+<text x="442" y="271.27" font-size="12" fill="var(--fig-orange, #B4460C)" font-weight="600">①、③ 1,152 B / token</text>
+<text x="440" y="58" font-size="11.5" fill="var(--fig-orange, #B4460C)">① 和 ③ 都只读 576 维的潜向量行</text>
+<text x="440" y="75" font-size="11.5" fill="var(--fig-ink, #1C1B19)">② 要读的是它的 71 倍</text>
+</svg>

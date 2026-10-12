@@ -1,0 +1,92 @@
+{
+  "slug": "l00-s8-js",
+  "title": "第 0 课 §8 · 规格总表",
+  "source": "deepseek/src/lesson-00-tech-tree.md §8 (规格总表: the two spec tables, the full timeline and the misreadings table); every number is from that page (checked in reference-docs/lesson-00-doc.md). Narration polished with the shuorenhua (说人话) rules, v2.5.1.",
+  "voice": "zm_010",
+  "speed": 1.0,
+  "speed_gsv": 0.95,
+  "speak_numbers": "zh",
+  "roadmap": {"course": "deepseek", "lesson": 0, "page": 8},
+  "questions": [
+    {"id": 1, "short": "每一格从哪来", "text": "规格总表的每一格，来自论文、配置文件，还是复算？"},
+    {"id": 2, "short": "50 行里的主干", "text": "完整时间线有 50 行，主干是哪几个？"},
+    {"id": 3, "short": "引用前先问三件事", "text": "引用一个数之前，先问哪三件事？"}
+  ],
+  "intro": {
+    "lines": [
+      {"id": "i1", "text": "这一页把整门课用到的数收在一处：{a}从第 6 课的 DeepSeek LLM，{b}到第 19 课的[ V4.1-Flash| V 四点一 Flash]。"},
+      {"id": "i2", "text": "第 0 课是整门课的地图，这一页是地图上的图例和比例尺。"},
+      {"id": "i3", "text": "这一集是第八页：{a}规格总表。"},
+      {"id": "i4", "text": "第一，规格表的每一格，来自论文、配置文件，还是复算？"},
+      {"id": "i5", "text": "第二，完整时间线有 50 行，主干是哪几个？"},
+      {"id": "i6", "text": "第三，引用一个数之前，先问哪三件事？", "hold": 0.3},
+      {"id": "i7", "text": "三个问题，分七段讲。{a}灰色的零基础也能听懂，{b}青色的是工程师向，可以跳过。", "hold": 0.4}
+    ]
+  },
+  "chapters": [
+    {
+      "id": "01", "title": "规格表一：规模与训练", "level": "zero", "tag": "SPEC.SCALE", "q": 1,
+      "lines": [
+        {"id": "l1", "text": "规格表一给规模与训练：{a}层数、隐藏维度、总参数和激活参数、训练 token、上下文长度。{b}每一格都写明了来源：论文、配置文件，或者复算。"},
+        {"id": "l2", "text": "比如 V3.2 的训练 token：{a}论文没有给总数；{b}约 16.6T，是笔者把 V3 的 14.8T、V3.1 的 839B 续训、V3.2 的两阶段续训加起来得到的。"},
+        {"id": "l3", "text": "{a}上下文一栏，是论文或模型卡宣称支持的长度；{b}配置文件里的位置上限另有含义，后面会讲。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "02", "title": "规格表二：KV 与专家", "level": "eng", "tag": "SPEC.KV", "q": 1,
+      "lines": [
+        {"id": "l1", "text": "规格表二给注意力、KV 缓存和专家。{a}KV 一栏是用式 0.2 到 0.5 复算的。"},
+        {"id": "l2", "text": "{a}其中 389,120、48,068、3,514、890，和 V4.1 论文图 1(b) 的柱长一致；{b}70,272 和 ISCA 论文表 1 的 70.272 KB 一致。{c}V4-Pro 的 5,031，是笔者推算的。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "03", "title": "从配置文件复现", "level": "eng", "tag": "SPEC.CONFIG", "q": 1,
+      "lines": [
+        {"id": "l1", "text": "举两个从配置文件复现的例子。{a}V4-Flash 的[ compress_ratios|压缩比列表]有 44 项：{b}前 43 项对应 43 层，21 个 4，20 个 128，2 个 0；{c}第 44 项属于 MTP 层，不计。"},
+        {"id": "l2", "text": "{a}代进去：21 乘 652 除以 4，加上 20 乘 584 除以 128，等于 3,514.25。"},
+        {"id": "l3", "text": "{a}V4.1-Flash 的[ kv_source_layer_ids|KV 来源层列表]是 2、8、14、20，只有这 4 层自己压缩 KV；{b}前三层在编码器里，m 等于 2；第 20 层是解码器的第一层，m 等于 1；{c}所以是 2.5 乘 356，等于 890。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "04", "title": "50 行里的 7 个主干", "level": "zero", "tag": "SPEC.TIMELINE", "q": 2,
+      "lines": [
+        {"id": "l1", "text": "完整时间线有 50 行，{a}从 2023 年 11 月的 DeepSeek-Coder，{b}到 2026 年 9 月的 DSec。"},
+        {"id": "l2", "text": "{a}主干只有 7 个：DeepSeek LLM、V2、V3、R1、V3.2、V4、V4.1。{b}其余是同结构的更新、旁支模型、论文和开源制品。"},
+        {"id": "l3", "text": "{a}主线一栏用 A 到 F 六个字母，M 是多模态旁支，P 是形式证明旁支；{b}日期后面注着论文的，取的是 arXiv 第一版的日期。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "05", "title": "常见误读（上）", "level": "zero", "tag": "SPEC.MYTH1", "q": 3,
+      "lines": [
+        {"id": "l1", "text": "接下来是几个常见误读。{a}V4 论文是 2026 年 6 月发的？{b}编号是 2606 开头，但 arXiv 提交于 4 月 26 日；权重和技术报告 4 月 24 日就在 Hugging Face 公开了。"},
+        {"id": "l2", "text": "{a}V4.1-Flash 是 552B 的模型？{b}552B 是主干参数，另有 196B 的 Engram 参数；激活参数还要分预填充 8B 和解码 16B。"},
+        {"id": "l3", "text": "{a}V4.1 的激活参数只有 V4-Pro 的四分之一？{b}论文原话如此；但 16 除以 49 是 0.33，8 除以 49 是 0.16，只有两者的平均才接近四分之一。"},
+        {"id": "l4", "text": "{a}DeepSeek-V1 是一次独立发布？{b}这是官方后来给 DeepSeek LLM 67B 起的别名；最早公开的 DeepSeek 语言模型是 DeepSeek-Coder。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "06", "title": "常见误读（下）", "level": "zero", "tag": "SPEC.MYTH2", "q": 3,
+      "lines": [
+        {"id": "l1", "text": "{a}配置里写着 163,840，说明支持 160K 上下文？{b}163,840 是 4096 乘 40，是 YaRN 的位置上限；V2、V3 系列的论文和模型卡写的都是 128K。"},
+        {"id": "l2", "text": "{a}小模型的 KV cache 一定更小？{b}DeepSeek LLM 7B 用 MHA，每 token 491,520 字节，比用 GQA-8 的 67B 还大。"},
+        {"id": "l3", "text": "{a}V3 只花了 557.6 万美元？{b}这只是正式训练的 GPU 小时按租价折算；R1 的 29.4 万美元，也不含 V3-Base 本身。"},
+        {"id": "l4", "text": "{a}V4 用 32T token 训练？{b}32T 只是 Flash；Pro 是 33T；V4.1-Flash 是 45T 多模态 token。{c}DeepSeek-R2 已经发布？截至 2026 年 9 月 24 日的核查，官方渠道里都没有 R2。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "07", "title": "先问三件事", "level": "zero", "tag": "SPEC.ASK", "q": 3,
+      "lines": [
+        {"id": "l1", "text": "所以，引用一个数之前，先问三件事。{a}第一，它是哪一版：预览还是正式，arXiv 的哪一版。"},
+        {"id": "l2", "text": "{a}第二，它的口径是什么：主干还是含 Engram，预填充还是解码。{b}第三，它是原文，还是推算。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "08", "title": "三个问题的答案", "level": "zero", "tag": "RECAP", "q": 0,
+      "lines": [
+        {"id": "l1", "text": "回到开头。{a}规格表的每一格，都能追到论文、配置文件或复算；{b}推算和合计的格子都标明了。"},
+        {"id": "l2", "text": "{a}时间线 50 行里，主干只有 7 个。"},
+        {"id": "l3", "text": "引用一个数之前，先问版本、口径和出处。{a}下一集是怎么读这门课：推荐顺序、数学对照、图的颜色和八个类比。", "hold": 2.0}
+      ]
+    }
+  ]
+}

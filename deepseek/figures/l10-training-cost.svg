@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>DeepSeek-V2 与 DeepSeek 67B 的训练账：单价、总价与算力利用率</title>
+
+<text x="20" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">① 单价：每万亿 token 的 GPU 小时</text>
+<text x="20" y="44" font-size="12" fill="var(--fig-muted, #74716A)">论文 §3.2.3（H800 集群实测）</text>
+<line x1="20" y1="300" x2="220" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="41" y="96.65" width="58" height="203.35" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="70" y="89.65" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">300.6K</text>
+<text x="70" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek 67B</text>
+<rect x="141" y="183.11" width="58" height="116.89" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="170" y="176.11" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">172.8K</text>
+<text x="170" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek-V2</text>
+<text x="120" y="350" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">V2 省 42.5%</text>
+<text x="275" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">② 总价：预训练全程的 GPU 小时</text>
+<text x="275" y="44" font-size="12" fill="var(--fig-muted, #74716A)">笔者估算：单价 × token 数（2.0T / 8.1T）</text>
+<line x1="275" y1="300" x2="475" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="296" y="213.58" width="58" height="86.42" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="325" y="206.58" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">0.60M</text>
+<text x="325" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek 67B</text>
+<rect x="396" y="98.8" width="58" height="201.2" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="425" y="91.8" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">1.40M</text>
+<text x="425" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek-V2</text>
+<text x="375" y="350" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">V2 是 67B 的 2.33 倍</text>
+<text x="530" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">③ 算力利用率 MFU（笔者估算）</text>
+<text x="530" y="44" font-size="12" fill="var(--fig-muted, #74716A)">6N 口径（括号内含注意力）</text>
+<line x1="530" y1="300" x2="730" y2="300" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<rect x="551" y="120.02" width="58" height="179.98" fill="var(--fig-muted, #74716A)" fill-opacity="0.45"/>
+<text x="580" y="113.02" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">37.6%</text>
+<text x="580" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek 67B</text>
+<rect x="651" y="201.87" width="58" height="98.13" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="680" y="194.87" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">20.5%</text>
+<text x="680" y="318" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">DeepSeek-V2</text>
+<text x="580" y="96.02" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">（39.3%）</text>
+<text x="680" y="177.87" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">（25.4%）</text>
+<text x="630" y="350" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">激活参数只有 31%，GPU 小时却是 57%</text>
+<text x="630" y="368" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">MoE 的通信、不均衡与小矩阵吃掉了一部分</text>
+<text x="20" y="392" font-size="12" fill="var(--fig-muted, #74716A)">MFU = 每卡每秒 token 数 × 每 token FLOPs ÷ 989 TFLOPS（H800 稠密 BF16 的常用峰值）；只是量级估算。</text>
+</svg>

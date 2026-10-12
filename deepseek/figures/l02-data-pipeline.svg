@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>GPT-3 的数据管线与质量过滤的保留概率</title>
+<defs><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker></defs>
+<rect x="10" y="30" width="163" height="88" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="91.5" y="54.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">Common Crawl</text>
+<text x="91.5" y="70.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">41 个月度分片</text>
+<text x="91.5" y="86.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2016–2019</text>
+<text x="91.5" y="102.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">45 TB（压缩）</text>
+<rect x="189" y="30" width="163" height="88" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="8"/>
+<text x="270.5" y="54.55" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">质量分类器</text>
+<text x="270.5" y="70.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">逻辑回归，打分 s ∈ [0, 1]</text>
+<text x="270.5" y="86.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">正例：WebText 等</text>
+<text x="270.5" y="102.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">负例：未过滤的 CC</text>
+<line x1="174" y1="74" x2="187" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="368" y="30" width="163" height="88" fill="var(--fig-violet, #6733C4)" fill-opacity="0.08" stroke="var(--fig-violet, #6733C4)" stroke-width="1.3" rx="8"/>
+<text x="449.5" y="54.55" font-size="13" fill="var(--fig-violet, #6733C4)" text-anchor="middle" font-weight="600">Pareto 重采样</text>
+<text x="449.5" y="70.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">X ~ Pareto(α = 9)</text>
+<text x="449.5" y="86.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">X &gt; 1 − s 就保留</text>
+<text x="449.5" y="102.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">（见下方曲线）</text>
+<line x1="353" y1="74" x2="366" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="547" y="30" width="163" height="88" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="8"/>
+<text x="628.5" y="54.55" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">MinHashLSH 去重</text>
+<text x="628.5" y="70.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">10 个哈希，模糊匹配</text>
+<text x="628.5" y="86.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">数据集内 + CC 去掉 WebText</text>
+<text x="628.5" y="102.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">总量平均减少 10%</text>
+<line x1="532" y1="74" x2="545" y2="74" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="10" y="150" width="163" height="88" fill="var(--fig-amber, #8A6508)" fill-opacity="0.08" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="91.5" y="182.55" font-size="13" fill="var(--fig-amber, #8A6508)" text-anchor="middle" font-weight="600">CC 过滤后 570 GB</text>
+<text x="91.5" y="198.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">约 400B 个 BPE token</text>
+<text x="91.5" y="214.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">（论文 §2.2）</text>
+<rect x="189" y="150" width="163" height="88" fill="var(--fig-green, #16704A)" fill-opacity="0.08" stroke="var(--fig-green, #16704A)" stroke-width="1.3" rx="8"/>
+<text x="270.5" y="174.55" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle" font-weight="600">混入精选语料</text>
+<text x="270.5" y="190.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">WebText2、Books1/2、</text>
+<text x="270.5" y="206.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">英文维基</text>
+<text x="270.5" y="222.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">按权重采样（图 2.6）</text>
+<line x1="174" y1="194" x2="187" y2="194" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="368" y="150" width="163" height="88" fill="var(--fig-red, #A3231C)" fill-opacity="0.08" stroke="var(--fig-red, #A3231C)" stroke-width="1.3" rx="8"/>
+<text x="449.5" y="174.55" font-size="13" fill="var(--fig-red, #A3231C)" text-anchor="middle" font-weight="600">13-gram 去污染</text>
+<text x="449.5" y="190.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">删去与评测集重叠的文档</text>
+<text x="449.5" y="206.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">有 bug：部分重叠漏网</text>
+<text x="449.5" y="222.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">因成本未重训</text>
+<line x1="353" y1="194" x2="366" y2="194" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="547" y="150" width="163" height="88" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.08" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.3" rx="8"/>
+<text x="628.5" y="182.55" font-size="13" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle" font-weight="600">训练 300B token</text>
+<text x="628.5" y="198.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">CC 只看了 0.44 遍</text>
+<text x="628.5" y="214.55" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">维基看了 3.4 遍</text>
+<line x1="532" y1="194" x2="545" y2="194" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<path d="M628.5 119.0 V134.0 H91.5 V148.0" fill="none" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<text x="30" y="272" font-size="13" fill="var(--fig-violet, #6733C4)" font-weight="600">质量过滤：分类器分数 s 与文档被保留的概率 P = (2 − s)<tspan baseline-shift="super" font-size="11">−9</tspan></text>
+<line x1="90" y1="478" x2="420" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="482" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.01%</text>
+<line x1="90" y1="433.5" x2="420" y2="433.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="437.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1%</text>
+<line x1="90" y1="389" x2="420" y2="389" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="393" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1%</text>
+<line x1="90" y1="344.5" x2="420" y2="344.5" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="348.5" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">10%</text>
+<line x1="90" y1="300" x2="420" y2="300" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="82" y="304" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">100%</text>
+<line x1="90" y1="300" x2="90" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="90" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.0</text>
+<line x1="156" y1="300" x2="156" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="156" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.2</text>
+<line x1="222" y1="300" x2="222" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="222" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4</text>
+<line x1="288" y1="300" x2="288" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="288" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.6</text>
+<line x1="354" y1="300" x2="354" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="354" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.8</text>
+<line x1="420" y1="300" x2="420" y2="478" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="420" y="494" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.0</text>
+<line x1="90" y1="478" x2="420" y2="478" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<line x1="90" y1="300" x2="90" y2="478" stroke="var(--fig-muted, #74716A)" stroke-width="1.2"/>
+<text x="255" y="514" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">分类器给文档的分数 s（越像精选语料越接近 1）</text>
+<text x="38" y="389" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle" transform="rotate(-90 38 389)">保留概率（对数）</text>
+<path d="M90.0 420.6 L92.8 419.8 L95.5 419.1 L98.3 418.4 L101.1 417.6 L103.9 416.9 L106.6 416.1 L109.4 415.4 L112.2 414.6 L115.0 413.9 L117.7 413.1 L120.5 412.3 L123.3 411.6 L126.1 410.8 L128.8 410.0 L131.6 409.2 L134.4 408.5 L137.1 407.7 L139.9 406.9 L142.7 406.1 L145.5 405.3 L148.2 404.5 L151.0 403.7 L153.8 402.9 L156.6 402.1 L159.3 401.3 L162.1 400.4 L164.9 399.6 L167.6 398.8 L170.4 398.0 L173.2 397.1 L176.0 396.3 L178.7 395.4 L181.5 394.6 L184.3 393.8 L187.1 392.9 L189.8 392.0 L192.6 391.2 L195.4 390.3 L198.2 389.4 L200.9 388.6 L203.7 387.7 L206.5 386.8 L209.2 385.9 L212.0 385.0 L214.8 384.1 L217.6 383.2 L220.3 382.3 L223.1 381.4 L225.9 380.5 L228.7 379.5 L231.4 378.6 L234.2 377.7 L237.0 376.7 L239.7 375.8 L242.5 374.9 L245.3 373.9 L248.1 372.9 L250.8 372.0 L253.6 371.0 L256.4 370.0 L259.2 369.1 L261.9 368.1 L264.7 367.1 L267.5 366.1 L270.3 365.1 L273.0 364.1 L275.8 363.1 L278.6 362.0 L281.3 361.0 L284.1 360.0 L286.9 358.9 L289.7 357.9 L292.4 356.8 L295.2 355.8 L298.0 354.7 L300.8 353.7 L303.5 352.6 L306.3 351.5 L309.1 350.4 L311.8 349.3 L314.6 348.2 L317.4 347.1 L320.2 346.0 L322.9 344.8 L325.7 343.7 L328.5 342.6 L331.3 341.4 L334.0 340.3 L336.8 339.1 L339.6 337.9 L342.4 336.8 L345.1 335.6 L347.9 334.4 L350.7 333.2 L353.4 332.0 L356.2 330.7 L359.0 329.5 L361.8 328.3 L364.5 327.0 L367.3 325.8 L370.1 324.5 L372.9 323.2 L375.6 321.9 L378.4 320.6 L381.2 319.3 L383.9 318.0 L386.7 316.7 L389.5 315.4 L392.3 314.0 L395.0 312.7 L397.8 311.3 L400.6 309.9 L403.4 308.6 L406.1 307.2 L408.9 305.8 L411.7 304.3 L414.5 302.9 L417.2 301.5 L420.0 300.0" fill="none" stroke="var(--fig-violet, #6733C4)" stroke-width="2.6"/>
+<circle cx="90" cy="420.56" r="4" fill="var(--fig-violet, #6733C4)"/>
+<text x="100" y="438.56" font-size="12" fill="var(--fig-ink, #1C1B19)">s = 0：0.2%</text>
+<circle cx="255" cy="370.52" r="4" fill="var(--fig-violet, #6733C4)"/>
+<text x="263" y="388.52" font-size="12" fill="var(--fig-ink, #1C1B19)">s = 0.5：2.6%</text>
+<circle cx="387" cy="316.58" r="4" fill="var(--fig-violet, #6733C4)"/>
+<text x="393" y="336.58" font-size="12" fill="var(--fig-ink, #1C1B19)">0.9：42%</text>
+<circle cx="420" cy="300" r="4" fill="var(--fig-violet, #6733C4)"/>
+<text x="412" y="294" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">s = 1：100%</text>
+<text x="482" y="312" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">和“设一个阈值”有什么不同？</text>
+<text x="482" y="331" font-size="12" fill="var(--fig-muted, #74716A)">阈值把低于它的文档全部删掉；</text>
+<text x="482" y="350" font-size="12" fill="var(--fig-muted, #74716A)">按这条曲线抽样，高分文档几乎全留，</text>
+<text x="482" y="369" font-size="12" fill="var(--fig-muted, #74716A)">低分文档仍有很小的概率留下，</text>
+<text x="482" y="388" font-size="12" fill="var(--fig-muted, #74716A)">而不是一刀切（由公式算出的效果）。</text>
+<text x="482" y="407" font-size="12" fill="var(--fig-muted, #74716A)"></text>
+<text x="482" y="426" font-size="12" fill="var(--fig-ink, #1C1B19)" font-weight="600">numpy 的 pareto(α) 是 Lomax 分布：</text>
+<text x="482" y="445" font-size="12" fill="var(--fig-muted, #74716A)">P(X &gt; x) = (1 + x)<tspan baseline-shift="super" font-size="11">−α</tspan>，</text>
+<text x="482" y="464" font-size="12" fill="var(--fig-muted, #74716A)">所以 P(X &gt; 1 − s) = (2 − s)<tspan baseline-shift="super" font-size="11">−α</tspan>。</text>
+</svg>

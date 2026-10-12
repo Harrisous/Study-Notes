@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 412" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>部分 RoPE 与输出逆旋转</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-orange, #B4460C)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="140" y="47" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">条目 <tspan font-weight="700">e</tspan><tspan baseline-shift="-2.6" font-size="11">s</tspan>（K = V）</text>
+<rect x="150" y="30" width="472.5" height="24" fill="var(--fig-orange, #B4460C)" fill-opacity="0.16" stroke="var(--fig-orange, #B4460C)" stroke-width="1"/>
+<text x="386.25" y="47" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">448 维，FP8，不带位置</text>
+<rect x="622.5" y="30" width="67.5" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<text x="656.25" y="47" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">64 维 RoPE</text>
+<text x="140" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">查询 <tspan font-weight="700">q</tspan><tspan baseline-shift="-2.6" font-size="11">t,i</tspan></text>
+<rect x="150" y="74" width="472.5" height="24" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="386.25" y="91" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">448 维，不带位置</text>
+<rect x="622.5" y="74" width="67.5" height="24" fill="var(--fig-red, #A3231C)" fill-opacity="0.16" stroke="var(--fig-red, #A3231C)" stroke-width="1"/>
+<text x="656.25" y="91" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">64 维 RoPE</text>
+<text x="656.25" y="124" font-size="11" fill="var(--fig-red, #A3231C)" text-anchor="middle">条目：BF16</text>
+<text x="150" y="124" font-size="11" fill="var(--fig-muted, #74716A)">只有最后 64 维按位置旋转；打分时两段各自点积再相加</text>
+<circle cx="130" cy="272" r="62" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="60" y1="272" x2="200" y2="272" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="130" y1="202" x2="130" y2="342" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="130" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">① 条目在位置 p = 4</text>
+<text x="130" y="178" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">转 pθ = 0.4</text>
+<circle cx="380" cy="272" r="62" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="310" y1="272" x2="450" y2="272" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="380" y1="202" x2="380" y2="342" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="380" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">② 查询在位置 t = 10</text>
+<text x="380" y="178" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">转 tθ = 1.0，夹角 (p−t)θ = −0.6</text>
+<circle cx="630" cy="272" r="62" fill="none" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1.2"/>
+<line x1="560" y1="272" x2="700" y2="272" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<line x1="630" y1="202" x2="630" y2="342" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="630" y="160" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="700">③ 输出再转 −t</text>
+<text x="630" y="178" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.4 − 1.0 = −0.6，只剩相对位置</text>
+<line x1="130" y1="272" x2="192" y2="272" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="130" y1="272" x2="187.11" y2="247.86" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4" marker-end="url(#ah-orange)"/>
+<text x="201.84" y="245.63" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">R<tspan baseline-shift="-2.6" font-size="11">p</tspan><tspan font-weight="700">e</tspan></text>
+<path d="M160 272 A30 30 0 0 0 157.63 260.32" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" marker-end="url(#ah-orange)"/>
+<line x1="380" y1="272" x2="437.11" y2="247.86" stroke="var(--fig-orange, #B4460C)" stroke-width="2.4" marker-end="url(#ah-orange)"/>
+<text x="451.84" y="245.63" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">R<tspan baseline-shift="-2.6" font-size="11">p</tspan><tspan font-weight="700">e</tspan></text>
+<line x1="380" y1="272" x2="413.5" y2="219.83" stroke="var(--fig-blue, #1F5FA8)" stroke-width="2.4" marker-end="url(#ah-blue)"/>
+<text x="422.14" y="210.37" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">R<tspan baseline-shift="-2.6" font-size="11">t</tspan><tspan font-weight="700">q</tspan></text>
+<path d="M398.37 243.39 A34 34 0 0 1 411.32 258.76" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.4" marker-end="url(#ah-red)"/>
+<text x="380" y="360" font-size="12" fill="var(--fig-red, #A3231C)" text-anchor="middle">打分 = cos(−0.6) = 0.825</text>
+<line x1="630" y1="272" x2="687.11" y2="247.86" stroke="var(--fig-orange, #B4460C)" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="707.37" y="243.29" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle">转前 0.4</text>
+<line x1="630" y1="272" x2="681.17" y2="307.01" stroke="var(--fig-green, #16704A)" stroke-width="2.4" marker-end="url(#ah-green)"/>
+<text x="694.38" y="320.04" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">R<tspan baseline-shift="-2.6" font-size="11">p−t</tspan><tspan font-weight="700">e</tspan></text>
+<path d="M666.84 256.42 A40 40 0 0 1 663.01 294.59" fill="none" stroke="var(--fig-green, #16704A)" stroke-width="1.4" marker-end="url(#ah-green)"/>
+<text x="630" y="360" font-size="12" fill="var(--fig-green, #16704A)" text-anchor="middle">(0.825, −0.565)</text>
+<text x="20" y="384" font-size="11" fill="var(--fig-muted, #74716A)">情形 B（t = 110，p = 104）：条目转 10.4、查询转 11.0，打分与逆旋转后的输出都与上图完全相同；</text>
+<text x="20" y="401" font-size="11" fill="var(--fig-muted, #74716A)">若不做逆旋转，输出里这一项是 R<tspan baseline-shift="-2.4" font-size="11">10.4</tspan><tspan font-weight="700">e</tspan> 而不是 R<tspan baseline-shift="-2.4" font-size="11">0.4</tspan><tspan font-weight="700">e</tspan>：同一段话换个位置，输出就变了（泄露绝对位置）。</text>
+</svg>

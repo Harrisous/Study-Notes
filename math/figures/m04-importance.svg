@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>重要性采样：权重与有效样本数</title>
+
+<line x1="60" y1="258" x2="360" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="224.67" x2="360" y2="224.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="191.33" x2="360" y2="191.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="158" x2="360" y2="158" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="124.67" x2="360" y2="124.67" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="91.33" x2="360" y2="91.33" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="58" x2="360" y2="58" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="60" y1="258" x2="360" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="60" y1="58" x2="60" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="56" y1="258" x2="60" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="56" y1="224.67" x2="60" y2="224.67" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="228.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.1</text>
+<line x1="56" y1="191.33" x2="60" y2="191.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="195.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.2</text>
+<line x1="56" y1="158" x2="60" y2="158" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="162" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.3</text>
+<line x1="56" y1="124.67" x2="60" y2="124.67" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="128.67" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.4</text>
+<line x1="56" y1="91.33" x2="60" y2="91.33" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="95.33" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="56" y1="58" x2="60" y2="58" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="53" y="62" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.6</text>
+<text x="20" y="158" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 20 158)">概率</text>
+<text x="40" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">用公平骰子（q）估计灌铅骰子（p）</text>
+<rect x="70.03" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="90.03" y="224.67" width="18" height="33.33" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="89.03" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<text x="89.03" y="194.44" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=0.6</text>
+<rect x="118.42" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="138.42" y="224.67" width="18" height="33.33" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="137.42" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<text x="137.42" y="194.44" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=0.6</text>
+<rect x="166.81" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="186.81" y="224.67" width="18" height="33.33" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="185.81" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">3</text>
+<text x="185.81" y="194.44" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=0.6</text>
+<rect x="215.19" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="235.19" y="224.67" width="18" height="33.33" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="234.19" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">4</text>
+<text x="234.19" y="194.44" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=0.6</text>
+<rect x="263.58" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="283.58" y="224.67" width="18" height="33.33" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="282.58" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">5</text>
+<text x="282.58" y="194.44" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=0.6</text>
+<rect x="311.97" y="202.44" width="18" height="55.56" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.1"/>
+<rect x="331.97" y="91.33" width="18" height="166.67" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1.1"/>
+<text x="330.97" y="274" font-size="12" fill="var(--fig-muted, #74716A)" text-anchor="middle">6</text>
+<text x="330.97" y="83.33" font-size="12" fill="var(--fig-orange, #B4460C)" text-anchor="middle" font-weight="600">w=3</text>
+<rect x="68" y="60" width="12" height="10" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.35" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1"/>
+<text x="86" y="70" font-size="12" fill="var(--fig-blue, #1F5FA8)">q：采样用的公平骰子，1/6</text>
+<rect x="68" y="80" width="12" height="10" fill="var(--fig-green, #16704A)" fill-opacity="0.45" stroke="var(--fig-green, #16704A)" stroke-width="1"/>
+<text x="86" y="90" font-size="12" fill="var(--fig-green, #16704A)">p：想估计的灌铅骰子</text>
+<text x="40" y="300" font-size="12" fill="var(--fig-ink, #1C1B19)">E<tspan baseline-shift="sub" font-size="11">q</tspan>[wX] = E<tspan baseline-shift="sub" font-size="11">p</tspan>[X] = 4.5；方差 37.05，是直接采 p 的 11.4 倍</text>
+<text x="40" y="324" font-size="12" fill="var(--fig-orange, #B4460C)">E<tspan baseline-shift="sub" font-size="11">q</tspan>[w²] = 1.8 → 有效样本比例 1/1.8 ≈ 0.56</text>
+<line x1="450" y1="258" x2="700" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="210.38" x2="700" y2="210.38" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="162.76" x2="700" y2="162.76" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="115.14" x2="700" y2="115.14" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="67.52" x2="700" y2="67.52" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="58" x2="450" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="500" y1="58" x2="500" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="550" y1="58" x2="550" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="600" y1="58" x2="600" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="650" y1="58" x2="650" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="700" y1="58" x2="700" y2="258" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<line x1="450" y1="258" x2="700" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="450" y1="58" x2="450" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1.1"/>
+<line x1="450" y1="258" x2="450" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="450" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0</text>
+<line x1="500" y1="258" x2="500" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="500" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0.5</text>
+<line x1="550" y1="258" x2="550" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="550" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1</text>
+<line x1="600" y1="258" x2="600" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="600" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">1.5</text>
+<line x1="650" y1="258" x2="650" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="650" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2</text>
+<line x1="700" y1="258" x2="700" y2="262" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="700" y="274" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">2.5</text>
+<line x1="446" y1="258" x2="450" y2="258" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="443" y="262" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0</text>
+<line x1="446" y1="210.38" x2="450" y2="210.38" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="443" y="214.38" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.25</text>
+<line x1="446" y1="162.76" x2="450" y2="162.76" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="443" y="166.76" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.5</text>
+<line x1="446" y1="115.14" x2="450" y2="115.14" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="443" y="119.14" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">0.75</text>
+<line x1="446" y1="67.52" x2="450" y2="67.52" stroke="var(--fig-muted, #74716A)" stroke-width="1"/>
+<text x="443" y="71.52" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="end">1</text>
+<text x="575" y="292" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">两个分布均值之差 μ</text>
+<text x="412" y="158" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" transform="rotate(-90 412 158)">有效样本比例 ESS/N</text>
+<text x="430" y="26" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">p = N(μ, 1)，q = N(0, 1)</text>
+<path d="M450 67.52 L451.26 67.55 L452.51 67.64 L453.77 67.79 L455.03 68 L456.28 68.27 L457.54 68.6 L458.79 68.99 L460.05 69.44 L461.31 69.94 L462.56 70.51 L463.82 71.13 L465.08 71.8 L466.33 72.54 L467.59 73.33 L468.84 74.17 L470.1 75.07 L471.36 76.02 L472.61 77.02 L473.87 78.07 L475.13 79.18 L476.38 80.33 L477.64 81.53 L478.89 82.78 L480.15 84.08 L481.41 85.42 L482.66 86.8 L483.92 88.23 L485.18 89.69 L486.43 91.2 L487.69 92.75 L488.94 94.33 L490.2 95.95 L491.46 97.6 L492.71 99.29 L493.97 101.01 L495.23 102.76 L496.48 104.54 L497.74 106.34 L498.99 108.17 L500.25 110.03 L501.51 111.91 L502.76 113.81 L504.02 115.73 L505.28 117.67 L506.53 119.63 L507.79 121.6 L509.05 123.59 L510.3 125.59 L511.56 127.6 L512.81 129.62 L514.07 131.65 L515.33 133.69 L516.58 135.73 L517.84 137.78 L519.1 139.83 L520.35 141.88 L521.61 143.94 L522.86 145.99 L524.12 148.04 L525.38 150.08 L526.63 152.12 L527.89 154.16 L529.15 156.19 L530.4 158.21 L531.66 160.22 L532.91 162.22 L534.17 164.21 L535.43 166.19 L536.68 168.15 L537.94 170.1 L539.2 172.04 L540.45 173.95 L541.71 175.86 L542.96 177.74 L544.22 179.6 L545.48 181.45 L546.73 183.28 L547.99 185.08 L549.25 186.87 L550.5 188.63 L551.76 190.37 L553.02 192.09 L554.27 193.78 L555.53 195.45 L556.78 197.1 L558.04 198.72 L559.3 200.32 L560.55 201.89 L561.81 203.43 L563.07 204.95 L564.32 206.45 L565.58 207.92 L566.83 209.36 L568.09 210.77 L569.35 212.16 L570.6 213.52 L571.86 214.86 L573.12 216.16 L574.37 217.44 L575.63 218.7 L576.88 219.92 L578.14 221.13 L579.4 222.3 L580.65 223.45 L581.91 224.57 L583.17 225.66 L584.42 226.73 L585.68 227.78 L586.93 228.79 L588.19 229.79 L589.45 230.75 L590.7 231.69 L591.96 232.61 L593.22 233.51 L594.47 234.38 L595.73 235.22 L596.98 236.04 L598.24 236.84 L599.5 237.62 L600.75 238.37 L602.01 239.11 L603.27 239.82 L604.52 240.51 L605.78 241.18 L607.04 241.82 L608.29 242.45 L609.55 243.06 L610.8 243.65 L612.06 244.22 L613.32 244.77 L614.57 245.31 L615.83 245.82 L617.09 246.32 L618.34 246.8 L619.6 247.27 L620.85 247.72 L622.11 248.15 L623.37 248.57 L624.62 248.97 L625.88 249.36 L627.14 249.74 L628.39 250.1 L629.65 250.45 L630.9 250.78 L632.16 251.1 L633.42 251.41 L634.67 251.71 L635.93 252 L637.19 252.27 L638.44 252.53 L639.7 252.79 L640.95 253.03 L642.21 253.26 L643.47 253.49 L644.72 253.7 L645.98 253.91 L647.24 254.11 L648.49 254.3 L649.75 254.48 L651.01 254.65 L652.26 254.81 L653.52 254.97 L654.77 255.12 L656.03 255.27 L657.29 255.41 L658.54 255.54 L659.8 255.67 L661.06 255.79 L662.31 255.9 L663.57 256.01 L664.82 256.11 L666.08 256.21 L667.34 256.31 L668.59 256.4 L669.85 256.48 L671.11 256.57 L672.36 256.64 L673.62 256.72 L674.87 256.79 L676.13 256.85 L677.39 256.92 L678.64 256.98 L679.9 257.04 L681.16 257.09 L682.41 257.14 L683.67 257.19 L684.92 257.24 L686.18 257.28 L687.44 257.32 L688.69 257.36 L689.95 257.4 L691.21 257.43 L692.46 257.47 L693.72 257.5 L694.97 257.53 L696.23 257.56 L697.49 257.58 L698.74 257.61 L700 257.63" fill="none" stroke="var(--fig-orange, #B4460C)" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="450" cy="67.52" r="4" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="500" cy="109.69" r="4" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="550" cy="187.92" r="4" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="600" cy="237.58" r="4" fill="var(--fig-ink, #1C1B19)"/>
+<circle cx="650" cy="253.88" r="4" fill="var(--fig-ink, #1C1B19)"/>
+<text x="558" y="181.93" font-size="12" fill="var(--fig-orange, #B4460C)">μ = 1：e<tspan baseline-shift="super" font-size="11">−1</tspan> ≈ 0.368</text>
+<text x="605" y="219.9" font-size="12" fill="var(--fig-orange, #B4460C)">μ = 2：0.018</text>
+<text x="555" y="80.86" font-size="12" fill="var(--fig-orange, #B4460C)">曲线：理论 e<tspan baseline-shift="super" font-size="11">−μ²</tspan></text>
+<text x="555" y="99.9" font-size="12" fill="var(--fig-ink, #1C1B19)">圆点：10⁶ 个样本实测</text>
+<text x="430" y="316" font-size="12" fill="var(--fig-ink, #1C1B19)">均值只差 2 个标准差，100 万个样本只顶</text>
+<text x="430" y="334" font-size="12" fill="var(--fig-ink, #1C1B19)">约 1.8 万个（理论）；这次实测 2.2 万个</text>
+</svg>

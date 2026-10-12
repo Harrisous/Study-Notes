@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 346" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>一个离群值的代价：格式 × 缩放粒度</title>
+
+<text x="270" y="34" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">被冲成 0 的比例</text>
+<line x1="270" y1="52" x2="270" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="270" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0%</text>
+<line x1="312.5" y1="52" x2="312.5" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="312.5" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">25%</text>
+<line x1="355" y1="52" x2="355" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="355" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50%</text>
+<line x1="397.5" y1="52" x2="397.5" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="397.5" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">75%</text>
+<line x1="440" y1="52" x2="440" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="440" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100%</text>
+<text x="530" y="34" font-size="13" fill="var(--fig-ink, #1C1B19)" font-weight="600">中位相对误差</text>
+<line x1="530" y1="52" x2="530" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="530" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">0%</text>
+<line x1="572.5" y1="52" x2="572.5" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="572.5" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">25%</text>
+<line x1="615" y1="52" x2="615" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="615" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">50%</text>
+<line x1="657.5" y1="52" x2="657.5" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="657.5" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">75%</text>
+<line x1="700" y1="52" x2="700" y2="284" stroke="var(--fig-grid, #EDE9E0)" stroke-width="1"/>
+<text x="700" y="300" font-size="11" fill="var(--fig-muted, #74716A)" text-anchor="middle">100%</text>
+<text x="250" y="73" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP4 · 整张量一个缩放</text>
+<rect x="270" y="60" width="164.52" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="440.52" y="73" font-size="12" fill="var(--fig-orange, #B4460C)">96.8%</text>
+<rect x="530" y="60" width="170" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="706" y="73" font-size="12" fill="var(--fig-orange, #B4460C)">100.0%</text>
+<text x="250" y="111" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP4 · 每 32 个一个缩放</text>
+<rect x="270" y="98" width="17.95" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="293.95" y="111" font-size="12" fill="var(--fig-orange, #B4460C)">10.6%</text>
+<rect x="530" y="98" width="18.9" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="554.9" y="111" font-size="12" fill="var(--fig-orange, #B4460C)">11.1%</text>
+<text x="250" y="149" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP4 · 每 16 个一个缩放</text>
+<rect x="270" y="136" width="12.96" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="288.96" y="149" font-size="12" fill="var(--fig-orange, #B4460C)">7.6%</text>
+<rect x="530" y="136" width="17.19" height="18" fill="var(--fig-orange, #B4460C)" fill-opacity="0.75"/>
+<text x="553.19" y="149" font-size="12" fill="var(--fig-orange, #B4460C)">10.1%</text>
+<line x1="16" y1="161" x2="750" y2="161" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1"/>
+<text x="250" y="187" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP8 · 整张量一个缩放</text>
+<rect x="270" y="174" width="1.5" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="276" y="187" font-size="12" fill="var(--fig-blue, #1F5FA8)">0.0%</text>
+<rect x="530" y="174" width="4.04" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="540.04" y="187" font-size="12" fill="var(--fig-blue, #1F5FA8)">2.4%</text>
+<text x="250" y="225" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP8 · 整张量，离群值 10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<rect x="270" y="212" width="29.58" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="305.58" y="225" font-size="12" fill="var(--fig-blue, #1F5FA8)">17.4%</text>
+<rect x="530" y="212" width="28.72" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="564.72" y="225" font-size="12" fill="var(--fig-blue, #1F5FA8)">16.9%</text>
+<text x="250" y="263" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="end">FP8 · 每 128 个，离群值 10<tspan baseline-shift="super" font-size="11">5</tspan></text>
+<rect x="270" y="250" width="3.82" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="279.82" y="263" font-size="12" fill="var(--fig-blue, #1F5FA8)">2.2%</text>
+<rect x="530" y="250" width="4.21" height="18" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.75"/>
+<text x="540.21" y="263" font-size="12" fill="var(--fig-blue, #1F5FA8)">2.5%</text>
+<text x="16" y="334" font-size="11" fill="var(--fig-muted, #74716A)">设置：1024 个 N(0,1) 随机数，其中一个换成离群值（前四行 50，后两行 10<tspan baseline-shift="super" font-size="11">5</tspan>）；统计其余 1023 个数。缩放因子 s = 块内最大绝对值 / 格式最大值</text>
+</svg>

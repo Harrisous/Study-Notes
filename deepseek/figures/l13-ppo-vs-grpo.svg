@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 432" font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<title>PPO 与 GRPO 的结构对比：GRPO 去掉价值模型，用一组回答的奖励统计量代替它</title>
+<defs><marker id="ah-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-blue, #1F5FA8)"/></marker><marker id="ah-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-green, #16704A)"/></marker><marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-ink, #1C1B19)"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--fig-red, #A3231C)"/></marker></defs>
+<text x="16" y="24" font-size="15" fill="var(--fig-ink, #1C1B19)" font-weight="700">PPO</text>
+<text x="56" y="24" font-size="12" fill="var(--fig-muted, #74716A)">（第 3 课）四个模型，其中两个要训练</text>
+<rect x="16" y="94" width="34" height="32" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="33" y="114.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">q</text>
+<line x1="52" y1="110" x2="70" y2="110" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="72" y="86" width="100" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="122" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">策略模型</text>
+<line x1="174" y1="110" x2="190" y2="110" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="192" y="94" width="30" height="32" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="207" y="114.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o</text>
+<line x1="224" y1="110" x2="250" y2="60" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="252" y="44" width="118" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="311" y="65" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">参考模型</text>
+<line x1="372" y1="60" x2="392" y2="60" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="400" y="65" font-size="13" fill="var(--fig-red, #A3231C)" font-weight="700">KL</text>
+<line x1="224" y1="110" x2="250" y2="110" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="252" y="94" width="118" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="311" y="115" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">奖励模型</text>
+<line x1="372" y1="110" x2="392" y2="110" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="400" y="115" font-size="13" fill="var(--fig-green, #16704A)" font-weight="700">r</text>
+<line x1="224" y1="110" x2="250" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="252" y="144" width="118" height="32" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="311" y="165" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">价值模型</text>
+<line x1="372" y1="160" x2="392" y2="160" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<text x="400" y="165" font-size="13" fill="var(--fig-blue, #1F5FA8)" font-weight="700">v</text>
+<text x="311" y="196" font-size="12" fill="var(--fig-blue, #1F5FA8)" text-anchor="middle">与策略同规模，要训练</text>
+<circle cx="452" cy="85" r="13" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4"/>
+<text x="452" y="90" font-size="14" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⊕</text>
+<line x1="418" y1="60" x2="440" y2="76" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" marker-end="url(#ah-red)"/>
+<line x1="414" y1="110" x2="440" y2="94" stroke="var(--fig-green, #16704A)" stroke-width="1.2" marker-end="url(#ah-green)"/>
+<text x="472" y="64" font-size="12" fill="var(--fig-ink, #1C1B19)">r − β·KL：KL 逐 token 进奖励</text>
+<line x1="466" y1="85" x2="494" y2="106" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<path d="M414 160 H527 V128" fill="none" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" marker-end="url(#ah-blue)"/>
+<rect x="496" y="94" width="62" height="32" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="527" y="114.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">GAE</text>
+<line x1="560" y1="110" x2="580" y2="110" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="582" y="94" width="42" height="32" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="603" y="114.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">A<tspan baseline-shift="-2.75" font-size="11">t</tspan></text>
+<text x="636" y="104" font-size="12" fill="var(--fig-ink, #1C1B19)">每个 token</text>
+<text x="636" y="121" font-size="12" fill="var(--fig-ink, #1C1B19)">各有一个优势</text>
+<text x="636" y="138" font-size="12" fill="var(--fig-muted, #74716A)">（依赖 λ）</text>
+<line x1="16" y1="214" x2="744" y2="214" stroke="var(--fig-rule, #DCD7CC)" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="16" y="240" font-size="15" fill="var(--fig-ink, #1C1B19)" font-weight="700">GRPO</text>
+<text x="66" y="240" font-size="12" fill="var(--fig-muted, #74716A)">（第 8 课）去掉价值模型，只有策略要训练</text>
+<rect x="16" y="302" width="34" height="32" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="33" y="322.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">q</text>
+<line x1="52" y1="318" x2="70" y2="318" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.4" marker-end="url(#ah-ink)"/>
+<rect x="72" y="294" width="100" height="48" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.4" rx="8"/>
+<text x="122" y="323" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">策略模型</text>
+<line x1="174" y1="318" x2="190" y2="280" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="192" y="266" width="36" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="210" y="284.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="-2.75" font-size="11">1</tspan></text>
+<line x1="174" y1="318" x2="190" y2="316" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="192" y="302" width="36" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="210" y="320.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="-2.75" font-size="11">2</tspan></text>
+<line x1="174" y1="318" x2="190" y2="368" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<rect x="192" y="354" width="36" height="28" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="210" y="372.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">o<tspan baseline-shift="-2.75" font-size="11">G</tspan></text>
+<text x="210" y="346" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⋮</text>
+<rect x="262" y="260" width="108" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="316" y="281" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">参考模型</text>
+<rect x="262" y="326" width="108" height="32" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.4" rx="8"/>
+<text x="316" y="347" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">奖励模型</text>
+<line x1="230" y1="316" x2="260" y2="276" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<line x1="230" y1="320" x2="260" y2="342" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.1" marker-end="url(#ah-ink)"/>
+<path d="M372 276 H420" fill="none" stroke="var(--fig-red, #A3231C)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah-red)"/>
+<text x="426" y="280" font-size="12" fill="var(--fig-red, #A3231C)">KL 估计直接加进损失（不进奖励）</text>
+<line x1="372" y1="342" x2="392" y2="342" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="396" y="288" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="413" y="302.5" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle">r<tspan baseline-shift="-2.75" font-size="11">1</tspan></text>
+<rect x="396" y="313" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="413" y="327.5" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle">r<tspan baseline-shift="-2.75" font-size="11">2</tspan></text>
+<text x="412" y="354" font-size="13" fill="var(--fig-green, #16704A)" text-anchor="middle">⋮</text>
+<rect x="396" y="363" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-green, #16704A)" stroke-width="1.2" rx="5"/>
+<text x="413" y="377.5" font-size="12.5" fill="var(--fig-green, #16704A)" text-anchor="middle">r<tspan baseline-shift="-2.75" font-size="11">G</tspan></text>
+<line x1="432" y1="336" x2="452" y2="336" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="454" y="310" width="108" height="52" fill="var(--fig-amber, #8A6508)" fill-opacity="0.1" stroke="var(--fig-amber, #8A6508)" stroke-width="1.3" rx="8"/>
+<text x="508" y="332" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle" font-weight="600">组内计算</text>
+<text x="508" y="350" font-size="12" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">(r − 均值)/标准差</text>
+<line x1="564" y1="336" x2="584" y2="336" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" marker-end="url(#ah-ink)"/>
+<rect x="588" y="288" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="605" y="302.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Â<tspan baseline-shift="-2.75" font-size="11">1</tspan></text>
+<rect x="588" y="313" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="605" y="327.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Â<tspan baseline-shift="-2.75" font-size="11">2</tspan></text>
+<text x="604" y="354" font-size="13" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">⋮</text>
+<rect x="588" y="363" width="34" height="20" fill="var(--fig-surface, #FFFFFF)" stroke="var(--fig-ink, #1C1B19)" stroke-width="1.2" rx="5"/>
+<text x="605" y="377.5" font-size="12.5" fill="var(--fig-ink, #1C1B19)" text-anchor="middle">Â<tspan baseline-shift="-2.75" font-size="11">G</tspan></text>
+<text x="636" y="322" font-size="12" fill="var(--fig-ink, #1C1B19)">同一回答的</text>
+<text x="636" y="339" font-size="12" fill="var(--fig-ink, #1C1B19)">所有 token</text>
+<text x="636" y="356" font-size="12" fill="var(--fig-ink, #1C1B19)">共用一个 Â<tspan baseline-shift="-2.64" font-size="11">i</tspan></text>
+<rect x="16" y="408" width="18" height="14" fill="var(--fig-blue, #1F5FA8)" fill-opacity="0.16" stroke="var(--fig-blue, #1F5FA8)" stroke-width="1.2" rx="3"/>
+<text x="40" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)">训练中的模型</text>
+<rect x="136" y="408" width="18" height="14" fill="var(--fig-muted, #74716A)" fill-opacity="0.1" stroke="var(--fig-muted, #74716A)" stroke-width="1.2" rx="3"/>
+<text x="160" y="420" font-size="12" fill="var(--fig-ink, #1C1B19)">冻结的模型（R1-Zero 的“奖励模型”就是规则检查器）</text>
+</svg>
