@@ -270,35 +270,41 @@ def cue_chunks(line, max_len: int = 18):
     """Cut one narration line into subtitle chunks: at punctuation, short phrases merged, long
     ones halved evenly (never inside a Latin word or number). Yields lists of spans."""
     phrases, cur = [], []
-    for sp in line.spans:
+    d = line.display
+    for i, sp in enumerate(line.spans):
         cur.append(sp)
-        ch = line.display[sp[0]:sp[1]]
+        ch = d[sp[0]:sp[1]]
         if ch and ch[-1] in STRONG + WEAK:
+            # "0.66、0.24、0.10" is one list of numbers: never cut at its 、
+            if ch == "、" and sp[0] > 0 and d[sp[0] - 1].isdigit() and sp[1] < len(d) and (d[sp[1]].isdigit() or d[sp[1]] == "−"):
+                continue
             phrases.append((cur, ch[-1] in STRONG))
             cur = []
     if cur:
         phrases.append((cur, True))
-    size = lambda spans: spans[-1][1] - spans[0][0]
+    vis = lambda a, b: sum(1.0 if ord(c) > 0x2E80 else 0.55 for c in line.display[a:b])
+    size = lambda spans: vis(spans[0][0], spans[-1][1])
     merged = []
     for spans, strong in phrases:
-        if merged and not merged[-1][1] and size(merged[-1][0]) + size(spans) <= max_len:
+        room = max_len + (4 if strong and size(spans) <= 3 else 0)   # a short sentence tail ("0.10") stays with its line
+        if merged and not merged[-1][1] and size(merged[-1][0]) + size(spans) <= room:
             merged[-1] = (merged[-1][0] + spans, strong)
         else:
             merged.append((spans, strong))
     for spans, _ in merged:
-        n = -(-size(spans) // max_len)
+        n = int(-(-size(spans) // max_len))
         if n <= 1:
             yield spans
             continue
         start = 0
         for k in range(1, n):
-            target = spans[0][0] + size(spans) * k / n
+            target = size(spans) * k / n
             best = None
             for i in range(start + 1, len(spans)):  # cut before spans[i]
                 a, b = line.display[spans[i][0] - 1], line.display[spans[i][0]]
                 if _word_char(a) and _word_char(b):
                     continue  # never inside a Latin word or a number
-                dist = abs(spans[i][0] - target)
+                dist = abs(vis(spans[0][0], spans[i][0]) - target)
                 if dist > 5:
                     continue
                 score = 3 if " " in (a, b) else 2 if a in "的了是在和与就都也还把被给到着过" else 1 if b in "第从在把被给向" else 0

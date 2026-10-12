@@ -1,0 +1,6 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). The worked numbers of lesson 0 §8.
+sum166 | 14.8\mathrm{T}+839\mathrm{B}+(2.1\mathrm{B}+943.7\mathrm{B})\approx\p{r}{16.6\mathrm{T}}
+f4 | 21\times\frac{652}{4}+20\times\frac{584}{128}=3{,}423+91.25=\p{r}{3{,}514.25}
+f41 | \Big(3\times\tfrac12+1\Big)\times356=2.5\times356=\p{r}{890}
+yarn | 163{,}840=4096\times40
+r33 | 16/49=0.33,\qquad 8/49=0.16

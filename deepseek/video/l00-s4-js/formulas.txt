@@ -1,0 +1,17 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.8)–(0.9) and the numbers of lesson 0 §4.
+bill | (2{,}664+119+5)\,\mathrm{K}\times\$2=\p{r}{\$5.576\,\mathrm{M}}
+days | 180{,}000\,/\,2{,}048\,/\,24=\p{r}{3.66}
+qs | s=\frac{\max_{j\in G}|x_j|}{\p{q}{q_{\max}}}
+qx | \hat x_j=s\cdot\mathrm{round}_{\mathrm{fmt}}\!\Big(\frac{x_j}{s}\Big)
+ue | s=2^{\p{c}{\lceil\log_2(a/448)\rceil}},\qquad a=\max_{j\in G}|x_j|
+avg | \mathbb{E}[r]=\int_{-1}^{0}2^{u}\,du=\frac{1}{2\ln 2}\approx\p{r}{72\%}
+ex1 | s=3.6/448\approx0.00804
+ex2 | 3.6/2^{-6}=230.4\approx0.51\times448
+bkv | B_{kv}=\p{c}{n_{\mathrm{copy}}}\times\p{m}{\frac{1}{m}}\times n_{\mathrm{dim}}\times\p{b}{b}
+b16 | 1{,}152\times8\,/\,576=\p{r}{16}
+b91 | 656\times8\,/\,576=\p{r}{9.1}
+b91v4 | 584\times8\,/\,512=\p{r}{9.1}
+b45 | 288\times8\,/\,512=\p{r}{4.5}
+e625 | \frac{16}{256}=2^{-4}=\p{r}{6.25\%}
+r3w | \frac{448}{2^{-6}}=28{,}672\approx\p{r}{3\times10^{4}}
+sq | \sqrt{512}\approx\p{a}{22.6}\ \ll\ 448\times6=\p{b}{2{,}688}

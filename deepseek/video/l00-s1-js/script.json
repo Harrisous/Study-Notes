@@ -1,0 +1,84 @@
+{
+  "slug": "l00-s1-js",
+  "title": "第 0 课 §1 · 一张科技树",
+  "source": "deepseek/src/lesson-00-tech-tree.md §1 (一张科技树) and its full timeline table; every date and day count is from that page (checked in reference-docs/lesson-00-doc.md). Narration polished with the shuorenhua (说人话) rules, v2.5.1.",
+  "voice": "zm_010",
+  "speed": 1.0,
+  "speed_gsv": 0.95,
+  "speak_numbers": "zh",
+  "roadmap": {"course": "deepseek", "lesson": 0, "page": 1},
+  "questions": [
+    {"id": 1, "short": "3,377 天里发生了什么", "text": "从 2017 年到 2026 年，这 3,377 天里发生了什么？"},
+    {"id": 2, "short": "为什么只有六条主线", "text": "几十个节点，为什么说只有六条主线？"},
+    {"id": 3, "short": "这张图怎么读", "text": "这张图该怎么读？"}
+  ],
+  "intro": {
+    "lines": [
+      {"id": "i1", "text": "这门课一共 21 课，{a}从一个标准的 GPT 讲起，{b}一路讲到 2026 年 9 月的[ DeepSeek-V4.1-Flash|DeepSeek V 四点一 Flash]。"},
+      {"id": "i2", "text": "第 0 课是整门课的地图。{a}它不推导任何机制：先画一棵科技树，再列一张规格总表，最后讲这门课怎么读。"},
+      {"id": "i3", "text": "这一集是它的第一页：{a}一张科技树。"},
+      {"id": "i4", "text": "第一，从 2017 年到 2026 年，{a}这 3,377 天里发生了什么？"},
+      {"id": "i5", "text": "第二，几十个节点，为什么说只有六条主线？"},
+      {"id": "i6", "text": "第三，这张图该怎么读？", "hold": 0.3},
+      {"id": "i7", "text": "三个问题，分六段讲，{a}全部是零基础。", "hold": 0.4}
+    ]
+  },
+  "chapters": [
+    {
+      "id": "01", "title": "3,377 天", "level": "zero", "tag": "TIMELINE", "q": 1,
+      "lines": [
+        {"id": "l1", "text": "先把时间摆出来。{a}2017 年 6 月 12 日，Transformer 的论文挂上 arXiv。{b}之后是 GPT-1、GPT-2、GPT-3，{c}2022 年 1 月的 InstructGPT，{d}和 2022 年 11 月 30 日上线的 ChatGPT。"},
+        {"id": "l2", "text": "从 Transformer 到 ChatGPT，是 1,997 天。{a}ChatGPT 之后 364 天，DeepSeek 的第一代通用模型 DeepSeek LLM 发布；{b}再过 1,016 天，是 2026 年 9 月 10 日的[ V4.1-Flash|V 四点一 Flash]。"},
+        {"id": "l3", "text": "加起来，3,377 天。{a}研究笔记从 DeepSeek-Coder 一直记到 2026 年 9 月的 DSec 论文，{b}一共 50 个条目：主线模型、旁支模型、论文和开源制品。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "02", "title": "从清单到树", "level": "zero", "tag": "TREE", "q": 2,
+      "lines": [
+        {"id": "l1", "text": "这么多条目，按时间排成一串，看到的只是一份清单。{a}换一个分法：按它要压低的那一笔账来分组。"},
+        {"id": "l2", "text": "清单就变成了几条线。{a}同一条线上，后一个节点几乎总是在前一个节点的账单上，再打一个折。"},
+        {"id": "l3", "text": "这就是科技树的意思：{a}节点是一次改进，{b}枝干是“在它的基础上”。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "03", "title": "六条主线，六张账单", "level": "zero", "tag": "LANES", "q": 2,
+      "lines": [
+        {"id": "l1", "text": "一共六条主线。{a}A，注意力与 KV cache：每个 token 缓存多少字节。{b}B，前馈层的稀疏化：参数量和计算量绑在一起。{c}C，数值与系统：训练算力、显存和通信。"},
+        {"id": "l2", "text": "{a}D，训练目标与后训练：从像语料，到做得对。{b}E，残差流与记忆：深度方向的信号尺度，以及知识记在哪里。{c}F，规模化规律与优化器：一次性大训练的下注。"},
+        {"id": "l3", "text": "这六条线不是互相独立的。{a}V4.1 的 FP4 KV 缓存，既是缓存更小，也是数值格式更短：{b}A 和 C 在这里相交。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "04", "title": "主干的节奏", "level": "zero", "tag": "RELEASES", "q": 1,
+      "lines": [
+        {"id": "l1", "text": "竖着看，是 DeepSeek 主干模型的发布节奏。{a}DeepSeek LLM 到 V2，159 天；{b}V2 到 V3，234 天；{c}V3 到 R1，只有 25 天。"},
+        {"id": "l2", "text": "R1 来得这么快，是因为它没有训练新的基座，{a}而是在 V3 的基座上做强化学习。"},
+        {"id": "l3", "text": "之后，R1 到[ V3.2-Exp|V 三点二 Exp]是 252 天，{a}V3.2 到 V4 预览版 144 天，{b}V4-Pro 正式版到[ V4.1-Flash|V 四点一 Flash]，只有 28 天。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "05", "title": "读图的三种方法", "level": "zero", "tag": "READING", "q": 3,
+      "lines": [
+        {"id": "l1", "text": "这张图有三种读法。{a}第一种，横着读：一条线的演进。{b}主线 A 上，从 2017 年的多头注意力，到 MQA、GQA、67B 的 GQA-8，{c}再到 V2 的 MLA、NSA、V3.2 的 DSA、V4 的 CSA 和 HCA，{d}最后是 V4.1 的 CSA2。"},
+        {"id": "l2", "text": "第二种，竖着读：一次发布动了哪几条线。{a}V2 动了 A、B、D；{b}V3 动了 B、C、D；{c}V4 在六条线上都有卡片；{d}R1 只动了 D。"},
+        {"id": "l3", "text": "第三种，看空白。{a}主线 E 从 2020 年到 2024 年 9 月是空的：{b}系数恒为 1 的那条捷径，在主流模型里几年没人动过，{c}直到 ByteDance 的 Hyper-Connections。", "hold": 0.5}
+      ]
+    },
+    {
+      "id": "06", "title": "继承的，和自己提出的", "level": "zero", "tag": "ORIGIN", "q": 3,
+      "lines": [
+        {"id": "l1", "text": "还要分清继承的和自己提出的。{a}MQA、GQA、RoPE、YaRN、GShard、Switch、PPO、DPO、Hyper-Connections 和 Muon，都来自别的团队。"},
+        {"id": "l2", "text": "DeepSeek 自己提出的，主要是 DeepSeekMoE、GRPO、MLA、无辅助损失均衡、FP8 训练和 DualPipe、NSA 和 DSA、mHC、Engram，{a}以及 CSA、HCA 和 CSA2。"},
+        {"id": "l3", "text": "一个好的读法是：每看到一个 DeepSeek 自己的节点，{a}就找它左边那个继承来的节点，{b}问一句：它嫌前者哪里不够？", "hold": 0.6}
+      ]
+    },
+    {
+      "id": "07", "title": "三个问题的答案", "level": "zero", "tag": "RECAP", "q": 0,
+      "lines": [
+        {"id": "l1", "text": "回到开头。{a}3,377 天：Transformer 到 ChatGPT 1,997 天，{b}再 364 天到 DeepSeek LLM，{c}再 1,016 天到[ V4.1-Flash|V 四点一 Flash]。"},
+        {"id": "l2", "text": "六条主线，各压一笔账。{a}三种读法：横着读演进，竖着读发布，再看空白。"},
+        {"id": "l3", "text": "下一集，{a}我们沿主线 A 走一遍：每个 token 缓存多少字节。", "hold": 2.0}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.14)–(0.15) and the numbers of lesson 0 §6.
+res | \mathbf x_{l+1}=\p{x}{\mathbf x_l}+\p{f}{\mathcal F_l(\mathbf x_l)}
+unroll | \mathbf x_L=\p{x}{1\cdot\mathbf x_l}+\sum_{i=l}^{L-1}\mathcal F_i(\mathbf x_i)
+lam | \mathbf x_{L}=\p{l}{\lambda^{L-l}}\,\mathbf x_l+\cdots
+g105 | 1.05^{60}=\p{r}{18.7}
+g095 | 0.95^{60}=\p{r}{0.046}
+g114 | 1.1428^{60}\approx\p{r}{3{,}000}
+hc | X_{l+1}=\p{res}{H^{\mathrm{res}}_l}\,X_l+\p{post}{H^{\mathrm{post}\,\top}_l}\,\mathcal F_l\big(\p{pre}{H^{\mathrm{pre}}_l}\,X_l\big)
+A | A=\begin{pmatrix}0.7&0.3\\0.3&0.7\end{pmatrix}
+A2 | A^2=\begin{pmatrix}0.58&0.42\\0.42&0.58\end{pmatrix}
+row | R=\begin{pmatrix}1&0\\1&0\end{pmatrix}
+avg | \begin{pmatrix}0.5&0.5\\0.5&0.5\end{pmatrix}
+io | 34d\,/\,3d\approx\p{r}{11}

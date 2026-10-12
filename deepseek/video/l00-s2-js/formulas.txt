@@ -1,0 +1,13 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math). Equations (0.1)–(0.5) and the derivation of lesson 0 §2.
+bkv | B_{kv}=\p{c}{n_{\mathrm{copy}}}\times\p{m}{\frac{1}{m}}\times\p{d}{n_{\mathrm{dim}}}\times\p{b}{b}
+mha | B_{kv}^{\mathrm{MHA/GQA}}=\p{two}{2}\,\p{g}{n_g\,d_h}\;\p{l}{l}\;\p{b}{b}
+mla | B_{kv}^{\mathrm{MLA}}=\p{d}{(d_c+d_h^R)}\;\p{l}{l}\;\p{b}{b}
+req | 389{,}120\times2^{20}\approx4.08\times10^{11}\ \mathrm{B}=408\ \mathrm{GB}
+n1 | 2\times8\times128\times95\times2=\p{r}{389{,}120}
+n2 | (512+64)\times60\times2=\p{r}{69{,}120}
+n3 | 61\times(656+132)=\p{r}{48{,}068}
+n4 | 21\times\tfrac{584+68}{4}+20\times\tfrac{584}{128}=\p{r}{3{,}514}
+n5 | \left(\tfrac12+\tfrac12+\tfrac12+\tfrac11\right)\times(288+68)=\p{r}{890}
+fold | \frac{389{,}120}{890}\approx437
+p933 | 1-\frac{25{,}920}{389{,}120}=93.3\%
+p822 | 1-\frac{69{,}120}{389{,}120}=82.2\%

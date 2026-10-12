@@ -1,0 +1,40 @@
+# id | LaTeX (typeset in Latin Modern by make_js_video.py math)
+# \p{name}{...} marks a part: the board can colour, dim or glow it, and point at its box (math.json "parts").
+# ---- intro: the page's formula, with the three places the questions point at
+attn | \p{sm}{\mathrm{softmax}}\!\Big(\frac{\p{qk}{QK^{\top}}}{\p{sq}{\sqrt{d_k}}}\p{m}{{}+M}\Big)\p{v}{V}
+# ---- 01
+root8 | 8=\sqrt{64}
+sigma | \sigma=\sqrt{n}
+dot64 | \mathbf q^{\top}\mathbf k=\p{s}{\sum_{i=1}^{64}}\p{t}{q_i\,k_i}
+# ---- 02
+qk | q_i,\ k_i\in\{+1,\,-1\}
+pm1 | q_ik_i=\pm1
+var4 | \mathrm{Var}=\frac{\p{a}{16\cdot1}\p{b}{{}+4\cdot4}\p{c}{{}+0\cdot6}\p{d}{{}+4\cdot4}\p{e}{{}+16\cdot1}}{16}\p{f}{{}=\frac{64}{16}}\p{g}{{}=4}
+sd2 | \sigma=\sqrt{4}=2
+# ---- 03
+dotdk | \mathbf q^{\top}\mathbf k=\sum_{i=1}^{d_k} q_i\,k_i
+d1 | \mathrm{E}[\mathbf q^{\top}\mathbf k]=\sum_{i=1}^{d_k}\p{e}{\mathrm{E}[q_i]\,\mathrm{E}[k_i]}=\p{z}{0}
+d2 | \mathrm{Var}(\mathbf q^{\top}\mathbf k)=\p{s}{\sum_{i=1}^{d_k}\mathrm{Var}(q_ik_i)}
+d3 | \mathrm{Var}(q_ik_i)=\mathrm{E}[q_i^2]\,\mathrm{E}[k_i^2]-0=\p{o}{1\times1}
+d4 | \mathrm{Var}(\mathbf q^{\top}\mathbf k)=\p{d}{d_k}
+d5 | \mathrm{Var}\!\left(\frac{\mathbf q^{\top}\mathbf k}{\sqrt{d_k}}\right)=\p{c}{\frac{1}{d_k}}\cdot d_k=\p{o}{1}
+# ---- 04
+smx | p_i=\frac{e^{\,\p{s}{s}\,z_i}}{\sum_k e^{\,\p{s}{s}\,z_k}}
+zvec | \mathbf z=(2,\ 1,\ 0.1)
+# ---- 05
+grad | \frac{\partial p_i}{\partial z_j}=\p{p}{p_i}\,(\p{d}{\delta_{ij}}-p_j)
+diag | \frac{\partial p_i}{\partial z_i}=p_i\,(1-p_i)
+# ---- 06
+mask | M_{tj}=\begin{cases}0,&j\le t\\-\infty,&j>t\end{cases}
+einf | e^{-\infty}=0
+# ---- 08
+wo | W^{O}\begin{pmatrix}\mathbf o_1\\ \vdots\\ \mathbf o_{12}\end{pmatrix}=\sum_{i=1}^{12}\p{w}{W^{O}_i}\,\p{o}{\mathbf o_i}
+wo2 | \begin{pmatrix}1&0.5\\-1&1\end{pmatrix}\!\begin{pmatrix}0.1332\\0.5777\end{pmatrix}=\p{a}{0.1332\begin{pmatrix}1\\-1\end{pmatrix}}+\p{b}{0.5777\begin{pmatrix}0.5\\1\end{pmatrix}}=\p{u}{\begin{pmatrix}0.4220\\0.4445\end{pmatrix}}
+cost1 | 1\times 2T^2\cdot 768
+cost2 | 12\times 2T^2\cdot 64=2T^2\cdot 768
+params | 768\times2304+2304+768\times768+768=2{,}362{,}368
+params2 | \approx 4d^2=4\times768^2=2{,}359{,}296
+# ---- 09
+recap1 | \mathrm{Var}\!\left(\frac{\mathbf q^{\top}\mathbf k}{\sqrt{d_k}}\right)=1
+recap2 | \mathrm{softmax}(S+M)
+recap3 | \mathbf u_t=\sum_i W^{O}_i\,\mathbf o_{t,i}

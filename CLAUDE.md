@@ -6,9 +6,10 @@ Self-contained lecture notes published with GitHub Pages. Two authoring pipeline
 - **Markdown-sourced lessons** (`deepseek/`, `math/`, mostly Chinese): edit `*/src/*.md`, never the built
   `*.html`. See `.cursor/skills/lesson-markdown/SKILL.md`. Build and check with
   `python .cursor/skills/lesson-markdown/scripts/build_lesson.py <src.md>` and `check_lesson.py <src.md>`.
-- **Lesson videos** (`deepseek/video/*.py`, one narrated blackboard episode per lesson page): see
-  `.cursor/skills/lesson-video/SKILL.md`. Lay out with `--dry` first, which is free. The narration is billed
-  by ElevenLabs and cached per line. Large files (venv, TinyTeX, caches, renders) live on `D:\StudyNotes-video`.
+- **Lesson videos**: see `.cursor/skills/lesson-video/SKILL.md`. There are two pipelines.
+  - `deepseek/video/*.py`: Manim, voiced by ElevenLabs, which is billed. Lay out with `--dry` first.
+  - `deepseek/video/*-js/`: Remotion (React), voiced locally by Kokoro, which is free. Lay out with `sheet` stills.
+  Large files (venvs, TinyTeX, node_modules, caches, renders) live on `D:\StudyNotes-video`.
 
 Writing rules for every lesson: `.cursor/skills/professor/SKILL.md` (explanation contract) and
 `.cursor/skills/academic-research/SKILL.md` (never state a number or attribution from memory). The DeepSeek
