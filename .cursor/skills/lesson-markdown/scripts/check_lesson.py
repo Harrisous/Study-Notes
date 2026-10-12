@@ -99,6 +99,27 @@ def prose_warnings(src):
     return warns
 
 
+def feynman_warnings(src):
+    """Once a lesson has the Feynman layer (style-feynman.md), every teaching page needs a
+    teach-it-back box, and the lesson needs its review page. Warnings, not errors."""
+    body = re.sub(r"```.*?```", "", src, flags=re.S)
+    if not re.search(r"^:{3,}\s*feynman\b", body, re.M):
+        return []
+    warns = []
+    chunks = re.split(r"^# (.+)$", body, flags=re.M)
+    titles = [chunks[j].split("|")[0].strip() for j in range(1, len(chunks), 2)]
+    for n, (title, page) in enumerate(zip(titles, chunks[2::2]), 1):
+        if re.search(r"练习|复盘|习题", title):
+            continue
+        if not re.search(r"^:{3,}\s*feynman\b", page, re.M):
+            warns.append("Feynman layer: §%d「%s」has no ::: feynman box" % (n, title))
+    if not any("复盘" in t for t in titles):
+        warns.append("Feynman layer: no 费曼复盘 page")
+    if not re.search(r"^:{3,}\s*predict\b[^\n]*\{#before-1\}", chunks[0], re.M):
+        warns.append("Feynman layer: the cover has no ::: predict … {#before-1} box")
+    return warns
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("src", nargs="+")
@@ -123,6 +144,7 @@ def main():
             errs += ["svg %s: %s" % (path.strip(), x) for x in e]
             warns += ["svg %s: %s" % (path.strip(), x) for x in w]
         warns += prose_warnings(text)
+        warns += feynman_warnings(text)
         for n, line in enumerate(text.splitlines(), 1):
             m = re.search(r"[\x00-\x08\x0b-\x1f\x7f]", line)
             if m:

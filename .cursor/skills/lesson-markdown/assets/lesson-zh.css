@@ -121,6 +121,8 @@ body, .zh { background: var(--color-paper); color: var(--color-ink); }
 @media print {
   details.ans { display: block; }
   details.ans > .ans-b { display: block !important; }
+  .fm-ask, .fm-tools, .fm-export, #ansall { display: none !important; }
+  .fm-ta { min-height: 7rem; }
 }
 
 @layer components {
@@ -156,6 +158,50 @@ body, .zh { background: var(--color-paper); color: var(--color-ink); }
   .prose-lesson blockquote > :last-child { margin-bottom: 0; }
   .prose-lesson blockquote p { margin: 0 0 .5rem; }
   .nobr { white-space: nowrap; }
+
+  /* ── Feynman practice (style-feynman.md): the reader writes, then compares ─────────── */
+  .box-fm { background: var(--color-surface); border: 1.5px solid color-mix(in srgb, var(--color-blue) 45%, transparent); }
+  .box-fm > .box-h, .box-pd > .box-h { color: var(--color-blue); }
+  .box-fm > .box-h::before { content: "\270E\00a0"; }
+  .box-pd { background: var(--color-surface); border: 1.5px dashed color-mix(in srgb, var(--color-blue) 45%, transparent); }
+  .box-pd > .box-h::before { content: "?\00a0"; }
+  .fm-prompt > :last-child { margin-bottom: .2rem; }
+  .fm-ta {
+    display: block; width: 100%; min-height: 5.5rem; resize: vertical; margin: .55rem 0 .15rem;
+    padding: .6rem .75rem; border: 1px solid var(--color-rule); border-radius: 8px;
+    background: var(--color-paper); color: var(--color-ink); font: inherit; font-size: .95rem; line-height: 1.7;
+  }
+  .fm-ta::placeholder { color: var(--color-muted); opacity: 1; }
+  .fm-ta:focus { outline: 2px solid color-mix(in srgb, var(--color-blue) 55%, transparent); outline-offset: 1px; }
+  .fm-tools { display: flex; align-items: center; justify-content: space-between; gap: .6rem; min-height: 1.7rem; }
+  .fm-saved { font-size: .75rem; color: var(--color-muted); }
+  .fm-ask { color: var(--color-blue); border-color: color-mix(in srgb, var(--color-blue) 45%, transparent); }
+  .fm-ask:disabled { opacity: .55; cursor: progress; }
+  .fm-sub { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .04em; color: var(--color-muted);
+    margin: .85rem 0 .3rem; }
+  .prose-lesson ul.fm-check { list-style: none; padding-left: 0; margin: 0 0 .3rem; }
+  .fm-check li { margin: .3rem 0; }
+  .fm-check label { display: flex; gap: .55rem; align-items: baseline; cursor: pointer; }
+  .fm-check input { flex: none; accent-color: var(--color-blue); transform: translateY(.12em); }
+  .fm-check input:checked + span { color: var(--color-muted); }
+  .fm-gaps { border-top: 1px dashed var(--color-rule); margin-top: .7rem; }
+  .fm-gaps > ul, .fm-gaps > p { margin-bottom: .3rem; }
+  .fm-fb { margin: .5rem 0 .2rem; padding: .7rem .9rem; border-radius: 8px; background: var(--color-blue-soft);
+    color: var(--color-ink); font-size: .92rem; line-height: 1.7; }
+  .fm-fb-v { font-weight: 700; }
+  .fm-fb-h { font-size: .74rem; font-weight: 700; color: var(--color-blue); margin: .6rem 0 .15rem; }
+  .prose-lesson ul.fm-fb-l { margin: 0; padding-left: 1.2rem; }
+  .fm-fb-n { margin-top: .6rem; font-size: .78rem; color: var(--color-muted); }
+  .fm-mirror { border-left: 3px solid color-mix(in srgb, var(--color-blue) 45%, transparent); padding: .2rem 0 .3rem .9rem;
+    margin: 1.1rem 0; }
+  .fm-mirror .fm-sub { margin-top: 0; }
+  .fm-mirror-b { white-space: pre-wrap; color: var(--color-ink); font-size: .95rem; }
+  .fm-mirror.empty .fm-mirror-b { color: var(--color-muted); font-size: .88rem; }
+  .fm-export { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; margin: 1.1rem 0; }
+  .fm-export > p { flex-basis: 100%; margin: .2rem 0 0; }
+  .fm-copy { color: var(--color-blue); border-color: color-mix(in srgb, var(--color-blue) 45%, transparent); }
+  .fm-copy-area { flex-basis: 100%; min-height: 10rem; font-family: var(--font-mono); font-size: .8rem; }
+  #ansall[aria-pressed="true"] { color: var(--color-blue); border-color: color-mix(in srgb, var(--color-blue) 45%, transparent); }
   /* Artifact variant renders MathML natively; Chrome ignores mtable's rowspacing/columnspacing
      attributes, so matrices collapse into overlapping rows. Space the cells with CSS instead;
      aligned/cases tables (right/left column pairs) keep tight horizontal spacing. */

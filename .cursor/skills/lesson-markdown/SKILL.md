@@ -99,6 +99,21 @@ Fenced with three or more colons; nest by using more colons on the outer fence.
 | `:::: cols` + `::: col` ×2 | two columns |
 | `::: todo` | orange dashed marker (unfinished work) |
 
+Feynman-practice components (what goes where: `deepseek/reference-docs/style-feynman.md`). The reader's
+writing and ticks are saved in their browser's localStorage under `fm:<lesson slug>:<id>`; the id is the
+`{#id}` you give or a hash of the title, so give boxes distinct titles and keep `{#id}`s stable.
+
+| fence | renders as |
+|---|---|
+| `:::: feynman 标题 {#id}` | teach-it-back box: prompt, a writing box, and in the Artifact variant a "请 Claude 找漏洞" button (the `sample` capability: declare `capabilities: {sample: {}}` when publishing). Nest `check`, `gaps`, `answer` |
+| `::: check 标题` | tickable checklist, one `- item` per line (inside a feynman box) |
+| `::: gaps 标题` | "卡住了？回到这里": where to look back (inside a feynman box) |
+| `:::: predict 标题 {#id}` | guess-first box with a writing box; nest `::: answer 揭晓` for the reveal |
+| `::: mirror id \| 标题` | shows, read-only, what the reader wrote in the box with that `{#id}` |
+| `::: fmexport 标题` | "复制我的全部讲解": copies every box's prompt and the reader's text as Markdown |
+
+Lessons with answers get a "展开答案 / 收起答案" button in the top bar (review mode).
+
 ### Inline
 
 - Citation: `[@deepseekv2]` or `[@a; @b]`, resolved against the refs block, numbered by

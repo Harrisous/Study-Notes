@@ -15,6 +15,9 @@ python $S/build_artifacts.py <scratch>/artifacts --link-map deepseek/reference-d
 否则会生成一个新的 Artifact）。新增一课：先不带 `url` 发布，拿到 URL 后加进 `artifacts.json` 和本表，
 再带 link map 重建并重发所有链接到它的课。
 
+带费曼层（`style-feynman.md`）的课在发布时声明 `capabilities: {"sample": {}}`，页面上的“请 Claude 找漏洞”按钮
+靠它工作；之后重新发布时省略 `capabilities` 会沿用已声明的能力。目前声明了 sample 的：第 1 课（2026-10-04）。
+
 ## 目录
 
 | 页面 | URL |
